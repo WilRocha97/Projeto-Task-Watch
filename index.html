@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/monitoramento.png" type="image/gif">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Task Watch</title>
+    <meta name="title" content="Task Watch">
+    <meta name="description" content="Sistema de gestão de rotinas automáticas">
+
+</head>
+<body class="dark">
+    <div id="bg" class="bg bgDark"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+
+    <header class="cabecalho" >
+        <div class="cabecalho_menu fundo" >
+            <!--<a id="monitor" class="cabecalho__menu__link" href="#">Monitor</a>-->
+            <div id="clock"></div>
+            <button id="toggleDarkMode">🔆</button>
+        </div>
+    </header>
+
+    <div id="tela_rotinas" class="rotinas">
+        <div id="Pendencias_SIGISSWEB_-_PC50" class="fundo rectangle status-executando ">
+            <div id="titulo" class="title">Pendencias SIGISSWEB - PC50</div>
+            <div id="andamentos" class="content">73 de 589 | 516 restantes</div>
+            <div id="estimado" class="content">Tempo estimado: 1 dia 3 horas 39 minutos</div>
+            <div id="previsao" class="content">Previsão de termino: 19/07/2024 as 15:45</div>
+        </div>
+
+        <div id="Certidão_Negativa_Receita_Federal_CPF_-_PC14" class="fundo rectangle status-warning">
+            <div class="title">Certidão Negativa Receita Federal CPF - PC14</div>
+            <div class="content">A rotina está ocisosa por muito tempo</div>
+            <div class="content"></div>
+            <div class="content"></div>
+        </div>
+
+        <div id="Encaminha_Docs_WhatsApp_-_PC34" class="fundo rectangle status-error">
+            <div class="title">Encaminha Docs WhatsApp - PC34</div>
+            <div class="content">Erro detectado</div>
+            <div class="content"></div>
+            <div class="content"></div>
+        </div>
+        
+    </div>
+
+    <footer class="rodape">
+        <div class="rodape__conteudo">
+            <p class="rodape__conteudo">🏳️‍🌈 Desenvolvido por <a class="link__padrao" href="https://wilrocha97.github.io/portfolio/" target="_blank" rel="noopener noreferrer"> Willian Rodrigues </a></p>   
+        </div>
+    </footer>
+    
+    <script type="module" src="js/main.js"></script>
+    <script src="js/modo.js"></script>
+</body>
+</html>

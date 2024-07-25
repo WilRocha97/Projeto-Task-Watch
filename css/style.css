@@ -1,0 +1,223 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --cor-vidro: #97979721;
+    --cor-texto-dark: #000000;
+    --cor-texto-light: #ffffff;
+    --cor-destaque: #fcc100;
+    --cor-link-fundo-claro: #ffffff;
+    --tamanho-titulo: 2.4rem;
+    --tamanho-texto: 1.4rem;
+    --tamanho-texto-2: 1rem;
+    --transicao-link: 0.3s;
+    --cor-executando: #00a323;
+    --cor-erro: #fc0000;
+    --cor-ocioso: #fc9700;
+    --blur: 5px;
+}
+
+
+body {
+    opacity: 0;
+    transition: opacity 1s;
+    font-family: "Montserrat", sans-serif;
+}
+
+
+.dark {
+    background-color: #000000;
+    transition: background-color 0.5s;
+    color: var(--cor-texto-light);
+}
+
+.light {
+    background-color: #ffffff;
+    transition: background-color 0.5s;
+    color: var(--cor-texto-dark);
+}
+
+
+.bg {
+    animation:slide 20s ease-in-out infinite alternate;
+    bottom:0;
+    left:-50%;
+    opacity:.5;
+    position:fixed;
+    right:-50%;
+    top:0;
+    z-index:-1;
+}
+
+.bgDark {
+    background-image: linear-gradient(-60deg,  #1f1f1f 50%, #111111 50%);
+}
+
+.bgLight {
+    background-image: linear-gradient(-60deg,  #dbdbdb 50%, #f1f1f1 50%);
+}
+
+.bg2 {
+    animation-direction:alternate-reverse;
+    animation-duration:22s;
+}
+
+.bg3 {
+    animation-duration:24s;
+}
+
+@keyframes slide {
+    0% {
+    transform:translateX(-25%);
+    }
+    100% {
+    transform:translateX(25%);
+    }
+}
+
+.fadeOut {
+    opacity: 0;
+}
+  
+.fadeIn {
+    opacity: 1;
+}
+
+
+.fundo {
+    background: var(--cor-vidro);
+    border-radius: 30px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.178);
+    backdrop-filter: blur(var(--blur));
+}
+
+
+/*------------------------------------------------------------------------------------------------*/
+
+
+#toggleDarkMode { 
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+
+/*------------------------------------------------------------------------------------------------*/
+
+.cabecalho {
+    display: flex;
+    justify-content: center;
+}
+
+.cabecalho_menu {
+    z-index: 2;
+    position: fixed;
+
+    display: flex;
+    justify-content: center;
+    
+    padding: 15px 25px;
+    margin: 15px;
+ 
+    gap: 40px;
+}
+
+.cabecalho__menu__link {
+    font-size: var(--tamanho-texto);
+    font-weight: bold;
+    color: var(--cor-link-fundo-claro);
+    text-decoration: none;
+    transition: var(--transicao-link);
+}
+
+.cabecalho__menu__link:hover {
+    color: var(--cor-texto);
+}
+#clock {
+    justify-content: center;
+    font-size: 15px;
+}
+
+/*------------------------------------------------------------------------------------------------*/
+
+
+.rotinas {
+    padding: 115px 50px 90px 50px;
+    display: flex;
+    justify-content: space-evenly;
+    height: 100%;
+    flex-wrap: wrap;
+}
+
+.rectangle {
+    border-bottom: 0;
+    padding: 25px;
+    margin: 25px;
+    width: 1px 1px;
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.3s, transform 0.3s, box-shadow 0.5s;;
+}
+.rectangle.enter {
+    opacity: 1;
+    transform: scale(1);
+}
+.status-executando {
+    box-shadow: 0 0 20px var(--cor-executando);
+}
+.status-executando:hover {
+    box-shadow: 0 0 60px var(--cor-executando);
+}
+
+.status-warning {
+    box-shadow: 0 0 20px var(--cor-ocioso);
+}
+.status-warning:hover {
+    box-shadow: 0 0 60px var(--cor-ocioso);
+}
+
+.status-error {
+    box-shadow: 0 0 20px var(--cor-erro);
+}
+.status-error:hover {
+    box-shadow: 0 0 60px var(--cor-erro);
+}
+
+.title {
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+.content {
+    font-size: 0.8em;
+    padding: 4px;
+}
+
+
+/*------------------------------------------------------------------------------------------------*/
+
+
+.rodape {
+    display: flex;
+    justify-content: center;
+    font-size: 0.8rem;
+    padding: 0.5% 3%;
+    margin: 2%;
+}
+
+.link__padrao {
+    font-weight: bold;
+    text-decoration: none;
+    color: #ff0040;
+}
+
+@media (max-width: 720px) {
+    .rotinas {
+        padding: 125px 5px 90px 5px;
+    }
+}
+
+@media (max-width: 1440px) {
+    .rotinas {
+        padding: 125px 30px 90px 30px;
+    }
+}
