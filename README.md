@@ -4,3 +4,11 @@
  O mesmo arquivo python é responsável por enviar ao JavaScript, uma lista com as informações das rotinas que estão em execução e depois são criados os cards dinamicamente na tela.
 
  Essa é a versão estática do site, as funções JavaScript e Python não estão disponíveis nessa versão.
+
+## Ferramentas utilizadas:
+* HTML
+* CSS
+* JavaScript
+
+## Feito por
+### Willian Rodrigues
