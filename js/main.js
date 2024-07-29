@@ -1,6 +1,13 @@
+var historicoBotao = document.getElementById('historico');
+var historicoTela = document.getElementById('historicoTela');
+var historicoLinha = document.querySelectorAll('.linha');
+var telaLayout = document.getElementById('layoutTela');
+const screenWidth = window.innerWidth;
+
 // adiciona um fade in ao abrir o site
 setTimeout(()=> {
-    document.body.classList.add('fadeIn')
+    document.body.classList.remove('fadeOut');
+    document.body.classList.add('fadeIn');
 }, 500);
 
 
@@ -18,6 +25,8 @@ function updateClock() {
 
     // Formatação dos minutos e segundos para adicionar um zero à esquerda se for menor que 10
     minutes = minutes < 10 ? '0' + minutes : minutes;
+    // Formatação dos minutos e segundos para adicionar um zero à esquerda se for menor que 10
+    hours = hours < 10 ? '0' + hours : hours;
 
     var formattedTime = dayOfWeek + ", " + day + " de " + month + " de " + year + " - " + hours + ":" + minutes;
     
@@ -27,3 +36,37 @@ function updateClock() {
 setInterval(updateClock, 1000);
 // Atualiza o relógio imediatamente ao carregar a página
 updateClock();
+
+
+historicoBotao.addEventListener('click', (e)=> {
+    if (historicoTela.classList.contains('invisible')) {
+        historicoTela.classList.remove('invisible');
+        telaLayout.classList.add('layout');
+        setTimeout(()=> {
+            historicoTela.classList.remove('fadeOut');
+            historicoTela.classList.add('fadeIn'); 
+        }, 250)
+        // sobe para a base da página
+        if (screenWidth < 2500) {
+            window.scrollTo({
+                top: document.body.scrollHeight,
+                behavior: 'smooth' // Para uma rolagem suave, adicione essa opção
+            });
+        }
+    }
+    else {
+        historicoTela.classList.add('fadeOut');
+        historicoTela.classList.remove('fadeIn');
+        setTimeout(()=> {
+            historicoTela.classList.add('invisible');
+            telaLayout.classList.remove('layout');
+        }, 250)
+        if (screenWidth < 2500) {
+            // sobe para o topo da página
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' // Para uma rolagem suave, adicione essa opção
+            });
+        }
+    }
+})

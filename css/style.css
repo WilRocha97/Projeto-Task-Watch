@@ -1,12 +1,11 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 
 :root {
-    --cor-vidro: #97979721;
+    --cor-vidro: #9797970e;
     --cor-texto-dark: #000000;
     --cor-texto-light: #ffffff;
-    --cor-destaque: #fcc100;
-    --cor-link-fundo-claro: #ffffff;
+    --cor-destaque: #ff0040;
     --tamanho-titulo: 2.4rem;
     --tamanho-texto: 1.4rem;
     --tamanho-texto-2: 1rem;
@@ -18,10 +17,29 @@
 }
 
 
+/* Estilizando a barra de rolagem */
+::-webkit-scrollbar {
+    width: 6px; /* Largura da barra de rolagem */
+}
+::-webkit-scrollbar-track {
+    background: transparent; /* Cor do fundo da barra de rolagem */
+}
+::-webkit-scrollbar-thumb {
+    background-color: #757575; /* Cor da barra de rolagem */
+    border-radius: 6px; /* Arredondamento das bordas */
+    border: none; /* Espaçamento entre a barra e o conteúdo */
+    transition: 0.5s;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #757575; /* Cor da barra de rolagem ao passar o mouse */
+}
+
+
 body {
     opacity: 0;
     transition: opacity 1s;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Roboto Flex", sans-serif;
+    font-weight: 300;
 }
 
 
@@ -83,6 +101,15 @@ body {
     opacity: 1;
 }
 
+.invisible {
+    opacity: 0;
+    height: 0;
+    width: 0;
+    padding: 0;
+    margin: 0;
+    border: none;
+    visibility: hidden;
+}
 
 .fundo {
     background: var(--cor-vidro);
@@ -99,16 +126,30 @@ body {
     border: none;
     background: none;
     cursor: pointer;
+    transition: var(--transicao-link);
+}
+#toggleDarkMode:hover {
+    text-shadow: 0 0 20px var(--cor-destaque);
 }
 
 
 /*------------------------------------------------------------------------------------------------*/
 
+
+.layout {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+/*------------------------------------------------------------------------------------------------*/
+
+
 .cabecalho {
     display: flex;
     justify-content: center;
 }
-
 .cabecalho_menu {
     z-index: 2;
     position: fixed;
@@ -119,21 +160,22 @@ body {
     font-size: 0.9em;
     gap: 40px;
 }
-
-.cabecalho__menu__link {
-    font-size: var(--tamanho-texto);
+.cabecalho__menu__botao {
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: var(--cor-texto);
+    font-size: var(--tamanho-texto-2);
     font-weight: bold;
-    color: var(--cor-link-fundo-claro);
-    text-decoration: none;
     transition: var(--transicao-link);
 }
-
-.cabecalho__menu__link:hover {
-    color: var(--cor-texto);
+.cabecalho__menu__botao:hover {
+    text-shadow: 0 0 20px var(--cor-destaque);
 }
 #clock {
     justify-content: center;
 }
+
 
 /*------------------------------------------------------------------------------------------------*/
 
@@ -141,11 +183,10 @@ body {
 .rotinas {
     padding: 115px 50px 90px 50px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     height: 100%;
     flex-wrap: wrap;
 }
-
 .rectangle {
     border-bottom: 0;
     padding: 25px;
@@ -165,21 +206,18 @@ body {
 .status-executando:hover {
     box-shadow: 0 0 60px var(--cor-executando);
 }
-
 .status-warning {
     box-shadow: 0 0 20px var(--cor-ocioso);
 }
 .status-warning:hover {
     box-shadow: 0 0 60px var(--cor-ocioso);
 }
-
 .status-error {
     box-shadow: 0 0 20px var(--cor-erro);
 }
 .status-error:hover {
     box-shadow: 0 0 60px var(--cor-erro);
 }
-
 .title {
     font-size: 1em;
     margin-bottom: 10px;
@@ -193,6 +231,41 @@ body {
 /*------------------------------------------------------------------------------------------------*/
 
 
+.telaHistorico {
+    max-height: 500px; /* Defina a altura máxima desejada */
+    overflow-y: auto; /* Adiciona o scroll vertical */
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    margin: 50px;
+    font-size: 0.8em;
+    transition: opacity 0.5s ease, height 0.5s ease, padding 0.5s ease;
+}
+.linha{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr; /* Três colunas iguais */
+    padding: 2% 1%;
+    gap: 10rem;
+    border-bottom: 2px solid #97979756;
+    padding-bottom: 5px; 
+}
+.ociosa {
+    color: var(--cor-ocioso);
+    font-weight: bold;
+}
+.erro {
+    color: var(--cor-erro);
+    font-weight: bold;
+}
+.executando {
+    color: var(--cor-executando);
+    font-weight: bold;
+}
+
+
+/*------------------------------------------------------------------------------------------------*/
+
+
 .rodape {
     display: flex;
     justify-content: center;
@@ -200,16 +273,31 @@ body {
     padding: 0.5% 3%;
     margin: 2%;
 }
-
 .link__padrao {
     font-weight: bold;
     text-decoration: none;
-    color: #ff0040;
+    color: var(--cor-destaque);
+    transition: var(--transicao-link);
+}
+.link__padrao:hover {
+    text-shadow: 0 0 20px var(--cor-destaque);
 }
 
 @media (max-width: 720px) {
+    #clock {
+        font-size: 0;
+    }
+    .cabecalho_menu {
+        gap: 15px;
+    }
     .rotinas {
         padding: 125px 5px 90px 5px;
+    }
+    .telaHistorico {
+        font-size: 0.5em;
+    }
+    .linha{
+        gap: 0.2rem;
     }
 }
 
@@ -219,5 +307,16 @@ body {
     }
     .rotinas {
         padding: 125px 30px 90px 30px;
+    }
+    .linha{
+        gap: 3rem;
+    }
+}
+
+@media (max-width: 2500px) {
+    .layout {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 }
