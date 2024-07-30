@@ -173,7 +173,7 @@ body {
     text-shadow: 0 0 20px var(--cor-destaque);
 }
 #clock {
-    justify-content: center;
+    align-self: center;
 }
 
 
