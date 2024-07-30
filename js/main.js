@@ -3,6 +3,7 @@ var historicoTela = document.getElementById('historicoTela');
 var historicoLinha = document.querySelectorAll('.linha');
 var telaLayout = document.getElementById('layoutTela');
 const screenWidth = window.innerWidth;
+var divsRotinas = document.querySelectorAll('#telaRotinas .fundo')
 
 // adiciona um fade in ao abrir o site
 setTimeout(()=> {
@@ -36,6 +37,21 @@ function updateClock() {
 setInterval(updateClock, 1000);
 // Atualiza o relógio imediatamente ao carregar a página
 updateClock();
+
+
+// Adiciona um ouvinte de eventos ao documento para capturar cliques
+document.body.addEventListener('click', (event) => {
+    // Verifica se o elemento clicado ou algum de seus pais possui a classe 'fundo'
+    let target = event.target;
+    while (target && !target.classList.contains('fundo')) {
+        target = target.parentElement;
+    }
+
+    // Se um elemento com a classe 'fundo' foi encontrado, alterna a classe 'collapsed'
+    if (target) {
+        target.classList.toggle('collapsed');
+    }
+});
 
 
 historicoBotao.addEventListener('click', (e)=> {
