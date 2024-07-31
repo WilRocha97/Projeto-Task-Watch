@@ -48,7 +48,6 @@ body {
     transition: background-color 0.5s;
     color: var(--cor-texto-light);
 }
-
 .light {
     background-color: #ffffff;
     transition: background-color 0.5s;
@@ -66,20 +65,16 @@ body {
     top:0;
     z-index:-1;
 }
-
 .bgDark {
     background-image: linear-gradient(-60deg,  #1f1f1f 50%, #111111 50%);
 }
-
 .bgLight {
     background-image: linear-gradient(-60deg,  #dbdbdb 50%, #f1f1f1 50%);
 }
-
 .bg2 {
     animation-direction:alternate-reverse;
     animation-duration:22s;
 }
-
 .bg3 {
     animation-duration:24s;
 }
@@ -96,11 +91,9 @@ body {
 .fadeOut {
     opacity: 0;
 }
-  
 .fadeIn {
     opacity: 1;
 }
-
 .invisible {
     opacity: 0;
     height: 0;
@@ -110,7 +103,6 @@ body {
     border: none;
     visibility: hidden;
 }
-
 .fundo {
     background: var(--cor-vidro);
     border-radius: 30px;
@@ -170,7 +162,7 @@ body {
     transition: var(--transicao-link);
 }
 .cabecalho__menu__botao:hover {
-    text-shadow: 0 0 20px var(--cor-destaque);
+    text-shadow: 0 0 6px var(--cor-destaque);
 }
 #clock {
     align-self: center;
