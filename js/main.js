@@ -54,27 +54,23 @@ document.body.addEventListener('click', (event) => {
 });
 
 
+// Abre e fecha a tela de histórico
 historicoBotao.addEventListener('click', (e)=> {
     historicoTela.classList.toggle('collapsed')
 
     if (historicoTela.classList.contains('collapsed')) {
-        // sobe para a base da página
+        // sobe para o topo da página
         setTimeout(()=> {
             if (screenWidth < 2500) {
-                // sobe para o topo da página
                 window.scrollTo({
                     top: 0,
                     behavior: 'smooth' // Para uma rolagem suave, adicione essa opção
                 });
             }
         }, 500);
-
-        historicoTela.scrollTo({
-            top: historicoTela.scrollHeight,
-            behavior: 'smooth' // Para uma rolagem suave, adicione essa opção
-        });
     }
     else {
+        // desce para a base da página e da tela de histórico
         setTimeout(()=> {
             if (screenWidth < 2500) {
                 window.scrollTo({
@@ -82,7 +78,10 @@ historicoBotao.addEventListener('click', (e)=> {
                     behavior: 'smooth' // Para uma rolagem suave, adicione essa opção
                 });
             }
+            historicoTela.scrollTo({
+                top: historicoTela.scrollHeight,
+                behavior: 'smooth' // Para uma rolagem suave, adicione essa opção
+            });
         }, 500);
     }
-    
 })
