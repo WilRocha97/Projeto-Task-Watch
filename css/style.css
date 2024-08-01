@@ -130,7 +130,7 @@ body {
 
 .layout {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
 }
 
@@ -241,7 +241,7 @@ body {
 
 
 .telaHistorico {
-    width: 35%;
+    width: 90%;
     max-height: 500px; /* Defina a altura máxima desejada */
     overflow: auto; /* Adiciona o scroll vertical */
     display: flex;
@@ -313,7 +313,8 @@ body {
         padding: 125px 5px 90px 5px;
     }
     .telaHistorico {
-        font-size: 0.5em;
+        width: 85%;
+        max-height: 700px; /* Defina a altura máxima desejada */
     }
     .linha{
         gap: 0.2rem;
@@ -330,15 +331,19 @@ body {
     .linha{
         gap: 3rem;
     }
+    .telaHistorico {
+        font-size: 0.5em;
+    }
 }
 
-@media (max-width: 2500px) {
+@media (min-width: 2500px) {
     .telaHistorico {
-        width: 90%;
+        width: 45%;
+        margin: 115px 50px;
     }
     .layout {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: center;
     }
 }
