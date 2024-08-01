@@ -180,19 +180,24 @@ body {
     flex-wrap: wrap;
 }
 .rectangle {
+    box-shadow: none;
     cursor: pointer;
     overflow: hidden; /* Para garantir que o conteúdo escondido não apareça */
-    padding: 25px;
-    margin: 25px;
-    width: auto;
-    height: 82px;
-    opacity: 1;
-    transform: scale(1);
-    transition: transform 0.3s, box-shadow 0.5s, opacity 0.5s ease, height 0.5s ease, padding 0.5s ease, margin 0.5s ease;
+    padding: 0px;
+    margin: 0px;
+    height: 0px;
+    width: 0px;
+    opacity: 0;
+    scale: 0;
+    transition: scale 0.5s ease, box-shadow 0.9s ease, opacity 0.5s ease, height 0.5s ease, width 0.5s ease, padding 0.5s ease, margin 0.5s ease;
 }
 .rectangle.enter {
+    padding: 25px;
+    margin: 25px;
+    height: 82px;
+    width: auto;
     opacity: 1;
-    transform: scale(1);
+    scale: 1;
 }
 .status-executando {
     box-shadow: 0 0 20px var(--cor-executando);
@@ -225,10 +230,10 @@ body {
     padding: 10px;
 }
 .rectangle .content {
-transition: opacity 0.5s ease; /* Transição para a opacidade das divs filhas */
+    transition: opacity 0.5s ease; /* Transição para a opacidade das divs filhas */
 }
 .rectangle.collapsed .content {
-opacity: 0; /* Torna as divs filhas invisíveis quando a div mãe está colapsada */
+    opacity: 0; /* Torna as divs filhas invisíveis quando a div mãe está colapsada */
 }
 
 
