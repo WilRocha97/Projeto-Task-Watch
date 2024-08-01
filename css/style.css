@@ -182,7 +182,6 @@ body {
 .rectangle {
     cursor: pointer;
     overflow: hidden; /* Para garantir que o conteúdo escondido não apareça */
-    border-bottom: 0;
     padding: 25px;
     margin: 25px;
     width: auto;
@@ -223,6 +222,7 @@ body {
 }
 .rectangle.collapsed {
     height: 15px; /* Altura desejada quando colapsado */
+    padding: 10px;
 }
 .rectangle .content {
 transition: opacity 0.5s ease; /* Transição para a opacidade das divs filhas */
@@ -236,14 +236,17 @@ opacity: 0; /* Torna as divs filhas invisíveis quando a div mãe está colapsad
 
 
 .telaHistorico {
+    width: 35%;
     max-height: 500px; /* Defina a altura máxima desejada */
-    overflow-y: auto; /* Adiciona o scroll vertical */
+    overflow: auto; /* Adiciona o scroll vertical */
     display: flex;
+    align-self: center;
     flex-direction: column;
     padding: 25px;
     margin: 50px;
     font-size: 0.8em;
-    transition: opacity 0.5s ease, height 0.5s ease, padding 0.5s ease;
+    opacity: 1;
+    transition: opacity 0.5s ease, max-height 0.5s ease, width 0.5s ease, padding 0.5s ease, margin 1s ease;
 }
 .linha{
     display: grid;
@@ -264,6 +267,13 @@ opacity: 0; /* Torna as divs filhas invisíveis quando a div mãe está colapsad
 .executando {
     color: var(--cor-executando);
     font-weight: bold;
+}
+.telaHistorico.collapsed {
+    width: 0%;
+    opacity: 0;
+    max-height: 0px; /* Altura desejada quando colapsado */
+    padding: 0px;
+    margin: 0px;
 }
 
 
@@ -318,6 +328,9 @@ opacity: 0; /* Torna as divs filhas invisíveis quando a div mãe está colapsad
 }
 
 @media (max-width: 2500px) {
+    .telaHistorico {
+        width: 90%;
+    }
     .layout {
         display: flex;
         flex-direction: column;

@@ -55,34 +55,34 @@ document.body.addEventListener('click', (event) => {
 
 
 historicoBotao.addEventListener('click', (e)=> {
-    if (historicoTela.classList.contains('invisible')) {
-        historicoTela.classList.remove('invisible');
-        telaLayout.classList.add('layout');
-        setTimeout(()=> {
-            historicoTela.classList.remove('fadeOut');
-            historicoTela.classList.add('fadeIn'); 
-        }, 250)
+    historicoTela.classList.toggle('collapsed')
+
+    if (historicoTela.classList.contains('collapsed')) {
         // sobe para a base da página
-        if (screenWidth < 2500) {
-            window.scrollTo({
-                top: document.body.scrollHeight,
-                behavior: 'smooth' // Para uma rolagem suave, adicione essa opção
-            });
-        }
+        setTimeout(()=> {
+            if (screenWidth < 2500) {
+                // sobe para o topo da página
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth' // Para uma rolagem suave, adicione essa opção
+                });
+            }
+        }, 500);
+
+        historicoTela.scrollTo({
+            top: historicoTela.scrollHeight,
+            behavior: 'smooth' // Para uma rolagem suave, adicione essa opção
+        });
     }
     else {
-        historicoTela.classList.add('fadeOut');
-        historicoTela.classList.remove('fadeIn');
         setTimeout(()=> {
-            historicoTela.classList.add('invisible');
-            telaLayout.classList.remove('layout');
-        }, 250)
-        if (screenWidth < 2500) {
-            // sobe para o topo da página
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth' // Para uma rolagem suave, adicione essa opção
-            });
-        }
+            if (screenWidth < 2500) {
+                window.scrollTo({
+                    top: document.body.scrollHeight,
+                    behavior: 'smooth' // Para uma rolagem suave, adicione essa opção
+                });
+            }
+        }, 500);
     }
+    
 })
