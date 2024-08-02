@@ -188,13 +188,11 @@ body {
 .rectangle {
     box-shadow: none;
     cursor: pointer;
-    overflow: hidden; /* Para garantir que o conteúdo escondido não apareça */
     padding: 0px;
     margin: 0px;
     height: 0px;
     width: 0px;
     opacity: 0;
-    scale: 0;
     transition: scale 0.5s ease, box-shadow 0.9s ease, opacity 0.5s ease, height 0.5s ease, width 0.5s ease, padding 0.5s ease, margin 0.5s ease;
 }
 .rectangle.enter {
@@ -233,9 +231,14 @@ body {
     padding: 4px;
 }
 .rectangle.collapsed {
-    height: 15px; /* Altura desejada quando colapsado */
+    height: 10px; /* Altura desejada quando colapsado */
     padding: 10px;
     font-size: 0.7em;
+    transition: scale 0.5s ease, height 0.5s ease, width 0.5s ease, transform 0.5s ease, box-shadow 0.9s ease, padding 0.5s ease;
+}
+.rectangle.collapsed:hover {
+    transform: scale(1.2);
+    z-index: 2;
 }
 .rectangle .content {
     transition: font-size 0.9s ease, opacity 0.5s ease; /* Transição para a opacidade das divs filhas */
