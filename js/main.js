@@ -53,7 +53,6 @@ document.body.addEventListener('click', (event) => {
     }
 });
 
-
 // Abre e fecha a tela de histórico
 historicoBotao.addEventListener('click', (e)=> {
     historicoTela.classList.toggle('collapsed')
@@ -85,3 +84,8 @@ historicoBotao.addEventListener('click', (e)=> {
         }, 500);
     }
 })
+
+// Adiciona o evento de clique na tela de histórico para evitar a propagação
+historicoTela.addEventListener('click', (e) => {
+    e.stopPropagation();
+});
