@@ -35,13 +35,13 @@ updateClock();
 
 // Adiciona um ouvinte de eventos ao documento para capturar cliques
 document.body.addEventListener('click', (event) => {
-    // Verifica se o elemento clicado ou algum de seus pais possui a classe 'fundo'
+    // Verifica se o elemento clicado ou algum de seus pais possui a classe 'rectangle'
     let target = event.target;
-    while (target && !target.classList.contains('fundo')) {
+    while (target && !target.classList.contains('rectangle')) {
         target = target.parentElement;
     }
 
-    // Se um elemento com a classe 'fundo' foi encontrado, alterna a classe 'collapsed'
+    // Se um elemento com a classe 'rectangle' foi encontrado, alterna a classe 'collapsed'
     if (target) {
         target.classList.toggle('collapsed');
     }
