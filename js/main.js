@@ -5,12 +5,6 @@ var telaLayout = document.getElementById('layoutTela');
 const screenWidth = window.innerWidth;
 var divsRotinas = document.querySelectorAll('#telaRotinas .fundo')
 
-// adiciona um fade in ao abrir o site
-setTimeout(()=> {
-    document.body.classList.remove('fadeOut');
-    document.body.classList.add('fadeIn');
-}, 500);
-
 
 function updateClock() {
     var daysOfWeek = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"];
