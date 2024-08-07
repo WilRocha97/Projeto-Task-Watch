@@ -2,6 +2,7 @@ var historicoBotao = document.getElementById('historico');
 var historicoTela = document.getElementById('historicoTela');
 var historicoLinha = document.querySelectorAll('.linha');
 var telaLayout = document.getElementById('layoutTela');
+var telaRotinas = document.getElementById('telaRotinas');
 const screenWidth = window.innerWidth;
 var divsRotinas = document.querySelectorAll('#telaRotinas .fundo')
 

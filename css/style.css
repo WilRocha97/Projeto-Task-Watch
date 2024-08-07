@@ -10,9 +10,9 @@
     --tamanho-texto: 1.4rem;
     --tamanho-texto-2: 1rem;
     --transicao-link: 0.3s;
-    --cor-executando: #00a323;
+    --cor-executando: #00a372;
     --cor-erro: #fc0000;
-    --cor-ocioso: #fc9700;
+    --cor-ocioso: #fc8f00;
     --blur: 4px;
 }
 
@@ -140,7 +140,8 @@ body {
     justify-content: center;
 }
 .cabecalho_menu {
-    z-index: 2;
+
+    z-index: 1;
     position: fixed;
     display: flex;
     justify-content: center;
@@ -165,7 +166,6 @@ body {
     align-self: center;
 }
 
-
 /*------------------------------------------------------------------------------------------------*/
 
 
@@ -184,38 +184,40 @@ body {
     height: 0px;
     width: 0px;
     opacity: 0;
-    transition: scale 0.5s ease, box-shadow 0.9s ease, opacity 0.5s ease, height 0.5s ease, width 0.5s ease, padding 0.5s ease, margin 0.5s ease;
+    transition: scale 0.5s ease, box-shadow 0.9s ease, opacity 0.5s ease, height 0.5s ease, padding 0.5s ease, margin 0.5s ease;
 }
 .rectangle.enter {
     padding: 25px;
     margin: 25px;
-    height: 82px;
+    height: 85px;
     width: auto;
     opacity: 1;
     scale: 1;
 }
 .status-executando {
-    box-shadow: 0 0 20px var(--cor-executando);
+    background: linear-gradient(50deg, #3da0772a, var(--cor-vidro), #3da0772a);
+    box-shadow: 0 0 5px var(--cor-executando);
 }
 .status-executando:hover {
-    box-shadow: 0 0 60px var(--cor-executando);
+    box-shadow: 0 0 30px var(--cor-executando);
 }
 .status-warning {
-    box-shadow: 0 0 20px var(--cor-ocioso);
+    background: linear-gradient(50deg, #a0963d25, var(--cor-vidro), #a0963d25);
+    box-shadow: 0 0 5px var(--cor-ocioso);
 }
 .status-warning:hover {
-    box-shadow: 0 0 60px var(--cor-ocioso);
+    box-shadow: 0 0 30px var(--cor-ocioso);
 }
 .status-error {
-    box-shadow: 0 0 20px var(--cor-erro);
+    background: linear-gradient(50deg, #a03d4227, var(--cor-vidro), #a03d4227);
+    box-shadow: 0 0 5px var(--cor-erro);
 }
 .status-error:hover {
-    box-shadow: 0 0 60px var(--cor-erro);
+    box-shadow: 0 0 30px var(--cor-erro);
 }
-.title {
+.rectangle .title {
     font-size: 1em;
-    margin-bottom: 10px;
-    transition: font-size 1s ease;
+    padding-bottom: 6px;
 }
 .content {
     font-size: 0.8em;
@@ -224,15 +226,14 @@ body {
 .rectangle.collapsed {
     height: 10px; /* Altura desejada quando colapsado */
     padding: 10px;
-    font-size: 0.7em;
-    transition: scale 0.5s ease, height 0.5s ease, width 0.5s ease, transform 0.5s ease, box-shadow 0.9s ease, padding 0.5s ease;
+    font-size: 0;
+    transition: scale 0.5s ease, height 0.5s ease, transform 0.5s ease, box-shadow 0.9s ease, padding 0.5s ease;
 }
 .rectangle.collapsed:hover {
     transform: scale(1.2);
-    z-index: 2;
 }
 .rectangle .content {
-    transition: font-size 0.9s ease, opacity 0.5s ease; /* Transição para a opacidade das divs filhas */
+    transition: font-size 0.9s ease, opacity 0.2s ease; /* Transição para a opacidade das divs filhas */
 }
 .rectangle.collapsed .content {
     opacity: 0; /* Torna as divs filhas invisíveis quando a div mãe está colapsada */
@@ -276,7 +277,7 @@ body {
     font-weight: bold;
 }
 .telaHistorico.collapsed {
-    width: 0;
+    width: 0%;
     opacity: 0;
     max-height: 0px; /* Altura desejada quando colapsado */
     padding: 0px;
@@ -305,6 +306,9 @@ body {
 }
 
 @media (max-width: 720px) {
+    .fundo {
+        border-radius: 25px;
+    }
     #clock {
         font-size: 0;
     }
@@ -312,7 +316,13 @@ body {
         gap: 15px;
     }
     .rotinas {
-        padding: 125px 5px 90px 5px;
+        padding: 125px 0 90px 0;
+    }
+    .rectangle.enter {
+        padding: 16px;
+    }
+    .rectangle.collapsed {
+        padding: 10px;
     }
     .telaHistorico {
         width: 85%;
@@ -321,6 +331,10 @@ body {
     .linha{
         gap: 0.2rem;
     }
+    body:focus {
+        outline: none;
+        border-color: 2px solid var(--cor-destaque);
+    }
 }
 
 @media (max-width: 1440px) {
@@ -328,7 +342,7 @@ body {
         font-size: 0.8em;
     }
     .rotinas {
-        padding: 125px 30px 90px 30px;
+        padding: 125px 5px 90px 5px;
     }
     .linha{
         gap: 3rem;
