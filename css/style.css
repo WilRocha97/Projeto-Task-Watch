@@ -333,6 +333,12 @@ body {
     padding: 0.5% 3%;
     margin: 2%;
 }
+.rodapeConteudo {
+    display: flex;
+    gap: 0.3rem 0.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
 .link__padrao {
     font-weight: bold;
     text-decoration: none;
@@ -368,6 +374,9 @@ body {
     }
     .linha{
         gap: 0.2rem;
+    }
+    .rodape{
+        scale: 0.8;
     }
     body:focus {
         outline: none;

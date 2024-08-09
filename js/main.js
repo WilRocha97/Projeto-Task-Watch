@@ -6,6 +6,7 @@ var telaLayout = document.getElementById('layoutTela');
 var telaRotinas = document.getElementById('telaRotinas');
 const screenWidth = window.innerWidth;
 var divsRotinas = document.querySelectorAll('#telaRotinas .fundo')
+const botoesFechar = document.querySelectorAll('.botaoFechar');
 
 
 function updateClock() {
@@ -86,9 +87,6 @@ historicoBotao.addEventListener('click', (e)=> {
 historicoTela.addEventListener('click', (e) => {
     e.stopPropagation();
 });
-
-// Seleciona todos os elementos com a classe 'botaoFechar'
-const botoesFechar = document.querySelectorAll('.botaoFechar');
     
 // Adiciona um event listener a cada botão de fechar
 botoesFechar.forEach(botao => {
