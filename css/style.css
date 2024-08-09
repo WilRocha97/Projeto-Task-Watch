@@ -159,7 +159,8 @@ body {
     transition: var(--transicao-link);
 }
 .cabecalho__menu__botao:hover {
-    text-shadow: 0 0 6px var(--cor-destaque);
+    text-shadow: 0 0 2px var(--cor-destaque);
+    color: var(--cor-destaque);
 }
 #clock {
     align-self: center;
@@ -213,6 +214,7 @@ body {
     box-shadow: 0 0 5px var(--cor-executando);
 }
 .status-executando:hover {
+    background: linear-gradient(-50deg, #3da0775b, var(--cor-vidro), #3da0775b);
     box-shadow: 0 0 30px var(--cor-executando);
 }
 
@@ -221,6 +223,7 @@ body {
     box-shadow: 0 0 5px var(--cor-ocioso);
 }
 .status-warning:hover {
+    background: linear-gradient(-50deg, #a0963d50, var(--cor-vidro), #a0963d50);
     box-shadow: 0 0 30px var(--cor-ocioso);
 }
 
@@ -229,6 +232,7 @@ body {
     box-shadow: 0 0 5px var(--cor-erro);
 }
 .status-error:hover {
+    background: linear-gradient(-50deg, #a03d425e, var(--cor-vidro), #a03d425e);
     box-shadow: 0 0 30px var(--cor-erro);
 }
 
@@ -237,6 +241,7 @@ body {
     box-shadow: 0 0 10px var(--cor-final);
 }
 .status-final:hover {
+    background: linear-gradient(-50deg, #3d89a04f, var(--cor-vidro), #3d89a04f);
     box-shadow: 0 0 30px var(--cor-final);
 }
 .botaoFechar {
