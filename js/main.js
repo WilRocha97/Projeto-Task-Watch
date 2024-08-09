@@ -1,4 +1,5 @@
 var historicoBotao = document.getElementById('historico');
+var historicoNotificacao = document.getElementById('bolinhaNotificacao')
 var historicoTela = document.getElementById('historicoTela');
 var historicoLinha = document.querySelectorAll('.linha');
 var telaLayout = document.getElementById('layoutTela');
@@ -50,6 +51,7 @@ document.body.addEventListener('click', (event) => {
 
 // Abre e fecha a tela de histórico
 historicoBotao.addEventListener('click', (e)=> {
+    historicoNotificacao.classList.add('invisible')
     historicoTela.classList.toggle('collapsed')
 
     if (historicoTela.classList.contains('collapsed')) {
@@ -83,4 +85,19 @@ historicoBotao.addEventListener('click', (e)=> {
 // Adiciona o evento de clique na tela de histórico para evitar a propagação
 historicoTela.addEventListener('click', (e) => {
     e.stopPropagation();
+});
+
+// Seleciona todos os elementos com a classe 'botaoFechar'
+const botoesFechar = document.querySelectorAll('.botaoFechar');
+    
+// Adiciona um event listener a cada botão de fechar
+botoesFechar.forEach(botao => {
+    botao.addEventListener('click', () => {
+        // Encontra o elemento pai mais próximo
+        const divMae = botao.closest('.rectangle');
+        divMae.classList.add('out')
+            setTimeout(()=> {
+                telaRotinas.removeChild(divMae)
+            }, 500);
+    });
 });
