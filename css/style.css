@@ -99,7 +99,7 @@ body {
 }
 
 .fundo {
-    background: var(--cor-vidro);
+    background: linear-gradient(-50deg, #c0c0c017, var(--cor-vidro), #c0c0c017);
     border-radius: 30px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.178);
     backdrop-filter: blur(var(--blur));
@@ -223,7 +223,7 @@ body {
     box-shadow: 0 0 5px var(--cor-ocioso);
 }
 .status-warning:hover {
-    background: linear-gradient(-50deg, #a0963d50, var(--cor-vidro), #a0963d50);
+    background: linear-gradient(-50deg, #a0550050, var(--cor-vidro), #a0550050);
     box-shadow: 0 0 30px var(--cor-ocioso);
 }
 
