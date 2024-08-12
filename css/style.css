@@ -182,24 +182,24 @@ body {
     padding: 115px 50px 90px 50px;
     display: flex;
     justify-content: center;
+    align-items: baseline;
     height: 100%;
     flex-wrap: wrap;
 }
 .rectangle {
     box-shadow: none;
     cursor: pointer;
-    padding: 0px;
-    margin: 0px;
-    height: 0px;
-    width: 0px;
+    padding: 0;
+    margin: 0;
     opacity: 0;
+    scale: 0;
     transition: var(--transicao-link);
 }
 .rectangle.enter {
+    width: fit-content;
+    height: fit-content;
     padding: 25px;
     margin: 25px;
-    height: 85px;
-    width: auto;
     opacity: 1;
     scale: 1;
 }
@@ -223,7 +223,7 @@ body {
     box-shadow: 0 0 5px var(--cor-ocioso);
 }
 .status-warning:hover {
-    background: linear-gradient(-50deg, #a0550050, var(--cor-vidro), #a0550050);
+    background: linear-gradient(-50deg, #a06d0050, var(--cor-vidro), #a06d0050);
     box-shadow: 0 0 30px var(--cor-ocioso);
 }
 
@@ -262,16 +262,12 @@ body {
     padding: 4px;
 }
 .rectangle.collapsed {
-    height: 10px; /* Altura desejada quando colapsado */
     padding: 10px;
+    margin: 10px;
     font-size: 0;
-    transition: var(--transicao-link);
 }
 .rectangle.collapsed:hover {
     transform: scale(1.2);
-}
-.rectangle .content {
-    transition: var(--transicao-link); /* Transição para a opacidade das divs filhas */
 }
 .rectangle.collapsed .content {
     opacity: 0; /* Torna as divs filhas invisíveis quando a div mãe está colapsada */
