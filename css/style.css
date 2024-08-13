@@ -39,12 +39,6 @@ body {
     font-weight: 300;
 }
 
-/* Aplica a animação ao corpo do site */
-.fade-in {
-    opacity: 0; /* Inicialmente invisível */
-    animation: fadeIn 1s ease-in-out forwards; /* 1s é a duração da animação */
-}
-
 .dark {
     background-color: #000000;
     transition: var(--transicao-link);
@@ -101,7 +95,7 @@ body {
 .fundo {
     background: linear-gradient(-50deg, #c0c0c017, var(--cor-vidro), #c0c0c017);
     border-radius: 20px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.178);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.178);
     backdrop-filter: blur(var(--blur));
 }
 
@@ -138,7 +132,6 @@ body {
     justify-content: center;
 }
 .cabecalho_menu {
-
     z-index: 1;
     position: fixed;
     display: flex;
