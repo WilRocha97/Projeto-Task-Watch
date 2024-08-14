@@ -109,8 +109,12 @@ body {
     cursor: pointer;
     transition: var(--transicao-link);
 }
+#toggleDarkMode img{
+    width: 14px;
+    height: auto;
+}
 #toggleDarkMode:hover {
-    text-shadow: 0 0 20px var(--cor-destaque);
+    scale: 1.2;
 }
 
 
@@ -134,15 +138,17 @@ body {
 .cabecalho_menu {
     z-index: 1;
     position: fixed;
+}
+.menu {
     display: flex;
     justify-content: center;
     padding: 15px 25px;
-    margin: 15px;
     font-size: 0.9em;
-    gap: 40px;
+    gap: 10px;
 }
 .cabecalho__menu__botao {
     position: relative;
+    align-self: center;
     border: none;
     background: none;
     cursor: pointer;
@@ -152,11 +158,14 @@ body {
     transition: var(--transicao-link);
 }
 .cabecalho__menu__botao:hover {
-    text-shadow: 0 0 2px var(--cor-destaque);
+    text-shadow: 0 0 5px var(--cor-destaque);
     color: var(--cor-destaque);
 }
 #clock {
     align-self: center;
+}
+.relogio {
+    scale: 1;
 }
 .bolinha {
     position: absolute; /* Posiciona a bolinha de forma absoluta em relação ao botão */
@@ -238,6 +247,7 @@ body {
     box-shadow: 0 0 30px var(--cor-final);
 }
 .botaoFechar {
+    width: fit-content;
     color: var(--cor-final);
     text-shadow: none;
     transition: var(--transicao-link);
@@ -342,11 +352,18 @@ body {
     .fundo {
         border-radius: 25px;
     }
+    .menu {
+        gap: 5px;
+    }
     #clock {
         font-size: 0;
     }
-    .cabecalho_menu {
-        gap: 15px;
+    .relogio {
+        scale: 0;
+        padding: 0;
+        margin: 0;
+        width: 0;
+        height: 0;
     }
     .rotinas {
         padding: 125px 0 90px 0;

@@ -18,14 +18,23 @@
     <div class="bg bg3"></div>
     
     <header class="cabecalho" >
-        <div class="cabecalho_menu fundo" >
-            <button id="historico" class="cabecalho__menu__botao novaNotificacao">
-                <span id="bolinhaNotificacao" class="bolinha"></span>
-                Histórico
-            </button>
-            <div id="clock"></div>
-            <button id="toggleDarkMode">🔆</button>
+        <div class="cabecalho_menu menu">
+            <div class="menu fundo">
+                <button id="historico" class="cabecalho__menu__botao novaNotificacao">
+                    <span id="bolinhaNotificacao" class="bolinha"></span>
+                    Histórico
+                </button>
+            </div>
+            <div class="menu fundo relogio">
+                <div id="clock"></div>
+            </div>
+            <div class="menu fundo" >
+                <button id="encolher" class="cabecalho__menu__botao">▼</button>
+                <button id="explodir" class="cabecalho__menu__botao">▲</button>
+                <button id="toggleDarkMode"><img class="modoImagem" src="assets/moon.png" alt="Modo escuro"></button>
+            </div>
         </div>
+        
     </header>
 
     <div id="layoutTela" class="layout">
@@ -202,7 +211,8 @@
         <div class="rodapeConteudo">
             <p class="rodapeLinha">🏳️‍🌈 Desenvolvido por <a class="link__padrao" href="https://wilrocha97.github.io/portfolio/" target="_blank" rel="noopener noreferrer"> Willian Rodrigues </a></p> 
             <p class="rodapeLinha">Icone do site por <a class="link__padrao" href="https://www.flaticon.com/authors/shahid-mehmood" target="_blank" rel="noopener noreferrer"> Shahid-Mehmood </a></p>   
-            </div>
+            <p class="rodapeLinha">Icones dos temas <a class="link__padrao" href="https://www.flaticon.com/authors/fathema-khanom" target="_blank" rel="noopener noreferrer"> Fathema Khanom </a></p>       
+        </div>
     </footer>
     
     <script type="module" src="js/main.js"></script>

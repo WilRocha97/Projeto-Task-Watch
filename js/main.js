@@ -1,3 +1,5 @@
+const encolhe = document.getElementById('encolher')
+const explode = document.getElementById('explodir')
 var historicoBotao = document.getElementById('historico');
 var historicoNotificacao = document.getElementById('bolinhaNotificacao')
 var historicoTela = document.getElementById('historicoTela');
@@ -49,6 +51,22 @@ document.body.addEventListener('click', (event) => {
         target.classList.toggle('collapsed');
     }
 });
+
+// Minimiza e maximiza todos os cards
+encolhe.addEventListener('click', (e) => {
+    const cards = document.querySelectorAll('.rectangle')
+    cards.forEach(card => {
+        card.classList.add('collapsed')
+    })
+})
+
+// Minimiza e maximiza todos os cards
+explode.addEventListener('click', (e) => {
+    const cards = document.querySelectorAll('.rectangle')
+    cards.forEach(card => {
+        card.classList.remove('collapsed')
+    })
+})
 
 // Abre e fecha a tela de histórico
 historicoBotao.addEventListener('click', (e)=> {
