@@ -87,9 +87,14 @@ body {
     height: 0;
     width: 0;
     padding: 0;
+    padding-bottom: 0;
     margin: 0;
+    scale: 0;
+    gap: 0;
     border: none;
+    border-bottom: none;
     visibility: hidden;
+    position: fixed;
 }
 
 .fundo {
@@ -167,14 +172,30 @@ body {
 .relogio {
     scale: 1;
 }
-.bolinha {
+.notifica {
+    align-self: center;
+}
+.bolinhaErro, .bolinhaOcioso, .bolinhaFinal{
     position: absolute; /* Posiciona a bolinha de forma absoluta em relação ao botão */
-    top: 0; /* Alinha a bolinha ao topo do botão */
-    right: 0; /* Alinha a bolinha à direita do botão */
     width: 5px; /* Ajuste o tamanho da bolinha conforme necessário */
     height: 5px; /* Ajuste o tamanho da bolinha conforme necessário */
-    background-color: red; /* Cor da bolinha */
     border-radius: 50%; /* Torna a bolinha circular */
+    transition: var(--transicao-link);
+}
+.bolinhaErro {
+    background-color: var(--cor-erro); /* Cor da bolinha */
+    top: 0; /* Alinha a bolinha ao topo do botão */
+    right: 0; /* Alinha a bolinha à direita do botão */
+}
+.bolinhaOcioso {
+    background-color: var(--cor-ocioso); /* Cor da bolinha */
+    bottom: 0; /* Alinha a bolinha ao topo do botão */
+    right: 0; /* Alinha a bolinha à direita do botão */
+}
+.bolinhaFinal {
+    background-color: var(--cor-final); /* Cor da bolinha */
+    top: 0; /* Alinha a bolinha ao topo do botão */
+    left: 0; /* Alinha a bolinha à direita do botão */
 }
 
 /*------------------------------------------------------------------------------------------------*/
@@ -280,6 +301,32 @@ body {
 /*------------------------------------------------------------------------------------------------*/
 
 
+.filtroHistorico{
+    padding: 0 30px;
+    margin: 35px 65px 5px 65px;
+    display: flex;
+    justify-items: center;
+    flex-direction: row;
+    gap: 10px;
+    transition: var(--transicao-link);
+}
+.filtroGeral, .filtroErro, .filtroOcioso, .filtroFinal{
+    cursor: pointer;
+    font-size: larger;
+    transition: var(--transicao-link);
+}
+.filtroErro {
+    color: var(--cor-erro); /* Cor da bolinha */
+}
+.filtroOcioso {
+    color: var(--cor-ocioso); /* Cor da bolinha */
+}
+.filtroFinal {
+    color: var(--cor-final); /* Cor da bolinha */
+}
+.filtroGeral:hover, .filtroErro:hover, .filtroOcioso:hover, .filtroFinal:hover {
+    scale: 1.5;
+}
 .telaHistorico {
     width: 90%;
     max-height: 500px; /* Defina a altura máxima desejada */
@@ -288,9 +335,8 @@ body {
     align-self: center;
     flex-direction: column;
     padding: 25px;
-    margin: 50px;
+    margin: 5px 50px 50px 50px;
     font-size: 0.8em;
-    opacity: 1;
     transition: var(--transicao-link);
 }
 .linha{
@@ -300,6 +346,10 @@ body {
     gap: 10rem;
     border-bottom: 2px solid #97979756;
     padding-bottom: 5px; 
+    transition: var(--transicao-link);
+}
+.iniciada {
+    color: var(--cor-texto);
 }
 .ociosa {
     color: var(--cor-ocioso);
@@ -373,7 +423,15 @@ body {
     }
     .telaHistorico {
         width: 85%;
-        max-height: 700px; /* Defina a altura máxima desejada */
+        max-height: 650px; /* Defina a altura máxima desejada */
+    }
+    .filtroHistorico{
+        padding: 0 30px;
+        margin: 10px 65px 5px 65px;
+        gap: 25px;
+    }
+    .filtroGeral, .filtroErro, .filtroOcioso, .filtroFinal{
+        font-size: x-large;
     }
     .linha{
         gap: 0.2rem;

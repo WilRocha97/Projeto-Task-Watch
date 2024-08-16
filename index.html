@@ -20,8 +20,10 @@
     <header class="cabecalho" >
         <div class="cabecalho_menu menu">
             <div class="menu fundo">
-                <button id="historico" class="cabecalho__menu__botao novaNotificacao">
-                    <span id="bolinhaNotificacao" class="bolinha"></span>
+                <button id="historico" class="cabecalho__menu__botao notifica">
+                    <span id="bolinhaNotificacaoErro" class="bolinhaErro"></span>
+                    <span id="bolinhaNotificacaoOcioso" class="bolinhaOcioso"></span>
+                    <span id="bolinhaNotificacaoFinal" class="bolinhaFinal"></span>
                     Histórico
                 </button>
             </div>
@@ -67,7 +69,13 @@
             </div>
             
         </div>
-
+        
+        <div id="painelFiltro" class="filtroHistorico invisible">
+            <span id="bolinhaGeral" class="filtroGeral">●</span>
+            <span id="bolinhaErro" class="filtroErro">●</span>
+            <span id="bolinhaOcioso" class="filtroOcioso">●</span>
+            <span id="bolinhaFinal" class="filtroFinal">●</span>
+        </div>
         <div id="historicoTela" class="telaHistorico fundo collapsed">
             <div class="linha">
                 <p id="data">15/07/2024 - 09:35</p>

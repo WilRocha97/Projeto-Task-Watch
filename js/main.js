@@ -1,9 +1,19 @@
 const encolhe = document.getElementById('encolher')
 const explode = document.getElementById('explodir')
+
+const painelFiltro = document.getElementById('painelFiltro');
+const botaoFiltroGeral = document.getElementById('bolinhaGeral')
+const botaoFiltroOciosa = document.getElementById('bolinhaOcioso')
+const botaoFiltroErro = document.getElementById('bolinhaErro')
+const botaoFiltroFinal = document.getElementById('bolinhaFinal')
+
 var historicoBotao = document.getElementById('historico');
-var historicoNotificacao = document.getElementById('bolinhaNotificacao')
 var historicoTela = document.getElementById('historicoTela');
 var historicoLinha = document.querySelectorAll('.linha');
+var historicoNotificacaoErro = document.getElementById('bolinhaNotificacaoErro')
+var historicoNotificacaoOcioso = document.getElementById('bolinhaNotificacaoOcioso')
+var historicoNotificacaoFinal = document.getElementById('bolinhaNotificacaoFinal')
+
 var telaLayout = document.getElementById('layoutTela');
 var telaRotinas = document.getElementById('telaRotinas');
 const screenWidth = window.innerWidth;
@@ -37,6 +47,36 @@ setInterval(updateClock, 1000);
 // Atualiza o relógio imediatamente ao carregar a página
 updateClock();
 
+function filtraHistorico(colunaOcorrencias, filtro) {
+    // Percorre todos os elementos selecionados
+    colunaOcorrencias.forEach((element) => {
+        // Verifica se o elemento contém a classe 'ocioso'
+        if (!element.classList.contains(filtro)) {
+            // Adiciona a classe 'invisible'
+            const parent = element.closest('div'); // Encontra a div pai mais próxima
+            parent.classList.add('invisible');
+        }
+        // Verifica se o elemento contém a classe 'ocioso'
+        if (element.classList.contains(filtro)) {
+            // Adiciona a classe 'invisible'
+            const parent = element.closest('div'); // Encontra a div pai mais próxima
+            parent.classList.remove('invisible');
+            // desce para a base da página e da tela de histórico
+        setTimeout(()=> {
+            if (screenWidth < 2500) {
+                window.scrollTo({
+                    top: document.body.scrollHeight,
+                    behavior: 'smooth' // Para uma rolagem suave, adicione essa opção
+                });
+            }
+            historicoTela.scrollTo({
+                top: historicoTela.scrollHeight,
+                behavior: 'smooth' // Para uma rolagem suave, adicione essa opção
+            });
+        }, 500);
+        }
+    });
+}
 
 // Adiciona um ouvinte de eventos ao documento para capturar cliques
 document.body.addEventListener('click', (event) => {
@@ -70,8 +110,11 @@ explode.addEventListener('click', (e) => {
 
 // Abre e fecha a tela de histórico
 historicoBotao.addEventListener('click', (e)=> {
-    historicoNotificacao.classList.add('invisible')
+    historicoNotificacaoErro.classList.add('invisible')
+    historicoNotificacaoOcioso.classList.add('invisible')
+    historicoNotificacaoFinal.classList.add('invisible')
     historicoTela.classList.toggle('collapsed')
+    painelFiltro.classList.toggle('invisible')
 
     if (historicoTela.classList.contains('collapsed')) {
         // sobe para o topo da página
@@ -100,11 +143,48 @@ historicoBotao.addEventListener('click', (e)=> {
         }, 500);
     }
 })
-
 // Adiciona o evento de clique na tela de histórico para evitar a propagação
 historicoTela.addEventListener('click', (e) => {
     e.stopPropagation();
 });
+botaoFiltroGeral.addEventListener('click', (e)=> {
+    // Seleciona todos os elementos cujo ID comece com 'ocorrencia'
+    const ocorrencias = document.querySelectorAll('[id^="ocorrencia"]');
+    
+    // Percorre todos os elementos selecionados
+    ocorrencias.forEach((element) => {
+        const parent = element.closest('div'); // Encontra a div pai mais próxima
+        parent.classList.remove('invisible');
+    });
+    // desce para a base da página e da tela de histórico
+    setTimeout(()=> {
+        if (screenWidth < 2500) {
+            window.scrollTo({
+                top: document.body.scrollHeight,
+                behavior: 'smooth' // Para uma rolagem suave, adicione essa opção
+            });
+        }
+        historicoTela.scrollTo({
+            top: historicoTela.scrollHeight,
+            behavior: 'smooth' // Para uma rolagem suave, adicione essa opção
+        });
+    }, 500);
+})
+botaoFiltroOciosa.addEventListener('click', (e)=> {
+    // Seleciona todos os elementos cujo ID comece com 'ocorrencia'
+    const ocorrencias = document.querySelectorAll('[id^="ocorrencia"]');
+    filtraHistorico(ocorrencias, 'ociosa')
+})
+botaoFiltroErro.addEventListener('click', (e)=> {
+    // Seleciona todos os elementos cujo ID comece com 'ocorrencia'
+    const ocorrencias = document.querySelectorAll('[id^="ocorrencia"]');
+    filtraHistorico(ocorrencias, 'erro')
+})
+botaoFiltroFinal.addEventListener('click', (e)=> {
+    // Seleciona todos os elementos cujo ID comece com 'ocorrencia'
+    const ocorrencias = document.querySelectorAll('[id^="ocorrencia"]');
+    filtraHistorico(ocorrencias, 'finalizada')
+})
     
 // Adiciona um event listener a cada botão de fechar
 botoesFechar.forEach(botao => {
