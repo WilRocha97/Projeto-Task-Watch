@@ -96,7 +96,7 @@ document.body.addEventListener('click', (event) => {
 encolhe.addEventListener('click', (e) => {
     const cards = document.querySelectorAll('.rectangle')
     cards.forEach(card => {
-        card.classList.add('collapsed')
+        card.classList.add('collapsed');
     })
 })
 

@@ -290,9 +290,6 @@ body {
     margin: 10px;
     font-size: 0;
 }
-.rectangle.collapsed:hover {
-    transform: scale(1.2);
-}
 .rectangle.collapsed .content {
     opacity: 0; /* Torna as divs filhas invisíveis quando a div mãe está colapsada */
 }
