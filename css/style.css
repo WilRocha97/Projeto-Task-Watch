@@ -423,7 +423,7 @@ body {
     }
     .telaHistorico {
         width: 85%;
-        max-height: 650px; /* Defina a altura máxima desejada */
+        max-height: 600px; /* Defina a altura máxima desejada */
     }
     .filtroHistorico{
         padding: 0 30px;
