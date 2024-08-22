@@ -102,6 +102,7 @@ body {
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.178);
     backdrop-filter: blur(var(--blur));
+    transition: var(--transicao-link);
 }
 
 
@@ -201,6 +202,10 @@ body {
 /*------------------------------------------------------------------------------------------------*/
 
 
+.sortable-ghost {
+    opacity: 0.4;
+    background-color: #ccc;
+}
 .rotinas {
     padding: 115px 50px 90px 50px;
     display: flex;
@@ -208,6 +213,7 @@ body {
     align-items: baseline;
     height: 100%;
     flex-wrap: wrap;
+    transition: var(--transicao-link);
 }
 .rectangle {
     box-shadow: none;

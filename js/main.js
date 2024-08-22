@@ -78,6 +78,21 @@ function filtraHistorico(colunaOcorrencias, filtro) {
     });
 }
 
+
+document.addEventListener('DOMContentLoaded', function() {
+    var container = document.getElementById('telaRotinas');
+    new Sortable(container, {
+        animation: 300, // Tempo de animação em milissegundos
+        ghostClass: 'sortable-ghost', // Classe que será adicionada ao item enquanto é arrastado
+        handle: '.fundo', // Isso garante que as divs filhas sejam as que podem ser arrastadas
+        onEnd: function (evt) {
+            // Callback executado quando o arrasto é concluído
+            console.log('Ordem das divs alterada');
+        }
+    });
+});
+
+
 // Adiciona um ouvinte de eventos ao documento para capturar cliques
 document.body.addEventListener('click', (event) => {
     // Verifica se o elemento clicado ou algum de seus pais possui a classe 'rectangle'
