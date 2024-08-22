@@ -84,16 +84,6 @@ body {
 
 .invisible {
     opacity: 0;
-    height: 0;
-    width: 0;
-    padding: 0;
-    padding-bottom: 0;
-    margin: 0;
-    scale: 0;
-    gap: 0;
-    border: none;
-    border-bottom: none;
-    visibility: hidden;
     position: fixed;
 }
 
@@ -169,13 +159,6 @@ body {
     }
     #clock {
         font-size: 0;
-    }
-    .relogio {
-        scale: 0;
-        padding: 0;
-        margin: 0;
-        width: 0;
-        height: 0;
     }
     .rotinas {
         padding: 125px 0 90px 0;

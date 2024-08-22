@@ -16,7 +16,7 @@ var historicoNotificacaoFinal = document.getElementById('bolinhaNotificacaoFinal
 
 var telaLayout = document.getElementById('layoutTela');
 var telaRotinas = document.getElementById('telaRotinas');
-const screenWidth = window.innerWidth;
+var screenWidth = window.innerWidth;
 var divsRotinas = document.querySelectorAll('#telaRotinas .fundo')
 const botoesFechar = document.querySelectorAll('.botaoFechar');
 
@@ -41,6 +41,14 @@ function updateClock() {
     var formattedTime = dayOfWeek + ", " + day + " de " + month + " de " + year + " - " + hours + ":" + minutes;
     
     document.getElementById('clock').textContent = formattedTime;
+
+    var screenWidth = window.innerWidth;
+    if (screenWidth < 720) {
+        document.getElementById('menuRelogio').classList.add('invisible')
+    }
+    else {
+        document.getElementById('menuRelogio').classList.remove('invisible')
+    }
 }
 // Atualiza o relógio a cada segundo
 setInterval(updateClock, 1000);
