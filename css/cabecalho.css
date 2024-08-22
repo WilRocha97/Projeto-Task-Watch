@@ -1,0 +1,61 @@
+.cabecalho {
+    display: flex;
+    justify-content: center;
+}
+.cabecalho_menu {
+    z-index: 1;
+    position: fixed;
+}
+.menu {
+    display: flex;
+    justify-content: center;
+    padding: 15px 25px;
+    font-size: 0.9em;
+    gap: 10px;
+}
+.cabecalho__menu__botao {
+    position: relative;
+    align-self: center;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: var(--cor-texto);
+    font-size: var(--tamanho-texto-2);
+    font-weight: bold;
+    transition: var(--transicao-link);
+}
+.cabecalho__menu__botao:hover {
+    text-shadow: 0 0 5px var(--cor-destaque);
+    color: var(--cor-destaque);
+}
+#clock {
+    align-self: center;
+}
+.relogio {
+    scale: 1;
+}
+.notifica {
+    align-self: center;
+}
+.bolinhaErro, .bolinhaOcioso, .bolinhaFinal{
+    position: absolute; /* Posiciona a bolinha de forma absoluta em relação ao botão */
+    width: 5px; /* Ajuste o tamanho da bolinha conforme necessário */
+    height: 5px; /* Ajuste o tamanho da bolinha conforme necessário */
+    border-radius: 50%; /* Torna a bolinha circular */
+    transition: var(--transicao-link);
+}
+.bolinhaErro {
+    background-color: var(--cor-erro); /* Cor da bolinha */
+    top: 0; /* Alinha a bolinha ao topo do botão */
+    right: 0; /* Alinha a bolinha à direita do botão */
+}
+.bolinhaOcioso {
+    background-color: var(--cor-ocioso); /* Cor da bolinha */
+    bottom: 0; /* Alinha a bolinha ao topo do botão */
+    right: 0; /* Alinha a bolinha à direita do botão */
+}
+.bolinhaFinal {
+    background-color: var(--cor-final); /* Cor da bolinha */
+    top: 0; /* Alinha a bolinha ao topo do botão */
+    left: 0; /* Alinha a bolinha à direita do botão */
+}

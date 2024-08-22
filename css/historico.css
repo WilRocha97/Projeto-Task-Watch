@@ -1,0 +1,69 @@
+.filtroHistorico{
+    padding: 0 30px;
+    margin: 35px 65px 5px 65px;
+    display: flex;
+    justify-items: center;
+    flex-direction: row;
+    gap: 10px;
+    transition: var(--transicao-link);
+}
+.filtroGeral, .filtroErro, .filtroOcioso, .filtroFinal{
+    cursor: pointer;
+    font-size: larger;
+    transition: var(--transicao-link);
+}
+.filtroErro {
+    color: var(--cor-erro); /* Cor da bolinha */
+}
+.filtroOcioso {
+    color: var(--cor-ocioso); /* Cor da bolinha */
+}
+.filtroFinal {
+    color: var(--cor-final); /* Cor da bolinha */
+}
+.filtroGeral:hover, .filtroErro:hover, .filtroOcioso:hover, .filtroFinal:hover {
+    scale: 1.5;
+}
+.telaHistorico {
+    width: 90%;
+    max-height: 500px; /* Defina a altura máxima desejada */
+    overflow: auto; /* Adiciona o scroll vertical */
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    padding: 25px;
+    margin: 5px 50px 50px 50px;
+    font-size: 0.8em;
+    transition: var(--transicao-link);
+}
+.linha{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr; /* Três colunas iguais */
+    padding: 2% 1%;
+    gap: 10rem;
+    border-bottom: 2px solid #97979756;
+    padding-bottom: 5px; 
+    transition: var(--transicao-link);
+}
+.iniciada {
+    color: var(--cor-texto);
+}
+.ociosa {
+    color: var(--cor-ocioso);
+    font-weight: bold;
+}
+.erro {
+    color: var(--cor-erro);
+    font-weight: bold;
+}
+.finalizada {
+    color: var(--cor-final);
+    font-weight: bold;
+}
+.telaHistorico.collapsed {
+    width: 0%;
+    opacity: 0;
+    max-height: 0px; /* Altura desejada quando colapsado */
+    padding: 0px;
+    margin: 0px;
+}

@@ -1,0 +1,131 @@
+@keyframes piscarWarning {
+    0%, 100% {
+        box-shadow: 0 0 5px var(--cor-ocioso);
+    }
+    25% {
+        box-shadow: 0 0 20px var(--cor-ocioso);
+    }
+    50% {
+        box-shadow: 0 0 5px var(--cor-ocioso);
+    }
+
+}
+@keyframes piscarError {
+    0%, 100% {
+        box-shadow: 0 0 5px var(--cor-erro);
+    }
+    50% {
+        box-shadow: 0 0 30px 5px var(--cor-erro);
+    }
+}
+@keyframes piscarFinish {
+    0%, 100% {
+        box-shadow: 0 0 10px var(--cor-final);
+    }
+    50% {
+        box-shadow: 0 0 30px var(--cor-final-opaca);
+    }
+}
+.sortable-ghost {
+    opacity: 0.4;
+    background-color: #ccc;
+}
+.rotinas {
+    padding: 115px 50px 90px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    height: 100%;
+    flex-wrap: wrap;
+    transition: var(--transicao-link);
+}
+.rectangle {
+    box-shadow: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    scale: 0;
+    transition: var(--transicao-link);
+}
+.rectangle.enter {
+    width: fit-content;
+    height: fit-content;
+    padding: 12px;
+    margin: 25px;
+    opacity: 1;
+    scale: 1;
+}
+.rectangle.out {
+    height: 0; /* Altura desejada quando colapsado */
+    font-size: 0;
+    scale: 0;
+}
+
+.status-executando {
+    background: linear-gradient(50deg, #3da0772a, var(--cor-vidro), #3da0772a);
+    box-shadow: 0 0 5px var(--cor-executando);
+}
+.status-executando:hover {
+    background: linear-gradient(-50deg, #3da0775b, var(--cor-vidro), #3da0775b);
+    box-shadow: 0 0 30px var(--cor-executando);
+}
+
+.status-warning {
+    background: linear-gradient(50deg, #a0963d25, var(--cor-vidro), #a0963d25);
+    box-shadow: 0 0 5px var(--cor-ocioso);
+    animation: piscarWarning 2s infinite;
+}
+.status-warning:hover {
+    background: linear-gradient(-50deg, #a06d0050, var(--cor-vidro), #a06d0050);
+    box-shadow: 0 0 30px var(--cor-ocioso);
+}
+
+.status-error {
+    background: linear-gradient(50deg, #a03d4227, var(--cor-vidro), #a03d4227);
+    box-shadow: 0 0 5px var(--cor-erro);
+    animation: piscarError 1.5s infinite;
+}
+.errorBlik {
+    box-shadow: 0 0 30px var(--cor-erro); 
+}
+.status-error:hover {
+    background: linear-gradient(-50deg, #a03d425e, var(--cor-vidro), #a03d425e);
+    box-shadow: 0 0 30px var(--cor-erro);
+}
+
+.status-final {
+    background: linear-gradient(50deg, #3d89a036, var(--cor-vidro), #3d89a036);
+    box-shadow: 0 0 10px var(--cor-final);
+    animation: piscarFinish 5s infinite;
+}
+.status-final:hover {
+    background: linear-gradient(-50deg, #3d89a04f, var(--cor-vidro), #3d89a04f);
+    box-shadow: 0 0 30px var(--cor-final);
+}
+.botaoFechar {
+    width: fit-content;
+    color: var(--cor-final);
+    text-shadow: none;
+    transition: var(--transicao-link);
+}
+.botaoFechar:hover {
+    text-shadow: 0 0 5px var(--cor-final);
+}
+
+.rectangle .title {
+    font-size: 1em;
+    padding-bottom: 6px;
+}
+.content {
+    font-size: 0.8em;
+    padding: 4px;
+}
+.rectangle.collapsed {
+    padding: 10px;
+    margin: 10px;
+    font-size: 0;
+}
+.rectangle.collapsed .content {
+    opacity: 0; /* Torna as divs filhas invisíveis quando a div mãe está colapsada */
+}
