@@ -206,13 +206,16 @@ body {
 }
 
 @media (min-width: 2500px) {
+    .filtroHistorico{
+        flex-direction: column !important;
+        margin: 115px 5px 115px 50px !important;
+    }
     .telaHistorico {
-        width: 45%;
-        margin: 115px 50px;
+        margin: 115px 50px 115px 5px !important;
     }
     .layout {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center !important;
     }
 }
