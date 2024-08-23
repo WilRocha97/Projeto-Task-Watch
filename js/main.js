@@ -89,13 +89,30 @@ function filtraHistorico(colunaOcorrencias, filtro) {
 
 document.addEventListener('DOMContentLoaded', function() {
     var container = document.getElementById('telaRotinas');
+    var delay = 300; // 300ms de delay
+    var timeout;
+
     new Sortable(container, {
-        animation: 300, // Tempo de animação em milissegundos
-        ghostClass: 'sortable-ghost', // Classe que será adicionada ao item enquanto é arrastado
-        handle: '.fundo', // Isso garante que as divs filhas sejam as que podem ser arrastadas
-        delay: 500, // Atraso de 300ms antes do início do arrasto
-        onEnd: function (evt) {
-            // Callback executado quando o arrasto é concluído
+        animation: 150,
+        handle: '.fundo',
+        delay: delay,
+        delayOnTouchOnly: true,
+        ghostClass: '', // Desativa a aplicação automática da classe
+        onChoose: function(evt) {
+            // Inicia um timeout para adicionar a classe após o delay
+            timeout = setTimeout(function() {
+                evt.item.classList.add('sortable-ghost');
+            }, delay);
+        },
+        onUnchoose: function(evt) {
+            // Caso o usuário solte antes do delay, limpa o timeout
+            clearTimeout(timeout);
+            evt.item.classList.remove('sortable-ghost');
+        },
+        onEnd: function(evt) {
+            // Remove a classe após o arrasto ser finalizado
+            clearTimeout(timeout);
+            evt.item.classList.remove('sortable-ghost');
             console.log('Ordem das divs alterada');
         }
     });

@@ -27,8 +27,8 @@
     }
 }
 .sortable-ghost {
-    opacity: 0.4;
-    background-color: #ccc;
+    background: linear-gradient(50deg, #85858550, var(--cor-vidro), #85858550) !important;
+    box-shadow: 0 0 10px gray !important;
 }
 .rotinas {
     padding: 115px 50px 90px 50px;
