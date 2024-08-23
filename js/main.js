@@ -93,6 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
         animation: 300, // Tempo de animação em milissegundos
         ghostClass: 'sortable-ghost', // Classe que será adicionada ao item enquanto é arrastado
         handle: '.fundo', // Isso garante que as divs filhas sejam as que podem ser arrastadas
+        delay: 500, // Atraso de 300ms antes do início do arrasto
         onEnd: function (evt) {
             // Callback executado quando o arrasto é concluído
             console.log('Ordem das divs alterada');
