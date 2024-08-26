@@ -33,6 +33,7 @@
 }
 .relogio {
     scale: 1;
+    transition: var(--transicao-link);
 }
 .notifica {
     align-self: center;
@@ -60,6 +61,7 @@
     left: 0; /* Alinha a bolinha à direita do botão */
 }
 .dicaTela {
-    margin-top: 100px;
+    margin-top: 60px;
     position: fixed;
+    transition: var(--transicao-link);
 }

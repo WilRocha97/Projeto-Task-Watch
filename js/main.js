@@ -157,10 +157,24 @@ dica.addEventListener('click', (e) => {
     telaDica.classList.toggle('invisible');
 
     if (telaDica.classList.contains('invisible')) {
-        textoDica.innerHTML = ``;
+        setTimeout(()=> {
+            textoDica.innerHTML = ``;
+        }, 500);
+        
     }
     else {
-        const template = `Olá, bem vindo ao Task Watch`;
+        const template = `Olá, bem vindo ao Task Watch<br><br><br>
+
+                        Aqui estam algumas dicas para melhor utilizar o site :)<br><br>
+                        
+                        <br><br>A cada nova rotina iniciada, um novo cartão irá aparecer na tela com as informações dela.
+                        <br><br>Se a rotina ficar ociosa por muito tempo, o cartão irá piscar em amarelo.
+                        <br><br>Se der algúm erro durante a execução da rotina, o cartão irá piscar em vermelho.
+                        <br><br>O botão "▼" minimiza todos os cartões e o "▲" maximiza todos de uma só vês, e você pode clicar diretamente no cartão para minimizar ou maximiza-los individualmente.
+                        <br><br>Voçê pode arastar os cartões para organiza-los da forma que preferir, basta segurar o cartão que você deseja mover até que ele fique cinza.
+                        <br><br>A tela de histórico, que é exibida ao clicar no botão "Histórico", pode ser filtrada por ocorrência, basta clicar no ponto colorido com a cor correspondente ao evento.
+                        <br>Eles ficam logo acima da janela de histórico do lado direito da tela.
+                        <br><br>Quando uma fotina finalizar, o cartão dela irá permanecer na tela até que você clique em "Fechar"`;
         textoDica.innerHTML = template;
     };
 })
