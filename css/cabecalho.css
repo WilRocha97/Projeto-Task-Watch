@@ -59,3 +59,7 @@
     top: 0; /* Alinha a bolinha ao topo do botão */
     left: 0; /* Alinha a bolinha à direita do botão */
 }
+.dicaTela {
+    margin-top: 100px;
+    position: fixed;
+}

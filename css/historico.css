@@ -37,6 +37,7 @@
     transition: var(--transicao-link);
 }
 .linha{
+    opacity: 1;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr; /* Três colunas iguais */
     padding: 2% 1%;
@@ -44,6 +45,14 @@
     border-bottom: 2px solid #97979756;
     padding-bottom: 5px; 
     transition: var(--transicao-link);
+}
+.linha.collapsed {
+    position: fixed;
+    width: 0;
+    opacity: 0;
+    height: 0; /* Altura desejada quando colapsado */
+    padding: 0;
+    margin: 0;
 }
 .iniciada {
     color: var(--cor-texto);
@@ -63,7 +72,7 @@
 .telaHistorico.collapsed {
     width: 0;
     opacity: 0;
-    max-height: 0;
+    max-height: 0; /* Altura desejada quando colapsado */
     padding: 0;
     margin: 0;
 }

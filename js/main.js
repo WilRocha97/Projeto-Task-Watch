@@ -1,5 +1,6 @@
 const encolhe = document.getElementById('encolher')
 const explode = document.getElementById('explodir')
+const dica = document.getElementById('dica')
 
 const painelFiltro = document.getElementById('painelFiltro');
 const botaoFiltroGeral = document.getElementById('bolinhaGeral')
@@ -60,28 +61,28 @@ function filtraHistorico(colunaOcorrencias, filtro) {
     colunaOcorrencias.forEach((element) => {
         // Verifica se o elemento contém a classe 'ocioso'
         if (!element.classList.contains(filtro)) {
-            // Adiciona a classe 'invisible'
+            // Adiciona a classe 'collapsed'
             const parent = element.closest('div'); // Encontra a div pai mais próxima
-            parent.classList.add('invisible');
+            parent.classList.add('collapsed');
         }
         // Verifica se o elemento contém a classe 'ocioso'
         if (element.classList.contains(filtro)) {
-            // Adiciona a classe 'invisible'
+            // Adiciona a classe 'collapsed'
             const parent = element.closest('div'); // Encontra a div pai mais próxima
-            parent.classList.remove('invisible');
+            parent.classList.remove('collapsed');
             // desce para a base da página e da tela de histórico
-        setTimeout(()=> {
-            if (screenWidth < 2500) {
-                window.scrollTo({
-                    top: document.body.scrollHeight,
+            setTimeout(()=> {
+                if (screenWidth < 2500) {
+                    window.scrollTo({
+                        top: document.body.scrollHeight,
+                        behavior: 'smooth' // Para uma rolagem suave, adicione essa opção
+                    });
+                }
+                historicoTela.scrollTo({
+                    top: historicoTela.scrollHeight,
                     behavior: 'smooth' // Para uma rolagem suave, adicione essa opção
                 });
-            }
-            historicoTela.scrollTo({
-                top: historicoTela.scrollHeight,
-                behavior: 'smooth' // Para uma rolagem suave, adicione essa opção
-            });
-        }, 500);
+            }, 500);
         }
     });
 }
@@ -149,6 +150,21 @@ explode.addEventListener('click', (e) => {
     })
 })
 
+// Janela com dicas de como o site funciona
+dica.addEventListener('click', (e) => {
+    const telaDica = document.getElementById('telaDica');
+    const textoDica = document.getElementById('textoDica');
+    telaDica.classList.toggle('invisible');
+
+    if (telaDica.classList.contains('invisible')) {
+        textoDica.innerHTML = ``;
+    }
+    else {
+        const template = `Olá, bem vindo ao Task Watch`;
+        textoDica.innerHTML = template;
+    };
+})
+
 // Abre e fecha a tela de histórico
 historicoBotao.addEventListener('click', (e)=> {
     historicoNotificacaoErro.classList.add('invisible')
@@ -195,7 +211,7 @@ botaoFiltroGeral.addEventListener('click', (e)=> {
     // Percorre todos os elementos selecionados
     ocorrencias.forEach((element) => {
         const parent = element.closest('div'); // Encontra a div pai mais próxima
-        parent.classList.remove('invisible');
+        parent.classList.remove('collapsed');
     });
     // desce para a base da página e da tela de histórico
     setTimeout(()=> {
