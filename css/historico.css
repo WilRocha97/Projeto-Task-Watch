@@ -70,9 +70,9 @@
     font-weight: bold;
 }
 .telaHistorico.collapsed {
-    width: 0;
-    opacity: 0;
-    max-height: 0; /* Altura desejada quando colapsado */
-    padding: 0;
-    margin: 0;
+    width: 0 !important; 
+    opacity: 0 !important;
+    max-height: 0 !important; /* Altura desejada quando colapsado */
+    padding: 0 !important;
+    margin: 0 !important;
 }
