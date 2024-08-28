@@ -61,7 +61,8 @@
     left: 0; /* Alinha a bolinha à direita do botão */
 }
 .dicaTela {
-    margin-top: 60px;
+    margin-top: 75px;
     position: fixed;
     transition: var(--transicao-link);
+    top: 0px;
 }

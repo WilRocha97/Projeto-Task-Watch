@@ -153,7 +153,7 @@ explode.addEventListener('click', (e) => {
 // Janela com dicas de como o site funciona
 dica.addEventListener('click', (e) => {
     const telaDica = document.getElementById('telaDica');
-    telaDica.classList.toggle('invisible');
+    telaDica.classList.toggle('invisible2');
 })
 
 // Abre e fecha a tela de histórico

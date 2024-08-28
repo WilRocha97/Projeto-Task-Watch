@@ -85,7 +85,10 @@ body {
 .invisible {
     opacity: 0;
     position: fixed;
-    scale: 0;
+}
+.invisible2 {
+    opacity: 0 !important;
+    visibility: hidden !important;
 }
 
 .fundo {
