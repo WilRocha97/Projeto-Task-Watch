@@ -39,10 +39,10 @@
 .linha{
     opacity: 1;
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr; /* Três colunas iguais */
+    grid-template-columns: 0.5fr 3fr 1fr; /* Três colunas iguais */
     padding: 2% 1% 0.2% 1%;
     height: 10px;
-    gap: 10rem;
+    gap: 2rem;
     border-bottom: 2px solid #97979756;
     transition: height 0.3s ease, padding 0.3s ease, opacity 0.3s ease, gap 0.3s ease;
 }
