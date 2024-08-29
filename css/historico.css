@@ -40,19 +40,18 @@
     opacity: 1;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr; /* Três colunas iguais */
-    padding: 2% 1%;
+    padding: 2% 1% 0.2% 1%;
+    height: 10px;
     gap: 10rem;
     border-bottom: 2px solid #97979756;
-    padding-bottom: 5px; 
-    transition: var(--transicao-link);
+    transition: height 0.3s ease, padding 0.3s ease, opacity 0.3s ease, gap 0.3s ease;
 }
 .linha.collapsed {
-    position: fixed;
-    width: 0;
+    border-bottom: 0;
     opacity: 0;
     height: 0; /* Altura desejada quando colapsado */
-    padding: 0;
-    margin: 0;
+    padding: 0 1%;
+    gap: 0;
 }
 .iniciada {
     color: var(--cor-texto);

@@ -58,33 +58,44 @@ updateClock();
 
 function filtraHistorico(colunaOcorrencias, filtro) {
     // Percorre todos os elementos selecionados
-    colunaOcorrencias.forEach((element) => {
-        // Verifica se o elemento contém a classe 'ocioso'
-        if (!element.classList.contains(filtro)) {
-            // Adiciona a classe 'collapsed'
-            const parent = element.closest('div'); // Encontra a div pai mais próxima
-            parent.classList.add('collapsed');
-        }
-        // Verifica se o elemento contém a classe 'ocioso'
-        if (element.classList.contains(filtro)) {
-            // Adiciona a classe 'collapsed'
-            const parent = element.closest('div'); // Encontra a div pai mais próxima
-            parent.classList.remove('collapsed');
-            // desce para a base da página e da tela de histórico
-            setTimeout(()=> {
-                if (screenWidth < 2500) {
-                    window.scrollTo({
-                        top: document.body.scrollHeight,
+    historicoLinha = document.querySelectorAll('.linha');
+    historicoLinha.forEach((element) => {
+        element.classList.add('invisible2');
+    });
+    setTimeout(()=> {
+        colunaOcorrencias.forEach((element) => {
+            // Verifica se o elemento contém a classe 'ocioso'
+            if (!element.classList.contains(filtro)) {
+                // Adiciona a classe 'collapsed'
+                const parent = element.closest('div'); // Encontra a div pai mais próxima
+                parent.classList.add('collapsed');
+            }
+            // Verifica se o elemento contém a classe 'ocioso'
+            if (element.classList.contains(filtro)) {
+                // Adiciona a classe 'collapsed'
+                const parent = element.closest('div'); // Encontra a div pai mais próxima
+                parent.classList.remove('collapsed');
+                // desce para a base da página e da tela de histórico
+                setTimeout(()=> {
+                    if (screenWidth < 2500) {
+                        window.scrollTo({
+                            top: document.body.scrollHeight,
+                            behavior: 'smooth' // Para uma rolagem suave, adicione essa opção
+                        });
+                    }
+                    historicoTela.scrollTo({
+                        top: historicoTela.scrollHeight,
                         behavior: 'smooth' // Para uma rolagem suave, adicione essa opção
                     });
-                }
-                historicoTela.scrollTo({
-                    top: historicoTela.scrollHeight,
-                    behavior: 'smooth' // Para uma rolagem suave, adicione essa opção
-                });
-            }, 500);
-        }
-    });
+                }, 500);
+            }
+        });
+    }, 500);
+    setTimeout(()=> {
+        historicoLinha.forEach((element) => {
+            element.classList.remove('invisible2');
+        });
+    }, 800);
 }
 
 
@@ -198,25 +209,37 @@ historicoTela.addEventListener('click', (e) => {
 botaoFiltroGeral.addEventListener('click', (e)=> {
     // Seleciona todos os elementos cujo ID comece com 'ocorrencia'
     const ocorrencias = document.querySelectorAll('[id^="ocorrencia"]');
-    
-    // Percorre todos os elementos selecionados
-    ocorrencias.forEach((element) => {
-        const parent = element.closest('div'); // Encontra a div pai mais próxima
-        parent.classList.remove('collapsed');
+
+    historicoLinha = document.querySelectorAll('.linha');
+    historicoLinha.forEach((element) => {
+        element.classList.add('invisible2');
     });
-    // desce para a base da página e da tela de histórico
     setTimeout(()=> {
-        if (screenWidth < 2500) {
-            window.scrollTo({
-                top: document.body.scrollHeight,
+        // Percorre todos os elementos selecionados
+        ocorrencias.forEach((element) => {
+            const parent = element.closest('div'); // Encontra a div pai mais próxima
+            parent.classList.remove('collapsed');
+        });
+        // desce para a base da página e da tela de histórico
+        setTimeout(()=> {
+            if (screenWidth < 2500) {
+                window.scrollTo({
+                    top: document.body.scrollHeight,
+                    behavior: 'smooth' // Para uma rolagem suave, adicione essa opção
+                });
+            }
+            historicoTela.scrollTo({
+                top: historicoTela.scrollHeight,
                 behavior: 'smooth' // Para uma rolagem suave, adicione essa opção
             });
-        }
-        historicoTela.scrollTo({
-            top: historicoTela.scrollHeight,
-            behavior: 'smooth' // Para uma rolagem suave, adicione essa opção
-        });
+        }, 500);
     }, 500);
+    setTimeout(()=> {
+        historicoLinha.forEach((element) => {
+            element.classList.remove('invisible2');
+        });
+    }, 800);
+
 })
 botaoFiltroOciosa.addEventListener('click', (e)=> {
     // Seleciona todos os elementos cujo ID comece com 'ocorrencia'
