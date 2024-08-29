@@ -86,9 +86,6 @@
     box-shadow: 0 0 5px var(--cor-erro);
     animation: piscarError 1.5s infinite;
 }
-.errorBlik {
-    box-shadow: 0 0 30px var(--cor-erro); 
-}
 .status-error:hover {
     background: linear-gradient(-50deg, #a03d425e, var(--cor-vidro), #a03d425e);
     box-shadow: 0 0 30px var(--cor-erro);
@@ -119,6 +116,9 @@
 }
 .content {
     font-size: 0.8em;
+    padding: 0;
+}
+.content:not(:empty) {
     padding: 4px;
 }
 .rectangle.collapsed {

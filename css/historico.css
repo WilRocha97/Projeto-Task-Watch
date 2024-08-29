@@ -43,8 +43,8 @@
     padding: 2% 1% 0.2% 1%;
     height: 10px;
     gap: 2rem;
-    border-bottom: 2px solid #97979756;
-    transition: height 0.3s ease, padding 0.3s ease, opacity 0.3s ease, gap 0.3s ease;
+    border-bottom: 1px solid #97979756;
+    transition: height 0.3s ease, padding 0.3s ease, opacity 0.3s ease, gap 0.3s ease, border-bottom 0.3s ease;
 }
 .linha.collapsed {
     border-bottom: 0;
@@ -52,6 +52,12 @@
     height: 0; /* Altura desejada quando colapsado */
     padding: 0 1%;
     gap: 0;
+}
+.linha:hover {
+    border-bottom: 1px solid var(--cor-texto-2);
+}
+.situacao {
+    text-align: right;
 }
 .iniciada {
     color: var(--cor-texto);

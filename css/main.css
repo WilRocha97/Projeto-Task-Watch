@@ -40,11 +40,14 @@ body {
 }
 
 .dark {
+    --cor-texto-2: #ffffff;
     background-color: #000000;
     transition: var(--transicao-link);
     color: var(--cor-texto-light);
+    
 }
 .light {
+    --cor-texto-2: #000000;
     background-color: #ffffff;
     transition: var(--transicao-link);
     color: var(--cor-texto-dark);
