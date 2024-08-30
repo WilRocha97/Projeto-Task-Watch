@@ -66,6 +66,10 @@
     background: linear-gradient(50deg, #3da0772a, var(--cor-vidro), #3da0772a);
     box-shadow: 0 0 5px var(--cor-executando);
 }
+.status-executando .shadow{
+    background-color: var(--cor-executando-opaca-2);
+    box-shadow: 0 0 60px var(--cor-executando); /* Aumentada a intensidade da sombra */
+}
 .status-executando:hover {
     background: linear-gradient(-50deg, #3da0775b, var(--cor-vidro), #3da0775b);
     box-shadow: 0 0 30px var(--cor-executando);
@@ -76,15 +80,23 @@
     box-shadow: 0 0 5px var(--cor-ocioso);
     animation: piscarWarning 2s infinite;
 }
+.status-warning .shadow{
+    background-color: var(--cor-ocioso-opaca-2);
+    box-shadow: 0 0 60px var(--cor-ocioso); /* Aumentada a intensidade da sombra */
+}
 .status-warning:hover {
     background: linear-gradient(-50deg, #a06d0050, var(--cor-vidro), #a06d0050);
     box-shadow: 0 0 30px var(--cor-ocioso);
 }
 
 .status-error {
-    background: linear-gradient(50deg, #a03d4227, var(--cor-vidro), #a03d4227);
+    background: linear-gradient(50deg, #a03d4231, var(--cor-vidro), #a03d4231);
     box-shadow: 0 0 5px var(--cor-erro);
     animation: piscarError 1.5s infinite;
+}
+.status-error .shadow{
+    background-color: var(--cor-erro-opaca-2);
+    box-shadow: 0 0 60px var(--cor-erro); /* Aumentada a intensidade da sombra */
 }
 .status-error:hover {
     background: linear-gradient(-50deg, #a03d425e, var(--cor-vidro), #a03d425e);
@@ -95,6 +107,10 @@
     background: linear-gradient(50deg, #3d89a036, var(--cor-vidro), #3d89a036);
     box-shadow: 0 0 10px var(--cor-final);
     animation: piscarFinish 5s infinite;
+}
+.status-final .shadow{
+    background-color: var(--cor-final-opaca-2);
+    box-shadow: 0 0 60px var(--cor-final); /* Aumentada a intensidade da sombra */
 }
 .status-final:hover {
     background: linear-gradient(-50deg, #3d89a04f, var(--cor-vidro), #3d89a04f);
@@ -117,6 +133,7 @@
 .content {
     font-size: 0.8em;
     padding: 0;
+    transition: padding 0.4s;
 }
 .content:not(:empty) {
     padding: 4px;
@@ -128,4 +145,13 @@
 }
 .rectangle.collapsed .content {
     opacity: 0; /* Torna as divs filhas invisíveis quando a div mãe está colapsada */
+}
+
+.shadow {
+    position: absolute;
+    width: 30px; /* Diminuído o tamanho do ponto de luz */
+    height: 30px; /* Diminuído o tamanho do ponto de luz */
+    border-radius: 50%;
+    pointer-events: none; /* Para garantir que o ponto de luz não afete a interação com outros elementos */
+    transform: translate(-40%, -20%); /* Para centralizar o ponto em relação ao cursor */
 }

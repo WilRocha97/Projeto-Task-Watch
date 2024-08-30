@@ -98,6 +98,25 @@ function filtraHistorico(colunaOcorrencias, filtro) {
     }, 800);
 }
 
+const cards = document.querySelectorAll('.rectangle')
+cards.forEach(card => {
+    const shadow = card.querySelector('.shadow');
+    shadow.classList.remove('invisible2');
+    card.addEventListener('mousemove', function(e) {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        shadow.style.left = `${x}px`;
+        shadow.style.top = `${y}px`;
+        shadow.style.opacity = 1; // Faz a sombra aparecer quando o mouse está sobre a div
+    });
+
+    card.addEventListener('mouseleave', function() {
+        shadow.style.opacity = 0; // Oculta a sombra quando o mouse sai da div
+    });
+})
+
 
 document.addEventListener('DOMContentLoaded', function() {
     var container = document.getElementById('telaRotinas');
