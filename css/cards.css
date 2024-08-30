@@ -1,35 +1,42 @@
 @keyframes piscarWarning {
     0%, 100% {
-        box-shadow: inset 0 0 15px var(--cor-ocioso-opaca);
+        box-shadow: inset 0 0 15px var(--cor-ocioso-opaca),
+                    0 0 10px var(--cor-ocioso-opaca);
         border: 2px solid var(--cor-ocioso-opaca);
     }
     25% {
-        box-shadow: inset 0 0 65px var(--cor-ocioso-opaca);
+        box-shadow: inset 0 0 65px var(--cor-ocioso-opaca),
+                    0 0 25px var(--cor-ocioso-opaca);
         border: 2px solid var(--cor-ocioso);
     }
     50% {
-        box-shadow: inset 0 0 15px var(--cor-ocioso-opaca);
+        box-shadow: inset 0 0 15px var(--cor-ocioso-opaca),
+                    0 0 10px var(--cor-ocioso-opaca);
         border: 2px solid var(--cor-ocioso-opaca);
     }
 
 }
 @keyframes piscarError {
     0%, 100% {
-        box-shadow: inset 0 0 15px var(--cor-erro-opaca);
+        box-shadow: inset 0 0 15px var(--cor-erro-opaca),
+                    0 0 10px var(--cor-erro-opaca);;
         border: 2px solid var(--cor-erro-opaca);
     }
     50% {
-        box-shadow: inset 0 0 65px var(--cor-erro-opaca);
+        box-shadow: inset 0 0 65px var(--cor-erro-opaca),
+                    0 0 25px var(--cor-erro-opaca);
         border: 2px solid var(--cor-erro);
     }
 }
 @keyframes piscarFinish {
     0%, 100% {
-        box-shadow: inset 0 0 15px var(--cor-final-opaca);
+        box-shadow: inset 0 0 15px var(--cor-final-opaca),
+                    0 0 10px var(--cor-final-opaca-2);
         border: 2px solid var(--cor-final-opaca);
     }
     50% {
-        box-shadow: inset 0 0 65px var(--cor-final-opaca);
+        box-shadow: inset 0 0 65px var(--cor-final-opaca),
+                    0 0 25px var(--cor-final-opaca);
         border: 2px solid var(--cor-final);
     }
 }
@@ -70,7 +77,8 @@
 }
 
 .status-executando {
-    box-shadow: inset 0 0 15px var(--cor-executando-opaca);
+    box-shadow: inset 0 0 15px var(--cor-executando-opaca),
+                0 0 10px var(--cor-executando-opaca);
     border: 2px solid var(--cor-executando-opaca);
 }
 /*.status-executando .shadow{
@@ -78,12 +86,14 @@
     box-shadow: 0 0 60px var(--cor-executando);
 }*/
 .status-executando:hover {
-    box-shadow: inset 0 0 60px var(--cor-executando-opaca);
+    box-shadow: inset 0 0 60px var(--cor-executando-opaca),
+                0 0 25px var(--cor-executando-opaca);;
     border: 2px solid var(--cor-executando);
 }
 
 .status-warning {
-    box-shadow: inset 0 0 15px var(--cor-ocioso-opaca);
+    box-shadow: inset 0 0 15px var(--cor-ocioso-opaca),
+                0 0 10px var(--cor-ocioso-opaca);
     border: 2px solid var(--cor-ocioso-opaca);
     animation: piscarWarning 2s infinite;
 }
@@ -92,12 +102,15 @@
     box-shadow: 0 0 60px var(--cor-ocioso);
 }*/
 .status-warning:hover {
-    box-shadow: inset 0 0 65px var(--cor-ocioso-opaca);
+    box-shadow: inset 0 0 65px var(--cor-ocioso-opaca),
+                0 0 25px var(--cor-ocioso-opaca);
     border: 2px solid var(--cor-ocioso);
+    animation: none;
 }
 
 .status-error {
-    box-shadow: inset 0 0 15px var(--cor-erro-opaca);
+    box-shadow: inset 0 0 15px var(--cor-erro-opaca),
+                0 0 10px var(--cor-erro-opaca);
     border: 2px solid var(--cor-erro-opaca);
     animation: piscarError 1.5s infinite;
 }
@@ -106,12 +119,15 @@
     box-shadow: 0 0 60px var(--cor-erro);
 }*/
 .status-error:hover {
-    box-shadow: inset 0 0 65px var(--cor-erro-opaca);
+    box-shadow: inset 0 0 65px var(--cor-erro-opaca),
+                0 0 25px var(--cor-erro-opaca);
     border: 2px solid var(--cor-erro);
+    animation:none;
 }
 
 .status-final {
-    box-shadow: inset 0 0 15px var(--cor-final-opaca-2);
+    box-shadow: inset 0 0 15px var(--cor-final-opaca-2),
+                0 0 10px var(--cor-final-opaca-2);
     border: 2px solid var(--cor-final-opaca-2);
     animation: piscarFinish 5s infinite;
 }
@@ -120,8 +136,10 @@
     box-shadow: 0 0 60px var(--cor-final);
 }*/
 .status-final:hover {
-    box-shadow: inset 0 0 60px var(--cor-final-opaca);
+    box-shadow: inset 0 0 60px var(--cor-final-opaca),
+                0 0 25px var(--cor-final-opaca);
     border: 2px solid var(--cor-final);
+    animation:none;
 }
 .botaoFechar {
     width: fit-content;
