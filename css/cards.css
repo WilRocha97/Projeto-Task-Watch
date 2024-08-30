@@ -1,29 +1,36 @@
 @keyframes piscarWarning {
     0%, 100% {
-        box-shadow: 0 0 5px var(--cor-ocioso);
+        box-shadow: inset 0 0 15px var(--cor-ocioso-opaca);
+        border: 2px solid var(--cor-ocioso-opaca);
     }
     25% {
-        box-shadow: 0 0 20px var(--cor-ocioso);
+        box-shadow: inset 0 0 65px var(--cor-ocioso-opaca);
+        border: 2px solid var(--cor-ocioso);
     }
     50% {
-        box-shadow: 0 0 5px var(--cor-ocioso);
+        box-shadow: inset 0 0 15px var(--cor-ocioso-opaca);
+        border: 2px solid var(--cor-ocioso-opaca);
     }
 
 }
 @keyframes piscarError {
     0%, 100% {
-        box-shadow: 0 0 5px var(--cor-erro);
+        box-shadow: inset 0 0 15px var(--cor-erro-opaca);
+        border: 2px solid var(--cor-erro-opaca);
     }
     50% {
-        box-shadow: 0 0 30px 5px var(--cor-erro);
+        box-shadow: inset 0 0 65px var(--cor-erro-opaca);
+        border: 2px solid var(--cor-erro);
     }
 }
 @keyframes piscarFinish {
     0%, 100% {
-        box-shadow: 0 0 10px var(--cor-final);
+        box-shadow: inset 0 0 15px var(--cor-final-opaca);
+        border: 2px solid var(--cor-final-opaca);
     }
     50% {
-        box-shadow: 0 0 30px var(--cor-final-opaca);
+        box-shadow: inset 0 0 65px var(--cor-final-opaca);
+        border: 2px solid var(--cor-final);
     }
 }
 .sortable-ghost {
@@ -63,58 +70,58 @@
 }
 
 .status-executando {
-    background: linear-gradient(50deg, #3da0772a, var(--cor-vidro), #3da0772a);
-    box-shadow: 0 0 5px var(--cor-executando);
+    box-shadow: inset 0 0 15px var(--cor-executando-opaca);
+    border: 2px solid var(--cor-executando-opaca);
 }
-.status-executando .shadow{
-    background-color: var(--cor-executando-opaca-2);
-    box-shadow: 0 0 60px var(--cor-executando); /* Aumentada a intensidade da sombra */
-}
+/*.status-executando .shadow{
+    background-color: var(--cor-executando-opaca);
+    box-shadow: 0 0 60px var(--cor-executando);
+}*/
 .status-executando:hover {
-    background: linear-gradient(-50deg, #3da0775b, var(--cor-vidro), #3da0775b);
-    box-shadow: 0 0 30px var(--cor-executando);
+    box-shadow: inset 0 0 60px var(--cor-executando-opaca);
+    border: 2px solid var(--cor-executando);
 }
 
 .status-warning {
-    background: linear-gradient(50deg, #a0963d25, var(--cor-vidro), #a0963d25);
-    box-shadow: 0 0 5px var(--cor-ocioso);
+    box-shadow: inset 0 0 15px var(--cor-ocioso-opaca);
+    border: 2px solid var(--cor-ocioso-opaca);
     animation: piscarWarning 2s infinite;
 }
-.status-warning .shadow{
-    background-color: var(--cor-ocioso-opaca-2);
-    box-shadow: 0 0 60px var(--cor-ocioso); /* Aumentada a intensidade da sombra */
-}
+/*.status-warning .shadow{
+    background-color: var(--cor-ocioso-opaca);
+    box-shadow: 0 0 60px var(--cor-ocioso);
+}*/
 .status-warning:hover {
-    background: linear-gradient(-50deg, #a06d0050, var(--cor-vidro), #a06d0050);
-    box-shadow: 0 0 30px var(--cor-ocioso);
+    box-shadow: inset 0 0 65px var(--cor-ocioso-opaca);
+    border: 2px solid var(--cor-ocioso);
 }
 
 .status-error {
-    background: linear-gradient(50deg, #a03d4231, var(--cor-vidro), #a03d4231);
-    box-shadow: 0 0 5px var(--cor-erro);
+    box-shadow: inset 0 0 15px var(--cor-erro-opaca);
+    border: 2px solid var(--cor-erro-opaca);
     animation: piscarError 1.5s infinite;
 }
-.status-error .shadow{
-    background-color: var(--cor-erro-opaca-2);
-    box-shadow: 0 0 60px var(--cor-erro); /* Aumentada a intensidade da sombra */
-}
+/*.status-error .shadow{
+    background-color: var(--cor-erro-opaca);
+    box-shadow: 0 0 60px var(--cor-erro);
+}*/
 .status-error:hover {
-    background: linear-gradient(-50deg, #a03d425e, var(--cor-vidro), #a03d425e);
-    box-shadow: 0 0 30px var(--cor-erro);
+    box-shadow: inset 0 0 65px var(--cor-erro-opaca);
+    border: 2px solid var(--cor-erro);
 }
 
 .status-final {
-    background: linear-gradient(50deg, #3d89a036, var(--cor-vidro), #3d89a036);
-    box-shadow: 0 0 10px var(--cor-final);
+    box-shadow: inset 0 0 15px var(--cor-final-opaca-2);
+    border: 2px solid var(--cor-final-opaca-2);
     animation: piscarFinish 5s infinite;
 }
-.status-final .shadow{
+/*.status-final .shadow{
     background-color: var(--cor-final-opaca-2);
-    box-shadow: 0 0 60px var(--cor-final); /* Aumentada a intensidade da sombra */
-}
+    box-shadow: 0 0 60px var(--cor-final);
+}*/
 .status-final:hover {
-    background: linear-gradient(-50deg, #3d89a04f, var(--cor-vidro), #3d89a04f);
-    box-shadow: 0 0 30px var(--cor-final);
+    box-shadow: inset 0 0 60px var(--cor-final-opaca);
+    border: 2px solid var(--cor-final);
 }
 .botaoFechar {
     width: fit-content;

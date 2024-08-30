@@ -10,14 +10,14 @@
     --tamanho-texto-2: 1rem;
     --transicao-link: 0.4s;
     --cor-executando: #00b47e;
-    --cor-executando-opaca-2: #00b47e17;
+    --cor-executando-opaca: #00b47e67;
     --cor-erro: #fc0000;
-    --cor-erro-opaca-2: #fc00001e;
+    --cor-erro-opaca: #fc000056;
     --cor-ocioso: #fc8f00;
-    --cor-ocioso-opaca-2: #fc8f001e;
+    --cor-ocioso-opaca: #fc8f0052;
     --cor-final: #00c1fc;
     --cor-final-opaca: #00c1fce1;
-    --cor-final-opaca-2: #00c1fc1c;
+    --cor-final-opaca: #00c1fc69;
     --blur: 4px;
 }
 
