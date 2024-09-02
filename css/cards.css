@@ -71,7 +71,6 @@
     scale: 1;
 }
 .rectangle.out {
-    height: 0; /* Altura desejada quando colapsado */
     font-size: 0;
     scale: 0;
 }
@@ -126,9 +125,9 @@
 }
 
 .status-final {
-    box-shadow: inset 0 0 15px var(--cor-final-opaca-2),
-                0 0 10px var(--cor-final-opaca-2);
-    border: 2px solid var(--cor-final-opaca-2);
+    box-shadow: inset 0 0 15px var(--cor-final-opaca),
+                0 0 10px var(--cor-final-opaca);
+    border: 2px solid var(--cor-final-opaca);
     animation: piscarFinish 5s infinite;
 }
 /*.status-final .shadow{

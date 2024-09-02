@@ -20,6 +20,7 @@
     --cor-final-opaca: #00c1fce1;
     --cor-final-opaca: #00c1fc69;
     --blur: 4px;
+    --og-clip-path: polygon(100% 0, 100% calc(100% - 25px), calc(100% - 25px) 100%, 0 100%, 0 0);
 }
 
 /* Estilizando a barra de rolagem */
@@ -183,7 +184,7 @@ body {
         margin: 5px 0 25px 0 !important;
         width: 85% !important;
         gap: 1rem !important;
-        max-height: 600px !important; /* Defina a altura máxima desejada */
+        max-height: 550px !important; /* Defina a altura máxima desejada */
     }
     .filtroHistorico{
         padding: 0 30px !important;
