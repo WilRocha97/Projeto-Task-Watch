@@ -183,7 +183,6 @@ body {
         padding: 15px !important;
         margin: 5px 0 25px 0 !important;
         width: 85% !important;
-        gap: 1rem !important;
         max-height: 550px !important; /* Defina a altura máxima desejada */
     }
     .filtroHistorico{
@@ -195,9 +194,8 @@ body {
         font-size: x-large !important;
     }
     .linha{
-        padding: 2% 2% !important;
+        padding: 2% 1% !important;
         grid-template-columns: 1.5fr 3fr 2fr !important;
-        gap: 0.5rem !important;
     }
     body:focus {
         outline: none !important;

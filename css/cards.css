@@ -157,18 +157,23 @@
 .content {
     font-size: 0.8em;
     padding: 0;
-    transition: padding 0.4s;
+    opacity: 0;
+    transition: opacity var(--transicao-link), padding var(--transicao-link);
 }
+.title:not(:empty), 
 .content:not(:empty) {
     padding: 4px;
+    opacity: 1;
 }
 .rectangle.collapsed {
+    font-size: 0;
     padding: 10px;
     margin: 10px;
-    font-size: 0;
 }
 .rectangle.collapsed .content {
-    opacity: 0; /* Torna as divs filhas invisíveis quando a div mãe está colapsada */
+    opacity: 0;
+    scale: 0;
+    padding: 0;
 }
 
 .shadow {

@@ -43,7 +43,6 @@
     grid-template-columns: 0.5fr 3fr 1fr; /* Três colunas iguais */
     padding: 1% 1%;
     min-height: 10px;
-    gap: 2rem;
     transition: var(--transicao-link);
 }
 .linha.collapsed {
@@ -52,7 +51,6 @@
     min-height: 0 !important;
     height: 0 !important; /* Altura desejada quando colapsado */
     padding: 0 1% !important;
-    gap: 0 !important;
 }
 .linha:hover {
     background: var(--cor-vidro-2);
