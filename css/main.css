@@ -2,7 +2,7 @@
 
 :root {
     --cor-vidro: #9797970e;
-    --cor-vidro-2: #97979744;
+    --cor-vidro-2: #9797971e;
     --cor-texto-dark: #000000;
     --cor-texto-light: #ffffff;
     --cor-destaque: #ff0040;
@@ -10,17 +10,16 @@
     --tamanho-texto: 1.4rem;
     --tamanho-texto-2: 1rem;
     --transicao-link: 0.4s;
-    --cor-executando: #00b47e;
-    --cor-executando-opaca: #00b47e67;
+    --cor-executando: #00cf91;
+    --cor-executando-opaca: #00b47e33;
     --cor-erro: #fc0000;
-    --cor-erro-opaca: #fc000056;
-    --cor-ocioso: #fc8f00;
-    --cor-ocioso-opaca: #fc8f0052;
+    --cor-erro-opaca: #fc000038;
+    --cor-ocioso: #fcac00;
+    --cor-ocioso-opaca: #fc8f002a;
     --cor-final: #00c1fc;
-    --cor-final-opaca: #00c1fce1;
-    --cor-final-opaca: #00c1fc69;
+    --cor-final-opaca: #00c1fc48;
     --blur: 4px;
-    --og-clip-path: polygon(100% 0, 100% calc(100% - 25px), calc(100% - 25px) 100%, 0 100%, 0 0);
+    --borda-card: 3px;
 }
 
 /* Estilizando a barra de rolagem */
@@ -101,7 +100,7 @@ body {
 }
 
 .fundo {
-    background: linear-gradient(-50deg, #c0c0c017, var(--cor-vidro), #c0c0c017);
+    background: var(--cor-vidro-2);
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.178);
     backdrop-filter: blur(var(--blur));

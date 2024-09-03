@@ -18,7 +18,6 @@ botao.addEventListener('click', (e)=> {
     // Atualiza o atributo alt da imagem
     imagem.alt = 'Modo escuro';
     }
-
 })
 
 // Verifica se o tema escuro está ativado
