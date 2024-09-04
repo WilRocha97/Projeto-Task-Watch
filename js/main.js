@@ -29,17 +29,20 @@ function updateClock() {
     var now = new Date();
     var dayOfWeek = daysOfWeek[now.getDay()];
     var day = now.getDate();
-    var month = months[now.getMonth()];
+    var monthName = months[now.getMonth()];
+    var month = now.getMonth() + 1;
     var year = now.getFullYear();
     var hours = now.getHours();
     var minutes = now.getMinutes();
 
+    // Formatação dos dias para adicionar um zero à esquerda se for menor que 10
+    day = day < 10 ? '0' + day : day;
     // Formatação dos minutos e segundos para adicionar um zero à esquerda se for menor que 10
     minutes = minutes < 10 ? '0' + minutes : minutes;
     // Formatação dos minutos e segundos para adicionar um zero à esquerda se for menor que 10
     hours = hours < 10 ? '0' + hours : hours;
 
-    var formattedTime = dayOfWeek + ", " + day + " de " + month + " de " + year + " - " + hours + ":" + minutes;
+    var formattedTime = dayOfWeek + ", " + day + " de " + monthName + " de " + year + " - " + hours + ":" + minutes;
     
     document.getElementById('clock').textContent = formattedTime;
 
