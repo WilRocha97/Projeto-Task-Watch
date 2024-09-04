@@ -11,13 +11,13 @@
     --tamanho-texto-2: 1rem;
     --transicao-link: 0.4s;
     --cor-executando: #00cf91;
-    --cor-executando-opaca: #00b47e33;
+    --cor-executando-opaca: #00694a;
     --cor-erro: #fc0000;
-    --cor-erro-opaca: #fc000038;
+    --cor-erro-opaca: #790000;
     --cor-ocioso: #fcac00;
-    --cor-ocioso-opaca: #fc8f002a;
+    --cor-ocioso-opaca: #9c5900;
     --cor-final: #00c1fc;
-    --cor-final-opaca: #00c1fc48;
+    --cor-final-opaca: #003d66;
     --blur: 4px;
     --borda-card: 3px;
 }
