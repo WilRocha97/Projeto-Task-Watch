@@ -153,12 +153,13 @@
 }
 .botaoFechar {
     width: fit-content;
-    color: var(--cor-final);
-    text-shadow: none;
+    color: white;
+    font-weight: 700;
+    text-shadow: 0 0 1px white;
     transition: var(--transicao-link);
 }
 .botaoFechar:hover {
-    text-shadow: 0 0 5px var(--cor-final);
+    text-shadow: 0 0 5px white;
 }
 
 .rectangle .title {
