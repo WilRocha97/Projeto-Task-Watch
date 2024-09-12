@@ -76,6 +76,9 @@
     font-size: 0;
     scale: 0;
 }
+.rectangle:hover{
+    text-shadow: 0 0 10px black;
+}
 
 .status-executando {
     background: linear-gradient(50deg, #006345, #004557);
@@ -175,14 +178,14 @@
 .porcentagem {
     z-index: -1;
     position: absolute;
-    bottom: -30%;
-    right: 0%;
+    bottom: -1.8rem;
+    right: 0;
     font-size: 7rem;
     font-weight: bold;
     transition: var(--transicao-link);
 }
-.title:not(:empty), 
-.content:not(:empty) {
+
+.title:not(:empty), .content:not(:empty) {
     padding: 4px;
     opacity: 1;
 }
