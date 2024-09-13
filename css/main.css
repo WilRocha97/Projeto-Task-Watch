@@ -145,7 +145,7 @@ body {
     justify-content: center;
     font-size: 0.8rem;
     padding: 0.5% 3%;
-    margin: 2%;
+    margin: 10px 2% 2% 2%;
 }
 .rodapeConteudo {
     display: flex;

@@ -26,13 +26,13 @@
 }
 .telaHistorico {
     width: 90%;
-    max-height: 500px; /* Defina a altura máxima desejada */
+    max-height: 585px; /* Defina a altura máxima desejada */
     overflow: auto; /* Adiciona o scroll vertical */
     display: flex;
     align-self: center;
     flex-direction: column;
-    padding: 25px;
-    margin: 5px 50px 50px 50px;
+    padding: 10px 25px;
+    margin: 5px 50px;
     font-size: 0.8em;
     transition: var(--transicao-link);
 }
