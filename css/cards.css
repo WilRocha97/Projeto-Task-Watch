@@ -134,7 +134,7 @@
     box-shadow: inset 0 0 80px var(--cor-erro),
                 0 0 30px var(--cor-erro);
     border: var(--borda-card) solid var(--cor-erro);
-    animation:none;
+    animation: none;
 }
 
 .status-final {
@@ -152,7 +152,7 @@
     box-shadow: inset 0 0 80px var(--cor-final),
                 0 0 30px var(--cor-final);
     border: var(--borda-card) solid var(--cor-final);
-    animation:none;
+    animation: none;
 }
 .botaoFechar {
     width: fit-content;
