@@ -8,6 +8,9 @@
     transition: var(--transicao-link);
 }
 .filtroGeral, .filtroErro, .filtroOcioso, .filtroFinal{
+    color: var(--cor-texto);
+    border: none;
+    background: none;
     cursor: pointer;
     font-size: larger;
     transition: var(--transicao-link);
