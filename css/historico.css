@@ -36,7 +36,7 @@
     align-self: center;
     flex-direction: column;
     padding: 10px 25px;
-    margin: 80px 50px 5px 50px;
+    margin: 80px 5px 10px 5px;
     font-size: 0.8em;
     transition: var(--transicao-link);
 }
@@ -45,7 +45,7 @@
     opacity: 1;
     display: grid;
     grid-template-columns: 0.5fr 3fr 1fr; /* Três colunas iguais */
-    padding: 1% 1%;
+    padding: 10px;
     min-height: 10px;
     transition: var(--transicao-link);
 }
