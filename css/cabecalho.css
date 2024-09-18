@@ -38,8 +38,15 @@
 .notifica {
     align-self: center;
 }
+.notificacao {
+    position: absolute;
+    top: 0; /* Alinha a bolinha ao topo do botão */
+    right: 0; /* Alinha a bolinha à direita do botão */
+    display: flex;
+    flex-direction: row;
+    gap: 1px;
+}
 .bolinhaErro, .bolinhaOcioso, .bolinhaFinal{
-    position: absolute; /* Posiciona a bolinha de forma absoluta em relação ao botão */
     width: 5px; /* Ajuste o tamanho da bolinha conforme necessário */
     height: 5px; /* Ajuste o tamanho da bolinha conforme necessário */
     border-radius: 50%; /* Torna a bolinha circular */
@@ -47,18 +54,12 @@
 }
 .bolinhaErro {
     background-color: var(--cor-erro); /* Cor da bolinha */
-    top: 0; /* Alinha a bolinha ao topo do botão */
-    right: 0; /* Alinha a bolinha à direita do botão */
 }
 .bolinhaOcioso {
     background-color: var(--cor-ocioso); /* Cor da bolinha */
-    bottom: 0; /* Alinha a bolinha ao topo do botão */
-    right: 0; /* Alinha a bolinha à direita do botão */
 }
 .bolinhaFinal {
     background-color: var(--cor-final); /* Cor da bolinha */
-    top: 0; /* Alinha a bolinha ao topo do botão */
-    left: 0; /* Alinha a bolinha à direita do botão */
 }
 .dicaTela {
     margin-top: 75px;

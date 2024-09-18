@@ -11,9 +11,6 @@ const botaoFiltroFinal = document.getElementById('bolinhaFinal')
 var historicoBotao = document.getElementById('historico');
 var historicoTela = document.getElementById('historicoTela');
 var historicoLinha = document.querySelectorAll('.linha');
-var historicoNotificacaoErro = document.getElementById('bolinhaNotificacaoErro')
-var historicoNotificacaoOcioso = document.getElementById('bolinhaNotificacaoOcioso')
-var historicoNotificacaoFinal = document.getElementById('bolinhaNotificacaoFinal')
 
 var telaLayout = document.getElementById('layoutTela');
 var telaRotinas = document.getElementById('telaRotinas');
@@ -81,9 +78,12 @@ function filtraHistorico(colunaOcorrencias, filtro) {
                 // desce para a base da página e da tela de histórico
                 setTimeout(()=> {
                     if (screenWidth < 2500) {
+                        const target = document.getElementById('targetHistorico');
+                        const targetPosition = target.offsetTop; /* Pega a posição do topo do elemento */
+                    
                         window.scrollTo({
-                            top: document.body.scrollHeight,
-                            behavior: 'smooth' // Para uma rolagem suave, adicione essa opção
+                            top: targetPosition, 
+                            behavior: 'smooth' /* Scroll suave */
                         });
                     }
                     historicoTela.scrollTo({
@@ -191,9 +191,9 @@ dica.addEventListener('click', (e) => {
 
 // Abre e fecha a tela de histórico
 historicoBotao.addEventListener('click', (e)=> {
-    historicoNotificacaoErro.classList.add('invisible')
-    historicoNotificacaoOcioso.classList.add('invisible')
-    historicoNotificacaoFinal.classList.add('invisible')
+    document.querySelectorAll('.bn').forEach(bolinha => {
+        bolinha.classList.add('invisible');
+    })
     historicoTela.classList.toggle('collapsed')
     painelFiltro.classList.toggle('invisible')
 
@@ -212,11 +212,15 @@ historicoBotao.addEventListener('click', (e)=> {
         // desce para a base da página e da tela de histórico
         setTimeout(()=> {
             if (screenWidth < 2500) {
+                const target = document.getElementById('targetHistorico');
+                const targetPosition = target.offsetTop; /* Pega a posição do topo do elemento */
+            
                 window.scrollTo({
-                    top: document.body.scrollHeight,
-                    behavior: 'smooth' // Para uma rolagem suave, adicione essa opção
+                    top: targetPosition, 
+                    behavior: 'smooth' /* Scroll suave */
                 });
             }
+
             historicoTela.scrollTo({
                 top: historicoTela.scrollHeight,
                 behavior: 'smooth' // Para uma rolagem suave, adicione essa opção
@@ -245,9 +249,12 @@ botaoFiltroGeral.addEventListener('click', (e)=> {
         // desce para a base da página e da tela de histórico
         setTimeout(()=> {
             if (screenWidth < 2500) {
+                const target = document.getElementById('targetHistorico');
+                const targetPosition = target.offsetTop; /* Pega a posição do topo do elemento */
+            
                 window.scrollTo({
-                    top: document.body.scrollHeight,
-                    behavior: 'smooth' // Para uma rolagem suave, adicione essa opção
+                    top: targetPosition, 
+                    behavior: 'smooth' /* Scroll suave */
                 });
             }
             historicoTela.scrollTo({
