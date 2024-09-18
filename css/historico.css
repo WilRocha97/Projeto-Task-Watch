@@ -41,7 +41,7 @@
     transition: var(--transicao-link);
 }
 .linha{
-    border-radius: 9px;
+    border-radius: 10px;
     opacity: 1;
     display: grid;
     grid-template-columns: 0.5fr 3fr 1fr; /* Três colunas iguais */
