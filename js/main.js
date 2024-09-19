@@ -8,8 +8,9 @@ const botaoFiltroOciosa = document.getElementById('bolinhaOcioso')
 const botaoFiltroErro = document.getElementById('bolinhaErro')
 const botaoFiltroFinal = document.getElementById('bolinhaFinal')
 
-var historicoBotao = document.getElementById('historico');
-var historicoTela = document.getElementById('historicoTela');
+const historicoBotao = document.getElementById('historico');
+const historicoTela = document.getElementById('historicoTela');
+const mainHistorico = document.getElementById('targetHistorico');
 var historicoLinha = document.querySelectorAll('.linha');
 
 var telaLayout = document.getElementById('layoutTela');
@@ -194,10 +195,9 @@ historicoBotao.addEventListener('click', (e)=> {
     document.querySelectorAll('.bn').forEach(bolinha => {
         bolinha.classList.add('invisible');
     })
-    historicoTela.classList.toggle('collapsed')
-    painelFiltro.classList.toggle('invisible')
+    mainHistorico.classList.toggle('collapsed')
 
-    if (historicoTela.classList.contains('collapsed')) {
+    if (mainHistorico.classList.contains('collapsed')) {
         // sobe para o topo da página
         setTimeout(()=> {
             if (screenWidth < 2500) {
@@ -229,7 +229,7 @@ historicoBotao.addEventListener('click', (e)=> {
     }
 })
 // Adiciona o evento de clique na tela de histórico para evitar a propagação
-historicoTela.addEventListener('click', (e) => {
+mainHistorico.addEventListener('click', (e) => {
     e.stopPropagation();
 });
 botaoFiltroGeral.addEventListener('click', (e)=> {

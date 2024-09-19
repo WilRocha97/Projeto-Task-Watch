@@ -53,7 +53,7 @@
                     <br><br>O botão "▼" minimiza todos os cartões e o "▲" maximiza todos de uma só vês, e você pode clicar diretamente em cada cartão para minimizar ou maximiza-los individualmente.
                     <br><br>Voçê pode arastar os cartões para organiza-los da forma que preferir, basta segurar o cartão que você deseja mover até que ele fique cinza.
                     <br><br>A tela de histórico, que é exibida ao clicar no botão "Histórico", pode ser filtrada por ocorrência, basta clicar no ponto colorido com a cor correspondente ao evento.
-                    <br>Eles ficam logo abaixo da janela de histórico do lado direito da tela.
+                    <br>Eles ficam logo acima da janela de histórico do lado direito da tela.
                 </div>
             </div>
         </div>
@@ -110,166 +110,168 @@
             
         </div>
 
-        <div id="targetHistorico"></div>
-        <div id="historicoTela" class="telaHistorico fundo collapsed">
-            <div class="linha">
-                <p id="data">15/07/2024 - 09:35</p>
-                <p id="rotina">Certidão Negativa Receita Federal CPF - PC14</p>
-                <p id="ocorrencia" class="situacao ociosa">A rotina está ociosa por muito tempo</p>
+        <div id="targetHistorico" class="mainHistorico collapsed">
+            <div id="painelFiltro" class="filtroHistorico">
+                <button id="bolinhaGeral" class="filtroGeral">●</button>
+                <button id="bolinhaErro" class="filtroErro">●</button>
+                <button id="bolinhaOcioso" class="filtroOcioso">●</button>
+                <button id="bolinhaFinal" class="filtroFinal">●</button>
             </div>
-            <div class="linha">
-                <p id="data">15/07/2024 - 09:45</p>
-                <p id="rotina">Encaminha Docs WhatsApp - PC34</p>
-                <p id="ocorrencia" class="situacao erro">Erro detectado</p>
-            </div>
-            <div class="linha">
-                <p id="data">15/07/2024 - 08:00</p>
-                <p id="rotina">Pendencias SIGISSWEB - PC50</p>
-                <p id="ocorrencia" class="situacao iniciada">Rotina iniciada</p>
-            </div>
-            <div class="linha">
-                <p id="data">15/07/2024 - 08:01</p>
-                <p id="rotina">Relatório Faturamento X Compra - PC67</p>
-                <p id="ocorrencia" class="situacao iniciada">Rotina iniciada</p>
-            </div>
-            <div class="linha">
-                <p id="data">15/07/2024 - 09:35</p>
-                <p id="rotina">Certidão Negativa Receita Federal CPF - PC14</p>
-                <p id="ocorrencia" class="situacao ociosa">A rotina está ociosa por muito tempo</p>
-            </div>
-            <div class="linha">
-                <p id="data">15/07/2024 - 09:45</p>
-                <p id="rotina">Encaminha Docs WhatsApp - PC34</p>
-                <p id="ocorrencia" class="situacao erro">Erro detectado</p>
-            </div>
-            <div class="linha">
-                <p id="data">15/07/2024 - 08:00</p>
-                <p id="rotina">Pendencias SIGISSWEB - PC50</p>
-                <p id="ocorrencia" class="situacao iniciada">Rotina iniciada</p>
-            </div>
-            <div class="linha">
-                <p id="data">15/07/2024 - 09:35</p>
-                <p id="rotina">Certidão Negativa Receita Federal CPF - PC14</p>
-                <p id="ocorrencia" class="situacao ociosa">A rotina está ociosa por muito tempo</p>
-            </div>
-            <div class="linha">
-                <p id="data">15/07/2024 - 08:01</p>
-                <p id="rotina">Relatório Faturamento X Compra - PC67</p>
-                <p id="ocorrencia" class="situacao iniciada">Rotina iniciada</p>
-            </div>
-            <div class="linha">
-                <p id="data">15/07/2024 - 09:45</p>
-                <p id="rotina">Encaminha Docs WhatsApp - PC34</p>
-                <p id="ocorrencia" class="situacao erro">Erro detectado</p>
-            </div>
-            <div class="linha">
-                <p id="data">15/07/2024 - 08:00</p>
-                <p id="rotina">Pendencias SIGISSWEB - PC50</p>
-                <p id="ocorrencia" class="situacao iniciada">Rotina iniciada</p>
-            </div>
-            <div class="linha">
-                <p id="data">15/07/2024 - 09:35</p>
-                <p id="rotina">Certidão Negativa Receita Federal CPF - PC14</p>
-                <p id="ocorrencia" class="situacao ociosa">A rotina está ociosa por muito tempo</p>
-            </div>
-            <div class="linha">
-                <p id="data">15/07/2024 - 09:45</p>
-                <p id="rotina">Encaminha Docs WhatsApp - PC34</p>
-                <p id="ocorrencia" class="situacao erro">Erro detectado</p>
-            </div>
-            <div class="linha">
-                <p id="data">15/07/2024 - 08:01</p>
-                <p id="rotina">Relatório Faturamento X Compra - PC67</p>
-                <p id="ocorrencia" class="situacao iniciada">Rotina iniciada</p>
-            </div>
-            <div class="linha">
-                <p id="data">15/07/2024 - 08:00</p>
-                <p id="rotina">Pendencias SIGISSWEB - PC50</p>
-                <p id="ocorrencia" class="situacao iniciada">Rotina iniciada</p>
-            </div>
-            <div class="linha">
-                <p id="data">15/07/2024 - 09:35</p>
-                <p id="rotina">Certidão Negativa Receita Federal CPF - PC14</p>
-                <p id="ocorrencia" class="situacao ociosa">A rotina está ociosa por muito tempo</p>
-            </div>
-            <div class="linha">
-                <p id="data">15/07/2024 - 09:45</p>
-                <p id="rotina">Encaminha Docs WhatsApp - PC34</p>
-                <p id="ocorrencia" class="situacao erro">Erro detectado</p>
-            </div>
-            <div class="linha">
-                <p id="data">15/07/2024 - 08:00</p>
-                <p id="rotina">Pendencias SIGISSWEB - PC50</p>
-                <p id="ocorrencia" class="situacao iniciada">Rotina iniciada</p>
-            </div>
-            <div class="linha">
-                <p id="data">15/07/2024 - 09:35</p>
-                <p id="rotina">Certidão Negativa Receita Federal CPF - PC14</p>
-                <p id="ocorrencia" class="situacao ociosa">A rotina está ociosa por muito tempo</p>
-            </div>
-            <div class="linha">
-                <p id="data">15/07/2024 - 09:45</p>
-                <p id="rotina">Encaminha Docs WhatsApp - PC34</p>
-                <p id="ocorrencia" class="situacao erro">Erro detectado</p>
-            </div>
-            <div class="linha">
-                <p id="data">15/07/2024 - 08:00</p>
-                <p id="rotina">Pendencias SIGISSWEB - PC50</p>
-                <p id="ocorrencia" class="situacao iniciada">Rotina iniciada</p>
-            </div>
-            <div class="linha">
-                <p id="data">15/07/2024 - 09:35</p>
-                <p id="rotina">Certidão Negativa Receita Federal CPF - PC14</p>
-                <p id="ocorrencia" class="situacao ociosa">A rotina está ociosa por muito tempo</p>
-            </div>
-            <div class="linha">
-                <p id="data">15/07/2024 - 09:45</p>
-                <p id="rotina">Encaminha Docs WhatsApp - PC34</p>
-                <p id="ocorrencia" class="situacao erro">Erro detectado</p>
-            </div>
-            <div class="linha">
-                <p id="data">15/07/2024 - 08:00</p>
-                <p id="rotina">Pendencias SIGISSWEB - PC50</p>
-                <p id="ocorrencia" class="situacao iniciada">Rotina iniciada</p>
-            </div>
-            <div class="linha">
-                <p id="data">15/07/2024 - 08:00</p>
-                <p id="rotina">Download Comprovantes de Pagamento - PC65</p>
-                <p id="ocorrencia" class="situacao finalizada">Rotina finalizada</p>
-            </div>
-            <div class="linha">
-                <p id="data">15/07/2024 - 08:00</p>
-                <p id="rotina">Pendencias SIGISSWEB - PC50</p>
-                <p id="ocorrencia" class="situacao iniciada">Rotina iniciada</p>
-            </div>
-            <div class="linha">
-                <p id="data">15/07/2024 - 09:35</p>
-                <p id="rotina">Certidão Negativa Receita Federal CPF - PC14</p>
-                <p id="ocorrencia" class="situacao ociosa">A rotina está ociosa por muito tempo</p>
-            </div>
-            <div class="linha">
-                <p id="data">15/07/2024 - 09:45</p>
-                <p id="rotina">Encaminha Docs WhatsApp - PC34</p>
-                <p id="ocorrencia" class="situacao erro">Erro detectado</p>
-            </div>
-            <div class="linha">
-                <p id="data">15/07/2024 - 08:00</p>
-                <p id="rotina">Pendencias SIGISSWEB - PC50</p>
-                <p id="ocorrencia" class="situacao iniciada">Rotina iniciada</p>
-            </div>
-            <div class="linha">
-                <p id="data">15/07/2024 - 08:00</p>
-                <p id="rotina">Download Comprovantes de Pagamento - PC65</p>
-                <p id="ocorrencia" class="situacao finalizada">Rotina finalizada</p>
+            <div id="historicoTela" class="telaHistorico fundo">
+                <div class="linha">
+                    <p id="data">15/07/2024 - 09:35</p>
+                    <p id="rotina">Certidão Negativa Receita Federal CPF - PC14</p>
+                    <p id="ocorrencia" class="situacao ociosa">A rotina está ociosa por muito tempo</p>
+                </div>
+                <div class="linha">
+                    <p id="data">15/07/2024 - 09:45</p>
+                    <p id="rotina">Encaminha Docs WhatsApp - PC34</p>
+                    <p id="ocorrencia" class="situacao erro">Erro detectado</p>
+                </div>
+                <div class="linha">
+                    <p id="data">15/07/2024 - 08:00</p>
+                    <p id="rotina">Pendencias SIGISSWEB - PC50</p>
+                    <p id="ocorrencia" class="situacao iniciada">Rotina iniciada</p>
+                </div>
+                <div class="linha">
+                    <p id="data">15/07/2024 - 08:01</p>
+                    <p id="rotina">Relatório Faturamento X Compra - PC67</p>
+                    <p id="ocorrencia" class="situacao iniciada">Rotina iniciada</p>
+                </div>
+                <div class="linha">
+                    <p id="data">15/07/2024 - 09:35</p>
+                    <p id="rotina">Certidão Negativa Receita Federal CPF - PC14</p>
+                    <p id="ocorrencia" class="situacao ociosa">A rotina está ociosa por muito tempo</p>
+                </div>
+                <div class="linha">
+                    <p id="data">15/07/2024 - 09:45</p>
+                    <p id="rotina">Encaminha Docs WhatsApp - PC34</p>
+                    <p id="ocorrencia" class="situacao erro">Erro detectado</p>
+                </div>
+                <div class="linha">
+                    <p id="data">15/07/2024 - 08:00</p>
+                    <p id="rotina">Pendencias SIGISSWEB - PC50</p>
+                    <p id="ocorrencia" class="situacao iniciada">Rotina iniciada</p>
+                </div>
+                <div class="linha">
+                    <p id="data">15/07/2024 - 09:35</p>
+                    <p id="rotina">Certidão Negativa Receita Federal CPF - PC14</p>
+                    <p id="ocorrencia" class="situacao ociosa">A rotina está ociosa por muito tempo</p>
+                </div>
+                <div class="linha">
+                    <p id="data">15/07/2024 - 08:01</p>
+                    <p id="rotina">Relatório Faturamento X Compra - PC67</p>
+                    <p id="ocorrencia" class="situacao iniciada">Rotina iniciada</p>
+                </div>
+                <div class="linha">
+                    <p id="data">15/07/2024 - 09:45</p>
+                    <p id="rotina">Encaminha Docs WhatsApp - PC34</p>
+                    <p id="ocorrencia" class="situacao erro">Erro detectado</p>
+                </div>
+                <div class="linha">
+                    <p id="data">15/07/2024 - 08:00</p>
+                    <p id="rotina">Pendencias SIGISSWEB - PC50</p>
+                    <p id="ocorrencia" class="situacao iniciada">Rotina iniciada</p>
+                </div>
+                <div class="linha">
+                    <p id="data">15/07/2024 - 09:35</p>
+                    <p id="rotina">Certidão Negativa Receita Federal CPF - PC14</p>
+                    <p id="ocorrencia" class="situacao ociosa">A rotina está ociosa por muito tempo</p>
+                </div>
+                <div class="linha">
+                    <p id="data">15/07/2024 - 09:45</p>
+                    <p id="rotina">Encaminha Docs WhatsApp - PC34</p>
+                    <p id="ocorrencia" class="situacao erro">Erro detectado</p>
+                </div>
+                <div class="linha">
+                    <p id="data">15/07/2024 - 08:01</p>
+                    <p id="rotina">Relatório Faturamento X Compra - PC67</p>
+                    <p id="ocorrencia" class="situacao iniciada">Rotina iniciada</p>
+                </div>
+                <div class="linha">
+                    <p id="data">15/07/2024 - 08:00</p>
+                    <p id="rotina">Pendencias SIGISSWEB - PC50</p>
+                    <p id="ocorrencia" class="situacao iniciada">Rotina iniciada</p>
+                </div>
+                <div class="linha">
+                    <p id="data">15/07/2024 - 09:35</p>
+                    <p id="rotina">Certidão Negativa Receita Federal CPF - PC14</p>
+                    <p id="ocorrencia" class="situacao ociosa">A rotina está ociosa por muito tempo</p>
+                </div>
+                <div class="linha">
+                    <p id="data">15/07/2024 - 09:45</p>
+                    <p id="rotina">Encaminha Docs WhatsApp - PC34</p>
+                    <p id="ocorrencia" class="situacao erro">Erro detectado</p>
+                </div>
+                <div class="linha">
+                    <p id="data">15/07/2024 - 08:00</p>
+                    <p id="rotina">Pendencias SIGISSWEB - PC50</p>
+                    <p id="ocorrencia" class="situacao iniciada">Rotina iniciada</p>
+                </div>
+                <div class="linha">
+                    <p id="data">15/07/2024 - 09:35</p>
+                    <p id="rotina">Certidão Negativa Receita Federal CPF - PC14</p>
+                    <p id="ocorrencia" class="situacao ociosa">A rotina está ociosa por muito tempo</p>
+                </div>
+                <div class="linha">
+                    <p id="data">15/07/2024 - 09:45</p>
+                    <p id="rotina">Encaminha Docs WhatsApp - PC34</p>
+                    <p id="ocorrencia" class="situacao erro">Erro detectado</p>
+                </div>
+                <div class="linha">
+                    <p id="data">15/07/2024 - 08:00</p>
+                    <p id="rotina">Pendencias SIGISSWEB - PC50</p>
+                    <p id="ocorrencia" class="situacao iniciada">Rotina iniciada</p>
+                </div>
+                <div class="linha">
+                    <p id="data">15/07/2024 - 09:35</p>
+                    <p id="rotina">Certidão Negativa Receita Federal CPF - PC14</p>
+                    <p id="ocorrencia" class="situacao ociosa">A rotina está ociosa por muito tempo</p>
+                </div>
+                <div class="linha">
+                    <p id="data">15/07/2024 - 09:45</p>
+                    <p id="rotina">Encaminha Docs WhatsApp - PC34</p>
+                    <p id="ocorrencia" class="situacao erro">Erro detectado</p>
+                </div>
+                <div class="linha">
+                    <p id="data">15/07/2024 - 08:00</p>
+                    <p id="rotina">Pendencias SIGISSWEB - PC50</p>
+                    <p id="ocorrencia" class="situacao iniciada">Rotina iniciada</p>
+                </div>
+                <div class="linha">
+                    <p id="data">15/07/2024 - 08:00</p>
+                    <p id="rotina">Download Comprovantes de Pagamento - PC65</p>
+                    <p id="ocorrencia" class="situacao finalizada">Rotina finalizada</p>
+                </div>
+                <div class="linha">
+                    <p id="data">15/07/2024 - 08:00</p>
+                    <p id="rotina">Pendencias SIGISSWEB - PC50</p>
+                    <p id="ocorrencia" class="situacao iniciada">Rotina iniciada</p>
+                </div>
+                <div class="linha">
+                    <p id="data">15/07/2024 - 09:35</p>
+                    <p id="rotina">Certidão Negativa Receita Federal CPF - PC14</p>
+                    <p id="ocorrencia" class="situacao ociosa">A rotina está ociosa por muito tempo</p>
+                </div>
+                <div class="linha">
+                    <p id="data">15/07/2024 - 09:45</p>
+                    <p id="rotina">Encaminha Docs WhatsApp - PC34</p>
+                    <p id="ocorrencia" class="situacao erro">Erro detectado</p>
+                </div>
+                <div class="linha">
+                    <p id="data">15/07/2024 - 08:00</p>
+                    <p id="rotina">Pendencias SIGISSWEB - PC50</p>
+                    <p id="ocorrencia" class="situacao iniciada">Rotina iniciada</p>
+                </div>
+                <div class="linha">
+                    <p id="data">15/07/2024 - 08:00</p>
+                    <p id="rotina">Download Comprovantes de Pagamento - PC65</p>
+                    <p id="ocorrencia" class="situacao finalizada">Rotina finalizada</p>
+                </div>
             </div>
         </div>
         
-        <div id="painelFiltro" class="filtroHistorico invisible">
-            <button id="bolinhaGeral" class="filtroGeral">●</button>
-            <button id="bolinhaErro" class="filtroErro">●</button>
-            <button id="bolinhaOcioso" class="filtroOcioso">●</button>
-            <button id="bolinhaFinal" class="filtroFinal">●</button>
-        </div>
+        
     </div>
 
     <footer class="rodape">
