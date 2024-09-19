@@ -12,5 +12,16 @@
 
 ## [Acesse meu site pra mais projetos legais](https://wilrocha97.github.io/portfolio/)
 
+
+## Abaixo algúns prints daa versão oficial do TaskWatch
+
+![Executando](https://github.com/WilRocha97/Projeto-Task-Watch/blob/main/Imagens/executando.png)
+![Ocioso](https://github.com/WilRocha97/Projeto-Task-Watch/blob/main/Imagens/ocioso.png)
+![Erro](https://github.com/WilRocha97/Projeto-Task-Watch/blob/main/Imagens/erro.png)
+![Finalizada](https://github.com/WilRocha97/Projeto-Task-Watch/blob/main/Imagens/finalizada.png)
+![Histórico](https://github.com/WilRocha97/Projeto-Task-Watch/blob/main/Imagens/hostórico.png)
+![Histórico filtro](https://github.com/WilRocha97/Projeto-Task-Watch/blob/main/Imagens/hostórico_filtrado.png)
+![Tela de ajuda](https://github.com/WilRocha97/Projeto-Task-Watch/blob/main/Imagens/tela_ajuda.png)
+
 ## Feito por
 ### Willian Rodrigues
