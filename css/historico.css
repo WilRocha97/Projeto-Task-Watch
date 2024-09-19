@@ -28,6 +28,24 @@
     padding: 10px 150px;
     transition: var(--transicao-link);
 }
+.filtroGeral.clicado, .filtroErro.clicado, .filtroOcioso.clicado, .filtroFinal.clicado{
+    scale: 1.5;
+}
+.filtroGeral.clicado {
+    text-shadow: 0 0 6px var(--cor-texto-2)
+}
+.filtroErro.clicado {
+    text-shadow: 0 0 6px var(--cor-erro)
+}
+.filtroOcioso.clicado {
+    text-shadow: 0 0 6px var(--cor-ocioso)
+}
+.filtroFinal.clicado {
+    text-shadow: 0 0 6px var(--cor-final)
+}
+.filtroErro {
+    color: var(--cor-erro); /* Cor da bolinha */
+}
 .filtroGeral, .filtroErro, .filtroOcioso, .filtroFinal{
     color: var(--cor-texto);
     border: none;

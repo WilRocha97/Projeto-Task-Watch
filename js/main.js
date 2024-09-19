@@ -1,12 +1,13 @@
-const encolhe = document.getElementById('encolher')
-const explode = document.getElementById('explodir')
-const dica = document.getElementById('dica')
+const encolhe = document.getElementById('encolher');
+const explode = document.getElementById('explodir');
+const dica = document.getElementById('dica');
 
 const painelFiltro = document.getElementById('painelFiltro');
-const botaoFiltroGeral = document.getElementById('bolinhaGeral')
-const botaoFiltroOciosa = document.getElementById('bolinhaOcioso')
-const botaoFiltroErro = document.getElementById('bolinhaErro')
-const botaoFiltroFinal = document.getElementById('bolinhaFinal')
+const botaoFiltroGeral = document.getElementById('bolinhaGeral');
+const botaoFiltroOciosa = document.getElementById('bolinhaOcioso');
+const botaoFiltroErro = document.getElementById('bolinhaErro');
+const botaoFiltroFinal = document.getElementById('bolinhaFinal');
+const botoesFiltro = document.querySelectorAll('.bFiltro');
 
 const historicoBotao = document.getElementById('historico');
 const historicoTela = document.getElementById('historicoTela');
@@ -16,7 +17,7 @@ var historicoLinha = document.querySelectorAll('.linha');
 var telaLayout = document.getElementById('layoutTela');
 var telaRotinas = document.getElementById('telaRotinas');
 var screenWidth = window.innerWidth;
-var divsRotinas = document.querySelectorAll('#telaRotinas .fundo')
+var divsRotinas = document.querySelectorAll('#telaRotinas .fundo');
 const botoesFechar = document.querySelectorAll('.botaoFechar');
 
 
@@ -51,13 +52,17 @@ function updateClock() {
     else {
         document.getElementById('menuRelogio').classList.remove('invisible')
     }
-}
+};
 // Atualiza o relógio a cada segundo
 setInterval(updateClock, 1000);
 // Atualiza o relógio imediatamente ao carregar a página
 updateClock();
 
 function filtraHistorico(colunaOcorrencias, filtro) {
+    botoesFiltro.forEach(filtro => {
+        filtro.classList.remove('clicado')
+    });
+
     // Percorre todos os elementos selecionados
     historicoLinha = document.querySelectorAll('.linha');
     historicoLinha.forEach((element) => {
@@ -70,7 +75,7 @@ function filtraHistorico(colunaOcorrencias, filtro) {
                 // Adiciona a classe 'collapsed'
                 const parent = element.closest('div'); // Encontra a div pai mais próxima
                 parent.classList.add('collapsed');
-            }
+            };
             // Verifica se o elemento contém a classe 'ocioso'
             if (element.classList.contains(filtro)) {
                 // Adiciona a classe 'collapsed'
@@ -92,7 +97,7 @@ function filtraHistorico(colunaOcorrencias, filtro) {
                         behavior: 'smooth' // Para uma rolagem suave, adicione essa opção
                     });
                 }, 500);
-            }
+            };
         });
     }, 500);
     setTimeout(()=> {
@@ -100,7 +105,7 @@ function filtraHistorico(colunaOcorrencias, filtro) {
             element.classList.remove('invisible2');
         });
     }, 800);
-}
+};
 
 //const cards = document.querySelectorAll('.rectangle')
 //cards.forEach(card => {
@@ -169,29 +174,29 @@ document.body.addEventListener('click', (event) => {
 });
 
 // Minimiza e maximiza todos os cards
-encolhe.addEventListener('click', (e) => {
+encolhe.addEventListener('click', () => {
     const cards = document.querySelectorAll('.rectangle')
     cards.forEach(card => {
         card.classList.add('collapsed');
     })
-})
+});
 
 // Minimiza e maximiza todos os cards
-explode.addEventListener('click', (e) => {
+explode.addEventListener('click', () => {
     const cards = document.querySelectorAll('.rectangle')
     cards.forEach(card => {
         card.classList.remove('collapsed')
     })
-})
+});
 
 // Janela com dicas de como o site funciona
-dica.addEventListener('click', (e) => {
+dica.addEventListener('click', () => {
     const telaDica = document.getElementById('telaDica');
     telaDica.classList.toggle('invisible2');
-})
+});
 
 // Abre e fecha a tela de histórico
-historicoBotao.addEventListener('click', (e)=> {
+historicoBotao.addEventListener('click', ()=> {
     document.querySelectorAll('.bn').forEach(bolinha => {
         bolinha.classList.add('invisible');
     })
@@ -227,12 +232,16 @@ historicoBotao.addEventListener('click', (e)=> {
             });
         }, 500);
     }
-})
+});
 // Adiciona o evento de clique na tela de histórico para evitar a propagação
 mainHistorico.addEventListener('click', (e) => {
     e.stopPropagation();
 });
-botaoFiltroGeral.addEventListener('click', (e)=> {
+botaoFiltroGeral.addEventListener('click', ()=> {
+    botoesFiltro.forEach(filtro => {
+        filtro.classList.remove('clicado')
+    });
+    
     // Seleciona todos os elementos cujo ID comece com 'ocorrencia'
     const ocorrencias = document.querySelectorAll('[id^="ocorrencia"]');
 
@@ -268,24 +277,26 @@ botaoFiltroGeral.addEventListener('click', (e)=> {
             element.classList.remove('invisible2');
         });
     }, 800);
-
-})
-botaoFiltroOciosa.addEventListener('click', (e)=> {
+    botaoFiltroGeral.classList.add('clicado')
+});
+botaoFiltroOciosa.addEventListener('click', ()=> {
     // Seleciona todos os elementos cujo ID comece com 'ocorrencia'
     const ocorrencias = document.querySelectorAll('[id^="ocorrencia"]');
     filtraHistorico(ocorrencias, 'ociosa')
-})
-botaoFiltroErro.addEventListener('click', (e)=> {
+    botaoFiltroOciosa.classList.add('clicado')
+});
+botaoFiltroErro.addEventListener('click', ()=> {
     // Seleciona todos os elementos cujo ID comece com 'ocorrencia'
     const ocorrencias = document.querySelectorAll('[id^="ocorrencia"]');
     filtraHistorico(ocorrencias, 'erro')
-})
-botaoFiltroFinal.addEventListener('click', (e)=> {
+    botaoFiltroErro.classList.add('clicado')
+});
+botaoFiltroFinal.addEventListener('click', ()=> {
     // Seleciona todos os elementos cujo ID comece com 'ocorrencia'
     const ocorrencias = document.querySelectorAll('[id^="ocorrencia"]');
     filtraHistorico(ocorrencias, 'finalizada')
-})
-    
+    botaoFiltroFinal.classList.add('clicado')
+});
 // Adiciona um event listener a cada botão de fechar
 botoesFechar.forEach(botao => {
     botao.addEventListener('click', () => {
