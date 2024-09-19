@@ -192,7 +192,7 @@ body {
     }
 
     .mainHistorico {
-        padding: 5px !important;
+        padding: 5px 0 !important;
     }
     .filtroHistorico{
         justify-content: center !important;
