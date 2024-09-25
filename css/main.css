@@ -219,7 +219,7 @@ body {
 
 @media (min-width: 2500px) {
     .mainHistorico {
-        width: 25% !important;
+        width: 45% !important;
     }
     .layout {
         display: flex !important;
