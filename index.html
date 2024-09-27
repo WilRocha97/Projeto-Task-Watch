@@ -23,11 +23,12 @@
     <header class="cabecalho" >
         <div class="cabecalho_menu menu">
             <div class="menu fundo">
-                <button id="historico" class="cabecalho__menu__botao notifica">
+                <button id="historico" class="cabecalho__menu__botao notifica" title="Histórico de ocorrências das rotinas">
                     <div class="notificacao">
-                        <span id="bolinha-status-error" class="bn bolinhaErro"></span>
-                        <span id="bolinha-status-warning" class="bn bolinhaOcioso"></span>
-                        <span id="bolinha-status-final" class="bn bolinhaFinal"></span>
+                        <span id="bolinha-status-error" class="bn bolinhaErro" title="Nova rotina com erro"></span>
+                        <span id="bolinha-status-warning" class="bn bolinhaOcioso" title="Nova rotina ociosa"></span>
+                        <span id="bolinha-status-final" class="bn bolinhaFinal" title="Nova rotina finalizada"></span>
+                        <span id="bolinha-status-executando" class="bn bolinhaExecutando" title="Nova rotina iniciada"></span>
                     </div>
                     Histórico
                 </button>
@@ -36,10 +37,10 @@
                 <div id="clock"></div>
             </div>
             <div class="menu fundo" >
-                <button id="encolher" class="cabecalho__menu__botao">▼</button>
-                <button id="explodir" class="cabecalho__menu__botao">▲</button>
-                <button id="dica" class="cabecalho__menu__botao">?</button>
-                <button id="toggleDarkMode"><img class="modoImagem" src="assets/moon.png" alt="Modo escuro"></button>
+                <button id="encolher" class="cabecalho__menu__botao" title="Minimizar todos os cartões">▼</button>
+                <button id="explodir" class="cabecalho__menu__botao" title="Maximizar todos os cartões">▲</button>
+                <button id="dica" class="cabecalho__menu__botao" title="Ajuda">?</button>
+                <button id="toggleDarkMode" title="Tema do site"><img class="modoImagem" src="assets/moon.png" alt="Tema do site"></button>
             </div>
             <div id="telaDica" class="menu fundo dicaTela invisible2">
                 <div id="textoDica">Olá, bem vindo ao Task Watch<br><br><br>
@@ -62,7 +63,7 @@
 
     <div id="layoutTela" class="layout">
         <div id="telaRotinas" class="rotinas">
-            <div id="Pendencias_SIGISSWEB_-_PC50" class="fundo rectangle enter status-executando" title="Relatório Faturamento X Compra - PC67">
+            <div id="Pendencias_SIGISSWEB_-_PC50" class="fundo rectangle enter status-executando" title="Relatório Faturamento X Compra - PC67 - Tempo estimado: 5 horas 26 minutos - %12">
                 <!--<div class="shadow invisible2"></div>-->
                 <div id="titulo" class="content title">Relatório Faturamento X Compra - PC67</div>
                 <div id="andamentos" class="content">73 de 589 | 516 restantes</div>
@@ -71,7 +72,7 @@
                 <div id="porcentagem" class="content porcentagem">%12</div>
             </div>
 
-            <div id="Relatório_Faturamento_X_Compra_-_PC67" class="fundo rectangle enter status-executando" title="Pendencias SIGISSWEB - PC50">
+            <div id="Relatório_Faturamento_X_Compra_-_PC67" class="fundo rectangle enter status-executando" title="Pendencias SIGISSWEB - PC50 - Tempo estimado: 1 dia 3 horas 39 minutos - %31">
                 <!--<div class="shadow invisible2"></div>-->
                 <div id="titulo" class="content title">Pendencias SIGISSWEB - PC50</div>
                 <div id="andamentos" class="content">236 de 759 | 523 restantes</div>
@@ -112,10 +113,10 @@
 
         <div id="targetHistorico" class="mainHistorico collapsed">
             <div id="painelFiltro" class="filtroHistorico">
-                <button id="bolinhaGeral" class="bFiltro filtroGeral">●</button>
-                <button id="bolinhaErro" class="bFiltro filtroErro">●</button>
-                <button id="bolinhaOcioso" class="bFiltro filtroOcioso">●</button>
-                <button id="bolinhaFinal" class="bFiltro filtroFinal">●</button>
+                <button id="bolinhaGeral" class="bFiltro filtroGeral" title="Filtro geral">●</button>
+                <button id="bolinhaErro" class="bFiltro filtroErro" title="Filtro 'Erro detectado'">●</button>
+                <button id="bolinhaOcioso" class="bFiltro filtroOcioso" title="Filtro 'A rotina esta ociosa por muito tempo'">●</button>
+                <button id="bolinhaFinal" class="bFiltro filtroFinal" title="Filtro 'Rotina finalizada'">●</button>
             </div>
             <div id="historicoTela" class="telaHistorico fundo">
                 <div class="linha">
