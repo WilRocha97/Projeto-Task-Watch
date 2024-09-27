@@ -165,9 +165,12 @@
     text-shadow: 0 0 5px white;
 }
 
-.rectangle .title {
+.titulo {
+    font-weight: 700;
     font-size: 1em;
-    padding-bottom: 6px;
+    padding: 4px;
+    opacity: 1;
+    margin-bottom: 10px;
 }
 .content {
     font-size: 0.8em;
@@ -185,7 +188,7 @@
     transition: var(--transicao-link);
 }
 
-.title:not(:empty), .content:not(:empty) {
+.content:not(:empty) {
     padding: 4px;
     opacity: 1;
 }
@@ -198,6 +201,11 @@
     opacity: 0;
     scale: 0;
     padding: 0;
+}
+.rectangle.collapsed .titulo {
+    scale: 0;
+    padding: 0;
+    margin-bottom: 0;
 }
 
 .shadow {
