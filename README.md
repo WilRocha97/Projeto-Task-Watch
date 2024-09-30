@@ -15,7 +15,6 @@
 
 ## Abaixo algúns prints daa versão oficial do TaskWatch
 
-![Executando](https://github.com/WilRocha97/Projeto-Task-Watch/blob/main/Imagens/executando.png)
 ![Ocioso](https://github.com/WilRocha97/Projeto-Task-Watch/blob/main/Imagens/ocioso.png)
 ![Erro](https://github.com/WilRocha97/Projeto-Task-Watch/blob/main/Imagens/erro.png)
 ![Finalizada](https://github.com/WilRocha97/Projeto-Task-Watch/blob/main/Imagens/finalizada.png)
