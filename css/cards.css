@@ -157,7 +157,7 @@
 .botaoFechar {
     width: fit-content;
     color: white;
-    font-weight: 700;
+    font-weight: 600;
     text-shadow: 0 0 1px white;
     transition: var(--transicao-link);
 }
@@ -166,7 +166,7 @@
 }
 
 .titulo {
-    font-weight: 700;
+    font-weight: 600;
     font-size: 1em;
     padding: 4px;
     opacity: 1;
@@ -184,7 +184,7 @@
     bottom: -1.8rem;
     right: 0;
     font-size: 7rem;
-    font-weight: bold;
+    font-weight: 600;
     transition: var(--transicao-link);
 }
 
