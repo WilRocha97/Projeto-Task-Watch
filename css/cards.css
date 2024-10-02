@@ -101,7 +101,7 @@
 }
 
 .status-warning {
-    background: linear-gradient(50deg, #aa8b00, #b96402);
+    background: linear-gradient(50deg, #aa8b00, #b95402);
     box-shadow: inset 0 0 15px var(--cor-ocioso-opaca),
                 0 0 10px var(--cor-ocioso-opaca);
     border: var(--borda-card) solid var(--cor-ocioso-opaca);
@@ -120,7 +120,7 @@
 
 .status-error {
     overflow: hidden;
-    background: linear-gradient(50deg, #920000fb, #a7197c);
+    background: linear-gradient(50deg, #920000fb, #a719a7);
     box-shadow: inset 0 0 15px var(--cor-erro-opaca),
                 0 0 10px var(--cor-erro-opaca);
     border: var(--borda-card) solid var(--cor-erro-opaca);
@@ -138,7 +138,7 @@
 }
 
 .status-final {
-    background: linear-gradient(50deg, #00798ffd, #492dc7);
+    background: linear-gradient(50deg, #00798ffd, #682dc7);
     box-shadow: inset 0 0 15px var(--cor-final-opaca),
                 0 0 10px var(--cor-final-opaca);
     border: var(--borda-card) solid var(--cor-final-opaca);
