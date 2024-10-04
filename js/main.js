@@ -176,13 +176,8 @@ document.body.addEventListener('click', (event) => {
 
             const maisInfo = target.querySelector('#resumoResultados');
             const botaoMaisInfo = target.querySelector('.maisInfo')
-            maisInfo.classList.toggle('collapsed')
-            if (botaoMaisInfo.innerHTML.trim() === '▼ Ocorrências') {
-                botaoMaisInfo.innerHTML = '▲ Ocorrências'
-            }
-            else {
-                botaoMaisInfo.innerHTML = '▼ Ocorrências'
-            }
+            maisInfo.classList.add('collapsed')
+            botaoMaisInfo.innerHTML = '▼ Ocorrências'
         }
     }
     else {
