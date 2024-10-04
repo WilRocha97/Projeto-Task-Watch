@@ -19,6 +19,7 @@ var telaRotinas = document.getElementById('telaRotinas');
 var screenWidth = window.innerWidth;
 var divsRotinas = document.querySelectorAll('#telaRotinas .fundo');
 const botoesFechar = document.querySelectorAll('.botaoFechar');
+const botoesMaisInfo = document.querySelectorAll('.maisInfo');
 
 
 function updateClock() {
@@ -163,13 +164,38 @@ document.addEventListener('DOMContentLoaded', function() {
 document.body.addEventListener('click', (event) => {
     // Verifica se o elemento clicado ou algum de seus pais possui a classe 'rectangle'
     let target = event.target;
-    while (target && !target.classList.contains('rectangle')) {
-        target = target.parentElement;
-    }
 
-    // Se um elemento com a classe 'rectangle' foi encontrado, alterna a classe 'collapsed'
-    if (target) {
-        target.classList.toggle('collapsed');
+    if (!target.classList.contains('maisInfo')){
+        while (target && !target.classList.contains('rectangle')) {
+            target = target.parentElement;
+        }
+    
+        // Se um elemento com a classe 'rectangle' foi encontrado, alterna a classe 'collapsed'
+        if (target) {
+            target.classList.toggle('collapsed');
+
+            const maisInfo = target.querySelector('#resumoResultados');
+            const botaoMaisInfo = target.querySelector('.maisInfo')
+            maisInfo.classList.toggle('collapsed')
+            if (botaoMaisInfo.innerHTML.trim() === '▼ Ocorrências') {
+                botaoMaisInfo.innerHTML = '▲ Ocorrências'
+            }
+            else {
+                botaoMaisInfo.innerHTML = '▼ Ocorrências'
+            }
+        }
+    }
+    else {
+        // minimiza a tela de ocorrências dentro do card
+        const divMae = target.closest('.rectangle');
+        const maisInfo = divMae.querySelector('#resumoResultados');
+        maisInfo.classList.toggle('collapsed')
+        if (target.innerHTML.trim() === '▼ Ocorrências') {
+            target.innerHTML = '▲ Ocorrências'
+        }
+        else {
+            target.innerHTML = '▼ Ocorrências'
+        }
     }
 });
 
@@ -177,6 +203,13 @@ document.body.addEventListener('click', (event) => {
 encolhe.addEventListener('click', () => {
     const cards = document.querySelectorAll('.rectangle')
     cards.forEach(card => {
+        card.classList.add('collapsed');
+        const botaoMaisInfo = card.querySelector('.maisInfo')
+        botaoMaisInfo.innerHTML = '▼ Ocorrências'
+    })
+
+    const ocorrenciasInfo = document.querySelectorAll('.resumoResultados')
+    ocorrenciasInfo.forEach(card => {
         card.classList.add('collapsed');
     })
 });
@@ -186,6 +219,12 @@ explode.addEventListener('click', () => {
     const cards = document.querySelectorAll('.rectangle')
     cards.forEach(card => {
         card.classList.remove('collapsed')
+        const botaoMaisInfo = card.querySelector('.maisInfo')
+        botaoMaisInfo.innerHTML = '▲ Ocorrências'
+    })
+    const ocorrenciasInfo = document.querySelectorAll('.resumoResultados')
+    ocorrenciasInfo.forEach(card => {
+        card.classList.remove('collapsed');
     })
 });
 

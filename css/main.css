@@ -118,6 +118,12 @@ body {
     box-shadow: 0 0 5px var(--sombra);
     backdrop-filter: blur(var(--blur));
 }
+.fundo2 {
+    background: #a8a8a82d;
+    border-radius: 10px;
+    box-shadow: 0 0 5px var(--sombra);
+    backdrop-filter: blur(var(--blur));
+}
 
 
 /*------------------------------------------------------------------------------------------------*/
