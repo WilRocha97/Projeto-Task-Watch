@@ -45,7 +45,7 @@
     box-shadow: 0 0 10px gray !important;
 }
 .rotinas {
-    padding: 115px 50px 90px 50px;
+    padding: 90px 12px 90px 12px;
     display: flex;
     justify-content: center;
     align-items: baseline;
@@ -175,7 +175,7 @@
     max-width: 500px;
     max-height: 500px;
     text-shadow: 0 0 1px white;
-    transition: padding var(--transicao-link), max-width var(--transicao-link), max-height var(--transicao-link);
+    transition: padding var(--transicao-link), max-width var(--transicao-link), max-height var(--transicao-link), text-shadow var(--transicao-link);
 }
 .maisInfo:hover {
     text-shadow: 0 0 5px white;
@@ -183,16 +183,18 @@
 .resumoResultados {
     opacity: 1;
     padding: 10px;
-    transition: opacity var(--transicao-link), padding var(--transicao-link);
+    max-height: 1000px;
+    transition: opacity var(--transicao-link), padding var(--transicao-link), max-height var(--transicao-link);
 }
 .resumoResultados.collapsed {
     opacity: 0;
     padding: 0;
+    max-height: 0;
 }
 .resumoResultados.collapsed .content{
     opacity: 0;
     padding: 0;
-    height: 0;
+    max-height: 0;
 }
 .rectangle.collapsed .maisInfo{ 
     scale: 0;
@@ -214,7 +216,8 @@
     padding: 0;
     opacity: 0;
     max-width: 300px;
-    transition: padding var(--transicao-link), opacity var(--transicao-link), max-width var(--transicao-link);
+    max-height: 200px;
+    transition: padding var(--transicao-link), opacity var(--transicao-link), max-width var(--transicao-link), max-height var(--transicao-link);
 }
 #media:not(:empty) {
     margin-top: 10px;
@@ -242,6 +245,7 @@
     opacity: 0;
     scale: 0;
     padding: 0;
+    max-height: 0;
 }
 .rectangle.collapsed .titulo {
     scale: 0;
