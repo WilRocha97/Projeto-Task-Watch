@@ -51,7 +51,7 @@
     align-items: baseline;
     height: 100%;
     flex-wrap: wrap;
-    transition: var(--transicao-link);
+    transition: height var(--transicao-link);
 }
 .rectangle {
     color: white;
@@ -119,7 +119,6 @@
 }
 
 .status-error {
-    overflow: hidden;
     background: linear-gradient(50deg, #920000fb, #a719a7);
     box-shadow: inset 0 0 15px var(--cor-erro-opaca),
                 0 0 10px var(--cor-erro-opaca);
@@ -173,8 +172,10 @@
     color: white;
     font-size: 0.8rem;
     font-weight: 600;
+    max-width: 500px;
+    max-height: 500px;
     text-shadow: 0 0 1px white;
-    transition: var(--transicao-link);
+    transition: padding var(--transicao-link), max-width var(--transicao-link), max-height var(--transicao-link);
 }
 .maisInfo:hover {
     text-shadow: 0 0 5px white;
@@ -182,13 +183,11 @@
 .resumoResultados {
     opacity: 1;
     padding: 10px;
-    margin-bottom: 10px;
-    transition: var(--transicao-link);
+    transition: opacity var(--transicao-link), padding var(--transicao-link);
 }
 .resumoResultados.collapsed {
     opacity: 0;
     padding: 0;
-    margin-bottom: 0;
 }
 .resumoResultados.collapsed .content{
     opacity: 0;
@@ -198,8 +197,8 @@
 .rectangle.collapsed .maisInfo{ 
     scale: 0;
     margin: 0;
-    width: 0;
-    height: 0;
+    max-width: 0;
+    max-height: 0;
     padding: 0;
 }
 
@@ -215,7 +214,10 @@
     padding: 0;
     opacity: 0;
     max-width: 300px;
-    transition: opacity var(--transicao-link), padding var(--transicao-link);
+    transition: padding var(--transicao-link), opacity var(--transicao-link), max-width var(--transicao-link);
+}
+#media:not(:empty) {
+    margin-top: 10px;
 }
 .porcentagem {
     z-index: -1;
@@ -241,10 +243,13 @@
     scale: 0;
     padding: 0;
 }
-.rectangle.collapsed .titulo{
+.rectangle.collapsed .titulo {
     scale: 0;
     padding: 0;
     margin-bottom: 0;
+}
+.rectangle.collapsed #media {
+    margin-top: 0;
 }
 
 .shadow {
