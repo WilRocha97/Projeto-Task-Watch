@@ -127,6 +127,13 @@ function filtraHistorico(colunaOcorrencias, filtro) {
 //    });
 //})
 
+const cards = document.querySelectorAll('.rectangle')
+cards.forEach((card, index) => {
+    setTimeout(()=> {
+        card.classList.add('enter');
+    }, 100 * index);
+});
+
 
 document.addEventListener('DOMContentLoaded', function() {
     var container = document.getElementById('telaRotinas');
@@ -158,7 +165,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
-
 
 // Adiciona um ouvinte de eventos ao documento para capturar cliques
 document.body.addEventListener('click', (event) => {
@@ -197,29 +203,37 @@ document.body.addEventListener('click', (event) => {
 // Minimiza e maximiza todos os cards
 encolhe.addEventListener('click', () => {
     const cards = document.querySelectorAll('.rectangle')
-    cards.forEach(card => {
-        card.classList.add('collapsed');
-        const botaoMaisInfo = card.querySelector('.maisInfo')
-        botaoMaisInfo.innerHTML = '▼ Ocorrências'
+    
+    cards.forEach((card, index) => {
+        setTimeout(()=> {
+            card.classList.add('collapsed');
+            const botaoMaisInfo = card.querySelector('.maisInfo')
+            botaoMaisInfo.innerHTML = '▼ Ocorrências'
+        }, 100 * index);
     })
-
+    
     const ocorrenciasInfo = document.querySelectorAll('.resumoResultados')
-    ocorrenciasInfo.forEach(card => {
-        card.classList.add('collapsed');
+    ocorrenciasInfo.forEach((card, index) => {
+        setTimeout(()=> {
+            card.classList.add('collapsed');
+        }, 100 * index);
     })
+    
 });
 
 // Minimiza e maximiza todos os cards
 explode.addEventListener('click', () => {
     const cards = document.querySelectorAll('.rectangle')
-    cards.forEach(card => {
-        card.classList.remove('collapsed')
-        const botaoMaisInfo = card.querySelector('.maisInfo')
-        botaoMaisInfo.innerHTML = '▲ Ocorrências'
-    })
-    const ocorrenciasInfo = document.querySelectorAll('.resumoResultados')
-    ocorrenciasInfo.forEach(card => {
-        card.classList.remove('collapsed');
+    cards.forEach((card, index) => {
+        setTimeout(()=> {
+            card.classList.remove('collapsed')
+            const botaoMaisInfo = card.querySelector('.maisInfo')
+            botaoMaisInfo.innerHTML = '▲ Ocorrências'
+
+            if (!botaoMaisInfo.classList.contains('invisible2')) {
+                card.querySelector('.resumoResultados').classList.remove('collapsed');
+            }
+        }, 100 * index);
     })
 });
 

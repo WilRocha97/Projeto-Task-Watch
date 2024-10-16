@@ -54,6 +54,7 @@
     transition: height var(--transicao-link);
 }
 .rectangle {
+    background: black;
     color: white;
     box-shadow: none;
     cursor: pointer;
