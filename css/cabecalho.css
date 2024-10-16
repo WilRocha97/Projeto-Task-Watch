@@ -9,7 +9,7 @@
 .menu {
     display: flex;
     justify-content: center;
-    padding: 15px 25px;
+    padding: 9px 12px;
     font-size: 0.9em;
     gap: 10px;
 }
@@ -32,6 +32,7 @@
     align-self: center;
 }
 .relogio {
+    padding: 9px 18px !important;
     scale: 1;
     transition: var(--transicao-link);
 }

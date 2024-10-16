@@ -190,6 +190,9 @@ body {
     #clock {
         font-size: 0 !important;
     }
+    .dicaTela {
+        max-width: 90% !important;
+    }
     .rotinas {
         padding: 125px 0 90px 0 !important;
     }
