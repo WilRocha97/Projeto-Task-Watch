@@ -95,7 +95,7 @@
     padding: 0 1% !important;
 }
 .linha:hover {
-    background: var(--cor-vidro-2);
+    background: var(--sombra-2);
 }
 .situacao {
     text-align: right;
