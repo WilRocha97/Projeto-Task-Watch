@@ -184,12 +184,14 @@
 .resumoResultados {
     opacity: 1;
     padding: 10px;
+    margin-bottom: 10px;
     max-height: 1000px;
-    transition: opacity var(--transicao-link), padding var(--transicao-link), max-height var(--transicao-link);
+    transition: opacity var(--transicao-link), margin-bottom var(--transicao-link), padding var(--transicao-link), max-height var(--transicao-link);
 }
 .resumoResultados.collapsed {
     opacity: 0;
     padding: 0;
+    margin-bottom: 0;
     max-height: 0;
 }
 .resumoResultados.collapsed .content{
@@ -219,9 +221,6 @@
     max-width: 300px;
     max-height: 200px;
     transition: padding var(--transicao-link), opacity var(--transicao-link), max-width var(--transicao-link), max-height var(--transicao-link);
-}
-#media:not(:empty) {
-    margin-top: 10px;
 }
 .porcentagem {
     z-index: -1;

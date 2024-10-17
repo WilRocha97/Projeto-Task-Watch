@@ -37,7 +37,12 @@
     transition: var(--transicao-link);
 }
 ::-webkit-scrollbar-thumb:hover {
-    background-color: #757575; /* Cor da barra de rolagem ao passar o mouse */
+    background: var(--cor-destaque);
+    box-shadow: 0 0 5px var(--cor-destaque);
+
+}
+::-webkit-scrollbar-button {
+    border: none;
 }
 
 body {
@@ -194,7 +199,7 @@ body {
         max-width: 90% !important;
     }
     .rotinas {
-        padding: 125px 0 90px 0 !important;
+        padding: 50px 0 90px 0 !important;
     }
     .rectangle.collapsed {
         padding: 10px !important;
@@ -206,7 +211,7 @@ body {
     .filtroHistorico{
         justify-content: center !important;
         gap: 25px !important;
-        padding: 10px !important;
+        padding: 60px 0 10px !important;
     }
     .filtroGeral, .filtroErro, .filtroOcioso, .filtroFinal{
         font-size: x-large !important;
