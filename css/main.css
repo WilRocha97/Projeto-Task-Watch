@@ -4,9 +4,6 @@
 @import url('historico.css');
 
 :root {
-    --cor-texto-dark: #000000;
-    --cor-texto-light: #ffffff;
-    --cor-destaque: #ff0040;
     --tamanho-titulo: 2.4rem;
     --tamanho-texto: 1.4rem;
     --tamanho-texto-2: 0.9rem;
@@ -21,6 +18,7 @@
     --cor-final-opaca: #003d66;
     --blur: 4px;
     --borda-card: 3px;
+    --sombra-card: #27272727;
 }
 
 /* Estilizando a barra de rolagem */
@@ -131,7 +129,7 @@ body {
 .fundo2 {
     background: #a8a8a82d;
     border-radius: 10px;
-    box-shadow: var(--direcao-sombra) var(--direcao-sombra) 9px var(--sombra);
+    box-shadow: 0 0 5px var(--sombra-card);
     backdrop-filter: blur(var(--blur));
 }
 
