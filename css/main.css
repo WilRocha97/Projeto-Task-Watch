@@ -54,28 +54,29 @@ body {
 }
 
 .dark {
+    --direcao-sombra: -3px;
     --cor-destaque: #ffffff;
-    --cor-vidro: #252525c7;
-    --cor-vidro-2: #252525c7;
+    --cor-vidro: #0f0f0f80;
+    --cor-vidro-2: #0f0f0f80;
     --cor-texto: #ffffff;
     --cor-texto-2: #000000;
-    --cor-fundo: #000000;
-    --sombra: #9e9e9e21;
+    --cor-fundo: #131313;
+    --sombra: #272727dc;
     --sombra-2: #3d3d3dc7;
-    background-color: #000000;
+    background-color: #131313;
     color: var(--cor-texto);
-    
 }
 .light {
+    --direcao-sombra: 3px;
     --cor-destaque: #000000;
-    --cor-vidro: #e6e3e3ad;
-    --cor-vidro-2: #e6e3e3ad;
+    --cor-vidro: #e9e9e9a1;
+    --cor-vidro-2: #e9e9e9a1;
     --cor-texto: #000000;
     --cor-texto-2: #ffffff;
-    --cor-fundo: #a5a5a5;
-    --sombra: #9e9e9e21;
+    --cor-fundo: #e6e6e6;
+    --sombra: #c7c7c7de;
     --sombra-2: #9b9b9bad;
-    background-color: #a5a5a5;
+    background-color: #e6e6e6;
     color: var(--cor-texto);
 }
 
@@ -124,13 +125,13 @@ body {
 .fundo {
     background: linear-gradient(-50deg, var(--cor-vidro-2), var(--cor-vidro), var(--cor-vidro-2));
     border-radius: 20px;
-    box-shadow: 0 0 5px var(--sombra);
+    box-shadow: var(--direcao-sombra) var(--direcao-sombra) 9px var(--sombra);
     backdrop-filter: blur(var(--blur));
 }
 .fundo2 {
     background: #a8a8a82d;
     border-radius: 10px;
-    box-shadow: 0 0 5px var(--sombra);
+    box-shadow: var(--direcao-sombra) var(--direcao-sombra) 9px var(--sombra);
     backdrop-filter: blur(var(--blur));
 }
 
