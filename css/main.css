@@ -54,7 +54,7 @@ body {
 .dark {
     --direcao-sombra: -3px;
     --cor-destaque: #ffffff;
-    --cor-vidro: #0f0f0f80;
+    --cor-vidro: #22222280;
     --cor-vidro-2: #0f0f0f80;
     --cor-texto: #ffffff;
     --cor-texto-2: #000000;
@@ -68,7 +68,7 @@ body {
     --direcao-sombra: 3px;
     --cor-destaque: #000000;
     --cor-vidro: #e9e9e9a1;
-    --cor-vidro-2: #e9e9e9a1;
+    --cor-vidro-2: #d1d1d1a1;
     --cor-texto: #000000;
     --cor-texto-2: #ffffff;
     --cor-fundo: #e6e6e6;
@@ -121,7 +121,7 @@ body {
 }
 
 .fundo {
-    background: linear-gradient(-50deg, var(--cor-vidro-2), var(--cor-vidro), var(--cor-vidro-2));
+    background: linear-gradient(-50deg, var(--cor-vidro-2), var(--cor-vidro));
     border-radius: 20px;
     box-shadow: var(--direcao-sombra) var(--direcao-sombra) 9px var(--sombra);
     backdrop-filter: blur(var(--blur));
