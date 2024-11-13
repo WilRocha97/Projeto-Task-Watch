@@ -44,6 +44,7 @@
 }
 
 body {
+    line-height: 15px;
     font-family: "Rubik", sans-serif;
     font-weight: 400;
     font-size: 0.9em;
