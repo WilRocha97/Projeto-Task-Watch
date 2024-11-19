@@ -1,15 +1,16 @@
 .cabecalho {
+    background: linear-gradient(-50deg, var(--cor-vidro-2), var(--cor-vidro));
+    box-shadow: var(--direcao-sombra-2) var(--direcao-sombra-2) 9px var(--sombra-escura);
     display: flex;
+    width: 100vw;
     justify-content: center;
-}
-.cabecalho_menu {
     z-index: 1;
     position: fixed;
 }
 .menu {
     display: flex;
     justify-content: center;
-    padding: 9px 12px;
+    padding: 9px 10px;
     font-size: 0.9em;
     gap: 10px;
 }
@@ -34,7 +35,7 @@
 .relogio {
     padding: 9px 18px !important;
     scale: 1;
-    transition: var(--transicao-link);
+    transition: scale var(--transicao-link), padding var(--transicao-link);
 }
 .notifica {
     align-self: center;

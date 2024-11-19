@@ -76,7 +76,8 @@
     padding: 10px 25px;
     margin: 5px;
     font-size: 0.8em;
-    transition: var(--transicao-link);
+    transition: width var(--transicao-link), max-height var(--transicao-link), padding var(--transicao-link), margin var(--transicao-link), 
+                font-size var(--transicao-link);
 }
 .linha{
     align-content: center;
