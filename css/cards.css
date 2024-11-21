@@ -274,3 +274,12 @@
     pointer-events: none; /* Para garantir que o ponto de luz não afete a interação com outros elementos */
     transform: translate(-40%, -20%); /* Para centralizar o ponto em relação ao cursor */
 }
+
+@media (max-width: 720px) {
+    .rotinas {
+        padding: 80px 0 90px 0;
+    }
+    .rectangle.collapsed {
+        padding: 10px;
+    }
+}

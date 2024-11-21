@@ -5,19 +5,16 @@
     opacity: 1;
     scale: 1;
     width: 100%;
-    height: 650px; /* Defina a altura máxima desejada */
-    display: flex;
-    align-self: center;
+    max-height: 100vh; /* Defina a altura máxima desejada */    align-self: center;
     flex-direction: column;
+    align-self: center;
     transition: var(--transicao-link);
 }
 .mainHistorico.collapsed {
-    scale: 0 !important;
-    width: 0 !important;
-    opacity: 0 !important;
-    height: 0 !important; /* Altura desejada quando colapsado */
-    padding: 0 !important;
-    margin: 0 !important;
+    opacity: 0;
+    max-height: 0;
+    padding: 0;
+    margin: 0;
 }
 .filtroHistorico{
     display: flex;
@@ -115,4 +112,34 @@
 .finalizada {
     color: var(--cor-final);
     font-weight: bold;
+}
+
+
+@media (max-width: 720px) {
+    .mainHistorico {
+        padding: 5px 0;
+    }
+    .filtroHistorico{
+        justify-content: center;
+        gap: 25px;
+        padding: 60px 0 10px;
+    }
+    .filtroGeral, .filtroErro, .filtroOcioso, .filtroFinal{
+        font-size: x-large;
+    }
+    .telaHistorico {
+        padding: 5px;
+    }
+    .linha{
+        align-self: center;
+        font-size: smaller;
+        padding: 1rem 0.6rem;
+        grid-template-columns: 1.5fr 3fr 2fr;
+    }
+}
+
+@media (min-width: 2500px) {
+    .mainHistorico {
+        width: 45%;
+    }
 }
