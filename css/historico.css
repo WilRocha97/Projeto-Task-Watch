@@ -142,4 +142,10 @@
     .mainHistorico {
         width: 45%;
     }
+    .mainHistorico.collapsed {
+        opacity: 0;
+        width: 0;
+        padding: 0;
+        margin: 0;
+    }
 }
