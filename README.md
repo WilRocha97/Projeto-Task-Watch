@@ -15,9 +15,7 @@
 
 ## Abaixo algúns prints da versão oficial do TaskWatch
 
-![Ocioso](https://github.com/WilRocha97/Projeto-Task-Watch/blob/main/Imagens/ocioso.png)
-![Erro](https://github.com/WilRocha97/Projeto-Task-Watch/blob/main/Imagens/erro.png)
-![Finalizada](https://github.com/WilRocha97/Projeto-Task-Watch/blob/main/Imagens/finalizada.png)
+![Cartões](https://github.com/WilRocha97/Projeto-Task-Watch/blob/main/Imagens/cartões.png)
 ![Histórico](https://github.com/WilRocha97/Projeto-Task-Watch/blob/main/Imagens/hostórico.png)
 ![Histórico filtro](https://github.com/WilRocha97/Projeto-Task-Watch/blob/main/Imagens/hostórico_filtrado.png)
 ![Tela de ajuda](https://github.com/WilRocha97/Projeto-Task-Watch/blob/main/Imagens/tela_ajuda.png)
