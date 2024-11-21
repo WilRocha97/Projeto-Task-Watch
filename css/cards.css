@@ -74,8 +74,11 @@
     scale: 1;
 }
 .rectangle.out {
-    font-size: 0;
-    scale: 0;
+    border: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    opacity: 0 !important;
+    scale: 0 !important;
 }
 .rectangle:hover{
     text-shadow: 0 0 10px black;
