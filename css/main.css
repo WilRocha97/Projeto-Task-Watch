@@ -22,26 +22,21 @@
 }
 
 /* Estilizando a barra de rolagem */
-::-webkit-scrollbar {
+body::-webkit-scrollbar {
     width: 6px; /* Largura da barra de rolagem */
 }
-::-webkit-scrollbar-track {
-    background: transparent; /* Cor do fundo da barra de rolagem */
+body::-webkit-scrollbar-track {
+    background: var(--cor-vidro-2); /* Cor do fundo da barra de rolagem */
 }
-::-webkit-scrollbar-thumb {
-    background-color: #757575; /* Cor da barra de rolagem */
+body::-webkit-scrollbar-thumb {
+    background-color: #818181; /* Cor da barra de rolagem */
     border-radius: 6px; /* Arredondamento das bordas */
     border: none; /* Espaçamento entre a barra e o conteúdo */
     transition: var(--transicao-link);
 }
-::-webkit-scrollbar-thumb:hover {
+body::-webkit-scrollbar-thumb:hover {
     background: var(--cor-destaque);
-    box-shadow: 0 0 5px var(--cor-destaque);
-
-}
-::-webkit-scrollbar-button {
     border: none;
-    background: none;
 }
 
 body {

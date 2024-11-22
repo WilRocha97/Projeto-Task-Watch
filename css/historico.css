@@ -1,3 +1,25 @@
+/* Estilizando a barra de rolagem */
+.telaHistorico::-webkit-scrollbar {
+    width: 6px; /* Largura da barra de rolagem */
+}
+.telaHistorico::-webkit-scrollbar-track {
+    background: transparent; /* Cor do fundo da barra de rolagem */
+}
+.telaHistorico::-webkit-scrollbar-thumb {
+    background-color: #818181; /* Cor da barra de rolagem */
+    border-radius: 6px; /* Arredondamento das bordas */
+    border: none; /* Espaçamento entre a barra e o conteúdo */
+    transition: var(--transicao-link);
+}
+.telaHistorico::-webkit-scrollbar-thumb:hover {
+    background: var(--cor-destaque);
+    border: none;
+}
+
+.telaHistorico::-webkit-scrollbar-button {
+    border: none;
+}
+
 .mainHistorico {
     padding: 115px 0 90px 0;
     display: flex;

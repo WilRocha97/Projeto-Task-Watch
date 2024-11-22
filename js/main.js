@@ -1,6 +1,9 @@
 const encolhe = document.getElementById('encolher');
 const explode = document.getElementById('explodir');
 const dica = document.getElementById('dica');
+const telaDica = document.getElementById('telaDica');
+const galeria = document.getElementById('galeria');
+const telaGaleria = document.getElementById('telaGaleria');
 
 const painelFiltro = document.getElementById('painelFiltro');
 const botaoFiltroGeral = document.getElementById('bolinhaGeral');
@@ -220,7 +223,6 @@ encolhe.addEventListener('click', () => {
     })
     
 });
-
 // Minimiza e maximiza todos os cards
 explode.addEventListener('click', () => {
     const cards = document.querySelectorAll('.rectangle')
@@ -239,8 +241,51 @@ explode.addEventListener('click', () => {
 
 // Janela com dicas de como o site funciona
 dica.addEventListener('click', () => {
-    const telaDica = document.getElementById('telaDica');
-    telaDica.classList.toggle('invisible2');
+    if (telaDica.classList.contains('invisible2')) {
+        telaDica.classList.remove('invisible2');
+    }
+    else {
+        telaDica.classList.add('invisible2');
+    }
+    if (!telaGaleria.classList.contains('invisible2')) {
+        telaGaleria.classList.add('invisible2');
+    }
+    
+});
+
+// Janela com imagens do TaskWatch oficial
+galeria.addEventListener('click', () => {
+    if (telaGaleria.classList.contains('invisible2')) {
+        telaGaleria.classList.remove('invisible2');
+    }
+    else {
+        telaGaleria.classList.add('invisible2');
+    }
+    if (!telaDica.classList.contains('invisible2')) {
+        telaDica.classList.add('invisible2');
+    }
+});
+// Modal para exibir as imagens em tela cheia
+document.querySelectorAll('.imagemGaleria').forEach(image => {
+    image.addEventListener('click', function () {
+        const modal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        const caption = document.getElementById('caption');
+
+        modal.style.display = 'block';
+        modalImage.src = this.src;
+        caption.innerText = this.alt;
+    });
+});
+document.querySelector('.close').addEventListener('click', function () {
+    const modal = document.getElementById('imageModal');
+    modal.style.display = 'none';
+});
+window.addEventListener('click', function (event) {
+    const modal = document.getElementById('imageModal');
+    if (event.target === modal) {
+        modal.style.display = 'none';
+    }
 });
 
 // Abre e fecha a tela de histórico

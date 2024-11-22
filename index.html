@@ -36,26 +36,48 @@
                 <button id="encolher" class="cabecalho__menu__botao" title="Minimizar todos os cartões">▼</button>
                 <button id="explodir" class="cabecalho__menu__botao" title="Maximizar todos os cartões">▲</button>
                 <button id="dica" class="cabecalho__menu__botao" title="Ajuda">?</button>
-                <button id="toggleDarkMode" title="Tema do site"><img class="modoImagem" src="assets/moon.png" alt="Tema do site"></button>
+                <button id="galeria" class="cabecalho__menu__botao" title="Galeria do TaskWatch oficial">Galeria</button>
+                <button id="toggleDarkMode" title="Tema do site"><img src="assets/moon.png" alt="Tema do site"></button>
             </div>
         </div>
         <div id="telaDica" class="menu fundo dicaTela invisible2">
-            <div id="textoDica" class="ClassTextoDica">Olá, esta é a versão estática do Task Watch, Os dados informados aqui são fictícios e servem apenas como exemplo.<br><br><br>
+            <div class="scroll dicaContainer">
+                <div id="textoDica" class="ClassTextoDica">Olá, esta é a versão estática do Task Watch, Os dados informados aqui são fictícios e servem apenas como exemplo.<br><br><br>
 
-                Aqui estam algumas informações sobre como o site funciona :)<br><br>
-                
-                <br><br>A cada rotina iniciada, um novo cartão irá aparecer na tela com as informações dela.
-                <br><br>Se a rotina ficar ociosa por muito tempo, o cartão irá pulsar em amarelo.
-                <br><br>Se der algúm erro durante a execução da rotina, o cartão irá pulsar em vermelho.
-                <br><br>Quando uma fotina finalizar, o cartão irá permanecer na tela até que você clique em "Fechar" e irá pulsar lentamente em azul.
-                <br><br>O botão "▼" minimiza todos os cartões e o "▲" maximiza todos de uma só vês, e você pode clicar diretamente em cada cartão para minimizar ou maximiza-los individualmente.
-                <br><br>Voçê pode arastar os cartões para organiza-los da forma que preferir, basta segurar o cartão que você deseja mover até que ele fique cinza.
-                <br><br>A tela de histórico, que é exibida ao clicar no botão "Histórico", pode ser filtrada por ocorrência, basta clicar no ponto colorido com a cor correspondente ao evento.
-                <br>Eles ficam logo acima da janela de histórico do lado direito da tela.
+                    Aqui estam algumas informações sobre como o site funciona :)<br><br>
+                    
+                    <br><br>A cada rotina iniciada, um novo cartão irá aparecer na tela com as informações dela.
+                    <br><br>Se a rotina ficar ociosa por muito tempo, o cartão irá pulsar em amarelo.
+                    <br><br>Se der algúm erro durante a execução da rotina, o cartão irá pulsar em vermelho.
+                    <br><br>Quando uma fotina finalizar, o cartão irá permanecer na tela até que você clique em "Fechar" e irá pulsar lentamente em azul.
+                    <br><br>O botão "▼" minimiza todos os cartões e o "▲" maximiza todos de uma só vês, e você pode clicar diretamente em cada cartão para minimizar ou maximiza-los individualmente.
+                    <br><br>Voçê pode arastar os cartões para organiza-los da forma que preferir, basta segurar o cartão que você deseja mover até que ele fique cinza.
+                    <br><br>A tela de histórico, que é exibida ao clicar no botão "Histórico", pode ser filtrada por ocorrência, basta clicar no ponto colorido com a cor correspondente ao evento.
+                    <br>Eles ficam logo acima da janela de histórico do lado direito da tela.
+                </div>
+            </div>
+        </div>
+        <div id="telaGaleria" class="menu fundo galeriaTela invisible2">
+            <div class="scroll galeriaContainer">
+                <div id="textoGaleria" class="ClassTextoGaleria">Aqui estão algumas imagens do TaskWatch oficial ;)<br><br><br>
+                </div>
+                <div class="imagens">
+                <img class="imagemGaleria" src="Imagens/cartões.png" alt="Visão geral dos catões">
+                <img class="imagemGaleria" src="Imagens/hostórico.png" alt="Tela de histórico">
+                <img class="imagemGaleria" src="Imagens/hostórico_filtrado.png" alt="Tela de histórico com filtro aplicado">
+                <img class="imagemGaleria" src="Imagens/tela_ajuda.png" alt="Tela de ajuda">
+                </div>
             </div>
         </div>
         
     </header>
+
+    <!-- Modal para exibir a imagem em tela cheia -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="caption"></div>
+    </div>
 
     <div id="layoutTela" class="layout">
         <div id="telaRotinas" class="rotinas">
