@@ -152,17 +152,19 @@
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
     background-color: rgba(0, 0, 0, 0.9);
 }
 
 .modal-content {
-    display: block;
     width: 90%;
     height: auto;
     border-radius: 20px;
     display: flex;
     justify-content: center;
+    
+    right: -30px;
+    margin: 30px;
+    position: relative;
 }
 
 .modal-content, .close {
@@ -213,7 +215,8 @@
         width: 100%;
     }
     .modal-content {
-        margin-left: 17px;
-        margin-top: 50%;
+        right: 20px;
+        margin: 50% 0 0 0;
+        position: fixed;
     }
 }
