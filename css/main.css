@@ -34,6 +34,9 @@ body::-webkit-scrollbar-thumb:hover {
     background: var(--cor-destaque);
     border: none;
 }
+body::-webkit-scrollbar-button {
+    background: var(--cor-vidro-2);
+}
 
 body {
     background: linear-gradient(-50deg, var(--cor-vidro-2), var(--cor-vidro));
