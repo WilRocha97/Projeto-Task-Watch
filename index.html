@@ -49,7 +49,8 @@
                     <br><br>A cada rotina iniciada, um novo cartão irá aparecer na tela com as informações dela.
                     <br><br>Se a rotina ficar ociosa por muito tempo, o cartão irá pulsar em amarelo.
                     <br><br>Se der algúm erro durante a execução da rotina, o cartão irá pulsar em vermelho.
-                    <br><br>Quando uma fotina finalizar, o cartão irá permanecer na tela até que você clique em "Fechar" e irá pulsar lentamente em azul.
+                    <br><br>Quando uma rotina finalizar, o cartão irá permanecer na tela até que você clique em "⨉" (Fechar cartão) e irá pulsar lentamente em azul.
+                    <br><br>Todos os cartões podem ser fechados a qualquer momento, porém, os que ainda estão em execução, voltarão para a tela.
                     <br><br>O botão "▼" minimiza todos os cartões e o "▲" maximiza todos de uma só vês, e você pode clicar diretamente em cada cartão para minimizar ou maximiza-los individualmente.
                     <br><br>Voçê pode arastar os cartões para organiza-los da forma que preferir, basta segurar o cartão que você deseja mover até que ele fique cinza.
                     <br><br>A tela de histórico, que é exibida ao clicar no botão "Histórico", pode ser filtrada por ocorrência, basta clicar no ponto colorido com a cor correspondente ao evento.
@@ -81,9 +82,12 @@
 
     <div id="layoutTela" class="layout">
         <div id="telaRotinas" class="rotinas">
-            <div id="Pendencias_SIGISSWEB_-_PC50" class="fundo rectangle status-executando" title="Relatório Faturamento X Compra - PC67 - Tempo estimado: 5 horas 26 minutos - %12">
+            <div id="Relatório_Faturamento_X_Compra_-_PC67" class="fundo rectangle status-executando" title="Relatório Faturamento X Compra - PC67 - Tempo estimado: 5 horas 26 minutos - %12">
                 <!--<div class="shadow invisible2"></div>-->
-                <div id="titulo" class="titulo">Relatório Faturamento X Compra - PC67</div>
+                <div class="cabecalhoCard">
+                    <div id="titulo" class="titulo">Relatório Faturamento X Compra - PC67</div> 
+                    <div class="content botaoFechar" title="Fechar cartão">⨉</div>
+                </div>
                 <div id="andamentos" class="content">73 de 589 | 516 restantes</div>
                 <div id="maisInfo" class="maisInfo">▼ Ocorrências</div>
                 <div id="resumoResultados" class="resumoResultados fundo2 collapsed">
@@ -99,9 +103,12 @@
                 <div id="porcentagem" class="content porcentagem">%12</div>
             </div>
 
-            <div id="Relatório_Faturamento_X_Compra_-_PC67" class="fundo rectangle status-executando" title="Pendencias SIGISSWEB - PC50 - Tempo estimado: 1 dia 3 horas 39 minutos - %31">
+            <div id="Pendencias_SIGISSWEB_-_PC50" class="fundo rectangle status-executando" title="Pendencias SIGISSWEB - PC50 - Tempo estimado: 1 dia 3 horas 39 minutos - %31">
                 <!--<div class="shadow invisible2"></div>-->
-                <div id="titulo" class="titulo">Pendencias SIGISSWEB - PC50</div>
+                <div class="cabecalhoCard">
+                    <div id="titulo" class="titulo">Pendencias SIGISSWEB - PC50</div> 
+                    <div class="content botaoFechar" title="Fechar cartão">⨉</div>
+                </div>
                 <div id="andamentos" class="content">236 de 759 | 523 restantes</div>
                 <div id="maisInfo" class="maisInfo">▼ Ocorrências</div>
                 <div id="resumoResultados" class="resumoResultados fundo2 collapsed">
@@ -117,7 +124,10 @@
 
             <div id="CND_Receita_Federal_CPF_-_PC14" class="fundo rectangle status-warning" title="CND Receita Federal CPF - PC14">
                 <!--<div class="shadow invisible2"></div>-->
-                <div id="titulo" class="titulo">CND Receita Federal CPF - PC14</div>
+                <div class="cabecalhoCard">
+                    <div id="titulo" class="titulo">CND Receita Federal CPF - PC14</div> 
+                    <div class="content botaoFechar">⨉</div>
+                </div>
                 <div id="andamentos" class="content">432 de 589 | 157 restantes</div>
                 <div id="maisInfo" class="maisInfo">▼ Ocorrências</div>
                 <div id="resumoResultados" class="resumoResultados fundo2 collapsed">
@@ -127,13 +137,16 @@
                 </div>
                 <div id="media" class="content"></div>
                 <div id="estimado" class="content">A rotina está ocisosa por muito tempo</div>
-                <div id="previsao" class="content botaoFechar">Fechar</div>
+                <div id="previsao" class="content"></div>
                 <div id="porcentagem" class="content porcentagem">!</div>
             </div>
 
             <div id="Encaminha_Docs_WhatsApp_-_PC53" class="fundo rectangle status-error" title="Encaminha Docs WhatsApp - PC34">
                 <!--<div class="shadow invisible2"></div>-->
-                <div id="titulo" class="titulo">Encaminha Docs WhatsApp - PC34</div>
+                <div class="cabecalhoCard">
+                    <div id="titulo" class="titulo">Encaminha Docs WhatsApp - PC34</div> 
+                    <div class="content botaoFechar" title="Fechar cartão">⨉</div>
+                </div>
                 <div id="andamentos" class="content"></div>
                 <div id="maisInfo" class="maisInfo"></div>
                 <div id="resumoResultados" class="resumoResultados fundo2 collapsed">
@@ -143,12 +156,16 @@
                 </div>
                 <div id="media" class="content"></div>
                 <div id="estimado" class="content">Erro detectado</div>
-                <div id="previsao" class="content botaoFechar">Fechar</div>
+                <div id="previsao" class="content"></div>
                 <div id="porcentagem" class="content porcentagem">✖</div>
             </div>
+
             <div id="Consulta_Divida_Ativa_-_PC25" class="fundo rectangle status-final" title="Consulta Divida Ativa - PC25">
                 <!--<div class="shadow invisible2"></div>-->
-                <div id="titulo" class="titulo">Consulta Divida Ativa - PC25</div>
+                <div class="cabecalhoCard">
+                    <div id="titulo" class="titulo">Consulta Divida Ativa - PC25</div> 
+                    <div class="content botaoFechar" title="Fechar cartão">⨉</div>
+                </div>
                 <div id="andamentos" class="content"></div>
                 <div id="maisInfo" class="maisInfo">▼ Ocorrências</div>
                 <div id="resumoResultados" class="resumoResultados fundo2 collapsed">
@@ -157,7 +174,7 @@
                 </div>
                 <div id="media" class="content"></div>
                 <div id="estimado" class="content">Rotina finalizada</div>
-                <div id="previsao" class="content botaoFechar">Fechar</div>
+                <div id="previsao" class="content"></div>
                 <div id="porcentagem" class="content porcentagem">✔</div>
             </div>
             
@@ -169,6 +186,7 @@
                 <button id="bolinhaErro" class="bFiltro filtroErro" title="Filtro 'Erro detectado'">●</button>
                 <button id="bolinhaOcioso" class="bFiltro filtroOcioso" title="Filtro 'A rotina esta ociosa por muito tempo'">●</button>
                 <button id="bolinhaFinal" class="bFiltro filtroFinal" title="Filtro 'Rotina finalizada'">●</button>
+                <button id="bolinhaFechar" class="bFiltro filtroFechar" title="Filtro 'Cartão fechado'">●</button>
             </div>
             <div id="historicoTela" class="telaHistorico fundo">
                 <div class="linha">
@@ -298,6 +316,11 @@
                 </div>
                 <div class="linha">
                     <p id="data">15/07/2024 - 08:00</p>
+                    <p id="rotina">Download Comprovantes de Pagamento - PC65</p>
+                    <p id="ocorrencia" class="situacao fechado">Cartão fechado</p>
+                </div>
+                <div class="linha">
+                    <p id="data">15/07/2024 - 08:00</p>
                     <p id="rotina">Pendencias SIGISSWEB - PC50</p>
                     <p id="ocorrencia" class="situacao iniciada">Rotina iniciada</p>
                 </div>
@@ -320,6 +343,11 @@
                     <p id="data">15/07/2024 - 08:00</p>
                     <p id="rotina">Download Comprovantes de Pagamento - PC65</p>
                     <p id="ocorrencia" class="situacao finalizada">Rotina finalizada</p>
+                </div>
+                <div class="linha">
+                    <p id="data">15/07/2024 - 08:00</p>
+                    <p id="rotina">Download Comprovantes de Pagamento - PC65</p>
+                    <p id="ocorrencia" class="situacao fechado">Cartão fechado</p>
                 </div>
             </div>
         </div>

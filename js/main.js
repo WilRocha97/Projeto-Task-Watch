@@ -7,6 +7,7 @@ const telaGaleria = document.getElementById('telaGaleria');
 
 const painelFiltro = document.getElementById('painelFiltro');
 const botaoFiltroGeral = document.getElementById('bolinhaGeral');
+const botaoFiltroFechar = document.getElementById('bolinhaFechar');
 const botaoFiltroOciosa = document.getElementById('bolinhaOcioso');
 const botaoFiltroErro = document.getElementById('bolinhaErro');
 const botaoFiltroFinal = document.getElementById('bolinhaFinal');
@@ -363,14 +364,20 @@ botaoFiltroGeral.addEventListener('click', ()=> {
                 top: historicoTela.scrollHeight,
                 behavior: 'smooth' // Para uma rolagem suave, adicione essa opção
             });
-        }, 500);
-    }, 500);
+        }, 700);
+    }, 700);
     setTimeout(()=> {
         historicoLinha.forEach((element) => {
             element.classList.remove('invisible2');
         });
     }, 800);
     botaoFiltroGeral.classList.add('clicado')
+});
+botaoFiltroFechar.addEventListener('click', ()=> {
+    // Seleciona todos os elementos cujo ID comece com 'ocorrencia'
+    const ocorrencias = document.querySelectorAll('[id^="ocorrencia"]');
+    filtraHistorico(ocorrencias, 'fechado')
+    botaoFiltroFechar.classList.add('clicado')
 });
 botaoFiltroOciosa.addEventListener('click', ()=> {
     // Seleciona todos os elementos cujo ID comece com 'ocorrencia'
@@ -395,9 +402,16 @@ botoesFechar.forEach(botao => {
     botao.addEventListener('click', () => {
         // Encontra o elemento pai mais próximo
         const divMae = botao.closest('.rectangle');
+        
         divMae.classList.add('out')
             setTimeout(()=> {
-                telaRotinas.removeChild(divMae)
+                if (divMae.classList.contains('status-executando')) {
+                    divMae.classList.remove('out')
+                    divMae.classList.remove('collapsed')
+                }
+                else {
+                    telaRotinas.removeChild(divMae)
+                }
             }, 500);
     });
 });

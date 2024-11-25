@@ -47,7 +47,7 @@
     padding: 10px 150px;
     transition: var(--transicao-link);
 }
-.filtroGeral.clicado, .filtroErro.clicado, .filtroOcioso.clicado, .filtroFinal.clicado{
+.filtroGeral.clicado, .filtroErro.clicado, .filtroOcioso.clicado, .filtroFinal.clicado, .filtroFechar.clicado{
     scale: 1.5;
 }
 .filtroGeral.clicado {
@@ -62,16 +62,22 @@
 .filtroFinal.clicado {
     text-shadow: 0 0 6px var(--cor-final)
 }
+.filtroFechar.clicado {
+    text-shadow: 0 0 6px var(--cor-fechar)
+}
 .filtroErro {
     color: var(--cor-erro); /* Cor da bolinha */
 }
-.filtroGeral, .filtroErro, .filtroOcioso, .filtroFinal{
+.filtroGeral, .filtroErro, .filtroOcioso, .filtroFinal, .filtroFechar{
     color: var(--cor-texto);
     border: none;
     background: none;
     cursor: pointer;
     font-size: larger;
     transition: var(--transicao-link);
+}
+.filtroFechar {
+    color: var(--cor-fechar); /* Cor da bolinha */
 }
 .filtroErro {
     color: var(--cor-erro); /* Cor da bolinha */
@@ -82,7 +88,7 @@
 .filtroFinal {
     color: var(--cor-final); /* Cor da bolinha */
 }
-.filtroGeral:hover, .filtroErro:hover, .filtroOcioso:hover, .filtroFinal:hover {
+.filtroGeral:hover, .filtroErro:hover, .filtroOcioso:hover, .filtroFinal:hover, .filtroFechar:hover {
     scale: 1.5;
 }
 .telaHistorico {
@@ -135,6 +141,10 @@
     color: var(--cor-final);
     font-weight: bold;
 }
+.fechado {
+    color: var(--cor-fechar);
+    font-weight: bold;
+}
 
 
 @media (max-width: 720px) {
@@ -146,7 +156,7 @@
         gap: 25px;
         padding: 60px 0 10px;
     }
-    .filtroGeral, .filtroErro, .filtroOcioso, .filtroFinal{
+    .filtroGeral, .filtroErro, .filtroOcioso, .filtroFinal, .filtroFechar{
         font-size: x-large;
     }
     .telaHistorico {

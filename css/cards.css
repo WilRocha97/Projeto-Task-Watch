@@ -157,15 +157,19 @@
     border: var(--borda-card) solid var(--cor-final);
     animation: none;
 }
+
+.cabecalhoCard {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 .botaoFechar {
-    width: fit-content;
     color: white;
-    font-weight: 600;
     text-shadow: 0 0 1px white;
-    transition: var(--transicao-link);
 }
 .botaoFechar:hover {
-    text-shadow: 0 0 5px white;
+    color: red;
+    text-shadow: 0 0 10px black;
 }
 
 .maisInfo {
@@ -226,7 +230,8 @@
     opacity: 0;
     max-width: 300px;
     max-height: 200px;
-    transition: padding var(--transicao-link), opacity var(--transicao-link), max-width var(--transicao-link), max-height var(--transicao-link);
+    transition: padding var(--transicao-link), opacity var(--transicao-link), max-width var(--transicao-link), max-height var(--transicao-link),
+                color var(--transicao-link), text-shadow var(--transicao-link);
 }
 .porcentagem {
     z-index: -1;
@@ -281,5 +286,8 @@
     }
     .rectangle.collapsed {
         padding: 10px;
+    }
+    .botaoFechar {
+        font-size: large;
     }
 }
