@@ -163,11 +163,20 @@
     flex-direction: row;
     justify-content: space-between;
 }
+
 .botaoFechar {
+    border-radius: 20px;
+    background-color: transparent;
+    margin-left: 4px;
+    padding: 4px 6px;
+    width: fit-content;
+    height: fit-content;
     color: white;
     text-shadow: 0 0 1px white;
+    transition: color var(--transicao-link), tex-shadow var(--transicao-link), background-color var(--transicao-link);
 }
 .botaoFechar:hover {
+    background-color: white;
     color: red;
     text-shadow: 0 0 10px black;
 }
@@ -180,7 +189,7 @@
     color: white;
     font-size: 0.8rem;
     font-weight: 600;
-    max-width: 500px;
+    max-width: fit-content;
     max-height: 500px;
     text-shadow: 0 0 1px white;
     transition: padding var(--transicao-link), max-width var(--transicao-link), max-height var(--transicao-link), text-shadow var(--transicao-link);
@@ -253,12 +262,20 @@
     padding: 10px;
     margin: 10px;
 }
-.rectangle.collapsed .content {
+.rectangle.collapsed .content{
     line-height: normal;
     opacity: 0;
     scale: 0;
     padding: 0;
     max-height: 0;
+}
+.rectangle.collapsed .botaoFechar{
+    opacity: 0;
+    scale: 0;
+    padding: 0;
+    width: 0;
+    height: 0;
+    margin: 0;
 }
 .rectangle.collapsed .titulo {
     line-height: normal;
