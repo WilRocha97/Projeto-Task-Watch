@@ -1,0 +1,97 @@
+@keyframes piscarWarning {
+    0%, 100% {
+        box-shadow: inset 0 0 15px var(--cor-opaca),
+                    0 0 10px var(--cor-opaca);
+        border: var(--borda-card) solid var(--cor-opaca);
+    }
+    25% {
+        box-shadow: inset 0 0 65px var(--cor-ocioso),
+                    0 0 30px var(--cor-ocioso);
+        border: var(--borda-card) solid var(--cor-ocioso);
+    }
+    50% {
+        box-shadow: inset 0 0 15px var(--cor-opaca),
+                    0 0 10px var(--cor-opaca);
+        border: var(--borda-card) solid var(--cor-opaca);
+    }
+
+}
+@keyframes piscarError {
+    0%, 100% {
+        box-shadow: inset 0 0 15px var(--cor-opaca),
+                    0 0 10px var(--cor-opaca);
+        border: var(--borda-card) solid var(--cor-opaca);
+    }
+    50% {
+        box-shadow: inset 0 0 65px var(--cor-erro),
+                    0 0 30px var(--cor-erro);
+        border: var(--borda-card) solid var(--cor-erro);
+    }
+}
+@keyframes piscarFinish {
+    0%, 100% {
+        box-shadow: inset 0 0 15px var(--cor-opaca),
+                    0 0 10px var(--cor-opaca);
+        border: var(--borda-card) solid var(--cor-opaca);
+    }
+    50% {
+        box-shadow: inset 0 0 65px var(--cor-final),
+                    0 0 30px var(--cor-final);
+        border: var(--borda-card) solid var(--cor-final);
+    }
+}
+
+/* Estilos específicos para cada status */
+.status-executando {
+    --cor-primaria: #006345;
+    --cor-secundaria: #004557;
+    --cor-opaca: #00694a;
+    --cor-principal: var(--cor-executando);
+    --cor-porcentagem: var(--cor-opaca);
+}
+.status-warning {
+    --cor-primaria: #aa8b00;
+    --cor-secundaria: #b95402;
+    --cor-opaca: #9c5900;
+    --cor-principal: var(--cor-ocioso);
+    --cor-porcentagem: var(--cor-ocioso);
+    animation: piscarWarning 2s infinite;
+}
+.status-error {
+    --cor-primaria: #920000fb;
+    --cor-secundaria: #a719a7;
+    --cor-opaca: #790000;
+    --cor-principal: var(--cor-erro);
+    --cor-porcentagem: var(--cor-erro);
+    animation: piscarError 1.5s infinite;
+}
+.status-final {
+    --cor-primaria: #00798ffd;
+    --cor-secundaria: #682dc7;
+    --cor-opaca: #004e81;
+    --cor-principal: var(--cor-final);
+    --cor-porcentagem: var(--cor-final);
+    animation: piscarFinish 8s infinite;
+}
+
+/* Estilos genéricos para todos os status */
+.status {
+    box-shadow: inset 0 0 15px var(--cor-opaca),
+                0 0 10px var(--cor-opaca);
+    border: var(--borda-card) solid var(--cor-opaca);
+    background: linear-gradient(50deg, var(--cor-primaria), var(--cor-secundaria));
+}
+.status .porcentagem {
+    color: var(--cor-porcentagem);
+    text-shadow: 0 0 15px var(--cor-porcentagem);
+}
+.status:hover {
+    box-shadow: inset 0 0 80px var(--cor-principal),
+                0 0 30px var(--cor-principal);
+    border: var(--borda-card) solid var(--cor-principal);
+    animation: none;
+}
+.status:hover .porcentagem {
+    color: var(--cor-principal);
+    text-shadow: 0 0 25px var(--cor-principal);
+}
