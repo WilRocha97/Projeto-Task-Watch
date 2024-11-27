@@ -58,6 +58,7 @@
     color: white;
     box-shadow: none;
     cursor: pointer;
+    border: 0;
     padding: 0;
     margin: 0;
     opacity: 0;
@@ -66,14 +67,16 @@
     transition: var(--transicao-link);
 }
 .rectangle.enter {
-    width: fit-content;
-    height: fit-content;
+    max-width: 275px;
+    max-height: 600px;
     padding: 12px;
     margin: 25px;
     opacity: 1;
     scale: 1;
 }
 .rectangle.out {
+    max-width: 0 !important;
+    height: 0 !important;
     border: 0 !important;
     padding: 0 !important;
     margin: 0 !important;
@@ -189,6 +192,7 @@
     color: white;
     font-size: 0.8rem;
     font-weight: 600;
+    scale: 1;
     max-width: fit-content;
     max-height: 500px;
     text-shadow: 0 0 1px white;
@@ -210,20 +214,6 @@
     padding: 0;
     margin-bottom: 0;
     max-height: 0;
-}
-.resumoResultados.collapsed .content{
-    line-height: normal;
-    opacity: 0;
-    padding: 0;
-    max-height: 0;
-}
-.rectangle.collapsed .maisInfo{ 
-    line-height: normal;
-    scale: 0;
-    margin: 0;
-    max-width: 0;
-    max-height: 0;
-    padding: 0;
 }
 
 .titulo {
@@ -259,33 +249,19 @@
 .rectangle.collapsed {
     line-height: normal;
     font-size: 0;
+    max-width: 10px;
+    max-height: 10px;
+    border-radius: 15px;
     padding: 10px;
     margin: 10px;
 }
-.rectangle.collapsed .content{
-    line-height: normal;
-    opacity: 0;
-    scale: 0;
-    padding: 0;
-    max-height: 0;
-}
-.rectangle.collapsed .botaoFechar{
-    opacity: 0;
-    scale: 0;
-    padding: 0;
-    width: 0;
-    height: 0;
-    margin: 0;
-}
-.rectangle.collapsed .titulo {
-    line-height: normal;
-    scale: 0;
-    padding: 0;
-    margin-bottom: 0;
-}
+.rectangle.collapsed .botaoFechar,
+.rectangle.collapsed .maisInfo,
+.rectangle.collapsed .content,
+.rectangle.collapsed .titulo,
 .rectangle.collapsed #media {
-    line-height: normal;
-    margin-top: 0;
+    opacity: 0;
+    scale: 0;
 }
 
 .shadow {
@@ -297,12 +273,10 @@
     transform: translate(-40%, -20%); /* Para centralizar o ponto em relação ao cursor */
 }
 
+
 @media (max-width: 720px) {
     .rotinas {
         padding: 80px 0 90px 0;
-    }
-    .rectangle.collapsed {
-        padding: 10px;
     }
     .botaoFechar {
         font-size: large;

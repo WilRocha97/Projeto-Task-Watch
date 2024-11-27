@@ -206,38 +206,37 @@ document.body.addEventListener('click', (event) => {
 
 // Minimiza e maximiza todos os cards
 encolhe.addEventListener('click', () => {
-    const cards = document.querySelectorAll('.rectangle')
+    const cards = document.querySelectorAll('.rectangle');
     
     cards.forEach((card, index) => {
+        const botaoMaisInfo = card.querySelector('.maisInfo');
+
         setTimeout(()=> {
             card.classList.add('collapsed');
-            const botaoMaisInfo = card.querySelector('.maisInfo')
-            botaoMaisInfo.innerHTML = '▼ Ocorrências'
+            setTimeout(()=> {
+                botaoMaisInfo.innerHTML = '▼ Ocorrências';
+                card.querySelector('.resumoResultados').classList.add('collapsed');
+            }, 100)
         }, 100 * index);
-    })
-    
-    const ocorrenciasInfo = document.querySelectorAll('.resumoResultados')
-    ocorrenciasInfo.forEach((card, index) => {
-        setTimeout(()=> {
-            card.classList.add('collapsed');
-        }, 100 * index);
-    })
-    
+    });
 });
 // Minimiza e maximiza todos os cards
 explode.addEventListener('click', () => {
-    const cards = document.querySelectorAll('.rectangle')
-    cards.forEach((card, index) => {
-        setTimeout(()=> {
-            card.classList.remove('collapsed')
-            const botaoMaisInfo = card.querySelector('.maisInfo')
-            botaoMaisInfo.innerHTML = '▲ Ocorrências'
+    const cards = document.querySelectorAll('.rectangle');
 
-            if (!botaoMaisInfo.classList.contains('invisible2')) {
-                card.querySelector('.resumoResultados').classList.remove('collapsed');
-            }
+    cards.forEach((card, index) => {
+        const botaoMaisInfo = card.querySelector('.maisInfo');
+
+        setTimeout(()=> {
+            card.classList.remove('collapsed');
+            setTimeout(()=> {
+                if (!botaoMaisInfo.classList.contains('invisible2')) {
+                    botaoMaisInfo.innerHTML = '▲ Ocorrências';
+                    card.querySelector('.resumoResultados').classList.remove('collapsed');
+                }
+            }, 100);
         }, 100 * index);
-    })
+    });
 });
 
 // Janela com dicas de como o site funciona
