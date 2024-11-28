@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     new Sortable(container, {
         animation: 150,
-        handle: '.fundo',
+        handle: '.rectangle',
         delay: delay,
         delayOnTouchOnly: true,
         ghostClass: '', // Desativa a aplicação automática da classe

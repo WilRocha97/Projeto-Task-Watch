@@ -1,43 +1,13 @@
-@keyframes piscarWarning {
+@keyframes piscar {
     0%, 100% {
-        box-shadow: inset 0 0 15px var(--cor-opaca),
-                    0 0 10px var(--cor-opaca);
-        border: var(--borda-card) solid var(--cor-opaca);
-    }
-    25% {
-        box-shadow: inset 0 0 65px var(--cor-ocioso),
-                    0 0 30px var(--cor-ocioso);
-        border: var(--borda-card) solid var(--cor-ocioso);
+        box-shadow: inset 0 0 65px var(--cor-principal),
+                    0 0 30px var(--cor-principal);
+        border: var(--borda-card) solid var(--cor-principal);
     }
     50% {
-        box-shadow: inset 0 0 15px var(--cor-opaca),
-                    0 0 10px var(--cor-opaca);
-        border: var(--borda-card) solid var(--cor-opaca);
-    }
-
-}
-@keyframes piscarError {
-    0%, 100% {
-        box-shadow: inset 0 0 15px var(--cor-opaca),
-                    0 0 10px var(--cor-opaca);
-        border: var(--borda-card) solid var(--cor-opaca);
-    }
-    50% {
-        box-shadow: inset 0 0 65px var(--cor-erro),
-                    0 0 30px var(--cor-erro);
-        border: var(--borda-card) solid var(--cor-erro);
-    }
-}
-@keyframes piscarFinish {
-    0%, 100% {
-        box-shadow: inset 0 0 15px var(--cor-opaca),
-                    0 0 10px var(--cor-opaca);
-        border: var(--borda-card) solid var(--cor-opaca);
-    }
-    50% {
-        box-shadow: inset 0 0 65px var(--cor-final),
-                    0 0 30px var(--cor-final);
-        border: var(--borda-card) solid var(--cor-final);
+        box-shadow: inset 0 0 65px var(--cor-principal-alternativa),
+                    0 0 30px var(--cor-principal-alternativa);
+        border: var(--borda-card) solid var(--cor-principal-alternativa);
     }
 }
 
@@ -54,24 +24,27 @@
     --cor-secundaria: #b95402;
     --cor-opaca: #9c5900;
     --cor-principal: var(--cor-ocioso);
+    --cor-principal-alternativa: var(--cor-ocioso-alternativa);
     --cor-porcentagem: var(--cor-ocioso);
-    animation: piscarWarning 2s infinite;
+    animation: piscar 3s infinite;
 }
 .status-error {
     --cor-primaria: #920000fb;
     --cor-secundaria: #a719a7;
     --cor-opaca: #790000;
     --cor-principal: var(--cor-erro);
+    --cor-principal-alternativa: var(--cor-erro-alternativa);
     --cor-porcentagem: var(--cor-erro);
-    animation: piscarError 1.5s infinite;
+    animation: piscar 1.5s infinite;
 }
 .status-final {
     --cor-primaria: #00798ffd;
     --cor-secundaria: #682dc7;
     --cor-opaca: #004e81;
     --cor-principal: var(--cor-final);
+    --cor-principal-alternativa: var(--cor-final-alternativa);
     --cor-porcentagem: var(--cor-final);
-    animation: piscarFinish 8s infinite;
+    animation: piscar 8s infinite;
 }
 
 /* Estilos genéricos para todos os status */

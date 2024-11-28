@@ -50,10 +50,14 @@ body {
 
 .dark {
     --cor-executando: #00cf91;
-    --cor-erro: #fc0000;
+    --cor-erro: #ff0000;
     --cor-ocioso: #ffae00;
     --cor-final: #00c1fc;
     --cor-fechar: #8d5cff;
+
+    --cor-erro-alternativa: #a80000;
+    --cor-ocioso-alternativa: #ac7500;
+    --cor-final-alternativa: #0086af;
     
     --cor-destaque: #ffffff;
     --cor-vidro: #1f2329;
@@ -70,10 +74,14 @@ body {
 }
 .light {
     --cor-executando: #00be85;
-    --cor-erro: #fc0000;
-    --cor-ocioso: #ca8a00;
+    --cor-erro: #da0101;
+    --cor-ocioso: #d49100;
     --cor-final: #00a7da;
     --cor-fechar: #3a00c0;
+
+    --cor-erro-alternativa: #810000;
+    --cor-ocioso-alternativa: #7c5500;
+    --cor-final-alternativa: #006280;
 
     --cor-destaque: #000000;
     --cor-vidro: #d1d1d1;
