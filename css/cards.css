@@ -21,9 +21,9 @@
     transition: height var(--transicao-link);
 }
 .rectangle {
-    background: black;
-    color: white;
-    box-shadow: none;
+    border-radius: 20px;
+    max-width: 0;
+    max-height: 0;
     cursor: pointer;
     border: 0;
     padding: 0;
