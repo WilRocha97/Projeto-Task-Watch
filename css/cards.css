@@ -1,14 +1,17 @@
 .sortable-ghost {
-    background: linear-gradient(50deg, #85858550, var(--cor-vidro), #85858550) !important;
-    box-shadow: 0 0 10px gray !important;
+    background: transparent !important;
+    box-shadow: var(--direcao-sombra-1) var(--direcao-sombra-1) 9px var(--sombra-clara),
+                var(--direcao-sombra-2) var(--direcao-sombra-2) 9px var(--sombra-escura) !important;
+    backdrop-filter: blur(var(--blur)) !important;
+    color: gray !important;
+    text-shadow: none !important;
+    border: none !important;
 }
-.shadow {
-    position: absolute;
-    width: 30px; /* Diminuído o tamanho do ponto de luz */
-    height: 30px; /* Diminuído o tamanho do ponto de luz */
-    border-radius: 50%;
-    pointer-events: none; /* Para garantir que o ponto de luz não afete a interação com outros elementos */
-    transform: translate(-40%, -20%); /* Para centralizar o ponto em relação ao cursor */
+.sortable-ghost .porcentagem, 
+.sortable-ghost .botaoFechar,
+.sortable-ghost .maisInfo {
+    color: var(--sombra-2) !important;
+    text-shadow: none !important;
 }
 
 .rotinas {
