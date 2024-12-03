@@ -172,7 +172,7 @@
 
 @media (min-width: 2500px) {
     .mainHistorico {
-        width: 45%;
+        width: 1500px;
     }
     .mainHistorico.collapsed {
         opacity: 0;
