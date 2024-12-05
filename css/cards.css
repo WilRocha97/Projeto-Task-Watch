@@ -123,8 +123,10 @@
     text-shadow: 0 0 5px white;
 }
 .resumoResultados {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     opacity: 1;
-    padding: 10px;
     margin-bottom: 10px;
     max-height: 1000px;
     transition: opacity var(--transicao-link), margin-bottom var(--transicao-link), padding var(--transicao-link), max-height var(--transicao-link);

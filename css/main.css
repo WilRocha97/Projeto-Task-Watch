@@ -117,6 +117,7 @@ body {
     backdrop-filter: blur(var(--blur));
 }
 .fundo2 {
+    padding: 8px;
     background: #a8a8a82d;
     border-radius: 10px;
     box-shadow: 0 0 5px var(--sombra-card);
