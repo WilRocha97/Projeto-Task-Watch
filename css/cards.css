@@ -4,8 +4,9 @@
                 var(--direcao-sombra-2) var(--direcao-sombra-2) 9px var(--sombra-escura) !important;
     backdrop-filter: blur(var(--blur)) !important;
     color: gray !important;
+    border: var(--borda-card) solid var(--sombra-escura) !important;
+    margin: 30px !important;
     text-shadow: none !important;
-    border: none !important;
 }
 .sortable-ghost .porcentagem, 
 .sortable-ghost .botaoFechar,
