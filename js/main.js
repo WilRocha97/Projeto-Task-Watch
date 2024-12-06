@@ -22,8 +22,6 @@ var telaLayout = document.getElementById('layoutTela');
 var telaRotinas = document.getElementById('telaRotinas');
 var screenWidth = window.innerWidth;
 var divsRotinas = document.querySelectorAll('#telaRotinas .fundo');
-const botoesFechar = document.querySelectorAll('.botaoFechar');
-const botoesMaisInfo = document.querySelectorAll('.maisInfo');
 
 
 function updateClock() {
@@ -170,12 +168,37 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Adiciona um ouvinte de eventos ao documento para capturar cliques
+// ouvinte para os cliques nos cartões
 document.body.addEventListener('click', (event) => {
     // Verifica se o elemento clicado ou algum de seus pais possui a classe 'rectangle'
     let target = event.target;
+    const divMae = target.closest('.rectangle');
 
-    if (!target.classList.contains('maisInfo')){
+    if (target.classList.contains('botaoFixar')) {
+        // Encontra o elemento pai mais próximo
+        divMae.classList.toggle('fixado')
+        if (target.innerHTML.trim() === '☆') {
+            target.innerHTML = '★'
+        }
+        else {
+            target.innerHTML = '☆'  
+        }
+    }
+    // verifica se o click foi no botão de fechar
+    else if (target.classList.contains('botaoFechar')) {
+        // Encontra o elemento pai mais próximo
+        divMae.classList.add('out')
+        setTimeout(()=> {
+            if (divMae.classList.contains('status-executando')) {
+                divMae.classList.remove('out')
+                divMae.classList.remove('collapsed')
+            }
+            else {
+                telaRotinas.removeChild(divMae)
+            }
+        }, 500);
+    }
+    else if (!target.classList.contains('maisInfo')){
         while (target && !target.classList.contains('rectangle')) {
             target = target.parentElement;
         }
@@ -192,7 +215,6 @@ document.body.addEventListener('click', (event) => {
     }
     else {
         // minimiza a tela de ocorrências dentro do card
-        const divMae = target.closest('.rectangle');
         const maisInfo = divMae.querySelector('#resumoResultados');
         maisInfo.classList.toggle('collapsed')
         if (target.innerHTML.trim() === '▼ Ocorrências') {
@@ -207,17 +229,20 @@ document.body.addEventListener('click', (event) => {
 // Minimiza e maximiza todos os cards
 encolhe.addEventListener('click', () => {
     const cards = document.querySelectorAll('.rectangle');
-    
-    cards.forEach((card, index) => {
-        const botaoMaisInfo = card.querySelector('.maisInfo');
+    const listaReversa = [...cards].reverse(); // Faz uma cópia para não alterar a original
 
-        setTimeout(()=> {
-            card.classList.add('collapsed');
+    listaReversa.forEach((card, index) => {
+        if (!card.classList.contains('fixado')) {
+            const botaoMaisInfo = card.querySelector('.maisInfo');
+
             setTimeout(()=> {
-                botaoMaisInfo.innerHTML = '▼ Ocorrências';
-                card.querySelector('.resumoResultados').classList.add('collapsed');
-            }, 100)
-        }, 100 * index);
+                card.classList.add('collapsed');
+                setTimeout(()=> {
+                    botaoMaisInfo.innerHTML = '▼ Ocorrências';
+                    card.querySelector('.resumoResultados').classList.add('collapsed');
+                }, 100)
+            }, 100 * index);
+        }
     });
 });
 // Minimiza e maximiza todos os cards
@@ -225,17 +250,19 @@ explode.addEventListener('click', () => {
     const cards = document.querySelectorAll('.rectangle');
 
     cards.forEach((card, index) => {
-        const botaoMaisInfo = card.querySelector('.maisInfo');
+        if (!card.classList.contains('fixado')) {
+            const botaoMaisInfo = card.querySelector('.maisInfo');
 
-        setTimeout(()=> {
-            card.classList.remove('collapsed');
             setTimeout(()=> {
-                if (!botaoMaisInfo.classList.contains('invisible2')) {
-                    botaoMaisInfo.innerHTML = '▲ Ocorrências';
-                    card.querySelector('.resumoResultados').classList.remove('collapsed');
-                }
-            }, 100);
-        }, 100 * index);
+                card.classList.remove('collapsed');
+                setTimeout(()=> {
+                    if (!botaoMaisInfo.classList.contains('invisible2')) {
+                        botaoMaisInfo.innerHTML = '▲ Ocorrências';
+                        card.querySelector('.resumoResultados').classList.remove('collapsed');
+                    }
+                }, 100);
+            }, 100 * index);
+        }
     });
 });
 
@@ -395,22 +422,4 @@ botaoFiltroFinal.addEventListener('click', ()=> {
     const ocorrencias = document.querySelectorAll('[id^="ocorrencia"]');
     filtraHistorico(ocorrencias, 'finalizada')
     botaoFiltroFinal.classList.add('clicado')
-});
-// Adiciona um event listener a cada botão de fechar
-botoesFechar.forEach(botao => {
-    botao.addEventListener('click', () => {
-        // Encontra o elemento pai mais próximo
-        const divMae = botao.closest('.rectangle');
-        
-        divMae.classList.add('out')
-            setTimeout(()=> {
-                if (divMae.classList.contains('status-executando')) {
-                    divMae.classList.remove('out')
-                    divMae.classList.remove('collapsed')
-                }
-                else {
-                    telaRotinas.removeChild(divMae)
-                }
-            }, 500);
-    });
 });

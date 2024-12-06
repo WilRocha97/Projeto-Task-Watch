@@ -67,6 +67,7 @@
     padding: 0;
     margin: 10px;
 }
+.rectangle.collapsed .botaoFixar,
 .rectangle.collapsed .botaoFechar,
 .rectangle.collapsed .maisInfo,
 .rectangle.collapsed .content,
@@ -89,7 +90,7 @@
     margin-bottom: 10px;
 }
 
-.botaoFechar {
+.botaoFechar, .botaoFixar {
     border-radius: 20px;
     background-color: transparent;
     margin-left: 4px;
@@ -100,10 +101,15 @@
     text-shadow: 0 0 1px white;
     transition: color var(--transicao-link), tex-shadow var(--transicao-link), background-color var(--transicao-link);
 }
-.botaoFechar:hover {
+.botaoFechar:hover, .botaoFixar:hover {
     background-color: white;
-    color: red;
     text-shadow: 0 0 10px black;
+}
+.botaoFixar:hover {
+    color: black;
+}
+.botaoFechar:hover {
+    color: red;
 }
 
 .maisInfo {
