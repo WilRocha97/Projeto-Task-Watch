@@ -111,6 +111,10 @@
 .botaoFechar:hover {
     color: red;
 }
+.botaoFixado {
+    text-shadow: 0 0 5px white,
+                 0 0 7px white;
+}
 
 .maisInfo {
     cursor:cell;
@@ -134,7 +138,6 @@
     flex-direction: column;
     gap: 10px;
     opacity: 1;
-    margin-bottom: 10px;
     max-height: 1000px;
     transition: opacity var(--transicao-link), margin-bottom var(--transicao-link), padding var(--transicao-link), max-height var(--transicao-link);
 }
@@ -146,16 +149,22 @@
     max-height: 0;
 }
 
-.content {
+.content, .content2 {
     font-size: 0.8em;
     padding: 0;
     opacity: 0;
     max-width: 300px;
-    max-height: 200px;
+    max-height: 0;
     transition: padding var(--transicao-link), opacity var(--transicao-link), max-width var(--transicao-link), max-height var(--transicao-link),
                 color var(--transicao-link), text-shadow var(--transicao-link);
 }
+.content2:not(:empty) {
+    max-height: 200px;
+    padding: 8px 4px 0 4px;
+    opacity: 1;
+}
 .content:not(:empty) {
+    max-height: 200px;
     padding: 4px;
     opacity: 1;
 }
