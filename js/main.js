@@ -23,6 +23,9 @@ var telaRotinas = document.getElementById('telaRotinas');
 var screenWidth = window.innerWidth;
 var divsRotinas = document.querySelectorAll('#telaRotinas .fundo');
 
+const imagens = ['arvore.png', 'bengala-doce.png', 'gengibre.png', 'gorro-do-papai-noel.png', 'meia.png', 'presente.png', 'visco.png'];
+
+
 
 function updateClock() {
     var daysOfWeek = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"];
@@ -133,6 +136,12 @@ const cards = document.querySelectorAll('.rectangle')
 cards.forEach((card, index) => {
     setTimeout(()=> {
         card.classList.add('enter');
+
+        // Escolhe uma imagem aleatória
+        const imagemAleatoria = imagens[Math.floor(Math.random() * imagens.length)];
+        // Atualiza a imagem
+        card.querySelector('#imagem-aleatoria').src = `assets/temas/${imagemAleatoria}`;
+
     }, 100 * index);
 });
 
