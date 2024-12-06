@@ -23,7 +23,8 @@ var telaRotinas = document.getElementById('telaRotinas');
 var screenWidth = window.innerWidth;
 var divsRotinas = document.querySelectorAll('#telaRotinas .fundo');
 
-const imagens = ['arvore.png', 'bengala-doce.png', 'gengibre.png', 'gorro-do-papai-noel.png', 'meia.png', 'presente.png', 'visco.png'];
+const imagens = ['arvore.png', 'bengala-doce.png', 'gengibre.png', 'gorro-do-papai-noel.png', 'meia.png', 'presente.png', 
+                 'visco.png', 'decoracao.png', 'papai-noel.png', 'guirlanda.png', 'estrela.png'];
 
 
 
