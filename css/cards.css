@@ -143,7 +143,6 @@
     transition: opacity var(--transicao-link), margin-bottom var(--transicao-link), padding var(--transicao-link), max-height var(--transicao-link);
 }
 .resumoResultados.collapsed {
-    line-height: normal;
     opacity: 0;
     padding: 0;
     margin-bottom: 0;
