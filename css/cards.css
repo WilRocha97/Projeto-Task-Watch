@@ -203,3 +203,20 @@
         font-size: large;
     }
 }
+@media (hover: none) and (max-width: 720px){
+    .botaoFechar:hover, .botaoFixar:hover {
+        background-color: transparent;
+        text-shadow: 0 0 0 transparent;
+        color: white;
+    }
+    .botaoFechar:active, .botaoFixar:active {
+        background-color: white;
+        text-shadow: 0 0 10px black;
+    }
+    .botaoFixar:active {
+        color: black;
+    }
+    .botaoFechar:active {
+        color: red;
+    }
+}

@@ -23,7 +23,9 @@
     color: rgb(255, 0, 64) !important;
 }
 #galeria:hover {
-    text-shadow: 0 0 5px rgb(255, 0, 64) !important;
+    text-shadow: 0 0 5px rgb(255, 0, 64),
+                    0 0 7px rgb(255, 0, 64),
+                    0 0 8px rgb(255, 0, 64) !important;
 }
 
 .cabecalho {
@@ -56,7 +58,9 @@
     transition: var(--transicao-link);
 }
 .cabecalho__menu__botao:hover {
-    text-shadow: 0 0 5px var(--cor-destaque);
+    text-shadow: 0 0 5px var(--cor-destaque),
+                    0 0 7px var(--cor-destaque),
+                    0 0 9px var(--cor-destaque);
     color: var(--cor-destaque);
 }
 #clock {
@@ -214,5 +218,26 @@
         right: 20px;
         margin: 50% 0 0 0;
         position: fixed;
+    }
+}
+@media (hover: none) and (max-width: 720px){
+    .cabecalho__menu__botao:hover {
+        text-shadow: 0 0 0 transparent;
+        color: var(--cor-texto);
+    }
+    .cabecalho__menu__botao:active {
+        text-shadow: 0 0 5px var(--cor-destaque),
+                    0 0 7px var(--cor-destaque),
+                    0 0 9px var(--cor-destaque);
+        color: var(--cor-destaque);
+    }
+
+    #galeria:hover {
+        text-shadow: 0 0 0 transparent !important;
+    }
+    #galeria:active {
+        text-shadow: 0 0 5px rgb(255, 0, 64),
+                    0 0 7px rgb(255, 0, 64),
+                    0 0 8px rgb(255, 0, 64) !important;
     }
 }
