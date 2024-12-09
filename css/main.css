@@ -179,12 +179,6 @@ body {
     text-shadow: 0 0 20px var(--cor-destaque);
 }
 
-@media (max-width: 720px) {
-    body:focus {
-        outline: none;
-        border-color: 2px solid var(--cor-destaque);
-    }
-}
 
 @media (max-width: 2500px) {
     .layout {

@@ -169,7 +169,6 @@
         grid-template-columns: 1.5fr 3fr 2fr;
     }
 }
-
 @media (max-width: 2500px) {
     .mainHistorico {
         width: 100%;
