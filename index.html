@@ -33,9 +33,11 @@
             <div id="menuRelogio" class="menu fundo relogio">
                 <div id="clock"></div>
             </div>
-            <div class="menu fundo" >
-                <button id="encolher" class="cabecalho__menu__botao" title="Minimizar todos os cartões">▼</button>
-                <button id="explodir" class="cabecalho__menu__botao" title="Maximizar todos os cartões">▲</button>
+            <div class="menu fundo botoes" >
+                <button id="encolherCard" class="cabecalho__menu__botao" title="Minimizar todos os cartões">▽</button>
+                <button id="encolher" class="cabecalho__menu__botao" title="Minimizar todas as telas internas dos cartões">▼</button>
+                <button id="explodirCard" class="cabecalho__menu__botao" title="Maximizar todos os cartões">△</button>
+                <button id="explodir" class="cabecalho__menu__botao" title="Maximizar todos as telas internas dos cartões">▲</button>
                 <button id="dica" class="cabecalho__menu__botao" title="Ajuda">?</button>
                 <button id="galeria" class="cabecalho__menu__botao" title="Galeria do TaskWatch oficial">Galeria</button>
                 <button id="toggleDarkMode" title="Tema do site"><img src="assets/moon.png" alt="Tema do site"></button>
@@ -89,14 +91,29 @@
                 <img id="imagem-aleatoria" alt="Imagem aleatória">
                 <div class="cabecalhoCard">
                     <div id="titulo" class="titulo">Relatório Faturamento X Compra - PC67</div> 
-                    <div class="botaoFixar" title="Fixar cartão">☆</div>
-                    <div class="botaoFechar" title="Fechar cartão">⨉</div>
+                    <div class="cabecalhoCard">
+                        <div class="botaoFixar" title="Fixar cartão">☆</div>
+                        <div class="botaoFechar" title="Fechar cartão">⨉</div>
+                    </div>
                 </div>
-                <div id="andamentos" class="content">73 de 589 | 516 restantes</div>
-                <div id="maisInfo" class="maisInfo">▼ Ocorrências</div>
+                <div class="progresso">
+                    <div id="porcentagem" class="fundo2 porcentagem">12.39%</div>
+                    <div id="mensagemAlerta" class="content"></div>
+                </div>
 
+                <div id="maisInfo" class="maisInfo">▼ Execução</div>
                 <div id="resumoResultados" class="resumoResultados collapsed">
                     <div class="fundo2">
+                        <div id="andamentos" class="content">73 de 589 | 516 restantes</div>
+                        <div id="media" class="content">Tempo médio por ciclo: 1 minuto 45 segundos</div>
+                        <div id="estimado" class="content">Tempo estimado: 1 dia 3 horas 39 minutos</div>
+                        <div id="previsao" class="content">Previsão de termino: 19/07/2024 as 15:45</div>
+                    </div>
+                </div>
+
+                <div id="maisInfo2" class="maisInfo2">▼ Andamentos</div>
+                <div id="resumoResultados2" class="resumoResultados2 collapsed">
+                    <div class="fundo2 telaResumo">
                         <div class="content">Dado atual:</div>
                         <div id="dado_atual" class="content">28 - 12345678000234 - Empresa Bacana LTDA</div>
                     </div>
@@ -108,23 +125,38 @@
                         <div id="occorencia2" class="content">36 - relatórios gerados</div>
                     </div>
                 </div>
-                <div id="media" class="content2">Tempo médio por ciclo: 15 segundos</div>
-                <div id="estimado" class="content2">Tempo estimado: 26 minutos</div>
-                <div id="previsao" class="content2">Previsão de termino: 18/07/2024 as 10:15</div>
-                <div id="porcentagem" class="content porcentagem">%12</div>
+
+                <div id="alerta" class="content alerta"></div>
             </div>
 
             <div id="Pendencias_SIGISSWEB_-_PC50" class="rectangle status status-executando" title="Pendencias SIGISSWEB - PC50 - Tempo estimado: 1 dia 3 horas 39 minutos - %31">
                 <img id="imagem-aleatoria" alt="Imagem aleatória">
                 <div class="cabecalhoCard">
                     <div id="titulo" class="titulo">Pendencias SIGISSWEB - PC50</div> 
-                    <div class="botaoFixar" title="Fixar cartão">☆</div>
-                    <div class="botaoFechar" title="Fechar cartão">⨉</div>
+                    <div class="cabecalhoCard">
+                        <div class="botaoFixar" title="Fixar cartão">☆</div>
+                        <div class="botaoFechar" title="Fechar cartão">⨉</div>
+                    </div>
                 </div>
-                <div id="andamentos" class="content">236 de 759 | 523 restantes</div>
-                <div id="maisInfo" class="maisInfo">▼ Ocorrências</div>
+
+                <div class="progresso">
+                    <div id="porcentagem" class="fundo2 porcentagem">31.09%</div>
+                    <div id="mensagemAlerta" class="content"></div>
+                </div>
+
+                <div id="maisInfo" class="maisInfo">▼ Execução</div>
                 <div id="resumoResultados" class="resumoResultados collapsed">
                     <div class="fundo2">
+                        <div id="andamentos" class="content">236 de 759 | 523 restantes</div>
+                        <div id="media" class="content">Tempo médio por ciclo: 15 segundos</div>
+                        <div id="estimado" class="content">Tempo estimado: 26 minutos</div>
+                        <div id="previsao" class="content">Previsão de termino: 18/07/2024 as 10:15</div>
+                    </div>
+                </div>
+
+                <div id="maisInfo2" class="maisInfo2">▼ Andamentos</div>
+                <div id="resumoResultados2" class="resumoResultados2 collapsed">
+                    <div class="fundo2 telaResumo">
                         <div class="content">Dado atual:</div>
                         <div id="dado_atual" class="content">14 - 98732165000732 - Empresa Maravilhosa LTDA EIRELI</div>
                     </div>
@@ -134,23 +166,38 @@
                         <div id="occorencia3" class="content">135 - sem pendencias</div>
                     </div>
                 </div>
-                <div id="media" class="content2">Tempo médio por ciclo: 1 minuto 45 segundos</div>
-                <div id="estimado" class="content2">Tempo estimado: 1 dia 3 horas 39 minutos</div>
-                <div id="previsao" class="content2">Previsão de termino: 19/07/2024 as 15:45</div>
-                <div id="porcentagem" class="content porcentagem">%31</div>
+
+                <div id="alerta" class="content alerta"></div>
             </div>
 
             <div id="CND_Receita_Federal_CPF_-_PC14" class="rectangle status status-warning" title="CND Receita Federal CPF - PC14">
                 <img id="imagem-aleatoria" alt="Imagem aleatória">
                 <div class="cabecalhoCard">
                     <div id="titulo" class="titulo">CND Receita Federal CPF - PC14</div> 
-                    <div class="botaoFixar" title="Fixar cartão">☆</div>
-                    <div class="botaoFechar" title="Fechar cartão">⨉</div>
+                    <div class="cabecalhoCard">
+                        <div class="botaoFixar" title="Fixar cartão">☆</div>
+                        <div class="botaoFechar" title="Fechar cartão">⨉</div>
+                    </div>
                 </div>
-                <div id="andamentos" class="content">432 de 589 | 157 restantes</div>
-                <div id="maisInfo" class="maisInfo">▼ Ocorrências</div>
+
+                <div class="progresso">
+                    <div id="porcentagem" class="fundo2 porcentagem">73.34%</div>
+                    <div id="mensagemAlerta" class="content">Rotina ocisosa</div>
+                </div>
+
+                <div id="maisInfo" class="maisInfo">▼ Execução</div>
                 <div id="resumoResultados" class="resumoResultados collapsed">
                     <div class="fundo2">
+                        <div id="andamentos" class="content">432 de 589 | 157 restantes</div>
+                        <div id="media" class="content"></div>
+                        <div id="estimado" class="content"></div>
+                        <div id="previsao" class="content"></div>
+                    </div>
+                </div>
+
+                <div id="maisInfo2" class="maisInfo2">▼ Andamentos</div>
+                <div id="resumoResultados2" class="resumoResultados2 collapsed">
+                    <div class="fundo2 telaResumo">
                         <div class="content">Dado atual:</div>
                         <div id="dado_atual" class="content">98 - 98741236000412 - Empresa Sencacional S/A</div>
                     </div>
@@ -160,49 +207,78 @@
                         <div id="occorencia3" class="content">358 - CPFs sem pendencias</div>
                     </div>
                 </div>
-                <div id="media" class="content2"></div>
-                <div id="estimado" class="content2">A rotina está ocisosa por muito tempo</div>
-                <div id="previsao" class="content2"></div>
-                <div id="porcentagem" class="content porcentagem">!</div>
+
+                <div id="alerta" class="content alerta">!</div>
             </div>
 
             <div id="Encaminha_Docs_WhatsApp_-_PC53" class="rectangle status status-error" title="Encaminha Docs WhatsApp - PC34">
                 <img id="imagem-aleatoria" alt="Imagem aleatória">
                 <div class="cabecalhoCard">
                     <div id="titulo" class="titulo">Encaminha Docs WhatsApp - PC34</div> 
-                    <div class="botaoFixar" title="Fixar cartão">☆</div>
-                    <div class="botaoFechar" title="Fechar cartão">⨉</div>
+                    <div class="cabecalhoCard">
+                        <div class="botaoFixar" title="Fixar cartão">☆</div>
+                        <div class="botaoFechar" title="Fechar cartão">⨉</div>
+                    </div>
                 </div>
-                <div id="andamentos" class="content"></div>
-                <div id="maisInfo" class="maisInfo">▼ Ocorrências</div>
+
+                <div class="progresso">
+                    <div id="porcentagem" class="fundo2 porcentagem">7.33%</div>
+                    <div id="mensagemAlerta" class="content">Erro detectado</div>
+                </div>
+
+                <div id="maisInfo" class="maisInfo">▼ Execução</div>
                 <div id="resumoResultados" class="resumoResultados collapsed">
                     <div class="fundo2">
+                        <div id="andamentos" class="content">11 de 150 | 139 restantes</div>
+                        <div id="media" class="content">Tempo médio por ciclo: 36 segundos</div>
+                        <div id="estimado" class="content"></div>
+                        <div id="previsao" class="content"></div>
+                    </div>
+                </div>
+
+                <div id="maisInfo2" class="maisInfo2">▼ Andamentos</div>
+                <div id="resumoResultados2" class="resumoResultados2 collapsed">
+                    <div class="fundo2 telaResumo">
                         <div class="content">Dado atual:</div>
                         <div id="dado_atual" class="content">56 - 12369874000698 - Empresa Incrível LTDA</div>
                     </div>
                     <div class="fundo2">
-                        <div id="occorencia1" class="content"></div>
-                        <div id="occorencia2" class="content"></div>
-                        <div id="occorencia3" class="content"></div>
+                        <div id="occorencia1" class="content">8 - Mensagen enviada</div>
+                        <div id="occorencia2" class="content">2 - Mensagem não enviada</div>
                     </div>
                 </div>
-                <div id="media" class="content2"></div>
-                <div id="estimado" class="content2">Erro detectado</div>
-                <div id="previsao" class="content2"></div>
-                <div id="porcentagem" class="content porcentagem">✖</div>
+                
+                <div id="alerta" class="content alerta">✖</div>
             </div>
 
             <div id="Consulta_Divida_Ativa_-_PC25" class="rectangle status status-final" title="Consulta Divida Ativa - PC25">
                 <img id="imagem-aleatoria" alt="Imagem aleatória">
                 <div class="cabecalhoCard">
                     <div id="titulo" class="titulo">Consulta Divida Ativa - PC25</div> 
-                    <div class="botaoFixar" title="Fixar cartão">☆</div>
-                    <div class="botaoFechar" title="Fechar cartão">⨉</div>
+                    <div class="cabecalhoCard">
+                        <div class="botaoFixar" title="Fixar cartão">☆</div>
+                        <div class="botaoFechar" title="Fechar cartão">⨉</div>
+                    </div>
                 </div>
-                <div id="andamentos" class="content"></div>
-                <div id="maisInfo" class="maisInfo">▼ Ocorrências</div>
+
+                <div class="progresso">
+                    <div id="porcentagem" class="fundo2 porcentagem"></div>
+                    <div id="mensagemAlerta" class="content">Rotina finalizada</div>
+                </div>
+
+                <div id="maisInfo" class="maisInfo">▼ Execução</div>
                 <div id="resumoResultados" class="resumoResultados collapsed">
                     <div class="fundo2">
+                        <div id="andamentos" class="content"></div>
+                        <div id="media" class="content">Tempo de execução: 1 hora 23 minutos 47 segundos</div>
+                        <div id="estimado" class="content"></div>
+                        <div id="previsao" class="content"></div>
+                    </div>
+                </div>
+
+                <div id="maisInfo2" class="maisInfo2">▼ Andamentos</div>
+                <div id="resumoResultados2" class="resumoResultados2 collapsed">
+                    <div class="fundo2 telaResumo">
                         <div class="content">Dado atual:</div>
                         <div id="dado_atual" class="content">36 - 98765432000876 - Empresa Legal ME</div>
                     </div>
@@ -211,10 +287,8 @@
                         <div id="occorencia2" class="content">2049 - empresas sem débito</div>
                     </div>
                 </div>
-                <div id="media" class="content2"></div>
-                <div id="estimado" class="content2">Rotina finalizada</div>
-                <div id="previsao" class="content2"></div>
-                <div id="porcentagem" class="content porcentagem">✔</div>
+                
+                <div id="alerta" class="content alerta">✔</div>
             </div>
             
         </div>

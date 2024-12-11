@@ -17,7 +17,7 @@
     --cor-secundaria: #004557;
     --cor-opaca: #00694a;
     --cor-principal: var(--cor-executando);
-    --cor-porcentagem: var(--cor-opaca);
+    --cor-alerta: var(--cor-opaca);
 }
 .status-warning {
     --cor-primaria: #aa8b00;
@@ -25,7 +25,7 @@
     --cor-opaca: #9c5900;
     --cor-principal: var(--cor-ocioso);
     --cor-principal-alternativa: var(--cor-ocioso-alternativa);
-    --cor-porcentagem: var(--cor-ocioso);
+    --cor-alerta: var(--cor-ocioso);
     animation: piscar 3s infinite;
 }
 .status-error {
@@ -34,7 +34,7 @@
     --cor-opaca: #790000;
     --cor-principal: var(--cor-erro);
     --cor-principal-alternativa: var(--cor-erro-alternativa);
-    --cor-porcentagem: var(--cor-erro);
+    --cor-alerta: var(--cor-erro);
     animation: piscar 1.5s infinite;
 }
 .status-final {
@@ -43,7 +43,7 @@
     --cor-opaca: #004e81;
     --cor-principal: var(--cor-final);
     --cor-principal-alternativa: var(--cor-final-alternativa);
-    --cor-porcentagem: var(--cor-final);
+    --cor-alerta: var(--cor-final);
     animation: piscar 8s infinite;
 }
 
@@ -54,9 +54,9 @@
     border: var(--borda-card) solid var(--cor-opaca);
     background: linear-gradient(50deg, var(--cor-primaria), var(--cor-secundaria));
 }
-.status .porcentagem {
-    color: var(--cor-porcentagem);
-    text-shadow: 0 0 15px var(--cor-porcentagem);
+.status .alerta {
+    color: var(--cor-alerta);
+    text-shadow: 0 0 15px var(--cor-alerta);
 }
 .status:hover {
     box-shadow: inset 0 0 80px var(--cor-principal),
@@ -64,7 +64,7 @@
     border: var(--borda-card) solid var(--cor-principal);
     animation: none;
 }
-.status:hover .porcentagem {
+.status:hover .alerta {
     color: var(--cor-principal);
     text-shadow: 0 0 25px var(--cor-principal);
 }
@@ -84,11 +84,11 @@
         animation: none;
     }
 
-    .status:hover .porcentagem {
-        color: var(--cor-porcentagem);
-        text-shadow: 0 0 15px var(--cor-porcentagem);
+    .status:hover .alerta {
+        color: var(--cor-alerta);
+        text-shadow: 0 0 15px var(--cor-alerta);
     }
-    .status:active .porcentagem {
+    .status:active .alerta {
         color: var(--cor-principal);
         text-shadow: 0 0 25px var(--cor-principal);
     }

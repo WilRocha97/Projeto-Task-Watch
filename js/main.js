@@ -1,3 +1,5 @@
+const encolheCard = document.getElementById('encolherCard');
+const explodeCard = document.getElementById('explodirCard');
 const encolhe = document.getElementById('encolher');
 const explode = document.getElementById('explodir');
 const dica = document.getElementById('dica');
@@ -22,6 +24,9 @@ var telaLayout = document.getElementById('layoutTela');
 var telaRotinas = document.getElementById('telaRotinas');
 var screenWidth = window.innerWidth;
 var divsRotinas = document.querySelectorAll('#telaRotinas .fundo');
+
+const maisInfos = [{botao:'.maisInfo', nomeBotaoMini:'▼ Execução', nomeBotaoMaxi:'▲ Execução', conteudo:'.resumoResultados'}, 
+                    {botao:'.maisInfo2', nomeBotaoMini:'▼ Andamentos', nomeBotaoMaxi:'▲ Andamentos', conteudo:'.resumoResultados2'}]
 
 const imagens = ['arvore.png', 'bengala-doce.png', 'gengibre.png', 'gorro-do-papai-noel.png', 'meia.png', 'presente.png', 
                  'visco.png', 'decoracao.png', 'papai-noel.png', 'guirlanda.png', 'estrela.png'];
@@ -209,7 +214,29 @@ document.body.addEventListener('click', (event) => {
             }
         }, 500);
     }
-    else if (!target.classList.contains('maisInfo')){
+    else if (target.classList.contains('maisInfo')){
+        // minimiza a tela de ocorrências dentro do card
+        const maisInfo = divMae.querySelector('#resumoResultados');
+        maisInfo.classList.toggle('collapsed')
+        if (target.innerHTML.trim() === '▼ Execução') {
+            target.innerHTML = '▲ Execução'
+        }
+        else {
+            target.innerHTML = '▼ Execução'
+        }
+    }
+    else if (target.classList.contains('maisInfo2')){
+        // minimiza a tela de ocorrências dentro do card
+        const maisInfo2 = divMae.querySelector('#resumoResultados2');
+        maisInfo2.classList.toggle('collapsed')
+        if (target.innerHTML.trim() === '▼ Andamentos') {
+            target.innerHTML = '▲ Andamentos'
+        }
+        else {
+            target.innerHTML = '▼ Andamentos'
+        }
+    }
+    else {
         while (target && !target.classList.contains('rectangle')) {
             target = target.parentElement;
         }
@@ -224,54 +251,72 @@ document.body.addEventListener('click', (event) => {
             botaoMaisInfo.innerHTML = '▼ Ocorrências'
         }
     }
-    else {
-        // minimiza a tela de ocorrências dentro do card
-        const maisInfo = divMae.querySelector('#resumoResultados');
-        maisInfo.classList.toggle('collapsed')
-        if (target.innerHTML.trim() === '▼ Ocorrências') {
-            target.innerHTML = '▲ Ocorrências'
-        }
-        else {
-            target.innerHTML = '▼ Ocorrências'
-        }
-    }
+    
 });
 
-// Minimiza e maximiza todos os cards
+// Minimiza e maximiza todas as telas internas dos cards
 encolhe.addEventListener('click', () => {
     const cards = document.querySelectorAll('.rectangle');
     const listaReversa = [...cards].reverse(); // Faz uma cópia para não alterar a original
 
     listaReversa.forEach((card, index) => {
         if (!card.classList.contains('fixado')) {
-            const botaoMaisInfo = card.querySelector('.maisInfo');
+            maisInfos.forEach(maisInfo => {
+                const botaoMaisInfo = card.querySelector(maisInfo.botao);
 
-            setTimeout(()=> {
-                card.classList.add('collapsed');
                 setTimeout(()=> {
-                    botaoMaisInfo.innerHTML = '▼ Ocorrências';
-                    card.querySelector('.resumoResultados').classList.add('collapsed');
-                }, 100)
-            }, 100 * index);
+                    setTimeout(()=> {
+                        botaoMaisInfo.innerHTML = maisInfo.nomeBotaoMini;
+                        card.querySelector(maisInfo.conteudo).classList.add('collapsed');
+                    }, 100)
+                }, 100 * index);
+            })
+            
         }
     });
 });
 // Minimiza e maximiza todos os cards
+encolheCard.addEventListener('click', () => {
+    const cards = document.querySelectorAll('.rectangle');
+    const listaReversa = [...cards].reverse(); // Faz uma cópia para não alterar a original
+
+    listaReversa.forEach((card, index) => {
+        if (!card.classList.contains('fixado')) {
+            setTimeout(()=> {
+                card.classList.add('collapsed');
+            }, 100 * index);  
+        }
+    });
+});
+// Minimiza e maximiza todas as telas internas dos cards
 explode.addEventListener('click', () => {
     const cards = document.querySelectorAll('.rectangle');
 
     cards.forEach((card, index) => {
         if (!card.classList.contains('fixado')) {
-            const botaoMaisInfo = card.querySelector('.maisInfo');
+            maisInfos.forEach(maisInfo => {
+                const botaoMaisInfo = card.querySelector(maisInfo.botao);
 
+                setTimeout(()=> {
+                    card.classList.remove('collapsed');
+                    setTimeout(()=> {
+                        botaoMaisInfo.innerHTML = maisInfo.nomeBotaoMaxi;
+                        card.querySelector(maisInfo.conteudo).classList.remove('collapsed');
+                    }, 100)
+                }, 100 * index);
+            })
+
+        }
+    });
+});
+// Minimiza e maximiza todos os cards
+explodeCard.addEventListener('click', () => {
+    const cards = document.querySelectorAll('.rectangle');
+
+    cards.forEach((card, index) => {
+        if (!card.classList.contains('fixado')) {
             setTimeout(()=> {
                 card.classList.remove('collapsed');
-                setTimeout(()=> {
-                    if (!botaoMaisInfo.classList.contains('invisible2')) {
-                        botaoMaisInfo.innerHTML = '▲ Ocorrências';
-                        card.querySelector('.resumoResultados').classList.remove('collapsed');
-                    }
-                }, 100);
             }, 100 * index);
         }
     });

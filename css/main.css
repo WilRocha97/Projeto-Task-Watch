@@ -9,7 +9,7 @@
     --tamanho-texto-2: 0.9rem;
     --transicao-link: 0.4s;
     --blur: 4px;
-    --borda-card: 3px;
+    --borda-card: 0;
     --sombra-card: #27272727;
 }
 

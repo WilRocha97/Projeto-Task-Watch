@@ -1,3 +1,24 @@
+/* Estilizando a barra de rolagem */
+.telaResumo::-webkit-scrollbar {
+    width: 6px; /* Largura da barra de rolagem */
+}
+.telaResumo::-webkit-scrollbar-track {
+    background: transparent; /* Cor do fundo da barra de rolagem */
+}
+.telaResumo::-webkit-scrollbar-thumb {
+    background-color: #e9e9e9; /* Cor da barra de rolagem */
+    border-radius: 6px; /* Arredondamento das bordas */
+    border: none; /* Espaçamento entre a barra e o conteúdo */
+    transition: var(--transicao-link);
+}
+.telaResumo::-webkit-scrollbar-thumb:hover {
+    background: var(--cor-destaque);
+    border: none;
+}
+.telaResumo::-webkit-scrollbar-button {
+    border: none;
+}
+
 .sortable-ghost {
     background: transparent !important;
     box-shadow: var(--direcao-sombra-1) var(--direcao-sombra-1) 9px var(--sombra-clara),
@@ -5,18 +26,19 @@
     backdrop-filter: blur(var(--blur)) !important;
     color: gray !important;
     border: var(--borda-card) solid var(--sombra-escura) !important;
-    margin: 30px !important;
     text-shadow: none !important;
 }
-.sortable-ghost .porcentagem, 
+.sortable-ghost .alerta, 
+.sortable-ghost .botaoFixar,
 .sortable-ghost .botaoFechar,
-.sortable-ghost .maisInfo {
+.sortable-ghost .maisInfo,
+.sortable-ghost .maisInfo2 {
     color: var(--sombra-2) !important;
     text-shadow: none !important;
 }
 
 .rotinas {
-    padding: 90px 12px 90px 12px;
+    padding: 80px 12px 90px 12px;
     display: flex;
     justify-content: center;
     align-items: baseline;
@@ -41,10 +63,11 @@
 .rectangle.enter {
     max-width: 275px;
     max-height: 600px;
-    padding: 12px;
-    margin: 25px;
+    padding: 10px;
+    margin: 15px;
     opacity: 1;
     scale: 1;
+    overflow: hidden;
 }
 .rectangle.out {
     max-width: 0 !important;
@@ -61,8 +84,8 @@
 .rectangle.collapsed {
     line-height: normal;
     font-size: 0;
-    max-width: 23px;
-    max-height: 23px;
+    max-width: 30px;
+    max-height: 30px;
     border-radius: 12px;
     padding: 0;
     margin: 10px;
@@ -70,7 +93,9 @@
 .rectangle.collapsed #imagem-aleatoria,
 .rectangle.collapsed .botaoFixar,
 .rectangle.collapsed .botaoFechar,
+.rectangle.collapsed .porcentagem,
 .rectangle.collapsed .maisInfo,
+.rectangle.collapsed .maisInfo2,
 .rectangle.collapsed .content,
 .rectangle.collapsed .titulo,
 .rectangle.collapsed #media {
@@ -89,6 +114,25 @@
     padding: 4px;
     opacity: 1;
     margin-bottom: 10px;
+}
+.progresso {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.porcentagem {
+    font-weight: 600;
+    font-size: 1em;
+    padding: 0;
+    max-width: 0;
+    opacity: 0;
+    transition: max-width var(--transicao-link), opacity var(--transicao-link), padding var(--transicao-link);
+}
+.porcentagem:not(:empty) {
+    max-width: 200px;
+    padding: 6px 8px;
+    opacity: 1;
 }
 
 .botaoFechar, .botaoFixar {
@@ -117,7 +161,7 @@
                  0 0 7px white;
 }
 
-.maisInfo {
+.maisInfo, .maisInfo2 {
     cursor:cell;
     border: none;
     background: none;
@@ -129,27 +173,31 @@
     max-width: fit-content;
     max-height: 500px;
     text-shadow: 0 0 1px white;
-    transition: padding var(--transicao-link), max-width var(--transicao-link), max-height var(--transicao-link), text-shadow var(--transicao-link);
+    transition: padding var(--transicao-link), max-width 1s, max-height var(--transicao-link), text-shadow var(--transicao-link);
 }
-.maisInfo:hover {
+.maisInfo:hover, .maisInfo2:hover {
     text-shadow: 0 0 5px white;
 }
-.resumoResultados {
+.resumoResultados, .resumoResultados2 {
     display: flex;
     flex-direction: column;
     gap: 10px;
     opacity: 1;
-    max-height: 1000px;
+    max-height: 250px;
     transition: opacity var(--transicao-link), margin-bottom var(--transicao-link), padding var(--transicao-link), max-height var(--transicao-link);
 }
-.resumoResultados.collapsed {
+.resumoResultados.collapsed, .resumoResultados2.collapsed {
     opacity: 0;
     padding: 0;
     margin-bottom: 0;
     max-height: 0;
 }
+.telaResumo {
+    overflow: auto;
+    max-height: 250px;
+}
 
-.content, .content2 {
+.content {
     font-size: 0.8em;
     padding: 0;
     opacity: 0;
@@ -158,17 +206,12 @@
     transition: padding var(--transicao-link), opacity var(--transicao-link), max-width var(--transicao-link), max-height var(--transicao-link),
                 color var(--transicao-link), text-shadow var(--transicao-link);
 }
-.content2:not(:empty) {
-    max-height: 200px;
-    padding: 8px 4px 0 4px;
-    opacity: 1;
-}
 .content:not(:empty) {
     max-height: 200px;
     padding: 4px;
     opacity: 1;
 }
-.porcentagem {
+.alerta {
     z-index: -1;
     position: absolute;
     bottom: 1.3rem;
@@ -177,7 +220,6 @@
     font-weight: 600;
     transition: var(--transicao-link);
 }
-
 
 #imagem-aleatoria {
     position: absolute;
@@ -217,11 +259,5 @@
     }
     .botaoFechar:active {
         color: red;
-    }
-    .maisInfo:hover {
-        text-shadow: 0 0 0 transparent;
-    }
-    .maisInfo:active {
-        text-shadow: 0 0 5px white;
     }
 }
