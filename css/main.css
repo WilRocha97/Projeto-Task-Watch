@@ -10,7 +10,8 @@
     --transicao-link: 0.4s;
     --blur: 4px;
     --borda-card: 0;
-    --sombra-card: #27272727;
+    --sombra-card: #3f3f3f27;
+    --sombra-card-clara: #81818127;
 }
 
 /* Estilizando a barra de rolagem */
@@ -120,7 +121,8 @@ body {
     padding: 8px;
     background: #a8a8a82d;
     border-radius: 10px;
-    box-shadow: 0 0 5px var(--sombra-card);
+    box-shadow: var(--direcao-sombra-1) var(--direcao-sombra-1) 5px var(--sombra-card-clara),
+                var(--direcao-sombra-2) var(--direcao-sombra-2) 5px var(--sombra-card);
     backdrop-filter: blur(var(--blur));
 }
 
