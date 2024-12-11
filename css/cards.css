@@ -1,12 +1,12 @@
 /* Estilizando a barra de rolagem */
 .telaResumo::-webkit-scrollbar {
-    width: 6px; /* Largura da barra de rolagem */
+    width: 4px; /* Largura da barra de rolagem */
 }
 .telaResumo::-webkit-scrollbar-track {
     background: transparent; /* Cor do fundo da barra de rolagem */
 }
 .telaResumo::-webkit-scrollbar-thumb {
-    background-color: #e9e9e9; /* Cor da barra de rolagem */
+    background-color: #dbdbdbb9; /* Cor da barra de rolagem */
     border-radius: 6px; /* Arredondamento das bordas */
     border: none; /* Espaçamento entre a barra e o conteúdo */
     transition: var(--transicao-link);
@@ -230,8 +230,8 @@
     position: absolute;
     overflow: visible;
     z-index: 1000;
-    top: 40px;
-    right: 20px;
+    top: 52px;
+    right: 27px;
     width: 45px;
     height: auto;
     transition: var(--transicao-link);
