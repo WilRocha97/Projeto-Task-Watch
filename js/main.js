@@ -217,22 +217,24 @@ document.body.addEventListener('click', (event) => {
     else if (target.classList.contains('maisInfo')){
         // minimiza a tela de ocorrências dentro do card
         const maisInfo = divMae.querySelector('#resumoResultados');
-        maisInfo.classList.toggle('collapsed')
-        if (target.innerHTML.trim() === '▼ Execução') {
+        if (maisInfo.classList.contains('collapsed')) {
+            maisInfo.classList.remove('collapsed')
             target.innerHTML = '▲ Execução'
         }
         else {
+            maisInfo.classList.add('collapsed')
             target.innerHTML = '▼ Execução'
         }
     }
     else if (target.classList.contains('maisInfo2')){
         // minimiza a tela de ocorrências dentro do card
         const maisInfo2 = divMae.querySelector('#resumoResultados2');
-        maisInfo2.classList.toggle('collapsed')
-        if (target.innerHTML.trim() === '▼ Andamentos') {
+        if (maisInfo2.classList.contains('collapsed')) {
+            maisInfo2.classList.remove('collapsed')
             target.innerHTML = '▲ Andamentos'
         }
         else {
+            maisInfo2.classList.add('collapsed')
             target.innerHTML = '▼ Andamentos'
         }
     }
