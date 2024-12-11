@@ -62,7 +62,7 @@
 }
 .rectangle.enter {
     max-width: 275px;
-    max-height: 600px;
+    max-height: 550px;
     padding: 10px;
     margin: 15px;
     opacity: 1;
