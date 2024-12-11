@@ -183,8 +183,13 @@
     flex-direction: column;
     gap: 10px;
     opacity: 1;
-    max-height: 250px;
     transition: opacity var(--transicao-link), margin-bottom var(--transicao-link), padding var(--transicao-link), max-height var(--transicao-link);
+}
+.resumoResultados {
+    max-height: 150px;
+}
+.resumoResultados2 {
+    max-height: 250px;
 }
 .resumoResultados.collapsed, .resumoResultados2.collapsed {
     opacity: 0;
@@ -214,7 +219,7 @@
 .alerta {
     z-index: -1;
     position: absolute;
-    bottom: 1.3rem;
+    top: 4rem;
     right: 0;
     font-size: 7rem;
     font-weight: 600;
