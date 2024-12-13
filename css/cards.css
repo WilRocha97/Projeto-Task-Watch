@@ -112,7 +112,7 @@
     padding: 0;
     margin: 10px;
 }
-.rectangle.collapsed #imagem-aleatoria,
+.rectangle.collapsed #decoracao,
 .rectangle.collapsed .botaoFixar,
 .rectangle.collapsed .botaoFechar,
 .rectangle.collapsed .porcentagem,
@@ -248,7 +248,7 @@
     transition: var(--transicao-link);
 }
 
-#imagem-aleatoria {
+#decoracao {
     position: absolute;
     overflow: visible;
     z-index: 1000;
@@ -258,7 +258,7 @@
     height: auto;
     transition: var(--transicao-link);
 }
-#imagem-aleatoria:hover {
+#decoracao:hover {
     scale: 1.2;
 }
 

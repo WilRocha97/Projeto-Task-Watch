@@ -1,3 +1,5 @@
+import {decoracao} from './temas.js';
+
 const encolheCard = document.getElementById('encolherCard');
 const explodeCard = document.getElementById('explodirCard');
 const encolhe = document.getElementById('encolher');
@@ -27,10 +29,6 @@ var divsRotinas = document.querySelectorAll('#telaRotinas .fundo');
 
 const maisInfos = [{botao:'.maisInfo', nomeBotaoMini:'▼ Execução', nomeBotaoMaxi:'▲ Execução', conteudo:'.resumoResultados'}, 
                     {botao:'.maisInfo2', nomeBotaoMini:'▼ Andamentos', nomeBotaoMaxi:'▲ Andamentos', conteudo:'.resumoResultados2'}]
-
-const imagens = ['arvore.png', 'bengala-doce.png', 'gengibre.png', 'gorro-do-papai-noel.png', 'meia.png', 'presente.png', 
-                 'visco.png', 'decoracao.png', 'papai-noel.png', 'guirlanda.png', 'estrela.png'];
-
 
 
 function updateClock() {
@@ -143,10 +141,7 @@ cards.forEach((card, index) => {
     setTimeout(()=> {
         card.classList.add('enter');
 
-        // Escolhe uma imagem aleatória
-        const imagemAleatoria = imagens[Math.floor(Math.random() * imagens.length)];
-        // Atualiza a imagem
-        card.querySelector('#imagem-aleatoria').src = `assets/temas/${imagemAleatoria}`;
+        decoracao(card);
 
     }, 100 * index);
 });
