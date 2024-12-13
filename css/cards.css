@@ -15,8 +15,30 @@
     background: var(--cor-destaque);
     border: none;
 }
-.telaResumo::-webkit-scrollbar-button {
-    border: none;
+/* Buttons */
+.telaResumo::-webkit-scrollbar-button:single-button {
+    background-color: transparent;
+    display: block;
+    border-style: solid;
+    height: 15px;
+    width: 4px;
+}
+/* Up */
+.telaResumo::-webkit-scrollbar-button:single-button:vertical:decrement {
+    border-width: 0 2px 8px 2px;
+    border-color: transparent transparent #dbdbdbb9 transparent;
+}
+
+.telaResumo::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
+    border-color: transparent transparent var(--cor-destaque) transparent;
+}
+/* Down */
+.telaResumo::-webkit-scrollbar-button:single-button:vertical:increment {
+    border-width: 8px 2px 0 2px ;
+    border-color: #dbdbdbb9 transparent transparent transparent;
+}
+.telaResumo::-webkit-scrollbar-button:vertical:single-button:increment:hover {
+    border-color: var(--cor-destaque) transparent transparent transparent;
 }
 
 .sortable-ghost {

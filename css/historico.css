@@ -15,9 +15,30 @@
     background: var(--cor-destaque);
     border: none;
 }
+/* Buttons */
+.telaHistorico::-webkit-scrollbar-button:single-button {
+    background-color: transparent;
+    display: block;
+    border-style: solid;
+    height: 25px;
+    width: 6px;
+}
+/* Up */
+.telaHistorico::-webkit-scrollbar-button:single-button:vertical:decrement {
+    border-width: 0 3px 10px 3px;
+    border-color: transparent transparent #818181 transparent;
+}
 
-.telaHistorico::-webkit-scrollbar-button {
-    border: none;
+.telaHistorico::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
+    border-color: transparent transparent var(--cor-destaque) transparent;
+}
+/* Down */
+.telaHistorico::-webkit-scrollbar-button:single-button:vertical:increment {
+    border-width: 10px 3px 0 3px ;
+    border-color: #818181 transparent transparent transparent;
+}
+.telaHistorico::-webkit-scrollbar-button:vertical:single-button:increment:hover {
+    border-color: var(--cor-destaque) transparent transparent transparent;
 }
 
 .mainHistorico {

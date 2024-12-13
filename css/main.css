@@ -14,41 +14,6 @@
     --sombra-card-clara: #81818127;
 }
 
-/* Estilizando a barra de rolagem */
-body::-webkit-scrollbar {
-    width: 6px; /* Largura da barra de rolagem */
-}
-body::-webkit-scrollbar-track {
-    background: var(--cor-vidro-2); /* Cor do fundo da barra de rolagem */
-}
-body::-webkit-scrollbar-thumb {
-    background-color: #818181; /* Cor da barra de rolagem */
-    border-radius: 6px; /* Arredondamento das bordas */
-    border: none; /* Espaçamento entre a barra e o conteúdo */
-    transition: var(--transicao-link);
-}
-body::-webkit-scrollbar-thumb:hover {
-    background: var(--cor-destaque);
-    border: none;
-}
-body::-webkit-scrollbar-button {
-    background: var(--cor-vidro-2);
-}
-
-body {
-    background: linear-gradient(-50deg, var(--cor-vidro-2), var(--cor-vidro));
-    min-height: 100vh;
-    line-height: 15px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    font-family: "Rubik", sans-serif;
-    font-weight: 400;
-    font-size: 0.9em;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
 .dark {
     --cor-executando: #00cf91;
     --cor-erro: #ff0000;
@@ -96,6 +61,62 @@ body {
     --sombra-escura: #a5a5a5de;
     --sombra-2: #afafafad;
     color: var(--cor-texto);
+}
+
+/* Estilizando a barra de rolagem */
+body::-webkit-scrollbar {
+    width: 6px; /* Largura da barra de rolagem */
+}
+body::-webkit-scrollbar-track {
+    background: var(--cor-vidro-2); /* Cor do fundo da barra de rolagem */
+}
+body::-webkit-scrollbar-thumb {
+    background-color: #818181; /* Cor da barra de rolagem */
+    border-radius: 6px; /* Arredondamento das bordas */
+    border: none; /* Espaçamento entre a barra e o conteúdo */
+    transition: var(--transicao-link);
+}
+body::-webkit-scrollbar-thumb:hover {
+    background: var(--cor-destaque);
+    border: none;
+}
+/* Buttons */
+body::-webkit-scrollbar-button:single-button {
+    background-color: var(--cor-vidro-2);
+    display: block;
+    border-style: solid;
+    height: 20px;
+    width: 6px;
+}
+/* Up */
+body::-webkit-scrollbar-button:single-button:vertical:decrement {
+    border-width: 0 3px 10px 3px;
+    border-color: transparent transparent #818181 transparent;
+}
+body::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
+    border-color: transparent transparent var(--cor-destaque) transparent;
+}
+/* Down */
+body::-webkit-scrollbar-button:single-button:vertical:increment {
+    border-width: 10px 3px 0 3px ;
+    border-color: #818181 transparent transparent transparent;
+}
+body::-webkit-scrollbar-button:vertical:single-button:increment:hover {
+    border-color: var(--cor-destaque) transparent transparent transparent;
+}
+
+body {
+    background: linear-gradient(-50deg, var(--cor-vidro-2), var(--cor-vidro));
+    min-height: 100vh;
+    line-height: 15px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Rubik", sans-serif;
+    font-weight: 400;
+    font-size: 0.9em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .invisible {
