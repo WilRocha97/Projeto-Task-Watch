@@ -246,11 +246,6 @@ document.body.addEventListener('click', (event) => {
         // Se um elemento com a classe 'rectangle' foi encontrado, alterna a classe 'collapsed'
         if (target) {
             target.classList.toggle('collapsed');
-
-            const maisInfo = target.querySelector('#resumoResultados');
-            const botaoMaisInfo = target.querySelector('.maisInfo')
-            maisInfo.classList.add('collapsed')
-            botaoMaisInfo.innerHTML = '▼ Ocorrências'
         }
     }
     
