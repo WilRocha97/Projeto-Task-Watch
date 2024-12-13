@@ -192,8 +192,8 @@ document.body.addEventListener('click', (event) => {
     if (target.classList.contains('botaoFixar')) {
         // Encontra o elemento pai mais próximo
         divMae.classList.toggle('fixado')
+        target.classList.toggle('botaoFixado')
         if (target.innerHTML.trim() === '☆') {
-            target.classList.toggle('botaoFixado')
             target.innerHTML = '★'
         }
         else {
