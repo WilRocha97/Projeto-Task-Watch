@@ -143,18 +143,31 @@
     align-items: center;
     margin-bottom: 10px;
 }
-.porcentagem {
-    font-weight: 600;
-    font-size: 1em;
-    padding: 0;
-    max-width: 0;
-    opacity: 0;
-    transition: max-width var(--transicao-link), opacity var(--transicao-link), padding var(--transicao-link);
+#porcentagem {
+    position: relative; /* Para posicionar a barra interna */
+    border-radius: 5px; /* Borda arredondada */
+    width: 48px;
+    height: 4px;
+    overflow: hidden; /* Garante que a barra interna não ultrapasse os limites */
 }
-.porcentagem:not(:empty) {
-    max-width: 200px;
-    padding: 6px 8px;
-    opacity: 1;
+
+/* Estilização da barra de carregamento */
+#porcentagem .barraLoading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%; /* Preenche a altura total da div */
+    background-color: #ffffff3b;
+    transition: width 0.5s ease-in-out; /* Transição suave ao aumentar */
+}
+/* Texto da porcentagem */
+#porcentagem .textoPorcentagem {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 600;
+    z-index: 2; /* Mantém o texto acima da barra */
 }
 
 .botaoFechar, .botaoFixar {
