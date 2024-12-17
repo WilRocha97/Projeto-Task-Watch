@@ -145,7 +145,6 @@
 }
 #porcentagem {
     position: relative; /* Para posicionar a barra interna */
-    border-radius: 5px; /* Borda arredondada */
     width: 48px;
     height: 4px;
     overflow: hidden; /* Garante que a barra interna não ultrapasse os limites */
