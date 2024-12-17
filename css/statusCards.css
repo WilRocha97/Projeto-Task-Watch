@@ -70,7 +70,7 @@
 }
 
 
-@media (hover: none) and (max-width: 720px){
+@media (max-width: 720px){
     .status:hover {
         box-shadow: inset 0 0 20px var(--cor-opaca),
                     0 0 10px var(--cor-opaca);

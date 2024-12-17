@@ -219,8 +219,7 @@
         margin: 50% 0 0 0;
         position: fixed;
     }
-}
-@media (hover: none) and (max-width: 720px){
+
     .cabecalho__menu__botao:hover {
         text-shadow: 0 0 0 transparent;
         color: var(--cor-texto);
