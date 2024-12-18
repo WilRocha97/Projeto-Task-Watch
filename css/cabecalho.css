@@ -39,12 +39,13 @@
     position: fixed;
     overflow: hidden;
 }
-.menu {
+.menu, .menuTelaBotoes {
     display: flex;
     justify-content: center;
     padding: 9px 10px;
     font-size: 0.9em;
     gap: 10px;
+    overflow: hidden;
 }
 .cabecalho__menu__botao {
     position: relative;
@@ -96,6 +97,13 @@
 }
 .bolinhaFinal {
     background-color: var(--cor-final); /* Cor da bolinha */
+}
+
+.menuTela {
+    opacity: 1;
+    margin: 10px;
+    max-height: 100vh;
+    transition: margin 1s, max-height 1s, opacity var(--transicao-link), padding var(--transicao-link);
 }
 
 .dicaContainer {
@@ -195,6 +203,10 @@
     }
     .menu {
         gap: 5px ;
+    }
+    .menuTelaBotoes {
+        flex-wrap: wrap;
+        gap: 25px;
     }
     #clock {
         font-size: 0;
