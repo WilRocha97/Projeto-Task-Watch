@@ -61,8 +61,9 @@ document.body.addEventListener('click', (event) => {
     const divMae = target.closest('.rectangle');
 
     // fecha o menu ao clicar em qualuqer lugar que não seja nele
-    if (!target.classList.contains('cabecalhoMenuBotao')) {
+    if (!target.classList.contains('cmb')) {
         telaMenu.classList.add('invisible2')
+        telaDica.classList.add('invisible2')
     }
 
     if (target.classList.contains('botaoFixar')) {
