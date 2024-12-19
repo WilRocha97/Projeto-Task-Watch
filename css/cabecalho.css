@@ -48,9 +48,7 @@
     color: rgb(255, 0, 64) !important;
 }
 #galeria:hover {
-    text-shadow: 0 0 5px rgb(255, 0, 64),
-                    0 0 7px rgb(255, 0, 64),
-                    0 0 8px rgb(255, 0, 64) !important;
+    background: var(--sombra-2);
 }
 
 .cabecalho {
@@ -67,27 +65,27 @@
 .menu, .menuTelaBotoes {
     display: flex;
     justify-content: center;
-    padding: 9px 10px;
+    padding: 4px 5px;
     font-size: 0.9em;
+    margin: 5px;
     gap: 10px;
     overflow: hidden;
 }
-.cabecalho__menu__botao {
+.cabecalhoMenuBotao {
     position: relative;
     align-self: center;
     border: none;
     background: none;
+    border-radius: var(--borda-botao);
+    padding: var(--padding-botao);
     cursor: pointer;
     color: var(--cor-texto);
     font-size: var(--tamanho-texto-2);
     font-weight: bold;
     transition: var(--transicao-link);
 }
-.cabecalho__menu__botao:hover {
-    text-shadow: 0 0 5px var(--cor-destaque),
-                    0 0 7px var(--cor-destaque),
-                    0 0 9px var(--cor-destaque);
-    color: var(--cor-destaque);
+.cabecalhoMenuBotao:hover {
+    background: var(--sombra-2);
 }
 #clock {
     align-self: center;
@@ -137,7 +135,7 @@
 }
 .dicaTela {
     align-self: center;
-    margin: 30px;
+    margin: 5px 30px 30px 30px;
     max-width: 80%;
     max-height: 80vh;
     transition: margin 1s, max-height 1s, opacity var(--transicao-link), padding var(--transicao-link);
@@ -156,7 +154,7 @@
     justify-content: center;
 
     align-self: center;
-    margin: 30px;
+    margin: 5px 30px 30px 30px;
     max-width: 80%;
     max-height: 80vh;
     transition: margin 1s, max-height 1s, opacity var(--transicao-link), padding var(--transicao-link);
@@ -225,6 +223,11 @@
 
 
 @media (max-width: 720px) {
+    #clock {
+        font-size: 0;
+    }
+}
+@media (max-width: 800px) {
     .fundo {
         border-radius: 25px;
     }
@@ -234,9 +237,6 @@
     .menuTelaBotoes {
         flex-wrap: wrap;
         gap: 25px;
-    }
-    #clock {
-        font-size: 0;
     }
 
     .dicaTela {
@@ -259,15 +259,11 @@
         position: fixed;
     }
 
-    .cabecalho__menu__botao:hover {
-        text-shadow: 0 0 0 transparent;
-        color: var(--cor-texto);
+    .cabecalhoMenuBotao:hover {
+        background: transparent;
     }
-    .cabecalho__menu__botao:active {
-        text-shadow: 0 0 5px var(--cor-destaque),
-                    0 0 7px var(--cor-destaque),
-                    0 0 9px var(--cor-destaque);
-        color: var(--cor-destaque);
+    .cabecalhoMenuBotao:active {
+        background: var(--sombra-2);
     }
 
     #galeria:hover {

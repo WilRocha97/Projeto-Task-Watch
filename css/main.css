@@ -12,6 +12,8 @@
     --borda-card: 0;
     --sombra-card: #3f3f3f27;
     --sombra-card-clara: #81818127;
+    --borda-botao: 20px;
+    --padding-botao: 6px 7px;;
 }
 
 .dark {
@@ -36,7 +38,6 @@
     --sombra-clara: #44444486;
     --sombra-escura: #0a0a0adc;
     --sombra-2: #232930c7;
-    color: var(--cor-texto);
 }
 .light {
     --cor-executando: #00be85;
@@ -60,7 +61,6 @@
     --sombra-clara: #e4e3e3c2;
     --sombra-escura: #a5a5a5de;
     --sombra-2: #afafafad;
-    color: var(--cor-texto);
 }
 
 /* Estilizando a barra de rolagem */
@@ -107,6 +107,7 @@ body::-webkit-scrollbar-button:vertical:single-button:increment:hover {
 
 body {
     background: linear-gradient(-50deg, var(--cor-vidro-2), var(--cor-vidro));
+    color: var(--cor-texto);
     min-height: 100vh;
     line-height: 15px;
     display: flex;

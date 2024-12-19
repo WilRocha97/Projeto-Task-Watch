@@ -16,6 +16,7 @@
     --cor-primaria: #006345;
     --cor-secundaria: #004557;
     --cor-opaca: #00694a;
+    --cor-loading: #00ffb350;
     --cor-principal: var(--cor-executando);
     --cor-alerta: var(--cor-opaca);
 }
@@ -23,6 +24,7 @@
     --cor-primaria: #aa8b00;
     --cor-secundaria: #b95402;
     --cor-opaca: #9c5900;
+    --cor-loading: #ffe60063;
     --cor-principal: var(--cor-ocioso);
     --cor-principal-alternativa: var(--cor-ocioso-alternativa);
     --cor-alerta: var(--cor-ocioso);
@@ -32,6 +34,7 @@
     --cor-primaria: #920000fb;
     --cor-secundaria: #a719a7;
     --cor-opaca: #790000;
+    --cor-loading: #ff004c63;
     --cor-principal: var(--cor-erro);
     --cor-principal-alternativa: var(--cor-erro-alternativa);
     --cor-alerta: var(--cor-erro);
