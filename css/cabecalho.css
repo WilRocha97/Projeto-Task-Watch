@@ -125,7 +125,7 @@
 .menuTela {
     opacity: 1;
     margin: 10px;
-    max-height: 100vh;
+    max-height: 10vh;
     transition: margin 1s, max-height 1s, opacity var(--transicao-link), padding var(--transicao-link);
 }
 
