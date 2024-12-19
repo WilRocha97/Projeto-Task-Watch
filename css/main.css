@@ -163,6 +163,8 @@ body {
     border: none;
     background: none;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
     transition: var(--transicao-link);
 }
 #toggleDarkMode img{
