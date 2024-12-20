@@ -4,6 +4,7 @@ const dica = document.getElementById('dica');
 const telaDica = document.getElementById('telaDica');
 const galeria = document.getElementById('galeria');
 const telaGaleria = document.getElementById('telaGaleria');
+var telaRotinas = document.getElementById('telaRotinas')
 
 var screenWidth = window.innerWidth;
 
@@ -44,20 +45,23 @@ setInterval(updateClock, 1000);
 // Atualiza o relógio imediatamente ao carregar a página
 updateClock();
 
-
 // Janela com dicas de como o site funciona
 menu.addEventListener('click', () => {
     if (telaMenu.classList.contains('invisible2')) {
         telaMenu.classList.remove('invisible2');
+        telaRotinas.classList.add('rotinasExpandida')
     }
     else {
         telaMenu.classList.add('invisible2');
-    }
-    if (!telaGaleria.classList.contains('invisible2')) {
-        telaGaleria.classList.add('invisible2');
+        telaRotinas.classList.remove('rotinasExpandida')
     }
     if (!telaDica.classList.contains('invisible2')) {
         telaDica.classList.add('invisible2');
+        telaRotinas.classList.remove('rotinasExpandida')
+    }
+    if (!telaGaleria.classList.contains('invisible2')) {
+        telaGaleria.classList.add('invisible2');
+        telaRotinas.classList.remove('rotinasExpandida')
     }
 });
 

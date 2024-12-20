@@ -66,7 +66,10 @@
     align-items: baseline;
     height: 100%;
     flex-wrap: wrap;
-    transition: height var(--transicao-link);
+    transition: height var(--transicao-link), padding var(--transicao-link);
+}
+.rotinasExpandida {
+    padding: 160px 12px 90px 12px;
 }
 .rectangle {
     color: white;

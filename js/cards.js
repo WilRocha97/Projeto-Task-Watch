@@ -5,7 +5,6 @@ const encolheCard = document.getElementById('encolherCard');
 const explodeCard = document.getElementById('explodirCard');
 const encolhe = document.getElementById('encolher');
 const explode = document.getElementById('explodir');
-
 var telaRotinas = document.getElementById('telaRotinas');
 
 const maisInfos = [{botao:'.maisInfo', nomeBotaoMini:'▼ Execução', nomeBotaoMaxi:'▲ Execução', conteudo:'.resumoResultados'}, 
@@ -64,6 +63,7 @@ document.body.addEventListener('click', (event) => {
     if (!target.classList.contains('cmb')) {
         telaMenu.classList.add('invisible2')
         telaDica.classList.add('invisible2')
+        telaRotinas.classList.remove('rotinasExpandida')
     }
 
     if (target.classList.contains('botaoFixar')) {
