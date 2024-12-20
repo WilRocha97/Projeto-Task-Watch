@@ -21,25 +21,29 @@ function definevariantesImagens() {
     let variantesImagens;
     let feriado;
 
-    // Verifica se está entre 1º de dezembro e 10 de janeiro
+    // Verifica datas
     if ((mes === 12 && dia >= 1) || (mes === 12 && dia <= 31)) {
-        variantesImagens = 8;
+        variantesImagens = 18;
         feriado = 'natal'
     } 
     else if ((mes === 1 && dia >= 1) || (mes === 1 && dia <= 2)) {
-        variantesImagens = 8;
+        variantesImagens = 5;
         feriado = 'anoNovo'
     }
     else if ((mes === 4 && dia >= 1) || (mes === 4 && dia <= 30)) {
         variantesImagens = 6;
         feriado = 'pascoa'
     }
+    else if ((mes === 6 && dia >= 1) || (mes === 7 && dia <= 31)) {
+        variantesImagens = 16;
+        feriado = 'junina'
+    }
     else if ((mes === 10 && dia >= 1) || (mes === 10 && dia <= 31)) {
-        variantesImagens = 19;
+        variantesImagens = 18;
         feriado = 'halloween'
     }
     else {
-        variantesImagens = 0; // Outro valor padrão, pode ser ajustado conforme necessário
+        variantesImagens = 0;
     }
 
     return {variantesImagens, feriado};
