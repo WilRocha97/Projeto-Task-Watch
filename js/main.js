@@ -4,7 +4,7 @@ const dica = document.getElementById('dica');
 const telaDica = document.getElementById('telaDica');
 const galeria = document.getElementById('galeria');
 const telaGaleria = document.getElementById('telaGaleria');
-var telaRotinas = document.getElementById('telaRotinas')
+const telaRotinas = document.getElementById('telaRotinas')
 
 var screenWidth = window.innerWidth;
 

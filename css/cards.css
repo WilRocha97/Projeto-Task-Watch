@@ -283,6 +283,9 @@
     .rotinas {
         padding: 80px 0 90px 0;
     }
+    .rotinasExpandida {
+        padding: 260px 0 90px 0;
+    }
     .botaoFechar {
         font-size: large;
     }
