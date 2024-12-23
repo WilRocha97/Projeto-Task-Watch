@@ -39,6 +39,10 @@ document.addEventListener('DOMContentLoaded', function() {
             // Inicia um timeout para adicionar a classe após o delay
             timeout = setTimeout(function() {
                 evt.item.classList.add('sortable-ghost');
+                telaMenu.classList.add('invisible2');
+                telaDica.classList.add('invisible2');
+                telaGaleria.classList.add('invisible2');
+                telaRotinas.classList.remove('rotinasExpandida')
             }, delay);
         },
         onUnchoose: function(evt) {

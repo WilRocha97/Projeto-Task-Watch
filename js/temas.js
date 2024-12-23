@@ -6,6 +6,7 @@ export function decoracao(card) {
         const imagemAleatoria = [Math.floor(Math.random() * variantesImagens)];
         // Atualiza a imagem
         card.querySelector('#decoracao').src = `assets/temas/${feriado}/${imagemAleatoria}.png`;
+        card.querySelector('#progresso').classList.add('progressoMenor');
     }
     else {
         card.querySelector('#decoracao').remove()
