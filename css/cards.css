@@ -285,15 +285,13 @@
 #decoracao {
     position: absolute;
     overflow: visible;
-    z-index: 1000;
-    top: 52px;
-    right: 27px;
-    width: 45px;
+    z-index: -1000;
+    top: 15px;
+    right: 20px;
+    width: 150px;
     height: auto;
+    opacity: 0.2;
     transition: var(--transicao-link);
-}
-#decoracao:hover {
-    scale: 1.2;
 }
 
 
