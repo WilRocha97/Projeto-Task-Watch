@@ -182,9 +182,53 @@ body {
 .layout {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    align-items: center;
 }
 
+.telaLogin {
+    margin: 50px 0 200px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.inicio {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 150px;
+    margin: 20px;
+}
+.inicioTitulo {
+    margin-top: 25vh;
+    font-size: 4em;
+    justify-content: space-between;
+}
+
+.cInputUsuario, .cInputSenha {
+    color: var(--cor-texto);
+    background: none;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+}
+.clearCInputUsuario, .clearCInputSenha, .inputEnter {
+    cursor: pointer;
+    color: var(--cor-texto);
+    background: none;
+    border: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 20px;
+    padding: 5px;
+    margin: 5px 6px;
+    transition: var(--transicao-link);
+}
+.clearCInputUsuario:hover, .clearCInputSenha:hover {
+    background: var(--sombra-2);
+}
 
 /*------------------------------------------------------------------------------------------------*/
 
