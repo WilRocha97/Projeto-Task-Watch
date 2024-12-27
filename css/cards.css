@@ -153,9 +153,6 @@
     margin-right: 5px;
     overflow: hidden; /* Garante que a barra interna não ultrapasse os limites */
 }
-.progressoMenor {
-    width: 75%;
-}
 
 /* Estilização da barra de carregamento */
 #porcentagem .barraLoading {
