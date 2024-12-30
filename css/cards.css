@@ -54,9 +54,12 @@
 .sortable-ghost .botaoFixar,
 .sortable-ghost .botaoFechar,
 .sortable-ghost .maisInfo,
-.sortable-ghost .maisInfo2 {
+.sortable-ghost .maisInfo2,
+.sortable-ghost .barraLoading {
     color: var(--sombra-2) !important;
     text-shadow: none !important;
+    --cor-loading-1: lightgray;
+    --cor-loading-2: lightgray;
 }
 
 .rotinas {
