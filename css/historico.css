@@ -151,15 +151,15 @@
     color: var(--cor-texto);
 }
 .ociosa {
-    color: var(--cor-ocioso);
+    color: var(--cor-ocioso-alternativa);
     font-weight: bold;
 }
 .erro {
-    color: var(--cor-erro);
+    color: var(--cor-erro-alternativa);
     font-weight: bold;
 }
 .finalizada {
-    color: var(--cor-final);
+    color: var(--cor-final-alternativa);
     font-weight: bold;
 }
 .fechado {

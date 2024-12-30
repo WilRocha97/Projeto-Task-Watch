@@ -37,7 +37,7 @@
     --direcao-sombra-1: -3px;
     --sombra-clara: #44444486;
     --sombra-escura: #0a0a0adc;
-    --sombra-2: #232930c7;
+    --sombra-2: #323a44c7;
 }
 .light {
     --cor-executando: #00be85;
@@ -60,7 +60,7 @@
     --direcao-sombra-1: -3px;
     --sombra-clara: #e4e3e3c2;
     --sombra-escura: #a5a5a5de;
-    --sombra-2: #afafafad;
+    --sombra-2: #9c9c9cad;
 }
 
 /* Estilizando a barra de rolagem */
@@ -251,9 +251,11 @@ body {
     text-decoration: none;
     color: var(--cor-destaque);
     transition: var(--transicao-link);
+    border-radius: 20px;
+    padding: 5px 7px;
 }
 .link__padrao:hover {
-    text-shadow: 0 0 20px var(--cor-destaque);
+    background: var(--sombra-2);
 }
 
 
