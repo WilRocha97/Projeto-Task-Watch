@@ -3,7 +3,7 @@ export function decoracao(card) {
     const {variantesImagens, feriado} = definevariantesImagens()
 
     if (feriado !== 'anoNovo') {
-        console.log(feriado)
+        // console.log(feriado)
         const elementos = document.querySelectorAll('.firework');
         for (let i = 0; i < 3 && i < elementos.length; i++) {
             elementos[i].remove();

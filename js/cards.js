@@ -9,6 +9,9 @@ var telaRotinas = document.getElementById('telaRotinas');
 const telaGaleria = document.getElementById('telaGaleria');
 const telaDica = document.getElementById('telaDica');
 
+// caso existe alguma coisa no localStorage captura a string e transforma em JS para poder ser usado
+let cardsFixados = JSON.parse(localStorage.getItem("cardsFixados")) || []
+
 const maisInfos = [{botao:'.maisInfo', nomeBotaoMini:'▼ Execução', nomeBotaoMaxi:'▲ Execução', conteudo:'.resumoResultados'}, 
                     {botao:'.maisInfo2', nomeBotaoMini:'▼ Andamentos', nomeBotaoMaxi:'▲ Andamentos', conteudo:'.resumoResultados2'}]
 
@@ -19,9 +22,29 @@ cards.forEach((card, index) => {
         card.classList.add('enter');
 
         decoracao(card);
+        verificaFixados(card.id);
 
     }, 100 * index);
 });
+
+function verificaFixados(card) {
+    if (cardsFixados.includes(card)) {
+        var temCard = document.getElementById(card)
+        if (temCard) {
+            temCard.classList.toggle('fixado')
+            var botaoFixar = temCard.querySelector('.botaoFixar')
+            botaoFixar.classList.toggle('botaoFixado')
+            if (botaoFixar.innerHTML.trim() === '☆') {
+                botaoFixar.innerHTML = '★'
+            }
+        }
+        else {
+            cardsFixados.splice(cardsFixados.findIndex(elemento => elemento == cardF), 1)
+            //adiciona a lista atualizada no localStorage convertendo-a em string
+            localStorage.setItem("cardsFixados", JSON.stringify(cardsFixados))
+        }
+    }
+}
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -79,11 +102,16 @@ document.body.addEventListener('click', (event) => {
         target.classList.toggle('botaoFixado')
         if (target.innerHTML.trim() === '☆') {
             target.innerHTML = '★'
+            cardsFixados.push(divMae.id)
         }
         else {
             target.innerHTML = '☆'  
+            cardsFixados.splice(cardsFixados.findIndex(elemento => elemento == divMae.id), 1)
         }
+        //adiciona a lista atualizada no localStorage convertendo-a em string
+        localStorage.setItem("cardsFixados", JSON.stringify(cardsFixados))
     }
+
     // verifica se o click foi no botão de fechar
     else if (target.classList.contains('botaoFechar')) {
         // Encontra o elemento pai mais próximo
