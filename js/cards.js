@@ -9,6 +9,7 @@ var telaRotinas = document.getElementById('telaRotinas');
 const telaGaleria = document.getElementById('telaGaleria');
 const telaDica = document.getElementById('telaDica');
 
+//localStorage.clear();
 // caso existe alguma coisa no localStorage captura a string e transforma em JS para poder ser usado
 let cardsFixados = JSON.parse(localStorage.getItem("cardsFixados")) || []
 
@@ -22,30 +23,46 @@ cards.forEach((card, index) => {
         card.classList.add('enter');
 
         decoracao(card);
-        verificaFixados(card.id);
+        verificaFixados(card);
 
     }, 100 * index);
 });
 
 function verificaFixados(card) {
-    if (cardsFixados.includes(card)) {
-        var temCard = document.getElementById(card)
+    if (cardsFixados.some(cardFixado => cardFixado[0] === card.id)) {
+        var temCard = document.getElementById(card.id)
         if (temCard) {
             temCard.classList.toggle('fixado')
             var botaoFixar = temCard.querySelector('.botaoFixar')
             botaoFixar.classList.toggle('botaoFixado')
             if (botaoFixar.innerHTML.trim() === '☆') {
                 botaoFixar.innerHTML = '★'
+
+                cardsFixados.splice(cardsFixados.findIndex(elemento => elemento[0] === card.id), 1)
+                const indice = Array.from(document.getElementById('telaRotinas').children).indexOf(card);
+                cardsFixados.push([card.id, indice])
             }
         }
         else {
-            cardsFixados.splice(cardsFixados.findIndex(elemento => elemento == cardF), 1)
-            //adiciona a lista atualizada no localStorage convertendo-a em string
-            localStorage.setItem("cardsFixados", JSON.stringify(cardsFixados))
+            cardsFixados.splice(cardsFixados.findIndex(elemento => elemento[0] === card.id), 1)
+            
         }
     }
+    //adiciona a lista atualizada no localStorage convertendo-a em string
+    localStorage.setItem("cardsFixados", JSON.stringify(cardsFixados))
 }
 
+function atualizaLocalStorage() {
+    cardsFixados = []
+    var cardsReordenados = document.querySelectorAll('.rectangle')
+    cardsReordenados.forEach(cardNewIndex => {
+        if (cardNewIndex.classList.contains('fixado')) {
+            const indice = Array.from(document.getElementById('telaRotinas').children).indexOf(cardNewIndex);
+            cardsFixados.push([cardNewIndex.id, indice])
+        }
+    })
+    localStorage.setItem("cardsFixados", JSON.stringify(cardsFixados))
+}
 
 document.addEventListener('DOMContentLoaded', function() {
     var container = document.getElementById('telaRotinas');
@@ -77,7 +94,9 @@ document.addEventListener('DOMContentLoaded', function() {
             // Remove a classe após o arrasto ser finalizado
             clearTimeout(timeout);
             evt.item.classList.remove('sortable-ghost');
-            console.log('Ordem das divs alterada');
+            //console.log('Ordem das divs alterada');
+
+            atualizaLocalStorage()
         }
     });
 });
@@ -102,14 +121,11 @@ document.body.addEventListener('click', (event) => {
         target.classList.toggle('botaoFixado')
         if (target.innerHTML.trim() === '☆') {
             target.innerHTML = '★'
-            cardsFixados.push(divMae.id)
         }
         else {
             target.innerHTML = '☆'  
-            cardsFixados.splice(cardsFixados.findIndex(elemento => elemento == divMae.id), 1)
         }
-        //adiciona a lista atualizada no localStorage convertendo-a em string
-        localStorage.setItem("cardsFixados", JSON.stringify(cardsFixados))
+        atualizaLocalStorage()
     }
 
     // verifica se o click foi no botão de fechar
