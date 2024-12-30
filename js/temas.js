@@ -30,7 +30,7 @@ function definevariantesImagens() {
     let feriado;
 
     // Verifica datas
-    if ((mes === 1 && dia >= 1) || (mes === 1 && dia <= 2)) {
+    if ((mes === 12 && dia >= 30) || (mes === 1 && dia <= 2)) {
         variantesImagens = 11;
         feriado = 'anoNovo'
     }
@@ -50,7 +50,7 @@ function definevariantesImagens() {
         variantesImagens = 18;
         feriado = 'halloween'
     }
-    else if ((mes === 12 && dia >= 1) || (mes === 12 && dia <= 30)) {
+    else if ((mes === 12 && dia >= 1) || (mes === 12 && dia <= 29)) {
         variantesImagens = 12;
         feriado = 'natal'
     }
