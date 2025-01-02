@@ -72,6 +72,7 @@
     overflow: hidden;
 }
 .cabecalhoMenuBotao {
+    white-space: nowrap;
     position: relative;
     align-self: center;
     border: none;
@@ -216,7 +217,7 @@
         font-size: 0;
     }
     .menuTela {
-        max-height: 20vh;
+        max-height: 30vh;
     }
 
     .dicaTela, .galeriaTela {

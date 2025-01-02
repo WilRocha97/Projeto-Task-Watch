@@ -45,6 +45,10 @@
         </div>
         <div id="telaMenu" class="cmb menu menuTela invisible2">
             <div class="cmb fundo menuTelaBotoes">
+                <div class="cmb fundoInvertido barraPesquisa">
+                    <input type="text" id="searchInputCard" class="cmb cInputCard" placeholder="Buscar cartão" title="Buscar cartão por nome da rotina">
+                    <button id="limpaCInputCard" class="cmb clearCInputCard">⨉</button>
+                </div>
                 <button id="encolherCard" class="cmb cabecalhoMenuBotao" title="Minimizar todos os cartões">▽ Mini. cartões</button>
                 <button id="explodirCard" class="cmb cabecalhoMenuBotao" title="Maximizar todos os cartões">△ Maxi. cartões</button>
                 <button id="encolher" class="cmb cabecalhoMenuBotao" title="Minimizar todas as telas internas dos cartões">▼ Mini. infos</button>
@@ -130,11 +134,11 @@
 
                 <div id="maisInfo2" class="maisInfo2">▼ Andamentos</div>
                 <div id="resumoResultados2" class="resumoResultados2 collapsed">
-                    <div class="fundo2">
+                    <div class="scrollInfo fundo2 telaDado">
                         <div class="content">Dado atual:</div>
                         <div id="dado_atual" class="content">28 - 12345678000234 - Empresa Bacana LTDA</div>
                     </div>
-                    <div class="fundo2 telaResumo">
+                    <div class="scrollInfo fundo2 telaResumo">
                         <div id="occorencia1" class="content">5 - empresas não encontradas</div>
                         <div id="occorencia2" class="content">4 - competência não habilitada</div>
                         <div id="occorencia3" class="content">2 - erro ao gerar o relatório</div>
@@ -178,11 +182,11 @@
 
                 <div id="maisInfo2" class="maisInfo2">▼ Andamentos</div>
                 <div id="resumoResultados2" class="resumoResultados2 collapsed">
-                    <div class="fundo2">
+                    <div class="scrollInfo fundo2 telaDado">
                         <div class="content">Dado atual:</div>
                         <div id="dado_atual" class="content">14 - 98732165000732 - Empresa Maravilhosa LTDA EIRELI</div>
                     </div>
-                    <div class="fundo2 telaResumo">
+                    <div class="scrollInfo fundo2 telaResumo">
                         <div id="occorencia1" class="content">26 - login e/ou senha inválido(s)</div>
                         <div id="occorencia2" class="content">75 - com pendencias</div>
                         <div id="occorencia3" class="content">135 - sem pendencias</div>
@@ -222,11 +226,11 @@
 
                 <div id="maisInfo2" class="maisInfo2">▼ Andamentos</div>
                 <div id="resumoResultados2" class="resumoResultados2 collapsed">
-                    <div class="fundo2">
+                    <div class="scrollInfo fundo2 telaDado">
                         <div class="content">Dado atual:</div>
                         <div id="dado_atual" class="content">98 - 98741236000412 - Empresa Sencacional S/A</div>
                     </div>
-                    <div class="fundo2 telaResumo">
+                    <div class="scrollInfo fundo2 telaResumo">
                         <div id="occorencia1" class="content">17 - CPFs impossibilitados de consultar</div>
                         <div id="occorencia2" class="content">57 - CPFs com pendencias</div>
                         <div id="occorencia3" class="content">358 - CPFs sem pendencias</div>
@@ -266,11 +270,11 @@
 
                 <div id="maisInfo2" class="maisInfo2">▼ Andamentos</div>
                 <div id="resumoResultados2" class="resumoResultados2 collapsed">
-                    <div class="fundo2">
+                    <div class="scrollInfo fundo2 telaDado">
                         <div class="content">Dado atual:</div>
                         <div id="dado_atual" class="content">56 - 12369874000698 - Empresa Incrível LTDA</div>
                     </div>
-                    <div class="fundo2 telaResumo">
+                    <div class="scrollInfo fundo2 telaResumo">
                         <div id="occorencia1" class="content">8 - Mensagen enviada</div>
                         <div id="occorencia2" class="content">2 - Mensagem não enviada</div>
                     </div>
@@ -309,11 +313,11 @@
 
                 <div id="maisInfo2" class="maisInfo2">▼ Andamentos</div>
                 <div id="resumoResultados2" class="resumoResultados2 collapsed">
-                    <div class="fundo2">
+                    <div class="scrollInfo fundo2 telaDado">
                         <div class="content">Dado atual:</div>
                         <div id="dado_atual" class="content">36 - 98765432000876 - Empresa Legal ME</div>
                     </div>
-                    <div class="fundo2 telaResumo">
+                    <div class="scrollInfo fundo2 telaResumo">
                         <div id="occorencia1" class="content">134 - empresas com débito</div>
                         <div id="occorencia2" class="content">2049 - empresas sem débito</div>
                     </div>
@@ -321,7 +325,6 @@
                 
                 <div id="alerta" class="content alerta">✔</div>
             </div>
-            
         </div>
 
         <div id="targetHistorico" class="mainHistorico collapsed">

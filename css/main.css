@@ -139,12 +139,19 @@ body {
     min-width: 0 !important;
 }
 
-.fundo {
+.fundo, .fundoInvertido {
     background: transparent;
     border-radius: 20px;
+    backdrop-filter: blur(var(--blur));
+}
+.fundo {
     box-shadow: var(--direcao-sombra-1) var(--direcao-sombra-1) 9px var(--sombra-clara),
                 var(--direcao-sombra-2) var(--direcao-sombra-2) 9px var(--sombra-escura);
-    backdrop-filter: blur(var(--blur));
+    
+}
+.fundoInvertido {
+    box-shadow: inset var(--direcao-sombra-1) var(--direcao-sombra-1) 9px var(--sombra-clara),
+                inset var(--direcao-sombra-2) var(--direcao-sombra-2) 9px var(--sombra-escura);
 }
 .fundo2 {
     padding: 8px;
@@ -207,14 +214,22 @@ body {
     justify-content: space-between;
 }
 
-.cInputUsuario, .cInputSenha {
+.barraPesquisa {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.cInputUsuario, .cInputSenha, .cInputCard {
+    width: 100%;
     color: var(--cor-texto);
     background: none;
     border: none;
     border-radius: 20px;
     padding: 10px;
 }
-.clearCInputUsuario, .clearCInputSenha, .inputEnter {
+.clearCInputUsuario, .clearCInputSenha, .clearCInputCard, .inputEnter {
     cursor: pointer;
     color: var(--cor-texto);
     background: none;
@@ -226,7 +241,7 @@ body {
     margin: 5px 6px;
     transition: var(--transicao-link);
 }
-.clearCInputUsuario:hover, .clearCInputSenha:hover {
+.clearCInputUsuario:hover, .clearCInputSenha:hover, .clearCInputNome:hover {
     background: var(--sombra-2);
 }
 

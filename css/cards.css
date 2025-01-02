@@ -1,22 +1,25 @@
 /* Estilizando a barra de rolagem */
-.telaResumo::-webkit-scrollbar {
+.scrollInfo::-webkit-scrollbar {
     width: 4px; /* Largura da barra de rolagem */
 }
-.telaResumo::-webkit-scrollbar-track {
+.scrollInfo::-webkit-scrollbar-track {
     background: transparent; /* Cor do fundo da barra de rolagem */
 }
-.telaResumo::-webkit-scrollbar-thumb {
+.scrollInfo::-webkit-scrollbar-thumb {
     background-color: #dbdbdbb9; /* Cor da barra de rolagem */
     border-radius: 6px; /* Arredondamento das bordas */
     border: none; /* Espaçamento entre a barra e o conteúdo */
     transition: var(--transicao-link);
 }
-.telaResumo::-webkit-scrollbar-thumb:hover {
+.scrollInfo::-webkit-scrollbar-thumb:hover {
     background: var(--cor-destaque);
     border: none;
 }
+.scrollInfo::-webkit-scrollbar-button {
+    border: none;
+}
 /* Buttons */
-.telaResumo::-webkit-scrollbar-button:single-button {
+.scrollInfo::-webkit-scrollbar-button:single-button {
     background-color: transparent;
     display: block;
     border-style: solid;
@@ -24,20 +27,20 @@
     width: 4px;
 }
 /* Up */
-.telaResumo::-webkit-scrollbar-button:single-button:vertical:decrement {
+.scrollInfo::-webkit-scrollbar-button:single-button:vertical:decrement {
     border-width: 0 2px 8px 2px;
     border-color: transparent transparent #dbdbdbb9 transparent;
 }
 
-.telaResumo::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
+.scrollInfo::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
     border-color: transparent transparent var(--cor-destaque) transparent;
 }
 /* Down */
-.telaResumo::-webkit-scrollbar-button:single-button:vertical:increment {
+.scrollInfo::-webkit-scrollbar-button:single-button:vertical:increment {
     border-width: 8px 2px 0 2px ;
     border-color: #dbdbdbb9 transparent transparent transparent;
 }
-.telaResumo::-webkit-scrollbar-button:vertical:single-button:increment:hover {
+.scrollInfo::-webkit-scrollbar-button:vertical:single-button:increment:hover {
     border-color: var(--cor-destaque) transparent transparent transparent;
 }
 
@@ -300,7 +303,7 @@
         padding: 80px 0 90px 0;
     }
     .rotinasExpandida {
-        padding: 260px 0 90px 0;
+        padding: 320px 0 90px 0;
     }
     .botaoFechar {
         font-size: large;

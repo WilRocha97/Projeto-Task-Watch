@@ -5,6 +5,8 @@ const telaDica = document.getElementById('telaDica');
 const galeria = document.getElementById('galeria');
 const telaGaleria = document.getElementById('telaGaleria');
 const telaRotinas = document.getElementById('telaRotinas')
+var cInputCard = document.getElementById('searchInputCard');
+const limpaCInputCard = document.getElementById('limpaCInputCard');
 
 var screenWidth = window.innerWidth;
 
@@ -62,6 +64,41 @@ menu.addEventListener('click', () => {
     if (!telaGaleria.classList.contains('invisible2')) {
         telaGaleria.classList.add('invisible2');
         telaRotinas.classList.remove('rotinasExpandida')
+    }
+});
+
+// limpa busca card
+
+limpaCInputCard.addEventListener('click', ()=> {
+    var cards = document.querySelectorAll('.rectangle');
+    cInputCard.value = ''
+    cards.forEach(card => { 
+        card.classList.remove('buscaCard');
+    });
+})
+// adiciona o evento de escutar a tecla na barra de busca dos cards
+cInputCard.addEventListener('keydown', (event) => {
+    var cardPesquisado = document.getElementById('searchInputCard').value;
+    if (event.key === 'Enter') {
+        var cards = document.querySelectorAll('.rectangle');
+
+        // Verificar se o id contém a frase pesquisada
+        const resultado = [];
+        cards.forEach(card => {
+            console.log(card.id.includes)
+            if (card.id.includes(cardPesquisado)) {
+            resultado.push(card); // Adicionar o card correspondente no resultado
+            }
+        });
+
+        // aplica estilo de destaque aos cards
+        if (resultado.length > 0) {
+            resultado.forEach(card => {
+            card.classList.add('buscaCard');
+            });
+        } else {
+            console.log('Nenhuma div encontrada com o texto "' + cardPesquisado + '" no ID.');
+        }
     }
 });
 
