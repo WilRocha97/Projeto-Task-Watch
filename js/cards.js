@@ -6,6 +6,7 @@ const explodeCard = document.getElementById('explodirCard');
 const encolhe = document.getElementById('encolher');
 const explode = document.getElementById('explodir');
 var telaRotinas = document.getElementById('telaRotinas');
+var telaHistorico = document.getElementById('targetHistorico');
 const telaGaleria = document.getElementById('telaGaleria');
 const telaDica = document.getElementById('telaDica');
 
@@ -105,7 +106,9 @@ document.addEventListener('DOMContentLoaded', function() {
 document.body.addEventListener('click', (event) => {
     // Verifica se o elemento clicado ou algum de seus pais possui a classe 'rectangle'
     let target = event.target;
-    const divMae = target.closest('.rectangle');
+    if (divMae) {
+        divMae.classList.remove('buscaCard');
+    }
 
     divMae.classList.remove('buscaCard')
     // fecha o menu ao clicar em qualuqer lugar que não seja nele
@@ -114,6 +117,7 @@ document.body.addEventListener('click', (event) => {
         telaDica.classList.add('invisible2')
         telaGaleria.classList.add('invisible2')
         telaRotinas.classList.remove('rotinasExpandida')
+        telaHistorico.classList.remove('historicoExpandida');
     }
 
     if (target.classList.contains('botaoFixar')) {

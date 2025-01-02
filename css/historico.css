@@ -51,7 +51,10 @@
     max-height: 100vh;
     flex-direction: column;
     align-self: initial;
-    transition: var(--transicao-link);
+    transition: opacity var(--transicao-link), max-height var(--transicao-link), padding 1s, margin var(--transicao-link), width var(--transicao-link);
+}
+.historicoExpandida {
+    padding: 160px 12px 0 0;
 }
 .mainHistorico.collapsed {
     opacity: 0;
@@ -196,5 +199,8 @@
     }
     .mainHistorico.collapsed {
         max-height: 0;
+    }
+    .historicoExpandida {
+        padding: 100px 12px 0 0;
     }
 }

@@ -6,7 +6,8 @@ const fecharAjuda = document.getElementById('fecharAjuda');
 const fecharGaleria = document.getElementById('fecharGaleria');
 const galeria = document.getElementById('galeria');
 const telaGaleria = document.getElementById('telaGaleria');
-const telaRotinas = document.getElementById('telaRotinas')
+const telaRotinas = document.getElementById('telaRotinas');
+var telaHistorico = document.getElementById('targetHistorico');
 var cInputCard = document.getElementById('searchInputCard');
 const limpaCInputCard = document.getElementById('limpaCInputCard');
 
@@ -54,18 +55,22 @@ menu.addEventListener('click', () => {
     if (telaMenu.classList.contains('invisible2')) {
         telaMenu.classList.remove('invisible2');
         telaRotinas.classList.add('rotinasExpandida');
+        telaHistorico.classList.add('historicoExpandida');
     }
     else {
         telaMenu.classList.add('invisible2');
         telaRotinas.classList.remove('rotinasExpandida');
+        telaHistorico.classList.remove('historicoExpandida');
     }
     if (!telaDica.classList.contains('invisible2')) {
         telaDica.classList.add('invisible2');
-        telaRotinas.classList.remove('rotinasExpandida');
+        telaRotinas.classList.add('rotinasExpandida');
+        telaHistorico.classList.add('historicoExpandida');
     }
     if (!telaGaleria.classList.contains('invisible2')) {
         telaGaleria.classList.add('invisible2');
-        telaRotinas.classList.remove('rotinasExpandida');
+        telaRotinas.classList.add('rotinasExpandida');
+        telaHistorico.classList.add('historicoExpandida');
     }
 });
 
@@ -119,6 +124,7 @@ cInputCard.addEventListener('keydown', (event) => {
 dica.addEventListener('click', () => {
     telaMenu.classList.add('invisible2');
     telaRotinas.classList.remove('rotinasExpandida');
+    telaHistorico.classList.remove('historicoExpandida');
     if (telaDica.classList.contains('invisible2')) {
         telaDica.classList.remove('invisible2');
     }
