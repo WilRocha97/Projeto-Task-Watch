@@ -229,7 +229,7 @@ body {
     border-radius: 20px;
     padding: 10px;
 }
-.clearCInputUsuario, .clearCInputSenha, .clearCInputCard, .inputEnter {
+.clearCInputUsuario, .clearCInputSenha, .clearCInputCard, .inputEnter, .fecharTela {
     cursor: pointer;
     color: var(--cor-texto);
     background: none;
@@ -241,7 +241,7 @@ body {
     margin: 5px 6px;
     transition: var(--transicao-link);
 }
-.clearCInputUsuario:hover, .clearCInputSenha:hover, .clearCInputNome:hover {
+.clearCInputUsuario:hover, .clearCInputSenha:hover, .clearCInputNome:hover, .fecharTela:hover {
     background: var(--sombra-2);
 }
 

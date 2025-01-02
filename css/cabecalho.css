@@ -85,7 +85,7 @@
     font-weight: bold;
     transition: var(--transicao-link);
 }
-.cabecalhoMenuBotao:hover {
+.cabecalhoMenuBotao:hover, .fecharTelaAjuda:hover {
     background: var(--sombra-2);
 }
 #clock {

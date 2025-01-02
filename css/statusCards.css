@@ -80,6 +80,10 @@
                 0 0 30px var(--cor-principal);
     border: 5px solid white;
 }
+.naoEncontrado {
+    color: red;
+    font-weight: bold;
+}
 
 
 @media (max-width: 800px){

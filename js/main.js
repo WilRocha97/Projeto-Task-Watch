@@ -2,6 +2,8 @@ const menu = document.getElementById('menu');
 const telaMenu = document.getElementById('telaMenu');
 const dica = document.getElementById('dica');
 const telaDica = document.getElementById('telaDica');
+const fecharAjuda = document.getElementById('fecharAjuda');
+const fecharGaleria = document.getElementById('fecharGaleria');
 const galeria = document.getElementById('galeria');
 const telaGaleria = document.getElementById('telaGaleria');
 const telaRotinas = document.getElementById('telaRotinas')
@@ -51,59 +53,72 @@ updateClock();
 menu.addEventListener('click', () => {
     if (telaMenu.classList.contains('invisible2')) {
         telaMenu.classList.remove('invisible2');
-        telaRotinas.classList.add('rotinasExpandida')
+        telaRotinas.classList.add('rotinasExpandida');
     }
     else {
         telaMenu.classList.add('invisible2');
-        telaRotinas.classList.remove('rotinasExpandida')
+        telaRotinas.classList.remove('rotinasExpandida');
     }
     if (!telaDica.classList.contains('invisible2')) {
         telaDica.classList.add('invisible2');
-        telaRotinas.classList.remove('rotinasExpandida')
+        telaRotinas.classList.remove('rotinasExpandida');
     }
     if (!telaGaleria.classList.contains('invisible2')) {
         telaGaleria.classList.add('invisible2');
-        telaRotinas.classList.remove('rotinasExpandida')
+        telaRotinas.classList.remove('rotinasExpandida');
     }
 });
 
 // limpa busca card
-
 limpaCInputCard.addEventListener('click', ()=> {
     var cards = document.querySelectorAll('.rectangle');
     cInputCard.value = ''
     cards.forEach(card => { 
         card.classList.remove('buscaCard');
+        cInputCard.classList.remove('naoEncontrado')
     });
 })
 // adiciona o evento de escutar a tecla na barra de busca dos cards
 cInputCard.addEventListener('keydown', (event) => {
+    cInputCard.classList.remove('naoEncontrado')
     var cardPesquisado = document.getElementById('searchInputCard').value;
     if (event.key === 'Enter') {
-        var cards = document.querySelectorAll('.rectangle');
+        // verifica se foi digitado alguma coisa na barra de pesquisa
+        if (cardPesquisado !== '') {
+            const cards = document.querySelectorAll('.rectangle');
 
-        // Verificar se o id contém a frase pesquisada
-        const resultado = [];
-        cards.forEach(card => {
-            console.log(card.id.includes)
-            if (card.id.includes(cardPesquisado)) {
-            resultado.push(card); // Adicionar o card correspondente no resultado
-            }
-        });
-
-        // aplica estilo de destaque aos cards
-        if (resultado.length > 0) {
-            resultado.forEach(card => {
-            card.classList.add('buscaCard');
+            // Verificar se o id contém a frase pesquisada
+            const resultado = [];
+            cards.forEach(card => {
+                console.log(card.id.includes)
+                if (card.id.includes(cardPesquisado)) {
+                resultado.push(card); // Adicionar o card correspondente no resultado
+                }
             });
-        } else {
-            console.log('Nenhuma div encontrada com o texto "' + cardPesquisado + '" no ID.');
+    
+            // aplica estilo de destaque aos cards
+            if (resultado.length > 0) {
+                resultado.forEach(card => {
+                card.classList.add('buscaCard');
+                });
+            } else {
+                cInputCard.classList.add('naoEncontrado')
+            }
+        }
+        // se não remove a marcação dos cards
+        else {
+            var cards = document.querySelectorAll('.rectangle');
+            cards.forEach(card => { 
+                card.classList.remove('buscaCard');
+            });
         }
     }
 });
 
 // Janela com dicas de como o site funciona
 dica.addEventListener('click', () => {
+    telaMenu.classList.add('invisible2');
+    telaRotinas.classList.remove('rotinasExpandida');
     if (telaDica.classList.contains('invisible2')) {
         telaDica.classList.remove('invisible2');
     }
@@ -114,9 +129,17 @@ dica.addEventListener('click', () => {
         telaGaleria.classList.add('invisible2');
     }
 });
+fecharAjuda.addEventListener('click', ()=> {
+    telaDica.classList.add('invisible2');
+})
+fecharGaleria.addEventListener('click', ()=> {
+    telaGaleria.classList.add('invisible2');
+})
 
 // Janela com imagens do TaskWatch oficial
 galeria.addEventListener('click', () => {
+    telaMenu.classList.add('invisible2');
+    telaRotinas.classList.remove('rotinasExpandida');
     if (telaGaleria.classList.contains('invisible2')) {
         telaGaleria.classList.remove('invisible2');
     }
