@@ -241,7 +241,10 @@ body {
     margin: 5px 6px;
     transition: var(--transicao-link);
 }
-.clearCInputUsuario:hover, .clearCInputSenha:hover, .clearCInputNome:hover, .fecharTela:hover {
+.clearCInputCard {
+    width: 30px;
+}
+.clearCInputUsuario:hover, .clearCInputSenha:hover, .clearCInputCard:hover, .clearCInputNome:hover, .fecharTela:hover {
     background: var(--sombra-2);
 }
 
