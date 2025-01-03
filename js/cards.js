@@ -106,6 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
 document.body.addEventListener('click', (event) => {
     // Verifica se o elemento clicado ou algum de seus pais possui a classe 'rectangle'
     let target = event.target;
+    const divMae = target.closest('.rectangle');
     if (divMae) {
         divMae.classList.remove('buscaCard');
     }
