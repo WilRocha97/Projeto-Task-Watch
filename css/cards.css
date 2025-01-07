@@ -149,8 +149,12 @@
 .progresso {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: 6px;
+}
+#mensagemAlerta {
+    max-height: 50px;
+    overflow: auto;
 }
 #porcentagem {
     position: relative; /* Para posicionar a barra interna */

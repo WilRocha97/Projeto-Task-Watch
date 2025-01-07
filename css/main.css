@@ -229,22 +229,23 @@ body {
     border-radius: 20px;
     padding: 10px;
 }
-.clearCInputUsuario, .clearCInputSenha, .clearCInputCard, .inputEnter, .fecharTela {
+.clearCInputUsuario, .clearCInputSenha, .clearCInputCard, .searchCInputCard, .inputEnter, .fecharTela {
     cursor: pointer;
+    font-weight: bold;
     color: var(--cor-texto);
     background: none;
     border: none;
-    width: 25px;
+    width: auto;
     height: 25px;
     border-radius: 20px;
-    padding: 5px;
+    padding: 5px 7px;
     margin: 5px 6px;
     transition: var(--transicao-link);
 }
 .clearCInputCard {
     width: 30px;
 }
-.clearCInputUsuario:hover, .clearCInputSenha:hover, .clearCInputCard:hover, .clearCInputNome:hover, .fecharTela:hover {
+.clearCInputUsuario:hover, .clearCInputSenha:hover, .clearCInputCard:hover, .searchCInputCard:hover, .clearCInputNome:hover, .fecharTela:hover {
     background: var(--sombra-2);
 }
 

@@ -50,6 +50,49 @@ setInterval(updateClock, 1000);
 // Atualiza o relógio imediatamente ao carregar a página
 updateClock();
 
+function desmarcaCardsBuscados() {
+    var cards = document.querySelectorAll('.rectangle');
+    cards.forEach(card => { 
+        card.classList.remove('buscaCard');
+        cInputCard.classList.remove('naoEncontrado')
+    });
+}
+
+function procurarCard(event) {
+    cInputCard.classList.remove('naoEncontrado');
+    desmarcaCardsBuscados();
+
+    var cardPesquisado = document.getElementById('searchInputCard').value;
+    if (event.key === 'Enter') {
+        // verifica se foi digitado alguma coisa na barra de pesquisa
+        if (cardPesquisado !== '') {
+            const cards = document.querySelectorAll('.rectangle');
+
+            // Verificar se o id contém a frase pesquisada
+            const resultado = [];
+            cards.forEach(card => {
+                // console.log(card.id.includes)
+                if (card.id.includes(cardPesquisado)) {
+                resultado.push(card); // Adicionar o card correspondente no resultado
+                }
+            });
+    
+            // aplica estilo de destaque aos cards
+            if (resultado.length > 0) {
+                resultado.forEach(card => {
+                card.classList.add('buscaCard');
+                });
+            } else {
+                cInputCard.classList.add('naoEncontrado');
+            }
+        }
+        // se não remove a marcação dos cards
+        else {
+            desmarcaCardsBuscados();
+        }
+    }
+}
+
 // Janela com dicas de como o site funciona
 menu.addEventListener('click', () => {
     if (telaMenu.classList.contains('invisible2')) {
@@ -76,49 +119,16 @@ menu.addEventListener('click', () => {
 
 // limpa busca card
 limpaCInputCard.addEventListener('click', ()=> {
-    var cards = document.querySelectorAll('.rectangle');
+    desmarcaCardsBuscados()
     cInputCard.value = ''
-    cards.forEach(card => { 
-        card.classList.remove('buscaCard');
-        cInputCard.classList.remove('naoEncontrado')
-    });
 })
 // adiciona o evento de escutar a tecla na barra de busca dos cards
 cInputCard.addEventListener('keydown', (event) => {
-    cInputCard.classList.remove('naoEncontrado')
-    var cardPesquisado = document.getElementById('searchInputCard').value;
-    if (event.key === 'Enter') {
-        // verifica se foi digitado alguma coisa na barra de pesquisa
-        if (cardPesquisado !== '') {
-            const cards = document.querySelectorAll('.rectangle');
-
-            // Verificar se o id contém a frase pesquisada
-            const resultado = [];
-            cards.forEach(card => {
-                console.log(card.id.includes)
-                if (card.id.includes(cardPesquisado)) {
-                resultado.push(card); // Adicionar o card correspondente no resultado
-                }
-            });
-    
-            // aplica estilo de destaque aos cards
-            if (resultado.length > 0) {
-                resultado.forEach(card => {
-                card.classList.add('buscaCard');
-                });
-            } else {
-                cInputCard.classList.add('naoEncontrado')
-            }
-        }
-        // se não remove a marcação dos cards
-        else {
-            var cards = document.querySelectorAll('.rectangle');
-            cards.forEach(card => { 
-                card.classList.remove('buscaCard');
-            });
-        }
-    }
+    procurarCard(event)
 });
+buscaCInputCard.addEventListener('click', ()=> {
+    procurarCard({key: 'Enter'})
+})
 
 // Janela com dicas de como o site funciona
 dica.addEventListener('click', () => {
