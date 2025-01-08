@@ -45,10 +45,7 @@
 }
 
 #galeria {
-    color: rgb(255, 0, 64) !important;
-}
-#galeria:hover {
-    background: var(--sombra-2);
+    color: var(--cor-padrao) !important;
 }
 
 .cabecalho {
@@ -65,31 +62,16 @@
 .menu, .menuTelaBotoes {
     display: flex;
     justify-content: center;
-    padding: 4px 5px;
     font-size: 0.9em;
     margin: 5px;
     gap: 10px;
     overflow: hidden;
 }
-.cabecalhoMenuBotao {
-    white-space: nowrap;
-    position: relative;
-    align-self: center;
-    border: none;
-    background: none;
-    border-radius: var(--borda-botao);
-    padding: var(--padding-botao);
-    cursor: pointer;
-    color: var(--cor-texto);
-    font-size: var(--tamanho-texto-2);
-    font-weight: bold;
-    transition: var(--transicao-link);
-}
-.cabecalhoMenuBotao:hover, .fecharTelaAjuda:hover {
-    background: var(--sombra-2);
-}
+
 #clock {
+    opacity: 1;
     align-self: center;
+    transition: font-size var(--transicao-link), opacity var(--transicao-link);
 }
 .relogio {
     padding: 9px 18px !important;
@@ -249,21 +231,5 @@
         right: 20px;
         margin: 50% 0 0 0;
         position: fixed;
-    }
-
-    .cabecalhoMenuBotao:hover {
-        background: transparent;
-    }
-    .cabecalhoMenuBotao:active {
-        background: var(--sombra-2);
-    }
-
-    #galeria:hover {
-        text-shadow: 0 0 0 transparent !important;
-    }
-    #galeria:active {
-        text-shadow: 0 0 5px rgb(255, 0, 64),
-                    0 0 7px rgb(255, 0, 64),
-                    0 0 8px rgb(255, 0, 64) !important;
     }
 }
