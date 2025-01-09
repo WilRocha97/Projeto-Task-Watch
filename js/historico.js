@@ -217,7 +217,9 @@ function fetchHistoricoFiltrado(ocorrencia = 'geral', page = 1) {
         if (filteredData.length === 0) {
             filteredData = [{'id': 0, 'data_hora': '-', 'script_name': 'Nenhum registro encontrado', 'andamentos': '-'}]
         }
-  
+        
+        filteredData = filteredData.reverse()
+        
         // Aplicar a paginação
         const startIndex = (page - 1) * pageSize;
         const endIndex = startIndex + pageSize;
