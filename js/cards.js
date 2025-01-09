@@ -111,7 +111,6 @@ document.body.addEventListener('click', (event) => {
         divMae.classList.remove('buscaCard');
     }
 
-    divMae.classList.remove('buscaCard')
     // fecha o menu ao clicar em qualuqer lugar que não seja nele
     if (!target.classList.contains('cmb')) {
         telaMenu.classList.add('invisible2')

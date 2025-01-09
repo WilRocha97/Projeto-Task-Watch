@@ -1,7 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
-@import url('cabecalho.css');
-@import url('cards.css');
-@import url('historico.css');
 
 :root {
     --tamanho-titulo: 2.4rem;
@@ -223,7 +220,7 @@ body {
     padding: 10px;
 }
 
-.MenuBotao {
+.MenuBotao, .paginaHistorico button {
     white-space: nowrap;
     position: relative;
     align-self: center;
@@ -238,7 +235,7 @@ body {
     font-weight: bold;
     transition: var(--transicao-link);
 }
-.MenuBotao:hover {
+.MenuBotao:hover, .paginaHistorico button:hover {
     background: var(--sombra-2);
 }
 

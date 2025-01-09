@@ -63,7 +63,8 @@
     display: flex;
     justify-content: center;
     font-size: 0.9em;
-    margin: 5px;
+    margin: 2px;
+    padding: 2px;
     gap: 10px;
     overflow: hidden;
 }

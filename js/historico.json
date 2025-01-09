@@ -1,0 +1,1241 @@
+{
+	"data": [
+		{
+			"id" : 5635,
+			"data_hora" : "05/01/2025 - 13:09",
+			"script_name" : "CND Receita Federal CPF - PC14",
+			"andamentos" : "Cartão fechado"
+		},
+		{
+			"id" : 5636,
+			"data_hora" : "05/01/2025 - 13:10",
+			"script_name" : "Consulta Divida Ativa - PC25",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5637,
+			"data_hora" : "05/01/2025 - 13:10",
+			"script_name" : "Consulta Divida Ativa - PC25",
+			"andamentos" : "Erro detectado"
+		},
+		{
+			"id" : 5638,
+			"data_hora" : "05/01/2025 - 13:12",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "A rotina está ociosa por muito tempo"
+		},
+		{
+			"id" : 5639,
+			"data_hora" : "05/01/2025 - 13:13",
+			"script_name" : "CND Receita Federal CPF - PC14",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5640,
+			"data_hora" : "05/01/2025 - 13:13",
+			"script_name" : "CND ReceitaFederal CPF - PC14",
+			"andamentos" : "A rotina está ociosa por muito tempo"
+		},
+		{
+			"id" : 5641,
+			"data_hora" : "05/01/2025 - 13:16",
+			"script_name" : "Consulta Divida Ativa - PC25",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5642,
+			"data_hora" : "05/01/2025 - 13:17",
+			"script_name" : "Consulta Divida Ativa - PC25",
+			"andamentos" : "Erro detectado"
+		},
+		{
+			"id" : 5643,
+			"data_hora" : "05/01/2025 - 13:17",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5644,
+			"data_hora" : "05/01/2025 - 13:19",
+			"script_name" : "Consulta Divida Ativa - PC25",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5645,
+			"data_hora" : "05/01/2025 - 13:21",
+			"script_name" : "Consulta Divida Ativa - PC25",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5646,
+			"data_hora" : "05/01/2025 - 13:27",
+			"script_name" : "Consulta Divida Ativa - PC25",
+			"andamentos" : "A rotina está ociosa por muito tempo"
+		},
+		{
+			"id" : 5647,
+			"data_hora" : "05/01/2025 - 13:39",
+			"script_name" : "Consulta Divida Ativa - PC25",
+			"andamentos" : "Rotina finalizada"
+		},
+		{
+			"id" : 5648,
+			"data_hora" : "05/01/2025 - 13:41",
+			"script_name" : "Consulta Divida Ativa - PC25",
+			"andamentos" : "Rotina finalizada"
+		},
+		{
+			"id" : 5649,
+			"data_hora" : "05/01/2025 - 13:42",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5650,
+			"data_hora" : "05/01/2025 - 13:46",
+			"script_name" : "Consulta Divida Ativa - PC25",
+			"andamentos" : "Cartão fechado"
+		},
+		{
+			"id" : 5651,
+			"data_hora" : "05/01/2025 - 13:47",
+			"script_name" : "CND Receita Federal CPF - PC14",
+			"andamentos" : "Rotina finalizada"
+		},
+		{
+			"id" : 5652,
+			"data_hora" : "05/01/2025 - 13:47",
+			"script_name" : "CND Receita Federal CPF - PC14",
+			"andamentos" : "Cartão fechado"
+		},
+		{
+			"id" : 5653,
+			"data_hora" : "05/01/2025 - 14:06",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "Rotina finalizada"
+		},
+		{
+			"id" : 5654,
+			"data_hora" : "05/01/2025 - 14:32",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "Cartão fechado"
+		},
+		{
+			"id" : 5655,
+			"data_hora" : "05/01/2025 - 14:32",
+			"script_name" : "Consulta Divida Ativa - PC25",
+			"andamentos" : "Cartão fechado"
+		},
+		{
+			"id" : 5656,
+			"data_hora" : "05/01/2025 - 14:32",
+			"script_name" : "CND Receita Federal CPF - PC14",
+			"andamentos" : "Cartão fechado"
+		},
+		{
+			"id" : 5657,
+			"data_hora" : "05/01/2025 - 14:36",
+			"script_name" : "CND ReceitaFederal CPF - PC14",
+			"andamentos" : "A rotina está ociosa por muito tempo"
+		},
+		{
+			"id" : 5658,
+			"data_hora" : "05/01/2025 - 14:46",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "A rotina está ociosa por muito tempo"
+		},
+		{
+			"id" : 5659,
+			"data_hora" : "05/01/2025 - 14:46",
+			"script_name" : "CND Receita Federal CPF - PC14",
+			"andamentos" : "A rotina está ociosa por muito tempo"
+		},
+		{
+			"id" : 5660,
+			"data_hora" : "05/01/2025 - 14:47",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5661,
+			"data_hora" : "05/01/2025 - 15:00",
+			"script_name" : "CND Receita Federal CPF - PC14",
+			"andamentos" : "Erro detectado"
+		},
+		{
+			"id" : 5662,
+			"data_hora" : "05/01/2025 - 15:00",
+			"script_name" : "CND Receita Federal CPF - PC14",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5663,
+			"data_hora" : "05/01/2025 - 15:13",
+			"script_name" : "Pendências SIGISSWEB - PC50",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5664,
+			"data_hora" : "05/01/2025 - 15:15",
+			"script_name" : "Pendências SIGISSWEB - PC50",
+			"andamentos" : "Rotina finalizada"
+		},
+		{
+			"id" : 5665,
+			"data_hora" : "05/01/2025 - 15:15",
+			"script_name" : "Consulta Divida Ativa - PC25",
+			"andamentos" : "A rotina está ociosa por muito tempo"
+		},
+		{
+			"id" : 5666,
+			"data_hora" : "05/01/2025 - 15:19",
+			"script_name" : "Pendências SIGISSWEB - PC50",
+			"andamentos" : "Cartão fechado"
+		},
+		{
+			"id" : 5667,
+			"data_hora" : "05/01/2025 - 15:22",
+			"script_name" : "CND ReceitaFederal CPF - PC14",
+			"andamentos" : "Rotina finalizada"
+		},
+		{
+			"id" : 5668,
+			"data_hora" : "05/01/2025 - 15:45",
+			"script_name" : "CND Receita Federal CPF - PC14",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5669,
+			"data_hora" : "05/01/2025 - 15:47",
+			"script_name" : "CND Receita Federal CPF - PC14",
+			"andamentos" : "Erro detectado"
+		},
+		{
+			"id" : 5670,
+			"data_hora" : "05/01/2025 - 15:47",
+			"script_name" : "CND Receita Federal CPF - PC14",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5671,
+			"data_hora" : "05/01/2025 - 15:49",
+			"script_name" : "CND ReceitaFederal CPF - PC14",
+			"andamentos" : "Cartão fechado"
+		},
+		{
+			"id" : 5672,
+			"data_hora" : "05/01/2025 - 16:24",
+			"script_name" : "Consulta Divida Ativa - PC25",
+			"andamentos" : "Erro detectado"
+		},
+		{
+			"id" : 5673,
+			"data_hora" : "05/01/2025 - 16:26",
+			"script_name" : "Pendências SIGISSWEB - PC50",
+			"andamentos" : "Cartão fechado"
+		},
+		{
+			"id" : 5674,
+			"data_hora" : "05/01/2025 - 16:28",
+			"script_name" : "Consulta Divida Ativa - PC25",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5675,
+			"data_hora" : "05/01/2025 - 16:33",
+			"script_name" : "Consulta Divida Ativa - PC25",
+			"andamentos" : "A rotina está ociosa por muito tempo"
+		},
+		{
+			"id" : 5676,
+			"data_hora" : "05/01/2025 - 16:38",
+			"script_name" : "Consulta Divida Ativa - PC25",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5677,
+			"data_hora" : "05/01/2025 - 16:43",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "A rotina está ociosa por muito tempo"
+		},
+		{
+			"id" : 5678,
+			"data_hora" : "05/01/2025 - 16:44",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5679,
+			"data_hora" : "05/01/2025 - 16:46",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5680,
+			"data_hora" : "05/01/2025 - 17:08",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5681,
+			"data_hora" : "05/01/2025 - 17:09",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "Erro detectado"
+		},
+		{
+			"id" : 5682,
+			"data_hora" : "05/01/2025 - 17:10",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5683,
+			"data_hora" : "05/01/2025 - 17:11",
+			"script_name" : "CND Receita Federal CPF - PC14",
+			"andamentos" : "A rotina está ociosa por muito tempo"
+		},
+		{
+			"id" : 5684,
+			"data_hora" : "05/01/2025 - 17:25",
+			"script_name" : "Encaminha Docs WhatsApp - PC34",
+			"andamentos" : "Erro detectado"
+		},
+		{
+			"id" : 5685,
+			"data_hora" : "05/01/2025 - 17:27",
+			"script_name" : "CND Receita Federal CPF - PC14",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5686,
+			"data_hora" : "05/01/2025 - 18:50",
+			"script_name" : "Pendências SIGISSWEB - PC50",
+			"andamentos" : "Rotina finalizada"
+		},
+		{
+			"id" : 5687,
+			"data_hora" : "06/01/2025 - 07:00",
+			"script_name" : "CND ReceitaFederal CPF - PC14",
+			"andamentos" : "Rotina finalizada"
+		},
+		{
+			"id" : 5688,
+			"data_hora" : "06/01/2025 - 07:54",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "A rotina está ociosa por muito tempo"
+		},
+		{
+			"id" : 5689,
+			"data_hora" : "06/01/2025 - 07:54",
+			"script_name" : "Consulta Divida Ativa - PC25",
+			"andamentos" : "A rotina está ociosa por muito tempo"
+		},
+		{
+			"id" : 5690,
+			"data_hora" : "06/01/2025 - 07:54",
+			"script_name" : "CND Receita Federal CPF - PC14",
+			"andamentos" : "A rotina está ociosa por muito tempo"
+		},
+		{
+			"id" : 5691,
+			"data_hora" : "06/01/2025 - 07:54",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "A rotina está ociosa por muito tempo"
+		},
+		{
+			"id" : 5692,
+			"data_hora" : "06/01/2025 - 07:54",
+			"script_name" : "Consulta Divida Ativa - PC25",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5693,
+			"data_hora" : "06/01/2025 - 07:56",
+			"script_name" : "Pendências SIGISSWEB - PC50",
+			"andamentos" : "Cartão fechado"
+		},
+		{
+			"id" : 5694,
+			"data_hora" : "06/01/2025 - 07:56",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "Cartão fechado"
+		},
+		{
+			"id" : 5695,
+			"data_hora" : "06/01/2025 - 07:56",
+			"script_name" : "CND Receita Federal CPF - PC14",
+			"andamentos" : "Cartão fechado"
+		},
+		{
+			"id" : 5696,
+			"data_hora" : "06/01/2025 - 07:56",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "Cartão fechado"
+		},
+		{
+			"id" : 5697,
+			"data_hora" : "06/01/2025 - 07:56",
+			"script_name" : "CND ReceitaFederal CPF - PC14",
+			"andamentos" : "Cartão fechado"
+		},
+		{
+			"id" : 5698,
+			"data_hora" : "06/01/2025 - 07:56",
+			"script_name" : "Encaminha Docs WhatsApp - PC34",
+			"andamentos" : "Cartão fechado"
+		},
+		{
+			"id" : 5699,
+			"data_hora" : "06/01/2025 - 08:00",
+			"script_name" : "Consulta Divida Ativa - PC25",
+			"andamentos" : "A rotina está ociosa por muito tempo"
+		},
+		{
+			"id" : 5700,
+			"data_hora" : "06/01/2025 - 08:00",
+			"script_name" : "Encaminha Docs WhatsApp - PC34",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5701,
+			"data_hora" : "06/01/2025 - 08:04",
+			"script_name" : "Consulta Divida Ativa - PC25",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5702,
+			"data_hora" : "06/01/2025 - 08:04",
+			"script_name" : "Consulta Divida Ativa - PC25",
+			"andamentos" : "Erro detectado"
+		},
+		{
+			"id" : 5703,
+			"data_hora" : "06/01/2025 - 08:05",
+			"script_name" : "Consulta Divida Ativa - PC25",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5704,
+			"data_hora" : "06/01/2025 - 08:05",
+			"script_name" : "Consulta Divida Ativa - PC25",
+			"andamentos" : "Cartão fechado"
+		},
+		{
+			"id" : 5705,
+			"data_hora" : "06/01/2025 - 08:06",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5706,
+			"data_hora" : "06/01/2025 - 08:06",
+			"script_name" : "Consulta Divida Ativa - PC25",
+			"andamentos" : "Erro detectado"
+		},
+		{
+			"id" : 5707,
+			"data_hora" : "06/01/2025 - 08:07",
+			"script_name" : "Consulta Divida Ativa - PC25",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5708,
+			"data_hora" : "06/01/2025 - 08:07",
+			"script_name" : "Consulta Divida Ativa - PC25",
+			"andamentos" : "Erro detectado"
+		},
+		{
+			"id" : 5709,
+			"data_hora" : "06/01/2025 - 08:08",
+			"script_name" : "Consulta Divida Ativa - PC25",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5710,
+			"data_hora" : "06/01/2025 - 08:08",
+			"script_name" : "Consulta Divida Ativa - PC25",
+			"andamentos" : "A rotina está ociosa por muito tempo"
+		},
+		{
+			"id" : 5711,
+			"data_hora" : "06/01/2025 - 08:08",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5712,
+			"data_hora" : "06/01/2025 - 08:09",
+			"script_name" : "Consulta Divida Ativa - PC25",
+			"andamentos" : "Erro detectado"
+		},
+		{
+			"id" : 5713,
+			"data_hora" : "06/01/2025 - 08:09",
+			"script_name" : "CND Receita Federal CPF - PC14",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5714,
+			"data_hora" : "06/01/2025 - 08:09",
+			"script_name" : "Consulta Divida Ativa - PC25",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5715,
+			"data_hora" : "06/01/2025 - 08:10",
+			"script_name" : "Consulta Divida Ativa - PC25",
+			"andamentos" : "Erro detectado"
+		},
+		{
+			"id" : 5716,
+			"data_hora" : "06/01/2025 - 08:11",
+			"script_name" : "Consulta Divida Ativa - PC25",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5717,
+			"data_hora" : "06/01/2025 - 08:16",
+			"script_name" : "Consulta Divida Ativa - PC25",
+			"andamentos" : "A rotina está ociosa por muito tempo"
+		},
+		{
+			"id" : 5718,
+			"data_hora" : "06/01/2025 - 08:17",
+			"script_name" : "Consulta Divida Ativa - PC25",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5719,
+			"data_hora" : "06/01/2025 - 08:18",
+			"script_name" : "CND Receita Federal CPF - PC14",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5720,
+			"data_hora" : "06/01/2025 - 08:23",
+			"script_name" : "Consulta Divida Ativa - PC25",
+			"andamentos" : "A rotina está ociosa por muito tempo"
+		},
+		{
+			"id" : 5721,
+			"data_hora" : "06/01/2025 - 08:28",
+			"script_name" : "Consulta Divida Ativa - PC25",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5722,
+			"data_hora" : "06/01/2025 - 08:29",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "A rotina está ociosa por muito tempo"
+		},
+		{
+			"id" : 5723,
+			"data_hora" : "06/01/2025 - 08:32",
+			"script_name" : "CND Receita Federal CPF - PC14",
+			"andamentos" : "A rotina está ociosa por muito tempo"
+		},
+		{
+			"id" : 5724,
+			"data_hora" : "06/01/2025 - 08:33",
+			"script_name" : "Consulta Divida Ativa - PC25",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5725,
+			"data_hora" : "06/01/2025 - 08:33",
+			"script_name" : "CND Receita Federal CPF - PC14",
+			"andamentos" : "Erro detectado"
+		},
+		{
+			"id" : 5726,
+			"data_hora" : "06/01/2025 - 08:45",
+			"script_name" : "CND Receita Federal CPF - PC14",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5727,
+			"data_hora" : "06/01/2025 - 08:50",
+			"script_name" : "Consulta Divida Ativa - PC25",
+			"andamentos" : "A rotina está ociosa por muito tempo"
+		},
+		{
+			"id" : 5728,
+			"data_hora" : "06/01/2025 - 08:52",
+			"script_name" : "Consulta Divida Ativa - PC25",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5729,
+			"data_hora" : "06/01/2025 - 09:30",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5730,
+			"data_hora" : "06/01/2025 - 09:40",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "Cartão fechado"
+		},
+		{
+			"id" : 5731,
+			"data_hora" : "06/01/2025 - 09:43",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "Erro detectado"
+		},
+		{
+			"id" : 5732,
+			"data_hora" : "06/01/2025 - 09:46",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5733,
+			"data_hora" : "06/01/2025 - 09:56",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5734,
+			"data_hora" : "06/01/2025 - 09:59",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "Cartão fechado"
+		},
+		{
+			"id" : 5735,
+			"data_hora" : "06/01/2025 - 10:00",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5736,
+			"data_hora" : "06/01/2025 - 10:01",
+			"script_name" : "Consulta Divida Ativa - PC25",
+			"andamentos" : "A rotina está ociosa por muito tempo"
+		},
+		{
+			"id" : 5737,
+			"data_hora" : "06/01/2025 - 10:04",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "Erro detectado"
+		},
+		{
+			"id" : 5738,
+			"data_hora" : "06/01/2025 - 10:05",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5739,
+			"data_hora" : "06/01/2025 - 10:28",
+			"script_name" : "CND Receita Federal CPF - PC14",
+			"andamentos" : "A rotina está ociosa por muito tempo"
+		},
+		{
+			"id" : 5740,
+			"data_hora" : "06/01/2025 - 10:30",
+			"script_name" : "CND Receita Federal CPF - PC14",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5741,
+			"data_hora" : "06/01/2025 - 11:29",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "Rotina finalizada"
+		},
+		{
+			"id" : 5742,
+			"data_hora" : "06/01/2025 - 11:35",
+			"script_name" : "Encaminha Docs WhatsApp - PC34",
+			"andamentos" : "A rotina está ociosa por muito tempo"
+		},
+		{
+			"id" : 5743,
+			"data_hora" : "06/01/2025 - 11:42",
+			"script_name" : "CND Receita Federal CPF - PC14",
+			"andamentos" : "A rotina está ociosa por muito tempo"
+		},
+		{
+			"id" : 5744,
+			"data_hora" : "06/01/2025 - 12:49",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "Rotina finalizada"
+		},
+		{
+			"id" : 5745,
+			"data_hora" : "06/01/2025 - 12:59",
+			"script_name" : "Encaminha Docs WhatsApp - PC34",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5746,
+			"data_hora" : "06/01/2025 - 13:02",
+			"script_name" : "CND Receita Federal CPF - PC14",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5747,
+			"data_hora" : "06/01/2025 - 13:16",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "Cartão fechado"
+		},
+		{
+			"id" : 5748,
+			"data_hora" : "06/01/2025 - 13:16",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "Cartão fechado"
+		},
+		{
+			"id" : 5749,
+			"data_hora" : "06/01/2025 - 13:38",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "A rotina está ociosa por muito tempo"
+		},
+		{
+			"id" : 5750,
+			"data_hora" : "06/01/2025 - 13:58",
+			"script_name" : "CND Receita Federal CPF - PC14",
+			"andamentos" : "A rotina está ociosa por muito tempo"
+		},
+		{
+			"id" : 5751,
+			"data_hora" : "06/01/2025 - 14:25",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5752,
+			"data_hora" : "06/01/2025 - 16:01",
+			"script_name" : "Pendências SIGISSWEB - PC50",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5753,
+			"data_hora" : "06/01/2025 - 16:01",
+			"script_name" : "Pendências SIGISSWEB - PC50",
+			"andamentos" : "Rotina finalizada"
+		},
+		{
+			"id" : 5754,
+			"data_hora" : "06/01/2025 - 16:20",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "Rotina finalizada"
+		},
+		{
+			"id" : 5755,
+			"data_hora" : "06/01/2025 - 16:27",
+			"script_name" : "CND Receita Federal CPF - PC14",
+			"andamentos" : "A rotina está ociosa por muito tempo"
+		},
+		{
+			"id" : 5756,
+			"data_hora" : "06/01/2025 - 16:29",
+			"script_name" : "Consulta Divida Ativa - PC25",
+			"andamentos" : "A rotina está ociosa por muito tempo"
+		},
+		{
+			"id" : 5757,
+			"data_hora" : "06/01/2025 - 16:43",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5758,
+			"data_hora" : "06/01/2025 - 16:54",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "A rotina está ociosa por muito tempo"
+		},
+		{
+			"id" : 5759,
+			"data_hora" : "06/01/2025 - 16:55",
+			"script_name" : "Pendências SIGISSWEB - PC50",
+			"andamentos" : "Cartão fechado"
+		},
+		{
+			"id" : 5760,
+			"data_hora" : "06/01/2025 - 16:55",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5761,
+			"data_hora" : "06/01/2025 - 16:56",
+			"script_name" : "CND Receita Federal CPF - PC14",
+			"andamentos" : "A rotina está ociosa por muito tempo"
+		},
+		{
+			"id" : 5762,
+			"data_hora" : "06/01/2025 - 16:58",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "Rotina finalizada"
+		},
+		{
+			"id" : 5763,
+			"data_hora" : "06/01/2025 - 16:59",
+			"script_name" : "Consulta Divida Ativa - PC25",
+			"andamentos" : "A rotina está ociosa por muito tempo"
+		},
+		{
+			"id" : 5764,
+			"data_hora" : "06/01/2025 - 17:00",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "Cartão fechado"
+		},
+		{
+			"id" : 5765,
+			"data_hora" : "06/01/2025 - 17:02",
+			"script_name" : "CND Receita Federal CPF - PC14",
+			"andamentos" : "Rotina finalizada"
+		},
+		{
+			"id" : 5766,
+			"data_hora" : "06/01/2025 - 17:03",
+			"script_name" : "CND Receita Federal CPF - PC14",
+			"andamentos" : "Cartão fechado"
+		},
+		{
+			"id" : 5767,
+			"data_hora" : "06/01/2025 - 17:12",
+			"script_name" : "Consulta Divida Ativa - PC25",
+			"andamentos" : "Cartão fechado"
+		},
+		{
+			"id" : 5768,
+			"data_hora" : "06/01/2025 - 17:14",
+			"script_name" : "Consulta Divida Ativa - PC25",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5769,
+			"data_hora" : "07/01/2025 - 07:57",
+			"script_name" : "Consulta Divida Ativa - PC25",
+			"andamentos" : "A rotina está ociosa por muito tempo"
+		},
+		{
+			"id" : 5770,
+			"data_hora" : "07/01/2025 - 07:57",
+			"script_name" : "Encaminha Docs WhatsApp - PC34",
+			"andamentos" : "A rotina está ociosa por muito tempo"
+		},
+		{
+			"id" : 5771,
+			"data_hora" : "07/01/2025 - 08:02",
+			"script_name" : "Consulta Divida Ativa - PC25",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5772,
+			"data_hora" : "07/01/2025 - 08:08",
+			"script_name" : "Encaminha Docs WhatsApp - PC34",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5773,
+			"data_hora" : "07/01/2025 - 08:10",
+			"script_name" : "Pendências SIGISSWEB - PC50",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5774,
+			"data_hora" : "07/01/2025 - 08:12",
+			"script_name" : "Pendências SIGISSWEB - PC50",
+			"andamentos" : "Erro detectado"
+		},
+		{
+			"id" : 5775,
+			"data_hora" : "07/01/2025 - 08:14",
+			"script_name" : "Pendências SIGISSWEB - PC50",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5776,
+			"data_hora" : "07/01/2025 - 08:14",
+			"script_name" : "Pendências SIGISSWEB - PC50",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5777,
+			"data_hora" : "07/01/2025 - 08:18",
+			"script_name" : "Pendências SIGISSWEB - PC50",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5778,
+			"data_hora" : "07/01/2025 - 08:18",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5779,
+			"data_hora" : "07/01/2025 - 08:19",
+			"script_name" : "Pendências SIGISSWEB - PC50",
+			"andamentos" : "Erro detectado"
+		},
+		{
+			"id" : 5780,
+			"data_hora" : "07/01/2025 - 08:22",
+			"script_name" : "Pendências SIGISSWEB - PC50",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5781,
+			"data_hora" : "07/01/2025 - 08:22",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "Erro detectado"
+		},
+		{
+			"id" : 5782,
+			"data_hora" : "07/01/2025 - 08:24",
+			"script_name" : "Pendências SIGISSWEB - PC50",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5783,
+			"data_hora" : "07/01/2025 - 08:24",
+			"script_name" : "Pendências SIGISSWEB - PC50",
+			"andamentos" : "Erro detectado"
+		},
+		{
+			"id" : 5784,
+			"data_hora" : "07/01/2025 - 08:24",
+			"script_name" : "Pendências SIGISSWEB - PC50",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5785,
+			"data_hora" : "07/01/2025 - 08:27",
+			"script_name" : "Pendências SIGISSWEB - PC50",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5786,
+			"data_hora" : "07/01/2025 - 08:29",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "Cartão fechado"
+		},
+		{
+			"id" : 5787,
+			"data_hora" : "07/01/2025 - 08:31",
+			"script_name" : "Encaminha Docs WhatsApp - PC34",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5788,
+			"data_hora" : "07/01/2025 - 08:31",
+			"script_name" : "Encaminha Docs WhatsApp - PC34",
+			"andamentos" : "Rotina finalizada"
+		},
+		{
+			"id" : 5789,
+			"data_hora" : "07/01/2025 - 08:33",
+			"script_name" : "Pendências SIGISSWEB - PC50",
+			"andamentos" : "A rotina está ociosa por muito tempo"
+		},
+		{
+			"id" : 5790,
+			"data_hora" : "07/01/2025 - 08:34",
+			"script_name" : "Encaminha Docs WhatsApp - PC34",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5791,
+			"data_hora" : "07/01/2025 - 08:37",
+			"script_name" : "Encaminha Docs WhatsApp - PC34",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5792,
+			"data_hora" : "07/01/2025 - 08:38",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5793,
+			"data_hora" : "07/01/2025 - 08:38",
+			"script_name" : "Encaminha Docs WhatsApp - PC34",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5794,
+			"data_hora" : "07/01/2025 - 08:40",
+			"script_name" : "Pendências SIGISSWEB - PC50",
+			"andamentos" : "Cartão fechado"
+		},
+		{
+			"id" : 5795,
+			"data_hora" : "07/01/2025 - 08:42",
+			"script_name" : "Encaminha Docs WhatsApp - PC34",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5796,
+			"data_hora" : "07/01/2025 - 08:43",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "A rotina está ociosa por muito tempo"
+		},
+		{
+			"id" : 5797,
+			"data_hora" : "07/01/2025 - 08:44",
+			"script_name" : "Encaminha Docs WhatsApp - PC34",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5798,
+			"data_hora" : "07/01/2025 - 08:44",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "Cartão fechado"
+		},
+		{
+			"id" : 5799,
+			"data_hora" : "07/01/2025 - 08:46",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5800,
+			"data_hora" : "07/01/2025 - 08:46",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "Erro detectado"
+		},
+		{
+			"id" : 5801,
+			"data_hora" : "07/01/2025 - 08:46",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "Cartão fechado"
+		},
+		{
+			"id" : 5802,
+			"data_hora" : "07/01/2025 - 08:47",
+			"script_name" : "Encaminha Docs WhatsApp - PC34",
+			"andamentos" : "Rotina finalizada"
+		},
+		{
+			"id" : 5803,
+			"data_hora" : "07/01/2025 - 08:50",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5804,
+			"data_hora" : "07/01/2025 - 08:50",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "Cartão fechado"
+		},
+		{
+			"id" : 5805,
+			"data_hora" : "07/01/2025 - 08:50",
+			"script_name" : "Encaminha Docs WhatsApp - PC34",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5837,
+			"data_hora" : "07/01/2025 - 08:55",
+			"script_name" : "Encaminha Docs WhatsApp - PC34",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5838,
+			"data_hora" : "07/01/2025 - 08:57",
+			"script_name" : "Encaminha Docs WhatsApp - PC34",
+			"andamentos" : "Erro detectado"
+		},
+		{
+			"id" : 5839,
+			"data_hora" : "07/01/2025 - 08:58",
+			"script_name" : "Encaminha Docs WhatsApp - PC34",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5840,
+			"data_hora" : "07/01/2025 - 08:58",
+			"script_name" : "Encaminha Docs WhatsApp - PC34",
+			"andamentos" : "Rotina finalizada"
+		},
+		{
+			"id" : 5841,
+			"data_hora" : "07/01/2025 - 08:58",
+			"script_name" : "Encaminha Docs WhatsApp - PC34",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5842,
+			"data_hora" : "07/01/2025 - 09:05",
+			"script_name" : "Encaminha Docs WhatsApp - PC34",
+			"andamentos" : "A rotina está ociosa por muito tempo"
+		},
+		{
+			"id" : 5843,
+			"data_hora" : "07/01/2025 - 09:16",
+			"script_name" : "Encaminha Docs WhatsApp - PC34",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5844,
+			"data_hora" : "07/01/2025 - 09:21",
+			"script_name" : "Encaminha Docs WhatsApp - PC34",
+			"andamentos" : "A rotina está ociosa por muito tempo"
+		},
+		{
+			"id" : 5845,
+			"data_hora" : "07/01/2025 - 09:24",
+			"script_name" : "Encaminha Docs WhatsApp - PC34",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5846,
+			"data_hora" : "07/01/2025 - 09:25",
+			"script_name" : "Encaminha Docs WhatsApp - PC34",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5847,
+			"data_hora" : "07/01/2025 - 09:25",
+			"script_name" : "Encaminha Docs WhatsApp - PC34",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5848,
+			"data_hora" : "07/01/2025 - 09:31",
+			"script_name" : "Encaminha Docs WhatsApp - PC34",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5849,
+			"data_hora" : "07/01/2025 - 09:33",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5850,
+			"data_hora" : "07/01/2025 - 09:33",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "Erro detectado"
+		},
+		{
+			"id" : 5851,
+			"data_hora" : "07/01/2025 - 09:34",
+			"script_name" : "Encaminha Docs WhatsApp - PC34",
+			"andamentos" : "Rotina finalizada"
+		},
+		{
+			"id" : 5852,
+			"data_hora" : "07/01/2025 - 09:34",
+			"script_name" : "Relatório Faturamento X Compra - PC67",
+			"andamentos" : "Cartão fechado"
+		},
+		{
+			"id" : 5853,
+			"data_hora" : "07/01/2025 - 09:40",
+			"script_name" : "Consulta Divida Ativa - PC25",
+			"andamentos" : "A rotina está ociosa por muito tempo"
+		},
+		{
+			"id" : 5866,
+			"data_hora" : "07/01/2025 - 09:50",
+			"script_name" : "Transmite DeSTDA sem movimento - PC20",
+			"andamentos" : "Erro detectado"
+		},
+		{
+			"id" : 5866,
+			"data_hora" : "07/01/2025 - 09:51",
+			"script_name" : "Transmite DeSTDA sem movimento - PC20",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5854,
+			"data_hora" : "07/01/2025 - 10:21",
+			"script_name" : "Encaminha Docs WhatsApp - PC34",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5855,
+			"data_hora" : "07/01/2025 - 10:21",
+			"script_name" : "Consulta Divida Ativa - PC25",
+			"andamentos" : "Erro detectado"
+		},
+		{
+			"id" : 5866,
+			"data_hora" : "07/01/2025 - 10:21",
+			"script_name" : "Transmite DeSTDA sem movimento - PC20",
+			"andamentos" : "A rotina está ociosa por muito tempo"
+		},
+		{
+			"id" : 5856,
+			"data_hora" : "07/01/2025 - 10:21",
+			"script_name" : "Consulta Divida Ativa - PC25",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5857,
+			"data_hora" : "07/01/2025 - 10:25",
+			"script_name" : "Encaminha Docs WhatsApp - PC34",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5858,
+			"data_hora" : "07/01/2025 - 10:25",
+			"script_name" : "Encaminha Docs WhatsApp - PC34",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5866,
+			"data_hora" : "07/01/2025 - 10:25",
+			"script_name" : "Transmite DeSTDA sem movimento - PC20",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5859,
+			"data_hora" : "07/01/2025 - 10:25",
+			"script_name" : "Encaminha Docs WhatsApp - PC34",
+			"andamentos" : "Cartão fechado"
+		},
+		{
+			"id" : 5860,
+			"data_hora" : "07/01/2025 - 10:25",
+			"script_name" : "Encaminha Docs WhatsApp - PC34",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5861,
+			"data_hora" : "07/01/2025 - 10:52",
+			"script_name" : "Consulta Divida Ativa - PC25",
+			"andamentos" : "A rotina está ociosa por muito tempo"
+		},
+		{
+			"id" : 5862,
+			"data_hora" : "07/01/2025 - 11:16",
+			"script_name" : "Encaminha Docs WhatsApp - PC34",
+			"andamentos" : "A rotina está ociosa por muito tempo"
+		},
+		{
+			"id" : 5866,
+			"data_hora" : "07/01/2025 - 11:16",
+			"script_name" : "Transmite DeSTDA sem movimento - PC20",
+			"andamentos" : "A rotina está ociosa por muito tempo"
+		},
+		{
+			"id" : 5863,
+			"data_hora" : "07/01/2025 - 11:16",
+			"script_name" : "Encaminha Docs WhatsApp - PC34",
+			"andamentos" : "Erro detectado"
+		},
+
+		{
+			"id" : 5864,
+			"data_hora" : "07/01/2025 - 11:17",
+			"script_name" : "Encaminha Docs WhatsApp - PC34",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5866,
+			"data_hora" : "07/01/2025 - 11:20",
+			"script_name" : "Transmite DeSTDA sem movimento - PC20",
+			"andamentos" : "Rotina iniciada"
+		},
+		{
+			"id" : 5865,
+			"data_hora" : "07/01/2025 - 11:33",
+			"script_name" : "Encaminha Docs WhatsApp - PC34",
+			"andamentos" : "A rotina está ociosa por muito tempo"
+		}
+	]
+}

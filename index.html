@@ -17,12 +17,6 @@
     <meta name="description" content="Sistema de monitoramento de rotinas automáticas">
 </head>
 <body class="dark"> 
-    <div class="firework"></div>
-    <div class="firework"></div>
-    <div class="firework"></div>
-    <div class="firework"></div>
-    <div class="firework"></div>
-
     <header class="cabecalho">
         <div class="menu">
             <div class="menu fundo">
@@ -107,8 +101,61 @@
         <div id="caption" class="cmb"></div>
     </div>
 
+    <div id="loading" class="invisible2">
+        <div class="loader">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
     <div id="layoutTela" class="layout">
         <div id="telaRotinas" class="rotinas">
+            <div id="Transmite_DeSTDA_sem_movimento_-_PC20" class="rectangle status status-executando" title="Transmite DeSTDA sem movimento - PC20 - Tempo estimado: 4 horas 26 minutos - 71.76%">
+                <img id="decoracao" alt="Decoração">
+                <div class="cabecalhoCard">
+                    <div id="titulo" class="titulo">Transmite DeSTDA sem movimento - PC20</div> 
+                    <div class="cabecalhoCard">
+                        <div class="botaoFixar" title="Fixar cartão">☆</div>
+                        <div class="botaoFechar" title="Fechar cartão">⨉</div>
+                    </div>
+                </div>
+                <div id="progresso" class="progresso">
+                    <div id="porcentagem" class="fundo2 porcentagem">
+                        <div id="barraLoading" class="barraLoading" style="width: 71.76%"></div>
+                        <span id="textoPorcentagem" class="textoPorcentagem">71.76%</span>
+                    </div>
+                    <div id="mensagemAlerta" class="scrollInfo content"></div>
+                </div>
+
+                <div id="maisInfo" class="maisInfo">▼ Execução</div>
+                <div id="resumoResultados" class="resumoResultados collapsed">
+                    <div class="fundo2">
+                        <div id="andamentos" class="content">465 de 648 | 183 restantes</div>
+                        <div id="media" class="content">Tempo médio por ciclo: 2 minuto 45 segundos</div>
+                        <div id="estimado" class="content">Tempo estimado: 4 horas 26 minutos</div>
+                        <div id="previsao" class="content">Previsão de termino: 07/01/2024 as 15:45</div>
+                    </div>
+                </div>
+
+                <div id="maisInfo2" class="maisInfo2">▼ Andamentos</div>
+                <div id="resumoResultados2" class="resumoResultados2 collapsed">
+                    <div class="scrollInfo fundo2 telaDado">
+                        <div class="content">Dado atual:</div>
+                        <div id="dado_atual" class="content">28 - 12345678000234 - Empresa Formidavel LTDA</div>
+                    </div>
+                    <div class="scrollInfo fundo2 telaResumo">
+                        <div id="occorencia1" class="content">414 - Competência transmitida</div>
+                        <div id="occorencia2" class="content">30 - Empresa não encontrada no SEDIF</div>
+                        <div id="occorencia3" class="content">21 - CPF do responsável inválido</div>
+                    </div>
+                </div>
+
+                <div id="alerta" class="content alerta"></div>
+            </div>
+
             <div id="Relatório_Faturamento_X_Compra_-_PC67" class="rectangle status status-executando" title="Relatório Faturamento X Compra - PC67 - Tempo estimado: 5 horas 26 minutos - %12">
                 <img id="decoracao" alt="Decoração">
                 <div class="cabecalhoCard">
@@ -156,10 +203,10 @@
                 <div id="alerta" class="content alerta"></div>
             </div>
 
-            <div id="Pendencias_SIGISSWEB_-_PC50" class="rectangle status status-executando" title="Pendencias SIGISSWEB - PC50 - Tempo estimado: 1 dia 3 horas 39 minutos - %31">
+            <div id="Pendências_SIGISSWEB_-_PC50" class="rectangle status status-executando" title="Pendências SIGISSWEB - PC50 - Tempo estimado: 1 dia 3 horas 39 minutos - %31">
                 <img id="decoracao" alt="Decoração">
                 <div class="cabecalhoCard">
-                    <div id="titulo" class="titulo">Pendencias SIGISSWEB - PC50</div> 
+                    <div id="titulo" class="titulo">Pendências SIGISSWEB - PC50</div> 
                     <div class="cabecalhoCard">
                         <div class="botaoFixar" title="Fixar cartão">☆</div>
                         <div class="botaoFechar" title="Fechar cartão">⨉</div>
@@ -332,174 +379,35 @@
         </div>
 
         <div id="targetHistorico" class="mainHistorico collapsed">
-            <div id="painelFiltro" class="filtroHistorico">
-                <button id="bolinhaGeral" class="bFiltro filtroGeral" title="Filtro geral">●</button>
-                <button id="bolinhaErro" class="bFiltro filtroErro" title="Filtro 'Erro detectado'">●</button>
-                <button id="bolinhaOcioso" class="bFiltro filtroOcioso" title="Filtro 'A rotina esta ociosa por muito tempo'">●</button>
-                <button id="bolinhaFinal" class="bFiltro filtroFinal" title="Filtro 'Rotina finalizada'">●</button>
-                <button id="bolinhaFechar" class="bFiltro filtroFechar" title="Filtro 'Cartão fechado'">●</button>
+            <div id="configHistorico" class="painelConfig collapsed">
+                <div id="painelPaginas" class="fundo menuPaginas">
+                    <div id="pagination" class="paginaHistorico"></div>
+                </div>
+                
+                <div id="painelInput" class="fundo">
+                    <input type="text" id="searchInputPageSize" class="hInputPageSize", value="15" title="Linhas por página" style="width: 15px;">
+                </div>
+                <div id="painelInput" class="fundo">
+                    <input type="text" id="searchInputDate" class="hInputDate" placeholder="Data e hora" title="Data e hora" style="width: 125px;">
+                    <button id="limpaHInputDate" class="MenuBotao">⨉</button>
+                </div>
+
+                <div id="painelInput" class="fundo">
+                    <input type="text" id="searchInputName" class="hInputName" placeholder="Nome da rotina" title="Nome da rotina" style="width: 125px;">
+                    <button id="limpaHInputName" class="MenuBotao">⨉</button>
+                </div>
+                
+                <div id="painelFiltro" class="filtroHistorico">
+                    <button id="bolinhaGeral" class="bFiltro filtroGeral" title="Filtro geral">●</button>
+                    <button id="bolinhaErro" class="bFiltro filtroErro" title="Filtro 'Erro detectado'">●</button>
+                    <button id="bolinhaOcioso" class="bFiltro filtroOcioso" title="Filtro 'A rotina esta ociosa por muito tempo'">●</button>
+                    <button id="bolinhaFinal" class="bFiltro filtroFinal" title="Filtro 'Rotina finalizada'">●</button>
+                    <button id="bolinhaFechar" class="bFiltro filtroFechar" title="Filtro 'Cartão fechado'">●</button>
+                </div>
             </div>
+            
             <div id="historicoTela" class="telaHistorico fundo">
-                <div class="linha">
-                    <p id="data">15/07/2024 - 09:35</p>
-                    <p id="rotina">Certidão Negativa Receita Federal CPF - PC14</p>
-                    <p id="ocorrencia" class="situacao ociosa">A rotina está ociosa por muito tempo</p>
-                </div>
-                <div class="linha">
-                    <p id="data">15/07/2024 - 09:45</p>
-                    <p id="rotina">Encaminha Docs WhatsApp - PC34</p>
-                    <p id="ocorrencia" class="situacao erro">Erro detectado</p>
-                </div>
-                <div class="linha">
-                    <p id="data">15/07/2024 - 08:00</p>
-                    <p id="rotina">Pendencias SIGISSWEB - PC50</p>
-                    <p id="ocorrencia" class="situacao iniciada">Rotina iniciada</p>
-                </div>
-                <div class="linha">
-                    <p id="data">15/07/2024 - 08:01</p>
-                    <p id="rotina">Relatório Faturamento X Compra - PC67</p>
-                    <p id="ocorrencia" class="situacao iniciada">Rotina iniciada</p>
-                </div>
-                <div class="linha">
-                    <p id="data">15/07/2024 - 09:35</p>
-                    <p id="rotina">Certidão Negativa Receita Federal CPF - PC14</p>
-                    <p id="ocorrencia" class="situacao ociosa">A rotina está ociosa por muito tempo</p>
-                </div>
-                <div class="linha">
-                    <p id="data">15/07/2024 - 09:45</p>
-                    <p id="rotina">Encaminha Docs WhatsApp - PC34</p>
-                    <p id="ocorrencia" class="situacao erro">Erro detectado</p>
-                </div>
-                <div class="linha">
-                    <p id="data">15/07/2024 - 08:00</p>
-                    <p id="rotina">Pendencias SIGISSWEB - PC50</p>
-                    <p id="ocorrencia" class="situacao iniciada">Rotina iniciada</p>
-                </div>
-                <div class="linha">
-                    <p id="data">15/07/2024 - 09:35</p>
-                    <p id="rotina">Certidão Negativa Receita Federal CPF - PC14</p>
-                    <p id="ocorrencia" class="situacao ociosa">A rotina está ociosa por muito tempo</p>
-                </div>
-                <div class="linha">
-                    <p id="data">15/07/2024 - 08:01</p>
-                    <p id="rotina">Relatório Faturamento X Compra - PC67</p>
-                    <p id="ocorrencia" class="situacao iniciada">Rotina iniciada</p>
-                </div>
-                <div class="linha">
-                    <p id="data">15/07/2024 - 09:45</p>
-                    <p id="rotina">Encaminha Docs WhatsApp - PC34</p>
-                    <p id="ocorrencia" class="situacao erro">Erro detectado</p>
-                </div>
-                <div class="linha">
-                    <p id="data">15/07/2024 - 08:00</p>
-                    <p id="rotina">Pendencias SIGISSWEB - PC50</p>
-                    <p id="ocorrencia" class="situacao iniciada">Rotina iniciada</p>
-                </div>
-                <div class="linha">
-                    <p id="data">15/07/2024 - 09:35</p>
-                    <p id="rotina">Certidão Negativa Receita Federal CPF - PC14</p>
-                    <p id="ocorrencia" class="situacao ociosa">A rotina está ociosa por muito tempo</p>
-                </div>
-                <div class="linha">
-                    <p id="data">15/07/2024 - 09:45</p>
-                    <p id="rotina">Encaminha Docs WhatsApp - PC34</p>
-                    <p id="ocorrencia" class="situacao erro">Erro detectado</p>
-                </div>
-                <div class="linha">
-                    <p id="data">15/07/2024 - 08:01</p>
-                    <p id="rotina">Relatório Faturamento X Compra - PC67</p>
-                    <p id="ocorrencia" class="situacao iniciada">Rotina iniciada</p>
-                </div>
-                <div class="linha">
-                    <p id="data">15/07/2024 - 08:00</p>
-                    <p id="rotina">Pendencias SIGISSWEB - PC50</p>
-                    <p id="ocorrencia" class="situacao iniciada">Rotina iniciada</p>
-                </div>
-                <div class="linha">
-                    <p id="data">15/07/2024 - 09:35</p>
-                    <p id="rotina">Certidão Negativa Receita Federal CPF - PC14</p>
-                    <p id="ocorrencia" class="situacao ociosa">A rotina está ociosa por muito tempo</p>
-                </div>
-                <div class="linha">
-                    <p id="data">15/07/2024 - 09:45</p>
-                    <p id="rotina">Encaminha Docs WhatsApp - PC34</p>
-                    <p id="ocorrencia" class="situacao erro">Erro detectado</p>
-                </div>
-                <div class="linha">
-                    <p id="data">15/07/2024 - 08:00</p>
-                    <p id="rotina">Pendencias SIGISSWEB - PC50</p>
-                    <p id="ocorrencia" class="situacao iniciada">Rotina iniciada</p>
-                </div>
-                <div class="linha">
-                    <p id="data">15/07/2024 - 09:35</p>
-                    <p id="rotina">Certidão Negativa Receita Federal CPF - PC14</p>
-                    <p id="ocorrencia" class="situacao ociosa">A rotina está ociosa por muito tempo</p>
-                </div>
-                <div class="linha">
-                    <p id="data">15/07/2024 - 09:45</p>
-                    <p id="rotina">Encaminha Docs WhatsApp - PC34</p>
-                    <p id="ocorrencia" class="situacao erro">Erro detectado</p>
-                </div>
-                <div class="linha">
-                    <p id="data">15/07/2024 - 08:00</p>
-                    <p id="rotina">Pendencias SIGISSWEB - PC50</p>
-                    <p id="ocorrencia" class="situacao iniciada">Rotina iniciada</p>
-                </div>
-                <div class="linha">
-                    <p id="data">15/07/2024 - 09:35</p>
-                    <p id="rotina">Certidão Negativa Receita Federal CPF - PC14</p>
-                    <p id="ocorrencia" class="situacao ociosa">A rotina está ociosa por muito tempo</p>
-                </div>
-                <div class="linha">
-                    <p id="data">15/07/2024 - 09:45</p>
-                    <p id="rotina">Encaminha Docs WhatsApp - PC34</p>
-                    <p id="ocorrencia" class="situacao erro">Erro detectado</p>
-                </div>
-                <div class="linha">
-                    <p id="data">15/07/2024 - 08:00</p>
-                    <p id="rotina">Pendencias SIGISSWEB - PC50</p>
-                    <p id="ocorrencia" class="situacao iniciada">Rotina iniciada</p>
-                </div>
-                <div class="linha">
-                    <p id="data">15/07/2024 - 08:00</p>
-                    <p id="rotina">Download Comprovantes de Pagamento - PC65</p>
-                    <p id="ocorrencia" class="situacao finalizada">Rotina finalizada</p>
-                </div>
-                <div class="linha">
-                    <p id="data">15/07/2024 - 08:00</p>
-                    <p id="rotina">Download Comprovantes de Pagamento - PC65</p>
-                    <p id="ocorrencia" class="situacao fechado">Cartão fechado</p>
-                </div>
-                <div class="linha">
-                    <p id="data">15/07/2024 - 08:00</p>
-                    <p id="rotina">Pendencias SIGISSWEB - PC50</p>
-                    <p id="ocorrencia" class="situacao iniciada">Rotina iniciada</p>
-                </div>
-                <div class="linha">
-                    <p id="data">15/07/2024 - 09:35</p>
-                    <p id="rotina">Certidão Negativa Receita Federal CPF - PC14</p>
-                    <p id="ocorrencia" class="situacao ociosa">A rotina está ociosa por muito tempo</p>
-                </div>
-                <div class="linha">
-                    <p id="data">15/07/2024 - 09:45</p>
-                    <p id="rotina">Encaminha Docs WhatsApp - PC34</p>
-                    <p id="ocorrencia" class="situacao erro">Erro detectado</p>
-                </div>
-                <div class="linha">
-                    <p id="data">15/07/2024 - 08:00</p>
-                    <p id="rotina">Pendencias SIGISSWEB - PC50</p>
-                    <p id="ocorrencia" class="situacao iniciada">Rotina iniciada</p>
-                </div>
-                <div class="linha">
-                    <p id="data">15/07/2024 - 08:00</p>
-                    <p id="rotina">Download Comprovantes de Pagamento - PC65</p>
-                    <p id="ocorrencia" class="situacao finalizada">Rotina finalizada</p>
-                </div>
-                <div class="linha">
-                    <p id="data">15/07/2024 - 08:00</p>
-                    <p id="rotina">Download Comprovantes de Pagamento - PC65</p>
-                    <p id="ocorrencia" class="situacao fechado">Cartão fechado</p>
-                </div>
+                <!--div da linha da tabela-->
             </div>
         </div>
     </div>

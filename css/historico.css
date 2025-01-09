@@ -42,40 +42,70 @@
 }
 
 .mainHistorico {
-    padding: 115px 0 90px 0;
+    width: 1500px;
+    padding: 100px 12px 0 0 ;
+    align-self: flex-start;
     display: flex;
     margin: 0;
     opacity: 1;
     scale: 1;
-    width: 1500px;
     max-height: 100vh;
     flex-direction: column;
-    align-self: initial;
     transition: opacity var(--transicao-link), max-height var(--transicao-link), padding 1s, margin var(--transicao-link), width var(--transicao-link);
 }
 .historicoExpandida {
     padding: 160px 12px 0 0;
 }
-.mainHistorico.collapsed {
+.painelConfig{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 10px 0;
+    gap: 10px;
+    justify-content: center;
+    align-items: baseline;
+    max-height: 200px;
+    transition: opacity var(--transicao-link), max-height var(--transicao-link), padding var(--transicao-link), margin var(--transicao-link);
+}
+.painelConfig.collapsed, .mainHistorico.collapsed {
     opacity: 0;
+    max-height: 0;
     padding: 0;
     margin: 0;
+}
+.mainHistorico.collapsed {
     width: 0;
 }
+
+.hInputName, .hInputDate, .hInputPageSize {
+    color: var(--cor-texto);
+    background: none;
+    border: none;
+    border-radius: 20px;
+    padding: 12px;
+}
+
 .filtroHistorico{
     display: flex;
-    justify-content: flex-end;
-    justify-items: center;
+    justify-self: center;
+    width: fit-content;
     flex-direction: row;
     gap: 10px;
-    padding: 10px 150px;
+    transition: var(--transicao-link);
+}
+.filtroGeral, .filtroErro, .filtroOcioso, .filtroFinal, .filtroFechar{
+    color: var(--cor-texto);
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: larger;
     transition: var(--transicao-link);
 }
 .filtroGeral.clicado, .filtroErro.clicado, .filtroOcioso.clicado, .filtroFinal.clicado, .filtroFechar.clicado{
     scale: 1.5;
 }
 .filtroGeral.clicado {
-    text-shadow: 0 0 6px var(--cor-texto-2)
+    text-shadow: 0 0 6px var(--cor-texto)
 }
 .filtroErro.clicado {
     text-shadow: 0 0 6px var(--cor-erro)
@@ -92,41 +122,49 @@
 .filtroErro {
     color: var(--cor-erro); /* Cor da bolinha */
 }
-.filtroGeral, .filtroErro, .filtroOcioso, .filtroFinal, .filtroFechar{
-    color: var(--cor-texto);
-    border: none;
-    background: none;
-    cursor: pointer;
-    font-size: larger;
-    transition: var(--transicao-link);
-}
-.filtroFechar {
-    color: var(--cor-fechar); /* Cor da bolinha */
-}
-.filtroErro {
-    color: var(--cor-erro); /* Cor da bolinha */
-}
 .filtroOcioso {
     color: var(--cor-ocioso); /* Cor da bolinha */
 }
 .filtroFinal {
     color: var(--cor-final); /* Cor da bolinha */
 }
+.filtroFechar {
+    color: var(--cor-fechar)
+}
 .filtroGeral:hover, .filtroErro:hover, .filtroOcioso:hover, .filtroFinal:hover, .filtroFechar:hover {
     scale: 1.5;
 }
+
+.menuPaginas {
+    display: flex;
+    justify-self: center;
+    width: fit-content;
+    flex-direction: row;
+}
+.paginaHistorico{
+    padding: 0 3px;
+}
+.paginaHistorico button:disabled {
+    color: var(--cor-texto-2);
+    background-color: var(--cor-texto);
+    cursor: default        /* Muda o cursor para 'não permitido' */
+}
+
 .telaHistorico {
     width: 90%;
-    max-height: 585px; /* Defina a altura máxima desejada */
-    overflow: auto; /* Adiciona o scroll vertical */
+    max-height: 72vh;
+    overflow: auto;
+    opacity: 1;
     display: flex;
     align-self: center;
     flex-direction: column;
-    padding: 10px 25px;
-    margin: 5px;
+    padding: 25px 25px;
+    margin: 5px 0 0 0;
     font-size: 0.8em;
-    transition: width var(--transicao-link), max-height var(--transicao-link), padding var(--transicao-link), margin var(--transicao-link), 
-                font-size var(--transicao-link);
+    transition: opacity var(--transicao-link);
+}
+.telaHistorico.collapsed {
+    opacity: 0 !important; /* Altura desejada quando colapsado */
 }
 .linha{
     align-content: center;
@@ -137,12 +175,6 @@
     padding: 10px;
     min-height: 10px;
     transition: var(--transicao-link);
-}
-.linha.collapsed {
-    opacity: 0 !important;
-    min-height: 0 !important;
-    height: 0 !important; /* Altura desejada quando colapsado */
-    padding: 0 1% !important;
 }
 .linha:hover {
     background: var(--sombra-2);
@@ -178,16 +210,16 @@
     .filtroHistorico{
         justify-content: center;
         gap: 25px;
-        padding: 60px 0 10px;
+        padding: 10px;
+    }
+    .telaHistorico {
+        padding: 5px;
+        overflow: auto;
     }
     .filtroGeral, .filtroErro, .filtroOcioso, .filtroFinal, .filtroFechar{
         font-size: x-large;
     }
-    .telaHistorico {
-        padding: 5px;
-    }
     .linha{
-        align-self: center;
         font-size: smaller;
         padding: 1rem 0.6rem;
         grid-template-columns: 1.5fr 3fr 2fr;
@@ -196,11 +228,13 @@
 @media (max-width: 2500px) {
     .mainHistorico {
         width: 100%;
+        padding: 70px 0;
+        align-self: initial;
     }
     .mainHistorico.collapsed {
-        max-height: 0;
+        width: 100%;
     }
     .historicoExpandida {
         padding: 100px 12px 0 0;
     }
-}
+}   
