@@ -217,6 +217,7 @@
     .menuTelaBotoes {
         flex-wrap: wrap;
         gap: 25px;
+        padding: 7px;
     }
 
     .dicaTela, .galeriaTela {
