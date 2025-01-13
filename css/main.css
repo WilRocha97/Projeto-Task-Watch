@@ -211,7 +211,7 @@ body {
     align-items: center;
     width: 100%;
 }
-.cInputUsuario, .cInputSenha, .cInputCard {
+.cInputUsuario, .cInputSenha, .cInputCard, .hInputName, .hInputDate, .hInputPageSize {
     width: 100%;
     color: var(--cor-texto);
     background: none;
@@ -228,7 +228,7 @@ body {
     background: none;
     border-radius: var(--borda-botao);
     padding: var(--padding-botao);
-    margin: 3px;
+    margin: 2.3px;
     cursor: pointer;
     color: var(--cor-texto);
     font-size: var(--tamanho-texto-2);

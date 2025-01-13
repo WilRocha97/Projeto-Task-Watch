@@ -77,13 +77,6 @@
     width: 0;
 }
 
-.hInputName, .hInputDate, .hInputPageSize {
-    color: var(--cor-texto);
-    background: none;
-    border: none;
-    border-radius: 20px;
-    padding: 12px;
-}
 
 .filtroHistorico{
     display: flex;
@@ -140,9 +133,6 @@
     justify-self: center;
     width: fit-content;
     flex-direction: row;
-}
-.paginaHistorico{
-    padding: 0 3px;
 }
 .paginaHistorico button:disabled {
     color: var(--cor-texto-2);
