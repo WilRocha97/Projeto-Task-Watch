@@ -59,12 +59,17 @@
     position: fixed;
     overflow: hidden;
 }
+.menu {
+    padding: 8px;
+}
+.menuTelaBotoes {
+    padding: 4px;
+}
 .menu, .menuTelaBotoes {
     display: flex;
     justify-content: center;
     font-size: 0.9em;
     margin: 2px;
-    padding: 2px;
     gap: 10px;
     overflow: hidden;
 }
