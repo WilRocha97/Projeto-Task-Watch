@@ -107,6 +107,10 @@ document.body.addEventListener('click', (event) => {
     // Verifica se o elemento clicado ou algum de seus pais possui a classe 'rectangle'
     let target = event.target;
     const divMae = target.closest('.rectangle');
+    const maisInfo = divMae.querySelector('#resumoResultados');
+    const telaResumoMaisInfo2 = divMae.querySelector('.telaResumo');
+    const maisInfo2 = divMae.querySelector('#resumoResultados2');
+
     if (divMae) {
         divMae.classList.remove('buscaCard');
     }
@@ -149,19 +153,30 @@ document.body.addEventListener('click', (event) => {
     }
     else if (target.classList.contains('maisInfo')){
         // minimiza a tela de ocorrências dentro do card
-        const maisInfo = divMae.querySelector('#resumoResultados');
         if (maisInfo.classList.contains('collapsed')) {
             maisInfo.classList.remove('collapsed')
+            telaResumoMaisInfo2.classList.remove('large')
+            maisInfo2.classList.remove('large')
             target.innerHTML = '▲ Execução'
         }
         else {
             maisInfo.classList.add('collapsed')
+            telaResumoMaisInfo2.classList.add('large')
+            maisInfo2.classList.add('large')
             target.innerHTML = '▼ Execução'
         }
     }
     else if (target.classList.contains('maisInfo2')){
+        if (maisInfo.classList.contains('collapsed')) {
+            telaResumoMaisInfo2.classList.add('large')
+            maisInfo2.classList.add('large')
+        }
+        else {
+            telaResumoMaisInfo2.classList.remove('large')
+            maisInfo2.classList.remove('large')
+        }
+        
         // minimiza a tela de ocorrências dentro do card
-        const maisInfo2 = divMae.querySelector('#resumoResultados2');
         if (maisInfo2.classList.contains('collapsed')) {
             maisInfo2.classList.remove('collapsed')
             target.innerHTML = '▲ Andamentos'

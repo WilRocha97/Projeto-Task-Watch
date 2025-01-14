@@ -250,6 +250,9 @@
 .resumoResultados2 {
     max-height: 200px;
 }
+.resumoResultados2.large {
+    max-height: 315px;
+}
 .resumoResultados.collapsed, .resumoResultados2.collapsed {
     opacity: 0;
     padding: 0;
@@ -263,6 +266,11 @@
 .telaResumo {
     overflow: auto;
     max-height: 100px;
+    transition: max-height var(--transicao-link);
+
+}
+.telaResumo.large {
+    max-height: 215px;
 }
 
 .content {
