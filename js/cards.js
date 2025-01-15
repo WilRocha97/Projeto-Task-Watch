@@ -108,7 +108,7 @@ document.body.addEventListener('click', (event) => {
     let target = event.target;
     const divMae = target.closest('.rectangle');
     const maisInfo = divMae.querySelector('#resumoResultados');
-    const telaResumoMaisInfo2 = divMae.querySelector('.telaResumo');
+    const telaResumoMaisInfo2 = divMae.querySelector('.telaResumoConteudo');
     const maisInfo2 = divMae.querySelector('#resumoResultados2');
 
     if (divMae) {
@@ -196,7 +196,13 @@ document.body.addEventListener('click', (event) => {
             target.classList.toggle('collapsed');
         }
     }
-    
+    // Controla o tamanho máximo do card para otimizar a animação de minimiza-lo
+    if (maisInfo.classList.contains('collapsed') && maisInfo2.classList.contains('collapsed') || divMae.classList.contains('collapsed')) {
+        divMae.classList.remove('large')
+    }
+    else {
+        divMae.classList.add('large') 
+    }
 });
 
 // Minimiza e maximiza todas as telas internas dos cards

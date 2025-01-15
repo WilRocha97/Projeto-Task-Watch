@@ -6,7 +6,7 @@
     background: transparent; /* Cor do fundo da barra de rolagem */
 }
 .scrollInfo::-webkit-scrollbar-thumb {
-    background-color: #dbdbdbb9; /* Cor da barra de rolagem */
+    background-color: #dbdbdb73; /* Cor da barra de rolagem */
     border-radius: 6px; /* Arredondamento das bordas */
     border: none; /* Espaçamento entre a barra e o conteúdo */
     transition: var(--transicao-link);
@@ -23,13 +23,13 @@
     background-color: transparent;
     display: block;
     border-style: solid;
-    height: 15px;
-    width: 4px;
+    height: 6px;
+    width: 5px;
 }
 /* Up */
 .scrollInfo::-webkit-scrollbar-button:single-button:vertical:decrement {
     border-width: 0 2px 8px 2px;
-    border-color: transparent transparent #dbdbdbb9 transparent;
+    border-color: transparent transparent #dbdbdb73 transparent;
 }
 
 .scrollInfo::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
@@ -38,7 +38,7 @@
 /* Down */
 .scrollInfo::-webkit-scrollbar-button:single-button:vertical:increment {
     border-width: 8px 2px 0 2px ;
-    border-color: #dbdbdbb9 transparent transparent transparent;
+    border-color: #dbdbdb73 transparent transparent transparent;
 }
 .scrollInfo::-webkit-scrollbar-button:vertical:single-button:increment:hover {
     border-color: var(--cor-destaque) transparent transparent transparent;
@@ -66,13 +66,13 @@
 }
 
 .rotinas {
-    padding: 80px 12px 90px 12px;
+    padding: 60px 12px 90px 12px;
     display: flex;
     justify-content: center;
     align-items: baseline;
     height: 100%;
     flex-wrap: wrap;
-    transition: height var(--transicao-link), padding 1s;
+    transition: height var(--transicao-link), padding var(--transicao-link);
 }
 .rotinasExpandida {
     padding: 160px 12px 90px 12px;
@@ -93,12 +93,15 @@
 }
 .rectangle.enter {
     max-width: 275px;
-    max-height: 450px;
+    max-height: 120px;
     padding: 10px;
     margin: 15px;
     opacity: 1;
     scale: 1;
     overflow: hidden;
+}
+.rectangle.enter.large {
+    max-height: 450px; 
 }
 .rectangle.out {
     max-width: 0 !important;
@@ -262,17 +265,17 @@
     margin-bottom: 0;
     max-height: 0;
 }
-.telaDado {
+.telaDadoConteudo {
     overflow: auto;
-    min-height: 42px;
-    max-height: 60px;
+    max-height: 42px;
 }
-.telaResumo {
+.telaResumoConteudo {
+    max-height: 148px;
     overflow: auto;
     transition: max-height var(--transicao-link);
 }
-.telaResumo.large {
-    max-height: 215px;
+.telaResumoConteudo.large {
+    max-height: 248px;
 }
 
 .content {

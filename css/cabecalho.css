@@ -128,6 +128,9 @@
     max-height: 75vh;
     transition: margin 1s, max-height 1s, opacity var(--transicao-link), padding var(--transicao-link);
 }
+.dicaTela h1 {
+    font-size: 1.2em;
+}
 .ClassTextoDica, .ClassTextoGaleria {
     padding: 20px;
 }

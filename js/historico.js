@@ -172,8 +172,8 @@ function fetchHistoricoFiltrado(ocorrencia = 'geral', page = 1) {
         pageSize = 1
         document.getElementById('searchInputPageSize').value = pageSize
     }
-    if (pageSize > 50) {
-        pageSize = 50
+    if (pageSize > 75) {
+        pageSize = 75
         document.getElementById('searchInputPageSize').value = pageSize
     }
 
