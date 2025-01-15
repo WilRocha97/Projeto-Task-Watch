@@ -98,22 +98,18 @@ menu.addEventListener('click', () => {
     if (telaMenu.classList.contains('invisible2')) {
         telaMenu.classList.remove('invisible2');
         telaRotinas.classList.add('rotinasExpandida');
-        telaHistorico.classList.add('historicoExpandida');
     }
     else {
         telaMenu.classList.add('invisible2');
         telaRotinas.classList.remove('rotinasExpandida');
-        telaHistorico.classList.remove('historicoExpandida');
     }
     if (!telaDica.classList.contains('invisible2')) {
         telaDica.classList.add('invisible2');
         telaRotinas.classList.add('rotinasExpandida');
-        telaHistorico.classList.add('historicoExpandida');
     }
     if (!telaGaleria.classList.contains('invisible2')) {
         telaGaleria.classList.add('invisible2');
         telaRotinas.classList.add('rotinasExpandida');
-        telaHistorico.classList.add('historicoExpandida');
     }
 });
 
@@ -134,7 +130,6 @@ buscaCInputCard.addEventListener('click', ()=> {
 dica.addEventListener('click', () => {
     telaMenu.classList.add('invisible2');
     telaRotinas.classList.remove('rotinasExpandida');
-    telaHistorico.classList.remove('historicoExpandida');
     if (telaDica.classList.contains('invisible2')) {
         telaDica.classList.remove('invisible2');
     }
