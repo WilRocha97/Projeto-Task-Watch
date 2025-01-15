@@ -89,16 +89,16 @@
 }
 .notificacao {
     position: absolute;
-    top: 0; /* Alinha a bolinha ao topo do botão */
-    right: 0; /* Alinha a bolinha à direita do botão */
+    bottom: 4px; /* Alinha a bolinha ao topo do botão */
+    left: 9px; /* Alinha a bolinha à direita do botão */
     display: flex;
     flex-direction: row;
     gap: 1px;
 }
 .bolinhaErro, .bolinhaOcioso, .bolinhaFinal{
-    width: 5px; /* Ajuste o tamanho da bolinha conforme necessário */
-    height: 5px; /* Ajuste o tamanho da bolinha conforme necessário */
-    border-radius: 50%; /* Torna a bolinha circular */
+    width: 20px; /* Ajuste o tamanho da bolinha conforme necessário */
+    height: 3px; /* Ajuste o tamanho da bolinha conforme necessário */
+    border-radius: 5px; /* Torna a bolinha circular */
     transition: var(--transicao-link);
 }
 .bolinhaErro {
