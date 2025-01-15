@@ -131,6 +131,7 @@
 .rectangle.collapsed .maisInfo,
 .rectangle.collapsed .maisInfo2,
 .rectangle.collapsed .content,
+.rectangle.collapsed .dispositivo,
 .rectangle.collapsed .titulo,
 .rectangle.collapsed #media {
     opacity: 0;
