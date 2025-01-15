@@ -1,22 +1,22 @@
 /* Estilizando a barra de rolagem */
-.telaHistorico::-webkit-scrollbar {
+.telaHistoricoConteudo::-webkit-scrollbar {
     width: 6px; /* Largura da barra de rolagem */
 }
-.telaHistorico::-webkit-scrollbar-track {
+.telaHistoricoConteudo::-webkit-scrollbar-track {
     background: transparent; /* Cor do fundo da barra de rolagem */
 }
-.telaHistorico::-webkit-scrollbar-thumb {
+.telaHistoricoConteudo::-webkit-scrollbar-thumb {
     background-color: #818181; /* Cor da barra de rolagem */
     border-radius: 6px; /* Arredondamento das bordas */
     border: none; /* Espaçamento entre a barra e o conteúdo */
     transition: var(--transicao-link);
 }
-.telaHistorico::-webkit-scrollbar-thumb:hover {
+.telaHistoricoConteudo::-webkit-scrollbar-thumb:hover {
     background: var(--cor-destaque);
     border: none;
 }
 /* Buttons */
-.telaHistorico::-webkit-scrollbar-button:single-button {
+.telaHistoricoConteudo::-webkit-scrollbar-button:single-button {
     background-color: transparent;
     display: block;
     border-style: solid;
@@ -24,20 +24,20 @@
     width: 6px;
 }
 /* Up */
-.telaHistorico::-webkit-scrollbar-button:single-button:vertical:decrement {
+.telaHistoricoConteudo::-webkit-scrollbar-button:single-button:vertical:decrement {
     border-width: 0 3px 10px 3px;
     border-color: transparent transparent #818181 transparent;
 }
 
-.telaHistorico::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
+.telaHistoricoConteudo::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
     border-color: transparent transparent var(--cor-destaque) transparent;
 }
 /* Down */
-.telaHistorico::-webkit-scrollbar-button:single-button:vertical:increment {
+.telaHistoricoConteudo::-webkit-scrollbar-button:single-button:vertical:increment {
     border-width: 10px 3px 0 3px ;
     border-color: #818181 transparent transparent transparent;
 }
-.telaHistorico::-webkit-scrollbar-button:vertical:single-button:increment:hover {
+.telaHistoricoConteudo::-webkit-scrollbar-button:vertical:single-button:increment:hover {
     border-color: var(--cor-destaque) transparent transparent transparent;
 }
 
@@ -141,9 +141,7 @@
 }
 
 .telaHistorico {
-    width: 90%;
     max-height: 72vh;
-    overflow: auto;
     opacity: 1;
     display: flex;
     align-self: center;
@@ -151,7 +149,13 @@
     padding: 25px 25px;
     margin: 5px 0 0 0;
     font-size: 0.8em;
+    width: 90%;
+    padding: 8px;
     transition: opacity var(--transicao-link);
+}
+.telaHistoricoConteudo {
+    border-radius: 10px;
+    overflow: auto;
 }
 .telaHistorico.collapsed {
     opacity: 0 !important; /* Altura desejada quando colapsado */
@@ -209,16 +213,19 @@
     .filtroGeral, .filtroErro, .filtroOcioso, .filtroFinal, .filtroFechar{
         font-size: x-large;
     }
+    .telaHistoricoConteudo {
+        border-radius: 20px;
+    }
     .linha{
         font-size: smaller;
-        padding: 1rem 0.6rem;
+        padding: 0.6rem;
         grid-template-columns: 1.5fr 3fr 2fr;
     }
 }
 @media (max-width: 2500px) {
     .mainHistorico {
         width: 100%;
-        padding: 70px 0;
+        padding: 60px 0;
         align-self: initial;
     }
     .mainHistorico.collapsed {

@@ -15,6 +15,7 @@ const botaoFiltroFechar = document.getElementById('bolinhaFechar');
 const botoesFiltro = document.querySelectorAll('.bFiltro');
 
 const historicoBotao = document.getElementById('historico');
+const historicoTelaContainer = document.getElementById('historicoTelaContainer');
 const historicoTela = document.getElementById('historicoTela');
 const mainHistorico = document.getElementById('targetHistorico');
 const painelConfig = document.getElementById('configHistorico');
@@ -56,14 +57,14 @@ function filtraHistorico(ocorrencia, page=1) {
     // Exibe o spinner antes de carregar o histórico
     document.getElementById('loading').classList.remove('invisible2');
 
-    historicoTela.classList.add('collapsed');
+    historicoTelaContainer.classList.add('collapsed');
     setTimeout(()=> {
         historicoTela.innerHTML = ''; // Limpa a tabela para novos dados
         fetchHistoricoFiltrado(ocorrencia, page)
         // Oculta o spinner após os dados serem carregados
     }, 600);
     setTimeout(()=> {
-        historicoTela.classList.remove('collapsed');
+        historicoTelaContainer.classList.remove('collapsed');
     }, 1000);
     // desce para a base da página e da tela de histórico
     setTimeout(()=> {
@@ -184,8 +185,6 @@ function fetchHistoricoFiltrado(ocorrencia = 'geral', page = 1) {
     // Exibe o spinner antes de carregar o histórico
     document.getElementById('loading').classList.remove('invisible2');
   
-    historicoTela.classList.add('collapsed');
-  
     fetch('js/historico.json')
       .then(response => response.json())
       .then(data => {
@@ -241,7 +240,7 @@ function fetchHistoricoFiltrado(ocorrencia = 'geral', page = 1) {
         document.getElementById('loading').classList.add('invisible2');
   
         // Remover a classe 'collapsed' da tela de histórico
-        historicoTela.classList.remove('collapsed');
+        historicoTelaContainer.classList.remove('collapsed');
   
         // Descer para a base da página (se necessário)
         // ...
