@@ -112,9 +112,6 @@
     opacity: 0 !important;
     scale: 0 !important;
 }
-.rectangle:hover{
-    text-shadow: 0 0 10px black;
-}
 .rectangle.collapsed {
     line-height: normal;
     font-size: 0;
@@ -188,7 +185,7 @@
     background: linear-gradient(90deg, var(--cor-loading-1), var(--cor-loading-2), var(--cor-loading-1), var(--cor-loading-2));
     background-size: 300% 100%;
     animation: fluidMove 2s infinite linear reverse;
-    transition: width 0.5s ease-in-out; /* Transição suave ao aumentar */
+    transition: 0.5s; /* Transição suave ao aumentar */
 }
 @keyframes fluidMove {
     0% {

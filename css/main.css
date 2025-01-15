@@ -12,16 +12,17 @@
     --borda-botao: 20px;
     --padding-botao: 6px 9px;
     --cor-padrao: #ff0040;
+    --cor-fundo-2: #a8a8a82d;
 }
 
 .dark {
     --cor-executando: #00cf91;
-    --cor-erro: #ff0000;
+    --cor-erro: #da0101;
     --cor-ocioso: #ffae00;
     --cor-final: #00c1fc;
     --cor-fechar: #8d5cff;
 
-    --cor-erro-alternativa: #cc0000;
+    --cor-erro-alternativa: #9b0000;
     --cor-ocioso-alternativa: #de9700;
     --cor-final-alternativa: #0098c7;
     
@@ -39,12 +40,12 @@
 }
 .light {
     --cor-executando: #00be85;
-    --cor-erro: #da0101;
+    --cor-erro: #cc0000;
     --cor-ocioso: #d49100;
     --cor-final: #00a7da;
     --cor-fechar: #3a00c0;
 
-    --cor-erro-alternativa: #9b0000;
+    --cor-erro-alternativa: #8f0000;
     --cor-ocioso-alternativa: #ac7600;
     --cor-final-alternativa: #00789c;
 
@@ -153,11 +154,12 @@ body {
 }
 .fundo2 {
     padding: 8px;
-    background: #a8a8a82d;
+    background: var(--cor-fundo-2);
     border-radius: 10px;
     box-shadow: var(--direcao-sombra-1) var(--direcao-sombra-1) 5px var(--sombra-card-clara),
                 var(--direcao-sombra-2) var(--direcao-sombra-2) 5px var(--sombra-card);
     backdrop-filter: blur(var(--blur));
+    transition: background-color var(--transicao-link);
 }
 
 
