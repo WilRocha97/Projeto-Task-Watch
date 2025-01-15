@@ -93,7 +93,7 @@
 }
 .rectangle.enter {
     max-width: 275px;
-    max-height: 120px;
+    max-height: 150px;
     padding: 10px;
     margin: 15px;
     opacity: 1;
@@ -142,6 +142,14 @@
     flex-direction: row;
     justify-content: space-between;
 }
+.dispositivo {
+    font-weight: 600;
+    font-size: 1em;
+    padding: 4px;
+    opacity: 1;
+    margin-bottom: 6px;
+    white-space: nowrap;
+}
 .titulo {
     font-weight: 600;
     font-size: 1em;
@@ -159,7 +167,7 @@
     margin-bottom: 6px;
 }
 #mensagemAlerta {
-    max-height: 50px;
+    max-height: 30px;
     overflow: auto;
 }
 #porcentagem {
