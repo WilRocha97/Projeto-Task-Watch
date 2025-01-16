@@ -177,11 +177,7 @@ function fetchHistoricoFiltrado(ocorrencia = 'geral', page = 1) {
         pageSize = 75
         document.getElementById('searchInputPageSize').value = pageSize
     }
-
-    botoesFiltro.forEach(filtro => {
-      filtro.classList.remove('clicado');
-    });
-  
+ 
     // Exibe o spinner antes de carregar o histórico
     document.getElementById('loading').classList.remove('invisible2');
   

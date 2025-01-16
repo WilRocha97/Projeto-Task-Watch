@@ -74,55 +74,54 @@
     width: 0;
 }
 
-
 .filtroHistorico{
     display: flex;
-    justify-self: center;
-    width: fit-content;
+    align-items: center;
     flex-direction: row;
     gap: 10px;
     transition: var(--transicao-link);
 }
 .filtroGeral, .filtroErro, .filtroOcioso, .filtroFinal, .filtroFechar{
-    color: var(--cor-texto);
     border: none;
-    background: none;
     cursor: pointer;
-    font-size: larger;
+    background-color: var(--cor-texto); /* Cor da bolinha */
+    width: 20px; /* Ajuste o tamanho da bolinha conforme necessário */
+    height: 5px; /* Ajuste o tamanho da bolinha conforme necessário */
+    border-radius: 5px; /* Torna a bolinha circular */
     transition: var(--transicao-link);
 }
 .filtroGeral.clicado, .filtroErro.clicado, .filtroOcioso.clicado, .filtroFinal.clicado, .filtroFechar.clicado{
-    scale: 1.5;
+    height: 10px;
 }
 .filtroGeral.clicado {
-    text-shadow: 0 0 6px var(--cor-texto)
+    box-shadow: 0 0 6px var(--cor-texto)
 }
 .filtroErro.clicado {
-    text-shadow: 0 0 6px var(--cor-erro)
+    box-shadow: 0 0 6px var(--cor-erro)
 }
 .filtroOcioso.clicado {
-    text-shadow: 0 0 6px var(--cor-ocioso)
+    box-shadow: 0 0 6px var(--cor-ocioso)
 }
 .filtroFinal.clicado {
-    text-shadow: 0 0 6px var(--cor-final)
+    box-shadow: 0 0 6px var(--cor-final)
 }
 .filtroFechar.clicado {
-    text-shadow: 0 0 6px var(--cor-fechar)
+    box-shadow: 0 0 6px var(--cor-fechar)
 }
 .filtroErro {
-    color: var(--cor-erro); /* Cor da bolinha */
+    background-color: var(--cor-erro); /* Cor da bolinha */
 }
 .filtroOcioso {
-    color: var(--cor-ocioso); /* Cor da bolinha */
+    background-color: var(--cor-ocioso); /* Cor da bolinha */
 }
 .filtroFinal {
-    color: var(--cor-final); /* Cor da bolinha */
+    background-color: var(--cor-final); /* Cor da bolinha */
 }
 .filtroFechar {
-    color: var(--cor-fechar)
+    background-color: var(--cor-fechar); /* Cor da bolinha */
 }
 .filtroGeral:hover, .filtroErro:hover, .filtroOcioso:hover, .filtroFinal:hover, .filtroFechar:hover {
-    scale: 1.5;
+    height: 10px;
 }
 
 .menuPaginas {
