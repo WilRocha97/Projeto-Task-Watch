@@ -1,3 +1,8 @@
+const encolheCard = document.getElementById('encolherCard');
+const explodeCard = document.getElementById('explodirCard');
+const encolhe = document.getElementById('encolher');
+const explode = document.getElementById('explodir');
+
 const menu = document.getElementById('menu');
 const telaMenu = document.getElementById('telaMenu');
 const dica = document.getElementById('dica');
@@ -11,6 +16,9 @@ var telaHistorico = document.getElementById('targetHistorico');
 var cInputCard = document.getElementById('searchInputCard');
 const limpaCInputCard = document.getElementById('limpaCInputCard');
 
+const maisInfos = [{botao:'.maisInfo', nomeBotaoMini:'▼ Execução', nomeBotaoMaxi:'▲ Execução', conteudo:'.resumoResultados'}, 
+                    {botao:'.maisInfo2', nomeBotaoMini:'▼ Andamentos', nomeBotaoMaxi:'▲ Andamentos', conteudo:'.resumoResultados2'}]
+                    
 var screenWidth = window.innerWidth;
 
 function updateClock() {
@@ -126,6 +134,78 @@ buscaCInputCard.addEventListener('click', ()=> {
     procurarCard({key: 'Enter'})
 })
 
+// Minimiza e maximiza todas as telas internas dos cards
+encolhe.addEventListener('click', () => {
+    const cards = document.querySelectorAll('.rectangle');
+    const listaReversa = [...cards].reverse(); // Faz uma cópia para não alterar a original
+
+    listaReversa.forEach((card, index) => {
+        if (!card.classList.contains('fixado')) {
+            card.classList.remove('large') 
+
+            maisInfos.forEach(maisInfo => {
+                const botaoMaisInfo = card.querySelector(maisInfo.botao);
+                setTimeout(()=> {
+                    setTimeout(()=> {
+                        botaoMaisInfo.innerHTML = maisInfo.nomeBotaoMini;
+                        card.querySelector(maisInfo.conteudo).classList.add('collapsed');
+                    }, 100)
+                }, 100 * index);
+            })
+            
+        }
+    });
+});
+// Minimiza e maximiza todos os cards
+encolheCard.addEventListener('click', () => {
+    const cards = document.querySelectorAll('.rectangle');
+    const listaReversa = [...cards].reverse(); // Faz uma cópia para não alterar a original
+
+    listaReversa.forEach((card, index) => {
+        if (!card.classList.contains('fixado')) {
+            setTimeout(()=> {
+                card.classList.add('collapsed');
+                card.classList.remove('large');
+            }, 100 * index);  
+        }
+    });
+});
+// Minimiza e maximiza todas as telas internas dos cards
+explode.addEventListener('click', () => {
+    const cards = document.querySelectorAll('.rectangle');
+
+    cards.forEach((card, index) => {
+        if (!card.classList.contains('fixado')) {
+            card.classList.add('large') 
+
+            maisInfos.forEach(maisInfo => {
+                const botaoMaisInfo = card.querySelector(maisInfo.botao);
+                setTimeout(()=> {
+                    card.classList.remove('collapsed');
+                    setTimeout(()=> {
+                        botaoMaisInfo.innerHTML = maisInfo.nomeBotaoMaxi;
+                        card.querySelector(maisInfo.conteudo).classList.remove('collapsed');
+                    }, 100)
+                }, 100 * index);
+            })
+
+        }
+    });
+});
+// Minimiza e maximiza todos os cards
+explodeCard.addEventListener('click', () => {
+    const cards = document.querySelectorAll('.rectangle');
+
+    cards.forEach((card, index) => {
+        if (!card.classList.contains('fixado')) {
+            setTimeout(()=> {
+                card.classList.remove('collapsed');
+                card.classList.add('large');
+            }, 100 * index);
+        }
+    });
+});
+
 // Janela com dicas de como o site funciona
 dica.addEventListener('click', () => {
     telaMenu.classList.add('invisible2');
@@ -143,9 +223,6 @@ dica.addEventListener('click', () => {
 fecharAjuda.addEventListener('click', ()=> {
     telaDica.classList.add('invisible2');
 })
-fecharGaleria.addEventListener('click', ()=> {
-    telaGaleria.classList.add('invisible2');
-})
 
 // Janela com imagens do TaskWatch oficial
 galeria.addEventListener('click', () => {
@@ -161,6 +238,9 @@ galeria.addEventListener('click', () => {
         telaDica.classList.add('invisible2');
     }
 });
+fecharGaleria.addEventListener('click', ()=> {
+    telaGaleria.classList.add('invisible2');
+})
 // Modal para exibir as imagens em tela cheia
 document.querySelectorAll('.imagemGaleria').forEach(image => {
     image.addEventListener('click', function () {

@@ -1,10 +1,6 @@
 
 import {decoracao} from './temas.js';
 
-const encolheCard = document.getElementById('encolherCard');
-const explodeCard = document.getElementById('explodirCard');
-const encolhe = document.getElementById('encolher');
-const explode = document.getElementById('explodir');
 var telaRotinas = document.getElementById('telaRotinas');
 var telaHistorico = document.getElementById('targetHistorico');
 const telaGaleria = document.getElementById('telaGaleria');
@@ -13,10 +9,6 @@ const telaDica = document.getElementById('telaDica');
 //localStorage.clear();
 // caso existe alguma coisa no localStorage captura a string e transforma em JS para poder ser usado
 let cardsFixados = JSON.parse(localStorage.getItem("cardsFixados")) || []
-
-const maisInfos = [{botao:'.maisInfo', nomeBotaoMini:'▼ Execução', nomeBotaoMaxi:'▲ Execução', conteudo:'.resumoResultados'}, 
-                    {botao:'.maisInfo2', nomeBotaoMini:'▼ Andamentos', nomeBotaoMaxi:'▲ Andamentos', conteudo:'.resumoResultados2'}]
-
 
 const cards = document.querySelectorAll('.rectangle')
 cards.forEach((card, index) => {
@@ -203,72 +195,4 @@ document.body.addEventListener('click', (event) => {
     else {
         divMae.classList.add('large') 
     }
-});
-
-// Minimiza e maximiza todas as telas internas dos cards
-encolhe.addEventListener('click', () => {
-    const cards = document.querySelectorAll('.rectangle');
-    const listaReversa = [...cards].reverse(); // Faz uma cópia para não alterar a original
-
-    listaReversa.forEach((card, index) => {
-        if (!card.classList.contains('fixado')) {
-            maisInfos.forEach(maisInfo => {
-                const botaoMaisInfo = card.querySelector(maisInfo.botao);
-
-                setTimeout(()=> {
-                    setTimeout(()=> {
-                        botaoMaisInfo.innerHTML = maisInfo.nomeBotaoMini;
-                        card.querySelector(maisInfo.conteudo).classList.add('collapsed');
-                    }, 100)
-                }, 100 * index);
-            })
-            
-        }
-    });
-});
-// Minimiza e maximiza todos os cards
-encolheCard.addEventListener('click', () => {
-    const cards = document.querySelectorAll('.rectangle');
-    const listaReversa = [...cards].reverse(); // Faz uma cópia para não alterar a original
-
-    listaReversa.forEach((card, index) => {
-        if (!card.classList.contains('fixado')) {
-            setTimeout(()=> {
-                card.classList.add('collapsed');
-            }, 100 * index);  
-        }
-    });
-});
-// Minimiza e maximiza todas as telas internas dos cards
-explode.addEventListener('click', () => {
-    const cards = document.querySelectorAll('.rectangle');
-
-    cards.forEach((card, index) => {
-        if (!card.classList.contains('fixado')) {
-            maisInfos.forEach(maisInfo => {
-                const botaoMaisInfo = card.querySelector(maisInfo.botao);
-
-                setTimeout(()=> {
-                    card.classList.remove('collapsed');
-                    setTimeout(()=> {
-                        botaoMaisInfo.innerHTML = maisInfo.nomeBotaoMaxi;
-                        card.querySelector(maisInfo.conteudo).classList.remove('collapsed');
-                    }, 100)
-                }, 100 * index);
-            })
-
-        }
-    });
-});
-// Minimiza e maximiza todos os cards
-explodeCard.addEventListener('click', () => {
-    const cards = document.querySelectorAll('.rectangle');
-
-    cards.forEach((card, index) => {
-        if (!card.classList.contains('fixado')) {
-            setTimeout(()=> {
-                card.classList.remove('collapsed');
-            }, 100 * index);
-        }
-    });
 });
