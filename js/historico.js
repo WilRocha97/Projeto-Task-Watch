@@ -327,22 +327,22 @@ mainHistorico.addEventListener('click', (e) => {
     e.stopPropagation();
 });
 botaoFiltroGeral.addEventListener('click', (e)=> {
-    filtraHistorico('geral')
+    filtraHistorico('', 'geral')
     botaoFiltroGeral.classList.add('clicado')
 })
 botaoFiltroOciosa.addEventListener('click', (e)=> {
-    filtraHistorico('A rotina está ociosa por muito tempo')
+    filtraHistorico('', 'A rotina está ociosa por muito tempo')
     botaoFiltroOciosa.classList.add('clicado')
 })
 botaoFiltroErro.addEventListener('click', (e)=> {
-    filtraHistorico('Erro detectado')
+    filtraHistorico('', 'Erro detectado')
     botaoFiltroErro.classList.add('clicado')
 })
 botaoFiltroFinal.addEventListener('click', (e)=> {
-    filtraHistorico('Rotina finalizada')
+    filtraHistorico('', 'Rotina finalizada')
     botaoFiltroFinal.classList.add('clicado')
 })
 botaoFiltroFechar.addEventListener('click', (e)=> {
-    filtraHistorico('Cartão fechado')
+    filtraHistorico('', 'Cartão fechado')
     botaoFiltroFechar.classList.add('clicado')
 })
