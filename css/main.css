@@ -37,6 +37,7 @@
     --sombra-clara: #44444486;
     --sombra-escura: #0a0a0adc;
     --sombra-2: #323a44c7;
+    --luz-menu: #7f95afc7;
 }
 .light {
     --cor-executando: #00be85;
@@ -60,6 +61,7 @@
     --sombra-clara: #e4e3e3c2;
     --sombra-escura: #a5a5a5de;
     --sombra-2: #9c9c9cad;
+    --luz-menu: #ebebebad;
 }
 
 /* Estilizando a barra de rolagem */
@@ -240,6 +242,23 @@ body {
 .MenuBotao:hover, .paginaHistorico button:hover {
     background: var(--sombra-2);
 }
+@keyframes luzMenu {
+    0% {
+        box-shadow: inset 0 0 0 var(--luz-menu),
+        0 0 0 var(--luz-menu);
+    }
+    40% {
+        box-shadow: inset 0 0 20px var(--luz-menu),
+                0 0 10px var(--luz-menu);
+    }
+    100% {
+        box-shadow: inset 0 0 20px #ffffff00,
+                0 0 10px #ffffff00;
+    }
+}
+button.clicked, .MenuBotao.clicked {
+    animation: luzMenu 0.5s linear;
+}
 
 /*------------------------------------------------------------------------------------------------*/
 
@@ -273,9 +292,6 @@ body {
 @media (max-width: 800px) {
     .MenuBotao:hover {
         background: transparent;
-    }
-    .MenuBotao:active {
-        background: var(--sombra-2);
     }
 }
 

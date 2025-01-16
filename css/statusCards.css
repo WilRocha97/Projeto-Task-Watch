@@ -107,19 +107,9 @@
         border: var(--borda-card) solid var(--cor-opaca);
         background: linear-gradient(50deg, var(--cor-primaria), var(--cor-secundaria));
     }
-    .status:active {
-        box-shadow: inset 0 0 150px var(--cor-principal),
-                    0 0 30px var(--cor-principal);
-        border: var(--borda-card) solid var(--cor-principal);
-        animation: none;
-    }
 
     .status:hover .alerta {
         color: var(--cor-alerta);
         text-shadow: 0 0 15px var(--cor-alerta);
-    }
-    .status:active .alerta {
-        color: var(--cor-principal);
-        text-shadow: 0 0 25px var(--cor-principal);
     }
 }

@@ -101,6 +101,15 @@ function procurarCard(event) {
     }
 }
 
+document.body.addEventListener('click', (event) => { 
+    let target = event.target;
+
+    target.classList.add('clicked');
+    setTimeout(() => {
+        target.classList.remove('clicked');
+    }, 500); // Tempo da animação
+})
+
 // Janela com dicas de como o site funciona
 menu.addEventListener('click', () => {
     if (telaMenu.classList.contains('invisible2')) {

@@ -49,7 +49,16 @@ function criaHistorico(data, rotina, ocorrencia) {
     newElement.innerHTML = template;
     historicoTela.appendChild(newElement);
 }
-function filtraHistorico(ocorrencia, page=1) {
+function filtraHistorico(event='', ocorrencia='geral', page=1) {
+    if (event != '') {
+        let target = event.target;
+
+        target.classList.add('clicked');
+        setTimeout(() => {
+            target.classList.remove('clicked');
+        }, 500); // Tempo da animação
+    }
+
     botoesFiltro.forEach(filtro => {
         filtro.classList.remove('clicado')
     });
@@ -91,7 +100,7 @@ function criaPaginacao(currentPage, totalPages, ocorrencia) {
         let prevButton = document.createElement('button');
         prevButton.innerText = '◀';
         prevButton.title = 'Página anterior'
-        prevButton.onclick = () => filtraHistorico(ocorrencia, currentPage - 1);
+        prevButton.onclick = (event) => filtraHistorico(event, ocorrencia, currentPage - 1);
         paginationContainer.appendChild(prevButton);
     }
 
@@ -99,7 +108,7 @@ function criaPaginacao(currentPage, totalPages, ocorrencia) {
     if (currentPage > 4) {
         let firstPageButton = document.createElement('button');
         firstPageButton.innerText = '1';
-        firstPageButton.onclick = () => filtraHistorico(ocorrencia, 1);
+        firstPageButton.onclick = (event) => filtraHistorico(event, ocorrencia, 1);
         paginationContainer.appendChild(firstPageButton);
 
         let dotsBefore = document.createElement('span');
@@ -110,7 +119,7 @@ function criaPaginacao(currentPage, totalPages, ocorrencia) {
     if (currentPage == 4) {
         let firstPageButton = document.createElement('button');
         firstPageButton.innerText = '1';
-        firstPageButton.onclick = () => filtraHistorico(ocorrencia, 1);
+        firstPageButton.onclick = (event) => filtraHistorico(event, ocorrencia, 1);
         paginationContainer.appendChild(firstPageButton);
     }
 
@@ -129,7 +138,7 @@ function criaPaginacao(currentPage, totalPages, ocorrencia) {
         let pageButton = document.createElement('button');
         pageButton.innerText = page;
         pageButton.disabled = (page === currentPage);  // Desabilita o botão da página atual
-        pageButton.onclick = () => filtraHistorico(ocorrencia, page);
+        pageButton.onclick = (event) => filtraHistorico(event, ocorrencia, page);
         paginationContainer.appendChild(pageButton);
     }
 
@@ -141,7 +150,7 @@ function criaPaginacao(currentPage, totalPages, ocorrencia) {
 
         let lastPageButton = document.createElement('button');
         lastPageButton.innerText = totalPages;
-        lastPageButton.onclick = () => filtraHistorico(ocorrencia, totalPages);
+        lastPageButton.onclick = (event) => filtraHistorico(event, ocorrencia, totalPages);
         paginationContainer.appendChild(lastPageButton);
     }
 
@@ -149,7 +158,7 @@ function criaPaginacao(currentPage, totalPages, ocorrencia) {
     if (currentPage == totalPages - 3) {
         let lastPageButton = document.createElement('button');
         lastPageButton.innerText = totalPages;
-        lastPageButton.onclick = () => filtraHistorico(ocorrencia, totalPages);
+        lastPageButton.onclick = (event) => filtraHistorico(event, ocorrencia, totalPages);
         paginationContainer.appendChild(lastPageButton);
     }
 
@@ -158,7 +167,7 @@ function criaPaginacao(currentPage, totalPages, ocorrencia) {
         let nextButton = document.createElement('button');
         nextButton.innerText = '▶';
         nextButton.title = 'Próxima página'
-        nextButton.onclick = () => filtraHistorico(ocorrencia, currentPage + 1);
+        nextButton.onclick = (event) => filtraHistorico(event, ocorrencia, currentPage + 1);
         paginationContainer.appendChild(nextButton);
     }
 }
@@ -245,14 +254,25 @@ function fetchHistoricoFiltrado(ocorrencia = 'geral', page = 1) {
         console.error('Erro ao carregar os dados do histórico:', error);
         // Implementar um mecanismo para lidar com erros, como exibir uma mensagem ao usuário
       });
-  }
+}
   
-
-limpaHInputDate.addEventListener('click', ()=> {
+limpaHInputDate.addEventListener('click', (event)=> {
     hInputDate.value = ''
+    let target = event.target;
+
+    target.classList.add('clicked');
+    setTimeout(() => {
+        target.classList.remove('clicked');
+    }, 500); // Tempo da animação
 })
-limpaHInputName.addEventListener('click', ()=> {
+limpaHInputName.addEventListener('click', (event)=> {
     hInputName.value = ''
+
+    let target = event.target;
+    target.classList.add('clicked');
+    setTimeout(() => {
+        target.classList.remove('clicked');
+    }, 500); // Tempo da animação
 })
 
 // Abre e fecha a tela de histórico

@@ -337,14 +337,35 @@
         text-shadow: 0 0 0 transparent;
         color: white;
     }
-    .botaoFechar:active, .botaoFixar:active {
-        background-color: white;
-        text-shadow: 0 0 10px black;
+    .botaoFixado:hover {
+        text-shadow: 0 0 5px white,
+                     0 0 7px white;
     }
-    .botaoFixar:active {
-        color: black;
+
+    .maisInfo:hover, .maisInfo2:hover {
+        text-shadow: none;
     }
-    .botaoFechar:active {
-        color: red;
+
+    @keyframes luzBotaoCard {
+        0% {
+            text-shadow: 0 0 0 var(--luz-menu);
+        }
+        40% {
+            text-shadow: 0 0 5px var(--luz-menu),
+                         0 0 7px var(--luz-menu),
+                         0 0 9px var(--luz-menu),
+                         0 0 11px var(--luz-menu),
+                         0 0 13px var(--luz-menu);
+        }
+        100% {
+            text-shadow: 0 0 5px #ffffff00,
+                         0 0 7px #ffffff00,
+                         0 0 9px #ffffff00,
+                         0 0 11px #ffffff00,
+                         0 0 13px #ffffff00;
+        }
+    }
+    .maisInfo.clicked, .maisInfo2.clicked {
+        animation: luzBotaoCard 0.5s linear;
     }
 }

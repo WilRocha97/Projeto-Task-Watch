@@ -99,100 +99,111 @@ document.body.addEventListener('click', (event) => {
     // Verifica se o elemento clicado ou algum de seus pais possui a classe 'rectangle'
     let target = event.target;
     const divMae = target.closest('.rectangle');
-    const maisInfo = divMae.querySelector('#resumoResultados');
-    const telaResumoMaisInfo2 = divMae.querySelector('.telaResumoConteudo');
-    const maisInfo2 = divMae.querySelector('#resumoResultados2');
 
     if (divMae) {
+        const maisInfo = divMae.querySelector('#resumoResultados');
+        const telaResumoMaisInfo2 = divMae.querySelector('.telaResumoConteudo');
+        const maisInfo2 = divMae.querySelector('#resumoResultados2');
+
         divMae.classList.remove('buscaCard');
-    }
 
-    // fecha o menu ao clicar em qualuqer lugar que não seja nele
-    if (!target.classList.contains('cmb')) {
-        telaMenu.classList.add('invisible2')
-        telaDica.classList.add('invisible2')
-        telaGaleria.classList.add('invisible2')
-        telaRotinas.classList.remove('rotinasExpandida')
-        telaHistorico.classList.remove('historicoExpandida');
-    }
-
-    if (target.classList.contains('botaoFixar')) {
-        // Encontra o elemento pai mais próximo
-        divMae.classList.toggle('fixado')
-        target.classList.toggle('botaoFixado')
-        if (target.innerHTML.trim() === '☆') {
-            target.innerHTML = '★'
+        // fecha o menu ao clicar em qualuqer lugar que não seja nele
+        if (!target.classList.contains('cmb')) {
+            telaMenu.classList.add('invisible2')
+            telaDica.classList.add('invisible2')
+            telaGaleria.classList.add('invisible2')
+            telaRotinas.classList.remove('rotinasExpandida')
+            telaHistorico.classList.remove('historicoExpandida');
         }
-        else {
-            target.innerHTML = '☆'  
-        }
-        atualizaLocalStorage()
-    }
 
-    // verifica se o click foi no botão de fechar
-    else if (target.classList.contains('botaoFechar')) {
-        // Encontra o elemento pai mais próximo
-        divMae.classList.add('out')
-        setTimeout(()=> {
-            if (divMae.classList.contains('status-executando')) {
-                divMae.classList.remove('out')
-                divMae.classList.remove('collapsed')
+        if (target.classList.contains('botaoFixar')) {
+            // Encontra o elemento pai mais próximo
+            divMae.classList.toggle('fixado')
+            target.classList.toggle('botaoFixado')
+            if (target.innerHTML.trim() === '☆') {
+                target.innerHTML = '★'
             }
             else {
-                telaRotinas.removeChild(divMae)
+                target.innerHTML = '☆'  
             }
-        }, 500);
-    }
-    else if (target.classList.contains('maisInfo')){
-        // minimiza a tela de ocorrências dentro do card
-        if (maisInfo.classList.contains('collapsed')) {
-            maisInfo.classList.remove('collapsed')
-            telaResumoMaisInfo2.classList.remove('large')
-            maisInfo2.classList.remove('large')
-            target.innerHTML = '▲ Execução'
+            atualizaLocalStorage()
+        }
+
+        // verifica se o click foi no botão de fechar
+        else if (target.classList.contains('botaoFechar')) {
+            // Encontra o elemento pai mais próximo
+            divMae.classList.add('out')
+            setTimeout(()=> {
+                if (divMae.classList.contains('status-executando')) {
+                    divMae.classList.remove('out')
+                    divMae.classList.remove('collapsed')
+                }
+                else {
+                    telaRotinas.removeChild(divMae)
+                }
+            }, 500);
+        }
+        else if (target.classList.contains('maisInfo')){
+            target.classList.add('clicked');
+            setTimeout(() => {
+                target.classList.remove('clicked');
+            }, 500); // Tempo da animação
+
+            // minimiza a tela de ocorrências dentro do card
+            if (maisInfo.classList.contains('collapsed')) {
+                maisInfo.classList.remove('collapsed')
+                telaResumoMaisInfo2.classList.remove('large')
+                maisInfo2.classList.remove('large')
+                target.innerHTML = '▲ Execução'
+            }
+            else {
+                maisInfo.classList.add('collapsed')
+                telaResumoMaisInfo2.classList.add('large')
+                maisInfo2.classList.add('large')
+                target.innerHTML = '▼ Execução'
+            }
+        }
+        else if (target.classList.contains('maisInfo2')){
+            target.classList.add('clicked');
+            setTimeout(() => {
+                target.classList.remove('clicked');
+            }, 500); // Tempo da animação
+
+            if (maisInfo.classList.contains('collapsed')) {
+                telaResumoMaisInfo2.classList.add('large')
+                maisInfo2.classList.add('large')
+            }
+            else {
+                telaResumoMaisInfo2.classList.remove('large')
+                maisInfo2.classList.remove('large')
+            }
+            
+            // minimiza a tela de ocorrências dentro do card
+            if (maisInfo2.classList.contains('collapsed')) {
+                maisInfo2.classList.remove('collapsed')
+                target.innerHTML = '▲ Andamentos'
+            }
+            else {
+                maisInfo2.classList.add('collapsed')
+                target.innerHTML = '▼ Andamentos'
+            }
         }
         else {
-            maisInfo.classList.add('collapsed')
-            telaResumoMaisInfo2.classList.add('large')
-            maisInfo2.classList.add('large')
-            target.innerHTML = '▼ Execução'
-        }
-    }
-    else if (target.classList.contains('maisInfo2')){
-        if (maisInfo.classList.contains('collapsed')) {
-            telaResumoMaisInfo2.classList.add('large')
-            maisInfo2.classList.add('large')
-        }
-        else {
-            telaResumoMaisInfo2.classList.remove('large')
-            maisInfo2.classList.remove('large')
-        }
+            while (target && !target.classList.contains('rectangle')) {
+                target = target.parentElement;
+            }
         
-        // minimiza a tela de ocorrências dentro do card
-        if (maisInfo2.classList.contains('collapsed')) {
-            maisInfo2.classList.remove('collapsed')
-            target.innerHTML = '▲ Andamentos'
+            // Se um elemento com a classe 'rectangle' foi encontrado, alterna a classe 'collapsed'
+            if (target) {
+                target.classList.toggle('collapsed');
+            }
+        }
+        // Controla o tamanho máximo do card para otimizar a animação de minimiza-lo
+        if (maisInfo.classList.contains('collapsed') && maisInfo2.classList.contains('collapsed') || divMae.classList.contains('collapsed')) {
+            divMae.classList.remove('large')
         }
         else {
-            maisInfo2.classList.add('collapsed')
-            target.innerHTML = '▼ Andamentos'
+            divMae.classList.add('large') 
         }
-    }
-    else {
-        while (target && !target.classList.contains('rectangle')) {
-            target = target.parentElement;
-        }
-    
-        // Se um elemento com a classe 'rectangle' foi encontrado, alterna a classe 'collapsed'
-        if (target) {
-            target.classList.toggle('collapsed');
-        }
-    }
-    // Controla o tamanho máximo do card para otimizar a animação de minimiza-lo
-    if (maisInfo.classList.contains('collapsed') && maisInfo2.classList.contains('collapsed') || divMae.classList.contains('collapsed')) {
-        divMae.classList.remove('large')
-    }
-    else {
-        divMae.classList.add('large') 
     }
 });
