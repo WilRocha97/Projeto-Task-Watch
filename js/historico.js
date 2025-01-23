@@ -20,6 +20,11 @@ const historicoTela = document.getElementById('historicoTela');
 const mainHistorico = document.getElementById('targetHistorico');
 const painelConfig = document.getElementById('configHistorico');
 
+const telaMenu = document.getElementById('telaMenu');
+const telaDica = document.getElementById('telaDica');
+const telaRotinas = document.getElementById('telaRotinas');
+const telaHistorico = document.getElementById('targetHistorico');
+
 const rodape = document.getElementById('rodape');
 
 function criaHistorico(data, rotina, ocorrencia) {
@@ -50,6 +55,11 @@ function criaHistorico(data, rotina, ocorrencia) {
     historicoTela.appendChild(newElement);
 }
 function filtraHistorico(event='', ocorrencia='geral', page=1) {
+    telaMenu.classList.add('invisible2');
+    telaDica.classList.add('invisible2');
+    telaRotinas.classList.remove('rotinasExpandida');
+    telaHistorico.classList.remove('historicoExpandida');
+    
     if (event != '') {
         let target = event.target;
 
@@ -277,6 +287,11 @@ limpaHInputName.addEventListener('click', (event)=> {
 
 // Abre e fecha a tela de histórico
 historicoBotao.addEventListener('click', ()=> {
+    telaMenu.classList.add('invisible2');
+    telaDica.classList.add('invisible2');
+    telaRotinas.classList.remove('rotinasExpandida');
+    telaHistorico.classList.remove('historicoExpandida');
+
     document.querySelectorAll('.bn').forEach(bolinha => {
         bolinha.classList.add('invisible');
     })

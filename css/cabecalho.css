@@ -115,7 +115,7 @@
     opacity: 1;
     margin: 10px;
     max-height: 10vh;
-    transition: margin 1s, max-height 1s, opacity var(--transicao-link), padding var(--transicao-link);
+    transition: margin var(--transicao-link), max-height var(--transicao-link), opacity var(--transicao-link), padding var(--transicao-link);
 }
 
 .dicaContainer, .galeriaContainer {
@@ -126,7 +126,7 @@
     margin: 5px 30px 30px 30px;
     max-width: 80%;
     max-height: 75vh;
-    transition: margin 1s, max-height 1s, opacity var(--transicao-link), padding var(--transicao-link);
+    transition: margin var(--transicao-link), max-height var(--transicao-link), opacity var(--transicao-link), padding var(--transicao-link);
 }
 .dicaTela h1 {
     font-size: 1.2em;

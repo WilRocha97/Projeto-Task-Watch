@@ -4,6 +4,7 @@ import {decoracao} from './temas.js';
 var telaRotinas = document.getElementById('telaRotinas');
 var telaHistorico = document.getElementById('targetHistorico');
 const telaGaleria = document.getElementById('telaGaleria');
+const telaMenu = document.getElementById('telaMenu');
 const telaDica = document.getElementById('telaDica');
 
 //localStorage.clear();

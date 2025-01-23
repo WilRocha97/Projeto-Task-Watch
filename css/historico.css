@@ -51,7 +51,7 @@
     scale: 1;
     max-height: 100vh;
     flex-direction: column;
-    transition: opacity var(--transicao-link), max-height var(--transicao-link), padding 1s, margin var(--transicao-link), width var(--transicao-link);
+    transition: opacity var(--transicao-link), max-height var(--transicao-link), padding var(--transicao-link), margin var(--transicao-link), width var(--transicao-link);
 }
 .painelConfig{
     display: flex;
