@@ -101,7 +101,7 @@
     overflow: hidden;
 }
 .rectangle.enter.large {
-    max-height: 450px; 
+    max-height: 465px; 
 }
 .rectangle.out {
     max-width: 0 !important;
