@@ -150,18 +150,16 @@ encolhe.addEventListener('click', () => {
 
     listaReversa.forEach((card, index) => {
         if (!card.classList.contains('fixado')) {
-            card.classList.remove('large') 
-
             maisInfos.forEach(maisInfo => {
                 const botaoMaisInfo = card.querySelector(maisInfo.botao);
                 setTimeout(()=> {
                     setTimeout(()=> {
                         botaoMaisInfo.innerHTML = maisInfo.nomeBotaoMini;
                         card.querySelector(maisInfo.conteudo).classList.add('collapsed');
+                        card.classList.remove('large') 
                     }, 100)
                 }, 100 * index);
             })
-            
         }
     });
 });
