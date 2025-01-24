@@ -61,8 +61,11 @@
 .sortable-ghost .barraLoading {
     color: var(--sombra-2) !important;
     text-shadow: none !important;
-    --cor-loading-1: lightgray;
-    --cor-loading-2: lightgray;
+    --cor-loading-1: #2e2e2e;
+    --cor-loading-2: #2e2e2e;
+}
+.sortable-ghost .porcentagem {
+    box-shadow: none;
 }
 
 .rotinas {
