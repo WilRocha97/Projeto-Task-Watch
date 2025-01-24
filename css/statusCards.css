@@ -5,9 +5,9 @@
         border: var(--borda-card) solid var(--cor-principal);
     }
     50% {
-        box-shadow: inset 0 0 15px var(--cor-principal-alternativa),
-                    0 0 10px var(--cor-principal-alternativa);
-        border: var(--borda-card) solid var(--cor-principal-alternativa);
+        box-shadow: inset 0 0 20px var(--cor-opaca),
+                    0 0 10px var(--cor-opaca);
+        border: var(--borda-card) solid var(--cor-opaca);
     }
 }
 @keyframes cardEncontrado {
@@ -24,7 +24,7 @@
 }
 
 /* Estilos específicos para cada status */
-.status-executando {
+.status-executando, .status-attention {
     --cor-primaria: #006345;
     --cor-secundaria: #004557;
     --cor-opaca: #00694a;
@@ -33,6 +33,9 @@
     --cor-principal: var(--cor-executando);
     --cor-alerta: var(--cor-opaca);
 }
+.status-attention {
+    animation: piscar 5s infinite;
+}
 .status-warning {
     --cor-primaria: #9c5e00;
     --cor-secundaria: #b94502;
@@ -40,7 +43,6 @@
     --cor-loading-1: #ffe60063;
     --cor-loading-2: #ffe60063;
     --cor-principal: var(--cor-ocioso);
-    --cor-principal-alternativa: var(--cor-ocioso-alternativa);
     --cor-alerta: var(--cor-ocioso);
     animation: piscar 3s infinite;
 }
@@ -51,7 +53,6 @@
     --cor-loading-1: #ff000063;
     --cor-loading-2: #ff000063;
     --cor-principal: var(--cor-erro);
-    --cor-principal-alternativa: var(--cor-erro-alternativa);
     --cor-alerta: var(--cor-erro);
     animation: piscar 1.5s infinite;
 }
@@ -60,7 +61,6 @@
     --cor-secundaria: #682dc7;
     --cor-opaca: #004e81;
     --cor-principal: var(--cor-final);
-    --cor-principal-alternativa: var(--cor-final-alternativa);
     --cor-alerta: var(--cor-final);
     animation: piscar 8s infinite;
 }
