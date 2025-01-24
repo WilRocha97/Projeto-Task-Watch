@@ -327,6 +327,17 @@
 
 
 @media (max-width: 800px) {
+    .rectangle.enter {
+        max-width: 85vw;
+        min-width: 85vw;
+    }
+    .rectangle.collapsed {
+        min-width: 30px;
+        min-height: 30px;
+        max-width: 30px;
+        max-height: 30px;
+    }
+
     .rotinas {
         padding: 80px 0 90px 0;
     }
