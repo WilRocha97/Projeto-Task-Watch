@@ -170,9 +170,13 @@ body {
 /*------------------------------------------------------------------------------------------------*/
 
 
+#toggleDarkMode{
+    display: flex;
+}
 #toggleDarkMode img{
-    width: 14px;
-    height: auto;
+    width: 18px;
+    height: 18px;
+    align-self: center;
 }
 
 

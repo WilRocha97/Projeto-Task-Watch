@@ -9,12 +9,14 @@ botao.addEventListener('click', (e)=> {
         imagem.src = 'assets/sun.png';
         // Atualiza o atributo alt da imagem
         imagem.alt = 'Modo claro';
+        botao.title = 'Mudar para modo escuro'
     }
     else {
         // Atualiza o atributo src da imagem
-    imagem.src = 'assets/moon.png';
-    // Atualiza o atributo alt da imagem
-    imagem.alt = 'Modo escuro';
+        imagem.src = 'assets/moon.png';
+        // Atualiza o atributo alt da imagem
+        imagem.alt = 'Modo escuro';
+        botao.title = 'Mudar para modo claro'
     }
 })
 
@@ -24,4 +26,7 @@ const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matc
 // Aplica o tema de acordo com a preferência do usuário
 if (!prefersDarkScheme) {
     corpo.classList.toggle('light');
+    imagem.src = 'assets/sun.png';
+    imagem.alt = 'Modo claro';
+    botao.title = 'Mudar para modo escuro'
 }
