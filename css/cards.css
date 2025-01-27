@@ -326,7 +326,7 @@
 }
 
 
-@media (max-width: 800px) {
+@media (max-width: 720px) {
     .rectangle.enter {
         max-width: 85vw;
         min-width: 85vw;
@@ -337,7 +337,9 @@
         max-width: 30px;
         max-height: 30px;
     }
+}
 
+@media (max-width: 800px) {
     .rotinas {
         padding: 80px 0 90px 0;
     }

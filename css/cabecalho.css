@@ -208,7 +208,7 @@
         font-size: 0;
     }
     .menuTela {
-        max-height: 30vh;
+        max-height: 40vh;
     }
 
     .dicaTela, .galeriaTela {
@@ -221,6 +221,9 @@
     }
     .menu {
         gap: 5px ;
+    }
+    .menuTela {
+        max-height: 30vh;
     }
     .menuTelaBotoes {
         flex-wrap: wrap;
