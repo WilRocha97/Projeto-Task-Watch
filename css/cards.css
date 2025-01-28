@@ -148,17 +148,15 @@
 .dispositivo {
     font-weight: 600;
     font-size: 1em;
-    padding: 4px;
+    padding:  4px 4px 5px 4px;
     opacity: 1;
-    margin-bottom: 6px;
     white-space: nowrap;
 }
 .titulo {
     font-weight: 600;
     font-size: 1em;
-    padding: 4px;
+    padding: 4px 4px 5px 4px;
     opacity: 1;
-    margin-bottom: 6px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -167,48 +165,48 @@
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    margin-bottom: 6px;
 }
 #mensagemAlerta {
     max-height: 30px;
     overflow: auto;
 }
-#porcentagem {
-    position: relative; /* Para posicionar a barra interna */
-    min-width: 48px;
-    height: 5px;
-    margin-right: 5px;
-    overflow: hidden; /* Garante que a barra interna não ultrapasse os limites */
+.porcentagem {
+    background: var(--cor-fundo-2);
+    backdrop-filter: blur(var(--blur));
+    width: 100%;
+    height: 3px;
+    margin: 0 3px 0 3px;
+    border-radius: 20px;
+    transition: var(--transicao-link)
 }
 
 /* Estilização da barra de carregamento */
-#porcentagem .barraLoading {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%; /* Preenche a altura total da div */
-    background: linear-gradient(90deg, var(--cor-loading-1), var(--cor-loading-2), var(--cor-loading-1), var(--cor-loading-2));
-    background-size: 300% 100%;
-    animation: fluidMove 2s infinite linear reverse;
+.barraLoading {
+    height: 100%;
+    background: linear-gradient(50deg, var(--cor-loading-1), var(--cor-loading-2));
+    border-right: var(--cor-loading-2) 3px;
+    border-radius: 20px;
     transition: 0.5s; /* Transição suave ao aumentar */
 }
-@keyframes fluidMove {
-    0% {
-        background-position: 0% 0%;
-    }
-    100% {
-        background-position: 100% 0%;
-    }
-}
-
-/* Texto da porcentagem */
-#porcentagem .textoPorcentagem {
+.bolinhaLoading{
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-weight: 600;
-    z-index: 2; /* Mantém o texto acima da barra */
+    background-color: var(--cor-loading-2);
+    box-shadow: inset 0 0 4px var(--cor-loading-2),
+                inset 0 0 5px var(--cor-loading-2),
+                inset 0 0 6px var(--cor-loading-2),
+                inset 0 0 4px var(--cor-loading-2),
+                0 0 5px var(--cor-loading-2),
+                0 0 6px var(--cor-loading-2),
+                0 0 7px var(--cor-loading-2),
+                0 0 8px var(--cor-loading-2),
+                0 0 5px var(--cor-loading-2),
+                0 0 6px var(--cor-loading-2),
+                0 0 7px var(--cor-loading-2),
+                0 0 8px var(--cor-loading-2);
+
+    width: 3px; /* Ajuste o tamanho da bolinha conforme necessário */
+    height: 3px; /* Ajuste o tamanho da bolinha conforme necessário */
+    border-radius: 5px; /* Torna a bolinha circular */
 }
 
 .botaoFechar, .botaoFixar {
@@ -241,7 +239,7 @@
     cursor:cell;
     border: none;
     background: none;
-    padding: 8px 0;
+    padding: 8px 0 0 0;
     color: white;
     font-size: 0.8rem;
     font-weight: 600;
@@ -257,7 +255,6 @@
 .resumoResultados, .resumoResultados2 {
     display: flex;
     flex-direction: column;
-    gap: 10px;
     opacity: 1;
     transition: opacity var(--transicao-link), margin-bottom var(--transicao-link), padding var(--transicao-link), max-height var(--transicao-link);
 }
@@ -265,10 +262,10 @@
     max-height: 115px;
 }
 .resumoResultados2 {
-    max-height: 232px;
+    max-height: 242px;
 }
 .resumoResultados2.large {
-    max-height: 332px;
+    max-height: 342px;
 }
 .resumoResultados.collapsed, .resumoResultados2.collapsed {
     opacity: 0;
@@ -326,16 +323,10 @@
 }
 
 
-@media (max-width: 720px) {
+@media (max-width: 649px) {
     .rectangle.enter {
         max-width: 85vw;
         min-width: 85vw;
-    }
-    .rectangle.collapsed {
-        min-width: 30px;
-        min-height: 30px;
-        max-width: 30px;
-        max-height: 30px;
     }
 }
 

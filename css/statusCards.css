@@ -29,7 +29,7 @@
     --cor-secundaria: #004557;
     --cor-opaca: #00694a;
     --cor-loading-1: #00ffb350;
-    --cor-loading-2: #00aeff50;
+    --cor-loading-2: #00ffff93;
     --cor-principal: var(--cor-executando);
     --cor-alerta: var(--cor-opaca);
 }
