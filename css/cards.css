@@ -259,7 +259,7 @@
     transition: opacity var(--transicao-link), margin-bottom var(--transicao-link), padding var(--transicao-link), max-height var(--transicao-link);
 }
 .resumoResultados {
-    max-height: 115px;
+    max-height: 125px;
 }
 .resumoResultados2 {
     max-height: 242px;
@@ -323,24 +323,7 @@
 }
 
 
-@media (max-width: 649px) {
-    .rectangle.enter {
-        max-width: 85vw;
-        min-width: 85vw;
-    }
-}
-
-@media (max-width: 800px) {
-    .rotinas {
-        padding: 80px 0 90px 0;
-    }
-    .rotinasExpandida {
-        padding: 320px 0 90px 0;
-    }
-    .botaoFechar {
-        font-size: large;
-    }
-
+@media (hover: none) {
     .botaoFechar:hover, .botaoFixar:hover {
         background-color: transparent;
         text-shadow: 0 0 0 transparent;
@@ -353,6 +336,31 @@
 
     .maisInfo:hover, .maisInfo2:hover {
         text-shadow: none;
+    }
+  }
+
+@media (max-width: 649px) {
+    .rectangle.enter {
+        max-width: 85vw;
+        min-width: 85vw;
+    }
+    .rectangle.collapsed {
+        min-width: 30px;
+        min-height: 30px;
+        max-width: 30px;
+        max-height: 30px;
+    }
+}
+
+@media (max-width: 800px) {
+    .rotinas {
+        padding: 80px 0 90px 0;
+    }
+    .rotinasExpandida {
+        padding: 320px 0 90px 0;
+    }
+    .botaoFechar {
+        font-size: large;
     }
 
     @keyframes luzBotaoCard {

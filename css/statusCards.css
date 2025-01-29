@@ -32,9 +32,10 @@
     --cor-loading-2: #00ffff93;
     --cor-principal: var(--cor-executando);
     --cor-alerta: var(--cor-opaca);
+    --animacao: none;
 }
 .status-attention {
-    animation: piscar 5s infinite;
+    --animacao: piscar 5s infinite;
 }
 .status-warning {
     --cor-primaria: #9c5e00;
@@ -44,7 +45,7 @@
     --cor-loading-2: #ffe60063;
     --cor-principal: var(--cor-ocioso);
     --cor-alerta: var(--cor-ocioso);
-    animation: piscar 3s infinite;
+    --animacao: piscar 3s infinite;
 }
 .status-error {
     --cor-primaria: #810101fb;
@@ -54,7 +55,7 @@
     --cor-loading-2: #ff000063;
     --cor-principal: var(--cor-erro);
     --cor-alerta: var(--cor-erro);
-    animation: piscar 1.5s infinite;
+    --animacao: piscar 1.5s infinite;
 }
 .status-final {
     --cor-primaria: #00798ffd;
@@ -62,7 +63,7 @@
     --cor-opaca: #004e81;
     --cor-principal: var(--cor-final);
     --cor-alerta: var(--cor-final);
-    animation: piscar 8s infinite;
+    --animacao: piscar 8s infinite;
 }
 
 /* Estilos genéricos para todos os status */
@@ -71,6 +72,7 @@
                 0 0 10px var(--cor-opaca);
     border: var(--borda-card) solid var(--cor-opaca);
     background: linear-gradient(50deg, var(--cor-primaria), var(--cor-secundaria));
+    animation: var(--animacao);
 }
 .status .alerta {
     color: var(--cor-alerta);
@@ -97,4 +99,20 @@
 .naoEncontrado {
     color: red;
     font-weight: bold;
+}
+
+
+@media (hover: none) {
+    .status:hover {
+        --cor-fundo-2: #a8a8a82d;
+        box-shadow: inset 0 0 20px var(--cor-opaca),
+                0 0 10px var(--cor-opaca);
+        border: var(--borda-card) solid var(--cor-opaca);
+        background: linear-gradient(50deg, var(--cor-primaria), var(--cor-secundaria));
+        animation: var(--animacao);
+    }
+    .status:hover .alerta {
+        color: var(--cor-alerta);
+        text-shadow: 0 0 15px var(--cor-alerta);
+    }
 }
