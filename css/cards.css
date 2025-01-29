@@ -209,13 +209,22 @@
     border-radius: 5px; /* Torna a bolinha circular */
 }
 
+.cabecalhoCardBotoes {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+}
 .botaoFechar, .botaoFixar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     border-radius: 20px;
     background-color: transparent;
-    margin-left: 4px;
-    padding: 4px 6px;
-    width: fit-content;
-    height: fit-content;
+    margin: 0 0 2px 4px;
+    padding: 3px;
+    width: 15px;
+    height: auto;
     color: white;
     text-shadow: 0 0 1px white;
     transition: color var(--transicao-link), tex-shadow var(--transicao-link), background-color var(--transicao-link);
@@ -353,13 +362,19 @@
 }
 
 @media (max-width: 800px) {
+    .maisInfo, .maisInfo2 {
+        margin-top: 10px;
+    }
     .rotinas {
         padding: 80px 0 90px 0;
     }
     .rotinasExpandida {
         padding: 320px 0 90px 0;
     }
-    .botaoFechar {
+    .cabecalhoCardBotoes {
+        gap: 10px;
+    }
+    .botaoFechar, .botaoFixar {
         font-size: large;
     }
 
