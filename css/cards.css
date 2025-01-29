@@ -312,9 +312,9 @@
 .alerta {
     z-index: -1;
     position: absolute;
-    top: 4rem;
+    top: 5rem;
     right: 0;
-    font-size: 7rem;
+    font-size: 6rem;
     font-weight: 600;
     transition: var(--transicao-link);
 }
@@ -346,7 +346,7 @@
     .maisInfo:hover, .maisInfo2:hover {
         text-shadow: none;
     }
-  }
+}
 
 @media (max-width: 649px) {
     .rectangle.enter {

@@ -34,7 +34,7 @@ function definevariantesImagens() {
         variantesImagens = 11;
         feriado = 'anoNovo'
     }
-    else if ((mes === 3 && dia >= 1) || (mes === 3 && dia <= 4)) {
+    else if ((mes === 2 && dia >= 24) || (mes === 3 && dia <= 4)) {
         variantesImagens = 12;
         feriado = 'carnaval'
     }

@@ -283,7 +283,7 @@ button.clicked, .MenuBotao.clicked {
     justify-content: center;
     flex-wrap: wrap;
 }
-.link__padrao {
+.linkPadrao {
     font-weight: bold;
     text-decoration: none;
     color: var(--cor-destaque);
@@ -291,7 +291,7 @@ button.clicked, .MenuBotao.clicked {
     border-radius: 20px;
     padding: 5px 7px;
 }
-.link__padrao:hover {
+.linkPadrao:hover {
     background: var(--sombra-2);
 }
 
