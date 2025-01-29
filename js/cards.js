@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // ouvinte para os cliques nos cartões
-document.body.addEventListener('click', (event) => {
+document.addEventListener('click', (event) => {
     // Verifica se o elemento clicado ou algum de seus pais possui a classe 'rectangle'
     let target = event.target;
     const divMae = target.closest('.rectangle');
