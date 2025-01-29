@@ -304,13 +304,13 @@ historicoBotao.addEventListener('click', ()=> {
 
     if (mainHistorico.classList.contains('collapsed')) {
         // sobe para o topo da página
+        if (screenWidth < 2500) {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' // Para uma rolagem suave, adicione essa opção
+            });
+        }
         setTimeout(()=> {
-            if (screenWidth < 2500) {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth' // Para uma rolagem suave, adicione essa opção
-                });
-            }
             historicoTela.innerHTML = ``
         }, 500);
     }
