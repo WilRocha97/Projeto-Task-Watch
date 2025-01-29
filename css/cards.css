@@ -207,6 +207,7 @@
     width: 3px; /* Ajuste o tamanho da bolinha conforme necessário */
     height: 3px; /* Ajuste o tamanho da bolinha conforme necessário */
     border-radius: 5px; /* Torna a bolinha circular */
+    transition: 0.5s; /* Transição suave ao aumentar */
 }
 
 .cabecalhoCardBotoes {

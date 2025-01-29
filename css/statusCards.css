@@ -41,8 +41,8 @@
     --cor-primaria: #9c5e00;
     --cor-secundaria: #b94502;
     --cor-opaca: #9c5900;
-    --cor-loading-1: #ffe60063;
-    --cor-loading-2: #ffe60063;
+    --cor-loading-1: #ffa60063;
+    --cor-loading-2: #ffbb00c5;
     --cor-principal: var(--cor-ocioso);
     --cor-alerta: var(--cor-ocioso);
     --animacao: piscar 3s infinite;
@@ -52,7 +52,7 @@
     --cor-secundaria: #a719a7;
     --cor-opaca: #790000;
     --cor-loading-1: #ff000063;
-    --cor-loading-2: #ff000063;
+    --cor-loading-2: #ff0062c0;
     --cor-principal: var(--cor-erro);
     --cor-alerta: var(--cor-erro);
     --animacao: piscar 1.5s infinite;
