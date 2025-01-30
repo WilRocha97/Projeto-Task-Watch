@@ -140,7 +140,6 @@
     flex-direction: column;
     justify-content: center;
 }
-
 .ClassTextoGaleria {
     display: flex;
     justify-content: center;
@@ -215,7 +214,7 @@
         max-height: 55vh;
     }
 }
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
     .fundo {
         border-radius: 25px;
     }

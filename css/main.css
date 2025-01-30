@@ -249,6 +249,9 @@ body {
 .MenuBotao:hover, .paginaHistorico button:hover {
     background: var(--sombra-2);
 }
+.MenuBotao:active, .paginaHistorico button:active {
+    background: none;
+}
 @keyframes luzMenu {
     0% {
         box-shadow: inset 0 0 0 var(--luz-menu),
@@ -296,9 +299,9 @@ button.clicked, .MenuBotao.clicked {
 }
 
 
-@media (max-width: 800px) {
-    .MenuBotao:hover {
-        background: transparent;
+@media (hover: none) {
+    .MenuBotao:hover, .paginaHistorico button:hover {
+        background: none;
     }
 }
 

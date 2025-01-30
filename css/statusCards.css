@@ -85,9 +85,22 @@
     border: var(--borda-card) solid var(--cor-principal);
     animation: none;
 }
+.status:focus, .status:active {
+    --cor-fundo-2: #a8a8a82d;
+    box-shadow: inset 0 0 20px var(--cor-opaca),
+            0 0 10px var(--cor-opaca);
+    border: var(--borda-card) solid var(--cor-opaca);
+    background: linear-gradient(50deg, var(--cor-primaria), var(--cor-secundaria));
+    animation: var(--animacao);
+}
+
 .status:hover .alerta {
     color: var(--cor-principal);
     text-shadow: 0 0 25px var(--cor-principal);
+}
+.status:active .alerta, .status:focus .alerta {
+    color: var(--cor-alerta);
+    text-shadow: 0 0 15px var(--cor-alerta);
 }
 
 .buscaCard {
