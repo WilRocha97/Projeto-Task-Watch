@@ -21,6 +21,27 @@ const maisInfos = [{botao:'.maisInfo', nomeBotaoMini:'▼ Execução', nomeBotao
                     
 var screenWidth = window.innerWidth;
 
+function isTouchDevice() {
+    return ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+}
+if (isTouchDevice()) {
+    var botoes = document.querySelectorAll('button');
+    var botoesCards = document.querySelectorAll('.btnCard');
+    var cards = document.querySelectorAll('.rectangle');
+
+    botoes.forEach((botao)=> {
+        botao.classList.add('nh')
+    });
+    botoesCards.forEach((botao)=> {
+        console.log(botao)
+        botao.classList.add('nh')
+    });
+    cards.forEach((botao)=> {
+        botao.classList.add('nh')
+    });
+}
+
+
 function updateClock() {
     var daysOfWeek = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"];
     var months = ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"];

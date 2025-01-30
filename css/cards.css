@@ -148,12 +148,17 @@
     opacity: 0.6;
 }
 
-.cabecalhoCard {
+.cabecalhoCard, .cabecalhoCardBotoes {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
-.dispositivo {
+.cabecalhoCardBotoes {
+    justify-content: flex-start;
+    margin-left: 3px;
+}
+
+.dispositivo, .titulo, .botaoFechar, .botaoFixar  {
     font-weight: 600;
     font-size: 1em;
     padding:  4px 4px 5px 4px;
@@ -161,14 +166,45 @@
     white-space: nowrap;
 }
 .titulo {
-    font-weight: 600;
-    font-size: 1em;
-    padding: 4px 4px 5px 4px;
-    opacity: 1;
-    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
+.botaoFechar, .botaoFixar {
+    text-align: center;
+    font-weight: 100;
+    font-size: 0.9em;
+    color: white;
+    background: none;
+    border: none;
+    border-radius: 20px;
+    width: 14px;
+    height: 13px;
+    transition: var(--transicao-link);
+}
+.botaoFechar:hover, .botaoFixar:hover {
+    background-color: white;
+}
+.botaoFixar:hover {
+    color: black;
+}
+.botaoFechar:hover {
+    color: red;
+}
+.botaoFechar.nh:hover, .botaoFixar.nh:hover {
+    background-color: transparent;
+    text-shadow: 0 0 0 transparent;
+    color: white;
+}
+.botaoFixado.nh:hover {
+    text-shadow: 0 0 5px white,
+                 0 0 7px white;
+}
+
+.botaoFixado {
+    text-shadow: 0 0 5px white,
+                 0 0 7px white;
+}
+
 .progresso {
     display: flex;
     flex-direction: row;
@@ -218,47 +254,6 @@
     transition: 0.5s; /* Transição suave ao aumentar */
 }
 
-.cabecalhoCardBotoes {
-    display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
-}
-.botaoFechar, .botaoFixar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    border-radius: 20px;
-    background-color: transparent;
-    margin: 0 0 2px 4px;
-    padding: 3px;
-    width: 15px;
-    height: auto;
-    color: white;
-    text-shadow: 0 0 1px white;
-    transition: color var(--transicao-link), tex-shadow var(--transicao-link), background-color var(--transicao-link);
-}
-.botaoFechar:hover, .botaoFixar:hover {
-    background-color: white;
-    text-shadow: 0 0 10px black;
-}
-.botaoFixar:hover {
-    color: black;
-}
-.botaoFechar:hover {
-    color: red;
-}
-.botaoFechar:active, .botaoFixar:active {
-    background-color: transparent;
-    text-shadow: 0 0 0 transparent;
-    color: white;
-}
-
-.botaoFixado {
-    text-shadow: 0 0 5px white,
-                 0 0 7px white;
-}
-
 .maisInfo, .maisInfo2 {
     cursor:cell;
     border: none;
@@ -276,7 +271,7 @@
 .maisInfo:hover, .maisInfo2:hover {
     text-shadow: 0 0 5px white;
 }
-.maisInfo:active, .maisInfo2:active {
+.maisInfo.nh:hover, .maisInfo2.nh:hover {
     text-shadow: 0 0 1px white;
 }
 
@@ -350,22 +345,6 @@
     transition: var(--transicao-link);
 }
 
-
-@media (hover: none) {
-    .botaoFechar:hover, .botaoFixar:hover {
-        background-color: transparent;
-        text-shadow: 0 0 0 transparent;
-        color: white;
-    }
-    .botaoFixado:hover {
-        text-shadow: 0 0 5px white,
-                     0 0 7px white;
-    }
-
-    .maisInfo:hover, .maisInfo2:hover {
-        text-shadow: 0 0 1px white;
-    }
-}
 
 @media (max-width: 649px) {
     .rectangle.enter {

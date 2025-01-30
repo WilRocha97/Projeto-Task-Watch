@@ -145,48 +145,52 @@ document.addEventListener('click', (event) => {
             }, 500);
         }
         else if (target.classList.contains('maisInfo')){
-            target.classList.add('clicked');
-            setTimeout(() => {
-                target.classList.remove('clicked');
-            }, 500); // Tempo da animação
-
-            // minimiza a tela de ocorrências dentro do card
-            if (maisInfo.classList.contains('collapsed')) {
-                maisInfo.classList.remove('collapsed')
-                telaResumoMaisInfo2.classList.remove('large')
-                maisInfo2.classList.remove('large')
-                target.innerHTML = '▲ Execução'
-            }
-            else {
-                maisInfo.classList.add('collapsed')
-                telaResumoMaisInfo2.classList.add('large')
-                maisInfo2.classList.add('large')
-                target.innerHTML = '▼ Execução'
+            if (!target.classList.contains('invisible2')) {
+                target.classList.add('clicked');
+                setTimeout(() => {
+                    target.classList.remove('clicked');
+                }, 500); // Tempo da animação
+    
+                // minimiza a tela de ocorrências dentro do card
+                if (maisInfo.classList.contains('collapsed')) {
+                    maisInfo.classList.remove('collapsed')
+                    telaResumoMaisInfo2.classList.remove('large')
+                    maisInfo2.classList.remove('large')
+                    target.innerHTML = '▲ Execução'
+                }
+                else {
+                    maisInfo.classList.add('collapsed')
+                    telaResumoMaisInfo2.classList.add('large')
+                    maisInfo2.classList.add('large')
+                    target.innerHTML = '▼ Execução'
+                }
             }
         }
         else if (target.classList.contains('maisInfo2')){
-            target.classList.add('clicked');
-            setTimeout(() => {
-                target.classList.remove('clicked');
-            }, 500); // Tempo da animação
-
-            if (maisInfo.classList.contains('collapsed')) {
-                telaResumoMaisInfo2.classList.add('large')
-                maisInfo2.classList.add('large')
-            }
-            else {
-                telaResumoMaisInfo2.classList.remove('large')
-                maisInfo2.classList.remove('large')
-            }
-            
-            // minimiza a tela de ocorrências dentro do card
-            if (maisInfo2.classList.contains('collapsed')) {
-                maisInfo2.classList.remove('collapsed')
-                target.innerHTML = '▲ Andamentos'
-            }
-            else {
-                maisInfo2.classList.add('collapsed')
-                target.innerHTML = '▼ Andamentos'
+            if (!target.classList.contains('invisible2')) {
+                target.classList.add('clicked');
+                setTimeout(() => {
+                    target.classList.remove('clicked');
+                }, 500); // Tempo da animação
+    
+                if (maisInfo.classList.contains('collapsed')) {
+                    telaResumoMaisInfo2.classList.add('large')
+                    maisInfo2.classList.add('large')
+                }
+                else {
+                    telaResumoMaisInfo2.classList.remove('large')
+                    maisInfo2.classList.remove('large')
+                }
+                
+                // minimiza a tela de ocorrências dentro do card
+                if (maisInfo2.classList.contains('collapsed')) {
+                    maisInfo2.classList.remove('collapsed')
+                    target.innerHTML = '▲ Andamentos'
+                }
+                else {
+                    maisInfo2.classList.add('collapsed')
+                    target.innerHTML = '▼ Andamentos'
+                }
             }
         }
         else {

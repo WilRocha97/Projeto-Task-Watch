@@ -133,6 +133,7 @@ body {
     padding: 0 !important;
     margin: 0 !important;
     max-height: 0 !important;
+    cursor: default !important;
 }
 .invisible3 {
     opacity: 0 !important;
