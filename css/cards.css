@@ -117,7 +117,6 @@
 }
 .rectangle.collapsed {
     line-height: normal;
-    font-size: 0;
     min-width: 30px;
     min-height: 30px;
     max-width: 30px;
@@ -129,15 +128,24 @@
 .rectangle.collapsed #decoracao,
 .rectangle.collapsed .botaoFixar,
 .rectangle.collapsed .botaoFechar,
-.rectangle.collapsed .porcentagem,
 .rectangle.collapsed .maisInfo,
 .rectangle.collapsed .maisInfo2,
 .rectangle.collapsed .content,
 .rectangle.collapsed .dispositivo,
 .rectangle.collapsed .titulo,
+.rectangle.collapsed .bolinhaLoading,
 .rectangle.collapsed #media {
     opacity: 0;
     scale: 0;
+}
+.rectangle.collapsed .porcentagem, 
+.rectangle.collapsed .barraLoading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border-radius: 0;
+    opacity: 0.6;
 }
 
 .cabecalhoCard {
