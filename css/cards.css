@@ -172,36 +172,32 @@
 .tituloContainer {
     overflow: hidden;
     width: 200px; /* Ajuste a largura conforme necessário */
-  }
-  
-  .tituloWrapper {
+}
+.tituloWrapper {
     position: relative; /* Torna o contêiner um contexto de posicionamento */
-    width: 200px; /* Ajuste a largura conforme necessário */
-  }
+}
 .titulo {
     margin: 0 auto;
     overflow: hidden;
     position: absolute;
-  }
-  
-  .titulo span {
+}
+.titulo span {
     display: inline-block;
     padding-left: 100%;
-    animation: moveTitulo 20s linear infinite;
-  }
+    animation: moveTitulo 30s linear infinite;
+} 
+.titulo2 span {
+    animation-delay: 15s;
+}
   
-  .titulo2 span {
-    animation-delay: 10s;
-  }
-  
-  @keyframes moveTitulo {
+@keyframes moveTitulo {
     0% {
       transform: translate(0, 0);
     }
     100% {
       transform: translate(-100%, 0);
     }
-  }
+}
 
 .botaoFechar, .botaoFixar {
     text-align: center;
