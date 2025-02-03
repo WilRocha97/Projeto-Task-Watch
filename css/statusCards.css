@@ -35,9 +35,11 @@
     --cor-principal: var(--cor-executando);
     --cor-alerta: var(--cor-opaca);
     --animacao: none;
+    --animacao-loading: moverBolinha 3s linear infinite
 }
 .status-attention {
     --animacao: piscar 5s infinite;
+    --animacao-loading : none
 }
 .status-warning {
     --cor-primaria: #9c5e00;
@@ -49,6 +51,7 @@
     --cor-principal: var(--cor-ocioso);
     --cor-alerta: var(--cor-ocioso);
     --animacao: piscar 3s infinite;
+    --animacao-loading : none
 }
 .status-error {
     --cor-primaria: #720000fb;
@@ -60,6 +63,7 @@
     --cor-principal: var(--cor-erro);
     --cor-alerta: var(--cor-erro);
     --animacao: piscar 1.5s infinite;
+    --animacao-loading : none
 }
 .status-final {
     --cor-primaria: #00798ffd;
@@ -69,6 +73,7 @@
     --cor-principal: var(--cor-final);
     --cor-alerta: var(--cor-final);
     --animacao: piscar 8s infinite;
+    --animacao-loading : none
 }
 
 /* Estilos genéricos para todos os status */
