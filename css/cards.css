@@ -189,9 +189,6 @@
     animation: moveTitulo 40s linear infinite;
 } 
 .titulo2 span {
-    animation-delay: 20s;
-}
-.titulo3 span {
     animation-delay: -20s;
 }
 @keyframes moveTitulo {
