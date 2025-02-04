@@ -138,6 +138,7 @@
 .rectangle.collapsed #media {
     opacity: 0;
     scale: 0;
+    animation: none;
 }
 .rectangle.collapsed .porcentagem, 
 .rectangle.collapsed .barraLoading {
