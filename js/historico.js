@@ -1,3 +1,5 @@
+import {animacaoBotao} from './main.js';
+
 var template = ``;
 var idClassHistorico = '';
 const screenWidth = window.innerWidth;
@@ -25,7 +27,6 @@ const telaDica = document.getElementById('telaDica');
 const telaRotinas = document.getElementById('telaRotinas');
 const telaHistorico = document.getElementById('targetHistorico');
 
-const rodape = document.getElementById('rodape');
 
 function criaHistorico(data, rotina, ocorrencia) {
     if (ocorrencia == 'Erro detectado') {
@@ -62,11 +63,7 @@ function filtraHistorico(event='', ocorrencia='geral', page=1) {
     
     if (event != '') {
         let target = event.target;
-
-        target.classList.add('clicked');
-        setTimeout(() => {
-            target.classList.remove('clicked');
-        }, 500); // Tempo da animação
+        animacaoBotao(target)
     }
 
     botoesFiltro.forEach(filtro => {
@@ -84,9 +81,6 @@ function filtraHistorico(event='', ocorrencia='geral', page=1) {
     }, 600);
     setTimeout(()=> {
         historicoTelaContainer.classList.remove('collapsed');
-    }, 1000);
-    // desce para a base da página e da tela de histórico
-    setTimeout(()=> {
         if (screenWidth < 2500) {
             const target = document.getElementById('targetHistorico');
             const targetPosition = target.offsetTop; /* Pega a posição do topo do elemento */
@@ -96,8 +90,7 @@ function filtraHistorico(event='', ocorrencia='geral', page=1) {
                 behavior: 'smooth' /* Scroll suave */
             });
         }
-    }, 1200);
-    
+    }, 1000);
 }
 function criaPaginacao(currentPage, totalPages, ocorrencia) {
     let paginationContainer = document.getElementById('pagination'); // Container da paginação
@@ -269,20 +262,13 @@ function fetchHistoricoFiltrado(ocorrencia = 'geral', page = 1) {
 limpaHInputDate.addEventListener('click', (event)=> {
     hInputDate.value = ''
     let target = event.target;
-
-    target.classList.add('clicked');
-    setTimeout(() => {
-        target.classList.remove('clicked');
-    }, 500); // Tempo da animação
+    animacaoBotao(target)
 })
 limpaHInputName.addEventListener('click', (event)=> {
     hInputName.value = ''
 
     let target = event.target;
-    target.classList.add('clicked');
-    setTimeout(() => {
-        target.classList.remove('clicked');
-    }, 500); // Tempo da animação
+    animacaoBotao(target)
 })
 
 // Abre e fecha a tela de histórico

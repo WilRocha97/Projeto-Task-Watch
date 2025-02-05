@@ -41,6 +41,12 @@ if (isTouchDevice()) {
     });
 }
 
+export function animacaoBotao(target) {
+    target.classList.add('clicked');
+    setTimeout(() => {
+        target.classList.remove('clicked');
+    }, 500); // Tempo da animação
+}
 
 function updateClock() {
     var daysOfWeek = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"];
@@ -124,11 +130,7 @@ function procurarCard(event) {
 
 document.body.addEventListener('click', (event) => { 
     let target = event.target;
-
-    target.classList.add('clicked');
-    setTimeout(() => {
-        target.classList.remove('clicked');
-    }, 500); // Tempo da animação
+    animacaoBotao(target)
 })
 
 // Janela com dicas de como o site funciona

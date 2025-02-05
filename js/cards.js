@@ -1,4 +1,4 @@
-
+import {animacaoBotao} from './main.js';
 import {decoracao} from './temas.js';
 
 var telaRotinas = document.getElementById('telaRotinas');
@@ -146,10 +146,7 @@ document.addEventListener('click', (event) => {
         }
         else if (target.classList.contains('maisInfo')){
             if (!target.classList.contains('invisible2')) {
-                target.classList.add('clicked');
-                setTimeout(() => {
-                    target.classList.remove('clicked');
-                }, 500); // Tempo da animação
+                animacaoBotao(target)
     
                 // minimiza a tela de ocorrências dentro do card
                 if (maisInfo.classList.contains('collapsed')) {
@@ -168,10 +165,7 @@ document.addEventListener('click', (event) => {
         }
         else if (target.classList.contains('maisInfo2')){
             if (!target.classList.contains('invisible2')) {
-                target.classList.add('clicked');
-                setTimeout(() => {
-                    target.classList.remove('clicked');
-                }, 500); // Tempo da animação
+                animacaoBotao(target)
     
                 if (maisInfo.classList.contains('collapsed')) {
                     telaResumoMaisInfo2.classList.add('large')
