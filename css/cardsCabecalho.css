@@ -138,9 +138,9 @@
     position: absolute;
     background: none;
     box-shadow: inset 0 0 10px var(--cor-loading-2),
-                inset 0 0 10px var(--cor-loading-2),
-                0 0 10px var(--cor-loading-2),
+                0 0 5px var(--cor-loading-2),
                 0 0 10px var(--cor-loading-2);
+    height: 2px;
     border-radius: 100%;
     animation: moverBolinha 4s linear infinite;
 }
@@ -150,19 +150,16 @@
         opacity: 0;
         left: 0;
         width: 0%;
-        height: 0px;
     }
     50% {
         bottom: 0;
         opacity: 1;
         width: 50%;
-        height: 3px;
-    }
+}
     100% {
         bottom: 50%;
         opacity: 0;
         left: 100%;
         width: 2%;
-        height: 1px;
     }
 }
