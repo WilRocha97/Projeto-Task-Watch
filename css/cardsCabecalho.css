@@ -1,0 +1,168 @@
+.cabecalhoCard, .cabecalhoCardBotoes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.cabecalhoCardBotoes {
+    justify-content: flex-start;
+    margin-left: 3px;
+}
+
+.dispositivo, .titulo, .botaoFechar, .botaoFixar  {
+    font-weight: 600;
+    font-size: 1em;
+    padding:  4px 4px 5px 4px;
+    opacity: 1;
+    white-space: nowrap;
+}
+.dispositivo {
+    margin-right: 3px;
+}
+
+.tituloContainer {
+    overflow: hidden;
+    width: 275px; /* Ajuste a largura conforme necessário */
+}
+.tituloWrapper {
+    position: relative; /* Torna o contêiner um contexto de posicionamento */
+    width: 100vw; 
+}
+.titulo {
+    margin: 0 auto;
+    overflow: hidden;
+    position: absolute;
+}
+.titulo span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: moveTitulo 40s linear infinite;
+} 
+.titulo2 span {
+    animation-delay: -20s;
+}
+@keyframes moveTitulo {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(-100%, 0);
+    }
+}
+
+.botaoFechar, .botaoFixar {
+    text-align: center;
+    font-weight: 100;
+    font-size: 0.9em;
+    color: white;
+    background: none;
+    border: none;
+    border-radius: 20px;
+    width: 14px;
+    height: 13px;
+    transition: var(--transicao-link);
+}
+.botaoFechar:hover, .botaoFixar:hover {
+    background-color: white;
+}
+.botaoFixar:hover {
+    color: black;
+}
+.botaoFechar:hover {
+    color: red;
+}
+.botaoFechar.nh:hover, .botaoFixar.nh:hover {
+    background-color: transparent;
+    text-shadow: 0 0 0 transparent;
+    color: white;
+}
+.botaoFixado.nh:hover {
+    text-shadow: 0 0 5px white,
+                 0 0 7px white;
+}
+
+.botaoFixado {
+    text-shadow: 0 0 5px white,
+                 0 0 7px white;
+}
+
+.progresso {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin: 3px 3px 0 3px;
+}
+#mensagemAlerta {
+    max-height: 30px;
+    overflow: auto;
+}
+.porcentagem {
+    background: var(--cor-fundo-2);
+    backdrop-filter: blur(var(--blur));
+    width: 100%;
+    height: 3px;
+    border-radius: 20px;
+    transition: var(--transicao-link)
+}
+
+/* Estilização da barra de carregamento */
+.barraLoading, .barraLoading {
+    position: relative;
+    height: 100%;
+    background: linear-gradient(50deg, var(--cor-loading-1), var(--cor-loading-2));
+    border-right: var(--cor-loading-2) 3px;
+    border-radius: 20px;
+    transition: 0.5s; /* Transição suave ao aumentar */
+}
+.bolinhaLoading{
+    position: absolute;
+    background-color: var(--cor-loading-2);
+    box-shadow: inset 0 0 4px var(--cor-loading-2),
+                inset 0 0 5px var(--cor-loading-2),
+                inset 0 0 6px var(--cor-loading-2),
+                inset 0 0 4px var(--cor-loading-2),
+                0 0 5px var(--cor-loading-2),
+                0 0 6px var(--cor-loading-2),
+                0 0 7px var(--cor-loading-2),
+                0 0 8px var(--cor-loading-2),
+                0 0 5px var(--cor-loading-2),
+                0 0 6px var(--cor-loading-2),
+                0 0 7px var(--cor-loading-2),
+                0 0 8px var(--cor-loading-2);
+    width: 3px;
+    height: 3px;
+    border-radius: 100%;
+    transition: 0.5s; /* Transição suave ao aumentar */
+}
+
+.bolinhaLoadingMove {
+    position: absolute;
+    background: none;
+    box-shadow: inset 0 0 10px var(--cor-loading-2),
+                inset 0 0 10px var(--cor-loading-2),
+                0 0 10px var(--cor-loading-2),
+                0 0 10px var(--cor-loading-2);
+    border-radius: 100%;
+    animation: moverBolinha 4s linear infinite;
+}
+@keyframes moverBolinha {
+    0% {
+        bottom: 50%;
+        opacity: 0;
+        left: 0;
+        width: 0%;
+        height: 0px;
+    }
+    50% {
+        bottom: 0;
+        opacity: 1;
+        width: 50%;
+        height: 3px;
+    }
+    100% {
+        bottom: 50%;
+        opacity: 0;
+        left: 100%;
+        width: 2%;
+        height: 1px;
+    }
+}

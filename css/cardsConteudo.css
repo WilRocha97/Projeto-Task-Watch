@@ -1,0 +1,90 @@
+.maisInfo, .maisInfo2 {
+    cursor:cell;
+    border: none;
+    background: none;
+    margin: 8px 0 0 0;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    scale: 1;
+    max-width: fit-content;
+    max-height: 500px;
+    text-shadow: 0 0 1px white;
+    transition: margin var(--transicao-link), max-width 1s, max-height var(--transicao-link), text-shadow var(--transicao-link);
+}
+.maisInfo:hover, .maisInfo2:hover {
+    text-shadow: 0 0 5px white;
+}
+.maisInfo.nh:hover, .maisInfo2.nh:hover {
+    text-shadow: 0 0 1px white;
+}
+
+.resumoResultados, .resumoResultados2 {
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+    transition: opacity var(--transicao-link), margin-bottom var(--transicao-link), padding var(--transicao-link), max-height var(--transicao-link);
+}
+.resumoResultados {
+    max-height: 125px;
+}
+.resumoResultados2 {
+    max-height: 242px;
+}
+.resumoResultados2.large {
+    max-height: 342px;
+}
+.resumoResultados.collapsed, .resumoResultados2.collapsed {
+    opacity: 0;
+    padding: 0;
+    margin-bottom: 0;
+    max-height: 0;
+}
+.telaDadoConteudo {
+    overflow: auto;
+    max-height: 42px;
+}
+.telaResumoConteudo {
+    max-height: 148px;
+    overflow: auto;
+    transition: max-height var(--transicao-link);
+}
+.telaResumoConteudo.large {
+    max-height: 248px;
+}
+
+.content {
+    font-size: 0.8em;
+    padding: 0;
+    opacity: 0;
+    max-width: 300px;
+    max-height: 0;
+    transition: padding var(--transicao-link), opacity var(--transicao-link), max-width var(--transicao-link), max-height var(--transicao-link),
+                color var(--transicao-link), text-shadow var(--transicao-link);
+}
+.content:not(:empty) {
+    max-height: 200px;
+    padding: 3px;
+    opacity: 1;
+}
+.alerta {
+    z-index: -1;
+    position: absolute;
+    top: 5rem;
+    right: 0;
+    font-size: 6rem;
+    font-weight: 600;
+    transition: var(--transicao-link);
+}
+
+#decoracao {
+    position: absolute;
+    overflow: visible;
+    z-index: -1000;
+    top: 15px;
+    right: 20px;
+    width: 150px;
+    height: auto;
+    opacity: 0.2;
+    transition: var(--transicao-link);
+}

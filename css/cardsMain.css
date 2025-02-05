@@ -1,0 +1,205 @@
+/* Estilizando a barra de rolagem */
+.scrollInfo::-webkit-scrollbar {
+    width: 4px; /* Largura da barra de rolagem */
+}
+.scrollInfo::-webkit-scrollbar-track {
+    background: transparent; /* Cor do fundo da barra de rolagem */
+}
+.scrollInfo::-webkit-scrollbar-thumb {
+    background-color: #dbdbdb73; /* Cor da barra de rolagem */
+    border-radius: 6px; /* Arredondamento das bordas */
+    border: none; /* Espaçamento entre a barra e o conteúdo */
+    transition: var(--transicao-link);
+}
+.scrollInfo::-webkit-scrollbar-thumb:hover {
+    background: var(--cor-destaque);
+    border: none;
+}
+.scrollInfo::-webkit-scrollbar-button {
+    border: none;
+}
+/* Buttons */
+.scrollInfo::-webkit-scrollbar-button:single-button {
+    background-color: transparent;
+    display: block;
+    border-style: solid;
+    height: 6px;
+    width: 5px;
+}
+/* Up */
+.scrollInfo::-webkit-scrollbar-button:single-button:vertical:decrement {
+    border-width: 0 2px 8px 2px;
+    border-color: transparent transparent #dbdbdb73 transparent;
+}
+
+.scrollInfo::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
+    border-color: transparent transparent var(--cor-destaque) transparent;
+}
+/* Down */
+.scrollInfo::-webkit-scrollbar-button:single-button:vertical:increment {
+    border-width: 8px 2px 0 2px ;
+    border-color: #dbdbdb73 transparent transparent transparent;
+}
+.scrollInfo::-webkit-scrollbar-button:vertical:single-button:increment:hover {
+    border-color: var(--cor-destaque) transparent transparent transparent;
+}
+
+.sortable-ghost {
+    background: transparent !important;
+    box-shadow: var(--direcao-sombra-1) var(--direcao-sombra-1) 9px var(--sombra-clara),
+                var(--direcao-sombra-2) var(--direcao-sombra-2) 9px var(--sombra-escura) !important;
+    backdrop-filter: blur(var(--blur)) !important;
+    color: gray !important;
+    border: var(--borda-card) solid var(--sombra-escura) !important;
+    text-shadow: none !important;
+}
+.sortable-ghost .alerta, 
+.sortable-ghost .botaoFixar,
+.sortable-ghost .botaoFechar,
+.sortable-ghost .maisInfo,
+.sortable-ghost .maisInfo2,
+.sortable-ghost .barraLoading {
+    color: var(--sombra-2) !important;
+    text-shadow: none !important;
+    --cor-loading-1: #2e2e2e;
+    --cor-loading-2: #2e2e2e;
+}
+.sortable-ghost .porcentagem {
+    box-shadow: none;
+}
+
+.rotinas {
+    padding: 60px 12px 90px 12px;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    height: 100%;
+    flex-wrap: wrap;
+    transition: height var(--transicao-link), padding var(--transicao-link);
+}
+.rotinasExpandida {
+    padding: 160px 12px 90px 12px;
+}
+.rectangle {
+    color: white;
+    border-radius: 20px;
+    max-width: 0;
+    max-height: 0;
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    scale: 0;
+    overflow: hidden;
+    transition: var(--transicao-link);
+}
+.rectangle.enter {
+    max-width: 275px;
+    max-height: 150px;
+    padding: 10px;
+    margin: 15px;
+    opacity: 1;
+    scale: 1;
+    overflow: hidden;
+}
+.rectangle.enter.large {
+    max-height: 465px; 
+}
+.rectangle.out {
+    max-width: 0 !important;
+    max-height: 0 !important;
+    border: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    opacity: 0 !important;
+    scale: 0 !important;
+}
+.rectangle.collapsed {
+    line-height: normal;
+    min-width: 30px;
+    min-height: 30px;
+    max-width: 30px;
+    max-height: 30px;
+    border-radius: 12px;
+    padding: 0;
+    margin: 10px;
+}
+.rectangle.collapsed #decoracao,
+.rectangle.collapsed .botaoFixar,
+.rectangle.collapsed .botaoFechar,
+.rectangle.collapsed .maisInfo,
+.rectangle.collapsed .maisInfo2,
+.rectangle.collapsed .content,
+.rectangle.collapsed .dispositivo,
+.rectangle.collapsed .titulo,
+.rectangle.collapsed .bolinhaLoading,
+.rectangle.collapsed .bolinhaLoadingMove,
+.rectangle.collapsed #media {
+    opacity: 0;
+    scale: 0;
+    animation: none;
+}
+.rectangle.collapsed .porcentagem, 
+.rectangle.collapsed .barraLoading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border-radius: 0;
+    opacity: 0.6;
+}
+
+@media (max-width: 649px) {
+    .rectangle.enter {
+        max-width: 85vw;
+        min-width: 85vw;
+    }
+    .rectangle.collapsed {
+        min-width: 30px;
+        min-height: 30px;
+        max-width: 30px;
+        max-height: 30px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .maisInfo, .maisInfo2 {
+        margin: 10px 0 0 0;
+    }
+    .rotinas {
+        padding: 80px 0 90px 0;
+    }
+    .rotinasExpandida {
+        padding: 320px 0 90px 0;
+    }
+    .cabecalhoCardBotoes {
+        gap: 10px;
+    }
+    .botaoFechar, .botaoFixar {
+        font-size: large;
+    }
+
+    @keyframes luzBotaoCard {
+        0% {
+            text-shadow: 0 0 0 var(--luz-menu);
+        }
+        40% {
+            text-shadow: 0 0 5px var(--luz-menu),
+                         0 0 7px var(--luz-menu),
+                         0 0 9px var(--luz-menu),
+                         0 0 11px var(--luz-menu),
+                         0 0 13px var(--luz-menu);
+        }
+        100% {
+            text-shadow: 0 0 5px #ffffff00,
+                         0 0 7px #ffffff00,
+                         0 0 9px #ffffff00,
+                         0 0 11px #ffffff00,
+                         0 0 13px #ffffff00;
+        }
+    }
+    .maisInfo.clicked, .maisInfo2.clicked {
+        animation: luzBotaoCard 0.5s linear;
+    }
+}
