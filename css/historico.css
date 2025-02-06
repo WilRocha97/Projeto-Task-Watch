@@ -163,7 +163,7 @@
     border-radius: var(--borda-botao);
     opacity: 1;
     display: grid;
-    grid-template-columns: 0.5fr 3fr 1fr; /* Três colunas iguais */
+    grid-template-columns: 0.5fr 3fr 1.5fr; /* Três colunas iguais */
     padding: 10px;
     min-height: 10px;
     transition: var(--transicao-link);
@@ -198,6 +198,10 @@
 @media (max-width: 720px) {
     .mainHistorico {
         padding: 5px 0;
+        width: 100%;
+    }
+    .mainHistorico.collapsed {
+        width: 100%;
     }
     .filtroHistorico{
         justify-content: center;
@@ -217,10 +221,10 @@
     .linha{
         font-size: smaller;
         padding: 0.6rem;
-        grid-template-columns: 1.5fr 3fr 2fr;
+        grid-template-columns: 1.5fr 2fr 1.5fr;
     }
 }
-@media (max-width: 2500px) {
+@media (min-width: 721px) and (max-width: 1500px) {
     .mainHistorico {
         width: 100%;
         padding: 60px 0;
@@ -228,5 +232,9 @@
     }
     .mainHistorico.collapsed {
         width: 100%;
+    }
+    .linha{
+        padding: 0.6rem;
+        grid-template-columns: 1fr 3fr 1fr
     }
 }   
