@@ -88,10 +88,11 @@
     position: absolute;
     z-index: 9000;
     opacity: 1 !important;
-    width: 30px;
-    height: 30px;
-    margin: 0 auto;
+    width: 1px;
+    height: 1px;
+    margin: 0;
     padding: 0;
+    left: 30%;
     top: 15%;
 }
 .rectangle.collapsed .botaoFixado:hover {
@@ -168,8 +169,8 @@
         left: 0;
         width: 0%;
     }
-    20% {
-        opacity: 0.5;
+    5% {
+        opacity: 0.1;
     }
     50% {
         opacity: 0.9;
