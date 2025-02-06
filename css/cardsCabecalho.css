@@ -84,6 +84,24 @@
     text-shadow: 0 0 5px white,
                  0 0 7px white;
 }
+.rectangle.collapsed .botaoFixado {
+    position: absolute;
+    z-index: 9000;
+    opacity: 1 !important;
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
+    padding: 0;
+    top: 15%;
+}
+.rectangle.collapsed .botaoFixado:hover {
+    color: white;
+    background: none;
+}
+.rectangle.collapsed .botaoFixar {
+    position: absolute;
+    opacity: 0;
+}
 
 .progresso {
     display: flex;
@@ -140,24 +158,24 @@
     box-shadow: inset 0 0 10px var(--cor-loading-2),
                 0 0 5px var(--cor-loading-2),
                 0 0 10px var(--cor-loading-2);
-    height: 2px;
+    height: 3px;
     border-radius: 100%;
     animation: moverBolinha 4s linear infinite;
 }
 @keyframes moverBolinha {
     0% {
-        bottom: 50%;
         opacity: 0;
         left: 0;
         width: 0%;
     }
+    20% {
+        opacity: 0.5;
+    }
     50% {
-        bottom: 0;
-        opacity: 1;
+        opacity: 0.9;
         width: 50%;
 }
     100% {
-        bottom: 50%;
         opacity: 0;
         left: 100%;
         width: 2%;

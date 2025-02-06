@@ -118,16 +118,28 @@ document.addEventListener('click', (event) => {
         }
 
         if (target.classList.contains('botaoFixar')) {
-            // Encontra o elemento pai mais próximo
-            divMae.classList.toggle('fixado')
-            target.classList.toggle('botaoFixado')
-            if (target.innerHTML.trim() === '☆') {
-                target.innerHTML = '★'
+            if (!divMae.classList.contains('collapsed')) {
+                // Encontra o elemento pai mais próximo
+                divMae.classList.toggle('fixado')
+                target.classList.toggle('botaoFixado')
+                if (target.innerHTML.trim() === '☆') {
+                    target.innerHTML = '★'
+                }
+                else {
+                    target.innerHTML = '☆'  
+                }
+                atualizaLocalStorage()
             }
             else {
-                target.innerHTML = '☆'  
+                while (target && !target.classList.contains('rectangle')) {
+                    target = target.parentElement;
+                }
+            
+                // Se um elemento com a classe 'rectangle' foi encontrado, alterna a classe 'collapsed'
+                if (target) {
+                    target.classList.toggle('collapsed');
+                }
             }
-            atualizaLocalStorage()
         }
 
         // verifica se o click foi no botão de fechar

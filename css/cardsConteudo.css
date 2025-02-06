@@ -70,10 +70,11 @@
 .alerta {
     z-index: -1;
     position: absolute;
-    top: 5rem;
+    bottom: 3.5rem;
     right: 0;
-    font-size: 6rem;
+    font-size: 10rem;
     font-weight: 600;
+    opacity: 0.4 !important;
     transition: var(--transicao-link);
 }
 

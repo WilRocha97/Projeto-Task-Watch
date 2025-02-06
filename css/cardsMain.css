@@ -126,7 +126,6 @@
     margin: 10px;
 }
 .rectangle.collapsed #decoracao,
-.rectangle.collapsed .botaoFixar,
 .rectangle.collapsed .botaoFechar,
 .rectangle.collapsed .maisInfo,
 .rectangle.collapsed .maisInfo2,
@@ -140,7 +139,8 @@
     scale: 0;
     animation: none;
 }
-.rectangle.collapsed .porcentagem, 
+.rectangle.collapsed .porcentagem,
+.rectangle.collapsed .botaoFixar, 
 .rectangle.collapsed .barraLoading {
     position: absolute;
     top: 0;
