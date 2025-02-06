@@ -225,16 +225,20 @@
     }
 }
 @media (min-width: 721px) and (max-width: 1500px) {
+    .linha{
+        padding: 0.6rem;
+        grid-template-columns: 1fr 3fr 1fr
+    }
+}  
+
+@media (max-width: 2500px) {
+    .mainHistorico.collapsed {
+        width: 100%;
+    }
+
     .mainHistorico {
         width: 100%;
         padding: 60px 0;
         align-self: initial;
     }
-    .mainHistorico.collapsed {
-        width: 100%;
-    }
-    .linha{
-        padding: 0.6rem;
-        grid-template-columns: 1fr 3fr 1fr
-    }
-}   
+}    
