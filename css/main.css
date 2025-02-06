@@ -168,23 +168,6 @@ body {
     transition: background-color var(--transicao-link);
 }
 
-
-/*------------------------------------------------------------------------------------------------*/
-
-
-#toggleDarkMode{
-    display: flex;
-}
-#toggleDarkMode img{
-    width: 18px;
-    height: 18px;
-    align-self: center;
-}
-
-
-/*------------------------------------------------------------------------------------------------*/
-
-
 .layout {
     display: flex;
     flex-direction: row;

@@ -111,6 +111,15 @@
     background-color: var(--cor-final); /* Cor da bolinha */
 }
 
+#toggleDarkMode{
+    display: flex;
+}
+#toggleDarkMode img{
+    width: 18px;
+    height: 18px;
+    align-self: center;
+}
+
 .menuTela {
     opacity: 1;
     margin: 10px;

@@ -156,6 +156,7 @@
 }
 .telaHistorico.collapsed {
     opacity: 0 !important; /* Altura desejada quando colapsado */
+    height: 72vh
 }
 .linha{
     align-content: center;
