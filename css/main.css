@@ -144,6 +144,8 @@ body {
 }
 
 .fundo, .fundoInvertido {
+    height: fit-content;
+    width: fit-content;
     background: transparent;
     border-radius: 20px;
     backdrop-filter: blur(var(--blur));

@@ -131,6 +131,14 @@
     width: fit-content;
     flex-direction: row;
 }
+.paginaHistorico {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+.paginaHistorico span {
+    align-self: center;
+}
 .paginaHistorico button:disabled {
     color: var(--cor-texto-2);
     background-color: var(--cor-texto);
