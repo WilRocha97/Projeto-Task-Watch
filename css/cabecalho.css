@@ -162,7 +162,7 @@
 .imagemGaleria {
     cursor: pointer;
     box-shadow: 0 0 5px rgb(255, 0, 64);
-    border-radius: 20px;
+    border-radius: var(--borda-botao);
     width: 30%;
     margin: 10px;
     height: auto;
@@ -183,7 +183,7 @@
 .modal-content {
     width: 90%;
     height: auto;
-    border-radius: 20px;
+    border-radius: var(--borda-botao);
     display: flex;
     justify-content: center;
     

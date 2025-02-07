@@ -56,7 +56,7 @@
     color: white;
     background: none;
     border: none;
-    border-radius: 20px;
+    border-radius: var(--borda-botao);
     width: 14px;
     height: 13px;
     transition: var(--transicao-link);
@@ -119,7 +119,7 @@
     backdrop-filter: blur(var(--blur));
     width: 100%;
     height: 3px;
-    border-radius: 20px;
+    border-radius: var(--borda-botao);
     transition: var(--transicao-link)
 }
 
@@ -129,7 +129,7 @@
     height: 100%;
     background: linear-gradient(50deg, var(--cor-loading-1), var(--cor-loading-2));
     border-right: var(--cor-loading-2) 3px;
-    border-radius: 20px;
+    border-radius: var(--borda-botao);
     transition: 0.5s; /* Transição suave ao aumentar */
 }
 .bolinhaLoading{

@@ -82,7 +82,7 @@
 }
 .rectangle {
     color: white;
-    border-radius: 20px;
+    border-radius: var(--borda-botao);
     max-width: 0;
     max-height: 0;
     cursor: pointer;

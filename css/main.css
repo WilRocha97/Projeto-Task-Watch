@@ -147,7 +147,7 @@ body {
     height: fit-content;
     width: fit-content;
     background: transparent;
-    border-radius: 20px;
+    border-radius: var(--borda-botao);
     backdrop-filter: blur(var(--blur));
 }
 .fundo {
@@ -213,7 +213,7 @@ body {
     color: var(--cor-texto);
     background: none;
     border: none;
-    border-radius: 20px;
+    border-radius: var(--borda-botao);
     padding: 10px;
 }
 
@@ -278,7 +278,7 @@ button.clicked, .MenuBotao.clicked {
     text-decoration: none;
     color: var(--cor-destaque);
     transition: var(--transicao-link);
-    border-radius: 20px;
+    border-radius: var(--borda-botao);
     padding: 5px 7px;
 }
 .linkPadrao:hover {

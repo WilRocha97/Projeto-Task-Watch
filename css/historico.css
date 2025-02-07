@@ -224,7 +224,7 @@
         font-size: x-large;
     }
     .telaHistoricoConteudo {
-        border-radius: 20px;
+        border-radius: var(--borda-botao);
     }
     .linha{
         font-size: smaller;
