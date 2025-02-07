@@ -212,18 +212,23 @@
 
 
 @media (max-width: 720px) {
+    .menuTelaBotoes {
+        flex-wrap: wrap;
+        gap: 25px;
+        padding: 7px;
+    }
     #clock {
         font-size: 0;
     }
     .menuTela {
-        max-height: 40vh;
+        max-height: 50vh;
     }
 
     .dicaTela, .galeriaTela {
-        max-height: 55vh;
+        max-height: 65vh;
     }
 }
-@media (max-width: 1000px) {
+@media (min-width: 721px) and (max-width: 1000px) {
     .fundo {
         border-radius: 25px;
     }
