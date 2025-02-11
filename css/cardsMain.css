@@ -97,14 +97,17 @@
 .rectangle.enter {
     max-width: 275px;
     max-height: 150px;
-    padding: 10px;
-    margin: 15px;
+    padding: 7px;
+    margin: 12px;
     opacity: 1;
     scale: 1;
     overflow: hidden;
 }
 .rectangle.enter.large {
-    max-height: 465px; 
+    max-height: 467px; 
+}
+.rectangle.enter.medium {
+    max-height: 190px; 
 }
 .rectangle.out {
     max-width: 0 !important;

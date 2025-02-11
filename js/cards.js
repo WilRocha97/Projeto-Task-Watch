@@ -212,9 +212,16 @@ document.addEventListener('click', (event) => {
         // Controla o tamanho máximo do card para otimizar a animação de minimiza-lo
         if (maisInfo.classList.contains('collapsed') && maisInfo2.classList.contains('collapsed') || divMae.classList.contains('collapsed')) {
             divMae.classList.remove('large')
+            divMae.classList.remove('medium')
         }
-        else {
-            divMae.classList.add('large') 
+        else if (!maisInfo.classList.contains('collapsed') && maisInfo2.classList.contains('collapsed')) {
+            divMae.classList.remove('large')
+            divMae.classList.add('medium') 
+        }
+        
+        else if (maisInfo.classList.contains('collapsed') && !maisInfo2.classList.contains('collapsed') || !maisInfo.classList.contains('collapsed') && !maisInfo2.classList.contains('collapsed')) {
+            divMae.classList.remove('medium')
+            divMae.classList.add('large')  
         }
     }
 });
