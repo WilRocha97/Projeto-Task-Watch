@@ -42,10 +42,10 @@
 }
 .telaDadoConteudo {
     overflow: auto;
-    max-height: 42px;
+    max-height: 41px;
 }
 .telaResumoConteudo {
-    max-height: 150px;
+    max-height: 145px;
     overflow: auto;
     transition: max-height var(--transicao-link);
 }
