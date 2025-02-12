@@ -78,7 +78,7 @@
     transition: height var(--transicao-link), padding var(--transicao-link);
 }
 .rotinasExpandida {
-    padding: 160px 12px 90px 12px;
+    padding: 130px 12px 90px 12px;
 }
 .rectangle {
     color: white;
