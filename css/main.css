@@ -218,6 +218,7 @@ body {
 }
 
 .MenuBotao, .paginaHistorico button {
+    height: 30px;    
     white-space: nowrap;
     position: relative;
     align-self: center;
