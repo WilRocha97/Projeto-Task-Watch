@@ -44,7 +44,7 @@
 .mainHistorico {
     width: 1500px;
     padding: 100px 12px 0 0 ;
-    align-self: flex-start;
+    align-items: center;
     display: flex;
     margin: 0;
     opacity: 1;
@@ -131,6 +131,9 @@
     width: fit-content;
     flex-direction: row;
 }
+.pageSize {
+    width: 35px;
+}
 .paginaHistorico {
     display: flex;
     justify-content: center;
@@ -152,7 +155,7 @@
     align-self: center;
     flex-direction: column;
     padding: 25px 25px;
-    margin: 5px 0 0 0;
+    margin: 20px 0 0 0;
     font-size: 0.8em;
     width: 90%;
     padding: 8px;
@@ -246,7 +249,7 @@
 
     .mainHistorico {
         width: 100%;
-        padding: 60px 0;
+        padding: 70px 0;
         align-self: initial;
     }
 }    

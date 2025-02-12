@@ -39,7 +39,7 @@
                 </button>
             </div>
         </div>
-        <div id="telaMenu" class="cmb menu menuTela invisible2">
+        <div id="telaMenu" class="cmb menuTela invisible2">
             <div class="cmb fundo menuTelaBotoes">
                 <div class="cmb fundoInvertido barraPesquisa">
                     <input type="text" id="searchInputCard" class="cmb cInputCard" placeholder="Buscar cartão" title="Buscar cartão por nome da rotina">
@@ -623,35 +623,36 @@
         </div>
 
         <div id="targetHistorico" class="mainHistorico collapsed">
-            <div id="configHistorico" class="painelConfig collapsed">
-                <div id="painelPaginas" class="fundo menuPaginas">
-                    <div id="pagination" class="paginaHistorico"></div>
-                </div>
-                
-                <div id="painelInput" class="fundo">
-                    <input type="text" id="searchInputPageSize" class="hInputPageSize", value="15" title="Linhas por página" style="width: 15px;">
-                </div>
-                <div id="painelInput" class="fundo">
-                    <input type="text" id="searchInputDate" class="hInputDate" placeholder="Data e hora" title="Data e hora" style="width: 125px;">
-                    <button id="limpaHInputDate" class="MenuBotao">⨉</button>
-                </div>
-
-                <div id="painelInput" class="fundo">
-                    <input type="text" id="searchInputName" class="hInputName" placeholder="Nome da rotina" title="Nome da rotina" style="width: 125px;">
-                    <button id="limpaHInputName" class="MenuBotao">⨉</button>
-                </div>
-                
-                <div id="painelFiltro" class="filtroHistorico">
-                    <button class="invisible3"></button>
-                    <button id="bolinhaGeral" class="bFiltro filtroGeral" title="Exibir todas as ocorrências"></button>
-                    <button id="bolinhaErro" class="bFiltro filtroErro" title="Filtro 'Erro detectado'"></button>
-                    <button id="bolinhaOcioso" class="bFiltro filtroOcioso" title="Filtro 'A rotina esta ociosa por muito tempo'"></button>
-                    <button id="bolinhaFinal" class="bFiltro filtroFinal" title="Filtro 'Rotina finalizada'"></button>
-                    <button id="bolinhaFechar" class="bFiltro filtroFechar" title="Filtro 'Cartão fechado'"></button>
-                    <button class="invisible3"></button>
+            <div id="telaMenu" class="cmb menuTela">
+                <div id="configHistorico" class="fundo menuTelaBotoes collapsed">
+                    <div id="painelPaginas" class="menuPaginas">
+                        <div id="pagination" class="paginaHistorico"></div>
+                    </div>
+                    
+                    <div id="painelInput" class="fundoInvertido barraPesquisa pageSize">
+                        <input type="text" id="searchInputPageSize" class="hInputPageSize", value="15" title="Linhas por página" style="width: 15px;">
+                    </div>
+                    <div id="painelInput" class="fundoInvertido barraPesquisa">
+                        <input type="text" id="searchInputDate" class="hInputDate" placeholder="Data e hora" title="Data e hora">
+                        <button id="limpaHInputDate" class="MenuBotao">⨉</button>
+                    </div>
+                    <div id="painelInput" class="fundoInvertido barraPesquisa">
+                        <input type="text" id="searchInputName" class="hInputName" placeholder="Nome da rotina" title="Nome da rotina">
+                        <button id="limpaHInputName" class="MenuBotao">⨉</button>
+                    </div>
+                    
+                    <div id="painelFiltro" class="filtroHistorico">
+                        <button class="invisible3"></button>
+                        <button id="bolinhaGeral" class="bFiltro filtroGeral" title="Exibir todas as ocorrências"></button>
+                        <button id="bolinhaErro" class="bFiltro filtroErro" title="Filtro 'Erro detectado'"></button>
+                        <button id="bolinhaOcioso" class="bFiltro filtroOcioso" title="Filtro 'A rotina esta ociosa por muito tempo'"></button>
+                        <button id="bolinhaFinal" class="bFiltro filtroFinal" title="Filtro 'Rotina finalizada'"></button>
+                        <button id="bolinhaFechar" class="bFiltro filtroFechar" title="Filtro 'Cartão fechado'"></button>
+                        <button class="invisible3"></button>
+                    </div>
                 </div>
             </div>
-            
+
             <div id="historicoTelaContainer" class="fundo telaHistorico">
                 <div id="historicoTela" class="telaHistoricoConteudo">
                     <!--div da linha da tabela-->

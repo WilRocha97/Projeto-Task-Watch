@@ -121,6 +121,8 @@
 }
 
 .menuTela {
+    display: flex;
+    justify-content: center;
     opacity: 1;
     margin: 10px;
     max-height: 10vh;
