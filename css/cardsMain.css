@@ -153,6 +153,7 @@
     opacity: 0.6;
 }
 
+
 @media (max-width: 649px) {
     .rectangle.enter {
         max-width: 85vw;
@@ -164,9 +165,13 @@
         max-width: 30px;
         max-height: 30px;
     }
+    .rotinasExpandida {
+        padding: 390px 0 90px 0;
+    }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1000px) and (min-width: 650px) {
+    
     .maisInfo, .maisInfo2 {
         margin: 10px 0 0 0;
     }
@@ -204,5 +209,11 @@
     }
     .maisInfo.clicked, .maisInfo2.clicked {
         animation: luzBotaoCard 0.5s linear;
+    }
+}
+
+@media (max-width: 1286px) and (min-width: 1001px) {
+    .rotinasExpandida {
+        padding: 190px 12px 90px 12px;
     }
 }

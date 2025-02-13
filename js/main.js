@@ -1,3 +1,4 @@
+const cartoesFixados = document.getElementById('controlarFixados');
 const encolheCard = document.getElementById('encolherCard');
 const explodeCard = document.getElementById('explodirCard');
 const encolhe = document.getElementById('encolher');
@@ -166,24 +167,39 @@ buscaCInputCard.addEventListener('click', ()=> {
     procurarCard({key: 'Enter'})
 })
 
+cartoesFixados.addEventListener('click', () => { 
+    cartoesFixados.classList.toggle('active')
+})
 // Minimiza e maximiza todas as telas internas dos cards
 encolhe.addEventListener('click', () => {
     const cards = document.querySelectorAll('.rectangle');
     const listaReversa = [...cards].reverse(); // Faz uma cópia para não alterar a original
 
+    if (cartoesFixados.classList.contains('active')) {
+
+    }
     listaReversa.forEach((card, index) => {
-        if (!card.classList.contains('fixado')) {
-            maisInfos.forEach(maisInfo => {
-                const botaoMaisInfo = card.querySelector(maisInfo.botao);
-                setTimeout(()=> {
-                    setTimeout(()=> {
-                        botaoMaisInfo.innerHTML = maisInfo.nomeBotaoMini;
-                        card.querySelector(maisInfo.conteudo).classList.add('collapsed');
-                        card.classList.remove('large') 
-                    }, 100)
-                }, 100 * index);
-            })
+        if (cartoesFixados.classList.contains('active')) {
+            if (!card.classList.contains('fixado')) {
+                return
+            }
         }
+        else {
+            if (card.classList.contains('fixado')) {
+                return
+            } 
+        }
+        
+        maisInfos.forEach(maisInfo => {
+            const botaoMaisInfo = card.querySelector(maisInfo.botao);
+            setTimeout(()=> {
+                setTimeout(()=> {
+                    botaoMaisInfo.innerHTML = maisInfo.nomeBotaoMini;
+                    card.querySelector(maisInfo.conteudo).classList.add('collapsed');
+                    card.classList.remove('large') 
+                }, 100)
+            }, 100 * index);
+        })
     });
 });
 // Minimiza e maximiza todos os cards
@@ -192,12 +208,21 @@ encolheCard.addEventListener('click', () => {
     const listaReversa = [...cards].reverse(); // Faz uma cópia para não alterar a original
 
     listaReversa.forEach((card, index) => {
-        if (!card.classList.contains('fixado')) {
-            setTimeout(()=> {
-                card.classList.add('collapsed');
-                card.classList.remove('large');
-            }, 100 * index);  
+        if (cartoesFixados.classList.contains('active')) {
+            if (!card.classList.contains('fixado')) {
+                return
+            }
         }
+        else {
+            if (card.classList.contains('fixado')) {
+                return
+            } 
+        }
+
+        setTimeout(()=> {
+            card.classList.add('collapsed');
+            card.classList.remove('large');
+        }, 100 * index);  
     });
 });
 // Minimiza e maximiza todas as telas internas dos cards
@@ -205,21 +230,28 @@ explode.addEventListener('click', () => {
     const cards = document.querySelectorAll('.rectangle');
 
     cards.forEach((card, index) => {
-        if (!card.classList.contains('fixado')) {
-            card.classList.add('large') 
-
-            maisInfos.forEach(maisInfo => {
-                const botaoMaisInfo = card.querySelector(maisInfo.botao);
-                setTimeout(()=> {
-                    card.classList.remove('collapsed');
-                    setTimeout(()=> {
-                        botaoMaisInfo.innerHTML = maisInfo.nomeBotaoMaxi;
-                        card.querySelector(maisInfo.conteudo).classList.remove('collapsed');
-                    }, 100)
-                }, 100 * index);
-            })
-
+        if (cartoesFixados.classList.contains('active')) {
+            if (!card.classList.contains('fixado')) {
+                return
+            }
         }
+        else {
+            if (card.classList.contains('fixado')) {
+                return
+            } 
+        }
+
+        maisInfos.forEach(maisInfo => {
+            const botaoMaisInfo = card.querySelector(maisInfo.botao);
+            setTimeout(()=> {
+                card.classList.remove('collapsed');
+                card.classList.add('large');
+                setTimeout(()=> {
+                    botaoMaisInfo.innerHTML = maisInfo.nomeBotaoMaxi;
+                    card.querySelector(maisInfo.conteudo).classList.remove('collapsed');
+                }, 100)
+            }, 100 * index);
+        })
     });
 });
 // Minimiza e maximiza todos os cards
@@ -227,12 +259,21 @@ explodeCard.addEventListener('click', () => {
     const cards = document.querySelectorAll('.rectangle');
 
     cards.forEach((card, index) => {
-        if (!card.classList.contains('fixado')) {
-            setTimeout(()=> {
-                card.classList.remove('collapsed');
-                card.classList.add('large');
-            }, 100 * index);
+        if (cartoesFixados.classList.contains('active')) {
+            if (!card.classList.contains('fixado')) {
+                return
+            }
         }
+        else {
+            if (card.classList.contains('fixado')) {
+                return
+            } 
+        }
+
+        setTimeout(()=> {
+            card.classList.remove('collapsed');
+            card.classList.add('large');
+        }, 100 * index);
     });
 });
 
