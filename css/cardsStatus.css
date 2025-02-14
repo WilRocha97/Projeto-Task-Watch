@@ -28,7 +28,7 @@
 .status-executando, .status-attention {
     --cor-primaria: #006345;
     --cor-secundaria: #004557;
-    --cor-opaca: #00865e9a;
+    --cor-opaca: #4d927d5d;
     --cor-opaca-2: #00694a9a;
     --cor-loading-1: #00ffb350;
     --cor-loading-2: #00ffff93;
@@ -42,7 +42,7 @@
 .status-warning {
     --cor-primaria: #9c5e00;
     --cor-secundaria: #b94502;
-    --cor-opaca: #b66d008a;
+    --cor-opaca: #af834257;
     --cor-opaca-2: #9c58008a;
     --cor-loading-1: #ffae008e;
     --cor-loading-2: #ffd000c5;
@@ -53,7 +53,7 @@
 .status-error {
     --cor-primaria: #720000fb;
     --cor-secundaria: #8d168d;
-    --cor-opaca: #b301018e;
+    --cor-opaca: #aa373750;
     --cor-opaca-2: #7900008e;
     --cor-loading-1: #e9000077;
     --cor-loading-2: #eb0091dc;
@@ -64,7 +64,7 @@
 .status-final {
     --cor-primaria: #00798ffd;
     --cor-secundaria: #682dc7;
-    --cor-opaca: #0060a08e;
+    --cor-opaca: #3279a84d;
     --cor-opaca-2: #004d818e;
     --cor-principal: var(--cor-final);
     --cor-alerta: var(--cor-final);
