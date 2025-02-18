@@ -100,6 +100,7 @@
     align-self: center;
 }
 .notificacao {
+    width: 79.5%;
     position: absolute;
     bottom: 4px; /* Alinha a bolinha ao topo do botão */
     left: 9px; /* Alinha a bolinha à direita do botão */
@@ -108,7 +109,7 @@
     gap: 1px;
 }
 .bolinhaErro, .bolinhaOcioso, .bolinhaFinal{
-    width: 20px; /* Ajuste o tamanho da bolinha conforme necessário */
+    width: 100%; /* Ajuste o tamanho da bolinha conforme necessário */
     height: 3px; /* Ajuste o tamanho da bolinha conforme necessário */
     border-radius: 5px; /* Torna a bolinha circular */
     transition: var(--transicao-link);
