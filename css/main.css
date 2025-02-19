@@ -28,15 +28,15 @@
     --cor-final-alternativa: #0098c7;
     
     --cor-destaque: #ffffff;
-    --cor-vidro: #1f2329;
-    --cor-vidro-2: #101314;
+    --cor-vidro: #16181d;
+    --cor-vidro-2: #131718;
     --cor-texto: #ffffff;
     --cor-texto-2: #000000;
     --cor-fundo: #131518;
     --direcao-sombra-2: 3px;
     --direcao-sombra-1: -3px;
-    --sombra-clara: #44444486;
-    --sombra-escura: #0a0a0adc;
+    --sombra-clara: #36363686;
+    --sombra-escura: #050505dc;
     --sombra-2: #323a44c7;
     --luz-menu: #7f95afc7;
 }
@@ -54,7 +54,7 @@
 
     --cor-destaque: #000000;
     --cor-vidro: #d1d1d1;
-    --cor-vidro-2: #b3b3b3;
+    --cor-vidro-2: #c0c0c0;
     --cor-texto: #000000;
     --cor-texto-2: #ffffff;
     --cor-fundo: #e6e6e6;
