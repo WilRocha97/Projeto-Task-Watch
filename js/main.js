@@ -138,10 +138,12 @@ document.body.addEventListener('click', (event) => {
 menu.addEventListener('click', () => {
     if (telaMenu.classList.contains('invisible2')) {
         telaMenu.classList.remove('invisible2');
+        menu.innerHTML = 'Menu ▴'
         telaRotinas.classList.add('rotinasExpandida');
     }
     else {
         telaMenu.classList.add('invisible2');
+        menu.innerHTML = 'Menu ▾'
         telaRotinas.classList.remove('rotinasExpandida');
     }
     if (!telaDica.classList.contains('invisible2')) {
@@ -280,6 +282,7 @@ explodeCard.addEventListener('click', () => {
 // Janela com dicas de como o site funciona
 dica.addEventListener('click', () => {
     telaMenu.classList.add('invisible2');
+    menu.innerHTML = 'Menu ▾'
     telaRotinas.classList.remove('rotinasExpandida');
     if (telaDica.classList.contains('invisible2')) {
         telaDica.classList.remove('invisible2');
@@ -298,6 +301,7 @@ fecharAjuda.addEventListener('click', ()=> {
 // Janela com imagens do TaskWatch oficial
 galeria.addEventListener('click', () => {
     telaMenu.classList.add('invisible2');
+    menu.innerHTML = 'Menu ▾'
     telaRotinas.classList.remove('rotinasExpandida');
     if (telaGaleria.classList.contains('invisible2')) {
         telaGaleria.classList.remove('invisible2');

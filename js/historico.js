@@ -22,6 +22,7 @@ const historicoTela = document.getElementById('historicoTela');
 const mainHistorico = document.getElementById('targetHistorico');
 const painelConfig = document.getElementById('configHistorico');
 
+const menu = document.getElementById('menu');
 const telaMenu = document.getElementById('telaMenu');
 const telaDica = document.getElementById('telaDica');
 const telaRotinas = document.getElementById('telaRotinas');
@@ -57,6 +58,7 @@ function criaHistorico(data, rotina, ocorrencia) {
 }
 function filtraHistorico(event='', ocorrencia='geral', page=1) {
     telaMenu.classList.add('invisible2');
+    menu.innerHTML = 'Menu ▾'
     telaDica.classList.add('invisible2');
     telaRotinas.classList.remove('rotinasExpandida');
     telaHistorico.classList.remove('historicoExpandida');
@@ -274,6 +276,7 @@ limpaHInputName.addEventListener('click', (event)=> {
 // Abre e fecha a tela de histórico
 historicoBotao.addEventListener('click', ()=> {
     telaMenu.classList.add('invisible2');
+    menu.innerHTML = 'Menu ▾'
     telaDica.classList.add('invisible2');
     telaRotinas.classList.remove('rotinasExpandida');
     telaHistorico.classList.remove('historicoExpandida');

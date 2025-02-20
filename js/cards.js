@@ -4,6 +4,7 @@ import {decoracao} from './temas.js';
 var telaRotinas = document.getElementById('telaRotinas');
 var telaHistorico = document.getElementById('targetHistorico');
 const telaGaleria = document.getElementById('telaGaleria');
+const menu = document.getElementById('menu');
 const telaMenu = document.getElementById('telaMenu');
 const telaDica = document.getElementById('telaDica');
 
@@ -74,6 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
             timeout = setTimeout(function() {
                 evt.item.classList.add('sortable-ghost');
                 telaMenu.classList.add('invisible2');
+                menu.innerHTML = 'Menu ▾'
                 telaDica.classList.add('invisible2');
                 telaGaleria.classList.add('invisible2');
                 telaRotinas.classList.remove('rotinasExpandida')
@@ -111,6 +113,7 @@ document.addEventListener('click', (event) => {
         // fecha o menu ao clicar em qualuqer lugar que não seja nele
         if (!target.classList.contains('cmb')) {
             telaMenu.classList.add('invisible2')
+            menu.innerHTML = 'Menu ▾'
             telaDica.classList.add('invisible2')
             telaGaleria.classList.add('invisible2')
             telaRotinas.classList.remove('rotinasExpandida')
