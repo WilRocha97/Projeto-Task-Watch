@@ -630,22 +630,20 @@
         <div id="targetHistorico" class="mainHistorico collapsed">
             <div id="telaMenu" class="cmb menuTela">
                 <div id="configHistorico" class="fundo menuTelaBotoes collapsed">
-                    <div id="painelPaginas" class="menuPaginas">
-                        <div id="pagination" class="paginaHistorico"></div>
-                    </div>
-                    
-                    <div id="painelInput" class="fundoInvertido barraPesquisa pageSize">
-                        <input type="text" id="searchInputPageSize" class="hInputPageSize", value="15" title="Linhas por página" style="width: 15px;">
-                    </div>
                     <div id="painelInput" class="fundoInvertido barraPesquisa">
                         <input type="text" id="searchInputDate" class="hInputDate" placeholder="Data e hora" title="Data e hora">
                         <button id="limpaHInputDate" class="MenuBotao">⨉</button>
                     </div>
+
                     <div id="painelInput" class="fundoInvertido barraPesquisa">
                         <input type="text" id="searchInputName" class="hInputName" placeholder="Nome da rotina" title="Nome da rotina">
                         <button id="limpaHInputName" class="MenuBotao">⨉</button>
                     </div>
                     
+                    <div id="painelInput" class="fundoInvertido barraPesquisa pageSize">
+                        <input type="text" id="searchInputPageSize" class="hInputPageSize", value="15" title="Linhas por página" style="width: 15px;">
+                    </div>
+
                     <div id="painelFiltro" class="filtroHistorico">
                         <button class="invisible3"></button>
                         <button id="bolinhaGeral" class="bFiltro filtroGeral" title="Exibir todas as ocorrências"></button>
@@ -654,6 +652,10 @@
                         <button id="bolinhaFinal" class="bFiltro filtroFinal" title="Filtro 'Rotina finalizada'"></button>
                         <button id="bolinhaFechar" class="bFiltro filtroFechar" title="Filtro 'Cartão fechado'"></button>
                         <button class="invisible3"></button>
+                    </div>
+
+                    <div id="painelPaginas" class="menuPaginas">
+                        <div id="pagination" class="paginaHistorico"></div>
                     </div>
                 </div>
             </div>
