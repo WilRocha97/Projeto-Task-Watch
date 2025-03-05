@@ -244,15 +244,17 @@ explode.addEventListener('click', () => {
         }
 
         maisInfos.forEach(maisInfo => {
-            const botaoMaisInfo = card.querySelector(maisInfo.botao);
-            setTimeout(()=> {
-                card.classList.remove('collapsed');
-                card.classList.add('large');
+            if (!card.querySelector(maisInfo.conteudo).classList.contains('invisible2')) {
+                const botaoMaisInfo = card.querySelector(maisInfo.botao);
                 setTimeout(()=> {
-                    botaoMaisInfo.innerHTML = maisInfo.nomeBotaoMaxi;
-                    card.querySelector(maisInfo.conteudo).classList.remove('collapsed');
-                }, 100)
-            }, 100 * index);
+                    card.classList.remove('collapsed');
+                    card.classList.add('large');
+                    setTimeout(()=> {
+                        botaoMaisInfo.innerHTML = maisInfo.nomeBotaoMaxi;
+                        card.querySelector(maisInfo.conteudo).classList.remove('collapsed');
+                    }, 100)
+                }, 100 * index);
+            }
         })
     });
 });
@@ -273,8 +275,10 @@ explodeCard.addEventListener('click', () => {
         }
 
         setTimeout(()=> {
-            card.classList.remove('collapsed');
-            card.classList.add('large');
+            if (card.classList.contains('collapsed')) {
+                card.classList.add('large');
+                card.classList.remove('collapsed');
+            }
         }, 100 * index);
     });
 });
