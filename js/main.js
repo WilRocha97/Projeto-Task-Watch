@@ -222,8 +222,9 @@ encolheCard.addEventListener('click', () => {
         }
 
         setTimeout(()=> {
-            card.classList.add('collapsed');
             card.classList.remove('large');
+            card.classList.remove('medium');
+            card.classList.add('collapsed');
         }, 100 * index);  
     });
 });
@@ -244,7 +245,7 @@ explode.addEventListener('click', () => {
         }
 
         maisInfos.forEach(maisInfo => {
-            if (!card.querySelector(maisInfo.conteudo).classList.contains('invisible2')) {
+            if (!card.querySelector(maisInfo.botao).classList.contains('invisible2')) {
                 const botaoMaisInfo = card.querySelector(maisInfo.botao);
                 setTimeout(()=> {
                     card.classList.remove('collapsed');
