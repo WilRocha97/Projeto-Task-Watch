@@ -90,7 +90,7 @@
     transition: font-size var(--transicao-link), opacity var(--transicao-link);
 }
 .relogio {
-    padding: 9px 18px !important;
+    padding: 9.8px 18px !important;
     scale: 1;
     transition: scale var(--transicao-link), padding var(--transicao-link);
 }

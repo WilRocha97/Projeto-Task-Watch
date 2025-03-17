@@ -163,7 +163,7 @@ body {
     padding: 7px;
     margin: 8px 0 0 0;
     background: var(--cor-fundo-2);
-    border-radius: 13px;
+    border-radius: 15px;
     box-shadow: var(--direcao-sombra-1) var(--direcao-sombra-1) 5px var(--sombra-card-clara),
                 var(--direcao-sombra-2) var(--direcao-sombra-2) 5px var(--sombra-card);
     backdrop-filter: blur(var(--blur));
@@ -207,6 +207,7 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    height: 35px;
 }
 .cInputUsuario, .cInputSenha, .cInputCard, .hInputName, .hInputDate, .hInputPageSize {
     width: 100%;

@@ -3,6 +3,7 @@
     border: none;
     background: none;
     margin: 8px 0 0 0;
+    padding: 0 4px;
     color: white;
     font-size: 0.75rem;
     font-weight: 600;
@@ -17,6 +18,9 @@
 }
 .maisInfo.nh:hover, .maisInfo2.nh:hover {
     text-shadow: 0 0 1px white;
+}
+.maisInfo.minimizado, .maisInfo2.minimizado {
+    padding: 0 0 4px 4px;
 }
 
 .resumoResultados, .resumoResultados2 {
