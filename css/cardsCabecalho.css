@@ -111,7 +111,7 @@
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    margin: 3px 3px 0 3px;
+    margin: 1px 4px;
 }
 #mensagemAlerta {
     max-height: 30px;

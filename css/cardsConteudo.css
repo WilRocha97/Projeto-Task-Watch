@@ -1,3 +1,7 @@
+#mensagemAlerta {
+    padding: 0 0 0 4px;
+}
+
 .maisInfo, .maisInfo2 {
     cursor:cell;
     border: none;
