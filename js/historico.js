@@ -98,7 +98,7 @@ function criaPaginacao(currentPage, totalPages, ocorrencia) {
     let paginationContainer = document.getElementById('pagination'); // Container da paginação
     paginationContainer.innerHTML = '';  // Limpa o conteúdo existente
 
-    const maxVisiblePages = 4; // Quantas páginas no máximo são mostradas entre os '...'
+    const maxVisiblePages = 3; // Quantas páginas no máximo são mostradas entre os '...'
 
     // Botão para a primeira página e 'Anterior'
     if (currentPage > 1) {
@@ -110,7 +110,7 @@ function criaPaginacao(currentPage, totalPages, ocorrencia) {
     }
 
     // Se a primeira página não está visível (ou seja, currentPage > 3), mostra o '1' e '...'
-    if (currentPage > 4) {
+    if (currentPage > 3) {
         let firstPageButton = document.createElement('button');
         firstPageButton.innerText = '1';
         firstPageButton.onclick = (event) => filtraHistorico(event, ocorrencia, 1);
@@ -121,7 +121,7 @@ function criaPaginacao(currentPage, totalPages, ocorrencia) {
         paginationContainer.appendChild(dotsBefore);
     }
     // Se estiver na ternceira página mostra também a primeira página
-    if (currentPage == 4) {
+    if (currentPage == 3) {
         let firstPageButton = document.createElement('button');
         firstPageButton.innerText = '1';
         firstPageButton.onclick = (event) => filtraHistorico(event, ocorrencia, 1);
@@ -148,7 +148,7 @@ function criaPaginacao(currentPage, totalPages, ocorrencia) {
     }
 
     // Se a última página não está visível (ou seja, currentPage < totalPages - 2), mostra '...' e a última página
-    if (currentPage < totalPages - 3) {
+    if (currentPage < totalPages - 2) {
         let dotsAfter = document.createElement('span');
         dotsAfter.innerText = '...';
         paginationContainer.appendChild(dotsAfter);
@@ -160,7 +160,7 @@ function criaPaginacao(currentPage, totalPages, ocorrencia) {
     }
 
     // Se estiver na ante penultima página mostra também a ultima página
-    if (currentPage == totalPages - 3) {
+    if (currentPage == totalPages - 2) {
         let lastPageButton = document.createElement('button');
         lastPageButton.innerText = totalPages;
         lastPageButton.onclick = (event) => filtraHistorico(event, ocorrencia, totalPages);
