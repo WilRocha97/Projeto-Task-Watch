@@ -161,7 +161,7 @@ body {
 }
 .fundo2 {
     padding: 7px;
-    margin: 8px 0 0 0;
+    margin: 5px 0 0 0;
     background: var(--cor-fundo-2);
     border-radius: 15px;
     box-shadow: var(--direcao-sombra-1) var(--direcao-sombra-1) 5px var(--sombra-card-clara),
@@ -207,7 +207,7 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 35px;
+    height: 34px;
 }
 .cInputUsuario, .cInputSenha, .cInputCard, .hInputName, .hInputDate, .hInputPageSize {
     width: 100%;

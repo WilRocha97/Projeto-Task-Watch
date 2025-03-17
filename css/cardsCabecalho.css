@@ -3,6 +3,9 @@
     flex-direction: row;
     justify-content: space-between;
 }
+.cabecalhoCard {
+    padding: 0 2px;
+}
 .cabecalhoCardBotoes {
     justify-content: flex-start;
     margin-left: 3px;
