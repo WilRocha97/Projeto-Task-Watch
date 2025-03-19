@@ -3,57 +3,41 @@
     syntax: "<number>";
     inherits: false;
     initial-value: 1;
-  }
-  
-  /* #fallback @keyframes blink-animation {
-    0%,
-    100% {
-      opacity: 1;
+}
+
+@keyframes blink-animation {
+    0%, 100% {
+        opacity: var(--blink-opacity, 1);
     }
     50% {
-      opacity: 0;
+        opacity: 0;
     }
-  }*/
-  
-  @keyframes blink-animation {
-    0%,
-    100% {
-      opacity: var(--blink-opacity, 1);
+}
+@keyframes smoothBg {
+    from {
+        background-position: 50% 50%, 50% 50%;
     }
-    50% {
-      opacity: 0;
+    to {
+        background-position: 350% 50%, 350% 50%;
     }
-  }
-  /*houdini*/
-  
-  /*base*/
-  :root {
+}
+
+:root {
     font-family: Inter, sans-serif;
 
     --bg: var(--stripe-color);
     --maincolor: var(--bg);
-  }
-  
-  /*custom*/
-  
-  @keyframes smoothBg {
-    from {
-      background-position: 50% 50%, 50% 50%;
-    }
-    to {
-      background-position: 350% 50%, 350% 50%;
-    }
-  }
-  
-  .wrapper {
+}
+
+.wrapper {
     opacity: 1;
     width: 100%;
     height: auto;
     position: absolute;
     transition: opacity var(--transicao-link);
-  }
-  
-  .hero {
+}
+
+.hero {
     opacity: 0.2;
     width: 100%;
     height: 100%;
@@ -63,31 +47,31 @@
     place-content: center;
     place-items: center;
     --stripes: repeating-linear-gradient(
-      100deg,
-      var(--stripe-color) 0%,
-      var(--stripe-color) 7%,
-      transparent 10%,
-      transparent 12%,
-      var(--stripe-color) 16%
-    );
-  
+                100deg,
+                var(--stripe-color) 0%,
+                var(--stripe-color) 7%,
+                transparent 10%,
+                transparent 12%,
+                var(--stripe-color) 16%
+                );
+
     --rainbow: repeating-linear-gradient(
-      100deg,
-      #60a5fa 10%,
-      #e879f9 15%,
-      #60a5fa 20%,
-      #5eead4 25%,
-      #60a5fa 30%
-    );
+                100deg,
+                #60a5fa 10%,
+                #e879f9 15%,
+                #60a5fa 20%,
+                #5eead4 25%,
+                #60a5fa 30%
+                );
     background-image: var(--stripes), var(--rainbow);
     background-size: 300%, 200%;
     background-position: 50% 50%, 50% 50%;
-  
+
     filter: var(--filter);
-  
+
     mask-image: radial-gradient(ellipse at 100% 0%, var(--cor-fundo) 40%, transparent 70%);
-  }
-  .hero::after {
+}
+.hero::after {
     content: "";
     position: absolute;
     inset: 0;
@@ -96,9 +80,9 @@
     animation: smoothBg 60s linear infinite;
     background-attachment: fixed;
     mix-blend-mode: difference;
-  }
+}
 
-  .tituloPrincipal {
+.tituloPrincipal {
     color: rgb(0, 0, 0);
     position: absolute;
     inset: 0;
@@ -113,15 +97,13 @@
     mix-blend-mode: difference;
     -webkit-mix-blend-mode: difference;
     filter: invert(1);
-  }
-  
-  .h1--scalingSize {
+}
+
+.h1--scalingSize {
     font-size: calc(1rem - -5vw);
     position: relative;
-  }
-  
-  /*challenge*/
-  .h1--scalingSize::before {
+}
+.h1--scalingSize::before {
     content: attr(data-text);
     position: absolute;
     inset: 0;
@@ -138,4 +120,4 @@
     margin: auto;
     z-index: 1;
     pointer-events: none;
-  }
+}
