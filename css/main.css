@@ -16,6 +16,9 @@
 }
 
 .dark {
+    --stripe-color: #000000;
+    --filter: blur(10px) opacity(50%) saturate(200%);
+
     --cor-executando: #00cf91;
     --cor-erro: #da0101;
     --cor-ocioso: #ffae00;
@@ -41,6 +44,9 @@
     --luz-menu: #7f95afc7;
 }
 .light {
+    --stripe-color: #ffffff;
+    --filter: blur(10px) invert(100%);
+
     --cor-executando: #00be85;
     --cor-erro: #cc0000;
     --cor-ocioso: #d49100;
@@ -127,6 +133,9 @@ body {
     opacity: 0;
     position: fixed;
     bottom: 200%;
+}
+.invisible1 {
+    opacity: 0 !important;
 }
 .invisible2 {
     opacity: 0 !important;

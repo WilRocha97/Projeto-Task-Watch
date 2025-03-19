@@ -13,7 +13,7 @@ const fecharGaleria = document.getElementById('fecharGaleria');
 const galeria = document.getElementById('galeria');
 const telaGaleria = document.getElementById('telaGaleria');
 const telaRotinas = document.getElementById('telaRotinas');
-var telaHistorico = document.getElementById('targetHistorico');
+var mainHistorico = document.getElementById('targetHistorico');
 var cInputCard = document.getElementById('searchInputCard');
 const limpaCInputCard = document.getElementById('limpaCInputCard');
 
@@ -80,11 +80,26 @@ function updateClock() {
     else {
         document.getElementById('menuRelogio').classList.remove('invisible')
     }
+
+
 };
 // Atualiza o relógio a cada segundo
 setInterval(updateClock, 1000);
 // Atualiza o relógio imediatamente ao carregar a página
 updateClock();
+
+// Verifica se tem algum card vizivel, se não exibe a tela de descanso
+setInterval(verificaTelaVazia, 1000);
+function verificaTelaVazia() {
+    if (mainHistorico.classList.contains('collapsed')) {
+        if (!document.querySelector(".rectangle.enter")) {
+            telaTitulo.classList.remove('invisible1');
+        }
+        else {
+            telaTitulo.classList.add('invisible1');
+        }
+    }
+};
 
 function desmarcaCardsBuscados() {
     var cards = document.querySelectorAll('.rectangle');
@@ -92,7 +107,7 @@ function desmarcaCardsBuscados() {
         card.classList.remove('buscaCard');
         cInputCard.classList.remove('naoEncontrado')
     });
-}
+};
 
 function procurarCard(event) {
     cInputCard.classList.remove('naoEncontrado');
@@ -127,12 +142,12 @@ function procurarCard(event) {
             desmarcaCardsBuscados();
         }
     }
-}
+};
 
 document.body.addEventListener('click', (event) => { 
     let target = event.target;
     animacaoBotao(target)
-})
+});
 
 // Janela com dicas de como o site funciona
 menu.addEventListener('click', () => {

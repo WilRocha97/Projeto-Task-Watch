@@ -149,10 +149,14 @@ document.addEventListener('click', (event) => {
         else if (target.classList.contains('botaoFechar')) {
             // Encontra o elemento pai mais próximo
             divMae.classList.add('out')
+            divMae.classList.remove('enter')
             setTimeout(()=> {
                 if (divMae.classList.contains('status-executando')) {
-                    divMae.classList.remove('out')
-                    divMae.classList.remove('collapsed')
+                    setTimeout(()=> {
+                        divMae.classList.remove('out')
+                        divMae.classList.add('enter')
+                        divMae.classList.remove('collapsed')
+                    }, 10000);
                 }
                 else {
                     telaRotinas.removeChild(divMae)

@@ -8,6 +8,7 @@ var hInputDate = document.getElementById('searchInputDate');
 const limpaHInputDate = document.getElementById('limpaHInputDate');
 var hInputName = document.getElementById('searchInputName');
 const limpaHInputName = document.getElementById('limpaHInputName');
+var telaTitulo = document.getElementById('telaTitulo');
 
 const botaoFiltroGeral = document.getElementById('bolinhaGeral');
 const botaoFiltroOciosa = document.getElementById('bolinhaOcioso');
@@ -301,29 +302,14 @@ historicoBotao.addEventListener('click', ()=> {
         }
         setTimeout(()=> {
             historicoTela.innerHTML = ``
+            if (document.querySelectorAll(".rectangle.out").length === 3) {
+                telaTitulo.classList.remove('invisible1');
+            }
         }, 500);
     }
     else {
+        telaTitulo.classList.add('invisible1');
         filtraHistorico();
-        // desce para a base da página e da tela de histórico
-        setTimeout(()=> {
-            if (screenWidth < 2500) {
-                const target = document.getElementById('targetHistorico');
-                const targetPosition = target.offsetTop; /* Pega a posição do topo do elemento */
-            
-                window.scrollTo({
-                    top: targetPosition, 
-                    behavior: 'smooth' /* Scroll suave */
-                });
-            }
-            else {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth' // Para uma rolagem suave, adicione essa opção
-                });
-            }
-        }, 500);
-
     }
 })
 // Adiciona o evento de clique na tela de histórico para evitar a propagação
