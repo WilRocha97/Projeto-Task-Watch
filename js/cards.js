@@ -153,6 +153,7 @@ document.addEventListener('click', (event) => {
             setTimeout(()=> {
                 if (divMae.classList.contains('status-executando')) {
                     setTimeout(()=> {
+                        telaTitulo.classList.add('invisible1');
                         divMae.classList.remove('out')
                         divMae.classList.add('enter')
                         divMae.classList.remove('collapsed')
