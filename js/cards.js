@@ -1,6 +1,8 @@
 import {animacaoBotao} from './main.js';
 import {decoracao} from './temas.js';
 
+var telaTitulo = document.querySelector("#telaTitulo");
+var telaTituloFundo = document.querySelector(".fundoGradiente");
 var telaRotinas = document.getElementById('telaRotinas');
 var telaHistorico = document.getElementById('targetHistorico');
 const telaGaleria = document.getElementById('telaGaleria');
@@ -154,6 +156,7 @@ document.addEventListener('click', (event) => {
                 if (divMae.classList.contains('status-executando')) {
                     setTimeout(()=> {
                         telaTitulo.classList.add('invisible1');
+                        telaTituloFundo.classList.add('invisible1');
                         divMae.classList.remove('out')
                         divMae.classList.add('enter')
                         divMae.classList.remove('collapsed')

@@ -15,6 +15,8 @@ const telaGaleria = document.getElementById('telaGaleria');
 const telaRotinas = document.getElementById('telaRotinas');
 var mainHistorico = document.getElementById('targetHistorico');
 var cInputCard = document.getElementById('searchInputCard');
+var telaTitulo = document.querySelector("#telaTitulo");
+var telaTituloFundo = document.querySelector(".fundoGradiente");
 const limpaCInputCard = document.getElementById('limpaCInputCard');
 
 const maisInfos = [{botao:'.maisInfo', nomeBotaoMini:'▼ Execução', nomeBotaoMaxi:'▲ Execução', conteudo:'.resumoResultados'}, 
@@ -94,9 +96,11 @@ function verificaTelaVazia() {
     if (mainHistorico.classList.contains('collapsed')) {
         if (!document.querySelector(".rectangle.enter")) {
             telaTitulo.classList.remove('invisible1');
+            telaTituloFundo.classList.remove('invisible1');
         }
         else {
             telaTitulo.classList.add('invisible1');
+            telaTituloFundo.classList.add('invisible1');
         }
     }
 };

@@ -139,6 +139,8 @@ body {
 }
 .invisible1 {
     opacity: 0 !important;
+    min-height: 0 !important;
+    max-height: 0 !important;
 }
 .invisible2 {
     opacity: 0 !important;
@@ -279,7 +281,7 @@ button.clicked, .MenuBotao.clicked {
     justify-content: center;
     font-size: 0.8rem;
     padding: 5rem 0 1rem 0;
-    margin: 70vh 2% 2% 2%;
+    margin: 65vh 2% 2% 2%;
 }
 .rodapeConteudo {
     display: flex;
