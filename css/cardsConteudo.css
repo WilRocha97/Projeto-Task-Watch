@@ -8,10 +8,11 @@
     font-size: 0.75rem;
     font-weight: 600;
     scale: 1;
+    opacity: 1;
     max-width: fit-content;
     max-height: 500px;
     text-shadow: 0 0 1px white;
-    transition: margin var(--transicao-link), max-width 1s, max-height var(--transicao-link), text-shadow var(--transicao-link);
+    transition: margin var(--transicao-link), max-width 1s, max-height var(--transicao-link), text-shadow var(--transicao-link), opacity var(--transicao-link), scale var(--transicao-link);
 }
 .maisInfo:hover, .maisInfo2:hover {
     text-shadow: 0 0 5px white;
@@ -63,8 +64,8 @@
     opacity: 0;
     max-width: 300px;
     max-height: 0;
-    transition: padding var(--transicao-link), opacity var(--transicao-link), max-width var(--transicao-link), max-height var(--transicao-link),
-                color var(--transicao-link), text-shadow var(--transicao-link);
+    transition: padding var(--transicao-link-2), opacity var(--transicao-link-2), max-width var(--transicao-link-2), max-height var(--transicao-link-2),
+                color var(--transicao-link-2), text-shadow var(--transicao-link-2);
 }
 .content:not(:empty) {
     max-height: 200px;
