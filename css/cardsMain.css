@@ -52,8 +52,7 @@
     color: gray !important;
     border: var(--borda-card) solid var(--sombra-escura) !important;
     text-shadow: none !important;
-}
-.sortable-ghost .alerta, 
+} 
 .sortable-ghost .botaoFixar,
 .sortable-ghost .botaoFechar,
 .sortable-ghost .maisInfo,

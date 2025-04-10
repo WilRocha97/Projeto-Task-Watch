@@ -73,17 +73,6 @@
     opacity: 1;
 }
 
-.alerta {
-    z-index: -1;
-    position: absolute;
-    bottom: 3.5rem;
-    right: 0;
-    font-size: 10rem;
-    font-weight: 600;
-    opacity: 0.4 !important;
-    transition: var(--transicao-link);
-}
-
 #decoracao {
     position: absolute;
     overflow: visible;
