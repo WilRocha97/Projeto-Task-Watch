@@ -26,7 +26,8 @@
 
 .tituloContainer {
     overflow: hidden;
-    width: 275px; /* Ajuste a largura conforme necessário */
+    width: 275px;
+    border-radius: var(--borda-botao);
 }
 .tituloWrapper {
     position: relative; /* Torna o contêiner um contexto de posicionamento */
