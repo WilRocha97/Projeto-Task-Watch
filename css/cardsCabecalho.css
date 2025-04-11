@@ -121,7 +121,7 @@
 }
 #mensagemAlerta {
     max-height: 30px;
-    margin-left: 3px;
+    margin: 0 3px;
     overflow: auto;
 }
 .porcentagem {
