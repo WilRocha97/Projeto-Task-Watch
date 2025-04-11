@@ -75,46 +75,68 @@
     --luz-menu: #ebebebad;
 }
 
+body {
+    --scroll-background: var(--cor-vidro-2);
+    --scroll-hover: var(--cor-destaque);
+    --scroll-button-heigh: 20px;
+    --scroll-bar-width: 6px;
+    --scroll-color: #858585;
+}
+.telaHistoricoConteudo, .dicaContainer, .galeriaContainer {
+    --scroll-background: transparent;
+    --scroll-hover: var(--cor-destaque);
+    --scroll-button-heigh: 20px;
+    --scroll-bar-width: 6px;
+    --scroll-color: #858585;
+}
+.scrollInfo {
+    --scroll-background: transparent;
+    --scroll-hover: white;
+    --scroll-button-heigh: 6px;
+    --scroll-bar-width: 4px;
+    --scroll-color: #dbdbdb73;
+}
+
 /* Estilizando a barra de rolagem */
-body::-webkit-scrollbar {
-    width: 6px; /* Largura da barra de rolagem */
+.scroll::-webkit-scrollbar {
+    width: var(--scroll-bar-width); /* Largura da barra de rolagem */
 }
-body::-webkit-scrollbar-track {
-    background: var(--cor-vidro-2); /* Cor do fundo da barra de rolagem */
+.scroll::-webkit-scrollbar-track {
+    background: var(--scroll-background); /* Cor do fundo da barra de rolagem */
 }
-body::-webkit-scrollbar-thumb {
-    background-color: #818181; /* Cor da barra de rolagem */
+.scroll::-webkit-scrollbar-thumb {
+    background-color: var(--scroll-color); /* Cor da barra de rolagem */
     border-radius: 6px; /* Arredondamento das bordas */
     border: none; /* Espaçamento entre a barra e o conteúdo */
     transition: var(--transicao-link);
 }
-body::-webkit-scrollbar-thumb:hover {
-    background: var(--cor-destaque);
+.scroll::-webkit-scrollbar-thumb:hover {
+    background: var(--scroll-hover);
     border: none;
 }
 /* Buttons */
-body::-webkit-scrollbar-button:single-button {
-    background-color: var(--cor-vidro-2);
+.scroll::-webkit-scrollbar-button:single-button {
+    background-color: var(--scroll-background);
     display: block;
     border-style: solid;
-    height: 20px;
-    width: 6px;
+    height: var(--scroll-button-heigh);
+    width: 5px;
 }
 /* Up */
-body::-webkit-scrollbar-button:single-button:vertical:decrement {
-    border-width: 0 3px 10px 3px;
-    border-color: transparent transparent #818181 transparent;
+.scroll::-webkit-scrollbar-button:single-button:vertical:decrement {
+    border-width: 0 2px 8px 2px;
+    border-color: transparent transparent var(--scroll-color) transparent;
 }
-body::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
-    border-color: transparent transparent var(--cor-destaque) transparent;
+.scroll::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
+    border-color: transparent transparent var(--scroll-hover) transparent;
 }
 /* Down */
-body::-webkit-scrollbar-button:single-button:vertical:increment {
-    border-width: 10px 3px 0 3px ;
-    border-color: #818181 transparent transparent transparent;
+.scroll::-webkit-scrollbar-button:single-button:vertical:increment {
+    border-width: 8px 2px 0 2px ;
+    border-color: var(--scroll-color) transparent transparent transparent;
 }
-body::-webkit-scrollbar-button:vertical:single-button:increment:hover {
-    border-color: var(--cor-destaque) transparent transparent transparent;
+.scroll::-webkit-scrollbar-button:vertical:single-button:increment:hover {
+    border-color: var(--scroll-hover) transparent transparent transparent;
 }
 
 body {
