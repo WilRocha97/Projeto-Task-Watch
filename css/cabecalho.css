@@ -145,19 +145,24 @@
 
 .dicaContainer, .galeriaContainer {
     overflow: auto;
+    display: flex;
+    flex-direction: column;
+}
+.dicaContainer button, .galeriaContainer button {
+    position: fixed;
+    margin-right: 10px;
 }
 .dicaTela, .galeriaTela {
     align-self: center;
     margin: 5px 30px 30px 30px;
     max-width: 80%;
-    max-height: 75vh;
+    max-height: 85vh;
     transition: margin var(--transicao-link), max-height var(--transicao-link), opacity var(--transicao-link), padding var(--transicao-link);
 }
-.dicaTela h1 {
-    font-size: 1.2em;
-}
+
 .ClassTextoDica, .ClassTextoGaleria {
     padding: 20px;
+    margin-top: 10px;
 }
 
 .galeriaTela {
@@ -238,7 +243,13 @@
     }
 
     .dicaTela, .galeriaTela {
-        max-height: 65vh;
+        max-height: 85vh;
+    }
+    
+    .modal-content {
+        right: 20px;
+        margin: 80% 0 0 0;
+        position: fixed;
     }
 }
 @media (min-width: 721px) and (max-width: 1000px) {
@@ -259,7 +270,7 @@
 
     .dicaTela, .galeriaTela {
         max-width: 95%;
-        max-height: 65vh;
+        max-height: 85vh;
         margin: 30px 15px;
     }
 
