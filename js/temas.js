@@ -38,7 +38,7 @@ function definevariantesImagens() {
         variantesImagens = 12;
         feriado = 'carnaval'
     }
-    else if ((mes === 4 && dia >= 1) && (mes === 4 && dia <= 30)) {
+    else if ((mes === 4 && dia >= 1) && (mes === 4 && dia <= 22)) {
         variantesImagens = 12;
         feriado = 'pascoa'
     }

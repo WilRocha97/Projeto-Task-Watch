@@ -46,12 +46,14 @@
     max-height: 0;
 }
 .telaDadoConteudo {
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     max-height: 36px;
 }
 .telaResumoConteudo {
     max-height: 143px;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     transition: max-height var(--transicao-link);
 }
 .telaResumoConteudo.large {
