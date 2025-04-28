@@ -24,11 +24,14 @@
     padding: 0 0 4px 4px;
 }
 
-.resumoResultados, .resumoResultados2 {
+.resumoResultados, .resumoResultados2, .resumoErroInfo {
     display: flex;
     flex-direction: column;
     opacity: 1;
     transition: opacity var(--transicao-link), margin-bottom var(--transicao-link), padding var(--transicao-link), max-height var(--transicao-link);
+}
+.resumoErroInfo {
+    max-height: 500px;
 }
 .resumoResultados {
     max-height: 125px;
@@ -39,21 +42,21 @@
 .resumoResultados2.large {
     max-height: 342px;
 }
-.resumoResultados.collapsed, .resumoResultados2.collapsed {
+.resumoResultados.collapsed, .resumoResultados2.collapsed, .resumoErroInfo.collapsed {
     opacity: 0;
     padding: 0;
     margin-bottom: 0;
     max-height: 0;
 }
-.telaDadoConteudo {
+.telaDadoConteudo, .telaResumoConteudo, .telaErroInfo {
     overflow-y: auto;
     overflow-x: hidden;
+}
+.telaDadoConteudo {
     max-height: 36px;
 }
 .telaResumoConteudo {
     max-height: 143px;
-    overflow-y: auto;
-    overflow-x: hidden;
     transition: max-height var(--transicao-link);
 }
 .telaResumoConteudo.large {
@@ -64,7 +67,6 @@
     font-size: 0.8em;
     padding: 0;
     opacity: 0;
-    max-width: 300px;
     max-height: 0;
     transition: padding var(--transicao-link-2), opacity var(--transicao-link-2), max-width var(--transicao-link-2), max-height var(--transicao-link-2),
                 color var(--transicao-link-2), text-shadow var(--transicao-link-2);

@@ -176,7 +176,7 @@ body {
     padding: 0 !important;
     margin: 0 !important;
     height: 0 !important;
-    min-width: 0 !important;
+    width: 0 !important;
 }
 
 .fundo, .fundoInvertido {
@@ -210,6 +210,10 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
+}
+.telaRotinas {
+    display: flex;
+    flex-direction: column;
 }
 
 .telaLogin {

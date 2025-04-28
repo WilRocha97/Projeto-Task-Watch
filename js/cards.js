@@ -4,6 +4,7 @@ import {decoracao} from './temas.js';
 var telaTitulo = document.querySelector("#telaTitulo");
 var telaTituloFundo = document.querySelector(".fundoGradiente");
 var telaRotinas = document.getElementById('telaRotinas');
+var telaRotinasExecutando = document.getElementById('telaRotinasExecutando');
 var telaHistorico = document.getElementById('targetHistorico');
 const telaGaleria = document.getElementById('telaGaleria');
 const menu = document.getElementById('menu');
@@ -61,11 +62,9 @@ function atualizaLocalStorage() {
     localStorage.setItem("cardsFixados", JSON.stringify(cardsFixados))
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    var container = document.getElementById('telaRotinas');
+function sortable(container) {
     var delay = 300; // 300ms de delay
     var timeout;
-
     new Sortable(container, {
         animation: 150,
         handle: '.rectangle',
@@ -97,6 +96,10 @@ document.addEventListener('DOMContentLoaded', function() {
             atualizaLocalStorage()
         }
     });
+}
+document.addEventListener('DOMContentLoaded', function() {
+    sortable(telaRotinas)
+    sortable(telaRotinasExecutando)
 });
 
 // ouvinte para os cliques nos cartões
@@ -109,6 +112,7 @@ document.addEventListener('click', (event) => {
         const maisInfo = divMae.querySelector('#resumoResultados');
         const telaResumoMaisInfo2 = divMae.querySelector('.telaResumoConteudo');
         const maisInfo2 = divMae.querySelector('#resumoResultados2');
+        const erroInfo = divMae.querySelector('#erroInfo');
 
         divMae.classList.remove('buscaCard');
 
@@ -146,7 +150,16 @@ document.addEventListener('click', (event) => {
                 }
             }
         }
-
+        else if (target.classList.contains('botaoInfo')) {
+            if (erroInfo.classList.contains('collapsed')) {
+                erroInfo.classList.remove('collapsed')
+                divMae.classList.add('extraLarge')
+            }
+            else {
+                erroInfo.classList.add('collapsed')
+                divMae.classList.remove('extraLarge')
+            }
+        }
         // verifica se o click foi no botão de fechar
         else if (target.classList.contains('botaoFechar')) {
             // Encontra o elemento pai mais próximo
@@ -228,11 +241,21 @@ document.addEventListener('click', (event) => {
                 target.classList.toggle('collapsed');
             }
         }
-        // Controla o tamanho máximo do card para otimizar a animação de minimiza-lo
-        if (maisInfo.classList.contains('collapsed') && maisInfo2.classList.contains('collapsed') || divMae.classList.contains('collapsed')) {
-            divMae.classList.remove('large')
-            divMae.classList.remove('medium')
+
+        if (!erroInfo.classList.contains('collapsed') && !divMae.classList.contains('collapsed')) {
+            divMae.classList.add('extraLarge') 
         }
+
+        // Controla o tamanho máximo do card para otimizar a animação de minimiza-lo
+        if (maisInfo.classList.contains('collapsed') && 
+            maisInfo2.classList.contains('collapsed') && 
+            erroInfo.classList.contains('collapsed') || 
+            divMae.classList.contains('collapsed')) 
+            {
+                divMae.classList.remove('extraLarge')
+                divMae.classList.remove('large')
+                divMae.classList.remove('medium')
+            }
         else if (!maisInfo.classList.contains('collapsed') && maisInfo2.classList.contains('collapsed')) {
             divMae.classList.remove('large')
             divMae.classList.add('medium') 

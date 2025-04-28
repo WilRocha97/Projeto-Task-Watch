@@ -22,7 +22,12 @@
 }
 
 .rotinas {
-    padding: 60px 12px 90px 12px;
+    padding: 60px 12px 0 12px;
+}
+.rotinasExecutando {
+    padding: 10px 12px 0 12px;
+}
+.rotinas, .rotinasExecutando {
     display: flex;
     justify-content: center;
     align-items: baseline;
@@ -31,12 +36,13 @@
     transition: height var(--transicao-link), padding var(--transicao-link);
 }
 .rotinasExpandida {
-    padding: 130px 12px 90px 12px;
+    padding: 130px 12px 0 12px;
 }
 .rectangle {
     color: white;
     border-radius: var(--borda-botao);
     max-width: 0;
+    min-width: 0;
     max-height: 0;
     cursor: pointer;
     border: 0;
@@ -55,6 +61,10 @@
     opacity: 1;
     scale: 1;
     overflow: hidden;
+}
+.rectangle.enter.extraLarge {
+    max-height: 550px;
+    max-width: 583px !important; 
 }
 .rectangle.enter.large {
     max-height: 467px; 
@@ -83,6 +93,7 @@
 }
 .rectangle.collapsed #decoracao,
 .rectangle.collapsed .botaoFechar,
+.rectangle.collapsed .botaoInfo,
 .rectangle.collapsed .maisInfo,
 .rectangle.collapsed .maisInfo2,
 .rectangle.collapsed .content,
@@ -119,7 +130,7 @@
         max-height: 30px;
     }
     .rotinasExpandida {
-        padding: 390px 0 90px 0;
+        padding: 390px 0 0 0;
     }
 }
 
@@ -129,10 +140,11 @@
         margin: 10px 0 0 0;
     }
     .rotinas {
-        padding: 80px 0 90px 0;
+        padding: 80px 0 0 0;
     }
+    
     .rotinasExpandida {
-        padding: 320px 0 90px 0;
+        padding: 320px 0 0 0;
     }
     .cabecalhoCardBotoes {
         gap: 10px;
@@ -167,6 +179,6 @@
 
 @media (max-width: 1286px) and (min-width: 1001px) {
     .rotinasExpandida {
-        padding: 190px 12px 90px 12px;
+        padding: 190px 12px 0 12px;
     }
 }
