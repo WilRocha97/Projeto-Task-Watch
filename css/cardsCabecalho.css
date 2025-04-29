@@ -26,7 +26,6 @@
 
 .tituloContainer {
     overflow: hidden;
-    width: 275px;
     border-radius: var(--borda-botao);
 }
 .tituloWrapper {
