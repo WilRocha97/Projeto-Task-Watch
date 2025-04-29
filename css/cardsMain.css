@@ -68,7 +68,7 @@
     max-width: 583px !important; 
 }
 .rectangle.enter.large {
-    max-height: 467px; 
+    max-height: 467px;
 }
 .rectangle.enter.medium {
     max-height: 250px; 
@@ -76,6 +76,8 @@
 .rectangle.out {
     max-width: 0 !important;
     max-height: 0 !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
     border: 0 !important;
     padding: 0 !important;
     margin: 0 !important;

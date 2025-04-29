@@ -180,7 +180,7 @@ document.addEventListener('click', (event) => {
                 }
             }, 500);
         }
-        else if (target.classList.contains('maisInfo')) {
+        else if (target.classList.contains('maisInfo')){
             if (!target.classList.contains('invisible2')) {
                 animacaoBotao(target)
     
@@ -205,10 +205,10 @@ document.addEventListener('click', (event) => {
                 }
             }
         }
-        else if (target.classList.contains('maisInfo2')) {
+        else if (target.classList.contains('maisInfo2')){
             if (!target.classList.contains('invisible2')) {
                 animacaoBotao(target)
-    
+                
                 if (maisInfo.classList.contains('collapsed')) {
                     telaResumoMaisInfo2.classList.add('large')
                     maisInfo2.classList.add('large')
@@ -217,7 +217,7 @@ document.addEventListener('click', (event) => {
                     telaResumoMaisInfo2.classList.remove('large')
                     maisInfo2.classList.remove('large')
                 }
-                
+    
                 // minimiza a tela de ocorrências dentro do card
                 if (maisInfo2.classList.contains('collapsed')) {
                     maisInfo2.classList.remove('collapsed')

@@ -32,6 +32,7 @@
 }
 .resumoErroInfo {
     max-height: 500px;
+    transition: max-height var(--transicao-link-2) ease-out;
 }
 .resumoResultados {
     max-height: 125px;
@@ -47,6 +48,7 @@
     padding: 0;
     margin-bottom: 0;
     max-height: 0;
+    transition: max-height var(--transicao-link);
 }
 .telaDadoConteudo, .telaResumoConteudo, .telaErroInfo {
     overflow-y: auto;
