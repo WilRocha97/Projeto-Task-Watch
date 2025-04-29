@@ -9,6 +9,7 @@
 } 
 .sortable-ghost .botaoFixar,
 .sortable-ghost .botaoFechar,
+.sortable-ghost .botaoInfo,
 .sortable-ghost .maisInfo,
 .sortable-ghost .maisInfo2,
 .sortable-ghost .barraLoading {
@@ -63,7 +64,7 @@
     overflow: hidden;
 }
 .rectangle.enter.extraLarge {
-    max-height: 550px;
+    max-height: 550px !important;
     max-width: 583px !important; 
 }
 .rectangle.enter.large {
@@ -149,7 +150,7 @@
     .cabecalhoCardBotoes {
         gap: 10px;
     }
-    .botaoFechar, .botaoFixar {
+    .botaoFechar, .botaoFixar, .botaoInfo {
         font-size: large;
     }
 
