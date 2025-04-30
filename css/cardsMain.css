@@ -135,6 +135,10 @@
     .rotinasExpandida {
         padding: 390px 0 0 0;
     }
+    .botaoFechar, .botaoFixar, .botaoInfo {
+        font-size: 1.2em !important;
+        font-weight: 100 !important;
+    }
 }
 
 @media (max-width: 1000px) and (min-width: 650px) {
@@ -154,6 +158,7 @@
     }
     .botaoFechar, .botaoFixar, .botaoInfo {
         font-size: large;
+        font-weight: bold;
     }
 
     @keyframes luzBotaoCard {

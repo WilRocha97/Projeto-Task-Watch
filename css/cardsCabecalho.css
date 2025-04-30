@@ -14,7 +14,7 @@
 .dispositivo, .titulo, .botaoFechar, .botaoFixar, .botaoInfo  {
     font-weight: 600;
     font-size: 1em;
-    padding:  4px 4px 5px 4px;
+    padding:  4px 5px 5px 5px;
     opacity: 1;
     scale: 1;
     white-space: nowrap;
@@ -58,9 +58,9 @@
 }
 
 .botaoFechar, .botaoFixar, .botaoInfo {
+    font-weight: 600;
+    font-size: 0.8em;
     text-align: center;
-    font-weight: 100;
-    font-size: 0.9em;
     color: white;
     background: none;
     border: none;
@@ -69,13 +69,11 @@
     height: 13px;
     transition: var(--transicao-link);
 }
-.botaoFechar:hover, .botaoFixar:hover, .botaoInfo:hover {
-    background-color: white;
-}
 .botaoFixar:hover {
-    color: black;
+    text-shadow: 0 0 5px white;
 }
 .botaoFechar:hover, .botaoInfo:hover {
+    text-shadow: 0 0 5px red;
     color: red;
 }
 .botaoFechar.nh:hover, .botaoFixar.nh:hover, .botaoInfo.nh:hover {
@@ -83,6 +81,7 @@
     text-shadow: 0 0 0 transparent;
     color: white;
 }
+
 .botaoFixado.nh:hover {
     text-shadow: 0 0 5px white,
                  0 0 7px white;

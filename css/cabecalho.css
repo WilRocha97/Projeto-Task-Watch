@@ -97,6 +97,9 @@
     align-self: center;
 }
 
+#dica {
+    cursor: help;
+}
 .dicaContainer, .galeriaContainer {
     overflow: auto;
     display: flex;
@@ -106,6 +109,7 @@
     position: fixed;
     margin-right: 10px;
 }
+
 .dicaTela, .galeriaTela {
     align-self: center;
     margin: 5px 30px 30px 30px;
