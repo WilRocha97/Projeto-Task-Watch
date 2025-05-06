@@ -139,6 +139,10 @@
         font-size: 1.2em !important;
         font-weight: 100 !important;
     }
+    .rectangle.collapsed .botaoFixado {
+        left: 26% !important;
+        top: 7% !important;
+    }
 }
 
 @media (max-width: 1000px) and (min-width: 650px) {
