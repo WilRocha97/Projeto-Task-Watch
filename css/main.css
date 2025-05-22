@@ -20,10 +20,10 @@
     --stripe-color: #000000;
     --filter: blur(10px) opacity(50%) saturate(200%);
 
-    --animacao-bota-1: #0f3b70;
-    --animacao-bota-2: #63720c;
-    --animacao-bota-3: #660f33;
-    --animacao-bota-4: #0f552e;
+    --animacao-bota-1: rgb(31, 100, 184);
+    --animacao-bota-2: #8b8d15;
+    --animacao-bota-3: #a52158;
+    --animacao-bota-4: #1b8d4f;
     
     --cor-executando: #00cf91;
     --cor-erro: #da0101;
@@ -85,13 +85,6 @@
     --luz-menu: #ebebebad;
 }
 
-body {
-    --scroll-background: var(--cor-vidro-2);
-    --scroll-hover: var(--cor-destaque);
-    --scroll-button-heigh: 20px;
-    --scroll-bar-width: 6px;
-    --scroll-color: #858585;
-}
 .telaHistoricoConteudo, .dicaContainer, .galeriaContainer {
     --scroll-background: transparent;
     --scroll-hover: var(--cor-destaque);
@@ -150,6 +143,12 @@ body {
 }
 
 body {
+    --scroll-background: var(--cor-vidro-2);
+    --scroll-hover: var(--cor-destaque);
+    --scroll-button-heigh: 20px;
+    --scroll-bar-width: 6px;
+    --scroll-color: #858585;
+
     background: linear-gradient(-50deg, var(--cor-vidro-2), var(--cor-vidro));
     color: var(--cor-texto);
     min-height: 100vh;
@@ -162,6 +161,10 @@ body {
     font-size: 0.9em;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+button {
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
 }
 
 .invisible {
@@ -302,10 +305,10 @@ body {
             inset 0 0 0 #ffffff00;
     }
     40% {
-        box-shadow: inset 2px 2px 20px var(--animacao-bota-1),
-                inset -2px -2px 20px var(--animacao-bota-3),
-                inset -2px 2px 20px var(--animacao-bota-4),
-                inset 2px -2px 20px var(--animacao-bota-2),
+        box-shadow: inset 2px 2px 30px var(--animacao-bota-1),
+                inset -2px -2px 30px var(--animacao-bota-3),
+                inset -2px 2px 30px var(--animacao-bota-4),
+                inset 2px -2px 30px var(--animacao-bota-2),
                 0 0 5px rgba(255, 255, 255, 0.349);
     }
     100% {
