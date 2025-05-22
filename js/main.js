@@ -49,6 +49,17 @@ export function animacaoBotao(target) {
     setTimeout(() => {
         target.classList.remove('clicked');
     }, 500); // Tempo da animação
+    
+    setTimeout(() => {
+        if (target.classList.contains('MenuBotaoActive')) {
+            target.classList.remove('MenuBotaoActive')
+            target.classList.add('MenuBotaoDesactive')
+        }
+        else if (target.classList.contains('MenuBotaoDesactive')) {
+            target.classList.remove('MenuBotaoDesactive')
+            target.classList.add('MenuBotaoActive')       
+        }
+    }, 1000);
 }
 
 function updateClock() {
