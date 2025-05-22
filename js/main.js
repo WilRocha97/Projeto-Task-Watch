@@ -1,3 +1,4 @@
+var relogio = document.getElementById('clock');
 const cartoesFixados = document.getElementById('controlarFixados');
 const encolheCard = document.getElementById('encolherCard');
 const explodeCard = document.getElementById('explodirCard');
@@ -84,7 +85,7 @@ function updateClock() {
 
     var formattedTime = dayOfWeek + ", " + day + " de " + monthName + " de " + year + " - " + hours + ":" + minutes;
     
-    document.getElementById('clock').textContent = formattedTime;
+    relogio.textContent = formattedTime;
 
     var screenWidth = window.innerWidth;
     if (screenWidth < 720) {

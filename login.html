@@ -7,39 +7,46 @@
     <link rel="icon" href="assets/avanco.png" type="image/gif">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/background.css">
     <link rel="stylesheet" href="css/cabecalho.css">
     <title>Task Watch</title>
     <meta name="title" content="Task Watch">
     <meta name="description" content="Sistema de monitoramento de rotinas automáticas">
 </head>
 <body class="dark"> 
+    <section id="telaTitulo" class='wrapper'>
+        <div class='fundoGradiente'>
+        </div>
+    </section>
+
     <div class="inicioTitulo">
         Task Watch :)
     </div>
 
     <div class="telaLogin">
-        <div id="inputUsuario" class="fundo">
+        <div id="inputUsuario" class="fundoSolido">
             <input type="text" id="inputUsuarioInfo" class="cInputUsuario" placeholder="Usuário" title="Usuário" style="width: 200px;">
-            <button id="limpaCInputUsuario" class="MenuBotao">⨉</button>
+            <button id="limpaCInputUsuario" class="cmb MenuBotao" style="color: red">⨉</button>
         </div>
-        <div id="inputSenha" class="fundo">
+        <div id="inputSenha" class="fundoSolido">
             <input type="password" id="inputSenhaInfo" class="cInputSenha" placeholder="Senha" title="Senha" style="width: 200px;">
-            <button id="limpaCInputSenha" class="MenuBotao">⨉</button>
+            <button id="limpaCInputSenha" class="cmb MenuBotao" style="color: red">⨉</button>
         </div>
-        <div class="menu fundo">
-            <button id="inputEnter" class="MenuBotao entrar">Entrar</button>
-            <button id="inputRecuperar" class="MenuBotao">Recuperar usuário</button>
-            <button id="inputRegistrar" class="MenuBotao">Criar usuário</button>
-            <button id="toggleDarkMode" class="botaoTitulo MenuBotao" title="Tema do site"><img class="cmb modoImagem" src="assets/moon.png" alt="Tema do site"></button>
+        <div class="menu fundoSolido">
+            <button id="inputEnter" class="cmb MenuBotao entrar">Entrar</button>
+            <button id="inputRecuperar" class="cmb MenuBotao">Recuperar usuário</button>
+            <button id="inputRegistrar" class="cmb MenuBotao">Criar usuário</button>
+            <button id="toggleDarkMode" class="cmb MenuBotao" title="Mudar para modo claro"><img class="cmb modoImagem" src="assets/moon.png" alt="Modo escuro"></button>
         </div>
     </div>
 
     <footer>
         <div class="rodapeConteudo">
-            <p class="rodapeLinha">🏳️‍🌈 Desenvolvido por <a class="link__padrao" href="https://wilrocha97.github.io/portfolio/" target="_blank" rel="noopener noreferrer"> Willian Rodrigues </a></p> 
+            <p class="rodapeLinha">🏳️‍🌈 Desenvolvido por <a class="linkPadrao" href="https://wilrocha97.github.io/portfolio/" target="_blank" rel="noopener noreferrer"> Willian Rodrigues </a></p> 
         </div>
     </footer>
 
     <script src="js/modo.js"></script>
+    <script type="module" src="js/mainLogin.js"></script>
 </body>
 </html>

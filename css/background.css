@@ -8,6 +8,7 @@
 }
 
 .wrapper {
+    z-index: -2;
     width: 100%;
     height: auto;
     position: absolute;
@@ -77,5 +78,5 @@
     font-size: calc(1rem - -5vw);
     position: relative;
     mix-blend-mode: difference;
-    color: white;
+    color: var(--cor-texto);
 }
