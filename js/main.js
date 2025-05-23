@@ -16,6 +16,7 @@ const telaGaleria = document.getElementById('telaGaleria');
 const telaRotinas = document.getElementById('telaRotinas');
 var mainHistorico = document.getElementById('targetHistorico');
 var cInputCard = document.getElementById('searchInputCard');
+const buscaCInputCard = document.getElementById('buscaCInputCard');
 var telaTitulo = document.querySelector("#telaTitulo");
 var telaTituloFundo = document.querySelector(".fundoGradiente");
 const limpaCInputCard = document.getElementById('limpaCInputCard');
