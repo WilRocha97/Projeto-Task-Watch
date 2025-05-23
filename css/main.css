@@ -21,9 +21,9 @@
     --filter: blur(10px) opacity(50%) saturate(200%);
 
     --animacao-bota-1: rgb(31, 100, 184);
-    --animacao-bota-2: #8b8d15;
+    --animacao-bota-2: #b4a51e;
     --animacao-bota-3: #a52158;
-    --animacao-bota-4: #1b8d4f;
+    --animacao-bota-4: #2fc974;
     
     --cor-executando: #00cf91;
     --cor-erro: #da0101;
@@ -55,7 +55,7 @@
     --filter: blur(10px) invert(100%);
 
     --animacao-bota-1: #4b9bfd;
-    --animacao-bota-2: #e4ff48;
+    --animacao-bota-2: #ffd448;
     --animacao-bota-3: #ff5fa2;
     --animacao-bota-4: #51fc9e;
 
@@ -305,10 +305,10 @@ button {
             inset 0 0 0 #ffffff00;
     }
     40% {
-        box-shadow: inset 2px 2px 30px var(--animacao-bota-1),
-                inset -2px -2px 30px var(--animacao-bota-3),
-                inset -2px 2px 30px var(--animacao-bota-4),
-                inset 2px -2px 30px var(--animacao-bota-2),
+        box-shadow: inset 4px 0 25px var(--animacao-bota-1),
+                inset -4px 0 25px var(--animacao-bota-3),
+                inset 0 4px 35px var(--animacao-bota-4),
+                inset 0 -4px 35px var(--animacao-bota-2),
                 0 0 5px rgba(255, 255, 255, 0.349);
     }
     100% {
@@ -326,31 +326,31 @@ button {
             inset 0 0 0 #ffffff00;
     }
     40% {
-        box-shadow: inset 2px 2px 30px var(--animacao-bota-2),
-                inset -2px -2px 30px var(--animacao-bota-1),
-                inset -2px 2px 30px var(--animacao-bota-3),
-                inset 2px -2px 30px var(--animacao-bota-4),
+        box-shadow: inset 4px 0 15px var(--animacao-bota-4),
+                inset -4px 0 15px var(--animacao-bota-2),
+                inset 0 4px 25px var(--animacao-bota-1),
+                inset 0 -4px 25px var(--animacao-bota-3),
                 0 0 5px rgba(255, 255, 255, 0.349);
     }
     100% {
-        box-shadow: inset 2px 2px 20px var(--animacao-bota-1),
-                inset 2px -2px 20px var(--animacao-bota-3),
-                inset -2px -2px 20px var(--animacao-bota-4),
-                inset -2px 2px 20px var(--animacao-bota-2);
+        box-shadow: inset 4px 0 15px var(--animacao-bota-1),
+                inset -4px 0 15px var(--animacao-bota-3),
+                inset 0 4px 25px var(--animacao-bota-4),
+                inset 0 -4px 25px var(--animacao-bota-2);
     }
 }
 @keyframes luzMenuDesactive {
     0% {
-        box-shadow: inset 2px 2px 20px var(--animacao-bota-1),
-                inset -2px -2px 20px var(--animacao-bota-3),
-                inset -2px 2px 20px var(--animacao-bota-4),
-                inset 2px -2px 20px var(--animacao-bota-2);
+        box-shadow: inset 4px 0 15px var(--animacao-bota-1),
+                inset -4px 0 15px var(--animacao-bota-3),
+                inset 0 4px 25px var(--animacao-bota-4),
+                inset 0 -4px 25px var(--animacao-bota-2);
     }
     40% {
-        box-shadow: inset 2px 2px 30px var(--animacao-bota-2),
-                inset -2px -2px 30px var(--animacao-bota-1),
-                inset -2px 2px 30px var(--animacao-bota-3),
-                inset 2px -2px 30px var(--animacao-bota-4),
+        box-shadow: inset 4px 0 15px var(--animacao-bota-4),
+                inset -4px 0 15px var(--animacao-bota-2),
+                inset 0 4px 25px var(--animacao-bota-1),
+                inset 0 -4px 25px var(--animacao-bota-3),
                 0 0 5px rgba(255, 255, 255, 0.349);
     }
     100% {

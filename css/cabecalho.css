@@ -78,25 +78,26 @@
 .bolinhaFinal {
     background-color: var(--cor-final); /* Cor da bolinha */
 }
+
 @keyframes carregandoBotao {
-    0% {
-        box-shadow: inset 2px 2px 30px var(--animacao-bota-2),
-                inset -2px -2px 30px var(--animacao-bota-1),
-                inset -2px 2px 30px var(--animacao-bota-3),
-                inset 2px -2px 30px var(--animacao-bota-4),
+    0%, 100% {
+        box-shadow: inset 4px 0 25px var(--animacao-bota-4),
+                inset -4px 0 25px var(--animacao-bota-2),
                 0 0 5px rgba(255, 255, 255, 0.349);
     }
-    50% {
-        box-shadow: inset 2px 2px 20px var(--animacao-bota-1),
-                inset 2px -2px 20px var(--animacao-bota-3),
-                inset -2px -2px 20px var(--animacao-bota-4),
-                inset -2px 2px 20px var(--animacao-bota-2);
+    25% {
+        box-shadow: inset 4px 0 25px var(--animacao-bota-2),
+                inset -4px 0 25px var(--animacao-bota-1),
+                0 0 5px rgba(255, 255, 255, 0.479);
     }
-    100% {
-        box-shadow: inset 2px 2px 30px var(--animacao-bota-2),
-                inset -2px -2px 30px var(--animacao-bota-1),
-                inset -2px 2px 30px var(--animacao-bota-3),
-                inset 2px -2px 30px var(--animacao-bota-4),
+    50% {
+        box-shadow: inset 4px 0 25px var(--animacao-bota-1),
+                inset -4px 0 25px var(--animacao-bota-3),
+                0 0 5px rgba(255, 255, 255, 0.479);
+    }
+    75% {
+        box-shadow: inset 4px 0 25px var(--animacao-bota-3),
+                inset -4px 0 25px var(--animacao-bota-4),
                 0 0 5px rgba(255, 255, 255, 0.349);
     }
 }
@@ -107,7 +108,7 @@
     position: absolute;
     width: 100%; /* Ajuste o tamanho da bolinha conforme necessário */
     height: 100%;
-    animation: carregandoBotao 1.5s infinite;
+    animation: carregandoBotao 2s infinite;
     transition: var(--transicao-link);
 }
 
@@ -118,10 +119,10 @@
 }
 #controlarFixados.active {
     opacity: 1;
-    box-shadow: inset 2px 2px 20px var(--animacao-bota-1),
-                inset -2px -2px 20px var(--animacao-bota-3),
-                inset -2px 2px 20px var(--animacao-bota-4),
-                inset 2px -2px 20px var(--animacao-bota-2);
+    box-shadow: inset 4px 0 15px var(--animacao-bota-1),
+                inset -4px 0 15px var(--animacao-bota-3),
+                inset 0 4px 25px var(--animacao-bota-4),
+                inset 0 -4px 25px var(--animacao-bota-2);
 }
 
 #toggleDarkMode{
