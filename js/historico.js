@@ -18,6 +18,7 @@ const botaoFiltroFechar = document.getElementById('bolinhaFechar');
 const botoesFiltro = document.querySelectorAll('.bFiltro');
 
 const historicoBotao = document.getElementById('historico');
+const carregandoHistorico = document.getElementById('carregandoHistorico');
 const historicoTelaContainer = document.getElementById('historicoTelaContainer');
 const historicoTela = document.getElementById('historicoTela');
 const mainHistorico = document.getElementById('targetHistorico');
@@ -58,6 +59,7 @@ function criaHistorico(data, rotina, ocorrencia) {
     historicoTela.appendChild(newElement);
 }
 function filtraHistorico(event='', ocorrencia='geral', page=1) {
+    carregandoHistorico.classList.remove('invisible')
     telaMenu.classList.add('invisible2');
     menu.innerHTML = 'Menu ▾'
     telaDica.classList.add('invisible2');
@@ -73,14 +75,10 @@ function filtraHistorico(event='', ocorrencia='geral', page=1) {
         filtro.classList.remove('clicado')
     });
 
-    // Exibe o spinner antes de carregar o histórico
-    document.getElementById('loading').classList.remove('invisible2');
-
     historicoTelaContainer.classList.add('collapsed');
     setTimeout(()=> {
         historicoTela.innerHTML = ''; // Limpa a tabela para novos dados
         fetchHistoricoFiltrado(ocorrencia, page)
-        // Oculta o spinner após os dados serem carregados
     }, 600);
     setTimeout(()=> {
         historicoTelaContainer.classList.remove('collapsed');
@@ -93,6 +91,7 @@ function filtraHistorico(event='', ocorrencia='geral', page=1) {
                 behavior: 'smooth' /* Scroll suave */
             });
         }
+        carregandoHistorico.classList.add('invisible')
     }, 1000);
 }
 function criaPaginacao(currentPage, totalPages, ocorrencia) {
@@ -192,9 +191,6 @@ function fetchHistoricoFiltrado(ocorrencia = 'geral', page = 1) {
         pageSize = 75
         document.getElementById('searchInputPageSize').value = pageSize
     }
- 
-    // Exibe o spinner antes de carregar o histórico
-    document.getElementById('loading').classList.remove('invisible2');
   
     fetch('js/historico.json')
       .then(response => response.json())
@@ -246,9 +242,6 @@ function fetchHistoricoFiltrado(ocorrencia = 'geral', page = 1) {
 
         // Criar a paginação
         criaPaginacao(page, totalPages, ocorrencia);
-  
-        // Ocultar o spinner após os dados serem carregados
-        document.getElementById('loading').classList.add('invisible2');
   
         // Remover a classe 'collapsed' da tela de histórico
         historicoTelaContainer.classList.remove('collapsed');
