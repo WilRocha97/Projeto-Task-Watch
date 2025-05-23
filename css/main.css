@@ -149,7 +149,8 @@ body {
     --scroll-bar-width: 6px;
     --scroll-color: #858585;
 
-    background: linear-gradient(-50deg, var(--cor-vidro-2), var(--cor-vidro));
+    background: linear-gradient(135deg, rgba(61, 61, 61, 0.151), rgba(0, 0, 0, 0.158));
+    background-color: var(--cor-fundo); /* cor base */
     color: var(--cor-texto);
     min-height: 100vh;
     line-height: 15px;
@@ -161,6 +162,7 @@ body {
     font-size: 0.9em;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    transition: background-color 1s ease;
 }
 button {
     -webkit-tap-highlight-color: transparent;
@@ -198,15 +200,12 @@ button {
     background: transparent;
     border-radius: var(--borda-botao);
     backdrop-filter: blur(var(--blur));
+    transition: box-shadow 1s;
 }
 .fundo, .fundoSolido {
     box-shadow: var(--direcao-sombra-1) var(--direcao-sombra-1) 9px var(--sombra-clara),
                 var(--direcao-sombra-2) var(--direcao-sombra-2) 9px var(--sombra-escura);
-    
-}
-.fundoSolido{
-    background: linear-gradient(-50deg, var(--cor-vidro-2), var(--cor-vidro));
-    border-radius: var(--borda-botao);
+    transition: box-shadow 1s;
 }
 .fundoInvertido {
     box-shadow: inset var(--direcao-sombra-1) var(--direcao-sombra-1) 9px var(--sombra-clara),
@@ -231,6 +230,7 @@ button {
 .telaRotinas {
     display: flex;
     flex-direction: column;
+    transition: var(--transicao-link);
 }
 
 .telaLogin {
@@ -289,7 +289,7 @@ button {
     color: var(--cor-texto);
     font-size: var(--tamanho-texto-2);
     font-weight: bold;
-    transition: var(--transicao-link);
+    transition: var(--transicao-link), color 1s;
 }
 .MenuBotao:hover, .MenuBotaoActive:hover, .MenuBotaoDesactive:hover, .paginaHistorico button:hover {
     background: var(--sombra-2);

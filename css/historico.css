@@ -19,7 +19,7 @@
     justify-content: center;
     align-items: baseline;
     max-height: 200px;
-    transition: opacity var(--transicao-link), max-height var(--transicao-link), padding var(--transicao-link), margin var(--transicao-link);
+    transition: opacity var(--transicao-link), max-height var(--transicao-link), padding var(--transicao-link), margin var(--transicao-link), box-shadow 1s, color 1s;
 }
 .painelConfig.collapsed, .mainHistorico.collapsed {
     opacity: 0;
@@ -88,6 +88,9 @@
     width: fit-content;
     flex-direction: row;
 }
+.hInputPageSize, .menuPaginas, .paginaHistorico {
+    transition: box-shadow 1s, color 1s;
+}
 .pageSize {
     width: 35px;
 }
@@ -116,7 +119,7 @@
     font-size: 0.8em;
     width: 90%;
     padding: 8px;
-    transition: opacity var(--transicao-link);
+    transition: opacity var(--transicao-link), box-shadow 1s, color 1s;
 }
 .telaHistoricoConteudo {
     border-radius: 10px;
@@ -134,13 +137,14 @@
     grid-template-columns: 0.5fr 3fr 1.5fr; /* Três colunas iguais */
     padding: 10px;
     min-height: 10px;
-    transition: var(--transicao-link);
+    transition: var(--transicao-link), color 1s;
 }
 .linha:hover {
     background: var(--sombra-2);
 }
 .situacao {
     text-align: right;
+    transition: var(--transicao-link), color 1s;
 }
 .iniciada {
     color: var(--cor-texto);
