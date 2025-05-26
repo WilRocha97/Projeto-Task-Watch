@@ -52,6 +52,8 @@
     opacity: 0;
     scale: 0;
     overflow: hidden;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
     transition: var(--transicao-link);
 }
 .rectangle.enter {
