@@ -85,6 +85,17 @@
     --luz-menu: #ebebebad;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: var(--cor-texto);
+    font-style: oblique;
+    transition: background-color 1s ease-in-out 0s;
+    box-shadow: inset 0 0 20px #23232300;
+}
+
 .telaHistoricoConteudo, .dicaContainer, .galeriaContainer {
     --scroll-background: transparent;
     --scroll-hover: var(--cor-destaque);
@@ -267,7 +278,7 @@ button {
     height: 34px;
 }
 .cInputUsuario, .cInputSenha, .cInputCard, .hInputName, .hInputDate, .hInputPageSize {
-    width: 100%;
+    width: 200px;
     color: var(--cor-texto);
     background: none;
     border: none;

@@ -309,6 +309,18 @@ historicoBotao.addEventListener('click', ()=> {
 mainHistorico.addEventListener('click', (e) => {
     e.stopPropagation();
 });
+// adiciona o evento de escutar a tecla na barra de busca por nome do histórico
+hInputName.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        filtraHistorico('', 'geral')
+    }
+});
+// adiciona o evento de escutar a tecla na barra de busca por data do histórico
+hInputDate.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        filtraHistorico('', 'geral')
+    }
+});
 botaoFiltroGeral.addEventListener('click', (e)=> {
     filtraHistorico('', 'geral')
     botaoFiltroGeral.classList.add('clicado')
