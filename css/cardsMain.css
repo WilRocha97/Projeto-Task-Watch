@@ -136,12 +136,15 @@
         padding: 390px 0 0 0;
     }
     .botaoFechar, .botaoFixar, .botaoInfo {
-        font-size: 1.2em !important;
+        font-size: 1.1em !important;
         font-weight: 100 !important;
     }
     .rectangle.collapsed .botaoFixado {
         left: 26% !important;
         top: 7% !important;
+    }
+    .botaoFechar, .botaoFixar, .botaoInfo {
+       margin-left: 5px;
     }
 }
 

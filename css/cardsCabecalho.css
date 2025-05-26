@@ -11,7 +11,7 @@
     margin-left: 3px;
 }
 
-.dispositivo, .titulo, .botaoFechar, .botaoFixar, .botaoInfo  {
+.dispositivo, .titulo  {
     font-weight: 600;
     font-size: 1em;
     padding:  4px 5px 5px 5px;
@@ -58,12 +58,16 @@
 }
 
 .botaoFechar, .botaoFixar, .botaoInfo {
+    padding:  4px 5px 5px 5px;
     font-weight: 600;
     font-size: 0.8em;
     text-align: center;
     color: white;
     background: none;
     border: none;
+    opacity: 1;
+    scale: 1;
+    white-space: nowrap;
     border-radius: var(--borda-botao);
     width: 14px;
     height: 13px;
