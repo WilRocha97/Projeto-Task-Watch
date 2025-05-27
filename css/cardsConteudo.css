@@ -35,7 +35,7 @@
     transition: max-height var(--transicao-link-2) ease-out;
 }
 .resumoResultados {
-    max-height: 125px;
+    max-height: 150px;
 }
 .resumoResultados2 {
     max-height: 242px;
