@@ -1,3 +1,7 @@
+var botoes = document.querySelectorAll('button');
+var botoesCards = document.querySelectorAll('.btnCard');
+var cards = document.querySelectorAll('.rectangle');
+
 var relogio = document.getElementById('clock');
 const cartoesFixados = document.getElementById('controlarFixados');
 const encolheCard = document.getElementById('encolherCard');
@@ -30,10 +34,6 @@ function isTouchDevice() {
     return ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
 }
 if (isTouchDevice()) {
-    var botoes = document.querySelectorAll('button');
-    var botoesCards = document.querySelectorAll('.btnCard');
-    var cards = document.querySelectorAll('.rectangle');
-
     botoes.forEach((botao)=> {
         botao.classList.add('nh')
     });
@@ -45,6 +45,23 @@ if (isTouchDevice()) {
         botao.classList.add('nh')
     });
 }
+let temMouse = false;
+function detectaMouse() {
+    temMouse = true;
+    botoes.forEach((botao)=> {
+            botao.classList.remove('nh')
+        });
+        botoesCards.forEach((botao)=> {
+            console.log(botao)
+            botao.classList.remove('nh')
+        });
+        cards.forEach((botao)=> {
+            botao.classList.remove('nh')
+        });
+    window.removeEventListener('mousemove', detectaMouse);
+}
+window.addEventListener('mousemove', detectaMouse);
+
 
 export function animacaoBotao(target) {
     target.classList.add('clicked');
