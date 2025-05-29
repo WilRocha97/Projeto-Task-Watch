@@ -1,3 +1,22 @@
+@keyframes luzBotaoCard {
+    0% {
+        text-shadow: 0 0 0 var(--luz-menu);
+    }
+    40% {
+        text-shadow: 0 0 5px var(--luz-menu),
+                        0 0 7px var(--luz-menu),
+                        0 0 9px var(--luz-menu),
+                        0 0 11px var(--luz-menu),
+                        0 0 13px var(--luz-menu);
+    }
+    100% {
+        text-shadow: 0 0 5px #ffffff00,
+                        0 0 7px #ffffff00,
+                        0 0 9px #ffffff00,
+                        0 0 11px #ffffff00,
+                        0 0 13px #ffffff00;
+    }
+}
 .sortable-ghost {
     background: transparent !important;
     box-shadow: var(--direcao-sombra-1) var(--direcao-sombra-1) 9px var(--sombra-clara),
@@ -148,6 +167,9 @@
     .botaoFechar, .botaoFixar, .botaoInfo {
        margin-left: 5px;
     }
+    .maisInfo.clicked, .maisInfo2.clicked {
+        animation: luzBotaoCard 0.5s linear;
+    }
 }
 
 @media (max-width: 1000px) and (min-width: 650px) {
@@ -168,26 +190,6 @@
     .botaoFechar, .botaoFixar, .botaoInfo {
         font-size: large;
         font-weight: bold;
-    }
-
-    @keyframes luzBotaoCard {
-        0% {
-            text-shadow: 0 0 0 var(--luz-menu);
-        }
-        40% {
-            text-shadow: 0 0 5px var(--luz-menu),
-                         0 0 7px var(--luz-menu),
-                         0 0 9px var(--luz-menu),
-                         0 0 11px var(--luz-menu),
-                         0 0 13px var(--luz-menu);
-        }
-        100% {
-            text-shadow: 0 0 5px #ffffff00,
-                         0 0 7px #ffffff00,
-                         0 0 9px #ffffff00,
-                         0 0 11px #ffffff00,
-                         0 0 13px #ffffff00;
-        }
     }
     .maisInfo.clicked, .maisInfo2.clicked {
         animation: luzBotaoCard 0.5s linear;
