@@ -13,7 +13,7 @@
     z-index: 2;
     position: fixed;
     overflow: hidden;
-    transition: background-color 1s, box-shadow 1s, color 1s;
+    transition: background-color 1s ease-in-out, box-shadow 1s ease-in-out, color 1s ease-in-out;
 }
 .menuTela {
     display: flex;
@@ -23,7 +23,8 @@
     opacity: 1;
     margin: 10px;
     max-height: 10vh;
-    transition: margin var(--transicao-link), max-height var(--transicao-link), opacity var(--transicao-link), padding var(--transicao-link), box-shadow 1s;
+    transition: margin var(--transicao-link) ease-in-out, max-height var(--transicao-link) ease-in-out, 
+                opacity var(--transicao-link) ease-in-out, padding var(--transicao-link) ease-in-out, box-shadow 1s ease-in-out;
 }
 .menu {
     padding: 8px;
@@ -43,12 +44,12 @@
 #clock {
     opacity: 1;
     align-self: center;
-    transition: font-size var(--transicao-link), opacity var(--transicao-link);
+    transition: font-size var(--transicao-link) ease-in-out, opacity var(--transicao-link) ease-in-out;
 }
 .relogio {
     padding: 9.8px 18px !important;
     scale: 1;
-    transition: scale var(--transicao-link), padding var(--transicao-link), box-shadow 1s;
+    transition: scale var(--transicao-link) ease-in-out, padding var(--transicao-link) ease-in-out, box-shadow 1s ease-in-out;
 }
 .notifica {
     overflow: hidden;
@@ -69,7 +70,7 @@
     width: 100%; /* Ajuste o tamanho da bolinha conforme necessário */
     height: 3px; /* Ajuste o tamanho da bolinha conforme necessário */
     border-radius: 5px; /* Torna a bolinha circular */
-    transition: var(--transicao-link), box-shadow 1s;
+    transition: var(--transicao-link) ease-in-out, box-shadow 1s ease-in-out;
 }
 .bolinhaErro {
     background-color: var(--cor-erro); /* Cor da bolinha */
@@ -111,13 +112,13 @@
     width: 100%; /* Ajuste o tamanho da bolinha conforme necessário */
     height: 100%;
     animation: carregandoBotao 2s infinite;
-    transition: var(--transicao-link);
+    transition: var(--transicao-link) ease-in-out;
 }
 
 #controlarFixados {
     opacity: 0.3;
     box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0);
-    transition: 1s;
+    transition: 1s ease-in-out;
 }
 #controlarFixados.active {
     opacity: 1;
@@ -154,7 +155,8 @@
     margin: 5px 30px 30px 30px;
     max-width: 80%;
     max-height: 85vh;
-    transition: margin var(--transicao-link), max-height var(--transicao-link), opacity var(--transicao-link), padding var(--transicao-link);
+    transition: margin var(--transicao-link) ease-in-out, max-height var(--transicao-link) ease-in-out, 
+                opacity var(--transicao-link) ease-in-out, padding var(--transicao-link) ease-in-out;
 }
 
 .ClassTextoDica, .ClassTextoGaleria {
@@ -185,7 +187,7 @@
     margin: 10px;
     height: auto;
     object-fit: cover; /* Ajusta a imagem ao container */
-    transition: width var(--transicao-link);
+    transition: width var(--transicao-link) ease-in-out;
 }
 .modal {
     display: none;

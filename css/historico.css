@@ -8,7 +8,9 @@
     scale: 1;
     max-height: 100vh;
     flex-direction: column;
-    transition: opacity var(--transicao-link), max-height var(--transicao-link), padding var(--transicao-link), margin var(--transicao-link), width var(--transicao-link);
+    transition: opacity var(--transicao-link) ease-in-out, max-height var(--transicao-link) ease-in-out, 
+                padding var(--transicao-link) ease-in-out, margin var(--transicao-link) ease-in-out, 
+                width var(--transicao-link) ease-in-out;
 }
 .painelConfig{
     display: flex;
@@ -19,7 +21,9 @@
     justify-content: center;
     align-items: baseline;
     max-height: 200px;
-    transition: opacity var(--transicao-link), max-height var(--transicao-link), padding var(--transicao-link), margin var(--transicao-link), box-shadow 1s, color 1s;
+    transition: opacity var(--transicao-link) ease-in-out, max-height var(--transicao-link) ease-in-out, 
+                padding var(--transicao-link) ease-in-out, margin var(--transicao-link) ease-in-out, box-shadow 1s ease-in-out, 
+                color 1s ease-in-out;
 }
 .painelConfig.collapsed, .mainHistorico.collapsed {
     opacity: 0;
@@ -37,7 +41,7 @@
     align-items: center;
     flex-direction: row;
     gap: 10px;
-    transition: var(--transicao-link);
+    transition: var(--transicao-link) ease-in-out;
 }
 .filtroGeral, .filtroErro, .filtroOcioso, .filtroFinal, .filtroFechar{
     border: none;
@@ -46,7 +50,7 @@
     width: 20px; /* Ajuste o tamanho da bolinha conforme necessário */
     height: 5px; /* Ajuste o tamanho da bolinha conforme necessário */
     border-radius: 5px; /* Torna a bolinha circular */
-    transition: var(--transicao-link);
+    transition: var(--transicao-link) ease-in-out;
 }
 .filtroGeral.clicado, .filtroErro.clicado, .filtroOcioso.clicado, .filtroFinal.clicado, .filtroFechar.clicado{
     height: 10px;
@@ -89,7 +93,7 @@
     flex-direction: row;
 }
 .hInputPageSize, .menuPaginas, .paginaHistorico {
-    transition: box-shadow 1s, color 1s;
+    transition: box-shadow 1s ease-in-out, color 1s ease-in-out;
 }
 .pageSize {
     width: 35px;
@@ -119,7 +123,7 @@
     font-size: 0.8em;
     width: 90%;
     padding: 8px;
-    transition: opacity var(--transicao-link), box-shadow 1s, color 1s;
+    transition: opacity var(--transicao-link) ease-in-out, box-shadow 1s ease-in-out, color 1s ease-in-out;
 }
 .telaHistoricoConteudo {
     border-radius: 10px;
@@ -137,14 +141,14 @@
     grid-template-columns: 0.5fr 3fr 1.5fr; /* Três colunas iguais */
     padding: 10px;
     min-height: 10px;
-    transition: var(--transicao-link), color 1s;
+    transition: var(--transicao-link) ease-in-out, color 1s ease-in-out;
 }
 .linha:hover {
     background: var(--sombra-2);
 }
 .situacao {
     text-align: right;
-    transition: var(--transicao-link), color 1s;
+    transition: var(--transicao-link) ease-in-out, color 1s ease-in-out;
 }
 .iniciada {
     color: var(--cor-texto);

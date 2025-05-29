@@ -34,7 +34,7 @@
     align-items: baseline;
     height: 100%;
     flex-wrap: wrap;
-    transition: height var(--transicao-link), padding var(--transicao-link);
+    transition: height var(--transicao-link) ease-in-out, padding var(--transicao-link) ease-in-out;
 }
 .rotinasExpandida {
     padding: 130px 12px 0 12px;
@@ -54,7 +54,7 @@
     overflow: hidden;
     -webkit-tap-highlight-color: transparent;
     outline: none;
-    transition: var(--transicao-link);
+    transition: var(--transicao-link) ease-in-out;
 }
 .rectangle.enter {
     max-width: 275px;
@@ -73,7 +73,7 @@
     max-height: 470px;
 }
 .rectangle.enter.medium {
-    max-height: 210px; 
+    max-height: 230px;
 }
 .rectangle.out {
     max-width: 0 !important;
