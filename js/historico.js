@@ -273,12 +273,13 @@ limpaHInputDate.addEventListener('click', (event)=> {
     hInputDate.value = ''
     let target = event.target;
     animacaoBotao(target)
+    filtraHistorico('', 'clicado')
 })
 limpaHInputName.addEventListener('click', (event)=> {
     hInputName.value = ''
-
     let target = event.target;
     animacaoBotao(target)
+    filtraHistorico('', 'clicado')
 })
 
 // Abre e fecha a tela de histórico
