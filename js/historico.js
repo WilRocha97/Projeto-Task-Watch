@@ -8,6 +8,7 @@ var hInputDate = document.getElementById('searchInputDate');
 const limpaHInputDate = document.getElementById('limpaHInputDate');
 var hInputName = document.getElementById('searchInputName');
 const limpaHInputName = document.getElementById('limpaHInputName');
+var InputPageSize = document.getElementById('searchInputPageSize');
 var telaTitulo = document.getElementById('telaTitulo');
 
 const botaoFiltroGeral = document.getElementById('bolinhaGeral');
@@ -59,6 +60,17 @@ function criaHistorico(data, rotina, ocorrencia) {
     historicoTela.appendChild(newElement);
 }
 function filtraHistorico(event='', ocorrencia='geral', page=1) {
+    var filtroClicado = false
+    if (ocorrencia == 'clicado') {
+        filtroClicado = document.getElementsByClassName('clicado')[0];
+        if (filtroClicado) {
+            ocorrencia = filtroClicado.getAttribute('title').match(/'([^']+)'/)[1]; // Pega o id do primeiro filtro clicado
+        }
+        else {
+            ocorrencia = 'geral'; // Se nenhum filtro estiver clicado, mostra todos
+        }
+    }
+
     carregandoHistorico.classList.remove('invisible')
     telaMenu.classList.add('invisible2');
     menu.innerHTML = 'Menu ▾'
@@ -71,10 +83,12 @@ function filtraHistorico(event='', ocorrencia='geral', page=1) {
         animacaoBotao(target)
     }
 
-    botoesFiltro.forEach(filtro => {
-        filtro.classList.remove('clicado')
-    });
-
+    if (!filtroClicado) {
+        botoesFiltro.forEach(filtro => {
+            filtro.classList.remove('clicado')
+        }); 
+    }
+    
     historicoTelaContainer.classList.add('collapsed');
     setTimeout(()=> {
         historicoTela.innerHTML = ''; // Limpa a tabela para novos dados
@@ -312,13 +326,19 @@ mainHistorico.addEventListener('click', (e) => {
 // adiciona o evento de escutar a tecla na barra de busca por nome do histórico
 hInputName.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
-        filtraHistorico('', 'geral')
+        filtraHistorico('', 'clicado')
     }
 });
 // adiciona o evento de escutar a tecla na barra de busca por data do histórico
 hInputDate.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
-        filtraHistorico('', 'geral')
+        filtraHistorico('', 'clicado')
+    }
+});
+// adiciona o evento de escutar a tecla no campo para a quantidade de itens por página
+InputPageSize.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        filtraHistorico('', 'clicado')
     }
 });
 botaoFiltroGeral.addEventListener('click', (e)=> {
