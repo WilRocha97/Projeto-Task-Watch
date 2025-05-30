@@ -123,6 +123,7 @@
 .rectangle.collapsed .content,
 .rectangle.collapsed .dispositivo,
 .rectangle.collapsed .titulo,
+.rectangle.collapsed .porcentagem.pulse,
 .rectangle.collapsed .bolinhaLoading,
 .rectangle.collapsed .bolinhaLoadingMove,
 .rectangle.collapsed #media {
