@@ -90,7 +90,7 @@
     background: linear-gradient(50deg, var(--cor-secundaria), var(--cor-primaria));
     animation: none;
 }
-.status:active {
+.status:active, .status.nh {
     --cor-fundo-2: #a8a8a82d;
     box-shadow: inset 0 0 20px var(--cor-opaca),
                 var(--direcao-sombra-1) var(--direcao-sombra-1) 10px var(--cor-opaca),
