@@ -3,7 +3,7 @@
 }
 
 .cabecalho {
-    background: linear-gradient(135deg, rgba(61, 61, 61, 0.151), rgba(0, 0, 0, 0.158));
+    background: linear-gradient(135deg, rgba(145, 145, 145, 0.151), rgba(39, 39, 39, 0.158));
     background-color: var(--cor-fundo); /* cor base */
     box-shadow: var(--direcao-sombra-2) var(--direcao-sombra-2) 9px var(--sombra-escura);
     display: flex;
