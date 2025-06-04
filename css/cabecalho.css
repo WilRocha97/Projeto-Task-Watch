@@ -60,11 +60,10 @@
 .notificacao {
     width: 78.2%;
     position: absolute;
-    bottom: 4px; /* Alinha a bolinha ao topo do botão */
-    left: 9px; /* Alinha a bolinha à direita do botão */
+    bottom: 5px; /* Alinha a bolinha ao topo do botão */
     display: flex;
     flex-direction: row;
-    gap: 1px;
+    gap: 3px;
 }
 .bolinhaErro, .bolinhaOcioso, .bolinhaFinal{
     width: 100%; /* Ajuste o tamanho da bolinha conforme necessário */
