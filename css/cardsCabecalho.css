@@ -136,6 +136,7 @@
     transition: var(--transicao-link) ease-in-out;
 }
 .porcentagem.pulse {
+    background: var(--cor-loading-2);
     align-self: center;
     height: 1px;
     margin: 1px;
@@ -208,8 +209,7 @@
     0% {
         width: 0;
         opacity: 1;
-        box-shadow: inset 0 0 10px var(--cor-loading-2),
-                0 0 4px var(--cor-loading-2),
+        box-shadow: 0 0 4px var(--cor-loading-2),
                 0 0 7px var(--cor-loading-2),
                 0 0 9px var(--cor-loading-2),
                 0 0 11px var(--cor-loading-2),
@@ -218,8 +218,7 @@
                 0 0 17px var(--cor-loading-2);
     }
     10% {
-        box-shadow: inset 0 0 10px var(--cor-loading-2),
-                0 0 2px var(--cor-loading-2),
+        box-shadow: 0 0 2px var(--cor-loading-2),
                 0 0 5px var(--cor-loading-2),
                 0 0 8px var(--cor-loading-2),
                 0 0 10px var(--cor-loading-2);
