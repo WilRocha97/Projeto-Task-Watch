@@ -10,6 +10,7 @@
     --borda-card: 0;
     --sombra-card: #3f3f3f27;
     --sombra-card-clara: #81818127;
+    --sombra-2: #7e736427;
     --borda-botao: 20px;
     --padding-botao: 6px 9px;
     --cor-padrao: #ff0040;
@@ -46,7 +47,6 @@
     --direcao-sombra-1: -3px;
     --sombra-clara: #2e2e2e86;
     --sombra-escura: #0a0a0adc;
-    --sombra-2: #424140c7;
     --luz-menu: #7f95afc7;
 }
 .light {
@@ -80,7 +80,6 @@
     --direcao-sombra-1: -3px;
     --sombra-clara: #ffffffc2;
     --sombra-escura: #bdbdbdde;
-    --sombra-2: #a59d93ad;
     --luz-menu: #ebebebad;
 }
 
