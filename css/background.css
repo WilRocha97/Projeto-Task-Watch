@@ -64,6 +64,9 @@
     background-attachment: fixed;
     mix-blend-mode: difference;
 }
+.fundoGradiente.invisible1::after {
+    animation: none;
+}
 
 .tituloSite {
     position: absolute;
