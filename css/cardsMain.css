@@ -59,6 +59,7 @@
     padding: 130px 12px 0 12px;
 }
 .rectangle {
+    --escala-card: 1.02;
     color: white;
     border-radius: var(--borda-botao);
     max-width: 0;
@@ -106,6 +107,7 @@
     scale: 0 !important;
 }
 .rectangle.collapsed {
+    --escala-card: 1.1;
     line-height: normal;
     min-width: 30px;
     min-height: 30px;

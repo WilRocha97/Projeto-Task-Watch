@@ -16,14 +16,14 @@
         scale: 1;
     }
     50% {
-         scale: 1.02;
+         scale: var(--escala-card);
     }
 }
 
 /* Estilos específicos para cada status */
 .status-executando, .status-attention {
     --cor-primaria: #006345;
-    --cor-secundaria: #004557;
+    --cor-secundaria: #003757;
     --cor-opaca: #4d927d5d;
     --cor-opaca-2: #00694a9a;
     --cor-loading-1: #00ffb350;
@@ -79,12 +79,13 @@
     animation: var(--animacao);
 }
 .status:hover {
-    scale: 1.02;
+    scale: var(--escala-card);
     --cor-fundo-2: #2525252d;
     box-shadow: inset 0 0 80px var(--cor-principal),
                 0 0 25px var(--cor-principal);
     border: var(--borda-card) solid var(--cor-principal);
     background: linear-gradient(50deg, var(--cor-secundaria), var(--cor-primaria));
+    animation: none;
 }
 .status.nh {
     --cor-fundo-2: #a8a8a82d;
