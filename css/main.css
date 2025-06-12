@@ -8,6 +8,7 @@
     --transicao-link-2: 0.5s;
     --blur: 15px;
     --blur-fundo: 5px;
+    --blur-card: 3px;
     --borda-card: 0;
     --sombra-card: #3f3f3f27;
     --sombra-card-clara: #81818127;
@@ -231,7 +232,7 @@ button {
     border-radius: 15px;
     box-shadow: var(--direcao-sombra-1) var(--direcao-sombra-1) 5px var(--sombra-card-clara),
                 var(--direcao-sombra-2) var(--direcao-sombra-2) 5px var(--sombra-card);
-    backdrop-filter: blur(var(--blur));
+    backdrop-filter: blur(var(--blur-card));
     transition: background-color var(--transicao-link) ease-in-out;
 }
 
