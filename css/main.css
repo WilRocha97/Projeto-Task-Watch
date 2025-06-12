@@ -6,7 +6,8 @@
     --tamanho-texto-2: 0.9rem;
     --transicao-link: 0.2s;
     --transicao-link-2: 0.5s;
-    --blur: 4px;
+    --blur: 15px;
+    --blur-fundo: 5px;
     --borda-card: 0;
     --sombra-card: #3f3f3f27;
     --sombra-card-clara: #81818127;
@@ -37,7 +38,7 @@
     --cor-final-alternativa: #0098c7;
     
     --cor-destaque: #ffffff;
-    --cor-vidro: #16181d;
+    --cor-vidro: #1f1d1c9a;
     --cor-vidro-2: #131718;
     --cor-texto: #ffffff;
     --cor-texto-2: #000000;
@@ -45,8 +46,9 @@
     --cor-fundo: #080808;
     --direcao-sombra-2: 3px;
     --direcao-sombra-1: -3px;
-    --sombra-clara: #2e2e2e86;
-    --sombra-escura: #0a0a0adc;
+    --sombra-clara: #00000028;
+    --sombra-escura: #0000006e;
+    --sombra-escura-2: #00000091;
     --luz-menu: #7f95afc7;
 }
 .light {
@@ -70,7 +72,7 @@
     --cor-final-alternativa: #00789c;
 
     --cor-destaque: #000000;
-    --cor-vidro: #d1d1d1;
+    --cor-vidro: #f3eee585;
     --cor-vidro-2: #c0c0c0;
     --cor-texto: #000000;
     --cor-texto-2: #ffffff;
@@ -78,8 +80,9 @@
     --cor-fundo: #fffaf4;
     --direcao-sombra-2: 3px;
     --direcao-sombra-1: -3px;
-    --sombra-clara: #ffffffc2;
-    --sombra-escura: #bdbdbdde;
+    --sombra-clara: #ffffff28;
+    --sombra-escura: #4443431f;
+    --sombra-escura-2: #2525255b;
     --luz-menu: #ebebebad;
 }
 
@@ -193,6 +196,7 @@ button {
     padding: 0 !important;
     margin: 0 !important;
     max-height: 0 !important;
+    width: 0 !important;
     cursor: default !important;
 }
 .invisible3 {
@@ -206,15 +210,15 @@ button {
 .fundo, .fundoInvertido {
     height: fit-content;
     width: fit-content;
-    background: transparent;
+    background: var(--cor-vidro);
     border-radius: var(--borda-botao);
     backdrop-filter: blur(var(--blur));
-    transition: box-shadow 1s ease-in-out;
+    transition: 1s ease-in-out;
+    box-shadow: var(--direcao-sombra-2) var(--direcao-sombra-2) 9px var(--sombra-escura-2);
 }
 .fundo, .fundoSolido {
     box-shadow: var(--direcao-sombra-1) var(--direcao-sombra-1) 9px var(--sombra-clara),
                 var(--direcao-sombra-2) var(--direcao-sombra-2) 9px var(--sombra-escura);
-    transition: box-shadow 1s ease-in-out;
 }
 .fundoInvertido {
     box-shadow: inset var(--direcao-sombra-1) var(--direcao-sombra-1) 9px var(--sombra-clara),

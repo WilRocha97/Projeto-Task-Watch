@@ -50,7 +50,7 @@
     width: 20px; /* Ajuste o tamanho da bolinha conforme necessário */
     height: 5px; /* Ajuste o tamanho da bolinha conforme necessário */
     border-radius: 5px; /* Torna a bolinha circular */
-    transition: var(--transicao-link) ease-in-out;
+    transition: var(--transicao-link) ease-in-out, background-color 1s ease-in-out, box-shadow 1s ease-in-out;
 }
 .filtroGeral.clicado, .filtroErro.clicado, .filtroOcioso.clicado, .filtroFinal.clicado, .filtroFechar.clicado{
     height: 10px;
@@ -110,6 +110,7 @@
     color: var(--cor-texto-2);
     background-color: var(--cor-texto);
     cursor: default;
+    transition: background-color 1s ease-in-out;
 }
 
 .telaHistorico {
@@ -123,7 +124,7 @@
     font-size: 0.8em;
     width: 90%;
     padding: 8px;
-    transition: opacity var(--transicao-link) ease-in-out, box-shadow 1s ease-in-out, color 1s ease-in-out;
+    transition: opacity var(--transicao-link) ease-in-out, box-shadow 1s ease-in-out, color 1s ease-in-out, background-color 1s ease-in-out;
 }
 .telaHistoricoConteudo {
     border-radius: 10px;
