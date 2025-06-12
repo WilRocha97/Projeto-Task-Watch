@@ -153,7 +153,8 @@
     margin: 5px 30px 100px 30px;
     max-width: 80%;
     max-height: 85vh;
-    transition: margin var(--transicao-link) ease-in-out, max-height var(--transicao-link) ease-in-out, 
+    width: 100%;
+    transition: margin var(--transicao-link) ease-in-out, max-height var(--transicao-link) ease-in-out, width var(--transicao-link) ease-in-out,
                 opacity var(--transicao-link) ease-in-out, padding var(--transicao-link) ease-in-out;
 }
 
