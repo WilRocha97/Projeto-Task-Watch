@@ -76,7 +76,7 @@ function sortable(container) {
             timeout = setTimeout(function() {
                 evt.item.classList.add('sortable-ghost');
                 telaMenu.classList.add('invisible2');
-                menu.innerHTML = 'Menu ▾'
+                menu.innerHTML = '≡'
                 telaDica.classList.add('invisible2');
                 telaGaleria.classList.add('invisible2');
                 telaRotinas.classList.remove('rotinasExpandida')
@@ -119,7 +119,7 @@ document.addEventListener('click', (event) => {
         // fecha o menu ao clicar em qualuqer lugar que não seja nele
         if (!target.classList.contains('cmb')) {
             telaMenu.classList.add('invisible2')
-            menu.innerHTML = 'Menu ▾'
+            menu.innerHTML = '≡'
             telaDica.classList.add('invisible2')
             telaGaleria.classList.add('invisible2')
             telaRotinas.classList.remove('rotinasExpandida')

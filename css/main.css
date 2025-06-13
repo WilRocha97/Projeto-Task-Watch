@@ -6,7 +6,7 @@
     --tamanho-texto-2: 0.9rem;
     --transicao-link: 0.2s;
     --transicao-link-2: 0.5s;
-    --blur: 15px;
+    --blur: 30px;
     --blur-fundo: 5px;
     --blur-card: 3px;
     --borda-card: 0;
@@ -155,6 +155,9 @@ input:-webkit-autofill:active{
     border-color: var(--scroll-hover) transparent transparent transparent;
 }
 
+html, body {
+  overflow-x: hidden !important;
+}
 body {
     --scroll-background: var(--cor-vidro-2);
     --scroll-hover: var(--cor-destaque);
@@ -196,7 +199,7 @@ button {
     opacity: 0 !important;
     padding: 0 !important;
     margin: 0 !important;
-    max-height: 0 !important;
+    height: 0 !important;
     width: 0 !important;
     cursor: default !important;
 }
@@ -222,6 +225,8 @@ button {
                 var(--direcao-sombra-2) var(--direcao-sombra-2) 9px var(--sombra-escura);
 }
 .fundoInvertido {
+    background: none;
+    backdrop-filter: none;
     box-shadow: inset var(--direcao-sombra-1) var(--direcao-sombra-1) 9px var(--sombra-clara),
                 inset var(--direcao-sombra-2) var(--direcao-sombra-2) 9px var(--sombra-escura);
 }
@@ -278,7 +283,8 @@ button {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 34px;
+    margin: 2.3px;
+    height: 30px;
 }
 .cInputUsuario, .cInputSenha, .cInputCard, .hInputName, .hInputDate, .hInputPageSize {
     width: 200px;
@@ -290,10 +296,12 @@ button {
 }
 
 .MenuBotao, .MenuBotaoActive, .MenuBotaoDesactive, .paginaHistorico button {
-    height: 30px;    
+    height: 30px;
+    min-width: 30px;
+    align-content: center;    
+    text-align: center;
     white-space: nowrap;
     position: relative;
-    align-self: end;
     border: none;
     background: none;
     border-radius: var(--borda-botao);

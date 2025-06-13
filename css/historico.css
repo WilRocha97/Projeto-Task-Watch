@@ -119,7 +119,6 @@
     display: flex;
     align-self: center;
     flex-direction: column;
-    padding: 25px 25px;
     margin: 15px 0 0 0;
     font-size: 0.8em;
     width: 90%;
@@ -128,7 +127,8 @@
 }
 .telaHistoricoConteudo {
     border-radius: 10px;
-    overflow: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 .telaHistorico.collapsed {
     opacity: 0 !important; /* Altura desejada quando colapsado */
@@ -177,45 +177,76 @@
         padding: 5px 0;
         width: 100%;
     }
+
     .mainHistorico.collapsed {
         width: 100%;
     }
-    .filtroHistorico{
+
+    .filtroHistorico {
         justify-content: center;
         gap: 25px;
         padding: 10px;
     }
+
     .telaHistorico {
         padding: 5px;
         overflow: auto;
+        margin: 60px 0 0 0;
     }
-    .filtroGeral, .filtroErro, .filtroOcioso, .filtroFinal, .filtroFechar{
+
+    .filtroGeral, .filtroErro, .filtroOcioso, .filtroFinal, .filtroFechar {
         font-size: x-large;
     }
+
     .telaHistoricoConteudo {
         border-radius: var(--borda-botao);
     }
-    .linha{
+
+    .linha {
         font-size: smaller;
         padding: 0.6rem;
         grid-template-columns: 1.5fr 2fr 1.5fr;
     }
 }
-@media (min-width: 721px) and (max-width: 1500px) {
-    .linha{
-        padding: 0.6rem;
-        grid-template-columns: 1fr 3fr 1fr
+
+@media (max-width: 990px) {
+    #telaMenu, #configHistorico {
+        flex-wrap: wrap;
     }
-}  
+}
+@media (max-width: 360px) {
+    .telaHistorico {
+        margin: 100px 0 0 0;
+    }
+}
+
+@media (min-width: 361px) and (max-width: 649px) {
+    .telaHistorico {
+        margin: 60px 0 0 0;
+    }
+}
+
+@media (min-width: 650px) and (max-width: 990px) {
+    .telaHistorico {
+        margin: 100px 0 0 0;
+    }
+}
+
+@media (min-width: 721px) and (max-width: 1500px) {
+    .linha {
+        padding: 0.6rem;
+        grid-template-columns: 1fr 3fr 1fr;
+    }
+}
 
 @media (max-width: 2500px) {
+    .mainHistorico,
     .mainHistorico.collapsed {
         width: 100%;
     }
 
     .mainHistorico {
-        width: 100%;
         padding: 65px 0;
         align-self: initial;
     }
-}    
+}
