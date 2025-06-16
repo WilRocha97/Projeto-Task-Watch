@@ -108,10 +108,10 @@
 .rectangle.collapsed {
     --escala-card: 1.1;
     line-height: normal;
-    min-width: 30px;
-    min-height: 30px;
-    max-width: 30px;
-    max-height: 30px;
+    min-width: 30px !important;
+    min-height: 30px !important;
+    max-width: 30px !important;
+    max-height: 30px !important;
     border-radius: 12px;
     padding: 0;
     margin: 10px;
@@ -155,10 +155,6 @@
 }
 
 @media (min-width: 650px) and (max-width: 720px) {
-    .rectangle.enter {
-        max-width: 85vw;
-        min-width: 85vw;
-    }
     .rectangle.collapsed {
         width: 30px;
         height: 30px;

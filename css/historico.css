@@ -259,12 +259,6 @@
         width: 100%;
     }
 
-    .filtroHistorico {
-        justify-content: center;
-        gap: 25px;
-        padding: 10px;
-    }
-
     .filtroGeral,
     .filtroErro,
     .filtroOcioso,
@@ -307,6 +301,12 @@
     .linha {
         grid-template-columns: 1fr 3fr 1fr;
         padding: 0.6rem;
+    }
+}
+/* Telas grandes até 2500px */
+@media (max-width: 721px) {
+    .filtroHistorico {
+        gap: 25px;
     }
 }
 
