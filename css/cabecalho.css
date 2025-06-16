@@ -3,7 +3,6 @@
 }
 
 .cabecalho {
-    backdrop-filter: blur(var(--blur-fundo));
     display: flex;
     flex-direction: column;
     border-radius: 20px;
@@ -13,6 +12,14 @@
     position: fixed;
     overflow: hidden;
     transition: var(--transicao-link) ease-in-out, background-color 1s ease-in-out, box-shadow 1s ease-in-out, color 1s ease-in-out;
+}
+.fundoCabecalho {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(var(--blur-fundo));
+    -webkit-backdrop-filter: blur(var(--blur-fundo)); /* compatibilidade com Safari */
+    z-index: 0;
 }
 .menuTela {
     display: flex;
