@@ -199,8 +199,8 @@ button {
     opacity: 0 !important;
     padding: 0 !important;
     margin: 0 !important;
-    height: 0 !important;
     width: 0 !important;
+    height: 0 !important;
     cursor: default !important;
 }
 .invisible3 {
@@ -285,7 +285,7 @@ button {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: 300px;
     margin: 2.3px;
     height: 30px;
 }

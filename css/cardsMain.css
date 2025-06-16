@@ -148,6 +148,10 @@
     .rotinasExpandida {
         padding-top: 250px;
     }
+    .rectangle.enter {
+        max-width: 85vw;
+        min-width: 85vw;
+    }
 }
 
 @media (min-width: 650px) and (max-width: 720px) {

@@ -1,111 +1,146 @@
+/* =============================================================================
+   LAYOUT PRINCIPAL DO HISTÓRICO
+   ============================================================================= */
+
 .mainHistorico {
-    width: 1500px;
-    padding: 100px 12px 0 0 ;
-    align-items: center;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1500px;
+    max-height: 100vh;
+    padding: 100px 12px 0 0;
     margin: 0;
     opacity: 1;
     scale: 1;
-    max-height: 100vh;
-    flex-direction: column;
-    transition: opacity var(--transicao-link) ease-in-out, max-height var(--transicao-link) ease-in-out, 
-                padding var(--transicao-link) ease-in-out, margin var(--transicao-link) ease-in-out, 
+    transition: opacity var(--transicao-link) ease-in-out,
+                max-height var(--transicao-link) ease-in-out,
+                padding var(--transicao-link) ease-in-out,
+                margin var(--transicao-link) ease-in-out,
                 width var(--transicao-link) ease-in-out;
 }
-.painelConfig{
+
+/* =============================================================================
+   PAINEL DE CONFIGURAÇÃO E FILTROS
+   ============================================================================= */
+
+.painelConfig {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin: 10px 0;
-    gap: 10px;
     justify-content: center;
     align-items: baseline;
     max-height: 200px;
-    transition: opacity var(--transicao-link) ease-in-out, max-height var(--transicao-link) ease-in-out, 
-                padding var(--transicao-link) ease-in-out, margin var(--transicao-link) ease-in-out, box-shadow 1s ease-in-out, 
+    margin: 10px 0;
+    gap: 10px;
+    transition: opacity var(--transicao-link) ease-in-out,
+                max-height var(--transicao-link) ease-in-out,
+                padding var(--transicao-link) ease-in-out,
+                margin var(--transicao-link) ease-in-out,
+                box-shadow 1s ease-in-out,
                 color 1s ease-in-out;
 }
-.painelConfig.collapsed, .mainHistorico.collapsed {
+
+/* Estados colapsados */
+.painelConfig.collapsed,
+.mainHistorico.collapsed {
     opacity: 0;
     max-height: 0;
     padding: 0;
     margin: 0;
     z-index: -999;
 }
+
 .mainHistorico.collapsed {
     width: 0;
 }
 
-.filtroHistorico{
+/* Filtros do histórico */
+.filtroHistorico {
+    height: 34.6px;
     display: flex;
     align-items: center;
-    flex-direction: row;
     gap: 10px;
     transition: var(--transicao-link) ease-in-out;
 }
-.filtroGeral, .filtroErro, .filtroOcioso, .filtroFinal, .filtroFechar{
+
+/* Base para todos os filtros */
+.filtroGeral,
+.filtroErro,
+.filtroOcioso,
+.filtroFinal,
+.filtroFechar {
     border: none;
     cursor: pointer;
-    background-color: var(--cor-texto); /* Cor da bolinha */
-    width: 20px; /* Ajuste o tamanho da bolinha conforme necessário */
-    height: 5px; /* Ajuste o tamanho da bolinha conforme necessário */
-    border-radius: 5px; /* Torna a bolinha circular */
-    transition: var(--transicao-link) ease-in-out, background-color 1s ease-in-out, box-shadow 1s ease-in-out;
+    background-color: var(--cor-texto);
+    width: 20px;
+    height: 5px;
+    border-radius: 5px;
+    transition: var(--transicao-link) ease-in-out,
+                background-color 1s ease-in-out,
+                box-shadow 1s ease-in-out;
 }
-.filtroGeral.clicado, .filtroErro.clicado, .filtroOcioso.clicado, .filtroFinal.clicado, .filtroFechar.clicado{
-    height: 10px;
-}
-.filtroGeral.clicado {
-    box-shadow: 0 0 6px var(--cor-texto)
-}
-.filtroErro.clicado {
-    box-shadow: 0 0 6px var(--cor-erro)
-}
-.filtroOcioso.clicado {
-    box-shadow: 0 0 6px var(--cor-ocioso)
-}
-.filtroFinal.clicado {
-    box-shadow: 0 0 6px var(--cor-final)
-}
+
+/* Cores específicas dos filtros */
+.filtroErro { background-color: var(--cor-erro); }
+.filtroOcioso { background-color: var(--cor-ocioso); }
+.filtroFinal { background-color: var(--cor-final); }
+.filtroFechar { background-color: var(--cor-fechar); }
+
+/* Estados hover e clicado */
+.filtroGeral:hover,
+.filtroErro:hover,
+.filtroOcioso:hover,
+.filtroFinal:hover,
+.filtroFechar:hover,
+.filtroGeral.clicado,
+.filtroErro.clicado,
+.filtroOcioso.clicado,
+.filtroFinal.clicado,
 .filtroFechar.clicado {
-    box-shadow: 0 0 6px var(--cor-fechar)
-}
-.filtroErro {
-    background-color: var(--cor-erro); /* Cor da bolinha */
-}
-.filtroOcioso {
-    background-color: var(--cor-ocioso); /* Cor da bolinha */
-}
-.filtroFinal {
-    background-color: var(--cor-final); /* Cor da bolinha */
-}
-.filtroFechar {
-    background-color: var(--cor-fechar); /* Cor da bolinha */
-}
-.filtroGeral:hover, .filtroErro:hover, .filtroOcioso:hover, .filtroFinal:hover, .filtroFechar:hover {
     height: 10px;
 }
+
+/* Box-shadows para estados clicados */
+.filtroGeral.clicado { box-shadow: 0 0 6px var(--cor-texto); }
+.filtroErro.clicado { box-shadow: 0 0 6px var(--cor-erro); }
+.filtroOcioso.clicado { box-shadow: 0 0 6px var(--cor-ocioso); }
+.filtroFinal.clicado { box-shadow: 0 0 6px var(--cor-final); }
+.filtroFechar.clicado { box-shadow: 0 0 6px var(--cor-fechar); }
+
+/* =============================================================================
+   PAGINAÇÃO
+   ============================================================================= */
 
 .menuPaginas {
     display: flex;
     justify-self: center;
     width: fit-content;
     flex-direction: row;
+    transition: box-shadow 1s ease-in-out,
+                color 1s ease-in-out;
 }
-.hInputPageSize, .menuPaginas, .paginaHistorico {
-    transition: box-shadow 1s ease-in-out, color 1s ease-in-out;
-}
+
 .pageSize {
     width: 35px;
 }
+
+.hInputPageSize {
+    transition: box-shadow 1s ease-in-out,
+                color 1s ease-in-out;
+}
+
 .paginaHistorico {
     display: flex;
     justify-content: center;
     flex-direction: row;
+    transition: box-shadow 1s ease-in-out,
+                color 1s ease-in-out;
 }
+
 .paginaHistorico span {
     align-self: center;
 }
+
 .paginaHistorico button:disabled {
     color: var(--cor-texto-2);
     background-color: var(--cor-texto);
@@ -113,69 +148,111 @@
     transition: background-color 1s ease-in-out;
 }
 
+/* =============================================================================
+   TELA DO HISTÓRICO
+   ============================================================================= */
+
 .telaHistorico {
-    max-height: 72vh;
-    opacity: 1;
     display: flex;
     align-self: center;
     flex-direction: column;
-    margin: 15px 0 0 0;
-    font-size: 0.8em;
+    max-height: 72vh;
     width: 90%;
+    margin: 15px 0 0 0;
     padding: 8px;
-    transition: opacity var(--transicao-link) ease-in-out, box-shadow 1s ease-in-out, color 1s ease-in-out, background-color 1s ease-in-out;
+    font-size: 0.8em;
+    opacity: 1;
+    transition: opacity var(--transicao-link) ease-in-out,
+                box-shadow 1s ease-in-out,
+                color 1s ease-in-out,
+                background-color 1s ease-in-out;
 }
+
 .telaHistoricoConteudo {
     border-radius: 10px;
     overflow-x: auto;
     overflow-y: hidden;
 }
+
 .telaHistorico.collapsed {
-    opacity: 0 !important; /* Altura desejada quando colapsado */
-    height: 72vh
+    opacity: 0 !important;
+    height: 72vh;
 }
-.linha{
+
+/* =============================================================================
+   LINHAS DO HISTÓRICO
+   ============================================================================= */
+
+.linha {
+    display: grid;
+    grid-template-columns: 0.5fr 3fr 1.5fr;
     align-content: center;
+    min-height: 10px;
+    padding: 10px;
     border-radius: var(--borda-botao);
     opacity: 1;
-    display: grid;
-    grid-template-columns: 0.5fr 3fr 1.5fr; /* Três colunas iguais */
-    padding: 10px;
-    min-height: 10px;
-    transition: var(--transicao-link) ease-in-out, color 1s ease-in-out;
+    transition: var(--transicao-link) ease-in-out,
+                color 1s ease-in-out;
 }
+
 .linha:hover {
     background: var(--sombra-2);
 }
+
 .situacao {
     text-align: right;
-    transition: var(--transicao-link) ease-in-out, color 1s ease-in-out;
+    transition: var(--transicao-link) ease-in-out,
+                color 1s ease-in-out;
 }
+
+/* Estados das situações */
 .iniciada {
     color: var(--cor-texto);
 }
+
 .ociosa {
     color: var(--cor-ocioso-alternativa);
     font-weight: bold;
 }
+
 .erro {
     color: var(--cor-erro-alternativa);
     font-weight: bold;
 }
+
 .finalizada {
     color: var(--cor-final-alternativa);
     font-weight: bold;
 }
+
 .fechado {
     color: var(--cor-fechar);
     font-weight: bold;
 }
 
+/* =============================================================================
+   MEDIA QUERIES - OTIMIZADAS
+   ============================================================================= */
 
-@media (max-width: 720px) {
+/* Mobile até 360px */
+@media (max-width: 470px) {
+    .telaHistorico {
+        margin: 40px 0 0 0;
+    }
+}
+
+/* Mobile 361px - 649px */
+@media (min-width: 471px) and (max-width: 649px) {
+    .telaHistorico {
+        margin: 10px 0 0 0;
+    }
+}
+
+/* Tablets e móveis até 720px */
+@media (min-width: 650px) and (max-width: 720px) {
     .mainHistorico {
-        padding: 5px 0;
         width: 100%;
+        padding: 5px 0;
     }
 
     .mainHistorico.collapsed {
@@ -188,14 +265,18 @@
         padding: 10px;
     }
 
-    .telaHistorico {
-        padding: 5px;
-        overflow: auto;
-        margin: 60px 0 0 0;
+    .filtroGeral,
+    .filtroErro,
+    .filtroOcioso,
+    .filtroFinal,
+    .filtroFechar {
+        font-size: x-large;
     }
 
-    .filtroGeral, .filtroErro, .filtroOcioso, .filtroFinal, .filtroFechar {
-        font-size: x-large;
+    .telaHistorico {
+        padding: 5px;
+        margin: 60px 0 0 0;
+        overflow: auto;
     }
 
     .telaHistoricoConteudo {
@@ -203,42 +284,33 @@
     }
 
     .linha {
-        font-size: smaller;
-        padding: 0.6rem;
         grid-template-columns: 1.5fr 2fr 1.5fr;
+        padding: 0.6rem;
+        font-size: smaller;
     }
 }
 
-@media (max-width: 990px) {
-    #telaMenu, #configHistorico {
-        flex-wrap: wrap;
-    }
-}
-@media (max-width: 360px) {
-    .telaHistorico {
-        margin: 100px 0 0 0;
-    }
-}
-
-@media (min-width: 361px) and (max-width: 649px) {
+/* Tablets médios 650px - 990px */
+@media (min-width: 650px) and (max-width: 990px) {
     .telaHistorico {
         margin: 60px 0 0 0;
     }
-}
 
-@media (min-width: 650px) and (max-width: 990px) {
-    .telaHistorico {
-        margin: 100px 0 0 0;
+    #telaMenu,
+    #configHistorico {
+        flex-wrap: wrap;
     }
 }
 
+/* Tablets grandes 721px - 1500px */
 @media (min-width: 721px) and (max-width: 1500px) {
     .linha {
-        padding: 0.6rem;
         grid-template-columns: 1fr 3fr 1fr;
+        padding: 0.6rem;
     }
 }
 
+/* Telas grandes até 2500px */
 @media (max-width: 2500px) {
     .mainHistorico,
     .mainHistorico.collapsed {

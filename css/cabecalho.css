@@ -1,41 +1,67 @@
-#galeria, #dica {
+/* Galeria e Dica - Cores compartilhadas */
+#galeria,
+#dica {
     color: var(--cor-padrao) !important;
 }
 
+/* Cabeçalho */
 .cabecalho {
+    position: fixed;
+    z-index: 2;
     display: flex;
     flex-direction: column;
-    border-radius: 20px;
     justify-content: center;
     align-items: center;
-    z-index: 2;
-    position: fixed;
+    border-radius: 20px;
     overflow: hidden;
-    transition: var(--transicao-link) ease-in-out, background-color 1s ease-in-out, box-shadow 1s ease-in-out, color 1s ease-in-out;
+    transition: var(--transicao-link) ease-in-out, 
+                background-color 1s ease-in-out, 
+                box-shadow 1s ease-in-out, 
+                color 1s ease-in-out;
 }
+
 .fundoCabecalho {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     backdrop-filter: blur(var(--blur-fundo));
-    -webkit-backdrop-filter: blur(var(--blur-fundo)); /* compatibilidade com Safari */
+    -webkit-backdrop-filter: blur(var(--blur-fundo));
     z-index: 0;
 }
+
+/* =============================================================================
+   SISTEMA DE MENU
+   ============================================================================= */
+
+.menu {
+    display: flex;
+    justify-content: center;
+    font-size: 0.9em;
+    margin: 2px;
+    gap: 10px;
+    padding: 8px;
+    overflow: hidden;
+}
+
 .menuTela {
     display: flex;
     justify-content: center;
-    gap: 10px;
-    opacity: 1;
-    padding: 0 8px 8px 8px;
     width: 100%;
     height: 38px;
-    transition: margin var(--transicao-link) ease-in-out, height var(--transicao-link) ease-in-out, width var(--transicao-link) ease-in-out,
-                padding var(--transicao-link) ease-in-out, opacity var(--transicao-link) ease-in-out, padding var(--transicao-link) ease-in-out, box-shadow 1s ease-in-out;
+    gap: 10px;
+    padding: 0 8px 8px 8px;
+    opacity: 1;
+    transition: margin var(--transicao-link) ease-in-out,
+                height var(--transicao-link) ease-in-out,
+                width var(--transicao-link) ease-in-out,
+                padding var(--transicao-link) ease-in-out,
+                opacity var(--transicao-link) ease-in-out,
+                box-shadow 1s ease-in-out;
 }
-.menu {
-    padding: 8px;
-}
-.menu, .menuTelaBotoes {
+
+.menuTelaBotoes {
     display: flex;
     justify-content: center;
     font-size: 0.9em;
@@ -44,84 +70,101 @@
     overflow: hidden;
 }
 
+/* =============================================================================
+   RELÓGIO E NOTIFICAÇÕES
+   ============================================================================= */
+
 #clock {
-    opacity: 1;
     align-self: center;
-    transition: font-size var(--transicao-link) ease-in-out, opacity var(--transicao-link) ease-in-out;
+    opacity: 1;
+    transition: font-size var(--transicao-link) ease-in-out,
+                opacity var(--transicao-link) ease-in-out;
 }
+
 .relogio {
     padding: 9.8px 18px !important;
     scale: 1;
-    transition: scale var(--transicao-link) ease-in-out, padding var(--transicao-link) ease-in-out, box-shadow 1s ease-in-out, background-color 1s ease-in-out;
+    transition: scale var(--transicao-link) ease-in-out,
+                padding var(--transicao-link) ease-in-out,
+                box-shadow 1s ease-in-out,
+                background-color 1s ease-in-out;
 }
+
 .notifica {
-    overflow: hidden;
     display: flex;
     justify-items: center;
     align-self: center;
+    overflow: hidden;
 }
+
 .notificacao {
-    width: 78.2%;
     position: absolute;
-    bottom: 5px; /* Alinha a bolinha ao topo do botão */
+    bottom: 5px;
+    width: 78.2%;
     display: flex;
-    flex-direction: row;
     gap: 3px;
 }
-.bolinhaErro, .bolinhaOcioso, .bolinhaFinal{
-    width: 100%; /* Ajuste o tamanho da bolinha conforme necessário */
-    height: 3px; /* Ajuste o tamanho da bolinha conforme necessário */
-    border-radius: 5px; /* Torna a bolinha circular */
-    transition: var(--transicao-link) ease-in-out, box-shadow 1s ease-in-out;
-}
-.bolinhaErro {
-    background-color: var(--cor-erro); /* Cor da bolinha */
-}
-.bolinhaOcioso {
-    background-color: var(--cor-ocioso); /* Cor da bolinha */
-}
+
+/* Bolinhas de status */
+.bolinhaErro,
+.bolinhaOcioso,
 .bolinhaFinal {
-    background-color: var(--cor-final); /* Cor da bolinha */
+    width: 100%;
+    height: 3px;
+    border-radius: 5px;
+    transition: var(--transicao-link) ease-in-out,
+                box-shadow 1s ease-in-out;
 }
+
+.bolinhaErro { background-color: var(--cor-erro); }
+.bolinhaOcioso { background-color: var(--cor-ocioso); }
+.bolinhaFinal { background-color: var(--cor-final); }
+
+/* =============================================================================
+   ANIMAÇÕES E ESTADOS
+   ============================================================================= */
 
 @keyframes carregandoBotao {
     0%, 100% {
         box-shadow: inset 4px 0 25px var(--animacao-bota-4),
-                inset -4px 0 25px var(--animacao-bota-2),
-                0 0 5px rgba(255, 255, 255, 0.349);
+                    inset -4px 0 25px var(--animacao-bota-2),
+                    0 0 5px rgba(255, 255, 255, 0.349);
     }
     25% {
         box-shadow: inset 4px 0 25px var(--animacao-bota-2),
-                inset -4px 0 25px var(--animacao-bota-1),
-                0 0 5px rgba(255, 255, 255, 0.479);
+                    inset -4px 0 25px var(--animacao-bota-1),
+                    0 0 5px rgba(255, 255, 255, 0.479);
     }
     50% {
         box-shadow: inset 4px 0 25px var(--animacao-bota-1),
-                inset -4px 0 25px var(--animacao-bota-3),
-                0 0 5px rgba(255, 255, 255, 0.479);
+                    inset -4px 0 25px var(--animacao-bota-3),
+                    0 0 5px rgba(255, 255, 255, 0.479);
     }
     75% {
         box-shadow: inset 4px 0 25px var(--animacao-bota-3),
-                inset -4px 0 25px var(--animacao-bota-4),
-                0 0 5px rgba(255, 255, 255, 0.349);
+                    inset -4px 0 25px var(--animacao-bota-4),
+                    0 0 5px rgba(255, 255, 255, 0.349);
     }
 }
+
 .carregando {
-    z-index: -1;
+    position: absolute;
     bottom: 0;
     right: 0;
-    position: absolute;
-    width: 100%; /* Ajuste o tamanho da bolinha conforme necessário */
+    width: 100%;
     height: 100%;
+    z-index: -1;
     animation: carregandoBotao 2s infinite;
     transition: var(--transicao-link) ease-in-out;
 }
 
+/* Controle de fixados */
 #controlarFixados {
     opacity: 0.3;
     box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0);
     transition: 1s ease-in-out;
 }
+
 #controlarFixados.active {
     opacity: 1;
     box-shadow: inset 4px 0 15px var(--animacao-bota-1),
@@ -130,93 +173,121 @@
                 inset 0 -4px 25px var(--animacao-bota-2);
 }
 
-#toggleDarkMode{
+/* Toggle Dark Mode */
+#toggleDarkMode {
     display: flex;
 }
-#toggleDarkMode img{
+
+#toggleDarkMode img {
     width: 18px;
     height: 18px;
     align-self: center;
 }
 
+/* =============================================================================
+   DICA E GALERIA
+   ============================================================================= */
+
 #dica {
     cursor: help;
 }
-.dicaContainer, .galeriaContainer {
-    overflow: auto;
+
+/* Containers compartilhados */
+.dicaContainer,
+.galeriaContainer {
     display: flex;
     flex-direction: column;
+    overflow: auto;
 }
-.dicaContainer button, .galeriaContainer button {
+
+.dicaContainer button,
+.galeriaContainer button {
     position: fixed;
     margin-right: 10px;
 }
 
-.dicaTela, .galeriaTela {
+/* Telas compartilhadas */
+.dicaTela,
+.galeriaTela {
+    opacity: 1;
     align-self: center;
     margin: 5px 30px 100px 30px;
-    max-width: 80%;
-    max-height: 85vh;
-    width: 100%;
-    transition: margin var(--transicao-link) ease-in-out, max-height var(--transicao-link) ease-in-out, width var(--transicao-link) ease-in-out,
-                opacity var(--transicao-link) ease-in-out, padding var(--transicao-link) ease-in-out;
+    width: 80%;
+    height: 85vh;
+    transition: margin var(--transicao-link) ease-in-out,
+                height var(--transicao-link) ease-in-out,
+                width var(--transicao-link) ease-in-out,
+                opacity var(--transicao-link) ease-in-out,
+                padding var(--transicao-link) ease-in-out;
 }
 
-.ClassTextoDica, .ClassTextoGaleria {
+/* Textos compartilhados */
+.ClassTextoDica,
+.ClassTextoGaleria {
     padding: 20px;
     margin-top: 10px;
 }
+
+/* =============================================================================
+   GALERIA ESPECÍFICA
+   ============================================================================= */
 
 .galeriaTela {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
+
 .ClassTextoGaleria {
     display: flex;
     justify-content: center;
 }
+
 .imagens {
-    padding: 20px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    padding: 20px;
 }
+
 .imagemGaleria {
-    cursor: pointer;
-    box-shadow: 0 0 5px rgb(255, 0, 64);
-    border-radius: var(--borda-botao);
     width: 30%;
-    margin: 10px;
     height: auto;
-    object-fit: cover; /* Ajusta a imagem ao container */
+    margin: 10px;
+    border-radius: var(--borda-botao);
+    box-shadow: 0 0 5px rgb(255, 0, 64);
+    object-fit: cover;
+    cursor: pointer;
     transition: width var(--transicao-link) ease-in-out;
 }
+
+/* =============================================================================
+   MODAL
+   ============================================================================= */
+
 .modal {
     display: none;
     position: fixed;
-    z-index: 1000;
-    left: 0;
     top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
 }
 
 .modal-content {
+    position: relative;
     width: 90%;
     height: auto;
+    margin: 30px;
+    right: -30px;
     border-radius: var(--borda-botao);
     display: flex;
     justify-content: center;
-    
-    right: -30px;
-    margin: 30px;
-    position: relative;
-}
-.modal-content, .close {
     animation: fadeIn 0.5s;
 }
+
 .close {
     position: absolute;
     top: 20px;
@@ -225,7 +296,9 @@
     font-size: 35px;
     font-weight: bold;
     cursor: pointer;
+    animation: fadeIn 0.5s;
 }
+
 #caption {
     margin: 10px auto;
     text-align: center;
@@ -233,13 +306,18 @@
     font-size: 15px;
 }
 
+/* =============================================================================
+   MEDIA QUERIES
+   ============================================================================= */
 
+/* Mobile (até 649px) */
 @media (max-width: 649px) {
     .menuTelaBotoes {
         flex-wrap: wrap;
         padding: 7px;
         gap: 25px;
     }
+    
     .menuTela {
         flex-wrap: wrap;
         gap: 0;
@@ -247,7 +325,8 @@
     }
 }
 
-@media (min-width: 650px) and (max-width: 916px) {
+/* Tablet pequeno (650px - 720px) */
+@media (min-width: 650px) and (max-width: 720px) {
     .menuTelaBotoes {
         padding: 7px;
         gap: 25px;
@@ -258,44 +337,30 @@
         height: 120px;
     }
 
-    .dicaTela, .galeriaTela {
-        max-height: 85vh;
-    }
-}
-
-@media (min-width: 650px) and (max-width: 720px) {
-    .menuTela {
-        height: 120px;
-    }
-
-    .dicaTela, .galeriaTela {
+    .dicaTela,
+    .galeriaTela {
         max-height: 85vh;
     }
 
     .modal-content {
         position: fixed;
         right: 20px;
-        margin-top: 80%;
-        margin-right: 0;
-        margin-bottom: 0;
-        margin-left: 0;
+        margin: 80% 0 0 0;
     }
 }
 
+/* Tablet médio (721px - 880px) */
 @media (min-width: 721px) and (max-width: 880px) {
     .menuTela {
         height: 120px;
-    }
-
-    .fundo {
-        border-radius: 25px;
     }
 
     .menu {
         gap: 5px;
     }
 
-    .dicaTela, .galeriaTela {
+    .dicaTela,
+    .galeriaTela {
         max-width: 95%;
         margin: 30px 15px;
     }
@@ -307,15 +372,25 @@
     .modal-content {
         position: fixed;
         right: 20px;
-        margin-top: 50%;
-        margin-right: 0;
-        margin-bottom: 0;
-        margin-left: 0;
+        margin: 50% 0 0 0;
     }
 }
 
+/* Tablet grande (650px - 916px) */
 @media (min-width: 650px) and (max-width: 916px) {
     .menuTelaBotoes {
         flex-wrap: nowrap;
+        padding: 7px;
+        gap: 25px;
+    }
+
+    .menuTela {
+        flex-wrap: wrap;
+        height: 120px;
+    }
+
+    .dicaTela,
+    .galeriaTela {
+        max-height: 85vh;
     }
 }
