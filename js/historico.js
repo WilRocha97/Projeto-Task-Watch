@@ -73,7 +73,7 @@ function filtraHistorico(event='', ocorrencia='geral', page=1) {
     carregandoHistorico.classList.remove('invisible')
     var screenWidth = window.innerWidth;
     if (screenWidth < 1255) {
-        telaMenu.classList.add('invisible2');
+        telaMenu.classList.add('invisible3');
         menu.innerHTML = '≡'
         telaDica.classList.add('invisible2');
         telaRotinas.classList.remove('rotinasExpandida');
@@ -289,7 +289,7 @@ limpaHInputName.addEventListener('click', (event)=> {
 historicoBotao.addEventListener('click', ()=> {
     var screenWidth = window.innerWidth;
     if (screenWidth < 1255) {
-        telaMenu.classList.add('invisible2');
+        telaMenu.classList.add('invisible3');
         menu.innerHTML = '≡'
         telaDica.classList.add('invisible2');
         telaRotinas.classList.remove('rotinasExpandida');

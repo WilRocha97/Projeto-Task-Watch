@@ -167,13 +167,13 @@ document.body.addEventListener('click', (event) => {
 
 // Janela com dicas de como o site funciona
 menu.addEventListener('click', () => {
-    if (telaMenu.classList.contains('invisible2')) {
-        telaMenu.classList.remove('invisible2');
+    if (telaMenu.classList.contains('invisible3')) {
+        telaMenu.classList.remove('invisible3');
         menu.innerHTML = '–'
         telaRotinas.classList.add('rotinasExpandida');
     }
     else {
-        telaMenu.classList.add('invisible2');
+        telaMenu.classList.add('invisible3');
         menu.innerHTML = '≡'
         telaRotinas.classList.remove('rotinasExpandida');
     }
@@ -342,7 +342,7 @@ fecharAjuda.addEventListener('click', ()=> {
 galeria.addEventListener('click', () => {
     var screenWidth = window.innerWidth;
     if (screenWidth < 1255) {
-        telaMenu.classList.add('invisible2');
+        telaMenu.classList.add('invisible3');
         menu.innerHTML = '≡'
         telaRotinas.classList.remove('rotinasExpandida');
     }

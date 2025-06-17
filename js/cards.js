@@ -77,7 +77,7 @@ function sortable(container) {
                 evt.item.classList.add('sortable-ghost');
                 var screenWidth = window.innerWidth;
                 if (screenWidth < 1255) {
-                    telaMenu.classList.add('invisible2');
+                    telaMenu.classList.add('invisible3');
                     menu.innerHTML = '≡'
                 }
                 telaDica.classList.add('invisible2');
@@ -123,7 +123,7 @@ document.addEventListener('click', (event) => {
         if (!target.classList.contains('cmb')) {
             var screenWidth = window.innerWidth;
             if (screenWidth < 1255) {
-                telaMenu.classList.add('invisible2');
+                telaMenu.classList.add('invisible3');
                 menu.innerHTML = '≡'
             }
             telaDica.classList.add('invisible2')
