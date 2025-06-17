@@ -28,7 +28,6 @@ const limpaCInputCard = document.getElementById('limpaCInputCard');
 const maisInfos = [{botao:'.maisInfo', nomeBotaoMini:'▼ Execução', nomeBotaoMaxi:'▲ Execução', conteudo:'.resumoResultados'}, 
                     {botao:'.maisInfo2', nomeBotaoMini:'▼ Andamentos', nomeBotaoMaxi:'▲ Andamentos', conteudo:'.resumoResultados2'}]
                     
-var screenWidth = window.innerWidth;
 
 function isTouchDevice() {
     return ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
@@ -318,9 +317,13 @@ explodeCard.addEventListener('click', () => {
 
 // Janela com dicas de como o site funciona
 dica.addEventListener('click', () => {
-    telaMenu.classList.add('invisible2');
-    menu.innerHTML = '≡'
-    telaRotinas.classList.remove('rotinasExpandida');
+    var screenWidth = window.innerWidth;
+    if (screenWidth < 1255) {
+        telaMenu.classList.add('invisible2');
+        menu.innerHTML = '≡'
+        telaRotinas.classList.remove('rotinasExpandida');
+    }
+    
     if (telaDica.classList.contains('invisible2')) {
         telaDica.classList.remove('invisible2');
     }
@@ -337,9 +340,12 @@ fecharAjuda.addEventListener('click', ()=> {
 
 // Janela com imagens do TaskWatch oficial
 galeria.addEventListener('click', () => {
-    telaMenu.classList.add('invisible2');
-    menu.innerHTML = '≡'
-    telaRotinas.classList.remove('rotinasExpandida');
+    var screenWidth = window.innerWidth;
+    if (screenWidth < 1255) {
+        telaMenu.classList.add('invisible2');
+        menu.innerHTML = '≡'
+        telaRotinas.classList.remove('rotinasExpandida');
+    }
     if (telaGaleria.classList.contains('invisible2')) {
         telaGaleria.classList.remove('invisible2');
     }

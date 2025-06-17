@@ -55,7 +55,7 @@
     transition: height var(--transicao-link) ease-in-out, padding var(--transicao-link) ease-in-out;
 }
 .rotinasExpandida {
-    padding: 110px 12px 0 12px;
+    padding: 60px 12px 0 12px;
 }
 .rectangle {
     --escala-card: 1.02;
@@ -196,5 +196,11 @@
     }
     .maisInfo.clicked, .maisInfo2.clicked {
         animation: luzBotaoCard 0.5s linear;
+    }
+}
+
+@media (min-width: 917px) and (max-width: 1255px) {
+    .rotinasExpandida {
+        padding: 110px 12px 0 12px;
     }
 }

@@ -2,7 +2,6 @@ import {animacaoBotao} from './main.js';
 
 var template = ``;
 var idClassHistorico = '';
-const screenWidth = window.innerWidth;
 
 var hInputDate = document.getElementById('searchInputDate');
 const limpaHInputDate = document.getElementById('limpaHInputDate');
@@ -72,11 +71,14 @@ function filtraHistorico(event='', ocorrencia='geral', page=1) {
     }
 
     carregandoHistorico.classList.remove('invisible')
-    telaMenu.classList.add('invisible2');
-    menu.innerHTML = '≡'
-    telaDica.classList.add('invisible2');
-    telaRotinas.classList.remove('rotinasExpandida');
-    telaHistorico.classList.remove('historicoExpandida');
+    var screenWidth = window.innerWidth;
+    if (screenWidth < 1255) {
+        telaMenu.classList.add('invisible2');
+        menu.innerHTML = '≡'
+        telaDica.classList.add('invisible2');
+        telaRotinas.classList.remove('rotinasExpandida');
+        telaHistorico.classList.remove('historicoExpandida');
+    }
     
     if (event != '') {
         let target = event.target;
@@ -96,6 +98,7 @@ function filtraHistorico(event='', ocorrencia='geral', page=1) {
     }, 600);
     setTimeout(()=> {
         historicoTelaContainer.classList.remove('collapsed');
+        var screenWidth = window.innerWidth;
         if (screenWidth < 2500) {
             const target = document.getElementById('targetHistorico');
             const targetPosition = target.offsetTop; /* Pega a posição do topo do elemento */
@@ -284,11 +287,14 @@ limpaHInputName.addEventListener('click', (event)=> {
 
 // Abre e fecha a tela de histórico
 historicoBotao.addEventListener('click', ()=> {
-    telaMenu.classList.add('invisible2');
-    menu.innerHTML = '≡'
-    telaDica.classList.add('invisible2');
-    telaRotinas.classList.remove('rotinasExpandida');
-    telaHistorico.classList.remove('historicoExpandida');
+    var screenWidth = window.innerWidth;
+    if (screenWidth < 1255) {
+        telaMenu.classList.add('invisible2');
+        menu.innerHTML = '≡'
+        telaDica.classList.add('invisible2');
+        telaRotinas.classList.remove('rotinasExpandida');
+        telaHistorico.classList.remove('historicoExpandida');
+    }
 
     document.querySelectorAll('.bn').forEach(bolinha => {
         bolinha.classList.add('invisible');
@@ -302,6 +308,7 @@ historicoBotao.addEventListener('click', ()=> {
 
     if (mainHistorico.classList.contains('collapsed')) {
         // sobe para o topo da página
+        var screenWidth = window.innerWidth;
         if (screenWidth < 2500) {
             window.scrollTo({
                 top: 0,
