@@ -75,8 +75,11 @@ function sortable(container) {
             // Inicia um timeout para adicionar a classe após o delay
             timeout = setTimeout(function() {
                 evt.item.classList.add('sortable-ghost');
-                telaMenu.classList.add('invisible2');
-                menu.innerHTML = '≡'
+                var screenWidth = window.innerWidth;
+                if (screenWidth < 1255) {
+                    telaMenu.classList.add('invisible2');
+                    menu.innerHTML = '≡'
+                }
                 telaDica.classList.add('invisible2');
                 telaGaleria.classList.add('invisible2');
                 telaRotinas.classList.remove('rotinasExpandida')
