@@ -118,8 +118,11 @@ document.addEventListener('click', (event) => {
 
         // fecha o menu ao clicar em qualuqer lugar que não seja nele
         if (!target.classList.contains('cmb')) {
-            telaMenu.classList.add('invisible2')
-            menu.innerHTML = '≡'
+            var screenWidth = window.innerWidth;
+            if (screenWidth < 1255) {
+                telaMenu.classList.add('invisible2');
+                menu.innerHTML = '≡'
+            }
             telaDica.classList.add('invisible2')
             telaGaleria.classList.add('invisible2')
             telaRotinas.classList.remove('rotinasExpandida')
