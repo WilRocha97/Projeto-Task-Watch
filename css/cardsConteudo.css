@@ -51,7 +51,8 @@
     padding: 0;
     margin-bottom: 0;
     max-height: 0;
-    transition: max-height var(--transicao-link) ease-in-out;
+    transition: opacity var(--transicao-link) ease-in-out, margin-bottom var(--transicao-link) ease-in-out, 
+                padding var(--transicao-link) ease-in-out, max-height var(--transicao-link) ease-in-out;
 }
 .telaDadoConteudo, .telaResumoConteudo, .telaErroInfo {
     overflow-y: auto;
