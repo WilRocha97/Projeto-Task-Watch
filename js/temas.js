@@ -18,7 +18,6 @@ export function decoracao(card) {
     else {
         card.querySelector('#decoracao').remove()
     }
-    
 }
 
 function definevariantesImagens() {
@@ -30,27 +29,27 @@ function definevariantesImagens() {
     let feriado;
 
     // Verifica datas
-    if ((mes === 12 && dia >= 30) && (mes === 1 && dia <= 2)) {
+    if ((mes === 12 && dia >= 30) || (mes === 1 && dia <= 2)) {
         variantesImagens = 11;
         feriado = 'anoNovo'
     }
-    else if ((mes === 2 && dia >= 24) && (mes === 3 && dia <= 4)) {
+    else if ((mes === 2 && dia >= 24) || (mes === 3 && dia <= 4)) {
         variantesImagens = 12;
         feriado = 'carnaval'
     }
-    else if ((mes === 4 && dia >= 1) && (mes === 4 && dia <= 22)) {
+    else if ((mes === 4 && dia >= 1) || (mes === 4 && dia <= 22)) {
         variantesImagens = 12;
         feriado = 'pascoa'
     }
-    else if ((mes === 6 && dia >= 29) && (mes === 6 && dia <= 30)) {
+    else if ((mes === 6 && dia >= 29) || (mes === 6 && dia <= 30)) {
         variantesImagens = 19;
         feriado = 'junina'
     }
-    else if ((mes === 10 && dia >= 1) && (mes === 10 && dia <= 31)) {
+    else if ((mes === 10 && dia >= 1) || (mes === 10 && dia <= 31)) {
         variantesImagens = 18;
         feriado = 'halloween'
     }
-    else if ((mes === 12 && dia >= 1) && (mes === 12 && dia <= 29)) {
+    else if ((mes === 12 && dia >= 1) || (mes === 12 && dia <= 29)) {
         variantesImagens = 12;
         feriado = 'natal'
     }

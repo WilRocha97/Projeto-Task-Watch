@@ -258,7 +258,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 20px;
+    padding: 1px;
 }
 
 .imagemGaleria {
@@ -289,10 +289,10 @@
 
 .modal-content {
     position: relative;
-    width: 90%;
+    width: 80vw;
     height: auto;
-    margin: 30px;
-    right: -30px;
+    justify-self: center;
+    margin: 10vh 10px;
     border-radius: var(--borda-botao);
     display: flex;
     justify-content: center;
