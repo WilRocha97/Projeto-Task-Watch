@@ -8,23 +8,27 @@
 }
 .cabecalhoCardBotoes {
     justify-content: flex-start;
-    margin-left: 5px;
 }
 
 .dispositivo, .titulo  {
     font-weight: 600;
     font-size: 1em;
-    padding:  4px 5px 5px 5px;
     opacity: 1;
     scale: 1;
     white-space: nowrap;
     transition: var(--transicao-link) ease-in-out;
 }
+.titulo {
+    padding:  4px 5px 5px 5px;
+}
 .dispositivo {
-    margin-right: 3px;
+    padding:  4px 0 5px 0;
+    opacity: 0;
+    max-width: 0;
 }
 
 .tituloContainer {
+    margin: 0 5px 0 5px;
     overflow: hidden;
     border-radius: var(--borda-botao);
 }
@@ -58,7 +62,6 @@
 }
 
 .botaoFechar, .botaoFixar, .botaoInfo {
-    padding:  4px 5px 5px 5px;
     font-weight: 600;
     font-size: 0.8em;
     text-align: center;
@@ -69,10 +72,55 @@
     scale: 1;
     white-space: nowrap;
     border-radius: var(--borda-botao);
-    width: 14px;
     height: 13px;
     transition: var(--transicao-link) ease-in-out;
 }
+.botaoFechar, .botaoInfo, .botaoFixar {
+    padding: 4px 0 5px 0;
+    width: 0;
+    opacity: 0;
+}
+.botaoFixado {
+    opacity: 1;
+    width: 14px;
+    padding:  4px 5px 5px 5px;
+}
+/* Mostra todo o cabeçalho no hover em telas de computador */
+.rectangle:hover .botaoFechar, 
+.rectangle:hover .botaoInfo,
+.rectangle:hover .botaoFixar {
+    width: 14px;
+    padding: 4px 5px 5px 5px;
+    opacity: 1;
+}
+.rectangle:hover .dispositivo {
+    padding:  4px 5px 5px 5px;
+    margin-right: 3px;
+    max-width: 50px;
+    opacity: 1;
+}
+.rectangle:hover .tituloContainer {
+    margin: 0 5px 0 0;
+}
+/* --------------------------------------- */
+/* Mostra todo o cabeçalho em telas de toque */
+.rectangle.nh .botaoFechar, 
+.rectangle.status-error.nh .botaoInfo,
+.rectangle.nh .botaoFixar {
+    width: 14px !important;
+    padding: 4px 5px 5px 5px !important;
+    opacity: 1 !important;
+}
+.rectangle.nh .dispositivo {
+    padding:  4px 5px 5px 5px !important;
+    margin-right: 3px !important;
+    max-width: 50px !important;
+    opacity: 1 !important;
+}
+.rectangle.nh .tituloContainer {
+    margin: 0 5px 0 0 !important;
+}
+/* --------------------------------------- */
 .botaoFixar:hover {
     text-shadow: 0 0 5px white;
 }
