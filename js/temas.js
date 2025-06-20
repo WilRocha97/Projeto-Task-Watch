@@ -37,19 +37,19 @@ function definevariantesImagens() {
         variantesImagens = 12;
         feriado = 'carnaval'
     }
-    else if ((mes === 4 && dia >= 1) || (mes === 4 && dia <= 22)) {
+    else if ((mes === 4 && dia >= 1) && (mes === 4 && dia <= 22)) {
         variantesImagens = 12;
         feriado = 'pascoa'
     }
-    else if ((mes === 6 && dia >= 29) || (mes === 6 && dia <= 30)) {
+    else if ((mes === 6 && dia >= 21) && (mes === 6 && dia <= 30)) {
         variantesImagens = 19;
         feriado = 'junina'
     }
-    else if ((mes === 10 && dia >= 1) || (mes === 10 && dia <= 31)) {
+    else if ((mes === 10 && dia >= 1) && (mes === 10 && dia <= 31)) {
         variantesImagens = 18;
         feriado = 'halloween'
     }
-    else if ((mes === 12 && dia >= 1) || (mes === 12 && dia <= 29)) {
+    else if ((mes === 12 && dia >= 1) && (mes === 12 && dia <= 29)) {
         variantesImagens = 12;
         feriado = 'natal'
     }
