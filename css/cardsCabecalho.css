@@ -107,18 +107,18 @@
 .rectangle.nh .botaoFechar, 
 .rectangle.status-error.nh .botaoInfo,
 .rectangle.nh .botaoFixar {
-    width: 14px !important;
-    padding: 4px 5px 5px 5px !important;
-    opacity: 1 !important;
+    width: 14px;
+    padding: 4px 5px 5px 5px;
+    opacity: 1;
 }
 .rectangle.nh .dispositivo {
-    padding:  4px 5px 5px 5px !important;
-    margin-right: 3px !important;
-    max-width: 50px !important;
-    opacity: 1 !important;
+    padding:  4px 5px 5px 5px;
+    margin-right: 3px;
+    max-width: 50px;
+    opacity: 1;
 }
 .rectangle.nh .tituloContainer {
-    margin: 0 5px 0 0 !important;
+    margin: 0 5px 0 0;
 }
 /* --------------------------------------- */
 .botaoFixar:hover {

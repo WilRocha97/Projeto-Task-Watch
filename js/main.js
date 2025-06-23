@@ -324,14 +324,17 @@ dica.addEventListener('click', () => {
         telaRotinas.classList.remove('rotinasExpandida');
     }
     
+    setTimeout(()=> {
+        if (!telaGaleria.classList.contains('invisible2')) {
+            telaGaleria.classList.add('invisible2');
+        }
+    }, 300);
+
     if (telaDica.classList.contains('invisible2')) {
         telaDica.classList.remove('invisible2');
     }
     else {
         telaDica.classList.add('invisible2');
-    }
-    if (!telaGaleria.classList.contains('invisible2')) {
-        telaGaleria.classList.add('invisible2');
     }
 });
 fecharAjuda.addEventListener('click', ()=> {
@@ -346,14 +349,18 @@ galeria.addEventListener('click', () => {
         menu.innerHTML = '≡'
         telaRotinas.classList.remove('rotinasExpandida');
     }
+
+    setTimeout(()=> {
+        if (!telaDica.classList.contains('invisible2')) {
+            telaDica.classList.add('invisible2');
+        }
+    }, 300);
+
     if (telaGaleria.classList.contains('invisible2')) {
         telaGaleria.classList.remove('invisible2');
     }
     else {
         telaGaleria.classList.add('invisible2');
-    }
-    if (!telaDica.classList.contains('invisible2')) {
-        telaDica.classList.add('invisible2');
     }
 });
 fecharGaleria.addEventListener('click', ()=> {
