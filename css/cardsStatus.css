@@ -88,6 +88,7 @@
     animation: none;
 }
 .status.nh {
+    scale: 1;
     --cor-fundo-2: #a8a8a82d;
     box-shadow: inset 0 0 20px var(--cor-opaca),
                 var(--direcao-sombra-1) var(--direcao-sombra-1) 10px var(--cor-opaca),
