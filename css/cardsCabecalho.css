@@ -15,14 +15,17 @@
     font-size: 1em;
     opacity: 1;
     scale: 1;
-    white-space: nowrap;
     transition: var(--transicao-link) ease-in-out;
 }
 .titulo {
+     white-space: nowrap;
     padding:  4px 5px 5px 5px;
 }
 .dispositivo {
+    left: -50px;
+    position: relative;
     padding:  4px 0 5px 0;
+    margin-right: 0;
     opacity: 0;
     max-width: 0;
 }
@@ -94,6 +97,8 @@
     opacity: 1;
 }
 .rectangle:hover .dispositivo {
+    left: 0;
+    position: relative;
     padding:  4px 5px 5px 5px;
     margin-right: 3px;
     max-width: 50px;
@@ -112,6 +117,8 @@
     opacity: 1;
 }
 .rectangle.nh .dispositivo {
+    left: 0;
+    position: relative;
     padding:  4px 5px 5px 5px;
     margin-right: 3px;
     max-width: 50px;
