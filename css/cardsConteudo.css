@@ -74,11 +74,11 @@
     padding: 0;
     opacity: 0;
     max-height: 0;
-    transition: padding var(--transicao-link-2) ease-in-out, opacity var(--transicao-link-2) ease-in-out, 
-                max-width var(--transicao-link-2) ease-in-out, max-height var(--transicao-link-2) ease-in-out,
-                color var(--transicao-link-2) ease-in-out, text-shadow var(--transicao-link-2) ease-in-out;
+    min-height: 0;
+    transition: var(--transicao-link-2) ease-in-out;
 }
 .content:not(:empty) {
+    min-height: 10px;
     max-height: 200px;
     padding: 3px;
     opacity: 1;
