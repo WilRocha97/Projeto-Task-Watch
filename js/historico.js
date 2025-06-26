@@ -92,6 +92,9 @@ function filtraHistorico(event='', ocorrencia='geral', page=1) {
     }
     
     historicoTelaContainer.classList.add('collapsed');
+    const paginationContainer = document.getElementById('pagination');
+    paginationContainer.classList.add('invisible4');
+    
     setTimeout(()=> {
         historicoTela.innerHTML = ''; // Limpa a tabela para novos dados
         fetchHistoricoFiltrado(ocorrencia, page)
@@ -112,86 +115,92 @@ function filtraHistorico(event='', ocorrencia='geral', page=1) {
     }, 1000);
 }
 function criaPaginacao(currentPage, totalPages, ocorrencia) {
-    let paginationContainer = document.getElementById('pagination'); // Container da paginação
-    paginationContainer.innerHTML = '';  // Limpa o conteúdo existente
+    const paginationContainer = document.getElementById('pagination');
+    setTimeout(() => {
+        paginationContainer.innerHTML = '';
 
-    const maxVisiblePages = 3; // Quantas páginas no máximo são mostradas entre os '...'
+        const maxVisiblePages = 3;
 
-    // Botão para a primeira página e 'Anterior'
-    if (currentPage > 1) {
-        let prevButton = document.createElement('button');
-        prevButton.innerText = '◀';
-        prevButton.title = 'Página anterior'
-        prevButton.onclick = (event) => filtraHistorico(event, ocorrencia, currentPage - 1);
-        paginationContainer.appendChild(prevButton);
-    }
+        if (currentPage > 1) {
+            let prevButton = document.createElement('button');
+            prevButton.innerText = '◀';
+            prevButton.title = 'Página anterior';
+            prevButton.className = 'pageButon';
+            prevButton.onclick = (event) => filtraHistorico(event, ocorrencia, currentPage - 1);
+            paginationContainer.appendChild(prevButton);
+        }
 
-    // Se a primeira página não está visível (ou seja, currentPage > 3), mostra o '1' e '...'
-    if (currentPage > 3) {
-        let firstPageButton = document.createElement('button');
-        firstPageButton.innerText = '1';
-        firstPageButton.onclick = (event) => filtraHistorico(event, ocorrencia, 1);
-        paginationContainer.appendChild(firstPageButton);
+        if (currentPage > 3) {
+            let firstPageButton = document.createElement('button');
+            firstPageButton.innerText = '1';
+            firstPageButton.className = 'pageButon';
+            firstPageButton.onclick = (event) => filtraHistorico(event, ocorrencia, 1);
+            paginationContainer.appendChild(firstPageButton);
 
-        let dotsBefore = document.createElement('span');
-        dotsBefore.innerText = '...';
-        paginationContainer.appendChild(dotsBefore);
-    }
-    // Se estiver na ternceira página mostra também a primeira página
-    if (currentPage == 3) {
-        let firstPageButton = document.createElement('button');
-        firstPageButton.innerText = '1';
-        firstPageButton.onclick = (event) => filtraHistorico(event, ocorrencia, 1);
-        paginationContainer.appendChild(firstPageButton);
-    }
+            let dotsBefore = document.createElement('span');
+            dotsBefore.className = 'pageButon';
+            dotsBefore.innerText = '...';
+            paginationContainer.appendChild(dotsBefore);
+        }
 
-    // Páginas centrais: limitamos a quantidade de páginas visíveis ao redor da página atual
-    let startPage = Math.max(currentPage - Math.floor(maxVisiblePages / 2), 1);
-    let endPage = Math.min(currentPage + Math.floor(maxVisiblePages / 2), totalPages);
+        if (currentPage == 3) {
+            let firstPageButton = document.createElement('button');
+            firstPageButton.className = 'pageButon';
+            firstPageButton.innerText = '1';
+            firstPageButton.onclick = (event) => filtraHistorico(event, ocorrencia, 1);
+            paginationContainer.appendChild(firstPageButton);
+        }
 
-    if (currentPage <= 3) {
-        endPage = Math.min(maxVisiblePages, totalPages);
-    }
-    if (currentPage >= totalPages - 2) {
-        startPage = Math.max(totalPages - maxVisiblePages + 1, 1);
-    }
+        let startPage = Math.max(currentPage - Math.floor(maxVisiblePages / 2), 1);
+        let endPage = Math.min(currentPage + Math.floor(maxVisiblePages / 2), totalPages);
 
-    for (let page = startPage; page <= endPage; page++) {
-        let pageButton = document.createElement('button');
-        pageButton.innerText = page;
-        pageButton.disabled = (page === currentPage);  // Desabilita o botão da página atual
-        pageButton.onclick = (event) => filtraHistorico(event, ocorrencia, page);
-        paginationContainer.appendChild(pageButton);
-    }
+        if (currentPage <= 3) {
+            endPage = Math.min(maxVisiblePages, totalPages);
+        }
+        if (currentPage >= totalPages - 2) {
+            startPage = Math.max(totalPages - maxVisiblePages + 1, 1);
+        }
 
-    // Se a última página não está visível (ou seja, currentPage < totalPages - 2), mostra '...' e a última página
-    if (currentPage < totalPages - 2) {
-        let dotsAfter = document.createElement('span');
-        dotsAfter.innerText = '...';
-        paginationContainer.appendChild(dotsAfter);
+        for (let page = startPage; page <= endPage; page++) {
+            let pageButton = document.createElement('button');
+            pageButton.innerText = page;
+            pageButton.className = 'pageButon';
+            pageButton.disabled = (page === currentPage);
+            pageButton.onclick = (event) => filtraHistorico(event, ocorrencia, page);
+            paginationContainer.appendChild(pageButton);
+        }
 
-        let lastPageButton = document.createElement('button');
-        lastPageButton.innerText = totalPages;
-        lastPageButton.onclick = (event) => filtraHistorico(event, ocorrencia, totalPages);
-        paginationContainer.appendChild(lastPageButton);
-    }
+        if (currentPage < totalPages - 2) {
+            let dotsAfter = document.createElement('span');
+            dotsAfter.className = 'pageButon';
+            dotsAfter.innerText = '...';
+            paginationContainer.appendChild(dotsAfter);
 
-    // Se estiver na ante penultima página mostra também a ultima página
-    if (currentPage == totalPages - 2) {
-        let lastPageButton = document.createElement('button');
-        lastPageButton.innerText = totalPages;
-        lastPageButton.onclick = (event) => filtraHistorico(event, ocorrencia, totalPages);
-        paginationContainer.appendChild(lastPageButton);
-    }
+            let lastPageButton = document.createElement('button');
+            lastPageButton.className = 'pageButon';
+            lastPageButton.innerText = totalPages;
+            lastPageButton.onclick = (event) => filtraHistorico(event, ocorrencia, totalPages);
+            paginationContainer.appendChild(lastPageButton);
+        }
 
-    // Botão para 'Próximo'
-    if (currentPage < totalPages) {
-        let nextButton = document.createElement('button');
-        nextButton.innerText = '▶';
-        nextButton.title = 'Próxima página'
-        nextButton.onclick = (event) => filtraHistorico(event, ocorrencia, currentPage + 1);
-        paginationContainer.appendChild(nextButton);
-    }
+        if (currentPage == totalPages - 2) {
+            let lastPageButton = document.createElement('button');
+            lastPageButton.className = 'pageButon';
+            lastPageButton.innerText = totalPages;
+            lastPageButton.onclick = (event) => filtraHistorico(event, ocorrencia, totalPages);
+            paginationContainer.appendChild(lastPageButton);
+        }
+
+        if (currentPage < totalPages) {
+            let nextButton = document.createElement('button');
+            nextButton.className = 'pageButon';
+            nextButton.innerText = '▶';
+            nextButton.title = 'Próxima página';
+            nextButton.onclick = (event) => filtraHistorico(event, ocorrencia, currentPage + 1);
+            paginationContainer.appendChild(nextButton);
+        }
+        paginationContainer.classList.remove('invisible4');
+    }, 300);
 }
 function fetchHistoricoFiltrado(ocorrencia = 'geral', page = 1) {
     var filteredData = ''

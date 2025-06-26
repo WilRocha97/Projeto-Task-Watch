@@ -323,7 +323,6 @@
     .menuTelaBotoes {
         flex-wrap: wrap;
         padding: 7px;
-        gap: 25px;
     }
     
     .menuTela {

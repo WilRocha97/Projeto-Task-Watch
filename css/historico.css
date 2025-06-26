@@ -125,16 +125,21 @@
 }
 
 .hInputPageSize {
+    min-width: 15px !important;
     transition: box-shadow 1s ease-in-out,
                 color 1s ease-in-out;
 }
 
 .paginaHistorico {
+    opacity: 1;
+    max-width: 500px;
     display: flex;
     justify-content: center;
     flex-direction: row;
     transition: box-shadow 1s ease-in-out,
-                color 1s ease-in-out;
+                color 1s ease-in-out,
+                opacity var(--transicao-link) ease-in-out,
+                max-width var(--transicao-link) ease-in-out;
 }
 
 .paginaHistorico span {

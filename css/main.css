@@ -210,6 +210,11 @@ button {
     width: 0 !important;
     cursor: default !important;
 }
+.invisible4 {
+    opacity: 0 !important;
+    max-width: 0 !important;
+    cursor: default !important;
+}
 
 .fundo, .fundoInvertido {
     height: fit-content;
