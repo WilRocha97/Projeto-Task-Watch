@@ -175,8 +175,8 @@
 
 .telaHistoricoConteudo {
     border-radius: 10px;
-    overflow-x: auto;
-    overflow-y: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .telaHistorico.collapsed {
