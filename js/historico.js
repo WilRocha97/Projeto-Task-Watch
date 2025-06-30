@@ -23,6 +23,7 @@ const historicoTelaContainer = document.getElementById('historicoTelaContainer')
 const historicoTela = document.getElementById('historicoTela');
 const mainHistorico = document.getElementById('targetHistorico');
 const painelConfig = document.getElementById('configHistorico');
+const paginationContainer = document.getElementById('pagination');
 
 const menu = document.getElementById('menu');
 const telaMenu = document.getElementById('telaMenu');
@@ -92,7 +93,6 @@ function filtraHistorico(event='', ocorrencia='geral', page=1) {
     }
     
     historicoTelaContainer.classList.add('collapsed');
-    const paginationContainer = document.getElementById('pagination');
     paginationContainer.classList.add('invisible4');
     
     setTimeout(()=> {
@@ -115,7 +115,6 @@ function filtraHistorico(event='', ocorrencia='geral', page=1) {
     }, 1000);
 }
 function criaPaginacao(currentPage, totalPages, ocorrencia) {
-    const paginationContainer = document.getElementById('pagination');
     setTimeout(() => {
         paginationContainer.innerHTML = '';
 
@@ -316,6 +315,7 @@ historicoBotao.addEventListener('click', ()=> {
     painelConfig.classList.toggle('collapsed');
 
     if (mainHistorico.classList.contains('collapsed')) {
+        paginationContainer.classList.add('invisible4');
         // sobe para o topo da página
         var screenWidth = window.innerWidth;
         if (screenWidth < 2500) {
