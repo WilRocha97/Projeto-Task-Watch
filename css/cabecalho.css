@@ -114,16 +114,31 @@
 .bolinhaErro,
 .bolinhaOcioso,
 .bolinhaFinal {
+    position: relative;	
+    bottom: 200%;
     width: 100%;
     height: 3px;
     border-radius: 5px;
-    transition: var(--transicao-link) ease-in-out,
+    transition: width 1s ease-in-out,
+                height 1s ease-in-out,
+                opacity 1s ease-in-out,
+                bottom 1s ease-in-out,
+                position 1s ease-in-out,
                 box-shadow 1s ease-in-out;
 }
 
-.bolinhaErro { background-color: var(--cor-erro); }
-.bolinhaOcioso { background-color: var(--cor-ocioso); }
-.bolinhaFinal { background-color: var(--cor-final); }
+.bolinhaErro { 
+    background-color: var(--cor-erro); 
+    box-shadow: 0 0 5px var(--cor-erro);
+}
+.bolinhaOcioso { 
+    background-color: var(--cor-ocioso); 
+    box-shadow: 0 0 5px var(--cor-ocioso);
+}
+.bolinhaFinal { 
+    background-color: var(--cor-final); 
+    box-shadow: 0 0 5px var(--cor-final); 
+}
 
 /* =============================================================================
    ANIMAÇÕES E ESTADOS

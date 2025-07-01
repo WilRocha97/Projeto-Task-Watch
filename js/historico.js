@@ -305,7 +305,7 @@ historicoBotao.addEventListener('click', ()=> {
     }
 
     document.querySelectorAll('.bn').forEach(bolinha => {
-        bolinha.classList.add('invisible');
+        bolinha.classList.add('invisible5');
     })
     botoesFiltro.forEach(filtro => {
         filtro.classList.remove('clicado')
