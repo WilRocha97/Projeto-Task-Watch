@@ -304,9 +304,11 @@ historicoBotao.addEventListener('click', ()=> {
         telaHistorico.classList.remove('historicoExpandida');
     }
 
-    document.querySelectorAll('.bn').forEach(bolinha => {
-        bolinha.classList.add('invisible5');
-    })
+    document.querySelectorAll('.bn').forEach((bolinha, index) => {
+        setTimeout(()=> {
+            bolinha.classList.add('invisible5');
+        }, index * 500); // Atraso baseado no índice
+    });
     botoesFiltro.forEach(filtro => {
         filtro.classList.remove('clicado')
     });
