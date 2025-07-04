@@ -124,7 +124,8 @@
                 opacity 1s ease-in-out,
                 bottom 1s ease-in-out,
                 position 1s ease-in-out,
-                box-shadow 1s ease-in-out;
+                box-shadow 1s ease-in-out,
+                margin 1s ease-in-out;
 }
 
 .bolinhaErro { 
