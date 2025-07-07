@@ -59,7 +59,7 @@
     font-size: 0.9em;
     margin: 2px;
     gap: 10px;
-    padding: 8px;
+    padding: 8px 8px 8px 0;
     opacity: 1;
     transition: margin var(--transicao-link) ease-in-out,
                 height var(--transicao-link) ease-in-out,
@@ -345,6 +345,7 @@
     .menuTela {
         flex-wrap: wrap;
         height: 180px;
+        padding: 8px
     }
 }
 
@@ -358,6 +359,7 @@
     .menuTela {
         flex-wrap: wrap;
         height: 120px;
+        padding: 8px
     }
 
     .dicaTela,
@@ -410,6 +412,7 @@
     .menuTela {
         flex-wrap: wrap;
         height: 120px;
+        padding: 8px
     }
 
     .dicaTela,
