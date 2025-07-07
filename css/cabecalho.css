@@ -239,6 +239,7 @@
     width: 80%;
     height: 85vh;
     transition: margin var(--transicao-link) ease-in-out,
+                background-color 1s ease-in-out,
                 height var(--transicao-link) ease-in-out,
                 width var(--transicao-link) ease-in-out,
                 opacity var(--transicao-link) ease-in-out,
