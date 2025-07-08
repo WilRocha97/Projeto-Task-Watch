@@ -1,9 +1,3 @@
-/* Galeria e Dica - Cores compartilhadas */
-#galeria,
-#dica {
-    color: var(--cor-padrao) !important;
-}
-
 /* Cabeçalho */
 .cabecalho {
     position: fixed;
