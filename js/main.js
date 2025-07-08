@@ -28,6 +28,11 @@ const limpaCInputCard = document.getElementById('limpaCInputCard');
 const maisInfos = [{botao:'.maisInfo', nomeBotaoMini:'▼ Execução', nomeBotaoMaxi:'▲ Execução', conteudo:'.resumoResultados'}, 
                     {botao:'.maisInfo2', nomeBotaoMini:'▼ Andamentos', nomeBotaoMaxi:'▲ Andamentos', conteudo:'.resumoResultados2'}]
                     
+document.querySelectorAll('.bn').forEach((bolinha, index) => {
+    setTimeout(()=> {
+        bolinha.classList.remove('invisible5');
+    }, index * 500); // Atraso baseado no índice
+});
 
 function isTouchDevice() {
     return ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);

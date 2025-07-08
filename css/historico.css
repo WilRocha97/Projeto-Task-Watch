@@ -189,6 +189,7 @@
    ============================================================================= */
 
 .linha {
+    gap: 5px;
     display: grid;
     grid-template-columns: 0.5fr 3fr 1.5fr;
     align-content: center;
