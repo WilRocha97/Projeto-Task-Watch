@@ -340,8 +340,13 @@
     .menuTelaBotoes {
         flex-wrap: wrap;
         padding: 7px;
+        margin: 5px !important;
     }
     
+    .barraPesquisa {
+        width: 90vw !important;
+    }
+
     .menuTela {
         flex-wrap: wrap;
         height: 180px;
