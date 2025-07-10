@@ -331,6 +331,19 @@
 
 /* Mobile (até 649px) */
 @media (max-width: 649px) {
+    .cabecalho {
+        bottom: 0;
+    }
+
+    .dicaTela,
+    .galeriaTela {
+        margin: 0 30px 30px 30px;
+    }
+    .dicaContainer button,
+    .galeriaContainer button {
+        bottom: 0;
+    }
+
     .menuTelaBotoes {
         flex-wrap: wrap;
         padding: 7px;
@@ -350,6 +363,10 @@
 
 /* Tablet pequeno (650px - 720px) */
 @media (min-width: 650px) and (max-width: 720px) {
+    .cabecalho {
+        bottom: 0;
+    }
+
     .menuTelaBotoes {
         padding: 7px;
         gap: 25px;
@@ -364,12 +381,15 @@
     .dicaTela,
     .galeriaTela {
         max-height: 85vh;
+        margin: 0 30px 30px 30px;
+    }
+    .dicaContainer button,
+    .galeriaContainer button {
+        bottom: 10px;
     }
 
     .modal-content {
         position: fixed;
-        right: 20px;
-        margin: 80% 0 0 0;
     }
 }
 
@@ -395,13 +415,15 @@
 
     .modal-content {
         position: fixed;
-        right: 20px;
-        margin: 50% 0 0 0;
     }
 }
 
 /* Tablet grande (650px - 916px) */
 @media (min-width: 650px) and (max-width: 916px) {
+    .cabecalho {
+        bottom: 0;
+    }
+
     .menuTelaBotoes {
         flex-wrap: nowrap;
         padding: 7px;
@@ -417,6 +439,11 @@
     .dicaTela,
     .galeriaTela {
         max-height: 85vh;
+        margin: 0 30px 30px 30px;
+    }
+    .dicaContainer button,
+    .galeriaContainer button {
+        bottom: 10px;
     }
 }
 @media (max-width: 1255px) {

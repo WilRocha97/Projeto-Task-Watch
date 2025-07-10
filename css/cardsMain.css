@@ -42,7 +42,7 @@
 }
 
 .rotinas {
-    padding: 60px 12px 0 12px;
+    padding: 12px 12px 0 12px;
 }
 .rotinasExecutando {
     padding: 10px 12px 0 12px;
@@ -53,9 +53,6 @@
     align-items: baseline;
     flex-wrap: wrap;
     transition: height var(--transicao-link) ease-in-out, padding var(--transicao-link) ease-in-out;
-}
-.rotinasExpandida {
-    padding: 60px 12px 0 12px;
 }
 .rectangle {
     --escala-card: 1.02;
@@ -145,9 +142,6 @@
 
 
 @media (max-width: 649px) {
-    .rotinasExpandida {
-        padding-top: 250px;
-    }
     .rectangle.enter {
         max-width: 85vw;
         min-width: 85vw;
@@ -162,9 +156,6 @@
         min-height: 30px;
         max-width: 30px;
         max-height: 30px;
-    }
-    .rotinasExpandida {
-        padding-top: 190px;
     }
     .botaoFechar, .botaoFixar, .botaoInfo {
         font-size: 1.1em !important;
@@ -181,9 +172,6 @@
 }
 
 @media (min-width: 720px) and (max-width: 916px) {
-    .rotinasExpandida {
-        padding-top: 190px;
-    }
     .maisInfo, .maisInfo2 {
         margin-top: 10px;
     }
@@ -196,11 +184,5 @@
     }
     .maisInfo.clicked, .maisInfo2.clicked {
         animation: luzBotaoCard 0.5s linear;
-    }
-}
-
-@media (min-width: 917px) and (max-width: 1255px) {
-    .rotinasExpandida {
-        padding: 110px 12px 0 12px;
     }
 }
