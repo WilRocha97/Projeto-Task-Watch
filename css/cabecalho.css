@@ -334,6 +334,9 @@
     .cabecalho {
         bottom: 0;
     }
+    .divisaoCabecalho {
+        flex-direction: column;
+    }
 
     .dicaTela,
     .galeriaTela {
@@ -345,6 +348,7 @@
     }
 
     .menuTelaBotoes {
+        gap: 25px;
         flex-wrap: wrap;
         padding: 7px;
         margin: 5px !important;
@@ -362,6 +366,9 @@
     .rotinas {
         padding: 12px 12px 0 12px !important;
     }
+    .rotinasExpandida{
+        padding: 12px 12px 0 12px !important;
+    }
     .mainHistorico {
         padding: 0 !important;
     }
@@ -372,18 +379,22 @@
     .cabecalho {
         bottom: 0;
     }
-
+    .divisaoCabecalho {
+        flex-direction: column;
+    }
     .menuTelaBotoes {
         padding: 7px;
         gap: 25px;
     }
-
     .menuTela {
         flex-wrap: wrap;
         height: 120px;
         padding: 8px
     }
     .rotinas {
+        padding: 12px 12px 0 12px !important;
+    }
+    .rotinasExpandida{
         padding: 12px 12px 0 12px !important;
     }
     .mainHistorico {
@@ -435,19 +446,23 @@
     .cabecalho {
         bottom: 0;
     }
-
+    .divisaoCabecalho {
+        flex-direction: column;
+    }
     .menuTelaBotoes {
         flex-wrap: nowrap;
         padding: 7px;
         gap: 25px;
     }
-
     .menuTela {
         flex-wrap: wrap;
         height: 120px;
         padding: 8px
     }
     .rotinas {
+        padding: 12px 12px 0 12px !important;
+    }
+        .rotinasExpandida{
         padding: 12px 12px 0 12px !important;
     }
     .mainHistorico {
@@ -464,8 +479,12 @@
         bottom: 10px;
     }
 }
-@media (max-width: 1255px) {
+@media (max-width: 1255px) and (min-width: 917px) {
     .divisaoCabecalho {
         flex-direction: column;
     }
+    .rotinasExpandida{
+        padding: 110px 12px 0 12px !important;
+    }
 }
+
