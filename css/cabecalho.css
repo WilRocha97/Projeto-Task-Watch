@@ -359,6 +359,10 @@
         height: 180px;
         padding: 8px
     }
+
+    .rotinas {
+        padding: 12px 12px 0 12px !important;
+    }
 }
 
 /* Tablet pequeno (650px - 720px) */
@@ -376,6 +380,9 @@
         flex-wrap: wrap;
         height: 120px;
         padding: 8px
+    }
+    .rotinas {
+        padding: 12px 12px 0 12px !important;
     }
 
     .dicaTela,
@@ -434,6 +441,9 @@
         flex-wrap: wrap;
         height: 120px;
         padding: 8px
+    }
+    .rotinas {
+        padding: 12px 12px 0 12px !important;
     }
 
     .dicaTela,
