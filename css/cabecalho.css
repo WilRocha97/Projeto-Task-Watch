@@ -359,9 +359,11 @@
         height: 180px;
         padding: 8px
     }
-
     .rotinas {
         padding: 12px 12px 0 12px !important;
+    }
+    .mainHistorico {
+        padding: 0 !important;
     }
 }
 
@@ -383,6 +385,9 @@
     }
     .rotinas {
         padding: 12px 12px 0 12px !important;
+    }
+    .mainHistorico {
+        padding: 0 !important;
     }
 
     .dicaTela,
@@ -444,6 +449,9 @@
     }
     .rotinas {
         padding: 12px 12px 0 12px !important;
+    }
+    .mainHistorico {
+        padding: 0 !important;
     }
 
     .dicaTela,
