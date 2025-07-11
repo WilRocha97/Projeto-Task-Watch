@@ -240,17 +240,17 @@
    MEDIA QUERIES - OTIMIZADAS
    ============================================================================= */
 
-/* Mobile até 360px */
+/* Mobile até 470px */
 @media (max-width: 470px) {
     .telaHistorico {
-        margin: 40px 0 0 0;
+        margin: 80px 0 0 0;
     }
 }
 
 /* Mobile 361px - 649px */
 @media (min-width: 471px) and (max-width: 649px) {
     .telaHistorico {
-        margin: 50px 0 0 0;
+        margin: 80px 0 0 0;
     }
 }
 
@@ -275,7 +275,7 @@
 
     .telaHistorico {
         padding: 5px;
-        margin: 60px 0 0 0;
+        margin: 10px 0 0 0;
         overflow: auto;
     }
 

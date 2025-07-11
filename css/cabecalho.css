@@ -97,8 +97,8 @@
 }
 
 .notificacao {
-    position: absolute;
-    bottom: 5px;
+    position: fixed;
+    bottom: 7px;
     width: 78.2%;
     display: flex;
 }
