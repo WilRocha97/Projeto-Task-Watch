@@ -28,12 +28,6 @@
         <div class="divisaoCabecalho">
             <div class="menu">
                 <div class="fundo">
-                    <button id="menu" class="cmb MenuBotao" title="Abrir menu">≡</button>
-                </div>
-                <div id="menuRelogio" class="fundo relogio">
-                    <div id="clock"></div>
-                </div>
-                <div class="fundo">
                     <button id="historico" class="MenuBotao notifica" title="Histórico de ocorrências das rotinas">
                         <div class="notificacao">
                             <span id="bolinha-status-executando" class="bn bolinhaExecutando" title="Nova rotina iniciada"></span>
@@ -46,25 +40,36 @@
                         <span id="carregandoHistorico" class="carregando invisible"></span>
                     </button>
                 </div>
+
+                <!-- <div id="menuRelogio" class="fundo relogio">
+                    <div id="clock"></div>
+                </div> -->
+
+                <div class="fundo">
+                    <button id="menu" class="cmb MenuBotao" title="Abrir menu">›</button>
+                </div>
             </div>
             <div id="telaMenu" class="cmb menuTelaCabecalho invisible3">
+                <div class="cmb fundo menuTelaBotoes">
+                    <button id="dica" class="cmb MenuBotao" title="Ajuda">?</button>
+                    <button id="galeria" class="cmb MenuBotao" title="Galeria do TaskWatch oficial">Galeria</button>
+                    <button id="toggleDarkMode" class="cmb MenuBotao" title="Mudar para modo claro"><img class="cmb modoImagem" src="assets/moon.png" alt="Modo escuro"></button>
+                </div>
+                
                 <div class="cmb fundo menuTelaBotoes">
                     <div class="cmb fundoInvertido barraPesquisa">
                         <input type="text" id="searchInputCard" class="cmb cInputCard" placeholder="Buscar cartão" title="Buscar cartão por nome da rotina">
                         <button id="buscaCInputCard" class="cmb MenuBotaoInterno" title="Buscar cartão">Buscar</button>
                         <button id="limpaCInputCard" class="cmb MenuBotaoInterno BotaoFechar" title="Limpar busca">⨉</button>
                     </div>
-                    
+                </div>
+
+                <div class="cmb fundo menuTelaBotoes">
                     <button id="controlarFixados" class="cmb MenuBotaoActive" title="Controlar cartões fixados">★</button>
                     <button id="encolherCard" class="cmb MenuBotao" title="Minimizar todos os cartões">–</button>
                     <button id="explodirCard" class="cmb MenuBotao" title="Maximizar todos os cartões">☐</button>
                     <button id="encolher" class="cmb MenuBotao" title="Minimizar todas as telas internas dos cartões">▲</button>
                     <button id="explodir" class="cmb MenuBotao" title="Maximizar todos as telas internas dos cartões">▼</button>
-                </div>
-                <div class="cmb fundo menuTelaBotoes">
-                    <button id="dica" class="cmb MenuBotao" title="Ajuda">? Ajuda</button>
-                    <button id="galeria" class="cmb MenuBotao" title="Galeria do TaskWatch oficial">Galeria</button>
-                    <button id="toggleDarkMode" class="cmb MenuBotao" title="Mudar para modo claro"><img class="cmb modoImagem" src="assets/moon.png" alt="Modo escuro"></button>
                 </div>
             </div>
         </div>

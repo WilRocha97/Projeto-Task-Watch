@@ -290,14 +290,6 @@
     }
 }
 
-/* Tablets médios 650px - 990px */
-@media (min-width: 650px) and (max-width: 990px) {
-    #telaMenu,
-    #configHistorico {
-        flex-wrap: wrap;
-    }
-}
-
 /* Tablets grandes 721px - 1500px */
 @media (min-width: 721px) and (max-width: 1500px) {
     .linha {

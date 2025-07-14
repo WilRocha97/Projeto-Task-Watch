@@ -39,7 +39,7 @@
     font-size: 0.9em;
     margin: 2px;
     width: 100%;
-    height: 34px;
+    height: auto;
     gap: 10px;
     padding: 8px;
     overflow: hidden;
@@ -375,9 +375,9 @@
         width: 90vw !important;
     }
 
-    .menuTela {
+    .menuTelaCabecalho, .menuTelaHistorico {
         flex-wrap: wrap;
-        height: 180px;
+        height: 190px;
         padding: 8px
     }
     .rotinas {
@@ -403,7 +403,7 @@
         padding: 7px;
         gap: 25px;
     }
-    .menuTela {
+    .menuTelaCabecalho, .menuTelaHistorico {
         flex-wrap: wrap;
         height: 120px;
         padding: 8px
@@ -435,7 +435,7 @@
 
 /* Tablet médio (721px - 880px) */
 @media (min-width: 721px) and (max-width: 880px) {
-    .menuTela {
+    .menuTelaCabecalho, .menuTelaHistorico {
         height: 120px;
     }
 
@@ -471,7 +471,7 @@
         padding: 7px;
         gap: 25px;
     }
-    .menuTela {
+    .menuTelaCabecalho, .menuTelaHistorico {
         flex-wrap: wrap;
         height: 120px;
         padding: 8px
@@ -504,4 +504,3 @@
         padding: 110px 12px 0 12px !important;
     }
 }
-

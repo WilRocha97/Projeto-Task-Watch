@@ -103,9 +103,8 @@ function updateClock() {
 
 };
 // Atualiza o relógio a cada segundo
-setInterval(updateClock, 1000);
-// Atualiza o relógio imediatamente ao carregar a página
-updateClock();
+// updateClock();
+//setInterval(updateClock, 1000);
 
 // Verifica se tem algum card vizivel, se não exibe a tela de descanso
 setInterval(verificaTelaVazia, 1000);
@@ -174,12 +173,12 @@ document.body.addEventListener('click', (event) => {
 menu.addEventListener('click', () => {
     if (telaMenu.classList.contains('invisible3')) {
         telaMenu.classList.remove('invisible3');
-        menu.innerHTML = '–'
+        menu.innerHTML = '‹'
         telaRotinas.classList.add('rotinasExpandida');
     }
     else {
         telaMenu.classList.add('invisible3');
-        menu.innerHTML = '≡'
+        menu.innerHTML = '›'
         telaRotinas.classList.remove('rotinasExpandida');
     }
     if (!telaDica.classList.contains('invisible2')) {
