@@ -54,8 +54,8 @@
     --sombra-clara: #00000028;
     --sombra-escura: #0000006e;
     --sombra-escura-2: #00000091;
-    --sombra-vidro-clara: rgba(56, 56, 56, 0.144);
-    --sombra-vidro-escura: rgba(0, 0, 0, 0.103);
+    --sombra-vidro-clara: rgba(85, 85, 85, 0.158);
+    --sombra-vidro-escura: rgba(8, 8, 8, 0.151);
     --luz-menu: #7f95afc7;
 }
 .light {
@@ -94,7 +94,7 @@
     --sombra-clara: #ffffff28;
     --sombra-escura: #4443431f;
     --sombra-escura-2: #2525255b;
-    --sombra-vidro-clara: rgba(255, 255, 255, 0.288);
+    --sombra-vidro-clara: rgba(255, 255, 255, 0.192);
     --sombra-vidro-escura: rgba(167, 167, 167, 0.103);
     --luz-menu: #ebebebad;
 }
