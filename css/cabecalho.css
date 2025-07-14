@@ -185,7 +185,11 @@
 
 #controlarFixados.active {
     opacity: 1;
-    box-shadow: inset 4px 0 15px var(--animacao-bota-1),
+    box-shadow: 4px 0 2px var(--animacao-opaca-bota-1),
+                -4px 0 2px var(--animacao-opaca-bota-3),
+                0 4px 2px var(--animacao-opaca-bota-4),
+                0 -4px 2px var(--animacao-opaca-bota-2),
+                inset 4px 0 15px var(--animacao-bota-1),
                 inset -4px 0 15px var(--animacao-bota-3),
                 inset 0 4px 25px var(--animacao-bota-4),
                 inset 0 -4px 25px var(--animacao-bota-2);
