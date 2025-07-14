@@ -297,17 +297,20 @@
         padding: 0.6rem;
     }
 }
+
 /* Telas grandes até 2500px */
 @media (max-width: 721px) {
     .filtroHistorico {
         gap: 25px;
     }
 }
+
 @media (min-width: 917px) and (max-width: 990px) {
     .telaHistorico {
         margin: 45px 0 0 0;
     }
 }
+
 /* Telas grandes até 2500px */
 @media (max-width: 2500px) {
     .mainHistorico,
