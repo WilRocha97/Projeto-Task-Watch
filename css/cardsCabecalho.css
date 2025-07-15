@@ -147,7 +147,7 @@
 .botaoFixado {
     text-shadow: 0 0 5px white,
                  0 0 7px white;
-    transform: rotate(72deg)
+    transform: rotate(72deg);
 }
 .rectangle.collapsed .botaoFixado {
     position: absolute;
@@ -157,8 +157,8 @@
     height: 1px;
     margin: 0;
     padding: 0;
-    left: 35%;
-    top: 22%;
+    left: 68.5%;
+    top: 25%;
 }
 .rectangle.collapsed .botaoFixado:hover {
     color: white;
