@@ -189,8 +189,6 @@
 /* Controle de fixados */
 #controlarFixados {
     align-self: center;
-    margin: 0;
-    padding: 0;
     opacity: 0.3;
     box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0);
     transition: 1s ease-in-out;
