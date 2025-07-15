@@ -173,12 +173,12 @@ document.body.addEventListener('click', (event) => {
 menu.addEventListener('click', () => {
     if (telaMenu.classList.contains('invisible3')) {
         telaMenu.classList.remove('invisible3');
-        menu.innerHTML = '‹'
+        menu.innerHTML = '❮'
         telaRotinas.classList.add('rotinasExpandida');
     }
     else {
         telaMenu.classList.add('invisible3');
-        menu.innerHTML = '›'
+        menu.innerHTML = '❯'
         telaRotinas.classList.remove('rotinasExpandida');
     }
     if (!telaDica.classList.contains('invisible2')) {

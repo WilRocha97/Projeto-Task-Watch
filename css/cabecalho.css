@@ -96,8 +96,6 @@
 
 .notifica {
     display: flex;
-    justify-items: center;
-    align-self: center;
     overflow: hidden;
 }
 
@@ -192,6 +190,8 @@
     opacity: 0.3;
     box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0);
     transition: 1s ease-in-out;
+}
+.abreMenu, #controlarFixados {
     height: 18px;
     min-width: 18px;
 }
@@ -206,6 +206,7 @@
                 inset -4px 0 15px var(--animacao-bota-3),
                 inset 0 4px 25px var(--animacao-bota-4),
                 inset 0 -4px 25px var(--animacao-bota-2);
+    transform: rotate(72deg)
 }
 
 /* Toggle Dark Mode */

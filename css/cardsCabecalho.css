@@ -147,6 +147,7 @@
 .botaoFixado {
     text-shadow: 0 0 5px white,
                  0 0 7px white;
+    transform: rotate(72deg)
 }
 .rectangle.collapsed .botaoFixado {
     position: absolute;

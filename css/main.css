@@ -348,6 +348,7 @@ button {
 .MenuBotao, .MenuBotaoInterno, .MenuBotaoActive, .MenuBotaoDesactive, .paginaHistorico button {
     align-content: center;    
     text-align: center;
+    align-items: center;
     white-space: nowrap;
     position: relative;
     border: none;
