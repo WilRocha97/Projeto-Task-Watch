@@ -497,6 +497,12 @@
         bottom: 10px;
     }
 }
+/* Tablet grande (650px - 916px) */
+@media (min-width: 650px) and (max-width: 1265px) {
+    .menuTelaHistorico {
+        flex-wrap: wrap;
+    }
+}
 @media (max-width: 1255px) and (min-width: 917px) {
     .divisaoCabecalho {
         flex-direction: column;

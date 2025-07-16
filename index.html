@@ -817,6 +817,10 @@
                     </div>
                 </div>
                 <div id="configHistorico" class="fundo menuTelaBotoes collapsed">
+                    <button id="exportarTabela" class="MenuBotao" title="Exportar tabela" value="csv">CSV 🠋</button>
+                    <span id="carregandoExportacao" class="carregando invisible"></span>
+                </div>
+                <div id="configHistorico" class="fundo menuTelaBotoes collapsed">
                     <div id="painelInput" class="fundoInvertido barraPesquisa pageSize">
                         <input type="text" id="searchInputPageSize" class="hInputPageSize", value="15" title="Linhas por página" style="width: 15px;">
                     </div>
@@ -849,5 +853,7 @@
     <script type="module" src="js/cards.js"></script>
     <script type="module" src="js/historico.js"></script>
     <script src="js/modo.js"></script>
+    <!-- XLSX (SheetJS) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 </body>
 </html>

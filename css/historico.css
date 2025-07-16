@@ -120,6 +120,18 @@
                 color 1s ease-in-out;
 }
 
+.selectMenu {
+    -webkit-appearance: none; /* Safari/Chrome */
+    -moz-appearance: none;    /* Firefox */
+    appearance: none;
+}
+.selectMenu option {
+  background-color: white;
+  color: black;
+  padding: 10px;
+  border-radius: var(--borda-botao);
+}
+
 .pageSize {
     width: 35px !important;
 }
@@ -158,6 +170,7 @@
    ============================================================================= */
 
 .telaHistorico {
+    z-index: -10;
     display: flex;
     align-self: center;
     flex-direction: column;
@@ -241,7 +254,12 @@
    ============================================================================= */
 
 /* Mobile até 470px */
-@media (max-width: 470px) {
+@media (max-width: 379px) {
+    .telaHistorico {
+        margin: 140px 0 0 0;
+    }
+}
+@media (max-width: 470px) and (min-width: 380px) {
     .telaHistorico {
         margin: 80px 0 0 0;
     }
@@ -275,7 +293,7 @@
 
     .telaHistorico {
         padding: 5px;
-        margin: 10px 0 0 0;
+        margin: 50px 0 0 0;
         overflow: auto;
     }
 
@@ -305,7 +323,7 @@
     }
 }
 
-@media (min-width: 917px) and (max-width: 990px) {
+@media (min-width: 917px) and (max-width: 1265px) {
     .telaHistorico {
         margin: 45px 0 0 0;
     }

@@ -16,6 +16,8 @@ const botaoFiltroErro = document.getElementById('bolinhaErro');
 const botaoFiltroFinal = document.getElementById('bolinhaFinal');
 const botaoFiltroFechar = document.getElementById('bolinhaFechar');
 const botoesFiltro = document.querySelectorAll('.bFiltro');
+const botaoExportarTabela = document.getElementById('exportarTabela');
+const carregandoExportacao = document.getElementById('carregandoExportacao');
 
 const historicoBotao = document.getElementById('historico');
 const carregandoHistorico = document.getElementById('carregandoHistorico');
@@ -291,6 +293,84 @@ limpaHInputName.addEventListener('click', (event)=> {
     let target = event.target;
     animacaoBotao(target)
     filtraHistorico('', 'clicado')
+})
+
+async function exportarTabela() {
+    const formato = botaoExportarTabela.value;
+    const rotina = document.getElementById('searchInputName').value;
+    const dataHora = document.getElementById('searchInputDate').value;
+    var filtroClicado = document.getElementsByClassName('clicado')[0];
+
+    carregandoExportacao.classList.remove('invisible');
+    const response = await fetch('js/historico.json');
+    const json = await response.json();
+    const dados = json.data.reverse(); // <- aqui está o array real
+
+    if (!Array.isArray(dados)) {
+        console.error('Formato inválido');
+        return;
+    }
+
+    // Filtros
+    const dadosFiltrados = dados.filter(item => {
+        const condData = !dataHora || item.data_hora >= dataHora;
+        const condScript = !rotina || item.script_name === rotina;
+        const condResultado = !filtroClicado || item.andamentos.toLowerCase().includes(filtroClicado.toLowerCase());
+        return condData && condScript && condResultado;
+    });
+
+    if (formato === 'csv') {
+        // Converte os dados para CSV manualmente
+        const colunas = Object.keys(dadosFiltrados[0]);
+        const linhas = dadosFiltrados.map(obj =>
+            colunas.map(col => `"${(obj[col] ?? '').toString().replace(/"/g, '""')}"`).join(';')
+        );
+
+        const conteudoCSV = [colunas.join(';'), ...linhas].join('\n');
+        const blob = new Blob(["\uFEFF" + conteudoCSV], { type: 'text/csv;charset=utf-8;' });
+
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'Histórico.csv';
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+
+        carregandoExportacao.classList.add('invisible');
+    }
+
+    if (formato === 'xlsx') {
+        // XLSX com SheetJS
+        const ws = XLSX.utils.json_to_sheet(dadosFiltrados);
+        const wb = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(wb, ws, 'Exportação');
+        XLSX.writeFile(wb, 'Histórico.xlsx');
+        carregandoExportacao.classList.add('invisible')
+    }
+
+    if (formato === 'pdf') {
+        // PDF com jsPDF + AutoTable
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+        const colunas = Object.keys(dadosFiltrados[0] || {});
+        const linhas = dadosFiltrados.map(obj => colunas.map(c => obj[c]));
+
+        doc.autoTable({
+        head: [colunas],
+        body: linhas,
+        styles: { fontSize: 8 },
+        headStyles: { fillColor: [220, 220, 220] }
+        });
+
+        doc.save('Histórico.pdf');
+        carregandoExportacao.classList.add('invisible')
+    }
+}
+botaoExportarTabela.addEventListener('click', (event)=> {
+    let target = event.target;
+    animacaoBotao(target)
+    exportarTabela()
 })
 
 // Abre e fecha a tela de histórico
