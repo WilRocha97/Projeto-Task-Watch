@@ -260,6 +260,7 @@
                 height var(--transicao-link) ease-in-out,
                 width var(--transicao-link) ease-in-out,
                 opacity var(--transicao-link) ease-in-out,
+                box-shadow 1s ease-in-out,
                 padding var(--transicao-link) ease-in-out;
 }
 

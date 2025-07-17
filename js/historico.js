@@ -78,10 +78,10 @@ function filtraHistorico(event='', ocorrencia='geral', page=1) {
     if (screenWidth < 1255) {
         telaMenu.classList.add('invisible3');
         menu.innerHTML = '❯'
-        telaDica.classList.add('invisible2');
-        telaRotinas.classList.remove('rotinasExpandida');
-        telaHistorico.classList.remove('historicoExpandida');
     }
+    telaDica.classList.add('invisible2');
+    telaRotinas.classList.remove('rotinasExpandida');
+    telaHistorico.classList.remove('historicoExpandida');
     
     if (event != '') {
         let target = event.target;
