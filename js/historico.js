@@ -77,7 +77,7 @@ function filtraHistorico(event='', ocorrencia='geral', page=1) {
     var screenWidth = window.innerWidth;
     if (screenWidth < 1255) {
         telaMenu.classList.add('invisible3');
-        menu.innerHTML = '≡'
+        menu.innerHTML = '❯'
         telaDica.classList.add('invisible2');
         telaRotinas.classList.remove('rotinasExpandida');
         telaHistorico.classList.remove('historicoExpandida');
@@ -296,10 +296,18 @@ limpaHInputName.addEventListener('click', (event)=> {
 })
 
 async function exportarTabela() {
+    var dadosFiltrados = ''
     const formato = botaoExportarTabela.value;
     const rotina = document.getElementById('searchInputName').value;
     const dataHora = document.getElementById('searchInputDate').value;
     var filtroClicado = document.getElementsByClassName('clicado')[0];
+    if (filtroClicado) {
+            var ocorrencia = filtroClicado.getAttribute('title').match(/'([^']+)'/)[1]; // Pega o id do primeiro filtro clicado
+        }
+        else {
+            var ocorrencia = 'geral'; // Se nenhum filtro estiver clicado, mostra todos
+        }
+    
 
     carregandoExportacao.classList.remove('invisible');
     const response = await fetch('js/historico.json');
@@ -311,13 +319,32 @@ async function exportarTabela() {
         return;
     }
 
-    // Filtros
-    const dadosFiltrados = dados.filter(item => {
-        const condData = !dataHora || item.data_hora >= dataHora;
-        const condScript = !rotina || item.script_name === rotina;
-        const condResultado = !filtroClicado || item.andamentos.toLowerCase().includes(filtroClicado.toLowerCase());
-        return condData && condScript && condResultado;
+    console.log(dataHora, rotina, ocorrencia)
+    console.log(dados)
+
+    dadosFiltrados = dados.filter(script => {
+        return script.andamentos; // Exemplo de filtragem
     });
+    if (ocorrencia != 'geral') {
+        // Filtrar os dados com base na ocorrência e outras condições
+        dadosFiltrados = dadosFiltrados.filter(script => {
+            return script.andamentos.includes(ocorrencia); // Exemplo de filtragem
+        });
+    }
+    if (rotina != '') {
+        // Filtrar os dados com base na ocorrência e outras condições
+        dadosFiltrados = dadosFiltrados.filter(script => {
+            return script.script_name.includes(rotina); // Exemplo de filtragem
+        });
+    }
+    if (dataHora != '') {
+        // Filtrar os dados com base na ocorrência e outras condições
+        dadosFiltrados = dadosFiltrados.filter(script => {
+            return script.data_hora.includes(dataHora); // Exemplo de filtragem
+        });
+    }
+
+    console.log(dadosFiltrados)
 
     if (formato === 'csv') {
         // Converte os dados para CSV manualmente
@@ -375,15 +402,6 @@ botaoExportarTabela.addEventListener('click', (event)=> {
 
 // Abre e fecha a tela de histórico
 historicoBotao.addEventListener('click', ()=> {
-    var screenWidth = window.innerWidth;
-    if (screenWidth < 1255) {
-        telaMenu.classList.add('invisible3');
-        menu.innerHTML = '≡'
-        telaDica.classList.add('invisible2');
-        telaRotinas.classList.remove('rotinasExpandida');
-        telaHistorico.classList.remove('historicoExpandida');
-    }
-
     document.querySelectorAll('.bn').forEach((bolinha, index) => {
         setTimeout(()=> {
             bolinha.classList.add('invisible5');
