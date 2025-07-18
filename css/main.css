@@ -54,8 +54,8 @@
     --sombra-clara: #00000028;
     --sombra-escura: #0000006e;
     --sombra-escura-2: #00000091;
-    --sombra-vidro-clara: rgba(85, 85, 85, 0.158);
-    --sombra-vidro-escura: rgba(8, 8, 8, 0.151);
+    --sombra-vidro-clara: rgb(255 255 255 / 2%);
+    --sombra-vidro-escura: rgb(140 140 140 / 2%);
     --luz-menu: #7f95afc7;
 }
 .light {
@@ -91,11 +91,11 @@
     --cor-fundo: #fffaf4;
     --direcao-sombra-2: 2px;
     --direcao-sombra-1: -2px;
-    --sombra-clara: #ffffff28;
-    --sombra-escura: #4443431f;
+    --sombra-clara: #b8b5b528;
+    --sombra-escura: #4a48481f;
     --sombra-escura-2: #2525255b;
-    --sombra-vidro-clara: rgba(255, 255, 255, 0.192);
-    --sombra-vidro-escura: rgba(167, 167, 167, 0.103);
+    --sombra-vidro-clara: rgb(255 255 255 / 25%);
+    --sombra-vidro-escura: rgb(155 155 155 / 10%);
     --luz-menu: #ebebebad;
 }
 
