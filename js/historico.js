@@ -308,8 +308,6 @@ async function exportarTabela() {
             var ocorrencia = 'geral'; // Se nenhum filtro estiver clicado, mostra todos
         }
     
-
-    carregandoExportacao.classList.remove('invisible');
     const response = await fetch('js/historico.json');
     const json = await response.json();
     const dados = json.data.reverse(); // <- aqui está o array real
@@ -397,7 +395,10 @@ async function exportarTabela() {
 botaoExportarTabela.addEventListener('click', (event)=> {
     let target = event.target;
     animacaoBotao(target)
-    exportarTabela()
+    carregandoExportacao.classList.remove('invisible');
+    setTimeout(()=> {
+        exportarTabela()
+    }, 1000);
 })
 
 // Abre e fecha a tela de histórico
