@@ -324,7 +324,7 @@ dica.addEventListener('click', () => {
     var screenWidth = window.innerWidth;
     if (screenWidth < 1255) {
         telaMenu.classList.add('invisible3');
-        menu.innerHTML = '≡'
+        menu.innerHTML = '❯'
         telaRotinas.classList.remove('rotinasExpandida');
     }
     
@@ -350,7 +350,7 @@ galeria.addEventListener('click', () => {
     var screenWidth = window.innerWidth;
     if (screenWidth < 1255) {
         telaMenu.classList.add('invisible3');
-        menu.innerHTML = '≡'
+        menu.innerHTML = '❯'
         telaRotinas.classList.remove('rotinasExpandida');
     }
 
