@@ -78,7 +78,7 @@ function sortable(container) {
                 var screenWidth = window.innerWidth;
                 if (screenWidth < 1255) {
                     telaMenu.classList.add('invisible3');
-                    menu.innerHTML = '≡'
+                    menu.innerHTML = '❯'
                 }
                 telaDica.classList.add('invisible2');
                 telaGaleria.classList.add('invisible2');
@@ -124,7 +124,7 @@ document.addEventListener('click', (event) => {
             var screenWidth = window.innerWidth;
             if (screenWidth < 1255) {
                 telaMenu.classList.add('invisible3');
-                menu.innerHTML = '≡'
+                menu.innerHTML = '❯'
             }
             telaDica.classList.add('invisible2')
             telaGaleria.classList.add('invisible2')
