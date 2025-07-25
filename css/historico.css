@@ -158,13 +158,6 @@
     align-self: center;
 }
 
-.paginaHistorico button:disabled {
-    color: var(--cor-texto-2);
-    background-color: var(--cor-texto);
-    cursor: default;
-    transition: background-color 1s ease-in-out;
-}
-
 /* =============================================================================
    TELA DO HISTÓRICO
    ============================================================================= */
