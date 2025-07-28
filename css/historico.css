@@ -7,7 +7,6 @@
     flex-direction: column;
     align-items: center;
     width: 1500px;
-    max-height: 100vh;
     padding: 100px 12px 0 0;
     margin: 0;
     opacity: 1;
@@ -246,25 +245,6 @@
    MEDIA QUERIES - OTIMIZADAS
    ============================================================================= */
 
-/* Mobile até 470px */
-@media (max-width: 379px) {
-    .telaHistorico {
-        margin: 140px 0 0 0;
-    }
-}
-@media (max-width: 470px) and (min-width: 380px) {
-    .telaHistorico {
-        margin: 80px 0 0 0;
-    }
-}
-
-/* Mobile 361px - 649px */
-@media (min-width: 471px) and (max-width: 649px) {
-    .telaHistorico {
-        margin: 80px 0 0 0;
-    }
-}
-
 /* Tablets e móveis até 720px */
 @media (min-width: 650px) and (max-width: 720px) {
     .mainHistorico {
@@ -286,7 +266,6 @@
 
     .telaHistorico {
         padding: 5px;
-        margin: 50px 0 0 0;
         overflow: auto;
     }
 
@@ -313,12 +292,6 @@
 @media (max-width: 721px) {
     .filtroHistorico {
         gap: 25px;
-    }
-}
-
-@media (min-width: 917px) and (max-width: 1265px) {
-    .telaHistorico {
-        margin: 45px 0 0 0;
     }
 }
 

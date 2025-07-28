@@ -23,7 +23,7 @@
     <meta name="description" content="Sistema de monitoramento de rotinas automáticas">
 </head>
 <body class="dark scroll"> 
-    <header class="cabecalho">
+    <header id="cabecalho" class="cabecalho">
         <div class="fundoCabecalho"></div>
         <div class="divisaoCabecalho">
             <div class="menu">
@@ -46,15 +46,14 @@
                 <div class="fundo menuTelaBotoes">
                     <div id="menu" class="cmb MenuBotao abreMenu" title="Abrir menu">❯</div>
                 </div>
-            </div>
-            <div id="telaMenu" class="cmb menuTelaCabecalho invisible3">
-                <div class="cmb fundo menuTelaBotoes">
+
+                <div class="cmb fundo menuTelaBotoes menuInvisivel invisible3">
                     <button id="dica" class="cmb MenuBotao" title="Ajuda">?</button>
                     <button id="galeria" class="cmb MenuBotao" title="Galeria do TaskWatch oficial">Galeria</button>
                     <button id="toggleDarkMode" class="cmb MenuBotao" title="Mudar para modo claro"><img class="cmb modoImagem" src="assets/moon.png" alt="Modo escuro"></button>
                 </div>
                 
-                <div class="cmb fundo menuTelaBotoes">
+                <div class="cmb fundo menuTelaBotoes menuInvisivel invisible3">
                     <div class="cmb fundoInvertido barraPesquisa">
                         <input type="text" id="searchInputCard" class="cmb cInputCard" placeholder="Buscar cartão" title="Buscar cartão por nome da rotina">
                         <button id="buscaCInputCard" class="cmb MenuBotaoInterno" title="Buscar cartão">Buscar</button>
@@ -62,7 +61,7 @@
                     </div>
                 </div>
 
-                <div class="cmb fundo menuTelaBotoes">
+                <div class="cmb fundo menuTelaBotoes menuInvisivel invisible3">
                     <div id="controlarFixados" class="cmb MenuBotaoActive" title="Controlar cartões fixados">★</div>
                     <button id="encolherCard" class="cmb MenuBotao" title="Minimizar todos os cartões">–</button>
                     <button id="explodirCard" class="cmb MenuBotao" title="Maximizar todos os cartões">▢</button>
@@ -805,7 +804,7 @@
         </div>
         
         <div id="targetHistorico" class="mainHistorico collapsed">
-            <div id="telaMenu" class="cmb menuTelaHistorico">
+            <div class="cmb menu">
                 <div id="configHistorico" class="fundo menuTelaBotoes collapsed">
                     <div id="painelInput" class="fundoInvertido barraPesquisa">
                         <input type="text" id="searchInputDate" class="hInputDate" placeholder="Data e hora" title="Data e hora">

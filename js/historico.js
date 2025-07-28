@@ -28,7 +28,7 @@ const painelConfig = document.getElementById('configHistorico');
 const paginationContainer = document.getElementById('pagination');
 
 const menu = document.getElementById('menu');
-const telaMenu = document.getElementById('telaMenu');
+const telaMenu = document.querySelectorAll('.menuInvisivel');
 const telaDica = document.getElementById('telaDica');
 const telaRotinas = document.getElementById('telaRotinas');
 const telaHistorico = document.getElementById('targetHistorico');
@@ -76,7 +76,10 @@ function filtraHistorico(event='', ocorrencia='geral', page=1) {
     carregandoHistorico.classList.remove('invisible')
     var screenWidth = window.innerWidth;
     if (screenWidth < 1255) {
-        telaMenu.classList.add('invisible3');
+        telaMenu.forEach(miniMenu => {
+            miniMenu.classList.add('invisible3');
+        })
+        document.getElementById('cabecalho').classList.remove('cabecalhoExpandido')
         menu.innerHTML = '❯'
     }
     telaDica.classList.add('invisible2');

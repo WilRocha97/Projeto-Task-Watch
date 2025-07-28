@@ -10,7 +10,7 @@ const encolhe = document.getElementById('encolher');
 const explode = document.getElementById('explodir');
 
 const menu = document.getElementById('menu');
-const telaMenu = document.getElementById('telaMenu');
+const telaMenu = document.querySelectorAll('.menuInvisivel');
 const dica = document.getElementById('dica');
 const telaDica = document.getElementById('telaDica');
 const fecharAjuda = document.getElementById('fecharAjuda');
@@ -171,13 +171,19 @@ document.body.addEventListener('click', (event) => {
 
 // Janela com dicas de como o site funciona
 menu.addEventListener('click', () => {
-    if (telaMenu.classList.contains('invisible3')) {
-        telaMenu.classList.remove('invisible3');
+    if (menu.innerHTML == '❯') {
+        telaMenu.forEach(miniMenu => {
+            miniMenu.classList.remove('invisible3');
+        })
+        document.getElementById('cabecalho').classList.add('cabecalhoExpandido')
         menu.innerHTML = '❮'
         telaRotinas.classList.add('rotinasExpandida');
     }
     else {
-        telaMenu.classList.add('invisible3');
+        telaMenu.forEach(miniMenu => {
+            miniMenu.classList.add('invisible3');
+        })
+        document.getElementById('cabecalho').classList.remove('cabecalhoExpandido')
         menu.innerHTML = '❯'
         telaRotinas.classList.remove('rotinasExpandida');
     }
