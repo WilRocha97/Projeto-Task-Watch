@@ -61,7 +61,8 @@
                 max-width var(--transicao-link) ease-in-out,
                 padding var(--transicao-link) ease-in-out,
                 opacity var(--transicao-link) ease-in-out,
-                box-shadow 1s ease-in-out;
+                box-shadow 1s ease-in-out,
+                background-color 1s ease-in-out;
 }
 
 /* =============================================================================
@@ -212,6 +213,37 @@
     width: 18px;
     height: 18px;
     align-self: center;
+}
+/* Animação para descer e sumir */
+@keyframes slideDownOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
+
+/* Animação para subir e aparecer */
+@keyframes slideUpIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.anim-out {
+    animation: slideDownOut 0.5s forwards;
+}
+
+.anim-in {
+    animation: slideUpIn 0.5s forwards;
 }
 
 /* =============================================================================
