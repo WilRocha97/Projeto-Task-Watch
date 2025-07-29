@@ -171,11 +171,14 @@ document.body.addEventListener('click', (event) => {
 
 // Janela com dicas de como o site funciona
 menu.addEventListener('click', () => {
+    var screenWidth = window.innerWidth;
     if (menu.innerHTML == '❯') {
         telaMenu.forEach(miniMenu => {
             miniMenu.classList.remove('invisible3');
         })
-        document.getElementById('cabecalho').classList.add('cabecalhoExpandido')
+        if (screenWidth < 1255) {
+            document.getElementById('cabecalho').classList.add('cabecalhoExpandido')
+        }
         menu.innerHTML = '❮'
         telaRotinas.classList.add('rotinasExpandida');
     }
@@ -183,16 +186,20 @@ menu.addEventListener('click', () => {
         telaMenu.forEach(miniMenu => {
             miniMenu.classList.add('invisible3');
         })
-        document.getElementById('cabecalho').classList.remove('cabecalhoExpandido')
+        if (screenWidth < 1255) {
+            document.getElementById('cabecalho').classList.remove('cabecalhoExpandido')
+        }
         menu.innerHTML = '❯'
         telaRotinas.classList.remove('rotinasExpandida');
     }
     if (!telaDica.classList.contains('invisible2')) {
         telaDica.classList.add('invisible2');
+        document.getElementById('cabecalho').classList.remove('cabecalhoMegaExpandido')
         telaRotinas.classList.add('rotinasExpandida');
     }
     if (!telaGaleria.classList.contains('invisible2')) {
         telaGaleria.classList.add('invisible2');
+        document.getElementById('cabecalho').classList.remove('cabecalhoMegaExpandido')
         telaRotinas.classList.add('rotinasExpandida');
     }
 });
@@ -329,7 +336,12 @@ explodeCard.addEventListener('click', () => {
 dica.addEventListener('click', () => {
     var screenWidth = window.innerWidth;
     if (screenWidth < 1255) {
-        telaMenu.classList.add('invisible3');
+        telaMenu.forEach(miniMenu => {
+            miniMenu.classList.add('invisible3');
+        })
+        if (screenWidth < 1255) {
+            document.getElementById('cabecalho').classList.remove('cabecalhoExpandido')
+        }
         menu.innerHTML = '❯'
         telaRotinas.classList.remove('rotinasExpandida');
     }
@@ -342,9 +354,11 @@ dica.addEventListener('click', () => {
 
     if (telaDica.classList.contains('invisible2')) {
         telaDica.classList.remove('invisible2');
+        document.getElementById('cabecalho').classList.add('cabecalhoMegaExpandido')
     }
     else {
         telaDica.classList.add('invisible2');
+        document.getElementById('cabecalho').classList.remove('cabecalhoMegaExpandido')
     }
 });
 fecharAjuda.addEventListener('click', ()=> {
@@ -355,7 +369,12 @@ fecharAjuda.addEventListener('click', ()=> {
 galeria.addEventListener('click', () => {
     var screenWidth = window.innerWidth;
     if (screenWidth < 1255) {
-        telaMenu.classList.add('invisible3');
+        telaMenu.forEach(miniMenu => {
+            miniMenu.classList.add('invisible3');
+        })
+        if (screenWidth < 1255) {
+            document.getElementById('cabecalho').classList.remove('cabecalhoExpandido')
+        }
         menu.innerHTML = '❯'
         telaRotinas.classList.remove('rotinasExpandida');
     }
@@ -368,9 +387,11 @@ galeria.addEventListener('click', () => {
 
     if (telaGaleria.classList.contains('invisible2')) {
         telaGaleria.classList.remove('invisible2');
+        document.getElementById('cabecalho').classList.add('cabecalhoMegaExpandido')
     }
     else {
         telaGaleria.classList.add('invisible2');
+        document.getElementById('cabecalho').classList.remove('cabecalhoMegaExpandido')
     }
 });
 fecharGaleria.addEventListener('click', ()=> {

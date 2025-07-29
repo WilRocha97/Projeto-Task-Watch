@@ -16,6 +16,9 @@
 .cabecalhoExpandido {
     max-height: 200px;
 }
+.cabecalhoMegaExpandido {
+    max-height: 8000px;
+}
 
 .fundoCabecalho {
     position: absolute;
