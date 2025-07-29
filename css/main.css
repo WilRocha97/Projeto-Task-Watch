@@ -346,6 +346,7 @@ button {
     min-width: 30px;
 }
 .MenuBotao, .MenuBotaoInterno, .MenuBotaoActive, .MenuBotaoDesactive, .paginaHistorico button {
+    overflow: hidden;
     align-content: center;    
     text-align: center;
     align-items: center;
