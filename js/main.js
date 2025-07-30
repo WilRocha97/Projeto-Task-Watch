@@ -9,6 +9,7 @@ const explodeCard = document.getElementById('explodirCard');
 const encolhe = document.getElementById('encolher');
 const explode = document.getElementById('explodir');
 
+const fundoCabecalho = document.getElementById('cabecalho')
 const menu = document.getElementById('menu');
 const telaMenu = document.querySelectorAll('.menuInvisivel');
 const dica = document.getElementById('dica');
@@ -177,7 +178,7 @@ menu.addEventListener('click', () => {
             miniMenu.classList.remove('invisible3');
         })
         if (screenWidth < 1255) {
-            document.getElementById('cabecalho').classList.add('cabecalhoExpandido')
+            fundoCabecalho.classList.add('cabecalhoExpandido')
         }
         menu.innerHTML = '❮'
         telaRotinas.classList.add('rotinasExpandida');
@@ -187,19 +188,19 @@ menu.addEventListener('click', () => {
             miniMenu.classList.add('invisible3');
         })
         if (screenWidth < 1255) {
-            document.getElementById('cabecalho').classList.remove('cabecalhoExpandido')
+            fundoCabecalho.classList.remove('cabecalhoExpandido')
         }
         menu.innerHTML = '❯'
         telaRotinas.classList.remove('rotinasExpandida');
     }
     if (!telaDica.classList.contains('invisible2')) {
         telaDica.classList.add('invisible2');
-        document.getElementById('cabecalho').classList.remove('cabecalhoMegaExpandido')
+        fundoCabecalho.classList.remove('cabecalhoMegaExpandido')
         telaRotinas.classList.add('rotinasExpandida');
     }
     if (!telaGaleria.classList.contains('invisible2')) {
         telaGaleria.classList.add('invisible2');
-        document.getElementById('cabecalho').classList.remove('cabecalhoMegaExpandido')
+        fundoCabecalho.classList.remove('cabecalhoMegaExpandido')
         telaRotinas.classList.add('rotinasExpandida');
     }
 });
@@ -340,7 +341,7 @@ dica.addEventListener('click', () => {
             miniMenu.classList.add('invisible3');
         })
         if (screenWidth < 1255) {
-            document.getElementById('cabecalho').classList.remove('cabecalhoExpandido')
+            fundoCabecalho.classList.remove('cabecalhoExpandido')
         }
         menu.innerHTML = '❯'
         telaRotinas.classList.remove('rotinasExpandida');
@@ -354,15 +355,16 @@ dica.addEventListener('click', () => {
 
     if (telaDica.classList.contains('invisible2')) {
         telaDica.classList.remove('invisible2');
-        document.getElementById('cabecalho').classList.add('cabecalhoMegaExpandido')
+        fundoCabecalho.classList.add('cabecalhoMegaExpandido')
     }
     else {
         telaDica.classList.add('invisible2');
-        document.getElementById('cabecalho').classList.remove('cabecalhoMegaExpandido')
+        fundoCabecalho.classList.remove('cabecalhoMegaExpandido')
     }
 });
 fecharAjuda.addEventListener('click', ()=> {
     telaDica.classList.add('invisible2');
+    fundoCabecalho.classList.remove('cabecalhoMegaExpandido')
 })
 
 // Janela com imagens do TaskWatch oficial
@@ -373,7 +375,7 @@ galeria.addEventListener('click', () => {
             miniMenu.classList.add('invisible3');
         })
         if (screenWidth < 1255) {
-            document.getElementById('cabecalho').classList.remove('cabecalhoExpandido')
+            fundoCabecalho.classList.remove('cabecalhoExpandido')
         }
         menu.innerHTML = '❯'
         telaRotinas.classList.remove('rotinasExpandida');
@@ -387,15 +389,16 @@ galeria.addEventListener('click', () => {
 
     if (telaGaleria.classList.contains('invisible2')) {
         telaGaleria.classList.remove('invisible2');
-        document.getElementById('cabecalho').classList.add('cabecalhoMegaExpandido')
+        fundoCabecalho.classList.add('cabecalhoMegaExpandido')
     }
     else {
         telaGaleria.classList.add('invisible2');
-        document.getElementById('cabecalho').classList.remove('cabecalhoMegaExpandido')
+        fundoCabecalho.classList.remove('cabecalhoMegaExpandido')
     }
 });
 fecharGaleria.addEventListener('click', ()=> {
     telaGaleria.classList.add('invisible2');
+    fundoCabecalho.classList.remove('cabecalhoMegaExpandido')
 })
 // Modal para exibir as imagens em tela cheia
 document.querySelectorAll('.imagemGaleria').forEach(image => {
