@@ -45,7 +45,7 @@
     padding: 60px 12px 0 12px;
 }
 .rotinasExecutando {
-    padding: 10px 12px 0 12px;
+    padding: 0 12px 0 12px;
 }
 .rotinas, .rotinasExecutando {
     display: flex;
