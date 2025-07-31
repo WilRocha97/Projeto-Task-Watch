@@ -265,7 +265,8 @@
 .galeriaContainer {
     display: flex;
     flex-direction: column;
-    overflow: auto;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .dicaContainer button,
@@ -282,6 +283,9 @@
     margin: 5px 30px 100px 30px;
     width: 80%;
     height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     transition: margin var(--transicao-link) ease-in-out,
                 background-color 1s ease-in-out,
                 height var(--transicao-link) ease-in-out,
@@ -301,12 +305,6 @@
 /* =============================================================================
    GALERIA ESPECÍFICA
    ============================================================================= */
-
-.galeriaTela {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
 
 .ClassTextoGaleria {
     display: flex;
@@ -457,7 +455,6 @@
 
     .dicaTela,
     .galeriaTela {
-        max-height: 85vh;
         margin: 0 30px 30px 30px;
     }
     .dicaContainer button,
@@ -478,7 +475,6 @@
 
     .dicaTela,
     .galeriaTela {
-        max-width: 95%;
         margin: 30px 15px;
     }
 
@@ -515,7 +511,6 @@
 
     .dicaTela,
     .galeriaTela {
-        max-height: 85vh;
         margin: 0 30px 30px 30px;
     }
     .dicaContainer button,
