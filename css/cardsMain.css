@@ -31,13 +31,15 @@
 .sortable-ghost .botaoInfo,
 .sortable-ghost .maisInfo,
 .sortable-ghost .maisInfo2,
-.sortable-ghost .barraLoading {
+.sortable-ghost .barraLoading,
+.sortable-ghost .porcentagem.pulse {
     color: var(--sombra-2) !important;
     text-shadow: none !important;
     --cor-loading-1: #444444;
     --cor-loading-2: #444444;
 }
-.sortable-ghost .porcentagem {
+.sortable-ghost .porcentagem,
+.sortable-ghost .bolinhaLoading {
     box-shadow: none;
 }
 
