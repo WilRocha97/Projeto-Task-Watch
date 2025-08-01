@@ -14,7 +14,7 @@
     --sombra-card-clara: #81818127;
     --sombra-2: #7c746827;
     --borda-botao: 20px;
-    --padding-botao: 6px 6px;
+    --padding-botao: 1px 6px;
     --cor-padrao: #ff0040;
 }
 
@@ -511,6 +511,11 @@ button.clicked, .MenuBotao.clicked {
         background: none;
     }
 }
+@media (max-width: 916px) {
+    .rodape {
+        padding: 5rem 0 100px 0;
+    }
+}  
 @media (max-width: 1255px) {
     .invisible3 {
         height: 0 !important;

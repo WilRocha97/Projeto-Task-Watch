@@ -418,9 +418,6 @@
         border-radius: 0;
         --tamanho-texto-2: 1rem;
     }
-    .rodape {
-        padding: 5rem 0 60px 0;
-    }
     .mainHistorico {
         padding: 0 !important;
     }
