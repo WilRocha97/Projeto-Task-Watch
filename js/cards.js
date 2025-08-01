@@ -6,9 +6,10 @@ var telaTituloFundo = document.querySelector(".fundoGradiente");
 var telaRotinas = document.getElementById('telaRotinas');
 var telaRotinasExecutando = document.getElementById('telaRotinasExecutando');
 var telaHistorico = document.getElementById('targetHistorico');
+const fundoCabecalho = document.getElementById('cabecalho')
 const telaGaleria = document.getElementById('telaGaleria');
 const menu = document.getElementById('menu');
-const telaMenu = document.getElementById('telaMenu');
+const telaMenu = document.querySelectorAll('.menuInvisivel');
 const telaDica = document.getElementById('telaDica');
 
 //localStorage.clear();
@@ -77,8 +78,14 @@ function sortable(container) {
                 evt.item.classList.add('sortable-ghost');
                 var screenWidth = window.innerWidth;
                 if (screenWidth < 1255) {
-                    telaMenu.classList.add('invisible3');
+                    telaMenu.forEach(miniMenu => {
+                        miniMenu.classList.add('invisible3');
+                    })
+                    if (screenWidth < 1255) {
+                        fundoCabecalho.classList.remove('cabecalhoExpandido')
+                    }
                     menu.innerHTML = '❯'
+                    telaRotinas.classList.remove('rotinasExpandida');
                 }
                 telaDica.classList.add('invisible2');
                 telaGaleria.classList.add('invisible2');
@@ -123,8 +130,14 @@ document.addEventListener('click', (event) => {
         if (!target.classList.contains('cmb')) {
             var screenWidth = window.innerWidth;
             if (screenWidth < 1255) {
-                telaMenu.classList.add('invisible3');
+                telaMenu.forEach(miniMenu => {
+                    miniMenu.classList.add('invisible3');
+                })
+                if (screenWidth < 1255) {
+                    fundoCabecalho.classList.remove('cabecalhoExpandido')
+                }
                 menu.innerHTML = '❯'
+                telaRotinas.classList.remove('rotinasExpandida');
             }
             telaDica.classList.add('invisible2')
             telaGaleria.classList.add('invisible2')

@@ -149,13 +149,17 @@
         min-width: 85vw;
     }
 }
-
-@media (min-width: 650px) and (max-width: 720px) {
+@media (max-width: 916px) {
+    .cabecalhoCardBotoes {
+        gap: 10px;
+    }
     .botaoFechar, .botaoFixar, .botaoInfo {
         font-size: 1.1em !important;
         font-weight: 100 !important;
         margin-left: 5px;
     }
+}
+@media (min-width: 650px) and (max-width: 720px) {
     .rectangle.collapsed .botaoFixado {
         left: 26% !important;
         top: 7% !important;
@@ -168,9 +172,6 @@
 @media (min-width: 720px) and (max-width: 916px) {
     .maisInfo, .maisInfo2 {
         margin-top: 10px;
-    }
-    .cabecalhoCardBotoes {
-        gap: 10px;
     }
     .botaoFechar, .botaoFixar, .botaoInfo {
         font-size: large;
