@@ -355,7 +355,6 @@ button {
     border: none;
     background: none;
     border-radius: var(--borda-botao);
-    padding: var(--padding-botao);
     margin: 2.3px;
     cursor: pointer;
     color: var(--cor-texto);

@@ -150,6 +150,14 @@
     }
 }
 @media (max-width: 916px) {
+    .rectangle.collapsed {
+        min-width: 45px !important;
+        min-height: 45px !important;
+        max-width: 45px !important;
+        max-height: 45px !important;
+        border-radius: var(--borda-botao);
+    }
+
     .cabecalhoCardBotoes {
         gap: 10px;
     }
@@ -160,10 +168,6 @@
     }
 }
 @media (min-width: 650px) and (max-width: 720px) {
-    .rectangle.collapsed .botaoFixado {
-        left: 26% !important;
-        top: 7% !important;
-    }
     .maisInfo.clicked, .maisInfo2.clicked {
         animation: luzBotaoCard 0.5s linear;
     }

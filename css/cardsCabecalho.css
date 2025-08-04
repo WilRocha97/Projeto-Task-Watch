@@ -284,3 +284,10 @@
         opacity: 0;
     }
 }
+
+@media (max-width: 916px) {
+    .rectangle.collapsed .botaoFixado {
+        left: 70%;
+        top: 29%;
+    }
+}

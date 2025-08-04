@@ -186,10 +186,6 @@
     box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0);
     transition: 1s ease-in-out;
 }
-.abreMenu, #controlarFixados {
-    height: 18px;
-    min-width: 18px;
-}
 
 #controlarFixados.active,
 .paginaHistorico button:disabled {
