@@ -127,9 +127,8 @@
 .rectangle.collapsed .bolinhaLoading,
 .rectangle.collapsed .bolinhaLoadingMove,
 .rectangle.collapsed #media {
-    opacity: 0;
-    scale: 0;
-    animation: none;
+    opacity: 0 !important;
+    animation: none !important;
 }
 .rectangle.collapsed .porcentagem,
 .rectangle.collapsed .botaoFixar, 

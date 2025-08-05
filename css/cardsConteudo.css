@@ -76,7 +76,7 @@
     max-height: 0;
     min-height: 0;
     transition: scale var(--transicao-link) ease-in-out, padding var(--transicao-link-2) ease-in-out, 
-                opacity var(--transicao-link-2) ease-in-out, max-width var(--transicao-link-2) ease-in-out, 
+                opacity var(--transicao-link) ease-in-out, max-width var(--transicao-link-2) ease-in-out, 
                 max-height var(--transicao-link-2) ease-in-out, min-height var(--transicao-link-2) ease-in-out,
                 color var(--transicao-link-2) ease-in-out, text-shadow var(--transicao-link-2) ease-in-out;
 }
