@@ -59,7 +59,7 @@
 .rectangle {
     --escala-card: 1.02;
     color: white;
-    border-radius: var(--borda-botao);
+    border-radius: 20px;
     max-width: 0;
     min-width: 0;
     max-height: 0;

@@ -390,7 +390,7 @@
     }
     
     .barraPesquisa {
-        width: 90vw !important;
+        width: 97vw !important;
     }
 
     .menu {
@@ -417,12 +417,24 @@
     .mainHistorico {
         padding: 0 !important;
     }
+
+    :root {
+        --borda-botao: 30px;
+    }
     .menuTelaBotoes {
-        gap: 25px;
         flex-wrap: wrap;
-        padding: 7px;
         margin: 5px;
-        border-radius: 30px;
+    }
+    .MenuBotaoInterno {
+        height: 44px;
+        min-width: 44px;
+    }
+    .MenuBotao, .MenuBotaoActive, .MenuBotaoDesactive, .paginaHistorico button {
+        height: 47px;
+        min-width: 47px;
+    }
+    .barraPesquisa {
+        height: 47px;
     }
 }
 /* Tablet pequeno (650px - 720px) */
@@ -430,11 +442,22 @@
     .divisaoCabecalho {
         flex-direction: column;
     }
-    .menuTelaBotoes {
-        padding: 7px;
-        gap: 25px;
-        border-radius: 30px;
+
+    :root {
+        --borda-botao: 30px;
     }
+    .MenuBotaoInterno {
+        height: 44px;
+        min-width: 44px;
+    }
+    .MenuBotao, .MenuBotaoActive, .MenuBotaoDesactive, .paginaHistorico button {
+        height: 47px;
+        min-width: 47px;
+    }
+    .barraPesquisa {
+        height: 47px;
+    }
+
     .menu {
         flex-wrap: wrap;
         padding: 8px
@@ -485,15 +508,27 @@
     .divisaoCabecalho {
         flex-direction: column;
     }
+
+    :root {
+        --borda-botao: 30px;
+    }
     .menuTelaBotoes {
         flex-wrap: nowrap;
-        padding: 7px;
-        gap: 25px;
-        border-radius: 30px;
     }
+    .MenuBotaoInterno {
+        height: 44px;
+        min-width: 44px;
+    }
+    .MenuBotao, .MenuBotaoActive, .MenuBotaoDesactive, .paginaHistorico button {
+        height: 47px;
+        min-width: 47px;
+    }
+    .barraPesquisa {
+        height: 47px;
+    }
+
     .menu {
         flex-wrap: wrap;
-        padding: 8px
     }
     .rotinas {
         padding: 12px 12px 0 12px !important;
@@ -512,9 +547,10 @@
     }
 }
 /* Tablet grande (650px - 916px) */
-@media (min-width: 650px) and (max-width: 1265px) {
+@media (min-width: 915px) and (max-width: 1265px) {
     .menu {
         flex-wrap: wrap;
+        row-gap: 20px;
     }
 }
 @media (max-width: 1255px) and (min-width: 917px) {

@@ -290,9 +290,21 @@
 }
 
 /* Telas grandes até 2500px */
-@media (max-width: 721px) {
+@media (max-width: 916px) {
     .filtroHistorico {
         gap: 25px;
+        height: 51.60px;
+    }
+    .pageSize {
+        width: 44px !important;
+        height: 44px !important;
+    }
+    .hInputPageSize {
+        min-width: 20px !important;
+        min-height: 20px !important;
+        font-size: larger;
+        transition: box-shadow 1s ease-in-out,
+                    color 1s ease-in-out;
     }
 }
 
