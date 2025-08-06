@@ -136,6 +136,7 @@ function procurarCard(event) {
 
     var cardPesquisado = document.getElementById('searchInputCard').value;
     if (event.key === 'Enter') {
+        cInputCard.blur()
         // verifica se foi digitado alguma coisa na barra de pesquisa
         if (cardPesquisado !== '') {
             const cards = document.querySelectorAll('.rectangle');
@@ -213,6 +214,12 @@ limpaCInputCard.addEventListener('click', ()=> {
 // adiciona o evento de escutar a tecla na barra de busca dos cards
 cInputCard.addEventListener('keydown', (event) => {
     procurarCard(event)
+});
+cInputCard.addEventListener('focus', (event) => {
+    fundoCabecalho.classList.add('cabecalhoSuperExpandido')
+});
+cInputCard.addEventListener('blur', (event) => {
+    fundoCabecalho.classList.remove('cabecalhoSuperExpandido')
 });
 buscaCInputCard.addEventListener('click', ()=> {
     procurarCard({key: 'Enter'})
