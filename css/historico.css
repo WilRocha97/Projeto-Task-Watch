@@ -123,6 +123,7 @@
 }
 
 .hInputPageSize {
+    text-align: center;
     min-width: 15px !important;
     transition: 1s ease-in-out;
 }
