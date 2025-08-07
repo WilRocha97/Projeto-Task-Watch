@@ -12,11 +12,7 @@
     margin: 0;
     opacity: 1;
     scale: 1;
-    transition: opacity var(--transicao-link) ease-in-out,
-                max-height var(--transicao-link) ease-in-out,
-                padding var(--transicao-link) ease-in-out,
-                margin var(--transicao-link) ease-in-out,
-                width var(--transicao-link) ease-in-out;
+    transition: var(--transicao-link) ease-in-out;
 }
 
 /* =============================================================================
@@ -33,6 +29,7 @@
     margin: 10px 0;
     gap: 10px;
     transition: opacity var(--transicao-link) ease-in-out,
+                filter var(--transicao-link) ease-in-out,
                 max-height var(--transicao-link) ease-in-out,
                 padding var(--transicao-link) ease-in-out,
                 margin var(--transicao-link) ease-in-out,
@@ -47,11 +44,13 @@
     max-height: 0;
     padding: 0;
     margin: 0;
+    filter: blur(var(--blur-transition));
     z-index: -999;
 }
 
 .mainHistorico.collapsed {
     width: 0;
+    filter: blur(var(--blur-transition));
 }
 
 /* Filtros do histórico */
@@ -116,20 +115,7 @@
     justify-self: center;
     width: fit-content;
     flex-direction: row;
-    transition: box-shadow 1s ease-in-out,
-                color 1s ease-in-out;
-}
-
-.selectMenu {
-    -webkit-appearance: none; /* Safari/Chrome */
-    -moz-appearance: none;    /* Firefox */
-    appearance: none;
-}
-.selectMenu option {
-  background-color: white;
-  color: black;
-  padding: 10px;
-  border-radius: var(--borda-botao);
+    transition: 1s ease-in-out;
 }
 
 .pageSize {
@@ -138,8 +124,7 @@
 
 .hInputPageSize {
     min-width: 15px !important;
-    transition: box-shadow 1s ease-in-out,
-                color 1s ease-in-out;
+    transition: 1s ease-in-out;
 }
 
 .paginaHistorico {
@@ -148,10 +133,9 @@
     display: flex;
     justify-content: center;
     flex-direction: row;
-    transition: box-shadow 1s ease-in-out,
-                color 1s ease-in-out,
-                opacity var(--transicao-link) ease-in-out,
-                max-width var(--transicao-link) ease-in-out;
+    transition: var(--transicao-link) ease-in-out,
+                box-shadow 1s ease-in-out,
+                color 1s ease-in-out;
 }
 
 .paginaHistorico span {
@@ -173,7 +157,7 @@
     padding: 8px;
     font-size: 0.8em;
     opacity: 1;
-    transition: opacity var(--transicao-link) ease-in-out,
+    transition: var(--transicao-link) ease-in-out,
                 box-shadow 1s ease-in-out,
                 color 1s ease-in-out,
                 background-color 1s ease-in-out;
@@ -188,6 +172,7 @@
 .telaHistorico.collapsed {
     opacity: 0 !important;
     height: 72vh;
+    filter: blur(var(--blur-transition));
 }
 
 /* =============================================================================
@@ -306,8 +291,7 @@
         min-width: 20px !important;
         min-height: 20px !important;
         font-size: larger;
-        transition: box-shadow 1s ease-in-out,
-                    color 1s ease-in-out;
+        transition: 1s ease-in-out;
     }
 }
 

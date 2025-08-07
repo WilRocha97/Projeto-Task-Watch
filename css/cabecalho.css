@@ -9,9 +9,7 @@
     align-items: center;
     border-radius: 0 0 20px 20px;
     overflow: hidden;
-    transition: bottom var(--transicao-link) ease-in-out, 
-                min-height var(--transicao-link) ease-in-out,
-                max-height var(--transicao-link) ease-in-out,
+    transition: var(--transicao-link) ease-in-out,
                 background-color 1s ease-in-out, 
                 box-shadow 1s ease-in-out, 
                 color 1s ease-in-out;
@@ -62,11 +60,7 @@
     min-height: 35px;
     max-width: 100%;
     opacity: 1;
-    transition: margin var(--transicao-link) ease-in-out,
-                height var(--transicao-link) ease-in-out,
-                max-width var(--transicao-link) ease-in-out,
-                padding var(--transicao-link) ease-in-out,
-                opacity var(--transicao-link) ease-in-out,
+    transition: var(--transicao-link) ease-in-out,
                 box-shadow 1s ease-in-out,
                 background-color 1s ease-in-out;
 }
@@ -85,8 +79,7 @@
 .relogio {
     padding: 9.8px 18px !important;
     scale: 1;
-    transition: scale var(--transicao-link) ease-in-out,
-                padding var(--transicao-link) ease-in-out,
+    transition: var(--transicao-link) ease-in-out,
                 box-shadow 1s ease-in-out,
                 background-color 1s ease-in-out;
 }
@@ -285,13 +278,9 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    transition: margin var(--transicao-link) ease-in-out,
+    transition: var(--transicao-link) ease-in-out,
                 background-color 1s ease-in-out,
-                height var(--transicao-link) ease-in-out,
-                width var(--transicao-link) ease-in-out,
-                opacity var(--transicao-link) ease-in-out,
-                box-shadow 1s ease-in-out,
-                padding var(--transicao-link) ease-in-out;
+                box-shadow 1s ease-in-out;
 }
 
 /* Textos compartilhados */
