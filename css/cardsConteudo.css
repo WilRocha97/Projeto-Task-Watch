@@ -12,9 +12,7 @@
     max-width: fit-content;
     max-height: 500px;
     text-shadow: 0 0 1px white;
-    transition: margin var(--transicao-link) ease-in-out, max-width 1s ease-in-out, max-height var(--transicao-link) ease-in-out, 
-                text-shadow var(--transicao-link) ease-in-out, opacity var(--transicao-link) ease-in-out, 
-                scale var(--transicao-link) ease-in-out;
+    transition: var(--transicao-link) ease-in-out;
 }
 .maisInfo:hover, .maisInfo2:hover {
     text-shadow: 0 0 5px white;
@@ -30,8 +28,7 @@
     display: flex;
     flex-direction: column;
     opacity: 1;
-    transition: opacity var(--transicao-link) ease-in-out, margin-bottom var(--transicao-link) ease-in-out, 
-                padding var(--transicao-link) ease-in-out, max-height var(--transicao-link) ease-in-out;
+    transition: var(--transicao-link) ease-in-out;
 }
 .resumoErroInfo {
     max-height: 500px;
@@ -51,8 +48,7 @@
     padding: 0;
     margin-bottom: 0;
     max-height: 0;
-    transition: opacity var(--transicao-link) ease-in-out, margin-bottom var(--transicao-link) ease-in-out, 
-                padding var(--transicao-link) ease-in-out, max-height var(--transicao-link) ease-in-out;
+    transition: var(--transicao-link) ease-in-out;
 }
 .telaDadoConteudo, .telaResumoConteudo, .telaErroInfo {
     overflow-y: auto;
@@ -76,9 +72,10 @@
     max-height: 0;
     min-height: 0;
     transition: scale var(--transicao-link) ease-in-out, padding var(--transicao-link-2) ease-in-out, 
-                opacity var(--transicao-link) ease-in-out, max-width var(--transicao-link-2) ease-in-out, 
-                max-height var(--transicao-link-2) ease-in-out, min-height var(--transicao-link-2) ease-in-out,
-                color var(--transicao-link-2) ease-in-out, text-shadow var(--transicao-link-2) ease-in-out;
+                opacity var(--transicao-link) ease-in-out, filter var(--transicao-link) ease-in-out,
+                max-width var(--transicao-link-2) ease-in-out, max-height var(--transicao-link-2) ease-in-out, 
+                min-height var(--transicao-link-2) ease-in-out, color var(--transicao-link-2) ease-in-out, 
+                text-shadow var(--transicao-link-2) ease-in-out;
 }
 .content:not(:empty) {
     min-height: 10px;
@@ -96,6 +93,7 @@
     width: 80px;
     height: auto;
     opacity: 0.2;
+    filter: blur(0);
     transition: var(--transicao-link) ease-in-out;
 }
 
