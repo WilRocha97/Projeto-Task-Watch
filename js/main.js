@@ -1,4 +1,5 @@
-var botoes = document.querySelectorAll('button');
+var botoesID = document.querySelectorAll('button');
+var botoes = document.querySelectorAll('.MenuBotao');
 var botoesCards = document.querySelectorAll('.btnCard');
 var cards = document.querySelectorAll('.rectangle');
 
@@ -40,6 +41,9 @@ function isTouchDevice() {
 }
 if (isTouchDevice()) {
     botoes.forEach((botao)=> {
+        botao.classList.add('nh')
+    });
+    botoesID.forEach((botao)=> {
         botao.classList.add('nh')
     });
     botoesCards.forEach((botao)=> {
