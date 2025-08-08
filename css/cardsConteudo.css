@@ -45,6 +45,7 @@
 }
 .resumoResultados.collapsed, .resumoResultados2.collapsed, .resumoErroInfo.collapsed {
     opacity: 0;
+    filter: blur(var(--blur-transition));
     padding: 0;
     margin-bottom: 0;
     max-height: 0;
