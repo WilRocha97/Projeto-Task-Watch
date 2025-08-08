@@ -70,10 +70,10 @@
     font-size: 0.8em;
     padding: 0;
     opacity: 0;
+    filter: blur(var(--blur-transition));
     max-height: 0;
     min-height: 0;
-    transition: scale var(--transicao-link) ease-in-out, padding var(--transicao-link-2) ease-in-out, 
-                opacity var(--transicao-link) ease-in-out, filter var(--transicao-link) ease-in-out,
+    transition: var(--transicao-link) ease-in-out, padding var(--transicao-link-2) ease-in-out,
                 max-width var(--transicao-link-2) ease-in-out, max-height var(--transicao-link-2) ease-in-out, 
                 min-height var(--transicao-link-2) ease-in-out, color var(--transicao-link-2) ease-in-out, 
                 text-shadow var(--transicao-link-2) ease-in-out;
@@ -83,6 +83,7 @@
     max-height: 200px;
     padding: 3px;
     opacity: 1;
+    filter: blur(0);
 }
 
 #decoracao {
