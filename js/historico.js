@@ -130,7 +130,7 @@ function criaPaginacao(currentPage, totalPages, ocorrencia) {
             prevButton.innerText = '◀';
             prevButton.title = 'Página anterior';
             prevButton.className = 'pageButon';
-            prevButton.onclick = (event) => filtraHistorico(event, ocorrencia, currentPage - 1);
+            prevButton.onclick = (event) => filtraHistorico(event, 'clicado', currentPage - 1);
             paginationContainer.appendChild(prevButton);
         }
 
@@ -138,7 +138,7 @@ function criaPaginacao(currentPage, totalPages, ocorrencia) {
             let firstPageButton = document.createElement('button');
             firstPageButton.innerText = '1';
             firstPageButton.className = 'pageButon';
-            firstPageButton.onclick = (event) => filtraHistorico(event, ocorrencia, 1);
+            firstPageButton.onclick = (event) => filtraHistorico(event, 'clicado', 1);
             paginationContainer.appendChild(firstPageButton);
 
             let dotsBefore = document.createElement('span');
@@ -151,7 +151,7 @@ function criaPaginacao(currentPage, totalPages, ocorrencia) {
             let firstPageButton = document.createElement('button');
             firstPageButton.className = 'pageButon';
             firstPageButton.innerText = '1';
-            firstPageButton.onclick = (event) => filtraHistorico(event, ocorrencia, 1);
+            firstPageButton.onclick = (event) => filtraHistorico(event, 'clicado', 1);
             paginationContainer.appendChild(firstPageButton);
         }
 
@@ -170,7 +170,7 @@ function criaPaginacao(currentPage, totalPages, ocorrencia) {
             pageButton.innerText = page;
             pageButton.className = 'pageButon';
             pageButton.disabled = (page === currentPage);
-            pageButton.onclick = (event) => filtraHistorico(event, ocorrencia, page);
+            pageButton.onclick = (event) => filtraHistorico(event, 'clicado', page);
             paginationContainer.appendChild(pageButton);
         }
 
@@ -183,7 +183,7 @@ function criaPaginacao(currentPage, totalPages, ocorrencia) {
             let lastPageButton = document.createElement('button');
             lastPageButton.className = 'pageButon';
             lastPageButton.innerText = totalPages;
-            lastPageButton.onclick = (event) => filtraHistorico(event, ocorrencia, totalPages);
+            lastPageButton.onclick = (event) => filtraHistorico(event, 'clicado', totalPages);
             paginationContainer.appendChild(lastPageButton);
         }
 
@@ -191,7 +191,7 @@ function criaPaginacao(currentPage, totalPages, ocorrencia) {
             let lastPageButton = document.createElement('button');
             lastPageButton.className = 'pageButon';
             lastPageButton.innerText = totalPages;
-            lastPageButton.onclick = (event) => filtraHistorico(event, ocorrencia, totalPages);
+            lastPageButton.onclick = (event) => filtraHistorico(event, 'clicado', totalPages);
             paginationContainer.appendChild(lastPageButton);
         }
 
@@ -200,7 +200,7 @@ function criaPaginacao(currentPage, totalPages, ocorrencia) {
             nextButton.className = 'pageButon';
             nextButton.innerText = '▶';
             nextButton.title = 'Próxima página';
-            nextButton.onclick = (event) => filtraHistorico(event, ocorrencia, currentPage + 1);
+            nextButton.onclick = (event) => filtraHistorico(event, 'clicado', currentPage + 1);
             paginationContainer.appendChild(nextButton);
         }
         paginationContainer.classList.remove('invisible4');
