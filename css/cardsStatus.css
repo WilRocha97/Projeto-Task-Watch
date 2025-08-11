@@ -1,11 +1,19 @@
 @keyframes piscar {
     0%, 100% {
-        box-shadow: inset 0 0 130px var(--cor-principal),
-                    0 0 25px var(--cor-principal);
+        box-shadow: inset 0 0 80px var(--cor-principal),
+                inset -1px -1px 1px var(--sombra-vidro-card-clara),
+                inset 1px 1px 1px var(--sombra-vidro-card-clara),
+                inset 1px -1px 1px var(--sombra-vidro-card-escura),
+                inset -1px 1px 1px var(--sombra-vidro-card-escura),
+                0 0 25px var(--cor-principal);
         border: var(--borda-card) solid var(--cor-principal);
     }
     50% {
         box-shadow: inset 0 0 20px var(--cor-opaca),
+                inset -1px -1px 1px var(--sombra-vidro-card-clara),
+                inset 1px 1px 1px var(--sombra-vidro-card-clara),
+                inset 1px -1px 1px var(--sombra-vidro-card-escura),
+                inset -1px 1px 1px var(--sombra-vidro-card-escura),
                 var(--direcao-sombra-1) var(--direcao-sombra-1) 10px var(--cor-opaca),
                 var(--direcao-sombra-2) var(--direcao-sombra-2) 10px var(--cor-opaca-2);
         border: var(--borda-card) solid var(--cor-opaca-2);
@@ -71,6 +79,10 @@
 .status {
     --cor-fundo-2: #a8a8a82d;
     box-shadow: inset 0 0 20px var(--cor-opaca),
+                inset -1px -1px 1px var(--sombra-vidro-card-clara),
+                inset 1px 1px 1px var(--sombra-vidro-card-clara),
+                inset 1px -1px 1px var(--sombra-vidro-card-escura),
+                inset -1px 1px 1px var(--sombra-vidro-card-escura),
                 var(--direcao-sombra-1) var(--direcao-sombra-1) 10px var(--cor-opaca),
                 var(--direcao-sombra-2) var(--direcao-sombra-2) 10px var(--cor-opaca-2);
 
@@ -82,6 +94,10 @@
     scale: var(--escala-card);
     --cor-fundo-2: #2525252d;
     box-shadow: inset 0 0 80px var(--cor-principal),
+                inset -1px -1px 1px var(--sombra-vidro-card-clara),
+                inset 1px 1px 1px var(--sombra-vidro-card-clara),
+                inset 1px -1px 1px var(--sombra-vidro-card-escura),
+                inset -1px 1px 1px var(--sombra-vidro-card-escura),
                 0 0 25px var(--cor-principal);
     border: var(--borda-card) solid var(--cor-principal);
     background: linear-gradient(50deg, var(--cor-secundaria), var(--cor-primaria));
@@ -91,6 +107,10 @@
     scale: 1;
     --cor-fundo-2: #a8a8a82d;
     box-shadow: inset 0 0 20px var(--cor-opaca),
+                inset -1px -1px 1px var(--sombra-vidro-card-clara),
+                inset 1px 1px 1px var(--sombra-vidro-card-clara),
+                inset 1px -1px 1px var(--sombra-vidro-card-escura),
+                inset -1px 1px 1px var(--sombra-vidro-card-escura),
                 var(--direcao-sombra-1) var(--direcao-sombra-1) 10px var(--cor-opaca),
                 var(--direcao-sombra-2) var(--direcao-sombra-2) 10px var(--cor-opaca-2);
 
@@ -114,8 +134,12 @@
     .status:hover {
         --cor-fundo-2: #a8a8a82d;
         box-shadow: inset 0 0 20px var(--cor-opaca),
-                    var(--direcao-sombra-1) var(--direcao-sombra-1) 10px var(--cor-opaca),
-                    var(--direcao-sombra-2) var(--direcao-sombra-2) 10px var(--cor-opaca-2);
+                inset -1px -1px 1px var(--sombra-vidro-card-clara),
+                inset 1px 1px 1px var(--sombra-vidro-card-clara),
+                inset 1px -1px 1px var(--sombra-vidro-card-escura),
+                inset -1px 1px 1px var(--sombra-vidro-card-escura),
+                var(--direcao-sombra-1) var(--direcao-sombra-1) 10px var(--cor-opaca),
+                var(--direcao-sombra-2) var(--direcao-sombra-2) 10px var(--cor-opaca-2);
 
         border: var(--borda-card) solid var(--cor-secundaria);
         background: linear-gradient(50deg, var(--cor-primaria), var(--cor-secundaria));
