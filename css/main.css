@@ -342,8 +342,7 @@ button {
 
 .BotaoFechar {
     color: red !important;
-    align-self: flex-end !important;
-    padding: none !important;
+    padding: 0 !important;
 }
 .MenuBotaoInterno {
     height: 27px;
