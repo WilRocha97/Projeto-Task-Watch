@@ -274,7 +274,11 @@ button {
     margin: 5px 0 0 0;
     background: var(--cor-fundo-2);
     border-radius: 15px;
-    box-shadow: var(--direcao-sombra-1) var(--direcao-sombra-1) 5px var(--sombra-card-clara),
+    box-shadow: inset -1px -1px 1px var(--sombra-vidro-card-clara),
+                inset 1px 1px 1px var(--sombra-vidro-card-clara),
+                inset 1px -1px 1px var(--sombra-vidro-card-escura),
+                inset -1px 1px 1px var(--sombra-vidro-card-escura),
+                var(--direcao-sombra-1) var(--direcao-sombra-1) 5px var(--sombra-card-clara),
                 var(--direcao-sombra-2) var(--direcao-sombra-2) 5px var(--sombra-card);
     backdrop-filter: blur(var(--blur-card));
     -webkit-backdrop-filter: blur(var(--blur-card)); /* compatibilidade com Safari */
