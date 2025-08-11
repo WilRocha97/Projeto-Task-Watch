@@ -43,9 +43,6 @@
     margin: 0 auto;
     overflow: hidden;
     position: absolute;
-    opacity: 1;
-    scale: 1;
-    transition: var(--transicao-link) ease-in-out;
 }
 .titulo span {
     display: inline-block;
