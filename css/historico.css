@@ -29,7 +29,6 @@
     margin: 10px 0;
     gap: 10px;
     transition: opacity var(--transicao-link) ease-in-out,
-                filter var(--transicao-link) ease-in-out,
                 max-height var(--transicao-link) ease-in-out,
                 padding var(--transicao-link) ease-in-out,
                 margin var(--transicao-link) ease-in-out,
@@ -44,13 +43,11 @@
     max-height: 0;
     padding: 0;
     margin: 0;
-    filter: blur(var(--blur-transition));
     z-index: -999;
 }
 
 .mainHistorico.collapsed {
     width: 0;
-    filter: blur(var(--blur-transition));
 }
 
 /* Filtros do histórico */
@@ -173,7 +170,6 @@
 .telaHistorico.collapsed {
     opacity: 0 !important;
     height: 72vh;
-    filter: blur(var(--blur-transition));
 }
 
 /* =============================================================================

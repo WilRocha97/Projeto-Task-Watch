@@ -128,7 +128,6 @@
 .rectangle.collapsed .bolinhaLoadingMove,
 .rectangle.collapsed #media {
     opacity: 0 !important;
-    filter: blur(100px);
     animation: none !important;
 }
 .rectangle.collapsed .porcentagem,

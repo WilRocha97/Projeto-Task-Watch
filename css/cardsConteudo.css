@@ -45,7 +45,6 @@
 }
 .resumoResultados.collapsed, .resumoResultados2.collapsed, .resumoErroInfo.collapsed {
     opacity: 0;
-    filter: blur(var(--blur-transition));
     padding: 0;
     margin-bottom: 0;
     max-height: 0;
@@ -70,7 +69,6 @@
     font-size: 0.8em;
     padding: 0;
     opacity: 0;
-    filter: blur(var(--blur-transition));
     max-height: 0;
     min-height: 0;
     transition: var(--transicao-link) ease-in-out, padding var(--transicao-link-2) ease-in-out,
@@ -83,7 +81,6 @@
     max-height: 200px;
     padding: 3px;
     opacity: 1;
-    filter: blur(0);
 }
 
 #decoracao {
@@ -95,7 +92,6 @@
     width: 80px;
     height: auto;
     opacity: 0.2;
-    filter: blur(0);
     transition: var(--transicao-link) ease-in-out;
 }
 
