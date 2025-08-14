@@ -6,10 +6,12 @@ var telaTituloFundo = document.querySelector(".fundoGradiente");
 var telaRotinas = document.getElementById('telaRotinas');
 var telaRotinasExecutando = document.getElementById('telaRotinasExecutando');
 var telaHistorico = document.getElementById('targetHistorico');
-const fundoCabecalho = document.getElementById('cabecalho')
-const telaGaleria = document.getElementById('telaGaleria');
+const fundoCabecalho = document.getElementById('cabecalho');
 const menu = document.getElementById('menu');
 const telaMenu = document.querySelectorAll('.menuInvisivel');
+
+const telaMaquinas = document.getElementById('telaMaquinas');
+const telaGaleria = document.getElementById('telaGaleria');
 const telaDica = document.getElementById('telaDica');
 
 //localStorage.clear();
@@ -82,14 +84,15 @@ function sortable(container) {
                         miniMenu.classList.add('invisible3');
                     })
                     if (screenWidth < 1255) {
-                        fundoCabecalho.classList.remove('cabecalhoExpandido')
+                        fundoCabecalho.classList.remove('cabecalhoExpandido');
                     }
                     menu.innerHTML = '❯'
                     telaRotinas.classList.remove('rotinasExpandida');
                 }
+                telaMaquinas.classList.add('invisible5');
                 telaDica.classList.add('invisible2');
                 telaGaleria.classList.add('invisible2');
-                telaRotinas.classList.remove('rotinasExpandida')
+                telaRotinas.classList.remove('rotinasExpandida');
             }, delay);
         },
         onUnchoose: function(evt) {
@@ -134,14 +137,15 @@ document.addEventListener('click', (event) => {
                     miniMenu.classList.add('invisible3');
                 })
                 if (screenWidth < 1255) {
-                    fundoCabecalho.classList.remove('cabecalhoExpandido')
+                    fundoCabecalho.classList.remove('cabecalhoExpandido');
                 }
                 menu.innerHTML = '❯'
                 telaRotinas.classList.remove('rotinasExpandida');
             }
-            telaDica.classList.add('invisible2')
-            telaGaleria.classList.add('invisible2')
-            telaRotinas.classList.remove('rotinasExpandida')
+            telaMaquinas.classList.add('invisible5');
+            telaDica.classList.add('invisible2');
+            telaGaleria.classList.add('invisible2');
+            telaRotinas.classList.remove('rotinasExpandida');
             telaHistorico.classList.remove('historicoExpandida');
         }
 

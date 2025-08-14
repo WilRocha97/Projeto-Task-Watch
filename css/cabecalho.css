@@ -200,14 +200,14 @@
 }
 
 /* Toggle Dark Mode */
-#toggleDarkMode {
+.iconeContainer {
     display: flex;
+    justify-content: center;
 }
 
-#toggleDarkMode img {
+.icone {
     width: 18px;
     height: 18px;
-    align-self: center;
 }
 /* Animação para descer e sumir */
 @keyframes slideDownOut {
@@ -257,28 +257,33 @@
 .galeriaContainer {
     display: flex;
     flex-direction: column;
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
 }
 
+#fecharMaquinas,
 .dicaContainer button,
 .galeriaContainer button {
     position: fixed;
+    right: 5px;
     margin-right: 10px;
 }
 
 /* Telas compartilhadas */
 .dicaTela,
 .galeriaTela {
+    font-size: 0.9em;
+    overflow: hidden;
     opacity: 1;
     align-self: center;
     margin: 5px 30px 100px 30px;
-    width: 80%;
-    height: 85vh;
+    padding: 8px;
+    max-width: 100%;
+    max-height: 85vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     transition: var(--transicao-link) ease-in-out,
+                width ease-in-out,
                 background-color 1s ease-in-out,
                 box-shadow 1s ease-in-out;
 }

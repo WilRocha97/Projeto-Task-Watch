@@ -82,7 +82,9 @@ function filtraHistorico(event='', ocorrencia='geral', page=1) {
         document.getElementById('cabecalho').classList.remove('cabecalhoExpandido')
         menu.innerHTML = '❯'
     }
+    telaMaquinas.classList.add('invisible5');
     telaDica.classList.add('invisible2');
+    telaGaleria.classList.add('invisible2');
     telaRotinas.classList.remove('rotinasExpandida');
     telaHistorico.classList.remove('historicoExpandida');
     

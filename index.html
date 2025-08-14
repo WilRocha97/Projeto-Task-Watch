@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/background.css">
     <link rel="stylesheet" href="css/cabecalho.css">
+    <link rel="stylesheet" href="css/maquinas.css">
     <link rel="stylesheet" href="css/cardsMain.css">
     <link rel="stylesheet" href="css/cardsCabecalho.css">
     <link rel="stylesheet" href="css/cardsConteudo.css">
@@ -49,10 +50,11 @@
                 </div>
 
                 <div class="cmb fundo menuTelaBotoes menuInvisivel invisible3">
-                    <button id="dica" class="cmb MenuBotao" title="Ajuda">?</button>
+                    <button id="maquinas" class="cmb MenuBotao" title="Lista de máquinas">⌨</button>
                     <button id="galeria" class="cmb MenuBotao" title="Galeria do TaskWatch oficial">Galeria</button>
-                    <button id="toggleDarkMode" class="cmb MenuBotao" title="Mudar para modo claro">
-                        <img class="cmb modoImagem" src="assets/moon.png" alt="Modo escuro">
+                    <button id="dica" class="cmb MenuBotao" title="Ajuda">?</button>
+                    <button id="toggleDarkMode" class="cmb MenuBotao iconeContainer" title="Mudar para modo claro">
+                        <img class="cmb icone" src="assets/moon.png" alt="Modo escuro">
                     </button>
                 </div>
                 
@@ -73,41 +75,8 @@
                 </div>
             </div>
         </div>
-        <div id="telaDica" class="cmb menu fundo dicaTela invisible2">
-            <div class="cmb scroll dicaContainer">
-                <button id="fecharAjuda" class="cmb MenuBotaoInterno BotaoFechar" title="Fecar ajuda">⨉</button>
-                <div id="textoDica" class="cmb ClassTextoDica">
-                    Olá, esta é a versão estática do Task Watch, Os dados informados aqui são fictícios e servem apenas como exemplo.<br><br><br>
-
-                    Caso queira, clice em "Galeria" para ver algumas imagens das versões anteriores do TaskWatch :D<br><br>
-                    Aqui estam algumas informações sobre como o site funciona :)<br><br>
-                    
-                    <br><br><br><h1>▾ Menu</h1>
-                    <br>• Na barra de busca (Buscar cartão) você pode procurar um cartão pelo nome que está no título dele, isso inclui o nome do computador que a rotina está sendo executada.
-                    <br><br>• Com o  botão "★" (Controlar cartões fixados) você pode decidir se os botões informados a seguir, vão controlar os cartões fixados ou os não fixados.
-                    <br><br>• O botão "–" minimiza todos os cartões e o "▢" maximiza todos eles, e você pode clicar diretamente em cada cartão para minimizar ou maximiza-los individualmente.
-                    <br><br>• O botão "▲" minimiza todas as telas internas dos cartões e o "▼" maximiza todas elas, e você pode clicar diretamente no titulo de cada tela interna para minimizar ou maximiza-las individualmente.
-
-                    <br><br><br><h1>▾ Cartões</h1>
-                    <br>• A cada rotina iniciada, um novo cartão irá aparecer na tela com as informações dela.
-                    <br><br>• Se a rotina ficar ociosa por muito tempo, o cartão irá pulsar em amarelo.
-                    <br><br>• Se ocorrer algúm erro durante a execução da rotina, o cartão irá pulsar em vermelho e é possível exibir o erro ao clicar em "(ℹ)".
-                    <br><br>• Os cartões com ocorrência, serão agrupados a cima dos cartões em execução.
-                    <br><br>• Quando uma rotina finalizar, o cartão irá permanecer na tela até que você clique em "⨉" (Fechar cartão) e irá pulsar lentamente em azul.
-                    <br><br>• Todos os cartões podem ser fechados a qualquer momento, porém, os que ainda estão em execução, voltarão para a tela. Aqui na versão stática do TaskWatch, eles voltarão depois de 10 segundos
-                    <br><br>• Os cartões podem ser fixados ao clicar em "☆" (Fixar cartão). Os cartões fixados só seram afetados ao clicar em "–" (Minizar tudo), "▢" (Maximizar tudo), "▲" (Minizar infos) e "▼" (Maximizar infos), se o botão "★" (Controlar cartões fixados) no menu for ativado.
-                    <br><br>• O navegador irá armazenar na memória interna quais cartões foram fixados.
-                    <br><br>• Voçê pode arastar os cartões para organiza-los da forma que preferir, basta segurar o cartão que você deseja mover até que ele fique cinza.
-                    <br><br>• Quando não estiver exibindo cartões, uma tela de descanso aparecerá.
-
-                    <br><br><br><h1>▾ Histórico</h1>
-                    <br>• A tela de histórico, que é exibida ao clicar no botão "Histórico", pode ser filtrada por ocorrência, basta clicar no ponto colorido com a cor correspondente ao evento. Eles ficam logo acima da janela de histórico do lado direito da tela.
-                    <br><br>• É possível buscar alguma ocorrência por parte da data e hora e também pelo nome da rotina utilizando as barras de pesquisa.
-                    <br><br>• O campo ao lado dos controles de paginação é onde você pode digitar a quantidade de linhas por página que apareceram na tela de hitórico, o padrão é 15 e o máixmo é 75 (Muitas linhas podem causar lentidão no dispositivo).
-                </div>
-            </div>
-        </div>
-        <div id="telaGaleria" class="cmb menu fundo galeriaTela invisible2">
+        
+        <div id="telaGaleria" class="cmb fundo galeriaTela invisible2">
             <div class="cmb scroll galeriaContainer">
                 <button id="fecharGaleria" class="cmb MenuBotaoInterno BotaoFechar" title="Fechar galeria">⨉</button>
 
@@ -216,6 +185,49 @@
 
             </div>
         </div>
+
+        <div id="telaDica" class="cmb fundo dicaTela invisible2">
+            <div class="cmb scroll dicaContainer">
+                <button id="fecharAjuda" class="cmb MenuBotaoInterno BotaoFechar" title="Fechar ajuda">⨉</button>
+                <div id="textoDica" class="cmb ClassTextoDica">
+                    Olá, esta é a versão estática do Task Watch, Os dados informados aqui são fictícios e servem apenas como exemplo.<br><br><br>
+
+                    Caso queira, clice em "Galeria" para ver algumas imagens das versões anteriores do TaskWatch :D<br><br>
+                    Aqui estam algumas informações sobre como o site funciona :)<br><br>
+                    
+                    <br><br><br><h1>▾ Dispositivos disponíveis</h1>
+                    <br>• O botão "⌨" abre a tela de dispositivos disponíveis, nela é possível visualizar quais estão executando alguma rotina.
+                    <br><br>• É possível alterar o status manualmente clicando em "Livre" ou "Ocupado". Porém, se existir algum cartão na tela com alguma rotina no dispositivo alterado, ele retornará para "Ocupado".
+                    <br><br>• Caso queira, é possível adicionar um comentário abaixo do nome do dispositivo.
+
+                    <br><br><br><h1>▾ Menu</h1>
+                    <br>• Na barra de busca (Buscar cartão) você pode procurar um cartão pelo nome que está no título dele, isso inclui o nome do computador que a rotina está sendo executada.
+                    <br><br>• Com o  botão "★" (Controlar cartões fixados) você pode decidir se os botões informados a seguir, vão controlar os cartões fixados ou os não fixados.
+                    <br><br>• O botão "–" minimiza todos os cartões e o "▢" maximiza todos eles, e você pode clicar diretamente em cada cartão para minimizar ou maximiza-los individualmente.
+                    <br><br>• O botão "▲" minimiza todas as telas internas dos cartões e o "▼" maximiza todas elas, e você pode clicar diretamente no titulo de cada tela interna para minimizar ou maximiza-las individualmente.
+                    
+                    <br><br><br><h1>▾ Cartões</h1>
+                    <br>• A cada rotina iniciada, um novo cartão irá aparecer na tela com as informações dela.
+                    <br><br>• Se a rotina ficar ociosa por muito tempo, o cartão irá pulsar em amarelo.
+                    <br><br>• Se ocorrer algúm erro durante a execução da rotina, o cartão irá pulsar em vermelho e é possível exibir o erro ao clicar em "(ℹ)".
+                    <br><br>• Os cartões com ocorrência, serão agrupados a cima dos cartões em execução.
+                    <br><br>• Quando uma rotina finalizar, o cartão irá permanecer na tela até que você clique em "⨉" (Fechar cartão) e irá pulsar lentamente em azul.
+                    <br><br>• Todos os cartões podem ser fechados a qualquer momento, porém, os que ainda estão em execução, voltarão para a tela. Aqui na versão stática do TaskWatch, eles voltarão depois de 10 segundos
+                    <br><br>• Os cartões podem ser fixados ao clicar em "☆" (Fixar cartão). Os cartões fixados só seram afetados ao clicar em "–" (Minizar tudo), "▢" (Maximizar tudo), "▲" (Minizar infos) e "▼" (Maximizar infos), se o botão "★" (Controlar cartões fixados) no menu for ativado.
+                    <br><br>• O navegador irá armazenar na memória interna quais cartões foram fixados.
+                    <br><br>• Voçê pode arastar os cartões para organiza-los da forma que preferir, basta segurar o cartão que você deseja mover até que ele fique cinza.
+                    <br><br>• Quando não estiver exibindo cartões, uma tela de descanso aparecerá.
+
+                    <br><br><br><h1>▾ Histórico</h1>
+                    <br>• A tela de histórico, que é exibida ao clicar no botão "Histórico", pode ser filtrada por ocorrência, basta clicar no ponto colorido com a cor correspondente ao evento. Eles ficam logo acima da janela de histórico do lado direito da tela.
+                    <br><br>• É possível buscar alguma ocorrência por parte da data e hora e também pelo nome da rotina utilizando as barras de pesquisa.
+                    <br><br>• O campo ao lado dos controles de paginação é onde você pode digitar a quantidade de linhas por página que apareceram na tela de hitórico, o padrão é 15 e o máixmo é 75 (Muitas linhas podem causar lentidão no dispositivo).
+                
+                    <br><br><br>Todos os cartões fixados e alterações na tela de dispositivos que você fizer ficam salvos no local storage do seu navegador, então sinta-se à vontade para explorar os recursos. :)<br><br>
+                </div>
+            </div>
+        </div>
+
     </header>
 
     <!-- Modal para exibir a imagem em tela cheia -->
@@ -233,13 +245,163 @@
         </div>
     </section>
 
+    <div id="telaMaquinas" class="fundo maquinasTela invisible5">
+        <button id="fecharMaquinas" class="cmb MenuBotaoInterno BotaoFechar" title="Fechar tela de maquinas">⨉</button>
+        <div class="cmb scroll maquinasContainer">
+            <div id="PC01" class="rectangleMaquinas">
+                <div class="tituloContainerMaquina">
+                    <div class="tituloMaquinas">PC01</div>
+                    <div class="menuTelaBotoes">
+                        <button id="buscarMaquina" class="cmb MenuBotao" title="Buscar máquina">❯</button>
+                        <button id="mudarStatus" class="cmb MenuBotao cMudarStatus" title="Mudar status">Em uso</button>
+                    </div>
+                </div>
+                <textarea type="text" class="inputComentario scroll scrollInfo telaMensagemMaquinas" placeholder="Adicionar comentário" title="Adicionar comentário"></textarea>
+                <span id="statusMaquina" class="cStatusMaquina ocupado"></span>
+            </div>
+
+            <div id="PC02" class="rectangleMaquinas">
+                <div class="tituloContainerMaquina">
+                    <div class="tituloMaquinas">PC02</div>
+                    <div class="menuTelaBotoes">
+                        <button id="buscarMaquina" class="cmb MenuBotao" title="Buscar máquina">❯</button>
+                        <button id="mudarStatus" class="cmb MenuBotao cMudarStatus" title="Mudar status">Em uso</button>
+                    </div>
+                </div>
+                <textarea type="text" class="inputComentario scroll scrollInfo telaMensagemMaquinas" placeholder="Adicionar comentário" title="Adicionar comentário"></textarea>
+                <span id="statusMaquina" class="cStatusMaquina ocupado"></span>
+            </div>
+
+            <div id="PC03" class="rectangleMaquinas">
+                <div class="tituloContainerMaquina">
+                    <div class="tituloMaquinas">PC03</div>
+                    <div class="menuTelaBotoes">
+                        <button id="buscarMaquina" class="cmb MenuBotao" title="Buscar máquina">❯</button>
+                        <button id="mudarStatus" class="cmb MenuBotao cMudarStatus" title="Mudar status">Em uso</button>
+                    </div>
+                </div>
+                <textarea type="text" class="inputComentario scroll scrollInfo telaMensagemMaquinas" placeholder="Adicionar comentário" title="Adicionar comentário"></textarea>
+                <span id="statusMaquina" class="cStatusMaquina ocupado"></span>
+            </div>
+            
+            <div id="PC04" class="rectangleMaquinas">
+                <div class="tituloContainerMaquina">
+                    <div class="tituloMaquinas">PC04</div>
+                    <div class="menuTelaBotoes">
+                        <button id="buscarMaquina" class="cmb MenuBotao" title="Buscar máquina">❯</button>
+                        <button id="mudarStatus" class="cmb MenuBotao cMudarStatus" title="Mudar status">Em uso</button>
+                    </div>
+                </div>
+                <textarea type="text" class="inputComentario scroll scrollInfo telaMensagemMaquinas" placeholder="Adicionar comentário" title="Adicionar comentário"></textarea>
+                <span id="statusMaquina" class="cStatusMaquina ocupado"></span>
+            </div>
+
+            <div id="PC05" class="rectangleMaquinas">
+                <div class="tituloContainerMaquina">
+                    <div class="tituloMaquinas">PC05</div>
+                    <div class="menuTelaBotoes">
+                        <button id="buscarMaquina" class="cmb MenuBotao" title="Buscar máquina">❯</button>
+                        <button id="mudarStatus" class="cmb MenuBotao cMudarStatus" title="Mudar status">Em uso</button>
+                    </div>
+                </div>
+                <textarea type="text" class="inputComentario scroll scrollInfo telaMensagemMaquinas" placeholder="Adicionar comentário" title="Adicionar comentário"></textarea>
+                <span id="statusMaquina" class="cStatusMaquina ocupado"></span>
+            </div>
+
+            <div id="PC06" class="rectangleMaquinas">
+                <div class="tituloContainerMaquina">
+                    <div class="tituloMaquinas">PC06</div>
+                    <div class="menuTelaBotoes">
+                        <button id="buscarMaquina" class="cmb MenuBotao" title="Buscar máquina">❯</button>
+                        <button id="mudarStatus" class="cmb MenuBotao cMudarStatus" title="Mudar status">Em uso</button>
+                    </div>
+                </div>
+                <textarea type="text" class="inputComentario scroll scrollInfo telaMensagemMaquinas" placeholder="Adicionar comentário" title="Adicionar comentário"></textarea>
+                <span id="statusMaquina" class="cStatusMaquina ocupado"></span>
+            </div>
+
+            <div id="PC07" class="rectangleMaquinas">
+                <div class="tituloContainerMaquina">
+                    <div class="tituloMaquinas">PC07</div>
+                    <div class="menuTelaBotoes">
+                        <button id="buscarMaquina" class="cmb MenuBotao" title="Buscar máquina">❯</button>
+                        <button id="mudarStatus" class="cmb MenuBotao cMudarStatus" title="Mudar status">Em uso</button>
+                    </div>
+                </div>
+                <textarea type="text" class="inputComentario scroll scrollInfo telaMensagemMaquinas" placeholder="Adicionar comentário" title="Adicionar comentário"></textarea>
+                <span id="statusMaquina" class="cStatusMaquina ocupado"></span>
+            </div>
+            
+            <div id="PC08" class="rectangleMaquinas">
+                <div class="tituloContainerMaquina">
+                    <div class="tituloMaquinas">PC08</div>
+                    <div class="menuTelaBotoes">
+                        <button id="buscarMaquina" class="cmb MenuBotao" title="Buscar máquina">❯</button>
+                        <button id="mudarStatus" class="cmb MenuBotao cMudarStatus" title="Mudar status">Em uso</button>
+                    </div>
+                </div>
+                <textarea type="text" class="inputComentario scroll scrollInfo telaMensagemMaquinas" placeholder="Adicionar comentário" title="Adicionar comentário"></textarea>
+                <span id="statusMaquina" class="cStatusMaquina ocupado"></span>
+            </div>
+
+            <div id="PC09" class="rectangleMaquinas">
+                <div class="tituloContainerMaquina">
+                    <div class="tituloMaquinas">PC09</div>
+                    <div class="menuTelaBotoes">
+                        <button id="buscarMaquina" class="cmb MenuBotao" title="Buscar máquina">❯</button>
+                        <button id="mudarStatus" class="cmb MenuBotao cMudarStatus" title="Mudar status">Em uso</button>
+                    </div>
+                </div>
+                <textarea type="text" class="inputComentario scroll scrollInfo telaMensagemMaquinas" placeholder="Adicionar comentário" title="Adicionar comentário"></textarea>
+                <span id="statusMaquina" class="cStatusMaquina ocupado"></span>
+            </div>
+            
+            <div id="PC10" class="rectangleMaquinas">
+                <div class="tituloContainerMaquina">
+                    <div class="tituloMaquinas">PC10</div>
+                    <div class="menuTelaBotoes">
+                        <button id="buscarMaquina" class="cmb MenuBotao" title="Buscar máquina">❯</button>
+                        <button id="mudarStatus" class="cmb MenuBotao cMudarStatus" title="Mudar status">Em uso</button>
+                    </div>
+                </div>
+                <textarea type="text" class="inputComentario scroll scrollInfo telaMensagemMaquinas" placeholder="Adicionar comentário" title="Adicionar comentário"></textarea>
+                <span id="statusMaquina" class="cStatusMaquina ocupado"></span>
+            </div>
+
+            <div id="PC11" class="rectangleMaquinas">
+                <div class="tituloContainerMaquina">
+                    <div class="tituloMaquinas">PC11</div>
+                    <div class="menuTelaBotoes">
+                        <button id="buscarMaquina" class="cmb MenuBotao" title="Buscar máquina">❯</button>
+                        <button id="mudarStatus" class="cmb MenuBotao cMudarStatus" title="Mudar status">Livre</button>
+                    </div>
+                </div>
+                <textarea type="text" class="inputComentario scroll scrollInfo telaMensagemMaquinas" placeholder="Adicionar comentário" title="Adicionar comentário"></textarea>
+                <span id="statusMaquina" class="cStatusMaquina livre"></span>
+            </div>
+
+            <div id="PC12" class="rectangleMaquinas">
+                <div class="tituloContainerMaquina">
+                    <div class="tituloMaquinas">PC12</div>
+                    <div class="menuTelaBotoes">
+                        <button id="buscarMaquina" class="cmb MenuBotao" title="Buscar máquina">❯</button>
+                        <button id="mudarStatus" class="cmb MenuBotao cMudarStatus" title="Mudar status">Em uso</button>
+                    </div>
+                </div>
+                <textarea type="text" class="inputComentario scroll scrollInfo telaMensagemMaquinas" placeholder="Adicionar comentário" title="Adicionar comentário"></textarea>
+                <span id="statusMaquina" class="cStatusMaquina ocupado"></span>
+            </div>
+
+        </div>
+    </div>
+
     <div id="layoutTela" class="layout">
         <div class="telaRotinas">
             <div id="telaRotinas" class="rotinas">
-                <div id="Consulta_Débitos_Estaduais_-_PC45" class="rectangle status status-attention" title="Consulta Débitos Estaduais - PC45 - Tempo estimado: 36 minutos - 63.40%">
+                <div id="Consulta_Débitos_Estaduais_-_PC01" class="rectangle status status-attention" title="Consulta Débitos Estaduais - PC01 - Tempo estimado: 36 minutos - 63.40%">
                     <img id="decoracao" alt="Decoração">
                     <div class="cabecalhoCard">
-                        <div class="dispositivo">PC45</div>
+                        <div class="dispositivo">PC01</div>
     
                         <div class="tituloContainer">
                             <div class="tituloWrapper">
@@ -311,10 +473,10 @@
                     </div>
                 </div>
     
-                <div id="CND_Receita_Federal_CPF_-_PC14" class="rectangle status status-warning" title="CND Receita Federal CPF - PC14">
+                <div id="CND_Receita_Federal_CPF_-_PC12" class="rectangle status status-warning" title="CND Receita Federal CPF - PC12">
                     <img id="decoracao" alt="Decoração">
                     <div class="cabecalhoCard">
-                        <div class="dispositivo">PC14</div>
+                        <div class="dispositivo">PC12</div>
     
                         <div class="tituloContainer">
                             <div class="tituloWrapper">
@@ -378,10 +540,10 @@
                     </div>
                 </div>
     
-                <div id="Diagnóstico_Fiscal_-_PC53" class="rectangle status status-error" title="Diagnóstico Fiscal - PC34">
+                <div id="Diagnóstico_Fiscal_-_PC04" class="rectangle status status-error" title="Diagnóstico Fiscal - PC04">
                     <img id="decoracao" alt="Decoração">
                     <div class="cabecalhoCard">
-                        <div class="dispositivo">PC34</div>
+                        <div class="dispositivo">PC04</div>
     
                         <div class="tituloContainer">
                             <div class="tituloWrapper">
@@ -464,10 +626,10 @@
                     </div>
                 </div>
     
-                <div id="Consulta_Divida_Ativa_-_PC25" class="rectangle status status-final" title="Consulta Divida Ativa - PC25">
+                <div id="Consulta_Divida_Ativa_-_PC10" class="rectangle status status-final" title="Consulta Divida Ativa - PC10">
                     <img id="decoracao" alt="Decoração">
                     <div class="cabecalhoCard">
-                        <div class="dispositivo">PC25</div> 
+                        <div class="dispositivo">PC10</div> 
     
                         <div class="tituloContainer">
                             <div class="tituloWrapper">
@@ -596,10 +758,10 @@
                     </div>
                 </div>
 
-                <div id="Transmite_DeSTDA_sem_movimento_-_PC20" class="rectangle status status-executando" title="Transmite DeSTDA sem movimento - PC20 - Tempo estimado: 4 horas 26 minutos - 71.76%">
+                <div id="Transmite_DeSTDA_sem_movimento_-_PC06" class="rectangle status status-executando" title="Transmite DeSTDA sem movimento - PC06 - Tempo estimado: 4 horas 26 minutos - 71.76%">
                     <img id="decoracao" alt="Decoração">
                     <div class="cabecalhoCard">
-                        <div class="dispositivo">PC20</div>
+                        <div class="dispositivo">PC06</div>
     
                         <div class="tituloContainer">
                             <div class="tituloWrapper">
@@ -666,10 +828,10 @@
                     </div>
                 </div>
     
-                <div id="Faturamento_X_Compra_-_PC67" class="rectangle status status-executando" title="Faturamento X Compra - PC67 - Tempo estimado: 5 horas 26 minutos - 12.39%">
+                <div id="Faturamento_X_Compra_-_PC09" class="rectangle status status-executando" title="Faturamento X Compra - PC09 - Tempo estimado: 5 horas 26 minutos - 12.39%">
                     <img id="decoracao" alt="Decoração">
                     <div class="cabecalhoCard">
-                        <div class="dispositivo">PC67</div>
+                        <div class="dispositivo">PC09</div>
     
                         <div class="tituloContainer">
                             <div class="tituloWrapper">
@@ -737,10 +899,10 @@
                     </div>
                 </div>
     
-                <div id="Pendências_SIGISSWEB_-_PC50" class="rectangle status status-executando" title="Pendências SIGISSWEB - PC50 - Tempo estimado: 1 dia 3 horas 39 minutos - 31.09%">
+                <div id="Pendências_SIGISSWEB_-_PC08" class="rectangle status status-executando" title="Pendências SIGISSWEB - PC08 - Tempo estimado: 1 dia 3 horas 39 minutos - 31.09%">
                     <img id="decoracao" alt="Decoração">
                     <div class="cabecalhoCard">
-                        <div class="dispositivo">PC50</div>
+                        <div class="dispositivo">PC08</div>
     
                         <div class="tituloContainer">
                             <div class="tituloWrapper">
@@ -864,6 +1026,7 @@
     
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.14.0/Sortable.min.js"></script>
     <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/maquinas.js"></script>
     <script type="module" src="js/cards.js"></script>
     <script type="module" src="js/historico.js"></script>
     <script src="js/modo.js"></script>

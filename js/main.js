@@ -12,13 +12,20 @@ const explode = document.getElementById('explodir');
 const fundoCabecalho = document.getElementById('cabecalho')
 const menu = document.getElementById('menu');
 const telaMenu = document.querySelectorAll('.menuInvisivel');
+
+const maquinas = document.getElementById('maquinas')
 const dica = document.getElementById('dica');
-const telaDica = document.getElementById('telaDica');
+const galeria = document.getElementById('galeria');
+
+const fecharMaquinas = document.getElementById('fecharMaquinas');
 const fecharAjuda = document.getElementById('fecharAjuda');
 const fecharGaleria = document.getElementById('fecharGaleria');
-const galeria = document.getElementById('galeria');
+
+const telaMaquinas = document.getElementById('telaMaquinas');
+const telaDica = document.getElementById('telaDica');
 const telaGaleria = document.getElementById('telaGaleria');
 const telaRotinas = document.getElementById('telaRotinas');
+
 var mainHistorico = document.getElementById('targetHistorico');
 var cInputCard = document.getElementById('searchInputCard');
 const buscaCInputCard = document.getElementById('buscaCInputCard');
@@ -130,11 +137,13 @@ function desmarcaCardsBuscados() {
     });
 };
 
-function procurarCard(event) {
+export function procurarCard(event, cardPesquisado='') {
     cInputCard.classList.remove('naoEncontrado');
     desmarcaCardsBuscados();
 
-    var cardPesquisado = document.getElementById('searchInputCard').value;
+    if (cardPesquisado == ''){
+        cardPesquisado = document.getElementById('searchInputCard').value;
+    }
     if (event.key === 'Enter') {
         cInputCard.blur()
         // verifica se foi digitado alguma coisa na barra de pesquisa
@@ -193,6 +202,11 @@ menu.addEventListener('click', () => {
         }
         menu.innerHTML = '❯'
         telaRotinas.classList.remove('rotinasExpandida');
+    }
+    if (!telaMaquinas.classList.contains('invisible5')) {
+        telaMaquinas.classList.add('invisible5');
+        fundoCabecalho.classList.remove('cabecalhoMegaExpandido')
+        telaRotinas.classList.add('rotinasExpandida');
     }
     if (!telaDica.classList.contains('invisible2')) {
         telaDica.classList.add('invisible2');
@@ -341,6 +355,40 @@ explodeCard.addEventListener('click', () => {
 });
 
 // Janela com dicas de como o site funciona
+maquinas.addEventListener('click', () => {
+    var screenWidth = window.innerWidth;
+    if (screenWidth < 1255) {
+        telaMenu.forEach(miniMenu => {
+            miniMenu.classList.add('invisible3');
+        })
+        if (screenWidth < 1255) {
+            fundoCabecalho.classList.remove('cabecalhoExpandido')
+        }
+        menu.innerHTML = '❯'
+        telaRotinas.classList.remove('rotinasExpandida');
+    }
+    
+    if (!telaGaleria.classList.contains('invisible2')) {
+        telaGaleria.classList.add('invisible2');
+    }
+    if (!telaDica.classList.contains('invisible2')) {
+        telaDica.classList.add('invisible2');
+    }
+
+    if (telaMaquinas.classList.contains('invisible5')) {
+        telaMaquinas.classList.remove('invisible5');
+        fundoCabecalho.classList.add('cabecalhoMegaExpandido')
+    }
+    else {
+        telaMaquinas.classList.add('invisible5');
+        fundoCabecalho.classList.remove('cabecalhoMegaExpandido')
+    }
+});
+fecharMaquinas.addEventListener('click', ()=> {
+    telaMaquinas.classList.add('invisible5');
+    fundoCabecalho.classList.remove('cabecalhoMegaExpandido')
+})
+
 dica.addEventListener('click', () => {
     var screenWidth = window.innerWidth;
     if (screenWidth < 1255) {
@@ -354,11 +402,12 @@ dica.addEventListener('click', () => {
         telaRotinas.classList.remove('rotinasExpandida');
     }
     
-    setTimeout(()=> {
-        if (!telaGaleria.classList.contains('invisible2')) {
+    if (!telaGaleria.classList.contains('invisible2')) {
             telaGaleria.classList.add('invisible2');
         }
-    }, 300);
+    if (!telaMaquinas.classList.contains('invisible5')) {
+        telaMaquinas.classList.add('invisible5');
+    }
 
     if (telaDica.classList.contains('invisible2')) {
         telaDica.classList.remove('invisible2');
@@ -388,11 +437,12 @@ galeria.addEventListener('click', () => {
         telaRotinas.classList.remove('rotinasExpandida');
     }
 
-    setTimeout(()=> {
-        if (!telaDica.classList.contains('invisible2')) {
-            telaDica.classList.add('invisible2');
-        }
-    }, 300);
+    if (!telaDica.classList.contains('invisible2')) {
+        telaDica.classList.add('invisible2');
+    }
+    if (!telaMaquinas.classList.contains('invisible5')) {
+        telaMaquinas.classList.add('invisible5');
+    }
 
     if (telaGaleria.classList.contains('invisible2')) {
         telaGaleria.classList.remove('invisible2');
