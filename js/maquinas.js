@@ -1,5 +1,9 @@
 import {procurarCard} from './main.js';
 
+const addMaquina = document.getElementById('adMaquina');
+const novaMaquina = document.getElementById('inputAddMaquina');
+const barraAddMaquina = document.getElementById('barraAddMaquina');
+
 // ouvinte para os cliques nos cartões
 document.addEventListener('click', (event) => {
     // Verifica se o elemento clicado ou algum de seus pais possui a classe 'rectangle'
@@ -21,7 +25,7 @@ document.addEventListener('click', (event) => {
                 if (statusDaMaquina.classList.contains('ocupado')) {
                     statusDaMaquina.classList.remove('ocupado')
                     statusDaMaquina.classList.add('livre')
-                    target.innerHTML = 'livre'
+                    target.innerHTML = 'Livre'
                 }
                 else {
                     statusDaMaquina.classList.remove('livre')
@@ -40,8 +44,15 @@ document.addEventListener('click', (event) => {
                 telaMaquinas.classList.add('invisible5');
             }
         }
-    }
 
+        if (target.id == 'deletarMaquina') {
+            divMae.classList.add('invisible7')
+            setTimeout(()=> {
+                const container = document.querySelector(".maquinasContainer");
+                container.removeChild(divMae);
+            }, 300);
+        }
+    }
 });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -120,4 +131,50 @@ document.addEventListener("DOMContentLoaded", () => {
     restaurarEstado();
     adicionarListeners();
     salvarEstado(); // Garante salvar caso seja a primeira vez
+});
+
+
+function adicionarMaquinaNoInicio(idMaquina) {
+    // Pega o container
+    const container = document.querySelector(".maquinasContainer");
+    if (!container) return;
+
+    // Cria a nova div
+    const novaDiv = document.createElement("div");
+    novaDiv.id = idMaquina;
+    novaDiv.className = "rectangleMaquinas invisible7";
+    novaDiv.innerHTML = `
+        <div class="tituloContainerMaquina">
+            <div class="tituloMaquinas">${idMaquina}</div>
+            <div class="menuTelaBotoes">
+                <button id="mudarStatus" class="cmb MenuBotao cMudarStatus" title="Mudar status">Livre</button>
+                <div id="buscarMaquina" class="cmb botaoFixar" title="Buscar máquina">❯</div>
+                <div id="deletarMaquina" class="btnCard botaoFechar" title="Deletar dispositivo">⨉</div>
+            </div>
+        </div>
+        <textarea type="text" class="inputComentario scroll scrollInfo telaMensagemMaquinas"
+            placeholder="Adicionar comentário" 
+            title="Adicionar comentário"></textarea>
+        <span id="statusMaquina" class="cStatusMaquina livre"></span>
+    `;
+
+    // Insere no índice 0 (antes do primeiro filho)
+    container.insertBefore(novaDiv, container.firstChild);
+    setTimeout(()=> {
+        document.getElementById(idMaquina).classList.remove('invisible7')
+    }, 100);
+}
+
+
+addMaquina.addEventListener('click' , () => {
+    barraAddMaquina.classList.toggle('invisible6')
+    novaMaquina.focus()
+})
+
+// adiciona o evento de escutar a tecla na barra de busca dos cards
+novaMaquina.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        const nomeNovaMaquina = novaMaquina.value;
+        adicionarMaquinaNoInicio(nomeNovaMaquina);  
+    }
 });

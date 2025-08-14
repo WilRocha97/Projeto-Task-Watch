@@ -6,6 +6,13 @@
     overflow-y: auto;
     overflow-x: hidden;
 }
+
+.menuMaquinas {
+    display: flex;
+    flex-direction: row;
+    max-width: 80%;
+    align-items: center;
+}
 .maquinasTela {
     padding: 60px 8px 8px 8px;
     position: fixed;
@@ -26,11 +33,20 @@
 }
 
 .rectangleMaquinas {
-    padding: 5px;
-    padding-right: 20px;
+    opacity: 1;
+    padding: 5px 20px 5px 5px;
     margin: 12px;
     border-radius: 10px;
+    max-height: 300px;
+    transition: var(--transicao-link) ease-in-out;
 }
+.rectangleMaquinas:hover .botaoFechar,
+.rectangleMaquinas:hover .botaoFixar {
+    width: 14px;
+    padding: 4px 5px 5px 5px;
+    opacity: 1;
+}
+
 .tituloContainerMaquina {
     display: flex;
     flex-direction: row;

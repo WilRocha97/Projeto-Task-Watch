@@ -77,6 +77,7 @@
     padding: 4px 0 5px 0;
     width: 0;
     opacity: 0;
+    cursor: pointer;
 }
 .botaoFixado {
     opacity: 1;
