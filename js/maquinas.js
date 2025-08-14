@@ -176,5 +176,6 @@ novaMaquina.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
         const nomeNovaMaquina = novaMaquina.value;
         adicionarMaquinaNoInicio(nomeNovaMaquina);  
+        novaMaquina.value= '';
     }
 });
