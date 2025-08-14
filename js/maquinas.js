@@ -9,15 +9,25 @@ document.addEventListener('click', (event) => {
     if (divMae) {
         if (target.id == 'mudarStatus') {
             var statusDaMaquina = divMae.querySelector('#statusMaquina');
-            if (statusDaMaquina.classList.contains('ocupado')) {
-                statusDaMaquina.classList.remove('ocupado')
-                statusDaMaquina.classList.add('livre')
-                target.innerHTML = 'livre'
-            }
-            else {
+            // Procura todos os elementos que tenham no ID a id da maquina
+            const elementos = Array.from(document.getElementById('layoutTela').querySelectorAll('[id]')).filter(el => el.id.includes(divMae.id));
+            // Se não encontrar nenhum card com a id da máquina, muda o status pra livre
+            if (elementos.length > 0) {
                 statusDaMaquina.classList.remove('livre')
                 statusDaMaquina.classList.add('ocupado')
                 target.innerHTML = 'Ocupado'
+            }
+            else {
+                if (statusDaMaquina.classList.contains('ocupado')) {
+                    statusDaMaquina.classList.remove('ocupado')
+                    statusDaMaquina.classList.add('livre')
+                    target.innerHTML = 'livre'
+                }
+                else {
+                    statusDaMaquina.classList.remove('livre')
+                    statusDaMaquina.classList.add('ocupado')
+                    target.innerHTML = 'Ocupado'
+                }
             }
         }
 
@@ -111,32 +121,3 @@ document.addEventListener("DOMContentLoaded", () => {
     adicionarListeners();
     salvarEstado(); // Garante salvar caso seja a primeira vez
 });
-
-function atualizarStatusParaOcupado() {
-    // Seleciona todos os .dispositivo
-    document.querySelectorAll(".dispositivo").forEach(dispositivo => {
-        const idMaquina = dispositivo.textContent.trim(); // Ex: "PC01"
-        const maquina = document.getElementById(idMaquina); // Encontra no container
-
-        if (maquina) {
-            const statusEl = maquina.querySelector("#statusMaquina");
-            const botaoStatus = maquina.querySelector("#mudarStatus");
-
-            if (statusEl) {
-                statusEl.className = "cStatusMaquina ocupado";
-            }
-            if (botaoStatus) {
-                botaoStatus.textContent = "Ocupado";
-            }
-        }
-    });
-
-    // Atualiza no localStorage usando a função que já criamos
-    if (typeof salvarEstado === "function") {
-        salvarEstado();
-    }
-}
-
-// atualiza os cartões a cada 2 segundo
-atualizarStatusParaOcupado()
-setInterval(atualizarStatusParaOcupado, 2000);

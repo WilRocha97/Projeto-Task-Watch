@@ -29,6 +29,7 @@ const paginationContainer = document.getElementById('pagination');
 
 const menu = document.getElementById('menu');
 const telaMenu = document.querySelectorAll('.menuInvisivel');
+const telaMaquinas = document.getElementById('telaMaquinas');
 const telaDica = document.getElementById('telaDica');
 const telaRotinas = document.getElementById('telaRotinas');
 const telaHistorico = document.getElementById('targetHistorico');
