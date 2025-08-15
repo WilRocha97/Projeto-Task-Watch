@@ -347,10 +347,6 @@ maquinas.addEventListener('click', () => {
         fundoCabecalho.classList.add('cabecalhoMegaExpandido')
     }
     else {
-        if (!barraAddMaquina.classList.contains('invisible6')) {
-            barraAddMaquina.classList.add('invisible6')
-            barraPesquisaMaquina.classList.remove('invisible6')
-        }
         fecharTelaDeMaquinas()
     }
 });
