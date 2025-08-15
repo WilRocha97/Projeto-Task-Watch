@@ -164,11 +164,11 @@ function adicionarMaquinaNoInicio(idMaquina) {
             <div class="tituloMaquinas">${idMaquina}</div>
             <div class="menuTelaBotoes">
                 <button id="mudarStatus" class="cmb MenuBotao cMudarStatus" title="Mudar status">Livre</button>
-                <div id="buscarMaquina" class="cmb botaoFixar" title="Buscar máquina">❯</div>
-                <div id="deletarMaquina" class="btnCard botaoFechar" title="Deletar dispositivo">⨉</div>
+                <div id="buscarMaquina" class="cmb botaoFixar botaoMaquina" title="Buscar máquina">❯</div>
+                <div id="deletarMaquina" class="btnCard botaoFechar botaoMaquina" title="Deletar dispositivo">⨉</div>
             </div>
         </div>
-        <textarea type="text" class="inputComentario scroll scrollInfo telaMensagemMaquinas"
+        <textarea type="text" class="inputComentario scroll telaMensagemMaquinas"
             placeholder="Adicionar comentário" 
             title="Adicionar comentário"></textarea>
         <span id="statusMaquina" class="cStatusMaquina livre"></span>

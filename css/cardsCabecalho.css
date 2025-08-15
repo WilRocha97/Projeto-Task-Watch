@@ -125,11 +125,11 @@
 }
 /* --------------------------------------- */
 .botaoFixar:hover {
-    text-shadow: 0 0 5px white;
+    text-shadow: 0 0 5px white !important;
 }
 .botaoFechar:hover, .botaoInfo:hover {
-    text-shadow: 0 0 5px red;
-    color: red;
+    text-shadow: 0 0 5px red !important;
+    color: red !important;
 }
 .botaoFechar.nh:hover, .botaoFixar.nh:hover, .botaoInfo.nh:hover {
     background-color: transparent;
