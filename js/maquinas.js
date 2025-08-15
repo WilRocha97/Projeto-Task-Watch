@@ -13,12 +13,13 @@ const STORAGE_KEY = "estadoMaquinas";
 
 export function fecharTelaDeMaquinas() {
     if (!barraAddMaquina.classList.contains('invisible6')) {
-        barraAddMaquina.classList.add('invisible6')
-        barraPesquisaMaquina.classList.remove('invisible6')
+        barraAddMaquina.classList.add('invisible6');
+        barraPesquisaMaquina.classList.remove('invisible6');
+        addMaquina.classList.toggle('addMaquinaAtivada');
     }
     pesquisaMaquina.value = ''
     telaMaquinas.classList.add('invisible5');
-    fundoCabecalho.classList.remove('cabecalhoMegaExpandido')
+    fundoCabecalho.classList.remove('cabecalhoMegaExpandido');
     setTimeout(()=> {
         const container = document.querySelector("#listaMaquinas");
         container.innerHTML = ''
