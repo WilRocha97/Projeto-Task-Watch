@@ -1,5 +1,6 @@
 import {animacaoBotao} from './main.js';
 import {decoracao} from './temas.js';
+import {fecharTelaDeMaquinas} from './maquinas.js';
 
 var telaTitulo = document.querySelector("#telaTitulo");
 var telaTituloFundo = document.querySelector(".fundoGradiente");
@@ -91,7 +92,7 @@ function sortable(container) {
                     menu.innerHTML = '❯'
                     telaRotinas.classList.remove('rotinasExpandida');
                 }
-                telaMaquinas.classList.add('invisible5');
+                fecharTelaDeMaquinas()
                 telaDica.classList.add('invisible2');
                 telaGaleria.classList.add('invisible2');
                 telaRotinas.classList.remove('rotinasExpandida');
@@ -191,7 +192,7 @@ document.addEventListener('click', (event) => {
                 menu.innerHTML = '❯'
                 telaRotinas.classList.remove('rotinasExpandida');
             }
-            telaMaquinas.classList.add('invisible5');
+            fecharTelaDeMaquinas()
             telaDica.classList.add('invisible2');
             telaGaleria.classList.add('invisible2');
             telaRotinas.classList.remove('rotinasExpandida');

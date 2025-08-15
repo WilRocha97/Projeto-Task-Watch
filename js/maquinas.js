@@ -1,5 +1,7 @@
 import {procurarCard} from './cards.js';
 
+const fundoCabecalho = document.getElementById('cabecalho');
+
 const addMaquina = document.getElementById('adMaquina');
 const novaMaquina = document.getElementById('inputAddMaquina');
 const pesquisaMaquina = document.getElementById('inputPesquisaMaquina');
@@ -8,6 +10,20 @@ const barraPesquisaMaquina = document.getElementById('barraPesquisaMaquina');
 const limpaInputPesquisaMaquina = document.getElementById('limpaInputPesquisaMaquina');
 const STORAGE_KEY = "estadoMaquinas";
 
+
+export function fecharTelaDeMaquinas() {
+    if (!barraAddMaquina.classList.contains('invisible6')) {
+        barraAddMaquina.classList.add('invisible6')
+        barraPesquisaMaquina.classList.remove('invisible6')
+    }
+    pesquisaMaquina.value = ''
+    telaMaquinas.classList.add('invisible5');
+    fundoCabecalho.classList.remove('cabecalhoMegaExpandido')
+    setTimeout(()=> {
+        const container = document.querySelector("#listaMaquinas");
+        container.innerHTML = ''
+    }, 500);
+}
 
 export function salvarEstado() {
     const estado = {};
@@ -163,7 +179,7 @@ document.addEventListener('click', (event) => {
 
             var screenWidth = window.innerWidth;
             if (screenWidth < 916) {
-                telaMaquinas.classList.add('invisible5');
+                fecharTelaDeMaquinas();
             }
         }
 

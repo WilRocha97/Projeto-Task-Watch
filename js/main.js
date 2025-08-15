@@ -3,6 +3,7 @@ import {desmarcaCardsBuscados} from './cards.js';
 import {restaurarEstado} from './maquinas.js';
 import {adicionarListeners} from './maquinas.js';
 import {salvarEstado} from './maquinas.js';
+import {fecharTelaDeMaquinas} from './maquinas.js';
 
 var botoes = document.querySelectorAll('.button');
 var botoesCards = document.querySelectorAll('.btnCard');
@@ -168,8 +169,7 @@ menu.addEventListener('click', () => {
         telaRotinas.classList.remove('rotinasExpandida');
     }
     if (!telaMaquinas.classList.contains('invisible5')) {
-        telaMaquinas.classList.add('invisible5');
-        fundoCabecalho.classList.remove('cabecalhoMegaExpandido')
+        fecharTelaDeMaquinas()
         telaRotinas.classList.add('rotinasExpandida');
     }
     if (!telaDica.classList.contains('invisible2')) {
@@ -351,12 +351,7 @@ maquinas.addEventListener('click', () => {
             barraAddMaquina.classList.add('invisible6')
             barraPesquisaMaquina.classList.remove('invisible6')
         }
-        telaMaquinas.classList.add('invisible5');
-        fundoCabecalho.classList.remove('cabecalhoMegaExpandido')
-        setTimeout(()=> {
-            const container = document.querySelector("#listaMaquinas");
-            container.innerHTML = ''
-        }, 500);
+        fecharTelaDeMaquinas()
     }
 });
 fecharMaquinas.addEventListener('click', ()=> {
@@ -365,12 +360,7 @@ fecharMaquinas.addEventListener('click', ()=> {
         barraPesquisaMaquina.classList.remove('invisible6')
     }
 
-    telaMaquinas.classList.add('invisible5');
-    fundoCabecalho.classList.remove('cabecalhoMegaExpandido')
-    setTimeout(()=> {
-        const container = document.querySelector("#listaMaquinas");
-        container.innerHTML = ''
-    }, 500);
+    fecharTelaDeMaquinas()
 })
 
 dica.addEventListener('click', () => {
@@ -390,7 +380,7 @@ dica.addEventListener('click', () => {
             telaGaleria.classList.add('invisible2');
         }
     if (!telaMaquinas.classList.contains('invisible5')) {
-        telaMaquinas.classList.add('invisible5');
+        fecharTelaDeMaquinas()
     }
 
     if (telaDica.classList.contains('invisible2')) {
@@ -425,7 +415,7 @@ galeria.addEventListener('click', () => {
         telaDica.classList.add('invisible2');
     }
     if (!telaMaquinas.classList.contains('invisible5')) {
-        telaMaquinas.classList.add('invisible5');
+        fecharTelaDeMaquinas()
     }
 
     if (telaGaleria.classList.contains('invisible2')) {
