@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 :root {
+    --escala-maquina: 1.02;
     --tamanho-titulo: 2.4rem;
     --tamanho-texto: 1.4rem;
     --tamanho-texto-2: 0.9rem;

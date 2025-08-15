@@ -59,12 +59,17 @@
 }
 
 .rectangleMaquinas {
+    scale: 1;
     opacity: 1;
     padding: 5px 20px 5px 5px;
     margin: 12px;
     border-radius: 10px;
     max-height: 300px;
     transition: var(--transicao-link) ease-in-out;
+}
+.rectangleMaquinas:hover {
+    scale: var(--escala-maquina);
+    animation: none;
 }
 .rectangleMaquinas:hover .botaoFechar,
 .rectangleMaquinas:hover .botaoFixar {
@@ -82,7 +87,7 @@
     align-items: center;
 }
 
-/* Bolinhas de status */
+/* barra de status */
 .cStatusMaquina {
     display: flex;
     width: 100%;
