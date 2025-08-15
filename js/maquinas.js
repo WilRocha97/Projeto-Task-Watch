@@ -194,6 +194,7 @@ document.addEventListener('click', (event) => {
 });
 
 addMaquina.addEventListener('click' , () => {
+    addMaquina.classList.toggle('addMaquinaAtivada')
     barraAddMaquina.classList.toggle('invisible6')
     barraPesquisaMaquina.classList.toggle('invisible6')
     novaMaquina.focus()

@@ -87,6 +87,10 @@
     align-items: center;
 }
 
+.addMaquinaAtivada {
+    transform: rotate(-90deg);
+}
+
 /* barra de status */
 .cStatusMaquina {
     display: flex;
