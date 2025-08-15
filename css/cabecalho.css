@@ -385,10 +385,6 @@
     .galeriaContainer button {
         bottom: 0;
     }
-    
-    .barraPesquisa {
-        width: 97vw !important;
-    }
 
     .menu {
         flex-wrap: wrap;
