@@ -32,6 +32,9 @@ const telaDica = document.getElementById('telaDica');
 const telaGaleria = document.getElementById('telaGaleria');
 const telaRotinas = document.getElementById('telaRotinas');
 
+const barraAddMaquina = document.getElementById('barraAddMaquina');
+const barraPesquisaMaquina = document.getElementById('barraPesquisaMaquina');
+
 var mainHistorico = document.getElementById('targetHistorico');
 var cInputCard = document.getElementById('searchInputCard');
 const buscaCInputCard = document.getElementById('buscaCInputCard');
@@ -344,6 +347,10 @@ maquinas.addEventListener('click', () => {
         fundoCabecalho.classList.add('cabecalhoMegaExpandido')
     }
     else {
+        if (!barraAddMaquina.classList.contains('invisible6')) {
+            barraAddMaquina.classList.add('invisible6')
+            barraPesquisaMaquina.classList.remove('invisible6')
+        }
         telaMaquinas.classList.add('invisible5');
         fundoCabecalho.classList.remove('cabecalhoMegaExpandido')
         setTimeout(()=> {
@@ -353,6 +360,11 @@ maquinas.addEventListener('click', () => {
     }
 });
 fecharMaquinas.addEventListener('click', ()=> {
+    if (!barraAddMaquina.classList.contains('invisible6')) {
+        barraAddMaquina.classList.add('invisible6')
+        barraPesquisaMaquina.classList.remove('invisible6')
+    }
+
     telaMaquinas.classList.add('invisible5');
     fundoCabecalho.classList.remove('cabecalhoMegaExpandido')
     setTimeout(()=> {

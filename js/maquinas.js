@@ -2,7 +2,9 @@ import {procurarCard} from './cards.js';
 
 const addMaquina = document.getElementById('adMaquina');
 const novaMaquina = document.getElementById('inputAddMaquina');
+const pesquisaMaquina = document.getElementById('inputPesquisaMaquina');
 const barraAddMaquina = document.getElementById('barraAddMaquina');
+const barraPesquisaMaquina = document.getElementById('barraPesquisaMaquina');
 const STORAGE_KEY = "estadoMaquinas";
 
 
@@ -176,6 +178,7 @@ document.addEventListener('click', (event) => {
 
 addMaquina.addEventListener('click' , () => {
     barraAddMaquina.classList.toggle('invisible6')
+    barraPesquisaMaquina.classList.toggle('invisible6')
     novaMaquina.focus()
 })
 
@@ -185,5 +188,23 @@ novaMaquina.addEventListener('keydown', (event) => {
         const nomeNovaMaquina = novaMaquina.value;
         adicionarMaquinaNoInicio(nomeNovaMaquina);  
         novaMaquina.value= '';
+    }
+});
+pesquisaMaquina.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        const nomeNovaMaquina = pesquisaMaquina.value;
+        const maquinasNaLista = document.querySelectorAll('.rectangleMaquinas');
+
+        for (const maquinaNaLista of maquinasNaLista) {
+            maquinaNaLista.querySelector('.cStatusMaquina').classList.remove('pulse')
+        }
+        // Verificar se o id contém a frase pesquisada
+        for (const maquinaNaLista of maquinasNaLista) {
+            // console.log(card.id.includes)
+            if (maquinaNaLista.id.includes(nomeNovaMaquina)) {
+                maquinaNaLista.querySelector('.cStatusMaquina').classList.add('pulse')
+                maquinaNaLista.scrollIntoView({ behavior: "smooth", block: "end" });
+            }
+        };
     }
 });

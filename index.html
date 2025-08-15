@@ -197,7 +197,8 @@
                     
                     <br><br><br><h1>▾ Dispositivos disponíveis</h1>
                     <br>• O botão "⌨" abre a tela de dispositivos disponíveis, nela é possível visualizar quais estão executando alguma rotina.
-                    <br><br>• O botão "✛" abre uma barra que pode ser usada para adicionar um novo dispositivo e caso ele já exista na lista, será marcado na tela.
+                    <br><br>• Na barra de busca (Busque um dispositivo) você pode verificar se um dispositivo exite na lista.
+                    <br><br>• O botão "✛" abre uma barra que pode ser usada para adicionar um novo dispositivo e caso ele já exista na lista, será marcado na tela. Ao abrir a barra de adição a barra de pesquisa irá minimizar, para ela voltar apenas clique em "✛" novamente
                     <br><br>• É possível alterar o status manualmente clicando em "Livre" ou "Ocupado". Porém, se existir algum cartão na tela com alguma rotina no dispositivo alterado, ele retornará para "Ocupado".
                     <br><br>• Caso queira, é possível adicionar um comentário abaixo do nome do dispositivo.
 
@@ -248,6 +249,10 @@
 
     <div id="telaMaquinas" class="fundo maquinasTela invisible5">
         <div class="menuMaquinas">
+            <div id="barraPesquisaMaquina" class="cmb fundoInvertido barraPesquisa">
+                <input type="text" id="inputPesquisaMaquina" class="cmb mInputName" placeholder="Busque um dispositivo" title="Busque um dispositivo">
+            </div>
+
             <button id="adMaquina" class="cmb MenuBotaoInterno" title="Adicionar/Pesquisar dispositivo">✛</button>
             <div id="barraAddMaquina" class="cmb fundoInvertido barraPesquisa invisible6">
                 <input type="text" id="inputAddMaquina" class="cmb mInputName" placeholder="Digite o nome do novo dispositivo" title="Digite o nome do novo dispositivo">
