@@ -14,6 +14,8 @@ const telaMaquinas = document.getElementById('telaMaquinas');
 const telaGaleria = document.getElementById('telaGaleria');
 const telaDica = document.getElementById('telaDica');
 
+var cInputCard = document.getElementById('searchInputCard');
+
 //localStorage.clear();
 // caso existe alguma coisa no localStorage captura a string e transforma em JS para poder ser usado
 let cardsFixados = JSON.parse(localStorage.getItem("cardsFixados")) || []
@@ -110,6 +112,53 @@ function sortable(container) {
         }
     });
 }
+
+export function desmarcaCardsBuscados() {
+    var cards = document.querySelectorAll('.rectangle');
+    cards.forEach(card => { 
+        card.classList.remove('buscaCard');
+        cInputCard.classList.remove('naoEncontrado')
+    });
+};
+
+export function procurarCard(event, cardPesquisado='') {
+    cInputCard.classList.remove('naoEncontrado');
+    desmarcaCardsBuscados();
+
+    if (cardPesquisado == ''){
+        cardPesquisado = document.getElementById('searchInputCard').value;
+    }
+    if (event.key === 'Enter') {
+        cInputCard.blur()
+        // verifica se foi digitado alguma coisa na barra de pesquisa
+        if (cardPesquisado !== '') {
+            const cards = document.querySelectorAll('.rectangle');
+
+            // Verificar se o id contém a frase pesquisada
+            const resultado = [];
+            cards.forEach(card => {
+                // console.log(card.id.includes)
+                if (card.id.includes(cardPesquisado)) {
+                resultado.push(card); // Adicionar o card correspondente no resultado
+                }
+            });
+    
+            // aplica estilo de destaque aos cards
+            if (resultado.length > 0) {
+                resultado.forEach(card => {
+                card.classList.add('buscaCard');
+                });
+            } else {
+                cInputCard.classList.add('naoEncontrado');
+            }
+        }
+        // se não remove a marcação dos cards
+        else {
+            desmarcaCardsBuscados();
+        }
+    }
+};
+
 document.addEventListener('DOMContentLoaded', function() {
     sortable(telaRotinas)
     sortable(telaRotinasExecutando)

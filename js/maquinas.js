@@ -1,4 +1,4 @@
-import {procurarCard} from './main.js';
+import {procurarCard} from './cards.js';
 
 const addMaquina = document.getElementById('adMaquina');
 const novaMaquina = document.getElementById('inputAddMaquina');
@@ -11,6 +11,8 @@ document.addEventListener('click', (event) => {
     const divMae = target.closest('.rectangleMaquinas');
 
     if (divMae) {
+        divMae.querySelector('.cStatusMaquina').classList.remove('pulse')
+
         if (target.id == 'mudarStatus') {
             var statusDaMaquina = divMae.querySelector('#statusMaquina');
             // Procura todos os elementos que tenham no ID a id da maquina
@@ -138,6 +140,20 @@ function adicionarMaquinaNoInicio(idMaquina) {
     // Pega o container
     const container = document.querySelector(".maquinasContainer");
     if (!container) return;
+
+    const maquinasNaLista = document.querySelectorAll('.rectangleMaquinas');
+    for (const maquinaNaLista of maquinasNaLista) {
+        maquinaNaLista.querySelector('.cStatusMaquina').classList.remove('pulse')
+    }
+    // Verificar se o id contém a frase pesquisada
+    for (const maquinaNaLista of maquinasNaLista) {
+        // console.log(card.id.includes)
+        if (maquinaNaLista.id === idMaquina) {
+            maquinaNaLista.querySelector('.cStatusMaquina').classList.add('pulse')
+            maquinaNaLista.scrollIntoView({ behavior: "smooth", block: "end" });
+            return;
+        }
+    };
 
     // Cria a nova div
     const novaDiv = document.createElement("div");

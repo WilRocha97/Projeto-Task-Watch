@@ -1,3 +1,6 @@
+import {procurarCard} from './cards.js';
+import {desmarcaCardsBuscados} from './cards.js';
+
 var botoes = document.querySelectorAll('.button');
 var botoesCards = document.querySelectorAll('.btnCard');
 var cards = document.querySelectorAll('.rectangle');
@@ -129,51 +132,6 @@ function verificaTelaVazia() {
     }
 };
 
-function desmarcaCardsBuscados() {
-    var cards = document.querySelectorAll('.rectangle');
-    cards.forEach(card => { 
-        card.classList.remove('buscaCard');
-        cInputCard.classList.remove('naoEncontrado')
-    });
-};
-
-export function procurarCard(event, cardPesquisado='') {
-    cInputCard.classList.remove('naoEncontrado');
-    desmarcaCardsBuscados();
-
-    if (cardPesquisado == ''){
-        cardPesquisado = document.getElementById('searchInputCard').value;
-    }
-    if (event.key === 'Enter') {
-        cInputCard.blur()
-        // verifica se foi digitado alguma coisa na barra de pesquisa
-        if (cardPesquisado !== '') {
-            const cards = document.querySelectorAll('.rectangle');
-
-            // Verificar se o id contém a frase pesquisada
-            const resultado = [];
-            cards.forEach(card => {
-                // console.log(card.id.includes)
-                if (card.id.includes(cardPesquisado)) {
-                resultado.push(card); // Adicionar o card correspondente no resultado
-                }
-            });
-    
-            // aplica estilo de destaque aos cards
-            if (resultado.length > 0) {
-                resultado.forEach(card => {
-                card.classList.add('buscaCard');
-                });
-            } else {
-                cInputCard.classList.add('naoEncontrado');
-            }
-        }
-        // se não remove a marcação dos cards
-        else {
-            desmarcaCardsBuscados();
-        }
-    }
-};
 
 document.body.addEventListener('click', (event) => { 
     let target = event.target;
