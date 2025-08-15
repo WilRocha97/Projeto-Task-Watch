@@ -5,6 +5,7 @@ const novaMaquina = document.getElementById('inputAddMaquina');
 const pesquisaMaquina = document.getElementById('inputPesquisaMaquina');
 const barraAddMaquina = document.getElementById('barraAddMaquina');
 const barraPesquisaMaquina = document.getElementById('barraPesquisaMaquina');
+const limpaInputPesquisaMaquina = document.getElementById('limpaInputPesquisaMaquina');
 const STORAGE_KEY = "estadoMaquinas";
 
 
@@ -191,20 +192,38 @@ novaMaquina.addEventListener('keydown', (event) => {
     }
 });
 pesquisaMaquina.addEventListener('keydown', (event) => {
+    pesquisaMaquina.classList.remove('naoEncontrado');
     if (event.key === 'Enter') {
         const nomeNovaMaquina = pesquisaMaquina.value;
         const maquinasNaLista = document.querySelectorAll('.rectangleMaquinas');
 
         for (const maquinaNaLista of maquinasNaLista) {
             maquinaNaLista.querySelector('.cStatusMaquina').classList.remove('pulse')
-        }
+        };
+
         // Verificar se o id contém a frase pesquisada
-        for (const maquinaNaLista of maquinasNaLista) {
-            // console.log(card.id.includes)
+        const resultado = [];
+        maquinasNaLista.forEach(maquinaNaLista => {
             if (maquinaNaLista.id.includes(nomeNovaMaquina)) {
+                resultado.push(maquinaNaLista); // Adicionar a máquina correspondente no resultado
+            }
+        });
+        // aplica estilo de destaque aos cards
+        if (resultado.length > 0) {
+            resultado.forEach(maquinaNaLista => {
                 maquinaNaLista.querySelector('.cStatusMaquina').classList.add('pulse')
                 maquinaNaLista.scrollIntoView({ behavior: "smooth", block: "end" });
-            }
+            });
+        } else {
+            pesquisaMaquina.classList.add('naoEncontrado');
         };
     }
 });
+// limpa busca card
+limpaInputPesquisaMaquina.addEventListener('click', ()=> {
+    pesquisaMaquina.value = ''
+    const maquinasNaLista = document.querySelectorAll('.rectangleMaquinas');
+    for (const maquinaNaLista of maquinasNaLista) {
+            maquinaNaLista.querySelector('.cStatusMaquina').classList.remove('pulse')
+    }
+})
