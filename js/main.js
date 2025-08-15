@@ -1,5 +1,8 @@
 import {procurarCard} from './cards.js';
 import {desmarcaCardsBuscados} from './cards.js';
+import {restaurarEstado} from './maquinas.js';
+import {adicionarListeners} from './maquinas.js';
+import {salvarEstado} from './maquinas.js';
 
 var botoes = document.querySelectorAll('.button');
 var botoesCards = document.querySelectorAll('.btnCard');
@@ -334,17 +337,28 @@ maquinas.addEventListener('click', () => {
     }
 
     if (telaMaquinas.classList.contains('invisible5')) {
+        restaurarEstado();
+        adicionarListeners();
+        salvarEstado();
         telaMaquinas.classList.remove('invisible5');
         fundoCabecalho.classList.add('cabecalhoMegaExpandido')
     }
     else {
         telaMaquinas.classList.add('invisible5');
         fundoCabecalho.classList.remove('cabecalhoMegaExpandido')
+        setTimeout(()=> {
+            const container = document.querySelector("#listaMaquinas");
+            container.innerHTML = ''
+        }, 500);
     }
 });
 fecharMaquinas.addEventListener('click', ()=> {
     telaMaquinas.classList.add('invisible5');
     fundoCabecalho.classList.remove('cabecalhoMegaExpandido')
+    setTimeout(()=> {
+        const container = document.querySelector("#listaMaquinas");
+        container.innerHTML = ''
+    }, 500);
 })
 
 dica.addEventListener('click', () => {

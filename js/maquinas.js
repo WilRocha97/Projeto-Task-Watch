@@ -3,6 +3,123 @@ import {procurarCard} from './cards.js';
 const addMaquina = document.getElementById('adMaquina');
 const novaMaquina = document.getElementById('inputAddMaquina');
 const barraAddMaquina = document.getElementById('barraAddMaquina');
+const STORAGE_KEY = "estadoMaquinas";
+
+
+export function salvarEstado() {
+    const estado = {};
+    document.querySelectorAll(".rectangleMaquinas").forEach(maquina => {
+        const id = maquina.id;
+        const statusEl = maquina.querySelector("#statusMaquina");
+        const textarea = maquina.querySelector("textarea");
+        const botaoStatus = maquina.querySelector("#mudarStatus");
+
+        estado[id] = {
+            statusClasse: statusEl ? statusEl.classList[1] || "" : "",
+            comentario: textarea ? textarea.value : "",
+            botaoTexto: botaoStatus ? botaoStatus.textContent : ""
+        };
+    });
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(estado));
+}
+
+export function restaurarEstado() {
+    const dados = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+    let alterado = false;
+
+    for (const id in dados) {
+        const maquina = document.getElementById(id);
+        if (!maquina) {
+            // Se o elemento não existe mais, remove do storage
+            delete dados[id];
+            alterado = true;
+            continue;
+        }
+
+        const { statusClasse, comentario, botaoTexto } = dados[id];
+        const statusEl = maquina.querySelector("#statusMaquina");
+        const textarea = maquina.querySelector("textarea");
+        const botaoStatus = maquina.querySelector("#mudarStatus");
+
+        if (statusEl && statusClasse) {
+            statusEl.className = `cStatusMaquina ${statusClasse}`;
+        }
+        if (textarea) {
+            textarea.value = comentario;
+        }
+        if (botaoStatus) {
+            botaoStatus.textContent = botaoTexto;
+        }
+    }
+
+    if (alterado) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(dados));
+    }
+}
+
+export function adicionarListeners() {
+    document.querySelectorAll(".rectangleMaquinas").forEach(maquina => {
+        const textarea = maquina.querySelector("textarea");
+        const botaoStatus = maquina.querySelector("#mudarStatus");
+        const statusEl = maquina.querySelector("#statusMaquina");
+
+        if (textarea) {
+            textarea.addEventListener("input", salvarEstado);
+        }
+        if (botaoStatus) {
+            botaoStatus.addEventListener("click", salvarEstado);
+        }
+        if (statusEl) {
+            const observer = new MutationObserver(salvarEstado);
+            observer.observe(statusEl, { attributes: true, attributeFilter: ["class"] });
+        }
+    });
+}
+
+function adicionarMaquinaNoInicio(idMaquina) {
+    // Pega o container
+    const container = document.querySelector(".maquinasContainer");
+    if (!container) return;
+
+    const maquinasNaLista = document.querySelectorAll('.rectangleMaquinas');
+    for (const maquinaNaLista of maquinasNaLista) {
+        maquinaNaLista.querySelector('.cStatusMaquina').classList.remove('pulse')
+    }
+    // Verificar se o id contém a frase pesquisada
+    for (const maquinaNaLista of maquinasNaLista) {
+        // console.log(card.id.includes)
+        if (maquinaNaLista.id === idMaquina) {
+            maquinaNaLista.querySelector('.cStatusMaquina').classList.add('pulse')
+            maquinaNaLista.scrollIntoView({ behavior: "smooth", block: "end" });
+            return;
+        }
+    };
+
+    // Cria a nova div
+    const novaDiv = document.createElement("div");
+    novaDiv.id = idMaquina;
+    novaDiv.className = "rectangleMaquinas invisible7";
+    novaDiv.innerHTML = `
+        <div class="tituloContainerMaquina">
+            <div class="tituloMaquinas">${idMaquina}</div>
+            <div class="menuTelaBotoes">
+                <button id="mudarStatus" class="cmb MenuBotao cMudarStatus" title="Mudar status">Livre</button>
+                <div id="buscarMaquina" class="cmb botaoFixar botaoMaquina" title="Buscar máquina">❯</div>
+                <div id="deletarMaquina" class="btnCard botaoFechar botaoMaquina" title="Deletar dispositivo">⨉</div>
+            </div>
+        </div>
+        <textarea type="text" class="inputComentario scroll telaMensagemMaquinas"
+            placeholder="Adicionar comentário" 
+            title="Adicionar comentário"></textarea>
+        <span id="statusMaquina" class="cStatusMaquina livre"></span>
+    `;
+
+    // Insere no índice 0 (antes do primeiro filho)
+    container.insertBefore(novaDiv, container.firstChild);
+    setTimeout(()=> {
+        document.getElementById(idMaquina).classList.remove('invisible7')
+    }, 100);
+}
 
 // ouvinte para os cliques nos cartões
 document.addEventListener('click', (event) => {
@@ -56,131 +173,6 @@ document.addEventListener('click', (event) => {
         }
     }
 });
-
-document.addEventListener("DOMContentLoaded", () => {
-    const STORAGE_KEY = "estadoMaquinas";
-
-    function salvarEstado() {
-        const estado = {};
-        document.querySelectorAll(".rectangleMaquinas").forEach(maquina => {
-            const id = maquina.id;
-            const statusEl = maquina.querySelector("#statusMaquina");
-            const textarea = maquina.querySelector("textarea");
-            const botaoStatus = maquina.querySelector("#mudarStatus");
-
-            estado[id] = {
-                statusClasse: statusEl ? statusEl.classList[1] || "" : "",
-                comentario: textarea ? textarea.value : "",
-                botaoTexto: botaoStatus ? botaoStatus.textContent : ""
-            };
-        });
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(estado));
-    }
-
-    function restaurarEstado() {
-        const dados = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
-        let alterado = false;
-
-        for (const id in dados) {
-            const maquina = document.getElementById(id);
-            if (!maquina) {
-                // Se o elemento não existe mais, remove do storage
-                delete dados[id];
-                alterado = true;
-                continue;
-            }
-
-            const { statusClasse, comentario, botaoTexto } = dados[id];
-            const statusEl = maquina.querySelector("#statusMaquina");
-            const textarea = maquina.querySelector("textarea");
-            const botaoStatus = maquina.querySelector("#mudarStatus");
-
-            if (statusEl && statusClasse) {
-                statusEl.className = `cStatusMaquina ${statusClasse}`;
-            }
-            if (textarea) {
-                textarea.value = comentario;
-            }
-            if (botaoStatus) {
-                botaoStatus.textContent = botaoTexto;
-            }
-        }
-
-        if (alterado) {
-            localStorage.setItem(STORAGE_KEY, JSON.stringify(dados));
-        }
-    }
-
-    function adicionarListeners() {
-        document.querySelectorAll(".rectangleMaquinas").forEach(maquina => {
-            const textarea = maquina.querySelector("textarea");
-            const botaoStatus = maquina.querySelector("#mudarStatus");
-            const statusEl = maquina.querySelector("#statusMaquina");
-
-            if (textarea) {
-                textarea.addEventListener("input", salvarEstado);
-            }
-            if (botaoStatus) {
-                botaoStatus.addEventListener("click", salvarEstado);
-            }
-            if (statusEl) {
-                const observer = new MutationObserver(salvarEstado);
-                observer.observe(statusEl, { attributes: true, attributeFilter: ["class"] });
-            }
-        });
-    }
-
-    restaurarEstado();
-    adicionarListeners();
-    salvarEstado(); // Garante salvar caso seja a primeira vez
-});
-
-
-function adicionarMaquinaNoInicio(idMaquina) {
-    // Pega o container
-    const container = document.querySelector(".maquinasContainer");
-    if (!container) return;
-
-    const maquinasNaLista = document.querySelectorAll('.rectangleMaquinas');
-    for (const maquinaNaLista of maquinasNaLista) {
-        maquinaNaLista.querySelector('.cStatusMaquina').classList.remove('pulse')
-    }
-    // Verificar se o id contém a frase pesquisada
-    for (const maquinaNaLista of maquinasNaLista) {
-        // console.log(card.id.includes)
-        if (maquinaNaLista.id === idMaquina) {
-            maquinaNaLista.querySelector('.cStatusMaquina').classList.add('pulse')
-            maquinaNaLista.scrollIntoView({ behavior: "smooth", block: "end" });
-            return;
-        }
-    };
-
-    // Cria a nova div
-    const novaDiv = document.createElement("div");
-    novaDiv.id = idMaquina;
-    novaDiv.className = "rectangleMaquinas invisible7";
-    novaDiv.innerHTML = `
-        <div class="tituloContainerMaquina">
-            <div class="tituloMaquinas">${idMaquina}</div>
-            <div class="menuTelaBotoes">
-                <button id="mudarStatus" class="cmb MenuBotao cMudarStatus" title="Mudar status">Livre</button>
-                <div id="buscarMaquina" class="cmb botaoFixar botaoMaquina" title="Buscar máquina">❯</div>
-                <div id="deletarMaquina" class="btnCard botaoFechar botaoMaquina" title="Deletar dispositivo">⨉</div>
-            </div>
-        </div>
-        <textarea type="text" class="inputComentario scroll telaMensagemMaquinas"
-            placeholder="Adicionar comentário" 
-            title="Adicionar comentário"></textarea>
-        <span id="statusMaquina" class="cStatusMaquina livre"></span>
-    `;
-
-    // Insere no índice 0 (antes do primeiro filho)
-    container.insertBefore(novaDiv, container.firstChild);
-    setTimeout(()=> {
-        document.getElementById(idMaquina).classList.remove('invisible7')
-    }, 100);
-}
-
 
 addMaquina.addEventListener('click' , () => {
     barraAddMaquina.classList.toggle('invisible6')
