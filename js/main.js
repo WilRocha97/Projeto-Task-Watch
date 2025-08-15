@@ -8,6 +8,7 @@ import {fecharTelaDeMaquinas} from './maquinas.js';
 var botoes = document.querySelectorAll('.button');
 var botoesCards = document.querySelectorAll('.btnCard');
 var cards = document.querySelectorAll('.rectangle');
+var maquinasNaLista = document.querySelectorAll('.rectangleMaquinas');
 
 var relogio = document.getElementById('clock');
 const cartoesFixados = document.getElementById('controlarFixados');
@@ -52,7 +53,7 @@ document.querySelectorAll('.bn').forEach((bolinha, index) => {
     }, index * 500); // Atraso baseado no índice
 });
 
-function isTouchDevice() {
+export function isTouchDevice() {
     return ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
 }
 if (isTouchDevice()) {
@@ -60,12 +61,15 @@ if (isTouchDevice()) {
         botao.classList.add('nh')
     });
     botoesCards.forEach((botao)=> {
-        console.log(botao)
         botao.classList.add('nh')
     });
     cards.forEach((botao)=> {
         botao.classList.add('nh')
     });
+    maquinasNaLista.forEach((botao)=> {
+        botao.classList.add('nh')
+    });
+    
 }
 
 export function animacaoBotao(target) {

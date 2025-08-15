@@ -1,4 +1,5 @@
 import {procurarCard} from './cards.js';
+import {isTouchDevice} from './main.js';
 
 const fundoCabecalho = document.getElementById('cabecalho');
 
@@ -20,10 +21,6 @@ export function fecharTelaDeMaquinas() {
     pesquisaMaquina.value = ''
     telaMaquinas.classList.add('invisible5');
     fundoCabecalho.classList.remove('cabecalhoMegaExpandido');
-    setTimeout(()=> {
-        const container = document.querySelector("#listaMaquinas");
-        container.innerHTML = ''
-    }, 500);
 }
 
 export function salvarEstado() {
@@ -138,6 +135,9 @@ function adicionarMaquinaNoInicio(idMaquina) {
     container.insertBefore(novaDiv, container.firstChild);
     setTimeout(()=> {
         document.getElementById(idMaquina).classList.remove('invisible7')
+        if (isTouchDevice()) {
+            document.getElementById(idMaquina).classList.add('nh')
+        }
     }, 100);
 }
 
