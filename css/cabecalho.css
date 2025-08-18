@@ -175,6 +175,9 @@
     animation: carregandoBotao 2s infinite;
     transition: var(--transicao-link) ease-in-out;
 }
+.carregando.off {
+    opacity: 0;
+}
 
 /* Controle de fixados */
 #controlarFixados {

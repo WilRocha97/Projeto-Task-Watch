@@ -75,7 +75,7 @@ function filtraHistorico(event='', ocorrencia='geral', page=1) {
         }
     }
 
-    carregandoHistorico.classList.remove('invisible')
+    carregandoHistorico.classList.remove('off')
     var screenWidth = window.innerWidth;
     if (screenWidth < 1255) {
         telaMenu.forEach(miniMenu => {
@@ -120,7 +120,7 @@ function filtraHistorico(event='', ocorrencia='geral', page=1) {
                 behavior: 'smooth' /* Scroll suave */
             });
         }
-        carregandoHistorico.classList.add('invisible')
+        carregandoHistorico.classList.add('off')
     }, 1000);
 }
 function criaPaginacao(currentPage, totalPages, ocorrencia) {
@@ -369,7 +369,7 @@ async function exportarTabela() {
         a.click();
         a.remove();
 
-        carregandoExportacao.classList.add('invisible');
+        carregandoExportacao.classList.add('off');
     }
 
     if (formato === 'xlsx') {
@@ -378,7 +378,7 @@ async function exportarTabela() {
         const wb = XLSX.utils.book_new();
         XLSX.utils.book_append_sheet(wb, ws, 'Exportação');
         XLSX.writeFile(wb, 'Histórico.xlsx');
-        carregandoExportacao.classList.add('invisible')
+        carregandoExportacao.classList.add('off')
     }
 
     if (formato === 'pdf') {
@@ -396,13 +396,13 @@ async function exportarTabela() {
         });
 
         doc.save('Histórico.pdf');
-        carregandoExportacao.classList.add('invisible')
+        carregandoExportacao.classList.add('off')
     }
 }
 botaoExportarTabela.addEventListener('click', (event)=> {
     let target = event.target;
     animacaoBotao(target)
-    carregandoExportacao.classList.remove('invisible');
+    carregandoExportacao.classList.remove('off');
     setTimeout(()=> {
         exportarTabela()
     }, 1000);
