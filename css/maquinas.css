@@ -143,6 +143,21 @@
     word-wrap: break-word; /* quebra automática das palavras */
 }
 
+.modalConfirma {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+    transition: var(--transicao-link);
+}
+.modalConfirmaContent {
+    position: fixed;
+    padding: 20px;
+    top: 50%;
+}
+
 @media (max-width: 916px) {
     .maquinasContainer {
         height: 80%;

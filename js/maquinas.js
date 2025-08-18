@@ -185,11 +185,23 @@ document.addEventListener('click', (event) => {
         }
 
         if (target.id == 'deletarMaquina') {
-            divMae.classList.add('invisible7')
-            setTimeout(()=> {
-                const container = document.querySelector(".maquinasContainer");
-                container.removeChild(divMae);
-            }, 300);
+            const modal = document.getElementById("modalConfirmacao");
+            modal.classList.remove("invisible2");
+
+            const btnConfirmar = document.getElementById("btnConfirmar");
+            const btnCancelar = document.getElementById("btnCancelar");
+
+            btnConfirmar.onclick = () => {
+                modal.classList.add("invisible2");
+                divMae.classList.add('invisible7')
+                setTimeout(()=> {
+                    const container = document.querySelector(".maquinasContainer");
+                    container.removeChild(divMae);
+                }, 300);
+            }
+            btnCancelar.onclick = () => {
+                modal.classList.add("invisible2");
+            };
         }
     }
 });

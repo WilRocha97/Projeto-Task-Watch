@@ -30,6 +30,7 @@
     backdrop-filter: blur(var(--blur-fundo));
     -webkit-backdrop-filter: blur(var(--blur-fundo));
     z-index: 0;
+    transition: var(--transicao-link);
 }
 
 /* =============================================================================
