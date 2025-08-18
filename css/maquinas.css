@@ -144,18 +144,21 @@
 }
 
 .modalConfirma {
+    opacity: 1;
     position: fixed;
     display: flex;
     justify-content: center;
     width: 100vw;
     height: 100vh;
     z-index: 999;
-    transition: var(--transicao-link);
+    transition: opacity var(--transicao-link) ease-in-out;
 }
 .modalConfirmaContent {
+    opacity: 1;
     position: fixed;
     padding: 20px;
-    top: 50%;
+    bottom: 50%;
+    transition: opacity var(--transicao-link) ease-in-out;
 }
 
 @media (max-width: 916px) {

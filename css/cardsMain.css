@@ -35,8 +35,8 @@
 .sortable-ghost .porcentagem.pulse {
     color: var(--sombra-2) !important;
     text-shadow: none !important;
-    --cor-loading-1: #444444;
-    --cor-loading-2: #444444;
+    --cor-loading-1: #6e6e6e7c;
+    --cor-loading-2: #6e6e6e7c;
 }
 .sortable-ghost .porcentagem,
 .sortable-ghost .bolinhaLoading {

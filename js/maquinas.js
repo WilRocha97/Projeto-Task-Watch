@@ -186,13 +186,19 @@ document.addEventListener('click', (event) => {
 
         if (target.id == 'deletarMaquina') {
             const modal = document.getElementById("modalConfirmacao");
+            const modalContent = document.querySelector(".modalConfirmaContent");
             modal.classList.remove("invisible2");
+            modalContent.classList.remove("invisible");
 
             const btnConfirmar = document.getElementById("btnConfirmar");
             const btnCancelar = document.getElementById("btnCancelar");
 
             btnConfirmar.onclick = () => {
                 modal.classList.add("invisible2");
+                setTimeout(()=> {
+                    modalContent.classList.add("invisible");
+                }, 300);
+                
                 divMae.classList.add('invisible7')
                 setTimeout(()=> {
                     const container = document.querySelector(".maquinasContainer");
@@ -201,6 +207,9 @@ document.addEventListener('click', (event) => {
             }
             btnCancelar.onclick = () => {
                 modal.classList.add("invisible2");
+                setTimeout(()=> {
+                    modalContent.classList.add("invisible");
+                }, 300);
             };
         }
     }
