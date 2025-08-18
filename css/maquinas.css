@@ -149,10 +149,21 @@
     }
     .maquinasTela {
         width: 80vw;
+        padding: 30px 8px 8px 8px;
     }
 }
 @media (max-width: 1255px) and (min-width: 917px) {
     .maquinasTela {
         width: 40vw;
+    }
+}
+@media (max-height: 930px) and (max-width: 916px) {
+    .maquinasContainer {
+        height: 75%;
+    }
+}
+@media (max-height: 830px) and (max-width: 916px) {
+    .maquinasContainer {
+        height: 70%;
     }
 }
