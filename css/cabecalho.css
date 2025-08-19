@@ -247,6 +247,76 @@
     animation: slideUpIn 0.5s forwards;
 }
 
+/* Animação para direita e sumir */
+@keyframes slideRightOut {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    50% {
+        opacity: 0;
+
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+}
+/* Animação para esquerda e sumir */
+@keyframes slideLeftOut {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+}
+/* Animação para direita e aparecer */
+@keyframes slideRightIn {
+    0% {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+/* Animação para esquerda e aparecer */
+@keyframes slideLeftIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.anim-out-side-left {
+    animation: slideLeftOut 0.3s forwards;
+}
+.anim-out-side-right {
+    animation: slideRightOut 0.3s forwards;
+}
+.anim-in-side-left {
+    animation: slideLeftIn 0.3s forwards;
+}
+.anim-in-side-right {
+    animation: slideRightIn 0.3s forwards;
+}
+
 /* =============================================================================
    DICA E GALERIA
    ============================================================================= */

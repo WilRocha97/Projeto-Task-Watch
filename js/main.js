@@ -152,15 +152,27 @@ document.body.addEventListener('click', (event) => {
 // Janela com dicas de como o site funciona
 menu.addEventListener('click', () => {
     var screenWidth = window.innerWidth;
-    if (menu.innerHTML == '❯') {
+    if (botaoMenu.innerHTML == '❯') {
         telaMenu.forEach(miniMenu => {
             miniMenu.classList.remove('invisible3');
         })
         if (screenWidth < 1255) {
             fundoCabecalho.classList.add('cabecalhoExpandido')
         }
-        menu.innerHTML = '❮'
         telaRotinas.classList.add('rotinasExpandida');
+
+        // Adiciona a animação de saída
+        botaoMenu.classList.remove('anim-in-side-left');
+        botaoMenu.classList.add('anim-out-side-right');
+        // Espera a animação de saída terminar para trocar a imagem
+        botaoMenu.addEventListener('animationend', function handleOut() {
+            botaoMenu.removeEventListener('animationend', handleOut); // Remove o listener
+            botaoMenu.innerHTML = '❮'
+
+            // Adiciona a animação de saída
+            botaoMenu.classList.remove('anim-out-side-right');
+            botaoMenu.classList.add('anim-in-side-right');
+        });
     }
     else {
         telaMenu.forEach(miniMenu => {
@@ -169,9 +181,22 @@ menu.addEventListener('click', () => {
         if (screenWidth < 1255) {
             fundoCabecalho.classList.remove('cabecalhoExpandido')
         }
-        menu.innerHTML = '❯'
         telaRotinas.classList.remove('rotinasExpandida');
+        
+        // Adiciona a animação de saída
+        botaoMenu.classList.remove('anim-in-side-right');
+        botaoMenu.classList.add('anim-out-side-left');
+        // Espera a animação de saída terminar para trocar a imagem
+        botaoMenu.addEventListener('animationend', function handleOut() {
+            botaoMenu.removeEventListener('animationend', handleOut); // Remove o listener
+            botaoMenu.innerHTML = '❯'
+
+            // Adiciona a animação de saída
+            botaoMenu.classList.remove('anim-out-side-left');
+            botaoMenu.classList.add('anim-in-side-left');
+        });
     }
+    
     if (!telaMaquinas.classList.contains('invisible5')) {
         fecharTelaDeMaquinas()
         telaRotinas.classList.add('rotinasExpandida');
