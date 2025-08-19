@@ -173,7 +173,7 @@ input:-webkit-autofill:active{
 
 html, body {
     overflow-x: hidden !important;
-    height: 100%;
+    min-height: 100%;
 }
 body {
     --scroll-background: var(--cor-vidro-2);
