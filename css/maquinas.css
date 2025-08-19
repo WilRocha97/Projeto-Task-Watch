@@ -30,6 +30,7 @@
 .maquinasContainer {
     border-radius: var(--borda-botao);
     height: 85%;
+    margin-top: 40px;
     display: flex;
     flex-direction: column;
     overflow-y: auto;
@@ -37,9 +38,11 @@
 }
 
 .menuMaquinas {
+    position: fixed;
     display: flex;
     flex-direction: row;
     max-width: 80%;
+    width: 100%;
     margin: 0 12px;
     align-items: center;
 }
@@ -77,6 +80,9 @@
 .rectangleMaquinas:hover {
     scale: var(--escala-maquina);
     animation: none;
+}
+.rectangleMaquinas.nh {
+    scale: 1;
 }
 .rectangleMaquinas:hover .botaoFechar,
 .rectangleMaquinas:hover .botaoFixar,
@@ -177,12 +183,16 @@
 }
 
 @media (max-width: 916px) {
+    .menuMaquinas {
+        bottom: 130px;
+    }
     .maquinasContainer {
         height: 80%;
+        margin-top: 0;
     }
     .maquinasTela {
         width: 80vw;
-        padding: 30px 8px 8px 8px;
+        padding: 8px;
     }
 }
 @media (max-width: 1255px) and (min-width: 917px) {
