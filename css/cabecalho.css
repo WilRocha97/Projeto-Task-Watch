@@ -490,7 +490,7 @@
         width: 45%;
     }
     .mainHistorico {
-        padding: 0 !important;
+        padding: 0 0 65px 0 !important;
     }
 
     :root {
