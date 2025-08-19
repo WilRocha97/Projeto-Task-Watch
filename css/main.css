@@ -375,6 +375,9 @@ button {
     height: 27px;
     min-width: 27px;
 }
+.mbt {
+    padding: 0 10px;
+}
 .MenuBotao, .MenuBotaoActive, .MenuBotaoDesactive, .paginaHistorico button {
     height: 30px;
     min-width: 30px;
@@ -545,6 +548,9 @@ button.clicked, .MenuBotao.clicked {
     }
 }
 @media (max-width: 916px) {
+    .mbt {
+        padding: 0 15px;
+    }
     .rodape {
         padding: 5rem 0 100px 0;
     }

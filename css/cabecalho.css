@@ -90,11 +90,10 @@
     overflow: hidden;
     justify-content: center;
 }
-
 .notificacao {
     position: fixed;
     bottom: 20%;
-    width: 78.2%;
+    width: 50%;
     display: flex;
 }
 
@@ -416,6 +415,9 @@
         bottom: 0vh !important;
         min-height: 100%;
         transition: var(--transicao-link) ease-in-out;
+    }
+    .notificacao {
+        width: 45%;
     }
     .mainHistorico {
         padding: 0 !important;
