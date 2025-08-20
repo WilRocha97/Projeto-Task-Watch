@@ -95,7 +95,7 @@ export function adicionarListeners() {
 
 function adicionarMaquinaNoInicio(idMaquina) {
     // Pega o container
-    const container = document.querySelector(".maquinasContainer");
+    const container = document.querySelector("#listaMaquinas");
     if (!container) return;
 
     const maquinasNaLista = document.querySelectorAll('.rectangleMaquinas');

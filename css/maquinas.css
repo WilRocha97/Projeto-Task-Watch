@@ -27,14 +27,17 @@
     }
 }
 
-.maquinasContainer {
+.maquinasContainerFundo {
+    overflow: scroll;
+    overflow-x: hidden;
     border-radius: var(--borda-botao);
     height: 85%;
+    width: 100%;
     margin-top: 40px;
+}
+.maquinasContainer {
     display: flex;
     flex-direction: column;
-    overflow-y: auto;
-    overflow-x: hidden;
 }
 
 .menuMaquinas {
@@ -47,7 +50,7 @@
     align-items: center;
 }
 .maquinasTela {
-    padding: 60px 8px 8px 8px;
+    padding-top: 60px;
     position: fixed;
     overflow: hidden;
     left: 0;
@@ -72,7 +75,7 @@
 .rectangleMaquinas {
     scale: 1;
     opacity: 1;
-    margin: 10px;
+    margin: 10px 16px;
     border-radius: 10px;
     max-height: 300px;
     transition: var(--transicao-link) ease-in-out;
@@ -186,7 +189,7 @@
     .menuMaquinas {
         bottom: 130px;
     }
-    .maquinasContainer {
+    .maquinasContainerFundo {
         height: 80%;
         margin-top: 0;
     }
@@ -201,12 +204,12 @@
     }
 }
 @media (max-height: 930px) and (max-width: 916px) {
-    .maquinasContainer {
+    .maquinasContainerFundo {
         height: 75%;
     }
 }
 @media (max-height: 830px) and (max-width: 916px) {
-    .maquinasContainer {
+    .maquinasContainerFundo {
         height: 70%;
     }
 }

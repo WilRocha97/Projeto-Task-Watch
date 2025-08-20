@@ -114,7 +114,7 @@ input:-webkit-autofill:active{
     box-shadow: inset 0 0 20px #23232300;
 }
 
-.telaHistoricoConteudo, .dicaContainer, .galeriaContainer, .maquinasContainer {
+.telaHistoricoConteudo, .dicaContainer, .galeriaContainer, .maquinasContainerFundo {
     --scroll-background: transparent;
     --scroll-hover: var(--cor-destaque);
     --scroll-button-heigh: 20px;
