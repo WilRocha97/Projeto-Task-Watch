@@ -143,15 +143,43 @@ function verificaTelaVazia() {
     }
 };
 
-
-document.body.addEventListener('click', (event) => { 
-    let target = event.target;
-    animacaoBotao(target)
-});
-
-// Janela com dicas de como o site funciona
-menu.addEventListener('click', () => {
+export function fechaMenu() {
+    var botaoMenu = document.getElementById('botaoMenu');
+    var telaMenu = document.querySelectorAll('.menuInvisivel');
+    var telaRotinas = document.getElementById('telaRotinas');
+    var fundoCabecalho = document.getElementById('cabecalho');
     var screenWidth = window.innerWidth;
+
+    telaMenu.forEach(miniMenu => {
+        miniMenu.classList.add('invisible3');
+    })
+    if (screenWidth < 1255) {
+        fundoCabecalho.classList.remove('cabecalhoExpandido')
+    }
+    telaRotinas.classList.remove('rotinasExpandida');
+    fundoCabecalho.classList.remove('cabecalhoMegaExpandido');
+    
+    // Adiciona a animação de saída
+    botaoMenu.classList.remove('anim-in-side-right');
+    botaoMenu.classList.add('anim-out-side-left');
+    // Espera a animação de saída terminar para trocar a imagem
+    botaoMenu.addEventListener('animationend', function handleOut() {
+        botaoMenu.removeEventListener('animationend', handleOut); // Remove o listener
+        botaoMenu.innerHTML = '❯'
+
+        // Adiciona a animação de saída
+        botaoMenu.classList.remove('anim-out-side-left');
+        botaoMenu.classList.add('anim-in-side-left');
+    });
+}
+
+export function abreFechaMenu() {
+    var botaoMenu = document.getElementById('botaoMenu');
+    var telaMenu = document.querySelectorAll('.menuInvisivel');
+    var telaRotinas = document.getElementById('telaRotinas');
+    var fundoCabecalho = document.getElementById('cabecalho');
+    var screenWidth = window.innerWidth;
+
     if (botaoMenu.innerHTML == '❯') {
         telaMenu.forEach(miniMenu => {
             miniMenu.classList.remove('invisible3');
@@ -175,27 +203,18 @@ menu.addEventListener('click', () => {
         });
     }
     else {
-        telaMenu.forEach(miniMenu => {
-            miniMenu.classList.add('invisible3');
-        })
-        if (screenWidth < 1255) {
-            fundoCabecalho.classList.remove('cabecalhoExpandido')
-        }
-        telaRotinas.classList.remove('rotinasExpandida');
-        
-        // Adiciona a animação de saída
-        botaoMenu.classList.remove('anim-in-side-right');
-        botaoMenu.classList.add('anim-out-side-left');
-        // Espera a animação de saída terminar para trocar a imagem
-        botaoMenu.addEventListener('animationend', function handleOut() {
-            botaoMenu.removeEventListener('animationend', handleOut); // Remove o listener
-            botaoMenu.innerHTML = '❯'
-
-            // Adiciona a animação de saída
-            botaoMenu.classList.remove('anim-out-side-left');
-            botaoMenu.classList.add('anim-in-side-left');
-        });
+        fechaMenu()
     }
+}
+
+document.body.addEventListener('click', (event) => { 
+    let target = event.target;
+    animacaoBotao(target)
+});
+
+// Janela com dicas de como o site funciona
+menu.addEventListener('click', () => {
+    abreFechaMenu()
     
     if (!telaMaquinas.classList.contains('invisible5')) {
         fecharTelaDeMaquinas()
@@ -349,17 +368,7 @@ explodeCard.addEventListener('click', () => {
 
 // Janela com dicas de como o site funciona
 maquinas.addEventListener('click', () => {
-    var screenWidth = window.innerWidth;
-    if (screenWidth < 1255) {
-        telaMenu.forEach(miniMenu => {
-            miniMenu.classList.add('invisible3');
-        })
-        if (screenWidth < 1255) {
-            fundoCabecalho.classList.remove('cabecalhoExpandido')
-        }
-        menu.innerHTML = '❯'
-        telaRotinas.classList.remove('rotinasExpandida');
-    }
+    fechaMenu()
     
     if (!telaGaleria.classList.contains('invisible2')) {
         telaGaleria.classList.add('invisible2');
@@ -367,13 +376,11 @@ maquinas.addEventListener('click', () => {
     if (!telaDica.classList.contains('invisible2')) {
         telaDica.classList.add('invisible2');
     }
-
     if (telaMaquinas.classList.contains('invisible5')) {
         restaurarEstado();
         adicionarListeners();
         salvarEstado();
         telaMaquinas.classList.remove('invisible5');
-        fundoCabecalho.classList.add('cabecalhoMegaExpandido')
     }
     else {
         fecharTelaDeMaquinas()
@@ -389,17 +396,7 @@ fecharMaquinas.addEventListener('click', ()=> {
 })
 
 dica.addEventListener('click', () => {
-    var screenWidth = window.innerWidth;
-    if (screenWidth < 1255) {
-        telaMenu.forEach(miniMenu => {
-            miniMenu.classList.add('invisible3');
-        })
-        if (screenWidth < 1255) {
-            fundoCabecalho.classList.remove('cabecalhoExpandido')
-        }
-        menu.innerHTML = '❯'
-        telaRotinas.classList.remove('rotinasExpandida');
-    }
+    fechaMenu()
     
     if (!telaGaleria.classList.contains('invisible2')) {
             telaGaleria.classList.add('invisible2');
@@ -424,17 +421,7 @@ fecharAjuda.addEventListener('click', ()=> {
 
 // Janela com imagens do TaskWatch oficial
 galeria.addEventListener('click', () => {
-    var screenWidth = window.innerWidth;
-    if (screenWidth < 1255) {
-        telaMenu.forEach(miniMenu => {
-            miniMenu.classList.add('invisible3');
-        })
-        if (screenWidth < 1255) {
-            fundoCabecalho.classList.remove('cabecalhoExpandido')
-        }
-        menu.innerHTML = '❯'
-        telaRotinas.classList.remove('rotinasExpandida');
-    }
+    fechaMenu()
 
     if (!telaDica.classList.contains('invisible2')) {
         telaDica.classList.add('invisible2');

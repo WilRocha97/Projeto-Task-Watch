@@ -1,5 +1,6 @@
 import {animacaoBotao} from './main.js';
 import {fecharTelaDeMaquinas} from './maquinas.js';
+import {fechaMenu} from './main.js';
 
 var template = ``;
 var idClassHistorico = '';
@@ -76,18 +77,10 @@ function filtraHistorico(event='', ocorrencia='geral', page=1) {
     }
 
     carregandoHistorico.classList.remove('off')
-    var screenWidth = window.innerWidth;
-    if (screenWidth < 1255) {
-        telaMenu.forEach(miniMenu => {
-            miniMenu.classList.add('invisible3');
-        })
-        document.getElementById('cabecalho').classList.remove('cabecalhoExpandido')
-        menu.innerHTML = '❯'
-    }
+    fechaMenu()
     fecharTelaDeMaquinas()
     telaDica.classList.add('invisible2');
     telaGaleria.classList.add('invisible2');
-    telaRotinas.classList.remove('rotinasExpandida');
     telaHistorico.classList.remove('historicoExpandida');
     
     if (event != '') {

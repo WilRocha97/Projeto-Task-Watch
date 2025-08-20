@@ -1,6 +1,7 @@
 import {animacaoBotao} from './main.js';
 import {decoracao} from './temas.js';
 import {fecharTelaDeMaquinas} from './maquinas.js';
+import {fechaMenu} from './main.js';
 
 var telaTitulo = document.querySelector("#telaTitulo");
 var telaTituloFundo = document.querySelector(".fundoGradiente");
@@ -81,21 +82,10 @@ function sortable(container) {
             // Inicia um timeout para adicionar a classe após o delay
             timeout = setTimeout(function() {
                 evt.item.classList.add('sortable-ghost');
-                var screenWidth = window.innerWidth;
-                if (screenWidth < 1255) {
-                    telaMenu.forEach(miniMenu => {
-                        miniMenu.classList.add('invisible3');
-                    })
-                    if (screenWidth < 1255) {
-                        fundoCabecalho.classList.remove('cabecalhoExpandido');
-                    }
-                    menu.innerHTML = '❯'
-                    telaRotinas.classList.remove('rotinasExpandida');
-                }
+                fechaMenu()
                 fecharTelaDeMaquinas()
                 telaDica.classList.add('invisible2');
                 telaGaleria.classList.add('invisible2');
-                telaRotinas.classList.remove('rotinasExpandida');
             }, delay);
         },
         onUnchoose: function(evt) {
@@ -181,21 +171,10 @@ document.addEventListener('click', (event) => {
 
         // fecha o menu ao clicar em qualuqer lugar que não seja nele
         if (!target.classList.contains('cmb')) {
-            var screenWidth = window.innerWidth;
-            if (screenWidth < 1255) {
-                telaMenu.forEach(miniMenu => {
-                    miniMenu.classList.add('invisible3');
-                })
-                if (screenWidth < 1255) {
-                    fundoCabecalho.classList.remove('cabecalhoExpandido');
-                }
-                menu.innerHTML = '❯'
-                telaRotinas.classList.remove('rotinasExpandida');
-            }
+            fechaMenu()
             fecharTelaDeMaquinas()
             telaDica.classList.add('invisible2');
             telaGaleria.classList.add('invisible2');
-            telaRotinas.classList.remove('rotinasExpandida');
             telaHistorico.classList.remove('historicoExpandida');
         }
 
