@@ -143,34 +143,34 @@ function verificaTelaVazia() {
     }
 };
 
-export function fechaMenu() {
+export function fechaMenu(botaoDoMenu=false) {
     var botaoMenu = document.getElementById('botaoMenu');
     var telaMenu = document.querySelectorAll('.menuInvisivel');
     var telaRotinas = document.getElementById('telaRotinas');
     var fundoCabecalho = document.getElementById('cabecalho');
     var screenWidth = window.innerWidth;
-
-    telaMenu.forEach(miniMenu => {
-        miniMenu.classList.add('invisible3');
-    })
-    if (screenWidth < 1255) {
-        fundoCabecalho.classList.remove('cabecalhoExpandido')
-    }
-    telaRotinas.classList.remove('rotinasExpandida');
-    fundoCabecalho.classList.remove('cabecalhoMegaExpandido');
     
-    // Adiciona a animação de saída
-    botaoMenu.classList.remove('anim-in-side-right');
-    botaoMenu.classList.add('anim-out-side-left');
-    // Espera a animação de saída terminar para trocar a imagem
-    botaoMenu.addEventListener('animationend', function handleOut() {
-        botaoMenu.removeEventListener('animationend', handleOut); // Remove o listener
-        botaoMenu.innerHTML = '❯'
-
+    if (screenWidth < 1255 || botaoDoMenu) {
+        telaMenu.forEach(miniMenu => {
+            miniMenu.classList.add('invisible3');
+        })
+        fundoCabecalho.classList.remove('cabecalhoExpandido');
+        fundoCabecalho.classList.remove('cabecalhoMegaExpandido');
+        telaRotinas.classList.remove('rotinasExpandida');
+    
         // Adiciona a animação de saída
-        botaoMenu.classList.remove('anim-out-side-left');
-        botaoMenu.classList.add('anim-in-side-left');
-    });
+        botaoMenu.classList.remove('anim-in-side-right');
+        botaoMenu.classList.add('anim-out-side-left');
+        // Espera a animação de saída terminar para trocar a imagem
+        botaoMenu.addEventListener('animationend', function handleOut() {
+            botaoMenu.removeEventListener('animationend', handleOut); // Remove o listener
+            botaoMenu.innerHTML = '❯'
+
+            // Adiciona a animação de saída
+            botaoMenu.classList.remove('anim-out-side-left');
+            botaoMenu.classList.add('anim-in-side-left');
+        });
+    }
 }
 
 export function abreFechaMenu() {
@@ -203,7 +203,7 @@ export function abreFechaMenu() {
         });
     }
     else {
-        fechaMenu()
+        fechaMenu(true)
     }
 }
 
