@@ -196,6 +196,9 @@ body {
     -moz-osx-font-smoothing: grayscale;
     transition: background-color 1s ease-in-out;
 }
+.paragrafo {
+    margin: 13px 7.3px;
+}
 button {
     -webkit-tap-highlight-color: transparent;
     outline: none;
@@ -247,6 +250,7 @@ button {
     cursor: default !important;
 }
 .invisible7 {
+    overflow: hidden !important;
     opacity: 0 !important;
     padding: 0 !important;
     margin: 0 !important;

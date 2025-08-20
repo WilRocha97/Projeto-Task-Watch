@@ -133,6 +133,8 @@ function adicionarMaquinaNoInicio(idMaquina) {
 
     // Insere no índice 0 (antes do primeiro filho)
     container.insertBefore(novaDiv, container.firstChild);
+    document.getElementById(idMaquina).scrollIntoView({ behavior: "smooth", block: "start" });
+
     setTimeout(()=> {
         document.getElementById(idMaquina).classList.remove('invisible7')
         if (isTouchDevice()) {
