@@ -381,7 +381,7 @@ button {
     height: 27px;
     min-width: 27px;
 }
-.mbt {
+.MenuBotaoTexto {
     padding: 0 10px;
 }
 .MenuBotao, .MenuBotaoActive, .MenuBotaoDesactive, .paginaHistorico button {
