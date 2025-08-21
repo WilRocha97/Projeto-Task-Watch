@@ -6,6 +6,7 @@ const fundoCabecalho = document.getElementById('cabecalho');
 const addMaquina = document.getElementById('adMaquina');
 const novaMaquina = document.getElementById('inputAddMaquina');
 const pesquisaMaquina = document.getElementById('inputPesquisaMaquina');
+const menuMaquinas = document.querySelector('.menuMaquinas');
 const barraAddMaquina = document.getElementById('barraAddMaquina');
 const barraPesquisaMaquina = document.getElementById('barraPesquisaMaquina');
 const limpaInputPesquisaMaquina = document.getElementById('limpaInputPesquisaMaquina');
@@ -221,7 +222,9 @@ addMaquina.addEventListener('click' , () => {
     addMaquina.classList.toggle('addMaquinaAtivada')
     barraAddMaquina.classList.toggle('invisible6')
     barraPesquisaMaquina.classList.toggle('invisible6')
-    novaMaquina.focus()
+    if (!barraAddMaquina.classList.contains('invisible6')) {
+        novaMaquina.focus()
+    }
 })
 
 // adiciona o evento de escutar a tecla na barra de busca dos cards
@@ -268,3 +271,21 @@ limpaInputPesquisaMaquina.addEventListener('click', ()=> {
             maquinaNaLista.querySelector('.cStatusMaquina').classList.remove('pulse')
     }
 })
+
+pesquisaMaquina.addEventListener('focus', (event) => {
+    menuMaquinas.classList.add('menuMaquinasSuperExpandido');
+    document.querySelector('.maquinasContainerFundo').classList.add('invisibleMobile');
+});
+pesquisaMaquina.addEventListener('blur', (event) => {
+    menuMaquinas.classList.remove('menuMaquinasSuperExpandido');
+    document.querySelector('.maquinasContainerFundo').classList.remove('invisibleMobile');
+});
+
+novaMaquina.addEventListener('focus', (event) => {
+    menuMaquinas.classList.add('menuMaquinasSuperExpandido');
+    document.querySelector('.maquinasContainerFundo').classList.add('invisibleMobile');
+});
+novaMaquina.addEventListener('blur', (event) => {
+    menuMaquinas.classList.remove('menuMaquinasSuperExpandido');
+    document.querySelector('.maquinasContainerFundo').classList.remove('invisibleMobile');
+});

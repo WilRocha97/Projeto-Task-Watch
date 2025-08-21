@@ -553,6 +553,11 @@ button.clicked, .MenuBotao.clicked {
     }
 }
 @media (max-width: 916px) {
+    .invisibleMobile {
+        opacity: 0 !important;
+        min-height: 0 !important;
+        max-height: 0 !important;
+    }
     .layout {
         min-height: 80vh;
     }
