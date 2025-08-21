@@ -554,10 +554,13 @@ button.clicked, .MenuBotao.clicked {
 }
 @media (max-width: 916px) {
     .layout {
-        min-height: 85vh;
+        min-height: 80vh;
     }
     .mbt {
         padding: 0 15px;
+    }
+    .rodape {
+        margin-bottom: 100px;
     }
 }  
 @media (max-width: 1255px) {
