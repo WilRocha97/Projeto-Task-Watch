@@ -101,13 +101,15 @@ function adicionarMaquinaNoInicio(idMaquina) {
 
     const maquinasNaLista = document.querySelectorAll('.rectangleMaquinas');
     for (const maquinaNaLista of maquinasNaLista) {
-        maquinaNaLista.querySelector('.cStatusMaquina').classList.remove('pulse')
+        maquinaNaLista.querySelector('.cStatusMaquina').classList.remove('pulse');
+        maquinaNaLista.classList.remove('pulse');
     }
     // Verificar se o id contém a frase pesquisada
     for (const maquinaNaLista of maquinasNaLista) {
         // console.log(card.id.includes)
         if (maquinaNaLista.id === idMaquina) {
-            maquinaNaLista.querySelector('.cStatusMaquina').classList.add('pulse')
+            maquinaNaLista.querySelector('.cStatusMaquina').classList.add('pulse');
+            maquinaNaLista.classList.add('pulse');
             maquinaNaLista.scrollIntoView({ behavior: "smooth", block: "end" });
             return;
         }
@@ -151,7 +153,8 @@ document.addEventListener('click', (event) => {
     const divMae = target.closest('.rectangleMaquinas');
 
     if (divMae) {
-        divMae.querySelector('.cStatusMaquina').classList.remove('pulse')
+        divMae.querySelector('.cStatusMaquina').classList.remove('pulse');
+        divMae.classList.remove('pulse');
 
         if (target.id == 'mudarStatus') {
             var statusDaMaquina = divMae.querySelector('#statusMaquina');
@@ -242,7 +245,8 @@ pesquisaMaquina.addEventListener('keydown', (event) => {
         const maquinasNaLista = document.querySelectorAll('.rectangleMaquinas');
 
         for (const maquinaNaLista of maquinasNaLista) {
-            maquinaNaLista.querySelector('.cStatusMaquina').classList.remove('pulse')
+            maquinaNaLista.querySelector('.cStatusMaquina').classList.remove('pulse');
+            maquinaNaLista.classList.remove('pulse');
         };
 
         // Verificar se o id contém a frase pesquisada
@@ -255,7 +259,8 @@ pesquisaMaquina.addEventListener('keydown', (event) => {
         // aplica estilo de destaque aos cards
         if (resultado.length > 0) {
             resultado.forEach(maquinaNaLista => {
-                maquinaNaLista.querySelector('.cStatusMaquina').classList.add('pulse')
+                maquinaNaLista.querySelector('.cStatusMaquina').classList.add('pulse');
+                maquinaNaLista.classList.add('pulse');
                 maquinaNaLista.scrollIntoView({ behavior: "smooth", block: "end" });
             });
         } else {
@@ -269,6 +274,7 @@ limpaInputPesquisaMaquina.addEventListener('click', ()=> {
     const maquinasNaLista = document.querySelectorAll('.rectangleMaquinas');
     for (const maquinaNaLista of maquinasNaLista) {
             maquinaNaLista.querySelector('.cStatusMaquina').classList.remove('pulse')
+            maquinaNaLista.classList.remove('pulse');
     }
 })
 

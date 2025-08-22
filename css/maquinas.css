@@ -1,16 +1,16 @@
 @keyframes pulsarMaquina {
     0%, 100% {
         background-color: black; 
-        box-shadow: 0 -45px 90px black,
-                    0 -40px 80px black,
-                    0 -35px 70px black,
-                    0 -30px 60px black,
-                    0 -25px 50px black,
-                    0 -20px 40px black,
-                    0 -15px 30px black,
-                    0 -10px 20px black,
-                    0 -5px 10px black,
-                    0 0 5px black;
+        box-shadow: 0 -45px 90px rgba(255, 255, 255, 0),
+                    0 -40px 80px rgba(255, 255, 255, 0),
+                    0 -35px 70px rgba(255, 255, 255, 0),
+                    0 -30px 60px rgba(255, 255, 255, 0),
+                    0 -25px 50px rgba(255, 255, 255, 0),
+                    0 -20px 40px rgba(255, 255, 255, 0),
+                    0 -15px 30px rgba(255, 255, 255, 0),
+                    0 -10px 20px rgba(255, 255, 255, 0),
+                    0 -5px 10px rgba(255, 255, 255, 0),
+                    0 0 5px rgba(255, 255, 255, 0);
     }
     50% {
         background-color: white; 
@@ -24,6 +24,14 @@
                     0 -10px 20px white,
                     0 -5px 10px white,
                     0 0 5px white;
+    }
+}
+@keyframes pulsarMaquinaFundo {
+    0%, 100% {
+        scale: 1;
+    }
+    50% {
+        scale: var(--escala-maquina);
     }
 }
 
@@ -88,7 +96,6 @@
 }
 .rectangleMaquinas:hover {
     scale: var(--escala-maquina);
-    animation: none;
 }
 .rectangleMaquinas.nh {
     scale: 1;
@@ -153,6 +160,9 @@
 }
 .cStatusMaquina.pulse {
     animation: pulsarMaquina 1s infinite;
+}
+.rectangleMaquinas.pulse {
+    animation: pulsarMaquinaFundo 1s infinite;
 }
 
 .tituloMaquinas {
