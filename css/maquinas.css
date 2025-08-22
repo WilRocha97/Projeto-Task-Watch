@@ -130,33 +130,24 @@
     height: 1px;
     margin: 5px 1.5px 0 1.5px;
     border-radius: 5px;
+    background-color: var(--cor-maquinas); 
+    box-shadow: 0 -45px 90px var(--cor-maquinas),
+                0 -40px 80px var(--cor-maquinas),
+                0 -35px 70px var(--cor-maquinas),
+                0 -30px 60px var(--cor-maquinas),
+                0 -25px 50px var(--cor-maquinas),
+                0 -20px 40px var(--cor-maquinas),
+                0 -15px 30px var(--cor-maquinas),
+                0 -10px 20px var(--cor-maquinas),
+                0 -5px 10px var(--cor-maquinas),
+                0 0 5px var(--cor-maquinas);
     transition: 1s ease-in-out;
 }
 .cStatusMaquina.livre { 
-    background-color: var(--cor-executando); 
-    box-shadow: 0 -45px 90px var(--cor-executando),
-                0 -40px 80px var(--cor-executando),
-                0 -35px 70px var(--cor-executando),
-                0 -30px 60px var(--cor-executando),
-                0 -25px 50px var(--cor-executando),
-                0 -20px 40px var(--cor-executando),
-                0 -15px 30px var(--cor-executando),
-                0 -10px 20px var(--cor-executando),
-                0 -5px 10px var(--cor-executando),
-                0 0 5px var(--cor-executando);
+    --cor-maquinas: var(--cor-executando-alternativa);
 }
 .cStatusMaquina.ocupado { 
-    background-color: var(--cor-ocioso); 
-    box-shadow: 0 -45px 90px var(--cor-ocioso),
-                0 -40px 80px var(--cor-ocioso),
-                0 -35px 70px var(--cor-ocioso),
-                0 -30px 60px var(--cor-ocioso),
-                0 -25px 50px var(--cor-ocioso),
-                0 -20px 40px var(--cor-ocioso),
-                0 -15px 30px var(--cor-ocioso),
-                0 -10px 20px var(--cor-ocioso),
-                0 -5px 10px var(--cor-ocioso),
-                0 0 5px var(--cor-ocioso);
+    --cor-maquinas: var(--cor-ocioso);
 }
 .cStatusMaquina.pulse {
     animation: pulsarMaquina 1s infinite;
