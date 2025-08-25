@@ -5,7 +5,7 @@ import {adicionarListeners} from './maquinas.js';
 import {salvarEstado} from './maquinas.js';
 import {fecharTelaDeMaquinas} from './maquinas.js';
 
-var botoes = document.querySelectorAll('.button');
+var botoes = document.querySelectorAll('button');
 var botoesCards = document.querySelectorAll('.btnCard');
 var cards = document.querySelectorAll('.rectangle');
 var maquinasNaLista = document.querySelectorAll('.rectangleMaquinas');
