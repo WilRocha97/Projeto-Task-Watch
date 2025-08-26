@@ -236,7 +236,7 @@
                 0 0 10px var(--cor-loading-2);
     height: 100%;
     border-radius: 100%;
-    animation: moverBolinha 4s linear infinite;
+    animation: moverBolinha 5s linear infinite;
 }
 @keyframes moverBolinha {
     0% {
@@ -244,7 +244,12 @@
         left: 0;
         width: 0%;
     }
-    2% {
+    5% {
+        opacity: 0;
+        left: 0;
+        width: 0%;
+    }
+    10% {
         opacity: 0.2;
     }
     50% {

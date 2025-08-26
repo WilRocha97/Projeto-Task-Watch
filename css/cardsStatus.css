@@ -5,7 +5,7 @@
                 inset 1px 1px 1px var(--sombra-vidro-clara),
                 inset 1px -1px 1px var(--sombra-vidro-escura),
                 inset -1px 1px 1px var(--sombra-vidro-escura),
-                0 0 25px var(--cor-principal);
+                0 0 15px var(--cor-principal);
         border: var(--borda-card) solid var(--cor-principal);
     }
     50% {
@@ -98,7 +98,7 @@
                 inset 1px 1px 1px var(--sombra-vidro-clara),
                 inset 1px -1px 1px var(--sombra-vidro-escura),
                 inset -1px 1px 1px var(--sombra-vidro-escura),
-                0 0 25px var(--cor-principal);
+                0 0 15px var(--cor-principal);
     border: var(--borda-card) solid var(--cor-principal);
     background: linear-gradient(50deg, var(--cor-secundaria), var(--cor-primaria));
     animation: none;
