@@ -20,7 +20,8 @@
 .maisInfo.nh:hover, .maisInfo2.nh:hover {
     text-shadow: 0 0 1px white;
 }
-.maisInfo.minimizado, .maisInfo2.minimizado {
+.maisInfo.minimizado, .maisInfo2.minimizado,
+.maisInfo2.invisible2 .maisInfo  {
     padding: 0 0 4px 4px;
 }
 
