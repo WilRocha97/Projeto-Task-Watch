@@ -192,7 +192,7 @@
     align-self: center;
     height: 1px;
     margin: 1px;
-    animation: pulsar 5s infinite;
+    animation: pulsar 10s infinite;
 }
 .porcentagem.pulse .barraLoading {
     height: 1px;
@@ -236,7 +236,7 @@
                 0 0 10px var(--cor-loading-2);
     height: 100%;
     border-radius: 100%;
-    animation: moverBolinha 5s linear infinite;
+    animation: moverBolinha 10s linear infinite;
 }
 @keyframes moverBolinha {
     0% {
@@ -244,19 +244,19 @@
         left: 0;
         width: 0%;
     }
-    5% {
+    50% {
         opacity: 0;
         left: 0;
         width: 0%;
     }
-    10% {
+    25% {
         opacity: 0.2;
     }
-    50% {
+    75% {
         opacity: 0.9;
         width: 50%;
     }
-    75% {
+    80% {
         opacity: 0.5;
     }
     100% {
@@ -270,7 +270,7 @@
         width: 0;
         opacity: 0;
     }
-    10% {
+    50% {
         width: 0;
         opacity: 1;
         box-shadow: 0 0 4px var(--cor-loading-2),
@@ -281,16 +281,16 @@
                 0 0 15px var(--cor-loading-2),
                 0 0 17px var(--cor-loading-2);
     }
-    25% {
+    75% {
         box-shadow: 0 0 2px var(--cor-loading-2),
                 0 0 5px var(--cor-loading-2),
                 0 0 8px var(--cor-loading-2),
                 0 0 10px var(--cor-loading-2);
     }
-    50% {
+    80% {
         width: 100%;
     }
-    60%, 100% {
+    85%, 100% {
         opacity: 0;
     }
 }
