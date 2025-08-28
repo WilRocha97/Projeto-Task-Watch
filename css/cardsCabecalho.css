@@ -185,7 +185,8 @@
     width: 100%;
     height: 3px;
     border-radius: var(--borda-botao);
-    transition: var(--transicao-link) ease-in-out;
+    transition: padding var(--transicao-link) ease-in-out, margin var(--transicao-link) ease-in-out, 
+                width var(--transicao-link) ease-in-out, height 0.1s ease-in-out;
 }
 .porcentagem.pulse {
     background: var(--cor-loading-2);
@@ -205,7 +206,7 @@
     background: linear-gradient(50deg, var(--cor-loading-1), var(--cor-loading-2));
     border-right: var(--cor-loading-2) 3px;
     border-radius: var(--borda-botao);
-    transition: height 0.2s ease-in-out, width 0.5s ease-in-out;
+    transition: height 0.1s ease-in-out, width 0.5s ease-in-out;
 }
 .bolinhaLoading {
     position: absolute;
@@ -225,7 +226,7 @@
     height: 100%;
     width: 3px;
     border-radius: 100%;
-    transition: 0.5s ease-in-out; /* Transição suave ao aumentar */
+    transition: height 0.1s ease-in-out, width 0.5s ease-in-out, box-shadow 0.5s ease-in-out; /* Transição suave ao aumentar */
 }
 
 .bolinhaLoadingMove {
