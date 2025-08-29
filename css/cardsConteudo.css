@@ -41,6 +41,14 @@
 .resumoResultados2 {
     max-height: 242px;
 }
+#telaDadoAtual {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+#telaResumoConteudo {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
 .resumoResultados2.large {
     max-height: 342px;
 }
