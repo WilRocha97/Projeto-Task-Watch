@@ -215,22 +215,24 @@ document.addEventListener('click', (event) => {
         // verifica se o click foi no botão de fechar
         else if (target.classList.contains('botaoFechar')) {
             // Encontra o elemento pai mais próximo
-            divMae.classList.add('out')
-            divMae.classList.remove('enter')
-            setTimeout(()=> {
-                if (divMae.classList.contains('status-executando')) {
-                    setTimeout(()=> {
-                        telaTitulo.classList.add('invisible1');
-                        telaTituloFundo.classList.add('invisible1');
-                        divMae.classList.remove('out')
-                        divMae.classList.add('enter')
-                        divMae.classList.remove('collapsed')
-                    }, 10000);
-                }
-                else {
-                    telaRotinas.removeChild(divMae)
-                }
-            }, 500);
+            if (!divMae.classList.contains('collapsed')) {
+                divMae.classList.add('out')
+                divMae.classList.remove('enter')
+                setTimeout(()=> {
+                    if (divMae.classList.contains('status-executando')) {
+                        setTimeout(()=> {
+                            telaTitulo.classList.add('invisible1');
+                            telaTituloFundo.classList.add('invisible1');
+                            divMae.classList.remove('out')
+                            divMae.classList.add('enter')
+                            divMae.classList.remove('collapsed')
+                        }, 10000);
+                    }
+                    else {
+                        telaRotinas.removeChild(divMae)
+                    }
+                }, 500);
+            }
         }
         else if (target.classList.contains('maisInfo')){
             if (!target.classList.contains('invisible2')) {
