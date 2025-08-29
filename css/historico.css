@@ -130,6 +130,7 @@
     max-width: 500px;
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: row;
     transition: var(--transicao-link) ease-in-out,
                 box-shadow 1s ease-in-out,
