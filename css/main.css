@@ -171,6 +171,10 @@ input:-webkit-autofill:active{
     border-color: var(--scroll-hover) transparent transparent transparent;
 }
 
+html, body {
+    overflow-x: hidden !important;
+    min-height: 100%;
+}
 body {
     --scroll-background: var(--cor-vidro-2);
     --scroll-hover: var(--cor-destaque);
@@ -178,8 +182,7 @@ body {
     --scroll-bar-width: 6px;
     --scroll-color: #858585;
 
-    overflow-x: hidden !important;
-    min-height: 100%;
+    overflow: hidden;
     background: linear-gradient(135deg, rgba(145, 145, 145, 0.151), rgba(39, 39, 39, 0.158));
     background-color: var(--cor-fundo); /* cor base */
     color: var(--cor-texto);
