@@ -72,7 +72,7 @@
     overflow: hidden;
     -webkit-tap-highlight-color: transparent;
     outline: none;
-    transition: var(--transicao-link) ease-in-out;
+    transition: var(--transicao-link) ease-in-out, max-width 0.2s ease-in-out;
 }
 .rectangle.enter {
     max-width: 275px;
@@ -114,6 +114,7 @@
     border-radius: 12px;
     padding: 0;
     margin: 10px;
+    transition: var(--transicao-link) ease-in-out, max-height 0.2s ease-in-out;
 }
 .rectangle.collapsed #decoracao,
 .rectangle.collapsed .botaoFechar,
