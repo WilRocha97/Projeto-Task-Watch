@@ -8,11 +8,7 @@ var telaTituloFundo = document.querySelector(".fundoGradiente");
 var telaRotinas = document.getElementById('telaRotinas');
 var telaRotinasExecutando = document.getElementById('telaRotinasExecutando');
 var telaHistorico = document.getElementById('targetHistorico');
-const fundoCabecalho = document.getElementById('cabecalho');
-const menu = document.getElementById('menu');
-const telaMenu = document.querySelectorAll('.menuInvisivel');
 
-const telaMaquinas = document.getElementById('telaMaquinas');
 const telaGaleria = document.getElementById('telaGaleria');
 const telaDica = document.getElementById('telaDica');
 
