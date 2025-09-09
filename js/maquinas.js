@@ -10,8 +10,100 @@ const menuMaquinas = document.querySelector('.menuMaquinas');
 const barraAddMaquina = document.getElementById('barraAddMaquina');
 const barraPesquisaMaquina = document.getElementById('barraPesquisaMaquina');
 const limpaInputPesquisaMaquina = document.getElementById('limpaInputPesquisaMaquina');
+const limpaInputAddMaquina = document.getElementById('limpaInputAddMaquina');
 const STORAGE_KEY = "estadoMaquinas";
 
+function esperar(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function exibeMaquinas() {
+    const maquinasNaLista = document.querySelectorAll('.rectangleMaquinas');
+    for (const maquinaNaLista of maquinasNaLista) {
+        maquinaNaLista.querySelector('.cStatusMaquina').classList.remove('pulse')
+        maquinaNaLista.classList.remove('invisible7')
+        await esperar(10);
+    }
+}
+
+async function exibeMaquinaPesquisada(pesquisa, nomeDaMaquina) {
+    var nomeNovaMaquina = ''
+    if (nomeDaMaquina != '') {
+        nomeNovaMaquina = nomeDaMaquina
+    }
+    else {
+        nomeNovaMaquina = pesquisaMaquina.value;
+    } 
+    const maquinasNaLista = document.querySelectorAll('.rectangleMaquinas');
+
+    // Verificar se o id contém a frase pesquisada
+    var resultado = false;
+
+    // Converte para array e inverte
+    const maquinasInvertidas = Array.from(maquinasNaLista).reverse();
+    for (const maquinaNaLista of maquinasInvertidas) {
+        if (!maquinaNaLista.id.includes(nomeNovaMaquina)) {
+            maquinaNaLista.classList.add('invisible7')
+        }
+        else {
+            resultado = true
+        }
+        await esperar(10);
+    };
+    // aplica estilo de destaque aos cards
+    if (!resultado) {
+        if (pesquisa) {
+            pesquisaMaquina.classList.add('naoEncontrado');
+        }
+    }
+}
+
+function adicionarMaquinaNoInicio(idMaquina) {
+    // Pega o container
+    const container = document.querySelector("#listaMaquinas");
+    if (!container) return;
+
+    // Verificar se o id contém a frase pesquisada
+    const maquinasNaLista = document.querySelectorAll('.rectangleMaquinas');
+    for (const maquinaNaLista of maquinasNaLista) {
+        // console.log(card.id.includes)
+        if (maquinaNaLista.id === idMaquina) {
+            exibeMaquinaPesquisada(false, idMaquina)
+            return;
+        }
+    };
+
+    // Cria a nova div
+    const novaDiv = document.createElement("div");
+    novaDiv.id = idMaquina;
+    novaDiv.className = "rectangleMaquinas invisible7";
+    novaDiv.innerHTML = `
+        <div class="tituloContainerMaquina">
+            <div class="tituloMaquinas">${idMaquina}</div>
+            <div class="menuTelaBotoes">
+                <button id="mudarStatus" class="cmb MenuBotao cMudarStatus" title="Mudar status">Livre</button>
+                <div id="buscarMaquina" class="cmb botaoFixar botaoMaquina" title="Buscar máquina">❯</div>
+                <div id="deletarMaquina" class="btnCard botaoFechar botaoMaquina" title="Deletar dispositivo">⨉</div>
+            </div>
+        </div>
+        <textarea type="text" class="inputComentario scroll telaMensagemMaquinas"
+            placeholder="Adicionar comentário" 
+            title="Adicionar comentário"></textarea>
+        <span id="statusMaquina" class="cStatusMaquina livre"></span>
+    `;
+
+    // Insere no índice 0 (antes do primeiro filho)
+    container.insertBefore(novaDiv, container.firstChild);
+    document.getElementById(idMaquina).scrollIntoView({ behavior: "smooth", block: "start" });
+
+    novaMaquina.value= '';
+    setTimeout(()=> {
+        document.getElementById(idMaquina).classList.remove('invisible7')
+        if (isTouchDevice()) {
+            document.getElementById(idMaquina).classList.add('nh')
+        }
+    }, 100);
+}
 
 export function fecharTelaDeMaquinas() {
     if (!barraAddMaquina.classList.contains('invisible6')) {
@@ -94,58 +186,6 @@ export function adicionarListeners() {
     });
 }
 
-function adicionarMaquinaNoInicio(idMaquina) {
-    // Pega o container
-    const container = document.querySelector("#listaMaquinas");
-    if (!container) return;
-
-    const maquinasNaLista = document.querySelectorAll('.rectangleMaquinas');
-    for (const maquinaNaLista of maquinasNaLista) {
-        maquinaNaLista.querySelector('.cStatusMaquina').classList.remove('pulse');
-        maquinaNaLista.classList.remove('pulse');
-    }
-    // Verificar se o id contém a frase pesquisada
-    for (const maquinaNaLista of maquinasNaLista) {
-        // console.log(card.id.includes)
-        if (maquinaNaLista.id === idMaquina) {
-            maquinaNaLista.querySelector('.cStatusMaquina').classList.add('pulse');
-            maquinaNaLista.classList.add('pulse');
-            maquinaNaLista.scrollIntoView({ behavior: "smooth", block: "end" });
-            return;
-        }
-    };
-
-    // Cria a nova div
-    const novaDiv = document.createElement("div");
-    novaDiv.id = idMaquina;
-    novaDiv.className = "rectangleMaquinas invisible7";
-    novaDiv.innerHTML = `
-        <div class="tituloContainerMaquina">
-            <div class="tituloMaquinas">${idMaquina}</div>
-            <div class="menuTelaBotoes">
-                <button id="mudarStatus" class="cmb MenuBotao cMudarStatus" title="Mudar status">Livre</button>
-                <div id="buscarMaquina" class="cmb botaoFixar botaoMaquina" title="Buscar máquina">❯</div>
-                <div id="deletarMaquina" class="btnCard botaoFechar botaoMaquina" title="Deletar dispositivo">⨉</div>
-            </div>
-        </div>
-        <textarea type="text" class="inputComentario scroll telaMensagemMaquinas"
-            placeholder="Adicionar comentário" 
-            title="Adicionar comentário"></textarea>
-        <span id="statusMaquina" class="cStatusMaquina livre"></span>
-    `;
-
-    // Insere no índice 0 (antes do primeiro filho)
-    container.insertBefore(novaDiv, container.firstChild);
-    document.getElementById(idMaquina).scrollIntoView({ behavior: "smooth", block: "start" });
-
-    setTimeout(()=> {
-        document.getElementById(idMaquina).classList.remove('invisible7')
-        if (isTouchDevice()) {
-            document.getElementById(idMaquina).classList.add('nh')
-        }
-    }, 100);
-}
-
 // ouvinte para os cliques nos cartões
 document.addEventListener('click', (event) => {
     // Verifica se o elemento clicado ou algum de seus pais possui a classe 'rectangle'
@@ -220,7 +260,6 @@ document.addEventListener('click', (event) => {
         }
     }
 });
-
 addMaquina.addEventListener('click' , () => {
     addMaquina.classList.toggle('addMaquinaAtivada')
     barraAddMaquina.classList.toggle('invisible6')
@@ -230,54 +269,20 @@ addMaquina.addEventListener('click' , () => {
     }
 })
 
-// adiciona o evento de escutar a tecla na barra de busca dos cards
-novaMaquina.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter') {
-        const nomeNovaMaquina = novaMaquina.value;
-        adicionarMaquinaNoInicio(nomeNovaMaquina);  
-        novaMaquina.value= '';
-    }
-});
-pesquisaMaquina.addEventListener('keydown', (event) => {
-    pesquisaMaquina.classList.remove('naoEncontrado');
-    if (event.key === 'Enter') {
-        const nomeNovaMaquina = pesquisaMaquina.value;
-        const maquinasNaLista = document.querySelectorAll('.rectangleMaquinas');
-
-        for (const maquinaNaLista of maquinasNaLista) {
-            maquinaNaLista.querySelector('.cStatusMaquina').classList.remove('pulse');
-            maquinaNaLista.classList.remove('pulse');
-        };
-
-        // Verificar se o id contém a frase pesquisada
-        const resultado = [];
-        maquinasNaLista.forEach(maquinaNaLista => {
-            if (maquinaNaLista.id.includes(nomeNovaMaquina)) {
-                resultado.push(maquinaNaLista); // Adicionar a máquina correspondente no resultado
-            }
-        });
-        // aplica estilo de destaque aos cards
-        if (resultado.length > 0) {
-            resultado.forEach(maquinaNaLista => {
-                maquinaNaLista.querySelector('.cStatusMaquina').classList.add('pulse');
-                maquinaNaLista.classList.add('pulse');
-                maquinaNaLista.scrollIntoView({ behavior: "smooth", block: "end" });
-            });
-        } else {
-            pesquisaMaquina.classList.add('naoEncontrado');
-        };
-    }
-});
 // limpa busca card
 limpaInputPesquisaMaquina.addEventListener('click', ()=> {
     pesquisaMaquina.value = ''
-    const maquinasNaLista = document.querySelectorAll('.rectangleMaquinas');
-    for (const maquinaNaLista of maquinasNaLista) {
-            maquinaNaLista.querySelector('.cStatusMaquina').classList.remove('pulse')
-            maquinaNaLista.classList.remove('pulse');
-    }
+    exibeMaquinas()
 })
-
+pesquisaMaquina.addEventListener('keydown', (event) => {
+    pesquisaMaquina.classList.remove('naoEncontrado');
+    if (event.key === 'Enter') {
+        exibeMaquinaPesquisada(true, '')
+    }
+    if (event.key === 'Backspace') {
+        exibeMaquinas()
+    }
+});
 pesquisaMaquina.addEventListener('focus', (event) => {
     menuMaquinas.classList.add('menuMaquinasSuperExpandido');
     document.querySelector('.maquinasContainerFundo').classList.add('invisibleMobile');
@@ -287,6 +292,21 @@ pesquisaMaquina.addEventListener('blur', (event) => {
     document.querySelector('.maquinasContainerFundo').classList.remove('invisibleMobile');
 });
 
+limpaInputAddMaquina.addEventListener('click', ()=> {
+    novaMaquina.value = ''
+    exibeMaquinas()
+})
+// adiciona o evento de escutar a tecla na barra de busca dos cards
+novaMaquina.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        const nomeNovaMaquina = novaMaquina.value;
+
+        adicionarMaquinaNoInicio(nomeNovaMaquina, 'Livre', 'livre', '', true);
+    }
+    if (event.key === 'Backspace') {
+        exibeMaquinas()
+    }
+});
 novaMaquina.addEventListener('focus', (event) => {
     menuMaquinas.classList.add('menuMaquinasSuperExpandido');
     document.querySelector('.maquinasContainerFundo').classList.add('invisibleMobile');
