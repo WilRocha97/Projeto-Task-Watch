@@ -149,7 +149,6 @@
     transform: rotate(72deg);
 }
 .rectangle.collapsed .botaoFixado {
-    position: absolute;
     z-index: 9000;
     opacity: 1 !important;
     width: 1px;
@@ -164,7 +163,6 @@
     background: none;
 }
 .rectangle.collapsed .botaoFixar {
-    position: absolute;
     opacity: 0;
 }
 

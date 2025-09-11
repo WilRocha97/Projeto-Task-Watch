@@ -146,6 +146,36 @@ export function procurarCard(event, cardPesquisado='') {
     }
 };
 
+export function verifica_estado_card(divMae) {
+    const maisInfo = divMae.querySelector('#resumoResultados');
+    const maisInfo2 = divMae.querySelector('#resumoResultados2');
+    const erroInfo = divMae.querySelector('#erroInfo');
+
+    if (!erroInfo.classList.contains('collapsed') && !divMae.classList.contains('collapsed')) {
+            divMae.classList.add('extraLarge') 
+    }
+
+    // Controla o tamanho máximo do card para otimizar a animação de minimiza-lo
+    if (maisInfo.classList.contains('collapsed') && 
+        maisInfo2.classList.contains('collapsed') && 
+        erroInfo.classList.contains('collapsed') || 
+        divMae.classList.contains('collapsed')) 
+        {
+            divMae.classList.remove('extraLarge')
+            divMae.classList.remove('large')
+            divMae.classList.remove('medium')
+        }
+    else if (!maisInfo.classList.contains('collapsed') && maisInfo2.classList.contains('collapsed')) {
+        divMae.classList.remove('large')
+        divMae.classList.add('medium') 
+    }
+    
+    else if (maisInfo.classList.contains('collapsed') && !maisInfo2.classList.contains('collapsed') || !maisInfo.classList.contains('collapsed') && !maisInfo2.classList.contains('collapsed')) {
+        divMae.classList.remove('medium')
+        divMae.classList.add('large')  
+    }
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     sortable(telaRotinas)
     sortable(telaRotinasExecutando)
@@ -292,28 +322,6 @@ document.addEventListener('click', (event) => {
             }
         }
 
-        if (!erroInfo.classList.contains('collapsed') && !divMae.classList.contains('collapsed')) {
-            divMae.classList.add('extraLarge') 
-        }
-
-        // Controla o tamanho máximo do card para otimizar a animação de minimiza-lo
-        if (maisInfo.classList.contains('collapsed') && 
-            maisInfo2.classList.contains('collapsed') && 
-            erroInfo.classList.contains('collapsed') || 
-            divMae.classList.contains('collapsed')) 
-            {
-                divMae.classList.remove('extraLarge')
-                divMae.classList.remove('large')
-                divMae.classList.remove('medium')
-            }
-        else if (!maisInfo.classList.contains('collapsed') && maisInfo2.classList.contains('collapsed')) {
-            divMae.classList.remove('large')
-            divMae.classList.add('medium') 
-        }
-        
-        else if (maisInfo.classList.contains('collapsed') && !maisInfo2.classList.contains('collapsed') || !maisInfo.classList.contains('collapsed') && !maisInfo2.classList.contains('collapsed')) {
-            divMae.classList.remove('medium')
-            divMae.classList.add('large')  
-        }
+        verifica_estado_card(divMae)
     }
 });

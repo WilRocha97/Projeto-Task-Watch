@@ -4,6 +4,7 @@ import {restaurarEstado} from './maquinas.js';
 import {adicionarListeners} from './maquinas.js';
 import {salvarEstado} from './maquinas.js';
 import {fecharTelaDeMaquinas} from './maquinas.js';
+import {verifica_estado_card} from './cards.js';
 
 var botoes = document.querySelectorAll('button');
 var botoesCards = document.querySelectorAll('.btnCard');
@@ -307,6 +308,8 @@ encolheCard.addEventListener('click', () => {
             card.classList.remove('large');
             card.classList.remove('medium');
             card.classList.add('collapsed');
+
+            verifica_estado_card(card)
         }, 100 * index);  
     });
 });
@@ -361,6 +364,8 @@ explodeCard.addEventListener('click', () => {
             if (card.classList.contains('collapsed')) {
                 card.classList.add('large');
                 card.classList.remove('collapsed');
+
+                verifica_estado_card(card)
             }
         }, 100 * index);
     });
