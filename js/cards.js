@@ -269,7 +269,7 @@ document.addEventListener('click', (event) => {
                     maisInfo.classList.remove('collapsed')
                     telaResumoMaisInfo2.classList.remove('large')
                     maisInfo2.classList.remove('large')
-                    target.innerHTML = '▲ Execução'
+                    target.querySelector('.maisInfob').classList.add('flip')
                     if (divMae.querySelector('.maisInfo2').classList.contains('invisible2')) {
                         target.classList.remove('minimizado')
                     }
@@ -278,7 +278,7 @@ document.addEventListener('click', (event) => {
                     maisInfo.classList.add('collapsed')
                     telaResumoMaisInfo2.classList.add('large')
                     maisInfo2.classList.add('large')
-                    target.innerHTML = '▼ Execução'
+                    target.querySelector('.maisInfob').classList.remove('flip')
                     if (divMae.querySelector('.maisInfo2').classList.contains('invisible2')) {
                         target.classList.add('minimizado')
                     }
@@ -301,12 +301,12 @@ document.addEventListener('click', (event) => {
                 // minimiza a tela de ocorrências dentro do card
                 if (maisInfo2.classList.contains('collapsed')) {
                     maisInfo2.classList.remove('collapsed')
-                    target.innerHTML = '▲ Andamentos'
+                    target.querySelector('.maisInfob').classList.add('flip')
                     target.classList.remove('minimizado')
                 }
                 else {
                     maisInfo2.classList.add('collapsed')
-                    target.innerHTML = '▼ Andamentos'
+                    target.querySelector('.maisInfob').classList.remove('flip')
                     target.classList.add('minimizado')
                 }
             }

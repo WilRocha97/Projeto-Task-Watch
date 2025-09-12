@@ -1,4 +1,6 @@
 .maisInfo, .maisInfo2 {
+    display: flex;
+    flex-direction: row;
     cursor:cell;
     border: none;
     background: none;
@@ -13,6 +15,15 @@
     max-height: 500px;
     text-shadow: 0 0 1px white;
     transition: var(--transicao-link) ease-in-out;
+}
+.maisInfob {
+    margin-right: 3px;
+    position: relative;
+    top: -1px;
+    transition: var(--transicao-link) ease-in-out; 
+}
+.flip {
+    transform: rotateX(180deg);
 }
 .maisInfo:hover, .maisInfo2:hover {
     text-shadow: 0 0 5px white;
