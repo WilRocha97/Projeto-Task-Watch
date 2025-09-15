@@ -17,14 +17,24 @@
     transition: var(--transicao-link) ease-in-out;
 }
 .maisInfob {
-    margin-right: 3px;
-    position: relative;
-    top: -1px;
-    transition: var(--transicao-link) ease-in-out; 
+    border-radius: var(--borda-botao);
+    align-self: center;
+    margin: 0 6px 0 0;
+    width: 0;
+    height: 0;
+    cursor: pointer;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 7px solid #ffffff; /* triangulo apontando para baixo */
+    transition: all 0.3s ease;
 }
-.flip {
-    transform: rotateX(180deg);
+.maisInfob.flip {
+    margin: 0 9px 0 0;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #ffffff;
+    border-top: 2px solid #ffffff; /* vira uma linha */
 }
+
 .maisInfo:hover, .maisInfo2:hover {
     text-shadow: 0 0 5px white;
 }
