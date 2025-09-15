@@ -45,8 +45,8 @@ var telaTitulo = document.querySelector("#telaTitulo");
 var telaTituloFundo = document.querySelector(".fundoGradiente");
 const limpaCInputCard = document.getElementById('limpaCInputCard');
 
-const maisInfos = [{botao:'.maisInfo', nomeBotaoMini:'▼ Execução', nomeBotaoMaxi:'▲ Execução', conteudo:'.resumoResultados'}, 
-                    {botao:'.maisInfo2', nomeBotaoMini:'▼ Andamentos', nomeBotaoMaxi:'▲ Andamentos', conteudo:'.resumoResultados2'}]
+const maisInfos = [{botao:'.maisInfo', conteudo:'.resumoResultados'}, 
+                    {botao:'.maisInfo2', conteudo:'.resumoResultados2'}]
                     
 document.querySelectorAll('.bn').forEach((bolinha, index) => {
     setTimeout(()=> {
@@ -276,10 +276,9 @@ encolhe.addEventListener('click', () => {
         }
         
         maisInfos.forEach(maisInfo => {
-            const botaoMaisInfo = card.querySelector(maisInfo.botao);
             setTimeout(()=> {
                 setTimeout(()=> {
-                    botaoMaisInfo.innerHTML = maisInfo.nomeBotaoMini;
+                    card.querySelector(maisInfo.botao).querySelector('.maisInfob').classList.remove('flip')
                     card.querySelector(maisInfo.conteudo).classList.add('collapsed');
                     card.classList.remove('large') 
                 }, 100)
@@ -331,12 +330,11 @@ explode.addEventListener('click', () => {
 
         maisInfos.forEach(maisInfo => {
             if (!card.querySelector(maisInfo.botao).classList.contains('invisible2')) {
-                const botaoMaisInfo = card.querySelector(maisInfo.botao);
                 setTimeout(()=> {
                     card.classList.remove('collapsed');
                     card.classList.add('large');
                     setTimeout(()=> {
-                        botaoMaisInfo.innerHTML = maisInfo.nomeBotaoMaxi;
+                        card.querySelector(maisInfo.botao).querySelector('.maisInfob').classList.add('flip')
                         card.querySelector(maisInfo.conteudo).classList.remove('collapsed');
                     }, 100)
                 }, 100 * index);
