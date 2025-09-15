@@ -282,6 +282,8 @@ encolhe.addEventListener('click', () => {
                     card.querySelector(maisInfo.conteudo).classList.add('collapsed');
                     card.classList.remove('large') 
                 }, 100)
+
+                verifica_estado_card(card)
             }, 100 * index);
         })
     });
@@ -336,6 +338,8 @@ explode.addEventListener('click', () => {
                     setTimeout(()=> {
                         card.querySelector(maisInfo.botao).querySelector('.maisInfob').classList.add('flip')
                         card.querySelector(maisInfo.conteudo).classList.remove('collapsed');
+
+                        verifica_estado_card(card)
                     }, 100)
                 }, 100 * index);
             }
