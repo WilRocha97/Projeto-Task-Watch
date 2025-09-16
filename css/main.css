@@ -290,7 +290,7 @@ button {
                 -1px 1px 1px var(--sombra-vidro-escura);
 }
 .fundo2 {
-    padding: 7px;
+    padding: 3px 2px;
     margin: 5px 0 0 0;
     background: var(--cor-fundo-2);
     border-radius: 15px;

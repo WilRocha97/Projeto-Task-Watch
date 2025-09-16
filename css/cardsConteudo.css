@@ -76,13 +76,19 @@
 .resumoResultados.collapsed, .resumoResultados2.collapsed, .resumoErroInfo.collapsed {
     opacity: 0;
     padding: 0;
-    margin-bottom: 0;
+    margin: 0;
     max-height: 0;
     transition: var(--transicao-link) ease-in-out;
 }
-.telaDadoConteudo, .telaResumoConteudo, .telaErroInfo {
+.telaExecucaoConteudo, .telaDadoConteudo, .telaResumoConteudo, .telaErroInfo {
+    margin: 3px 6px;
+}
+.telaExecucaoConteudo, .telaDadoConteudo, .telaResumoConteudo, .telaErroInfo {
     overflow-y: auto;
     overflow-x: hidden;
+}
+.telaExecucaoConteudo {
+    overflow: hidden;
 }
 .telaDadoConteudo {
     max-height: 36px;
@@ -98,11 +104,12 @@
 #mensagemAlerta {
     max-height: 30px;
     overflow: auto;
+    margin: 0 3px;
 }
 .content {
     min-height: 10px;
     max-height: 200px;
-    padding: 3px 6px;
+    padding: 3px;
     opacity: 1;
     transition: var(--transicao-link-2) ease-in-out;
 }
