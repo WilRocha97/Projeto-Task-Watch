@@ -96,7 +96,7 @@
     left: 0;
     position: relative;
     margin-right: 4px;
-    max-width: 50px;
+    max-width: 90px;
     opacity: 1;
 }
 .rectangle:hover .tituloContainer {

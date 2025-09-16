@@ -118,14 +118,14 @@
 
 .tituloMaquinas {
     font-weight: 600;
-    font-size: 1em;
+    font-size: 0.85rem;
     white-space: nowrap
 }
 
 .telaMensagemMaquinas {
     width: 100%; 
     height: 50px;
-    font-size: 1em;
+    font-size: 0.7rem;
     padding: 0 5px;
     cursor: pointer;
     box-sizing: border-box;
@@ -185,6 +185,9 @@
         min-height: 95%;
         align-items: flex-start;
         transition: var(--transicao-link) ease-in-out;
+    }
+    .botaoMaquina {
+        margin: 10px;
     }
 }
 @media (max-width: 1255px) and (min-width: 917px) {
