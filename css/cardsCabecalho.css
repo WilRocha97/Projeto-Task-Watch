@@ -1,20 +1,22 @@
 .cabecalhoCard, .cabecalhoCardBotoes {
     display: flex;
+    text-align: center;
     flex-direction: row;
     justify-content: space-between;
 }
 .cabecalhoCard {
-    padding: 0 2px;
-    max-height: 24px;
+    margin: 5px 6px;
 }
 .cabecalhoCardBotoes {
+    gap: 0;
     justify-content: flex-start;
+    transition: var(--transicao-link) ease-in-out;
 }
 
 .dispositivo, .titulo  {
     font-weight: 600;
     font-size: 1em;
-    padding:  4px 0 5px 0;
+    text-align: center;
     opacity: 1;
     scale: 1;
     transition: var(--transicao-link) ease-in-out;
@@ -25,14 +27,13 @@
 .dispositivo {
     left: -50px;
     position: relative;
-    margin-right: 0;
     opacity: 0;
     max-width: 0;
 }
 
 .tituloContainer {
-    margin: 0 5px 0 5px;
     overflow: hidden;
+    margin-right: 10px;
 }
 .tituloWrapper {
     position: relative; /* Torna o contêiner um contexto de posicionamento */
@@ -75,7 +76,6 @@
     transition: var(--transicao-link) ease-in-out;
 }
 .botaoFechar, .botaoInfo, .botaoFixar {
-    padding: 4px 0 5px 0;
     width: 0;
     opacity: 0;
     cursor: pointer;
@@ -83,40 +83,43 @@
 .botaoFixado {
     opacity: 1;
     width: 14px;
-    padding:  4px 5px 5px 5px;
 }
 /* Mostra todo o cabeçalho no hover em telas de computador */
 .rectangle:hover .botaoFechar, 
 .rectangle:hover .botaoInfo,
-.rectangle:hover .botaoFixar {
+.rectangle:hover .botaoFixar,
+.rectangle:hover .botaoFixado{
     width: 14px;
-    padding: 4px 5px 5px 5px;
     opacity: 1;
+    /* margin-left: 4px; */
 }
 .rectangle:hover .dispositivo {
     left: 0;
     position: relative;
-    padding:  4px 5px 5px 5px;
-    margin-right: 3px;
+    margin-right: 4px;
     max-width: 50px;
     opacity: 1;
 }
 .rectangle:hover .tituloContainer {
     margin: 0 5px 0 0;
 }
+.rectangle:hover .cabecalhoCardBotoes {
+    gap: 10px;
+}
 /* --------------------------------------- */
 /* Mostra todo o cabeçalho em telas de toque */
 .rectangle.nh .botaoFechar, 
 .rectangle.status-error.nh .botaoInfo,
-.rectangle.nh .botaoFixar {
+.rectangle.nh .botaoFixar,
+.rectangle.nh .botaoFixado{
     width: 14px;
-    padding: 4px 5px 5px 5px;
+    /* padding-left: 4px; */
     opacity: 1;
 }
 .rectangle.nh .dispositivo {
     left: 0;
     position: relative;
-    padding:  4px 5px 5px 5px;
+    padding-right: 4px;
     margin-right: 3px;
     max-width: 50px;
     opacity: 1;
@@ -170,7 +173,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin: 1px 6px;
+    margin: 1px 3px;
     transition: var(--transicao-link) ease-in-out;
 }
 .porcentagem {

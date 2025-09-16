@@ -4,8 +4,8 @@
     cursor:cell;
     border: none;
     background: none;
-    margin: 8px 0 0 0;
-    padding: 0 4px;
+    margin: 5px 0 0 0;
+    padding: 0 6px;
     color: white;
     font-size: 0.75rem;
     font-weight: 600;
@@ -17,7 +17,6 @@
     transition: var(--transicao-link) ease-in-out;
 }
 .maisInfob {
-    border-radius: var(--borda-botao);
     align-self: center;
     margin: 0 6px 0 0;
     width: 0;
@@ -43,7 +42,7 @@
 }
 .maisInfo.minimizado, .maisInfo2.minimizado,
 .maisInfo2.invisible2 .maisInfo  {
-    padding: 0 0 4px 4px;
+    padding: 0 0 2px 6px;
 }
 
 .resumoResultados, .resumoResultados2, .resumoErroInfo {
@@ -98,13 +97,12 @@
 
 #mensagemAlerta {
     max-height: 30px;
-    margin: 0 3px;
     overflow: auto;
 }
 .content {
     min-height: 10px;
     max-height: 200px;
-    padding: 3px;
+    padding: 3px 6px;
     opacity: 1;
     font-size: 0.8em;
     transition: var(--transicao-link-2) ease-in-out;
@@ -140,4 +138,18 @@
 .rectangle.enter.extraLarge #decoracao {
     top: 15px;
     width: 250px;
+}
+
+@media (max-width: 916px) {
+    .maisInfo, .maisInfo2  {
+        margin: 15px 0 0 0;
+        font-size: 1.1em;
+        /* margin-left: 5px; */
+    }
+    .content {
+        font-size: 0.9em
+    }
+    .dispositivo, .tituloContainer {
+        font-size: 1.1em
+    }
 }
