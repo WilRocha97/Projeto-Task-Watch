@@ -28,7 +28,7 @@
     transition: all 0.3s ease;
 }
 .maisInfob.flip {
-    margin: 0 9px 0 0;
+    margin: 0 9px 0 3px;
     border-left: 2px solid #ffffff;
     border-right: 2px solid #ffffff;
     border-top: 2px solid #ffffff; /* vira uma linha */
