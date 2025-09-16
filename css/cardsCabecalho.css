@@ -15,7 +15,7 @@
 
 .dispositivo, .titulo  {
     font-weight: 600;
-    font-size: 1em;
+    font-size: 0.85rem;
     text-align: center;
     opacity: 1;
     scale: 1;
@@ -63,7 +63,7 @@
 
 .botaoFechar, .botaoFixar, .botaoInfo {
     font-weight: 600;
-    font-size: 0.8em;
+    font-size: 0.7rem;
     text-align: center;
     color: white;
     background: none;
@@ -91,7 +91,6 @@
 .rectangle:hover .botaoFixado{
     width: 14px;
     opacity: 1;
-    /* margin-left: 4px; */
 }
 .rectangle:hover .dispositivo {
     left: 0;
@@ -113,7 +112,6 @@
 .rectangle.nh .botaoFixar,
 .rectangle.nh .botaoFixado{
     width: 14px;
-    /* padding-left: 4px; */
     opacity: 1;
 }
 .rectangle.nh .dispositivo {

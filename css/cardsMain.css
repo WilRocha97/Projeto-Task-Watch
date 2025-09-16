@@ -159,12 +159,13 @@
     }
 
     .cabecalhoCardBotoes {
-        gap: 15px !important;
+        gap: 20px !important;
     }
     .botaoFechar, .botaoFixar, .botaoInfo {
-        font-size: 1.3em !important;
+        font-size: 1.3rem !important;
         font-weight: 100 !important;
         /* margin-left: 5px; */
+        width: 20px !important;
     }
 }
 @media (min-width: 650px) and (max-width: 720px) {

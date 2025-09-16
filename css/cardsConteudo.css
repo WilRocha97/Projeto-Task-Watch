@@ -104,7 +104,6 @@
     max-height: 200px;
     padding: 3px 6px;
     opacity: 1;
-    font-size: 0.8em;
     transition: var(--transicao-link-2) ease-in-out;
 }
 .content.vazio, #mensagemAlerta.vazio {
@@ -143,13 +142,16 @@
 @media (max-width: 916px) {
     .maisInfo, .maisInfo2  {
         margin: 15px 0 0 0;
-        font-size: 1.1em;
-        /* margin-left: 5px; */
+        font-size: 1rem;
+    }
+    .maisInfo.minimizado, .maisInfo2.minimizado, .maisInfo2.invisible2 .maisInfo {
+        padding: 0 0 6px 6px;
     }
     .content {
-        font-size: 0.9em
+        font-size: 0.9rem;
+        padding: 5px 6px;
     }
-    .dispositivo, .tituloContainer {
-        font-size: 1.1em
+    .dispositivo, .titulo, .tituloContainer {
+        font-size: 1.1rem !important;
     }
 }

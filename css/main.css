@@ -194,7 +194,7 @@ body {
     flex-direction: column;
     font-family: "Rubik", sans-serif;
     font-weight: 400;
-    font-size: 0.9em;
+    font-size: 0.7em;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     transition: background-color 1s ease-in-out;
@@ -258,6 +258,7 @@ button {
     padding: 0 !important;
     margin: 0 !important;
     max-height: 0 !important;
+    cursor: default !important;
 }
 
 .fundo, .fundoInvertido {
@@ -551,7 +552,7 @@ button.clicked, .MenuBotao.clicked {
 
 
 @media (hover: none) {
-    .MenuBotao:hover, .paginaHistorico button:hover {
+    .MenuBotao:hover, .MenuBotaoActive:hover, .MenuBotaoDesactive:hover, .paginaHistorico button:hover {
         background: none;
     }
 }
