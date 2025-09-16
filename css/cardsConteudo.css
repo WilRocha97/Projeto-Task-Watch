@@ -161,4 +161,7 @@
     .dispositivo, .titulo, .tituloContainer {
         font-size: 1.1rem !important;
     }
+    #mensagemAlerta {
+        margin: 0;
+    }
 }

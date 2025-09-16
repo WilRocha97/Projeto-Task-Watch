@@ -231,6 +231,7 @@ button {
     padding: 0 !important;
     margin: 0 !important;
     max-width: 0 !important;
+    height: 0 !important;
     cursor: default !important;
 }
 .invisible4 {

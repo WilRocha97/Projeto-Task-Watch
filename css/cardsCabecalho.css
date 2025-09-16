@@ -295,4 +295,7 @@
         left: 70%;
         top: 29%;
     }
+    .progresso {
+        margin: 10px 3px 0 3px;
+    }
 }
