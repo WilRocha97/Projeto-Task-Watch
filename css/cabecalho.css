@@ -46,7 +46,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 0.9em;
     margin: 2px;
     width: 100%;
     padding: 8px;
@@ -346,7 +345,7 @@
 /* Telas compartilhadas */
 .dicaTela,
 .galeriaTela {
-    font-size: 0.9em;
+    font-size: 0.75rem;
     overflow: hidden;
     opacity: 1;
     align-self: center;
