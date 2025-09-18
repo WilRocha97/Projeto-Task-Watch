@@ -70,7 +70,6 @@ if (isTouchDevice()) {
     maquinasNaLista.forEach((botao)=> {
         botao.classList.add('nh')
     });
-    
 }
 
 export function animacaoBotao(target) {

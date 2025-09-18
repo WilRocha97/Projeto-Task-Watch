@@ -88,10 +88,10 @@
     max-width: 583px !important; 
 }
 .rectangle.enter.large {
-    max-height: 470px;
+    max-height: 500px;
 }
 .rectangle.enter.medium {
-    max-height: 240px;
+    max-height: 270px;
 }
 .rectangle.out {
     max-width: 0 !important;
