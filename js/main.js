@@ -40,7 +40,6 @@ const barraPesquisaMaquina = document.getElementById('barraPesquisaMaquina');
 
 var mainHistorico = document.getElementById('targetHistorico');
 var cInputCard = document.getElementById('searchInputCard');
-const buscaCInputCard = document.getElementById('buscaCInputCard');
 var telaTitulo = document.querySelector("#telaTitulo");
 var telaTituloFundo = document.querySelector(".fundoGradiente");
 const limpaCInputCard = document.getElementById('limpaCInputCard');
@@ -247,9 +246,6 @@ cInputCard.addEventListener('focus', (event) => {
 cInputCard.addEventListener('blur', (event) => {
     fundoCabecalho.classList.remove('cabecalhoSuperExpandido')
 });
-buscaCInputCard.addEventListener('click', ()=> {
-    procurarCard({key: 'Enter'})
-})
 
 cartoesFixados.addEventListener('click', () => { 
     cartoesFixados.classList.toggle('active')

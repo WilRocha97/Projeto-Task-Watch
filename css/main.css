@@ -292,7 +292,7 @@ button {
 }
 .fundo2 {
     padding: 3px 2px;
-    margin: 5px 0 0 0;
+    margin: 2px 0 0 0;
     background: var(--cor-fundo-2);
     border-radius: 15px;
     box-shadow: inset -1px -1px 1px var(--sombra-vidro-card-clara),
@@ -353,9 +353,6 @@ button {
     width: 100%;
     margin: 2.3px;
     height: 30px;
-}
-#buscaCInputCard {
-    width: 110px;
 }
 
 .inputComentario {
