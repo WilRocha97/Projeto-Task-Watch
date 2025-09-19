@@ -3,6 +3,7 @@ import {isTouchDevice} from './main.js';
 
 const fundoCabecalho = document.getElementById('cabecalho');
 
+const botaoOrdenarTelaMaquinas = document.getElementById("ordenarMaquinas")
 const botaoFixarTelaMaquinas = document.getElementById('fixarTelaMaquinas');
 const addMaquina = document.getElementById('adMaquina');
 const novaMaquina = document.getElementById('inputAddMaquina');
@@ -114,7 +115,6 @@ export function fecharTelaDeMaquinas() {
             addMaquina.classList.toggle('addMaquinaAtivada');
         }
         pesquisaMaquina.value = ''
-        telaMaquinas.classList.add('invisible5');
         fundoCabecalho.classList.remove('cabecalhoMegaExpandido');
     }
 }
@@ -189,6 +189,40 @@ export function adicionarListeners() {
     });
 }
 
+let ordenado = false;
+var maquinas = ''
+var lista = ''
+botaoOrdenarTelaMaquinas.addEventListener("click", () => {
+    botaoOrdenarTelaMaquinas.classList.toggle('addMaquinaAtivada')
+    if (!ordenado) {
+        lista = document.getElementById("listaMaquinas");
+        maquinas = Array.from(lista.children); // salva a ordem original
+        ordenado = false;
+
+        // Ordenar -> "livre" no topo
+        const livres = [];
+        const outros = [];
+        
+        maquinas.forEach(maquina => {
+            const status = maquina.querySelector(".cStatusMaquina");
+            if (status && status.classList.contains("livre")) {
+                livres.push(maquina);
+            } else {
+                outros.push(maquina);
+            }
+        });
+
+        // limpa e remonta a lista
+        lista.innerHTML = "";
+        [...livres, ...outros].forEach(m => lista.appendChild(m));
+        ordenado = true;
+    } else {
+        // Voltar à ordem original
+        lista.innerHTML = "";
+        maquinas.forEach(m => lista.appendChild(m));
+        ordenado = false;
+    }
+});
 botaoFixarTelaMaquinas.addEventListener('click', ()=> {
     botaoFixarTelaMaquinas.classList.toggle('active')
     document.querySelector('body').classList.toggle('mf');
@@ -279,7 +313,6 @@ addMaquina.addEventListener('click' , () => {
         novaMaquina.focus()
     }
 })
-
 // limpa busca card
 limpaInputPesquisaMaquina.addEventListener('click', ()=> {
     pesquisaMaquina.value = ''
@@ -302,7 +335,6 @@ pesquisaMaquina.addEventListener('blur', (event) => {
     menuMaquinas.classList.remove('menuMaquinasSuperExpandido');
     document.querySelector('.maquinasContainerFundo').classList.remove('invisibleMobile');
 });
-
 limpaInputAddMaquina.addEventListener('click', ()=> {
     novaMaquina.value = ''
     exibeMaquinas()
