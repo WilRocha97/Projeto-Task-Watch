@@ -204,6 +204,10 @@ body {
 .paragrafo {
     margin: 13px 7.3px;
 }
+h1 {
+    font-weight: 500;
+    font-size: var(--tamanho-texto-2);
+}
 button {
     -webkit-tap-highlight-color: transparent;
     outline: none;
