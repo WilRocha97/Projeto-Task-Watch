@@ -44,8 +44,6 @@
     position: fixed;
     display: flex;
     flex-direction: row;
-    max-width: 80%;
-    width: 100%;
     margin: 5px 12px;
     align-items: center;
     transition: var(--transicao-link) ease-in-out;
@@ -182,6 +180,16 @@
     .maquinasContainerFundo {
         height: 80%;
         margin-top: 0;
+    }
+    #fixarTelaMaquinas {
+        opacity: 0;
+        max-width: 0;
+        max-height: 0;
+        min-height: 0;
+        max-width: 0;
+        position: fixed;
+        top: -1000px;
+        cursor: default;
     }
     .maquinasTela {
         width: 80vw;
