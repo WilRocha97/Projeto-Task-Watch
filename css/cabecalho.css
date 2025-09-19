@@ -415,7 +415,7 @@
     width: 80vw;
     height: auto;
     justify-self: center;
-    margin: 10vh 10px;
+    margin: 10vh 10px 0;
     border-radius: var(--borda-botao);
     display: flex;
     justify-content: center;
