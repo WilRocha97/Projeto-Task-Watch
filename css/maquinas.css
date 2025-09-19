@@ -206,6 +206,7 @@
     }
     .mf {
         margin-left: 30vw;
+        width: 70vw !important;
     }
     .maquinasContainerFundo {
         margin-top: 30%;
