@@ -401,8 +401,11 @@ button {
     padding: 0 10px;
 }
 .MenuBotao, .MenuBotaoActive, .MenuBotaoDesactive, .paginaHistorico button {
-    height: 30px;
+    max-height: 30px;
+    min-height: 30px;
     min-width: 30px;
+    max-width: 500px;
+    opacity: 1;
 }
 .MenuBotao, .MenuBotaoInterno, .MenuBotaoActive, .MenuBotaoDesactive, .paginaHistorico button {
     overflow: hidden;
@@ -415,12 +418,14 @@ button {
     background: none;
     border-radius: var(--borda-botao);
     margin: 2.3px;
-    padding-bottom: 3px;
     cursor: pointer;
     color: var(--cor-texto);
     font-size: var(--tamanho-texto-2);
     font-weight: bold;
     transition: var(--transicao-link) ease-in-out, color 1s ease-in-out;
+}
+.MenuBotaoActive, .MenuBotaoDesactive {
+   padding-bottom: 3px;
 }
 .MenuBotao:hover, .MenuBotaoInterno:hover, .MenuBotaoActive:hover, .MenuBotaoDesactive:hover, .paginaHistorico button:hover {
     background: var(--sombra-2);

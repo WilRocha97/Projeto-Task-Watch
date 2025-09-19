@@ -231,7 +231,6 @@ botaoFixarTelaMaquinas.addEventListener('click', ()=> {
 
     document.getElementById('fecharMaquinas').classList.toggle('invisible2');
     document.getElementById('maquinas').classList.toggle('invisible2');
-
 })
 // ouvinte para os cliques nos cartões
 document.addEventListener('click', (event) => {
