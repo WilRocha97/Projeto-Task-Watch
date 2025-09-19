@@ -190,6 +190,7 @@ export function adicionarListeners() {
 }
 
 botaoFixarTelaMaquinas.addEventListener('click', ()=> {
+    botaoFixarTelaMaquinas.classList.toggle('active')
     document.getElementById('cabecalho').classList.toggle('mf');
     document.getElementById('layoutTela').classList.toggle('mf');
     document.querySelector('.rodape').classList.toggle('mf');

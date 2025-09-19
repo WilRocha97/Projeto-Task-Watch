@@ -409,6 +409,7 @@ button {
     background: none;
     border-radius: var(--borda-botao);
     margin: 2.3px;
+    padding-bottom: 3px;
     cursor: pointer;
     color: var(--cor-texto);
     font-size: var(--tamanho-texto-2);

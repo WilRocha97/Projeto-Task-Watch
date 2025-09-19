@@ -198,7 +198,8 @@
                 inset 0 4px 25px var(--animacao-bota-4),
                 inset 0 -4px 25px var(--animacao-bota-2);
 }
-#controlarFixados.active {
+#controlarFixados.active,
+#fixarTelaMaquinas.active {
     transform: rotate(-72deg)
 }
 
