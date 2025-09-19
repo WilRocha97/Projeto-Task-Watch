@@ -107,7 +107,7 @@ function adicionarMaquinaNoInicio(idMaquina) {
 }
 
 export function fecharTelaDeMaquinas() {
-    if (!document.getElementById('layoutTela').classList.contains('mf')) {
+    if (!document.querySelector('body').classList.contains('mf')) {
         if (!barraAddMaquina.classList.contains('invisible6')) {
             barraAddMaquina.classList.add('invisible6');
             barraPesquisaMaquina.classList.remove('invisible6');
@@ -191,9 +191,7 @@ export function adicionarListeners() {
 
 botaoFixarTelaMaquinas.addEventListener('click', ()=> {
     botaoFixarTelaMaquinas.classList.toggle('active')
-    document.getElementById('cabecalho').classList.toggle('mf');
-    document.getElementById('layoutTela').classList.toggle('mf');
-    document.querySelector('.rodape').classList.toggle('mf');
+    document.querySelector('body').classList.toggle('mf');
 
     document.getElementById('fecharMaquinas').classList.toggle('invisible2');
     document.getElementById('maquinas').classList.toggle('invisible2');

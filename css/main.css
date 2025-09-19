@@ -176,6 +176,8 @@ input:-webkit-autofill:active{
 html, body {
     overflow-x: hidden !important;
     min-height: 100%;
+    width: 100vw;
+    margin: 0;
 }
 body {
     --scroll-background: var(--cor-vidro-2);
@@ -197,7 +199,7 @@ body {
     font-size: 0.7em;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    transition: background-color 1s ease-in-out;
+    transition: background-color 1s ease-in-out, margin 1s ease-in-out ,width 1s ease-in-out;
 }
 .paragrafo {
     margin: 13px 7.3px;
