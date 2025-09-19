@@ -270,18 +270,14 @@ document.addEventListener('click', (event) => {
                     telaResumoMaisInfo2.classList.remove('large')
                     maisInfo2.classList.remove('large')
                     target.querySelector('.maisInfob').classList.add('flip')
-                    if (divMae.querySelector('.maisInfo2').classList.contains('invisible2')) {
-                        target.classList.remove('minimizado')
-                    }
+                    target.classList.remove('minimizado')
                 }
                 else {
                     maisInfo.classList.add('collapsed')
                     telaResumoMaisInfo2.classList.add('large')
                     maisInfo2.classList.add('large')
                     target.querySelector('.maisInfob').classList.remove('flip')
-                    if (divMae.querySelector('.maisInfo2').classList.contains('invisible2')) {
-                        target.classList.add('minimizado')
-                    }
+                    target.classList.add('minimizado')
                 }
             }
         }
