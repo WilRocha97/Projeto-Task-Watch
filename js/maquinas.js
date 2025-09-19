@@ -3,7 +3,8 @@ import {isTouchDevice} from './main.js';
 
 const fundoCabecalho = document.getElementById('cabecalho');
 
-const botaoOrdenarTelaMaquinas = document.getElementById("ordenarMaquinas")
+const telaMaquinas = document.getElementById('telaMaquinas');
+const botaoOrdenarTelaMaquinas = document.getElementById("ordenarMaquinas");
 const botaoFixarTelaMaquinas = document.getElementById('fixarTelaMaquinas');
 const addMaquina = document.getElementById('adMaquina');
 const novaMaquina = document.getElementById('inputAddMaquina');
@@ -115,6 +116,7 @@ export function fecharTelaDeMaquinas() {
             addMaquina.classList.toggle('addMaquinaAtivada');
         }
         pesquisaMaquina.value = ''
+        telaMaquinas.classList.add('invisible5');
         fundoCabecalho.classList.remove('cabecalhoMegaExpandido');
     }
 }
