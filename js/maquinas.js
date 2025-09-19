@@ -3,6 +3,7 @@ import {isTouchDevice} from './main.js';
 
 const fundoCabecalho = document.getElementById('cabecalho');
 
+const botaoFixarTelaMaquinas = document.getElementById('fixarTelaMaquinas');
 const addMaquina = document.getElementById('adMaquina');
 const novaMaquina = document.getElementById('inputAddMaquina');
 const pesquisaMaquina = document.getElementById('inputPesquisaMaquina');
@@ -106,14 +107,16 @@ function adicionarMaquinaNoInicio(idMaquina) {
 }
 
 export function fecharTelaDeMaquinas() {
-    if (!barraAddMaquina.classList.contains('invisible6')) {
-        barraAddMaquina.classList.add('invisible6');
-        barraPesquisaMaquina.classList.remove('invisible6');
-        addMaquina.classList.toggle('addMaquinaAtivada');
+    if (!document.getElementById('layoutTela').classList.contains('mf')) {
+        if (!barraAddMaquina.classList.contains('invisible6')) {
+            barraAddMaquina.classList.add('invisible6');
+            barraPesquisaMaquina.classList.remove('invisible6');
+            addMaquina.classList.toggle('addMaquinaAtivada');
+        }
+        pesquisaMaquina.value = ''
+        telaMaquinas.classList.add('invisible5');
+        fundoCabecalho.classList.remove('cabecalhoMegaExpandido');
     }
-    pesquisaMaquina.value = ''
-    telaMaquinas.classList.add('invisible5');
-    fundoCabecalho.classList.remove('cabecalhoMegaExpandido');
 }
 
 export function salvarEstado() {
@@ -186,6 +189,15 @@ export function adicionarListeners() {
     });
 }
 
+botaoFixarTelaMaquinas.addEventListener('click', ()=> {
+    document.getElementById('cabecalho').classList.toggle('mf');
+    document.getElementById('layoutTela').classList.toggle('mf');
+    document.querySelector('.rodape').classList.toggle('mf');
+
+    document.getElementById('fecharMaquinas').classList.toggle('invisible2');
+    document.getElementById('maquinas').classList.toggle('invisible2');
+
+})
 // ouvinte para os cliques nos cartões
 document.addEventListener('click', (event) => {
     // Verifica se o elemento clicado ou algum de seus pais possui a classe 'rectangle'

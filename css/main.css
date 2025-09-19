@@ -223,6 +223,8 @@ button {
     margin: 0 !important;
     max-width: 0 !important;
     max-height: 0 !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
     cursor: default !important;
     z-index: -999;
 }
@@ -306,12 +308,18 @@ button {
     transition: background-color var(--transicao-link) ease-in-out;
 }
 
+.mf {
+    margin-left: 20vw;
+    width: fit-content !important;
+}
+
 .layout {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     width: 100%;
     min-height: 90vh;
+    transition: var(--transicao-link);
 }
 .telaRotinas {
     display: flex;

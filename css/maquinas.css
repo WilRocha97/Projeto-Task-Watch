@@ -4,10 +4,13 @@
     left: 0;
     z-index: 1;
     opacity: 1;
-    width: 22vw;
+    width: 20vw;
+    margin: 0;
     border-radius: 0;
     height: 100%;
+    min-height: 0;
     transition: var(--transicao-link) ease-in-out,
+                min-heigt 1s ease-in-out,
                 background-color 1s ease-in-out,
                 box-shadow 1s ease-in-out;
 }
@@ -17,8 +20,9 @@
 }
 
 .cabecalhoMenuMaquinas {
-    display: block;
+    display: flex;
     height: 3%;
+    justify-content: center;
 }
 .maquinasContainerFundo {
     position: fixed;
@@ -41,7 +45,6 @@
     display: flex;
     flex-direction: row;
     max-width: 80%;
-    min-height: 10%;
     width: 100%;
     margin: 5px 12px;
     align-items: center;
@@ -153,21 +156,25 @@
 }
 
 @media (min-width: 1650px) {
-    .cabecalhoMenuMaquinas {
-        height: 1%;
-    }
     .menuMaquinas {
         min-height: 5%;
     }
-    .maquinasContainerFundo {
-        height: 93%;
-        max-height: 93%;
-        margin-top: 12%;
+    .maquinasTela {
+        width: 20vw;
+    }
+}
+@media (min-width: 2500px) {
+    .menuMaquinas {
+        min-height: 5%;
+    }
+    .maquinasTela {
+        width: 10vw;
     }
 }
 @media (max-width: 916px) {
     .cabecalhoMenuMaquinas {
         height: 1%;
+        opacity: 0;
     }
     .menuMaquinas {
         bottom: 80px;
@@ -192,7 +199,16 @@
 }
 @media (max-width: 1255px) and (min-width: 917px) {
     .maquinasTela {
-        width: 40vw;
+        width: 30vw;
+    }
+    .menuMaquinas {
+        min-height: 10%;
+    }
+    .mf {
+        margin-left: 30vw;
+    }
+    .maquinasContainerFundo {
+        margin-top: 30%;
     }
 }
 @media (max-height: 930px) and (max-width: 916px) {
