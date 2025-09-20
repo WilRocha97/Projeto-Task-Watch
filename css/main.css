@@ -602,3 +602,10 @@ button.clicked, .MenuBotao.clicked {
         width: fit-content;
     }
 }
+
+@media (min-width: 2500px) {
+    .mf {
+        margin-left: 10vw;
+        width: 90vw !important;
+    }
+}
