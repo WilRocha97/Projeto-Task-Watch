@@ -185,22 +185,23 @@
 /* Controle de fixados */
 #controlarFixados {
     align-self: center;
-    opacity: 0.3;
     box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0);
     transition: 1s ease-in-out;
 }
 
 #controlarFixados.active,
+#fixarTelaMaquinas.active,
 .paginaHistorico button:disabled {
-    opacity: 1;
-    box-shadow: 4px 0 2px var(--animacao-opaca-bota-1),
-                -4px 0 2px var(--animacao-opaca-bota-3),
-                0 4px 2px var(--animacao-opaca-bota-4),
-                0 -4px 2px var(--animacao-opaca-bota-2),
-                inset 4px 0 15px var(--animacao-bota-1),
-                inset -4px 0 15px var(--animacao-bota-3),
-                inset 0 4px 25px var(--animacao-bota-4),
-                inset 0 -4px 25px var(--animacao-bota-2);
+    text-shadow: 4px 0 5px var(--animacao-opaca-bota-1),
+                 4px 0 10px var(--animacao-bota-1),
+                -4px 0 5px var(--animacao-opaca-bota-3),
+                -4px 0 10px var(--animacao-bota-3),
+                0 -4px 5px var(--animacao-opaca-bota-2),
+                0 -4px 10px var(--animacao-bota-2),
+                0 4px 5px var(--animacao-opaca-bota-4),
+                0 4px 10px var(--animacao-bota-4);
+                
+                
 }
 #controlarFixados.active,
 #fixarTelaMaquinas.active {

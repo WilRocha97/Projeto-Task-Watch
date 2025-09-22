@@ -27,13 +27,13 @@
     --filter: blur(10px) opacity(50%) saturate(200%);
 
     --animacao-bota-1: #1f64b8;
-    --animacao-bota-2: #b4a51e;
-    --animacao-bota-3: #a52158;
-    --animacao-bota-4: #2fc974;
+    --animacao-bota-2: #2fc974;
+    --animacao-bota-3: #b4a51e;
+    --animacao-bota-4: #a52158;
     --animacao-opaca-bota-1: #1f64b838;
-    --animacao-opaca-bota-2: #b4a51e2d;
-    --animacao-opaca-bota-3: #a521582d;
-    --animacao-opaca-bota-4: #2fc97427;
+    --animacao-opaca-bota-2: #2fc97427;
+    --animacao-opaca-bota-3: #b4a51e2d;
+    --animacao-opaca-bota-4: #a521582d;
     
     --cor-executando: #00cf91;
     --cor-erro: #ff0000;
@@ -67,13 +67,13 @@
     --filter: blur(10px) invert(100%);
 
     --animacao-bota-1: #4b9bfd;
-    --animacao-bota-2: #ffd448;
-    --animacao-bota-3: #ff5fa2;
-    --animacao-bota-4: #51fc9e;
+    --animacao-bota-2: #51fc9e;
+    --animacao-bota-3: #ffd448;
+    --animacao-bota-4: #ff5fa2;
     --animacao-opaca-bota-1: #4b9bfd1c;
-    --animacao-opaca-bota-2: #ffd44825;
-    --animacao-opaca-bota-3: #ff5fa21f;
-    --animacao-opaca-bota-4: #51fc9e2f;
+    --animacao-opaca-bota-2: #51fc9e2f;
+    --animacao-opaca-bota-3: #ffd44825;
+    --animacao-opaca-bota-4: #ff5fa21f;
 
     --cor-executando: #00be85;
     --cor-erro: #ff0000;
@@ -476,6 +476,14 @@ button {
                     inset 0 0 0 #ffffff00,
                     inset 0 0 0 #ffffff00,
                     inset 0 0 0 #ffffff00;
+        text-shadow: 0 0 0 #ffffff00,
+                     0 0 0 #ffffff00,
+                     0 0 0 #ffffff00,
+                     0 0 0 #ffffff00,
+                     0 0 0 #ffffff00,
+                     0 0 0 #ffffff00,
+                     0 0 0 #ffffff00,
+                     0 0 0 #ffffff00;
     }
     40% {
         box-shadow: 4px 0 2px var(--animacao-opaca-bota-4),
@@ -486,28 +494,44 @@ button {
                     inset -4px 0 15px var(--animacao-bota-2),
                     inset 0 4px 25px var(--animacao-bota-1),
                     inset 0 -4px 25px var(--animacao-bota-3);
+        text-shadow: 4px 0 5px var(--animacao-opaca-bota-1),
+                     4px 0 10px var(--animacao-bota-1),
+                     -4px 0 5px var(--animacao-opaca-bota-3),
+                     -4px 0 10px var(--animacao-bota-3),
+                     0 -4px 5px var(--animacao-opaca-bota-2),
+                     0 -4px 10px var(--animacao-bota-2)
+                     0 4px 5px var(--animacao-opaca-bota-4),
+                     0 4px 10px var(--animacao-bota-4);
     }
     100% {
-        box-shadow: 4px 0 2px var(--animacao-opaca-bota-1),
-                    -4px 0 2px var(--animacao-opaca-bota-3),
-                    0 4px 2px var(--animacao-opaca-bota-4),
-                    0 -4px 2px var(--animacao-opaca-bota-2),
-                    inset 4px 0 15px var(--animacao-bota-1),
-                    inset -4px 0 15px var(--animacao-bota-3),
-                    inset 0 4px 25px var(--animacao-bota-4),
-                    inset 0 -4px 25px var(--animacao-bota-2);
+        box-shadow: 0 0 0 #ffffff00,
+                    0 0 0 #ffffff00,
+                    0 0 0 #ffffff00,
+                    0 0 0 #ffffff00,
+                    inset 0 0 0 #ffffff00,
+                    inset 0 0 0 #ffffff00,
+                    inset 0 0 0 #ffffff00,
+                    inset 0 0 0 #ffffff00;
     }
 }
 @keyframes luzMenuDesactive {
     0% {
-        box-shadow: 4px 0 2px var(--animacao-opaca-bota-1),
-                    -4px 0 2px var(--animacao-opaca-bota-3),
-                    0 4px 2px var(--animacao-opaca-bota-4),
-                    0 -4px 2px var(--animacao-opaca-bota-2),
-                    inset 4px 0 15px var(--animacao-bota-1),
-                    inset -4px 0 15px var(--animacao-bota-3),
-                    inset 0 4px 25px var(--animacao-bota-4),
-                    inset 0 -4px 25px var(--animacao-bota-2);
+        box-shadow: 0 0 0 #ffffff00,
+                    0 0 0 #ffffff00,
+                    0 0 0 #ffffff00,
+                    0 0 0 #ffffff00,
+                    inset 0 0 0 #ffffff00,
+                    inset 0 0 0 #ffffff00,
+                    inset 0 0 0 #ffffff00,
+                    inset 0 0 0 #ffffff00;
+        text-shadow: 4px 0 5px var(--animacao-opaca-bota-1),
+                     4px 0 10px var(--animacao-bota-1),
+                     -4px 0 5px var(--animacao-opaca-bota-3),
+                     -4px 0 10px var(--animacao-bota-3),
+                     0 -4px 5px var(--animacao-opaca-bota-2),
+                     0 -4px 10px var(--animacao-bota-2),
+                     0 4px 5px var(--animacao-opaca-bota-4),
+                     0 4px 10px var(--animacao-bota-4);
     }
     40% {
         box-shadow: 4px 0 2px var(--animacao-opaca-bota-4),
@@ -528,6 +552,14 @@ button {
                     inset 0 0 0 #ffffff00,
                     inset 0 0 0 #ffffff00,
                     inset 0 0 0 #ffffff00;
+        text-shadow: 0 0 0 #ffffff00,
+                     0 0 0 #ffffff00,
+                     0 0 0 #ffffff00,
+                     0 0 0 #ffffff00,
+                     0 0 0 #ffffff00,
+                     0 0 0 #ffffff00,
+                     0 0 0 #ffffff00,
+                     0 0 0 #ffffff00;
     }
 }
 button.clicked, .MenuBotao.clicked {
