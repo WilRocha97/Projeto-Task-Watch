@@ -302,7 +302,7 @@ button {
     padding: 3px 2px;
     margin: 2px 0 0 0;
     background: var(--cor-fundo-2);
-    border-radius: 15px;
+    border-radius: calc(var(--borda-botao) - 5px);
     box-shadow: inset -1px -1px 1px var(--sombra-vidro-card-clara),
                 inset 1px 1px 1px var(--sombra-vidro-card-clara),
                 inset 1px -1px 1px var(--sombra-vidro-card-escura),
@@ -366,6 +366,7 @@ button {
     align-items: center;
     width: 100%;
     margin: 2.3px;
+    border-radius: calc(var(--borda-botao) - 2.3px);
     height: 30px;
 }
 
@@ -602,7 +603,6 @@ button.clicked, .MenuBotao.clicked {
         width: fit-content;
     }
 }
-
 @media (min-width: 2500px) {
     .mf {
         margin-left: 10vw;

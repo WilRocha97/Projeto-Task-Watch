@@ -160,7 +160,7 @@
 }
 
 .telaHistoricoConteudo {
-    border-radius: 10px;
+    border-radius: calc(var(--borda-botao) - 8px);
     max-height: 67vh;
     overflow-y: auto;
     overflow-x: hidden;
@@ -181,7 +181,7 @@
     align-content: center;
     min-height: 10px;
     padding: 10px;
-    border-radius: var(--borda-botao);
+    border-radius: calc(var(--borda-botao) - 8px);
     opacity: 1;
     transition: var(--transicao-link) ease-in-out,
                 color 1s ease-in-out;

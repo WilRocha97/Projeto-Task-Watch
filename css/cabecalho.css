@@ -500,6 +500,7 @@
         flex-wrap: wrap;
         margin: 5px;
         padding: 3px;
+        min-height: 47px;
     }
     .MenuBotaoInterno {
         height: 44px;
