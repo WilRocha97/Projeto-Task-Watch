@@ -622,6 +622,11 @@ button.clicked, .MenuBotao.clicked {
     .rodape {
         margin-bottom: 100px;
     }
+    .MenuBotao, .MenuBotaoActive, .MenuBotaoDesactive, .paginaHistorico button {
+        max-height: 47px;
+        min-height: 47px;
+        min-width: 47px;
+    }
 }  
 @media (max-width: 1255px) {
     .invisible3 {
