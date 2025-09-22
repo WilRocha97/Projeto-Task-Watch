@@ -91,6 +91,7 @@
     justify-content: center;
 }
 .notificacao {
+    z-index: -999;
     position: fixed;
     bottom: 20%;
     width: 50%;
@@ -118,15 +119,18 @@
 
 .bolinhaErro { 
     background-color: var(--cor-erro); 
-    box-shadow: 0 0 5px var(--cor-erro);
+    box-shadow: 0 0 10px var(--cor-erro),
+                0 -10px 20px var(--cor-erro);
 }
 .bolinhaOcioso { 
     background-color: var(--cor-ocioso); 
-    box-shadow: 0 0 5px var(--cor-ocioso);
+    box-shadow: 0 0 10px var(--cor-ocioso),
+                0 -10px 20px var(--cor-ocioso);
 }
 .bolinhaFinal { 
     background-color: var(--cor-final); 
-    box-shadow: 0 0 5px var(--cor-final); 
+    box-shadow: 0 0 10px var(--cor-final),
+                0 -10px 20px var(--cor-final); 
 }
 
 /* =============================================================================

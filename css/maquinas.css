@@ -133,6 +133,7 @@
     resize: none;          /* impede redimensionamento manual */
     overflow-y: auto;      /* ativa scroll vertical quando passar do max-height */
     word-wrap: break-word; /* quebra automática das palavras */
+    transition: var(--transicao-link);
 }
 
 .modalConfirma {

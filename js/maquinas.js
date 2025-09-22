@@ -227,10 +227,10 @@ botaoOrdenarTelaMaquinas.addEventListener("click", () => {
                 maquinas.forEach(m => lista.appendChild(m));
                 ordenado = false;
             }
-    }, 200);
+    }, 300);
     setTimeout(()=> {
         document.querySelector('.maquinasContainerFundo').classList.remove('invisible1')
-    }, 400);
+    }, 600);
 });
 botaoFixarTelaMaquinas.addEventListener('click', ()=> {
     botaoFixarTelaMaquinas.classList.toggle('active')
