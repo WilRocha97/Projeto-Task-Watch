@@ -6,6 +6,7 @@
 }
 .cabecalhoCard {
     margin: 5px 6px;
+    max-height: 15px;
 }
 .cabecalhoCardBotoes {
     gap: 0;
