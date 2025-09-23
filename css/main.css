@@ -428,8 +428,26 @@ button {
 .MenuBotaoActive, .MenuBotaoDesactive {
    padding-bottom: 3px;
 }
-.MenuBotao:hover, .MenuBotaoInterno:hover, .MenuBotaoActive:hover, .MenuBotaoDesactive:hover, .paginaHistorico button:hover {
-    background: var(--sombra-2);
+.MenuBotao:hover, .MenuBotaoActive:hover, .MenuBotaoDesactive:hover, .paginaHistorico button:hover {
+    background: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none; /* compatibilidade com Safari */
+    box-shadow: inset var(--direcao-sombra-1) var(--direcao-sombra-1) 9px var(--sombra-clara),
+                inset var(--direcao-sombra-2) var(--direcao-sombra-2) 9px var(--sombra-escura),
+                -1px -1px 1px var(--sombra-vidro-clara),
+                1px 1px 1px var(--sombra-vidro-clara),
+                1px -1px 1px var(--sombra-vidro-escura),
+                -1px 1px 1px var(--sombra-vidro-escura);
+}
+.MenuBotaoInterno:hover {
+    background: var(--cor-vidro);
+    backdrop-filter: blur(var(--blur));
+    box-shadow: var(--direcao-sombra-1) var(--direcao-sombra-1) 9px var(--sombra-clara),
+                var(--direcao-sombra-2) var(--direcao-sombra-2) 9px var(--sombra-escura),
+                inset -1px -1px 1px var(--sombra-vidro-clara),
+                inset 1px 1px 1px var(--sombra-vidro-clara),
+                inset 1px -1px 1px var(--sombra-vidro-escura),
+                inset -1px 1px 1px var(--sombra-vidro-escura);
 }
 .MenuBotao.nh, .MenuBotaoInterno.nh, .MenuBotaoActive.nh, .MenuBotaoDesactive.nh, .paginaHistorico button.nh {
     background: none;
@@ -499,7 +517,7 @@ button {
                      -4px 0 5px var(--animacao-opaca-bota-3),
                      -4px 0 10px var(--animacao-bota-3),
                      0 -4px 5px var(--animacao-opaca-bota-2),
-                     0 -4px 10px var(--animacao-bota-2)
+                     0 -4px 10px var(--animacao-bota-2),
                      0 4px 5px var(--animacao-opaca-bota-4),
                      0 4px 10px var(--animacao-bota-4);
     }
@@ -598,7 +616,14 @@ button.clicked, .MenuBotao.clicked {
     padding: 5px 7px;
 }
 .linkPadrao:hover {
-    background: var(--sombra-2);
+    text-shadow: 4px 0 5px var(--animacao-opaca-bota-1),
+                4px 0 10px var(--animacao-bota-1),
+                -4px 0 5px var(--animacao-opaca-bota-3),
+                -4px 0 10px var(--animacao-bota-3),
+                0 -4px 5px var(--animacao-opaca-bota-2),
+                0 -4px 10px var(--animacao-bota-2),
+                0 4px 5px var(--animacao-opaca-bota-4),
+                0 4px 10px var(--animacao-bota-4);
 }
 
 
