@@ -501,8 +501,8 @@
         min-height: 47px;
     }
     .MenuBotaoInterno {
-        height: 44px;
-        min-width: 44px;
+        height: 42px;
+        min-width: 42px;
     }
     .barraPesquisa {
         height: 47px;
@@ -516,10 +516,6 @@
 
     :root {
         --borda-botao: 30px;
-    }
-    .MenuBotaoInterno {
-        height: 44px;
-        min-width: 44px;
     }
     .barraPesquisa {
         height: 47px;
@@ -581,10 +577,6 @@
     }
     .menuTelaBotoes {
         flex-wrap: nowrap;
-    }
-    .MenuBotaoInterno {
-        height: 44px;
-        min-width: 44px;
     }
     .barraPesquisa {
         height: 47px;
