@@ -34,7 +34,6 @@
 
 .tituloContainer {
     overflow: hidden;
-    margin-right: 10px;
 }
 .tituloWrapper {
     position: relative; /* Torna o contêiner um contexto de posicionamento */
@@ -84,6 +83,7 @@
 .botaoFixado {
     opacity: 1;
     width: 14px;
+    padding-bottom: 1px;
 }
 /* Mostra todo o cabeçalho no hover em telas de computador */
 .rectangle:hover .botaoFechar, 
