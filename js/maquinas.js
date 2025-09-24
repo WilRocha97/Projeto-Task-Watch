@@ -118,6 +118,7 @@ export function fecharTelaDeMaquinas() {
         pesquisaMaquina.value = ''
         telaMaquinas.classList.add('invisible5');
         fundoCabecalho.classList.remove('cabecalhoMegaExpandido');
+        botaoOrdenarTelaMaquinas.classList.remove('addMaquinaAtivada')
     }
 }
 
@@ -191,14 +192,13 @@ export function adicionarListeners() {
     });
 }
 
-let ordenado = false;
 var maquinas = ''
 var lista = ''
 botaoOrdenarTelaMaquinas.addEventListener("click", () => {
     botaoOrdenarTelaMaquinas.classList.toggle('addMaquinaAtivada')
     document.querySelector('.maquinasContainerFundo').classList.add('invisible1')
     setTimeout(()=> {
-        if (!ordenado) {
+        if (botaoOrdenarTelaMaquinas.classList.contains('addMaquinaAtivada')) {
                 lista = document.getElementById("listaMaquinas");
                 maquinas = Array.from(lista.children); // salva a ordem original
                 ordenado = false;
@@ -219,13 +219,11 @@ botaoOrdenarTelaMaquinas.addEventListener("click", () => {
                 // limpa e remonta a lista
                 lista.innerHTML = "";
                 [...livres, ...outros].forEach(m => lista.appendChild(m));
-                ordenado = true;
             } 
             else {
                 // Voltar à ordem original
                 lista.innerHTML = "";
                 maquinas.forEach(m => lista.appendChild(m));
-                ordenado = false;
             }
     }, 300);
     setTimeout(()=> {
