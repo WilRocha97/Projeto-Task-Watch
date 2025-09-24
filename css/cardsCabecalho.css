@@ -85,6 +85,9 @@
     width: 14px;
     padding-bottom: 1px;
 }
+.cabecalhoCardBotoesExpandido{
+    margin-left: 10px;
+}
 /* Mostra todo o cabeçalho no hover em telas de computador */
 .rectangle:hover .botaoFechar, 
 .rectangle:hover .botaoInfo,
@@ -105,6 +108,7 @@
 }
 .rectangle:hover .cabecalhoCardBotoes {
     gap: 10px;
+    margin-left: 0px !important;
 }
 /* --------------------------------------- */
 /* Mostra todo o cabeçalho em telas de toque */

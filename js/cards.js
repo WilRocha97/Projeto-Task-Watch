@@ -36,6 +36,7 @@ function verificaFixados(card) {
             temCard.classList.toggle('fixado')
             var botaoFixar = temCard.querySelector('.botaoFixar')
             botaoFixar.classList.toggle('botaoFixado')
+            card.querySelector('.cabecalhoCardBotoes').classList.toggle('cabecalhoCardBotoesExpandido')
             if (botaoFixar.innerHTML.trim() === '☆') {
                 botaoFixar.innerHTML = '★'
 
@@ -209,6 +210,7 @@ document.addEventListener('click', (event) => {
                 // Encontra o elemento pai mais próximo
                 divMae.classList.toggle('fixado')
                 target.classList.toggle('botaoFixado')
+                divMae.querySelector('.cabecalhoCardBotoes').classList.toggle('cabecalhoCardBotoesExpandido')
                 if (target.innerHTML.trim() === '☆') {
                     target.innerHTML = '★'
                 }
