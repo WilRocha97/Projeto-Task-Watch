@@ -88,34 +88,17 @@
 .cabecalhoCardBotoesExpandido{
     margin-left: 10px;
 }
-/* Mostra todo o cabeçalho no hover em telas de computador */
+/* Mostra todo o cabeçalho no hover em telas de computador ou no modo mobile*/
 .rectangle:hover .botaoFechar, 
 .rectangle:hover .botaoFixar,
-.rectangle:hover .botaoFixado{
-    width: 14px;
-    opacity: 1;
-}
-.rectangle:hover .dispositivo {
-    left: 0;
-    position: relative;
-    margin-right: 4px;
-    max-width: 90px;
-    opacity: 1;
-}
-.rectangle:hover .tituloContainer {
-    margin: 0 5px 0 0;
-}
-.rectangle:hover .cabecalhoCardBotoes {
-    gap: 10px;
-}
-/* --------------------------------------- */
-/* Mostra todo o cabeçalho em telas de toque */
+.rectangle:hover .botaoFixado,
 .rectangle.nh .botaoFechar, 
 .rectangle.nh .botaoFixar,
 .rectangle.nh .botaoFixado{
     width: 14px;
     opacity: 1;
 }
+.rectangle:hover .dispositivo,
 .rectangle.nh .dispositivo {
     left: 0;
     position: relative;
@@ -124,8 +107,13 @@
     max-width: 90px;
     opacity: 1;
 }
+.rectangle:hover .tituloContainer,
 .rectangle.nh .tituloContainer {
     margin: 0 5px 0 0;
+}
+.rectangle:hover .cabecalhoCardBotoes,
+.rectangle.nh .cabecalhoCardBotoes {
+    margin-left: 10px;
 }
 /* --------------------------------------- */
 .botaoFixar:hover {
@@ -173,7 +161,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin: 1px 5px;
+    margin: 1px 6px;
     transition: var(--transicao-link) ease-in-out;
 }
 .porcentagem {

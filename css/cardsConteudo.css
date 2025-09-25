@@ -1,8 +1,21 @@
 .subMenuCard {
     display: flex;
     flex-direction: row;
-    margin: 5px 6px;
+    margin: 5px 3px;
     gap: 10px;
+    max-height: 0;
+    opacity: 0;
+    transition: var(--transicao-link) ease-in-out;
+}
+.rectangle:hover .subMenuCard {
+    margin: 5px 6px;
+    max-height: 20px;
+    opacity: 1;
+}
+.rectangle.nh .subMenuCard {
+    margin: 10px 6px;
+    max-height: 20px;
+    opacity: 1;
 }
 .maisInfo, .maisInfo2, .maisInfo3 {
     display: flex;
