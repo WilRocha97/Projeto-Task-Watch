@@ -214,7 +214,7 @@
                     <br><br>• Quando uma rotina finalizar, o cartão irá pulsar lentamente em azul.
                     <br><br>• Todos os cartões podem ser fechados a qualquer momento clicando em "⨉" (Fechar cartão), porém, os que ainda estão em execução, voltarão para a tela.
                     <br><br>• Os cartões podem ser fixados ao clicar em "☆" (Fixar cartão). Mais detalhes abaixo na sessão Menu.
-                    <br><br>• Existem três telas internas em cada cartão, uma com as informações de progresso e tempo de execução, outra com um resumo dos resultados e a última com as informações de erro da rotina. Para abri-las ou fecha-las, clique nos botões que aparecem no cartão dinâmicamente durante a execução, os botões são "Execução", "Andamentos", que aparecem no corpo do cartão e "(ℹ)" que aparece no cabeçalho dele.   
+                    <br><br>• Existem três telas internas em cada cartão, uma com as informações de progresso e tempo de execução, outra com um resumo dos resultados e a última com as informações de erro da rotina. Para abri-las ou fecha-las, clique nos botões que aparecem no cartão dinâmicamente durante a execução, os botões são "Execução", "Andamentos", que aparecem no corpo do cartão e "Info" que aparece no cabeçalho dele.   
                     <br><br>• O navegador irá armazenar na memória interna quais cartões foram fixados.
                     <br><br>• Cartões com alguma ocorrência, ocioso, erro ou finalisado, ficaram no topo da tela mas voçê pode arastar os cartões para organiza-los da forma que preferir, apenas dentro de cada grupo, grupo das rotinas em execução ou grupo das rotinas com ocorrência, basta segurar o cartão que você deseja mover até que ele fique cinza.
                     <br><br>• Quando não estiver exibindo cartões, uma tela de descanso aparecerá.
@@ -472,7 +472,6 @@
                         </div>
     
                         <div class="cabecalhoCardBotoes">
-                            <div class="btnCard botaoInfo invisible3" title="Exibir erro">(ℹ)</div>
                             <div class="btnCard botaoFixar" title="Fixar cartão">☆</div>
                             <div class="btnCard botaoFechar" title="Fechar cartão">⨉</div>
                         </div>
@@ -487,8 +486,13 @@
                         </div>
                     </div>
                     <p id="mensagemAlerta" class="scroll scrollInfo content">Aguardando configuração</p>
-    
-                    <div id="maisInfo" class="btnCard maisInfo"><div class=maisInfob></div> Execução</div>
+                    
+                    <div class="subMenuCard">
+                        <div id="maisInfo" class="btnCard maisInfo">Execução <div class=maisInfob></div></div>
+                        <div id="maisInfo2" class="btnCard maisInfo2">Andamentos <div class=maisInfob></div></div>
+                        <div id="maisInfo3" class="btnCard maisInfo3 invisible3">Info <div class=maisInfob></div></div>
+                    </div>
+
                     <div id="resumoResultados" class="fundo2 resumoResultados collapsed">
                         <div class="telaExecucaoConteudo">
                             <p id="andamentos" class="content">63.40% - 946 de 1492 - 546 Restantes</p>
@@ -499,7 +503,6 @@
                         </div>
                     </div>
     
-                    <div id="maisInfo2" class="btnCard maisInfo2 minimizado"><div class=maisInfob></div> Andamentos</div>
                     <div id="resumoResultados2" class="resumoResultados2 collapsed">
                         <div id="telaDadoAtual" class="fundo2 telaDadoAtualFundo">
                             <div class="scroll scrollInfo telaDadoConteudo">
@@ -541,12 +544,11 @@
                         </div>
     
                         <div class="cabecalhoCardBotoes">
-                            <div class="btnCard botaoInfo invisible3" title="Exibir erro">(ℹ)</div>
                             <div class="btnCard botaoFixar" title="Fixar cartão">☆</div>
                             <div class="btnCard botaoFechar" title="Fechar cartão">⨉</div>
                         </div>
                     </div>
-    
+
                     <div id="progresso" class="progresso">
                         <div id="porcentagem" class="fundo2 porcentagem">
                             <div id="barraLoading" class="barraLoading" style="width: 73.34%">
@@ -556,8 +558,13 @@
                         </div>
                     </div>
                     <p id="mensagemAlerta" class="scroll scrollInfo content">Rotina ocisosa</p>
-    
-                    <div id="maisInfo" class="btnCard maisInfo"><div class=maisInfob></div> Execução</div>
+
+                    <div class="subMenuCard">
+                        <div id="maisInfo" class="btnCard maisInfo">Execução <div class=maisInfob></div></div>
+                        <div id="maisInfo2" class="btnCard maisInfo2">Andamentos <div class=maisInfob></div></div>
+                        <div id="maisInfo3" class="btnCard maisInfo3 invisible3">Info <div class=maisInfob></div></div>
+                    </div>
+
                     <div id="resumoResultados" class="fundo2 resumoResultados collapsed">
                         <div class="telaExecucaoConteudo">
                             <p id="andamentos" class="content">73.34% - 432 de 589 - 157 restantes</p>
@@ -565,7 +572,6 @@
                         </div>
                     </div>
     
-                    <div id="maisInfo2" class="btnCard maisInfo2 minimizado"><div class=maisInfob></div> Andamentos</div>
                     <div id="resumoResultados2" class="resumoResultados2 collapsed">
                         <div id="telaDadoAtual" class="fundo2 telaDadoAtualFundo">
                             <div class="scroll scrollInfo telaDadoConteudo">
@@ -603,12 +609,11 @@
                         </div>
     
                         <div class="cabecalhoCardBotoes">
-                            <div class="btnCard botaoInfo" title="Exibir erro">ℹ</div>
                             <div class="btnCard botaoFixar" title="Fixar cartão">☆</div>
                             <div class="btnCard botaoFechar" title="Fechar cartão">⨉</div>
                         </div>
                     </div>
-    
+
                     <div id="progresso" class="progresso">
                         <div id="porcentagem" class="fundo2 porcentagem">
                             <div id="barraLoading" class="barraLoading" style="width: 7.33%">
@@ -618,8 +623,13 @@
                         </div>
                     </div>
                     <p id="mensagemAlerta" class="scroll scrollInfo content">Erro detectado</p>
-    
-                    <div id="maisInfo" class="btnCard maisInfo"><div class=maisInfob></div> Execução</div>
+                    
+                    <div class="subMenuCard">
+                        <div id="maisInfo" class="btnCard maisInfo">Execução <div class=maisInfob></div></div>
+                        <div id="maisInfo2" class="btnCard maisInfo2">Andamentos <div class=maisInfob></div></div>
+                        <div id="maisInfo3" class="btnCard maisInfo3">Info <div class=maisInfob></div></div>
+                    </div>
+
                     <div id="resumoResultados" class="fundo2 resumoResultados collapsed">
                         <div class="telaExecucaoConteudo">
                             <p id="andamentos" class="content">7.33% - 11 de 150 - 139 restantes</p>
@@ -628,7 +638,6 @@
                         </div>
                     </div>
     
-                    <div id="maisInfo2" class="btnCard maisInfo2 minimizado"><div class=maisInfob></div> Andamentos</div>
                     <div id="resumoResultados2" class="resumoResultados2 collapsed">
                         <div id="telaDadoAtual" class="fundo2 telaDadoAtualFundo">
                             <div class="scroll scrollInfo telaDadoConteudo">
@@ -686,12 +695,11 @@
                         </div>
     
                         <div class="cabecalhoCardBotoes">
-                            <div class="btnCard botaoInfo invisible3" title="Exibir erro">(ℹ)</div>
                             <div class="btnCard botaoFixar" title="Fixar cartão">☆</div>
                             <div class="btnCard botaoFechar" title="Fechar cartão">⨉</div>
                         </div>
                     </div>
-    
+
                     <div id="progresso" class="progresso">
                         <div id="porcentagem" class="porcentagem invisible3">
                             <div id="barraLoading" class="barraLoading invisible3" style="width: 0">
@@ -701,8 +709,13 @@
                         </div>
                     </div>
                     <p id="mensagemAlerta" class="scroll scrollInfo content">Rotina finalizada</p>
-    
-                    <div id="maisInfo" class="btnCard maisInfo"><div class=maisInfob></div> Execução</div>
+                    
+                    <div class="subMenuCard">
+                        <div id="maisInfo" class="btnCard maisInfo">Execução <div class=maisInfob></div></div>
+                        <div id="maisInfo2" class="btnCard maisInfo2">Andamentos <div class=maisInfob></div></div>
+                        <div id="maisInfo3" class="btnCard maisInfo3 invisible3">Info <div class=maisInfob></div></div>
+                    </div>
+
                     <div id="resumoResultados" class="fundo2 resumoResultados collapsed">
                         <div class="telaExecucaoConteudo">
                             <p id="inicio" class="content">Início: 15/02/2025 as 09:45</p>
@@ -710,7 +723,6 @@
                         </div>
                     </div>
     
-                    <div id="maisInfo2" class="btnCard maisInfo2 minimizado"><div class=maisInfob></div> Andamentos</div>
                     <div id="resumoResultados2" class="resumoResultados2 collapsed">
                         <div id="telaDadoAtual" class="fundo2 invisible2">
                             <div class="scroll scrollInfo telaDadoConteudo">
@@ -748,7 +760,6 @@
                         </div>
 
                         <div class="cabecalhoCardBotoes">
-                            <div class="btnCard botaoInfo invisible3" title="Exibir erro">(ℹ)</div>
                             <div class="btnCard botaoFixar" title="Fixar cartão">☆</div>
                             <div class="btnCard botaoFechar" title="Fechar cartão">⨉</div>
                         </div>
@@ -764,7 +775,12 @@
                     </div>
                     <p id="mensagemAlerta" class="scroll scrollInfo content">Enviando mensagem</p>
 
-                    <div id="maisInfo" class="btnCard maisInfo minimizado"><div class=maisInfob></div> Execução</div>
+                    <div class="subMenuCard">
+                        <div id="maisInfo" class="btnCard maisInfo">Execução <div class=maisInfob></div></div>
+                        <div id="maisInfo2" class="btnCard maisInfo2 invisible3">Andamentos <div class=maisInfob></div></div>
+                        <div id="maisInfo3" class="btnCard maisInfo3 invisible3">Info <div class=maisInfob></div></div>
+                    </div>
+
                     <div id="resumoResultados" class="fundo2 resumoResultados collapsed">
                         <div class="telaExecucaoConteudo">
                             <p id="andamento" class="content">2 Restantes</p>
@@ -775,7 +791,6 @@
                         </div>
                     </div>
     
-                    <div id="maisInfo2" class="btnCard maisInfo2 invisible2 minimizado"><div class=maisInfob></div> Andamentos</div>
                     <div id="resumoResultados2" class="resumoResultados2 collapsed invisible2">
                         <div id="telaDadoAtual" class="fundo2 invisible2">
                             <div class="scroll scrollInfo telaDadoConteudo">
@@ -814,12 +829,11 @@
                         </div>
     
                         <div class="cabecalhoCardBotoes">
-                            <div class="btnCard botaoInfo invisible3" title="Exibir erro">(ℹ)</div>
                             <div class="btnCard botaoFixar" title="Fixar cartão">☆</div>
                             <div class="btnCard botaoFechar" title="Fechar cartão">⨉</div>
                         </div>
                     </div>
-    
+
                     <div id="progresso" class="progresso">
                         <div id="porcentagem" class="fundo2 porcentagem">
                             <div id="barraLoading" class="barraLoading" style="width: 71.76%">
@@ -829,8 +843,13 @@
                         </div>
                     </div>
                     <p id="mensagemAlerta" class="scroll scrollInfo content vazio"></p>
-    
-                    <div id="maisInfo" class="btnCard maisInfo"><div class=maisInfob></div> Execução</div>
+
+                    <div class="subMenuCard">
+                        <div id="maisInfo" class="btnCard maisInfo">Execução <div class=maisInfob></div></div>
+                        <div id="maisInfo2" class="btnCard maisInfo2">Andamentos <div class=maisInfob></div></div>
+                        <div id="maisInfo3" class="btnCard maisInfo3 invisible3">Info <div class=maisInfob></div></div>
+                    </div>
+
                     <div id="resumoResultados" class="fundo2 resumoResultados collapsed">
                         <div class="telaExecucaoConteudo">
                             <p id="andamentos" class="content">71.76% - 465 de 648 - 183 restantes</p>
@@ -841,7 +860,6 @@
                         </div>
                     </div>
     
-                    <div id="maisInfo2" class="btnCard maisInfo2 minimizado"><div class=maisInfob></div> Andamentos</div>
                     <div id="resumoResultados2" class="resumoResultados2 collapsed">
                         <div id="telaDadoAtual" class="fundo2 telaDadoAtualFundo">
                             <div class="scroll scrollInfo telaDadoConteudo">
@@ -879,12 +897,11 @@
                         </div>
     
                         <div class="cabecalhoCardBotoes">
-                            <div class="btnCard botaoInfo invisible3" title="Exibir erro">(ℹ)</div>
                             <div class="btnCard botaoFixar" title="Fixar cartão">☆</div>
                             <div class="btnCard botaoFechar" title="Fechar cartão">⨉</div>
                         </div>
                     </div>
-    
+
                     <div id="progresso" class="progresso">
                         <div id="porcentagem" class="fundo2 porcentagem">
                             <div id="barraLoading" class="barraLoading" style="width: 12.39%">
@@ -894,8 +911,13 @@
                         </div>
                     </div>
                     <p id="mensagemAlerta" class="scroll scrollInfo content vazio"></p>
-    
-                    <div id="maisInfo" class="btnCard maisInfo"><div class=maisInfob></div> Execução</div>
+                    
+                    <div class="subMenuCard">
+                        <div id="maisInfo" class="btnCard maisInfo">Execução <div class=maisInfob></div></div>
+                        <div id="maisInfo2" class="btnCard maisInfo2">Andamentos <div class=maisInfob></div></div>
+                        <div id="maisInfo3" class="btnCard maisInfo3 invisible3">Info <div class=maisInfob></div></div>
+                    </div>
+
                     <div id="resumoResultados" class="fundo2 resumoResultados collapsed">
                         <div class="telaExecucaoConteudo">
                             <p id="andamentos" class="content">12.39% - 73 de 589 - 516 restantes</p>
@@ -906,7 +928,6 @@
                         </div>
                     </div>
     
-                    <div id="maisInfo2" class="btnCard maisInfo2 minimizado"><div class=maisInfob></div> Andamentos</div>
                     <div id="resumoResultados2" class="resumoResultados2 collapsed">
                         <div id="telaDadoAtual" class="fundo2 telaDadoAtualFundo">
                             <div class="scroll scrollInfo telaDadoConteudo">
@@ -948,12 +969,11 @@
                         </div>
     
                         <div class="cabecalhoCardBotoes">
-                            <div class="btnCard botaoInfo invisible3" title="Exibir erro">(ℹ)</div>
                             <div class="btnCard botaoFixar" title="Fixar cartão">☆</div>
                             <div class="btnCard botaoFechar" title="Fechar cartão">⨉</div>
                         </div>
                     </div>
-    
+
                     <div id="progresso" class="progresso">
                         <div id="porcentagem" class="fundo2 porcentagem">
                             <div id="barraLoading" class="barraLoading" style="width: 31.09%">
@@ -962,9 +982,15 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="subMenuCard">
+                        <div id="maisInfo" class="btnCard maisInfo">Execução <div class=maisInfob></div></div>
+                        <div id="maisInfo2" class="btnCard maisInfo2">Andamentos <div class=maisInfob></div></div>
+                        <div id="maisInfo3" class="btnCard maisInfo3 invisible3">Info <div class=maisInfob></div></div>
+                    </div>
+
                     <p id="mensagemAlerta" class="scroll scrollInfo content vazio"></p>
     
-                    <div id="maisInfo" class="btnCard maisInfo"><div class=maisInfob></div> Execução</div>
                     <div id="resumoResultados" class="fundo2 resumoResultados collapsed">
                         <div class="telaExecucaoConteudo">
                             <p id="andamentos" class="content">31.09% - 236 de 759 - 523 restantes</p>
@@ -975,7 +1001,6 @@
                         </div>
                     </div>
     
-                    <div id="maisInfo2" class="btnCard maisInfo2 minimizado"><div class=maisInfob></div> Andamentos</div>
                     <div id="resumoResultados2" class="resumoResultados2 collapsed">
                         <div id="telaDadoAtual" class="fundo2 telaDadoAtualFundo">
                             <div class="scroll scrollInfo telaDadoConteudo">

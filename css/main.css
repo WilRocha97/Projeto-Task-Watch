@@ -300,9 +300,9 @@ button {
 }
 .fundo2 {
     padding: 3px 2px;
-    margin: 2px 0 0 0;
+    margin: 4px 0 0 0;
     background: var(--cor-fundo-2);
-    border-radius: calc(var(--borda-botao) - 5px);
+    border-radius: 15px;
     box-shadow: inset -1px -1px 1px var(--sombra-vidro-card-clara),
                 inset 1px 1px 1px var(--sombra-vidro-card-clara),
                 inset 1px -1px 1px var(--sombra-vidro-card-escura),

@@ -61,7 +61,7 @@
     }
 }
 
-.botaoFechar, .botaoFixar, .botaoInfo {
+.botaoFechar, .botaoFixar {
     font-weight: 600;
     font-size: 0.7rem;
     text-align: center;
@@ -75,7 +75,7 @@
     height: 13px;
     transition: var(--transicao-link) ease-in-out;
 }
-.botaoFechar, .botaoInfo, .botaoFixar {
+.botaoFechar, .botaoFixar {
     width: 0;
     opacity: 0;
     cursor: pointer;
@@ -90,7 +90,6 @@
 }
 /* Mostra todo o cabeçalho no hover em telas de computador */
 .rectangle:hover .botaoFechar, 
-.rectangle:hover .botaoInfo,
 .rectangle:hover .botaoFixar,
 .rectangle:hover .botaoFixado{
     width: 14px;
@@ -108,12 +107,10 @@
 }
 .rectangle:hover .cabecalhoCardBotoes {
     gap: 10px;
-    margin-left: 0px !important;
 }
 /* --------------------------------------- */
 /* Mostra todo o cabeçalho em telas de toque */
 .rectangle.nh .botaoFechar, 
-.rectangle.status-error.nh .botaoInfo,
 .rectangle.nh .botaoFixar,
 .rectangle.nh .botaoFixado{
     width: 14px;
@@ -134,11 +131,11 @@
 .botaoFixar:hover {
     text-shadow: 0 0 5px white !important;
 }
-.botaoFechar:hover, .botaoInfo:hover {
+.botaoFechar:hover {
     text-shadow: 0 0 5px red !important;
     color: red !important;
 }
-.botaoFechar.nh:hover, .botaoFixar.nh:hover, .botaoInfo.nh:hover {
+.botaoFechar.nh:hover, .botaoFixar.nh:hover {
     background-color: transparent;
     text-shadow: 0 0 0 transparent;
     color: white;
@@ -176,7 +173,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin: 1px 3px;
+    margin: 1px 5px;
     transition: var(--transicao-link) ease-in-out;
 }
 .porcentagem {

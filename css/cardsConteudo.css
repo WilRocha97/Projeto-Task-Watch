@@ -1,11 +1,15 @@
-.maisInfo, .maisInfo2 {
+.subMenuCard {
+    display: flex;
+    flex-direction: row;
+    margin: 5px 6px;
+    gap: 10px;
+}
+.maisInfo, .maisInfo2, .maisInfo3 {
     display: flex;
     flex-direction: row;
     cursor:cell;
     border: none;
     background: none;
-    margin: 5px 0 0 0;
-    padding: 0 6px;
     color: white;
     font-size: 0.75rem;
     font-weight: 600;
@@ -17,32 +21,29 @@
     transition: var(--transicao-link) ease-in-out;
 }
 .maisInfob {
+    border-radius: 5px;
+    margin: 0 5px;
     align-self: center;
-    margin: 0 6px 0 0;
-    width: 0;
-    height: 0;
     cursor: pointer;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 7px solid #ffffff; /* triangulo apontando para baixo */
+    border-left: 4px solid #ffffff;
+    border-right: 4px solid #ffffff;
+    border-top: 4px solid #ffffff;
+    border-bottom: 4px solid #ffffff;
     transition: all 0.3s ease;
 }
 .maisInfob.flip {
-    margin: 0 9px 0 3px;
-    border-left: 2px solid #ffffff;
-    border-right: 2px solid #ffffff;
-    border-top: 2px solid #ffffff; /* vira uma linha */
+    margin: 5px 5px;
+    border-left: 4px solid #ffffff;
+    border-right: 4px solid #ffffff;
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
 }
 
-.maisInfo:hover, .maisInfo2:hover {
+.maisInfo:hover, .maisInfo2:hover, .maisInfo3:hover {
     text-shadow: 0 0 5px white;
 }
-.maisInfo.nh:hover, .maisInfo2.nh:hover {
+.maisInfo.nh:hover, .maisInfo2.nh:hover, .maisInfo3.nh:hover {
     text-shadow: 0 0 1px white;
-}
-.maisInfo.minimizado, .maisInfo2.minimizado,
-.maisInfo2.invisible2 .maisInfo  {
-    padding: 0 0 2px 6px;
 }
 
 .resumoResultados, .resumoResultados2, .resumoErroInfo {
@@ -91,7 +92,7 @@
     overflow: hidden;
 }
 .telaDadoConteudo {
-    max-height: 36px;
+    max-height: 52px;
 }
 .telaResumoConteudo {
     max-height: 143px;
@@ -147,12 +148,14 @@
 }
 
 @media (max-width: 916px) {
-    .maisInfo, .maisInfo2  {
-        margin: 15px 0 0 0;
+    .maisInfo, .maisInfo2, .maisInfo3  {
         font-size: 1rem;
     }
-    .maisInfo.minimizado, .maisInfo2.minimizado, .maisInfo2.invisible2 .maisInfo {
-        padding: 0 0 6px 6px;
+    .subMenuCard {
+        flex-wrap: wrap;
+        font-size: 1rem;
+        margin: 10px 6px;
+        gap: 20px;
     }
     .content {
         font-size: 0.9rem;

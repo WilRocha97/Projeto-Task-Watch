@@ -230,14 +230,16 @@ document.addEventListener('click', (event) => {
                 }
             }
         }
-        else if (target.classList.contains('botaoInfo')) {
+        else if (target.classList.contains('maisInfo3')) {
             if (erroInfo.classList.contains('collapsed')) {
                 erroInfo.classList.remove('collapsed')
                 divMae.classList.add('extraLarge')
+                target.querySelector('.maisInfob').classList.add('flip')
             }
             else {
                 erroInfo.classList.add('collapsed')
                 divMae.classList.remove('extraLarge')
+                target.querySelector('.maisInfob').classList.remove('flip')
             }
         }
         // verifica se o click foi no botão de fechar
@@ -272,14 +274,12 @@ document.addEventListener('click', (event) => {
                     telaResumoMaisInfo2.classList.remove('large')
                     maisInfo2.classList.remove('large')
                     target.querySelector('.maisInfob').classList.add('flip')
-                    target.classList.remove('minimizado')
                 }
                 else {
                     maisInfo.classList.add('collapsed')
                     telaResumoMaisInfo2.classList.add('large')
                     maisInfo2.classList.add('large')
                     target.querySelector('.maisInfob').classList.remove('flip')
-                    target.classList.add('minimizado')
                 }
             }
         }
@@ -300,12 +300,10 @@ document.addEventListener('click', (event) => {
                 if (maisInfo2.classList.contains('collapsed')) {
                     maisInfo2.classList.remove('collapsed')
                     target.querySelector('.maisInfob').classList.add('flip')
-                    target.classList.remove('minimizado')
                 }
                 else {
                     maisInfo2.classList.add('collapsed')
                     target.querySelector('.maisInfob').classList.remove('flip')
-                    target.classList.add('minimizado')
                 }
             }
         }
