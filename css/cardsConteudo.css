@@ -1,7 +1,7 @@
 .subMenuCard {
     display: flex;
     flex-direction: row;
-    margin: 5px 6px;
+    margin: 5px 8px 3px;
     gap: 10px;
     transition: var(--transicao-link) ease-in-out;
 }
@@ -106,7 +106,7 @@
 #mensagemAlerta {
     max-height: 30px;
     overflow: auto;
-    margin: 0 3px;
+    margin: 0 5px;
 }
 .content {
     min-height: 10px;

@@ -5,7 +5,7 @@
     justify-content: space-between;
 }
 .cabecalhoCard {
-    margin: 5px 6px;
+    margin: 5px 8px;
     max-height: 15px;
 }
 .cabecalhoCardBotoes {
@@ -51,6 +51,9 @@
 } 
 .titulo2 span {
     animation-delay: -20s;
+}
+.bordaTitulo {
+    border-radius: 20px;
 }
 @keyframes moveTitulo {
     0% {
@@ -162,7 +165,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin: 1px 5px;
+    margin: 1px 8px;
     transition: var(--transicao-link) ease-in-out;
 }
 .porcentagem {
