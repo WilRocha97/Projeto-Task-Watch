@@ -163,7 +163,6 @@
     }
     .botaoFechar, .botaoFixar, .botaoInfo {
         font-size: 1rem !important;
-        font-weight: 100 !important;
     }
 }
 @media (min-width: 650px) and (max-width: 720px) {

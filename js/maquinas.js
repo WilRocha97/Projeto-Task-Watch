@@ -201,7 +201,6 @@ botaoOrdenarTelaMaquinas.addEventListener("click", () => {
         if (botaoOrdenarTelaMaquinas.classList.contains('addMaquinaAtivada')) {
                 lista = document.getElementById("listaMaquinas");
                 maquinas = Array.from(lista.children); // salva a ordem original
-                ordenado = false;
 
                 // Ordenar -> "livre" no topo
                 const livres = [];
