@@ -180,7 +180,6 @@
     background: var(--cor-loading-2);
     align-self: center;
     height: 1px;
-    margin: 1px;
     animation: pulsar 10s infinite;
 }
 .porcentagem.pulse .barraLoading {
@@ -255,32 +254,21 @@
     }
 }
 @keyframes pulsar {
-    0% {
-        width: 0;
-        opacity: 0;
+    0%, 30%, 70%, 100% {
+        width: 100%;
+        opacity: 0.2;
+        box-shadow: 0 0 0 var(--cor-loading-2),
+                0 0 0 var(--cor-loading-2),
+                0 0 0 var(--cor-loading-2),
+                0 0 0 var(--cor-loading-2);
     }
-    50% {
-        width: 0;
+    45%, 55% {
+        width: 100%;
         opacity: 1;
         box-shadow: 0 0 4px var(--cor-loading-2),
                 0 0 7px var(--cor-loading-2),
                 0 0 9px var(--cor-loading-2),
-                0 0 11px var(--cor-loading-2),
-                0 0 13px var(--cor-loading-2),
-                0 0 15px var(--cor-loading-2),
-                0 0 17px var(--cor-loading-2);
-    }
-    75% {
-        box-shadow: 0 0 2px var(--cor-loading-2),
-                0 0 5px var(--cor-loading-2),
-                0 0 8px var(--cor-loading-2),
-                0 0 10px var(--cor-loading-2);
-    }
-    80% {
-        width: 100%;
-    }
-    85%, 100% {
-        opacity: 0;
+                0 0 11px var(--cor-loading-2);
     }
 }
 
