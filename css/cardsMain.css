@@ -103,6 +103,7 @@
     margin: 0 !important;
     opacity: 0 !important;
     scale: 0 !important;
+    transition: var(--transicao-link) ease-in-out, max-height 0.2s ease-in-out;
 }
 .rectangle.collapsed {
     --escala-card: 1.1;
