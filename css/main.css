@@ -409,7 +409,6 @@ button {
     opacity: 1;
 }
 .MenuBotao, .MenuBotaoInterno, .MenuBotaoActive, .MenuBotaoDesactive, .paginaHistorico button {
-    overflow: hidden;
     align-content: center;    
     text-align: center;
     align-items: center;
