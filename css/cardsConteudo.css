@@ -1,6 +1,8 @@
 .subMenuCard {
     display: flex;
     flex-direction: row;
+    opacity: 1;
+    max-height: 20px;
     margin: 5px 8px 3px;
     gap: 10px;
     transition: var(--transicao-link) ease-in-out;
