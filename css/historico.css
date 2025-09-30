@@ -175,6 +175,7 @@
    ============================================================================= */
 
 .linha {
+    position: relative;
     gap: 5px;
     display: grid;
     grid-template-columns: 0.5fr 3fr 1.5fr;
@@ -186,9 +187,37 @@
     transition: var(--transicao-link) ease-in-out,
                 color 1s ease-in-out;
 }
-
-.linha:hover {
-    background: var(--sombra-2);
+.linha::after {
+    justify-self: center;
+    align-self: center;
+    width: 95%;
+    height: 70%;
+    opacity: 0;
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 999;
+    border-radius: inherit;
+    box-shadow: var(--direcao-sombra-1) var(--direcao-sombra-1) 9px var(--sombra-clara),
+            var(--direcao-sombra-2) var(--direcao-sombra-2) 9px var(--sombra-escura),
+            4px 0 3px var(--animacao-opaca-bota-1),
+            -4px 0 3px var(--animacao-opaca-bota-3),
+            0 -4px 3px var(--animacao-opaca-bota-2),
+            0 4px 3px var(--animacao-opaca-bota-4),
+            inset -1px -1px 1px var(--sombra-vidro-clara),
+            inset 1px 1px 1px var(--sombra-vidro-clara),
+            inset 1px -1px 1px var(--sombra-vidro-escura),
+            inset -1px 1px 1px var(--sombra-vidro-escura),
+            inset 4px 0 15px var(--animacao-opaca-bota-1),
+            inset -4px 0 15px var(--animacao-opaca-bota-3),
+            inset 0 -4px 15px var(--animacao-opaca-bota-2),
+            inset 0 4px 15px var(--animacao-opaca-bota-4);
+    transition: var(--transicao-link) ease-in-out;
+}
+.linha:hover::after {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
 }
 
 .situacao {

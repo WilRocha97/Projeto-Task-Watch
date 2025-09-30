@@ -428,23 +428,40 @@ button {
 .MenuBotaoActive, .MenuBotaoDesactive {
    padding-bottom: 3px;
 }
-.MenuBotao:hover, .MenuBotaoInterno:hover, .MenuBotaoActive:hover, .MenuBotaoDesactive:hover, .paginaHistorico button:hover {
+.MenuBotao::after, .MenuBotaoInterno::after, .MenuBotaoActive::after, .MenuBotaoDesactive::after, .paginaHistorico button::after {
+    justify-self: center;
+    align-self: center;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 999;
+    border-radius: inherit;
     box-shadow: var(--direcao-sombra-1) var(--direcao-sombra-1) 9px var(--sombra-clara),
-                var(--direcao-sombra-2) var(--direcao-sombra-2) 9px var(--sombra-escura),
-                4px 0 3px var(--animacao-opaca-bota-1),
-                -4px 0 3px var(--animacao-opaca-bota-3),
-                0 -4px 3px var(--animacao-opaca-bota-2),
-                0 4px 3px var(--animacao-opaca-bota-4),
-                inset -1px -1px 1px var(--sombra-vidro-clara),
-                inset 1px 1px 1px var(--sombra-vidro-clara),
-                inset 1px -1px 1px var(--sombra-vidro-escura),
-                inset -1px 1px 1px var(--sombra-vidro-escura),
-                inset 4px 0 15px var(--animacao-opaca-bota-1),
-                inset -4px 0 15px var(--animacao-opaca-bota-3),
-                inset 0 -4px 15px var(--animacao-opaca-bota-2),
-                inset 0 4px 15px var(--animacao-opaca-bota-4);
+            var(--direcao-sombra-2) var(--direcao-sombra-2) 9px var(--sombra-escura),
+            4px 0 3px var(--animacao-opaca-bota-1),
+            -4px 0 3px var(--animacao-opaca-bota-3),
+            0 -4px 3px var(--animacao-opaca-bota-2),
+            0 4px 3px var(--animacao-opaca-bota-4),
+            inset -1px -1px 1px var(--sombra-vidro-clara),
+            inset 1px 1px 1px var(--sombra-vidro-clara),
+            inset 1px -1px 1px var(--sombra-vidro-escura),
+            inset -1px 1px 1px var(--sombra-vidro-escura),
+            inset 4px 0 15px var(--animacao-opaca-bota-1),
+            inset -4px 0 15px var(--animacao-opaca-bota-3),
+            inset 0 -4px 15px var(--animacao-opaca-bota-2),
+            inset 0 4px 15px var(--animacao-opaca-bota-4);
+    transition: var(--transicao-link) ease-in-out;
 }
-.MenuBotao.nh, .MenuBotaoInterno.nh, .MenuBotaoActive.nh, .MenuBotaoDesactive.nh, .paginaHistorico button.nh {
+.MenuBotao:hover::after, .MenuBotaoInterno:hover::after, .MenuBotaoActive:hover::after, .MenuBotaoDesactive:hover::after, .paginaHistorico button:hover::after {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+}
+
+.MenuBotao.nh::after, .MenuBotaoInterno.nh::after, .MenuBotaoActive.nh::after, .MenuBotaoDesactive.nh::after, .paginaHistorico button.nh::after {
     background: None;
     backdrop-filter: None;
     box-shadow: 0 0 0 #00000000,
