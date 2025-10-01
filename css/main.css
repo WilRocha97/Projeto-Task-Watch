@@ -468,34 +468,52 @@ button {
 }
 @keyframes luzMenu {
     0% {
-        box-shadow: 4px 0 3px var(--animacao-opaca-bota-1),
-                -4px 0 3px var(--animacao-opaca-bota-3),
-                0 -4px 3px var(--animacao-opaca-bota-2),
-                0 4px 3px var(--animacao-opaca-bota-4),
-                inset 4px 0 15px var(--animacao-opaca-bota-1),
-                inset -4px 0 15px var(--animacao-opaca-bota-3),
-                inset 0 4px 15px var(--animacao-opaca-bota-4),
-                inset 0 -4px 15px var(--animacao-opaca-bota-2);
-    }
-    50% {
-        box-shadow: 4px 0 3px var(--animacao-opaca-bota-1),
+        box-shadow: var(--direcao-sombra-1) var(--direcao-sombra-1) 9px var(--sombra-clara),
+                    var(--direcao-sombra-2) var(--direcao-sombra-2) 9px var(--sombra-escura),
+                    4px 0 3px var(--animacao-opaca-bota-1),
                     -4px 0 3px var(--animacao-opaca-bota-3),
                     0 -4px 3px var(--animacao-opaca-bota-2),
                     0 4px 3px var(--animacao-opaca-bota-4),
+                    inset -1px -1px 1px var(--sombra-vidro-clara),
+                    inset 1px 1px 1px var(--sombra-vidro-clara),
+                    inset 1px -1px 1px var(--sombra-vidro-escura),
+                    inset -1px 1px 1px var(--sombra-vidro-escura),
+                    inset 4px 0 15px var(--animacao-opaca-bota-1),
+                    inset -4px 0 15px var(--animacao-opaca-bota-3),
+                    inset 0 -4px 15px var(--animacao-opaca-bota-2),
+                    inset 0 4px 15px var(--animacao-opaca-bota-4);
+    }
+    50% {
+        box-shadow: var(--direcao-sombra-1) var(--direcao-sombra-1) 9px var(--sombra-clara),
+                    var(--direcao-sombra-2) var(--direcao-sombra-2) 9px var(--sombra-escura),
+                    4px 0 3px var(--animacao-opaca-bota-1),
+                    -4px 0 3px var(--animacao-opaca-bota-3),
+                    0 -4px 3px var(--animacao-opaca-bota-2),
+                    0 4px 3px var(--animacao-opaca-bota-4),
+                    inset -1px -1px 1px var(--sombra-vidro-clara),
+                    inset 1px 1px 1px var(--sombra-vidro-clara),
+                    inset 1px -1px 1px var(--sombra-vidro-escura),
+                    inset -1px 1px 1px var(--sombra-vidro-escura),
                     inset 4px 0 25px var(--animacao-bota-1),
                     inset -4px 0 25px var(--animacao-bota-3),
                     inset 0 4px 35px var(--animacao-bota-4),
                     inset 0 -4px 35px var(--animacao-bota-2);
     }
     100% {
-        box-shadow: 4px 0 3px var(--animacao-opaca-bota-1),
-                -4px 0 3px var(--animacao-opaca-bota-3),
-                0 -4px 3px var(--animacao-opaca-bota-2),
-                0 4px 3px var(--animacao-opaca-bota-4),
-                inset 4px 0 15px var(--animacao-opaca-bota-1),
-                inset -4px 0 15px var(--animacao-opaca-bota-3),
-                inset 0 4px 15px var(--animacao-opaca-bota-4),
-                inset 0 -4px 15px var(--animacao-opaca-bota-2);
+        box-shadow: var(--direcao-sombra-1) var(--direcao-sombra-1) 9px var(--sombra-clara),
+                    var(--direcao-sombra-2) var(--direcao-sombra-2) 9px var(--sombra-escura),
+                    4px 0 3px var(--animacao-opaca-bota-1),
+                    -4px 0 3px var(--animacao-opaca-bota-3),
+                    0 -4px 3px var(--animacao-opaca-bota-2),
+                    0 4px 3px var(--animacao-opaca-bota-4),
+                    inset -1px -1px 1px var(--sombra-vidro-clara),
+                    inset 1px 1px 1px var(--sombra-vidro-clara),
+                    inset 1px -1px 1px var(--sombra-vidro-escura),
+                    inset -1px 1px 1px var(--sombra-vidro-escura),
+                    inset 4px 0 15px var(--animacao-opaca-bota-1),
+                    inset -4px 0 15px var(--animacao-opaca-bota-3),
+                    inset 0 -4px 15px var(--animacao-opaca-bota-2),
+                    inset 0 4px 15px var(--animacao-opaca-bota-4);
     }
 }
 @keyframes luzMenuActive {
