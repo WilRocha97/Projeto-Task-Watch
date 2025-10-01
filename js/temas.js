@@ -111,11 +111,12 @@ export function decoracao(card) {
         card.querySelector('#decoracao').src = `assets/temas/${feriado}/${imagemAleatoria}.png`;
         card.querySelector('#decoracao').alt = `Figurinha ${feriado}`;
 
-        applyPatternTo('.fundo', {
-            url: "assets/temas/" + feriado + "/icone_final.png",
-            size: '64px 64px',
-            useOverlay: true
-        });
+        // Função para aplocar pattern em elementos especificos
+        //applyPatternTo('.fundo', {
+        //    url: "assets/temas/" + feriado + "/icone_final.png",
+        //    size: '64px 64px',
+        //    useOverlay: true
+        //});
 
     }
     else {
