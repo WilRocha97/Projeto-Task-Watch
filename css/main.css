@@ -430,8 +430,8 @@ button {
 .MenuBotao::after, .MenuBotaoInterno::after, .MenuBotaoActive::after, .MenuBotaoDesactive::after, .paginaHistorico button::after {
     justify-self: center;
     align-self: center;
-    width: 0;
-    height: 0;
+    width: 80%;
+    height: 80%;
     opacity: 0;
     content: "";
     position: absolute;
