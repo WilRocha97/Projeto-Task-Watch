@@ -183,3 +183,8 @@
     top: 70%;
     animation-delay: 2s;
   }
+
+.pattern-overlay {
+    opacity: var(--opacidade-patern); /* controla a transparência */
+    transition: var(--transicao-link) ease-in-out;
+}

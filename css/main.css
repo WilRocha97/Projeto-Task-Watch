@@ -25,6 +25,7 @@
 .dark {
     --stripe-color: #000000;
     --filter: blur(10px) opacity(50%) saturate(200%);
+    --opacidade-patern: 0.1;
 
     --animacao-bota-1: #1f64b8;
     --animacao-bota-2: #2fc974;
@@ -65,6 +66,7 @@
 .light {
     --stripe-color: #ffffff;
     --filter: blur(10px) invert(100%);
+    --opacidade-patern: 0.25;
 
     --animacao-bota-1: #4b9bfd;
     --animacao-bota-2: #51fc9e;
