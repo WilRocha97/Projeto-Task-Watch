@@ -175,7 +175,7 @@
     width: 100%;
     height: 3px;
     border-radius: var(--borda-botao);
-    transition: margin 0.2s, width var(--transicao-link) ease-in-out, height 0.2s;
+    transition: margin 0.2s, width var(--transicao-link) ease-in-out, height 0.2s, background-color var(--transicao-link) ease-in-out;
 }
 .porcentagem.pulse .barraLoading {
     width: 100% !important;

@@ -14,6 +14,7 @@ export function decoracao(card) {
         const imagemAleatoria = [Math.floor(Math.random() * variantesImagens)];
         // Atualiza a imagem
         card.querySelector('#decoracao').src = `assets/temas/${feriado}/${imagemAleatoria}.png`;
+        card.querySelector('#decoracao').alt = `Figurinha ${feriado}`;
     }
     else {
         card.querySelector('#decoracao').remove()
