@@ -326,7 +326,7 @@ explode.addEventListener('click', () => {
         }
 
         maisInfos.forEach(maisInfo => {
-            if (!card.querySelector(maisInfo.botao).classList.contains('invisible2')) {
+            if (!card.querySelector(maisInfo.botao).classList.contains('invisible')) {
                 setTimeout(()=> {
                     card.classList.remove('collapsed');
                     card.classList.add('large');
