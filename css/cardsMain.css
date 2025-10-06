@@ -37,6 +37,7 @@
     text-shadow: none !important;
     --cor-loading-1: #6e6e6e7c;
     --cor-loading-2: #6e6e6e7c;
+    --cor-botao-maisInfo: var(--sombra-2) !important;
 }
 .sortable-ghost .porcentagem,
 .sortable-ghost .bolinhaLoading {

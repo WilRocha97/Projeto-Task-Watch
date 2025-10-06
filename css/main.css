@@ -19,7 +19,8 @@
     --borda-botao: 20px;
     --padding-botao: 1px 6px;
     --cor-padrao: #ff0040;
-    --blur-transition: 10px
+    --blur-transition: 10px;
+    --cor-botao-maisInfo: #ffffffff;
 }
 
 .dark {

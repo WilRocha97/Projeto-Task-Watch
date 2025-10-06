@@ -28,18 +28,18 @@
     margin: 0 5px;
     align-self: center;
     cursor: pointer;
-    border-left: 3px solid #ffffff;
-    border-right: 3px solid #ffffff;
-    border-top: 3px solid #ffffff;
-    border-bottom: 3px solid #ffffff;
+    border-left: 3px solid var(--cor-botao-maisInfo);
+    border-right: 3px solid var(--cor-botao-maisInfo);
+    border-top: 3px solid var(--cor-botao-maisInfo);
+    border-bottom: 3px solid var(--cor-botao-maisInfo);
     transition: all 0.3s ease;
 }
 .maisInfob.flip {
     margin: 5px 5px;
-    border-left: 3px solid #ffffff;
-    border-right: 3px solid #ffffff;
-    border-top: 1px solid #ffffff;
-    border-bottom: 1px solid #ffffff;
+    border-left: 3px solid var(--cor-botao-maisInfo);
+    border-right: 3px solid var(--cor-botao-maisInfo);
+    border-top: 1px solid var(--cor-botao-maisInfo);
+    border-bottom: 1px solid var(--cor-botao-maisInfo);
 }
 
 .maisInfo:hover, .maisInfo2:hover, .maisInfo3:hover {
