@@ -23,9 +23,13 @@ function definevariantesImagens() {
         variantesImagens = 19;
         feriado = 'junina'
     }
-    else if ((mes === 10 && dia >= 1) && (mes === 10 && dia <= 31)) {
+    else if ((mes === 10 && dia >= 1) && (mes === 10 && dia <= 30)) {
         variantesImagens = 18;
         feriado = 'halloween'
+    }
+    else if ((mes === 10 && dia >= 31) || (mes === 11 && dia <= 5)) {
+        variantesImagens = 19;
+        feriado = 'diaDeMuertos'
     }
     else if ((mes === 12 && dia >= 1) && (mes === 12 && dia <= 29)) {
         variantesImagens = 12;
