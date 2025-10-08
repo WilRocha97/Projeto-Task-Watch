@@ -5,7 +5,8 @@
                 inset 1px 1px 1px var(--sombra-vidro-clara),
                 inset 1px -1px 1px var(--sombra-vidro-escura),
                 inset -1px 1px 1px var(--sombra-vidro-escura),
-                0 0 15px var(--cor-principal);
+                0 0 50px var(--cor-opaca),
+                0 0 25px var(--cor-opaca-2);
         border: var(--borda-card) solid var(--cor-principal);
     }
     50% {
@@ -14,8 +15,8 @@
                 inset 1px 1px 1px var(--sombra-vidro-clara),
                 inset 1px -1px 1px var(--sombra-vidro-escura),
                 inset -1px 1px 1px var(--sombra-vidro-escura),
-                var(--direcao-sombra-1) var(--direcao-sombra-1) 10px var(--cor-opaca),
-                var(--direcao-sombra-2) var(--direcao-sombra-2) 10px var(--cor-opaca-2);
+                var(--direcao-sombra-1) var(--direcao-sombra-1) 5px var(--cor-opaca),
+                var(--direcao-sombra-2) var(--direcao-sombra-2) 5px var(--cor-opaca-2);
         border: var(--borda-card) solid var(--cor-opaca-2);
     }
 }
@@ -83,8 +84,8 @@
                 inset 1px 1px 1px var(--sombra-vidro-clara),
                 inset 1px -1px 1px var(--sombra-vidro-escura),
                 inset -1px 1px 1px var(--sombra-vidro-escura),
-                var(--direcao-sombra-1) var(--direcao-sombra-1) 10px var(--cor-opaca),
-                var(--direcao-sombra-2) var(--direcao-sombra-2) 10px var(--cor-opaca-2);
+                var(--direcao-sombra-1) var(--direcao-sombra-1) 5px var(--cor-opaca),
+                var(--direcao-sombra-2) var(--direcao-sombra-2) 5px var(--cor-opaca-2);
 
     border: var(--borda-card) solid var(--cor-opaca-2);
     background: linear-gradient(50deg, var(--cor-primaria), var(--cor-secundaria));
@@ -98,7 +99,8 @@
                 inset 1px 1px 1px var(--sombra-vidro-clara),
                 inset 1px -1px 1px var(--sombra-vidro-escura),
                 inset -1px 1px 1px var(--sombra-vidro-escura),
-                0 0 15px var(--cor-principal);
+                0 0 50px var(--cor-opaca),
+                0 0 25px var(--cor-opaca-2);
     border: var(--borda-card) solid var(--cor-principal);
     background: linear-gradient(50deg, var(--cor-secundaria), var(--cor-primaria));
     animation: none;
@@ -111,8 +113,8 @@
                 inset 1px 1px 1px var(--sombra-vidro-clara),
                 inset 1px -1px 1px var(--sombra-vidro-escura),
                 inset -1px 1px 1px var(--sombra-vidro-escura),
-                var(--direcao-sombra-1) var(--direcao-sombra-1) 10px var(--cor-opaca),
-                var(--direcao-sombra-2) var(--direcao-sombra-2) 10px var(--cor-opaca-2);
+                var(--direcao-sombra-1) var(--direcao-sombra-1) 5px var(--cor-opaca),
+                var(--direcao-sombra-2) var(--direcao-sombra-2) 5px var(--cor-opaca-2);
 
     border: var(--borda-card) solid var(--cor-secundaria);
     background: linear-gradient(50deg, var(--cor-primaria), var(--cor-secundaria));

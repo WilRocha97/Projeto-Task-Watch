@@ -82,7 +82,7 @@
 }
 
 .addMaquinaAtivada {
-    transform: rotate(-90deg);
+    transform: rotate(-180deg);
 }
 
 /* barra de status */
