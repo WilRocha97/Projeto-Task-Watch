@@ -190,8 +190,8 @@
 .linha::after {
     justify-self: center;
     align-self: center;
-    width: 95%;
-    height: 90%;
+    width: 99.5%;
+    height: 50%;
     opacity: 0;
     content: "";
     position: absolute;
@@ -208,10 +208,10 @@
             inset 1px 1px 1px var(--sombra-vidro-clara),
             inset 1px -1px 1px var(--sombra-vidro-escura),
             inset -1px 1px 1px var(--sombra-vidro-escura),
-            inset 4px 0 15px var(--animacao-opaca-bota-1),
-            inset -4px 0 15px var(--animacao-opaca-bota-3),
-            inset 0 -4px 15px var(--animacao-opaca-bota-2),
-            inset 0 4px 15px var(--animacao-opaca-bota-4);
+            inset 4px 0 25px var(--animacao-opaca-bota-1),
+            inset -4px 0 25px var(--animacao-opaca-bota-3),
+            inset 0 -4px 25px var(--animacao-opaca-bota-2),
+            inset 0 4px 25px var(--animacao-opaca-bota-4);
     transition: var(--transicao-link) ease-in-out;
 }
 .linha:hover::after {
