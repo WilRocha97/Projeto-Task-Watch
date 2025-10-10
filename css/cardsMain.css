@@ -73,7 +73,7 @@
     overflow: hidden;
     -webkit-tap-highlight-color: transparent;
     outline: none;
-    transition: var(--transicao-link) ease-in-out, max-width 0.2s ease-in-out;
+    transition: var(--transicao-link) ease-in-out, max-width 0.2s ease-in-out, min-width 0.2s ease-in-out;
 }
 .rectangle.enter {
     max-width: 275px;
@@ -85,8 +85,8 @@
     overflow: hidden;
 }
 .rectangle.enter.extraLarge {
-    max-height: 900px !important;
-    max-width: 583px !important; 
+    max-height: 900px;
+    max-width: 583px; 
 }
 .rectangle.enter.large {
     max-height: 500px;
@@ -104,32 +104,28 @@
     margin: 0 !important;
     opacity: 0 !important;
     scale: 0 !important;
-    transition: var(--transicao-link) ease-in-out, max-height 0.2s ease-in-out;
+    transition: var(--transicao-link) ease-in-out, max-height 0.2s ease-in-out, min-height 0.2s ease-in-out;
 }
 .rectangle.collapsed {
     --escala-card: 1.1;
-    line-height: normal;
-    min-width: 30px !important;
-    min-height: 30px !important;
     max-width: 30px !important;
     max-height: 30px !important;
     border-radius: 12px;
     padding: 0;
     margin: 10px;
-    transition: var(--transicao-link) ease-in-out, max-height 0.2s ease-in-out;
+    transition: var(--transicao-link) ease-in-out, max-height 0.2s ease-in-out, min-height 0.2s ease-in-out;
 }
 .rectangle.collapsed #decoracao,
 .rectangle.collapsed .botaoFechar,
 .rectangle.collapsed .botaoInfo,
 .rectangle.collapsed .maisInfo,
 .rectangle.collapsed .maisInfo2,
-.rectangle.collapsed .content,
 .rectangle.collapsed .dispositivo,
 .rectangle.collapsed .titulo,
+.rectangle.collapsed #media,
 .rectangle.collapsed .porcentagem.pulse,
 .rectangle.collapsed .bolinhaLoading,
-.rectangle.collapsed .bolinhaLoadingMove,
-.rectangle.collapsed #media {
+.rectangle.collapsed .bolinhaLoadingMove {
     opacity: 0 !important;
     animation: none !important;
 }

@@ -153,7 +153,7 @@ export function verifica_estado_card(divMae) {
     const erroInfo = divMae.querySelector('#erroInfo');
 
     if (!erroInfo.classList.contains('collapsed') && !divMae.classList.contains('collapsed')) {
-            divMae.classList.add('extraLarge') 
+        divMae.classList.add('extraLarge') 
     }
 
     // Controla o tamanho máximo do card para otimizar a animação de minimiza-lo

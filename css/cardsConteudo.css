@@ -53,7 +53,7 @@
     display: flex;
     flex-direction: column;
     opacity: 1;
-    transition: var(--transicao-link) ease-in-out;
+    transition: 0.2s ease-in-out;
 }
 .resumoErroInfo {
     max-height: 500px;
@@ -152,20 +152,20 @@
 
 @media (max-width: 916px) {
     .maisInfo, .maisInfo2, .maisInfo3  {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
     .subMenuCard {
         flex-wrap: wrap;
-        font-size: 1rem;
+        font-size: 0.9rem;
         margin: 10px 6px;
         gap: 20px;
     }
     .content {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
         padding: 5px 6px;
     }
     .dispositivo, .titulo, .tituloContainer {
-        font-size: 1.1rem !important;
+        font-size: 1rem !important;
         height: 20px;
     }
     #mensagemAlerta {

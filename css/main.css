@@ -684,7 +684,7 @@ button.clicked, .MenuBotao.clicked {
 }
 .linkPadrao:hover {
     text-shadow: 4px 0 5px var(--animacao-opaca-bota-1),
-                4px 0 10px var(--animacao-bota-1),
+                 4px 0 10px var(--animacao-bota-1),
                 -4px 0 5px var(--animacao-opaca-bota-3),
                 -4px 0 10px var(--animacao-bota-3),
                 0 -4px 5px var(--animacao-opaca-bota-2),
