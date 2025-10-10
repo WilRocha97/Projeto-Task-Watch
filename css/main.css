@@ -60,7 +60,7 @@
     --sombra-clara: #00000028;
     --sombra-escura: #0000006e;
     --sombra-escura-2: #00000091;
-    --sombra-vidro-clara: #ffffff07;
+    --sombra-vidro-clara: #ffffff0c;
     --sombra-vidro-escura: #8c8c8c05;
     --luz-menu: #7f95afc7;
 }
@@ -73,10 +73,10 @@
     --animacao-bota-2: #51fc9e;
     --animacao-bota-3: #ffd448;
     --animacao-bota-4: #ff5fa2;
-    --animacao-opaca-bota-1: #4b9bfd1c;
-    --animacao-opaca-bota-2: #51fc9e2f;
-    --animacao-opaca-bota-3: #ffd44825;
-    --animacao-opaca-bota-4: #ff5fa21f;
+    --animacao-opaca-bota-1: #4b9bfd2c;
+    --animacao-opaca-bota-2: #51fc9e3a;
+    --animacao-opaca-bota-3: #ffd44834;
+    --animacao-opaca-bota-4: #ff5fa233;
 
     --cor-executando: #00be85;
     --cor-erro: #ff0000;
@@ -101,8 +101,8 @@
     --sombra-clara: #b8b5b528;
     --sombra-escura: #4a48481f;
     --sombra-escura-2: #2525255b;
-    --sombra-vidro-clara: #ffffff40;
-    --sombra-vidro-escura: #9b9b9b1a;
+    --sombra-vidro-clara: #ffffff65;
+    --sombra-vidro-escura: #7e7e7e2f;
     --luz-menu: #ebebebad;
 }
 
@@ -285,10 +285,10 @@ button {
 .fundo, .fundoSolido {
     box-shadow: var(--direcao-sombra-1) var(--direcao-sombra-1) 9px var(--sombra-clara),
                 var(--direcao-sombra-2) var(--direcao-sombra-2) 9px var(--sombra-escura),
-                inset -1px -1px 1px var(--sombra-vidro-clara),
-                inset 1px 1px 1px var(--sombra-vidro-clara),
-                inset 1px -1px 1px var(--sombra-vidro-escura),
-                inset -1px 1px 1px var(--sombra-vidro-escura);
+                inset -1px -1px 2px var(--sombra-vidro-clara),
+                inset 1px 1px 2px var(--sombra-vidro-clara),
+                inset 1px -1px 2px var(--sombra-vidro-escura),
+                inset -1px 1px 2px var(--sombra-vidro-escura);
 }
 .fundoInvertido {
     background: none;
@@ -447,10 +447,10 @@ button {
             -4px 0 3px var(--animacao-opaca-bota-3),
             0 -4px 3px var(--animacao-opaca-bota-2),
             0 4px 3px var(--animacao-opaca-bota-4),
-            inset -1px -1px 1px var(--sombra-vidro-clara),
-            inset 1px 1px 1px var(--sombra-vidro-clara),
-            inset 1px -1px 1px var(--sombra-vidro-escura),
-            inset -1px 1px 1px var(--sombra-vidro-escura),
+            inset -1px -1px 2px var(--sombra-vidro-clara),
+            inset 1px 1px 2px var(--sombra-vidro-clara),
+            inset 1px -1px 2px var(--sombra-vidro-escura),
+            inset -1px 1px 2px var(--sombra-vidro-escura),
             inset 4px 0 15px var(--animacao-opaca-bota-1),
             inset -4px 0 15px var(--animacao-opaca-bota-3),
             inset 0 -4px 15px var(--animacao-opaca-bota-2),
