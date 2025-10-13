@@ -1,6 +1,8 @@
 import {procurarCard} from './cards.js';
 import {isTouchDevice} from './main.js';
 
+let canClickLimpaBusca = true;
+
 const fundoCabecalho = document.getElementById('cabecalho');
 
 const telaMaquinas = document.getElementById('telaMaquinas');
@@ -21,12 +23,15 @@ function esperar(ms) {
 }
 
 async function exibeMaquinas() {
+    canClickLimpaBusca = false
+
     const maquinasNaLista = document.querySelectorAll('.rectangleMaquinas');
     for (const maquinaNaLista of maquinasNaLista) {
-        maquinaNaLista.querySelector('.cStatusMaquina').classList.remove('pulse')
-        maquinaNaLista.classList.remove('invisible7')
-        await esperar(10);
+        maquinaNaLista.classList.remove('invisible7');
+        await esperar(20);
     }
+    
+    canClickLimpaBusca = true
 }
 
 async function exibeMaquinaPesquisada(pesquisa, nomeDaMaquina) {
@@ -51,7 +56,7 @@ async function exibeMaquinaPesquisada(pesquisa, nomeDaMaquina) {
         else {
             resultado = true
         }
-        await esperar(10);
+        await esperar(20);
     };
     // aplica estilo de destaque aos cards
     if (!resultado) {
@@ -243,9 +248,6 @@ document.addEventListener('click', (event) => {
     const divMae = target.closest('.rectangleMaquinas');
 
     if (divMae) {
-        divMae.querySelector('.cStatusMaquina').classList.remove('pulse');
-        divMae.classList.remove('pulse');
-
         if (target.id == 'mudarStatus') {
             var statusDaMaquina = divMae.querySelector('#statusMaquina');
             // Procura todos os elementos que tenham no ID a id da maquina
@@ -320,10 +322,14 @@ addMaquina.addEventListener('click' , () => {
 })
 // limpa busca card
 limpaInputPesquisaMaquina.addEventListener('click', ()=> {
+    if (!canClickLimpaBusca) return;
+
     pesquisaMaquina.value = ''
     exibeMaquinas()
 })
 pesquisaMaquina.addEventListener('keydown', (event) => {
+    if (!canClickLimpaBusca) return;
+
     pesquisaMaquina.classList.remove('naoEncontrado');
     if (event.key === 'Enter') {
         exibeMaquinaPesquisada(true, '')
@@ -341,6 +347,8 @@ pesquisaMaquina.addEventListener('blur', (event) => {
     document.querySelector('.maquinasContainerFundo').classList.remove('invisibleMobile');
 });
 limpaInputAddMaquina.addEventListener('click', ()=> {
+    if (!canClickLimpaBusca) return;
+
     novaMaquina.value = ''
     exibeMaquinas()
 })
