@@ -200,10 +200,6 @@
     border-radius: inherit;
     box-shadow: var(--direcao-sombra-1) var(--direcao-sombra-1) 9px var(--sombra-clara),
             var(--direcao-sombra-2) var(--direcao-sombra-2) 9px var(--sombra-escura),
-            4px 0 3px var(--animacao-opaca-bota-1),
-            -4px 0 3px var(--animacao-opaca-bota-3),
-            0 -4px 3px var(--animacao-opaca-bota-2),
-            0 4px 3px var(--animacao-opaca-bota-4),
             inset -1px -1px 1px var(--sombra-vidro-clara),
             inset 1px 1px 1px var(--sombra-vidro-clara),
             inset 1px -1px 1px var(--sombra-vidro-escura),

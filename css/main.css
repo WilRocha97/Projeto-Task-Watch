@@ -73,10 +73,10 @@
     --animacao-bota-2: #51fc9e;
     --animacao-bota-3: #ffd448;
     --animacao-bota-4: #ff5fa2;
-    --animacao-opaca-bota-1: #4b9bfd2c;
-    --animacao-opaca-bota-2: #51fc9e3a;
-    --animacao-opaca-bota-3: #ffd44834;
-    --animacao-opaca-bota-4: #ff5fa233;
+    --animacao-opaca-bota-1: #0073ff2c;
+    --animacao-opaca-bota-2: #00ff733a;
+    --animacao-opaca-bota-3: #ffc40034;
+    --animacao-opaca-bota-4: #ff006a33;
 
     --cor-executando: #00be85;
     --cor-erro: #ff0000;
@@ -98,8 +98,8 @@
     --cor-fundo: #fffaf4;
     --direcao-sombra-2: 2px;
     --direcao-sombra-1: -2px;
-    --sombra-clara: #b8b5b528;
-    --sombra-escura: #4a48481f;
+    --sombra-clara: #97959528;
+    --sombra-escura: #3b3b3b1f;
     --sombra-escura-2: #2525255b;
     --sombra-vidro-clara: #ffffff65;
     --sombra-vidro-escura: #7e7e7e2f;
@@ -443,10 +443,6 @@ button {
     border-radius: inherit;
     box-shadow: var(--direcao-sombra-1) var(--direcao-sombra-1) 9px var(--sombra-clara),
             var(--direcao-sombra-2) var(--direcao-sombra-2) 9px var(--sombra-escura),
-            4px 0 3px var(--animacao-opaca-bota-1),
-            -4px 0 3px var(--animacao-opaca-bota-3),
-            0 -4px 3px var(--animacao-opaca-bota-2),
-            0 4px 3px var(--animacao-opaca-bota-4),
             inset -1px -1px 2px var(--sombra-vidro-clara),
             inset 1px 1px 2px var(--sombra-vidro-clara),
             inset 1px -1px 2px var(--sombra-vidro-escura),
