@@ -98,7 +98,7 @@
     max-height: 52px;
 }
 .telaResumoConteudo {
-    max-height: 143px;
+    max-height: 145px;
     transition: max-height var(--transicao-link) ease-in-out;
 }
 .telaResumoConteudo.large {
