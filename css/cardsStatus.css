@@ -112,6 +112,9 @@
     background: linear-gradient(50deg, var(--cor-primaria), var(--cor-secundaria));
     animation: var(--animacao);
 }
+.status.collapsed {
+    animation: none;
+}
 
 .buscaCard, .buscaCard:hover {
     animation: bounce 0.5s infinite !important;
