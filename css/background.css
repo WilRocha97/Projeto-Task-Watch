@@ -15,7 +15,7 @@
     min-height: 100vh;
     max-height: 100vh;
     opacity: 1;
-    transition: max-height 2s, min-height 2s, opacity var(--transicao-link);
+    transition: 2s ease-in-out;
 }
 
 .fundoGradiente {
@@ -52,7 +52,7 @@
     filter: var(--filter);
 
     mask-image: radial-gradient(ellipse at 30% 0%, var(--cor-fundo) 0, transparent 70%);
-    transition: opacity 1s;
+    transition: 1s ease-in-out;
 }
 .fundoGradiente::after {
     content: "";

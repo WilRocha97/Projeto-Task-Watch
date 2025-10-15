@@ -61,8 +61,7 @@
     --escala-card: 1.02;
     color: white;
     border-radius: 20px;
-    max-width: 0;
-    min-width: 0;
+    width: 0;
     max-height: 0;
     cursor: pointer;
     border: 0;
@@ -73,10 +72,10 @@
     overflow: hidden;
     -webkit-tap-highlight-color: transparent;
     outline: none;
-    transition: var(--transicao-link) ease-in-out, max-width 0.2s ease-in-out, min-width 0.2s ease-in-out;
+    transition: var(--transicao-link) ease-in-out, width 0.2s ease-in-out;
 }
 .rectangle.enter {
-    max-width: 275px;
+    width: 275px;
     max-height: 150px;
     padding: 5px;
     margin: 12px;
@@ -86,7 +85,7 @@
 }
 .rectangle.enter.extraLarge {
     max-height: 900px;
-    max-width: 583px; 
+    width: 583px; 
 }
 .rectangle.enter.large {
     max-height: 500px;
@@ -95,9 +94,8 @@
     max-height: 270px;
 }
 .rectangle.out {
-    max-width: 0 !important;
+    width: 0 !important;
     max-height: 0 !important;
-    min-width: 0 !important;
     min-height: 0 !important;
     border: 0 !important;
     padding: 0 !important;
@@ -108,7 +106,7 @@
 }
 .rectangle.collapsed {
     --escala-card: 1.1;
-    max-width: 30px !important;
+    width: 30px !important;
     max-height: 30px !important;
     border-radius: 12px;
     padding: 0;
@@ -145,15 +143,13 @@
 
 @media (max-width: 641px) {
     .rectangle.enter {
-        max-width: 85vw;
-        min-width: 85vw;
+        width: 85vw;
     }
 }
 @media (max-width: 916px) {
     .rectangle.collapsed {
-        min-width: 45px !important;
+        width: 45px !important;
         min-height: 45px !important;
-        max-width: 45px !important;
         max-height: 45px !important;
         border-radius: var(--borda-botao);
     }
