@@ -15,7 +15,7 @@
                     inset 1px 1px 2px var(--sombra-vidro-clara),
                     inset 1px -1px 2px var(--sombra-vidro-escura),
                     inset -1px 1px 2px var(--sombra-vidro-escura);
-        border: var(--borda-card) solid var(--cor-secundaria);
+        border: var(--borda-card) solid var(--cor-vidro);
     }
 }
 @keyframes bounce {
@@ -82,7 +82,7 @@
                 inset 1px 1px 2px var(--sombra-vidro-clara),
                 inset 1px -1px 2px var(--sombra-vidro-escura),
                 inset -1px 1px 2px var(--sombra-vidro-escura);
-    border: var(--borda-card) solid var(--cor-secundaria);
+    border: var(--borda-card) solid var(--cor-vidro);
     background: linear-gradient(50deg, var(--cor-primaria), var(--cor-secundaria));
     animation: var(--animacao);
 }
@@ -108,7 +108,7 @@
                 inset 1px 1px 2px var(--sombra-vidro-clara),
                 inset 1px -1px 2px var(--sombra-vidro-escura),
                 inset -1px 1px 2px var(--sombra-vidro-escura);
-    border: var(--borda-card) solid var(--cor-secundaria);
+    border: var(--borda-card) solid var(--cor-vidro);
     background: linear-gradient(50deg, var(--cor-primaria), var(--cor-secundaria));
     animation: var(--animacao);
 }

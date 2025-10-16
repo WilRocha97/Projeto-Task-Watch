@@ -160,8 +160,9 @@
 
 .telaHistoricoConteudo {
     border-radius: calc(var(--borda-botao) - 8px);
-    max-height: 67vh;
+    max-height: 69vh;
     margin: 3px;
+    padding: 5px;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -183,20 +184,22 @@
     min-height: 10px;
     padding: 10px;
     border-radius: calc(var(--borda-botao) - 3px);
+    border: var(--borda-card) solid #00000000;
     opacity: 1;
     transition: var(--transicao-link) ease-in-out,
                 color 1s ease-in-out;
 }
 .linha::after {
-    justify-self: center;
-    align-self: center;
-    width: 99.5%;
-    height: 50%;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scaleX(0.99) scaleY(0.6);
     opacity: 0;
     content: "";
     position: absolute;
-    inset: 0;
     z-index: 999;
+    border: var(--borda-card) solid var(--cor-borda-vidro);
     border-radius: inherit;
     box-shadow: var(--direcao-sombra-1) var(--direcao-sombra-1) 9px var(--sombra-clara),
             var(--direcao-sombra-2) var(--direcao-sombra-2) 9px var(--sombra-escura),
@@ -211,8 +214,7 @@
     transition: var(--transicao-link) ease-in-out;
 }
 .linha:hover::after {
-    width: 100%;
-    height: 100%;
+    transform: translate(-50%, -50%) scaleX(1) scaleY(1);
     opacity: 1;
 }
 
