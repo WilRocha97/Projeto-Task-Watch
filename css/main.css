@@ -417,6 +417,7 @@ button {
     align-content: center;    
     text-align: center;
     align-items: center;
+    justify-self: center;
     white-space: nowrap;
     position: relative;
     border: none;
@@ -447,6 +448,8 @@ button {
     border-radius: inherit;
     box-shadow: var(--direcao-sombra-1) var(--direcao-sombra-1) 9px var(--sombra-clara),
             var(--direcao-sombra-2) var(--direcao-sombra-2) 9px var(--sombra-escura),
+            inset 0 0 1px var(--cor-borda-vidro),
+            inset 0 0 1px var(--cor-borda-vidro),
             inset -1px -1px 2px var(--sombra-vidro-clara),
             inset 1px 1px 2px var(--sombra-vidro-clara),
             inset 1px -1px 2px var(--sombra-vidro-escura),
