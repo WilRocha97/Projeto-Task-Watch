@@ -2,6 +2,7 @@
     0%, 100% {
         box-shadow: inset 0 0 80px var(--cor-principal),
                 inset 0 0 1px var(--cor-principal),
+                inset 0 0 1px var(--cor-principal),
                 inset -1px -1px 2px var(--sombra-vidro-clara),
                 inset 1px 1px 2px var(--sombra-vidro-clara),
                 inset 1px -1px 2px var(--sombra-vidro-escura),
@@ -92,6 +93,7 @@
     transform: translateY(-3px);
     --cor-fundo-2: #2525252d;
     box-shadow: inset 0 0 80px var(--cor-principal),
+                inset 0 0 1px var(--cor-principal),
                 inset 0 0 1px var(--cor-principal),
                 inset -1px -1px 2px var(--sombra-vidro-clara),
                 inset 1px 1px 2px var(--sombra-vidro-clara),
