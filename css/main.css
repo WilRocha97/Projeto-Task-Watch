@@ -461,10 +461,14 @@ button {
     transform: translate(-50%, -50%) scale(1);
     opacity: 1;
 }
+.MenuBotao:hover, .MenuBotaoInterno:hover, .MenuBotaoActive:hover, .MenuBotaoDesactive:hover, .paginaHistorico button:hover {
+    margin: 3px 5px;
+}
 
 .MenuBotao.nh::after, .MenuBotaoInterno.nh::after, .MenuBotaoActive.nh::after, .MenuBotaoDesactive.nh::after, .paginaHistorico button.nh::after {
     background: None;
     backdrop-filter: None;
+    border: var(--borda-card) solid #00000000;
     box-shadow: 0 0 0 #00000000,
                 inset 0 0 0 #00000000;
 }
@@ -696,6 +700,7 @@ button.clicked, .MenuBotao.clicked {
 @media (hover: none) {
     .MenuBotao:hover, .MenuBotaoInterno:hover, .MenuBotaoActive:hover, .MenuBotaoDesactive:hover, .paginaHistorico button:hover {
         background: None;
+        margin: 3px;
         backdrop-filter: None;
         box-shadow: 0 0 0 #00000000,
                     inset 0 0 0 #00000000;

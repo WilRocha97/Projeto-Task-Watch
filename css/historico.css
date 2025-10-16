@@ -217,6 +217,9 @@
     transform: translate(-50%, -50%) scaleX(1) scaleY(1);
     opacity: 1;
 }
+.linha:hover {
+    padding: 12px 10px;
+}
 
 .situacao {
     text-align: right;
