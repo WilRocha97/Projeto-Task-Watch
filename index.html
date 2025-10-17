@@ -60,7 +60,7 @@
                 <div class="cmb fundo menuTelaBotoes menuInvisivel invisible3">
                     <div class="cmb fundoInvertido barraPesquisa">
                         <input type="text" id="searchInputCard" class="cmb cInputCard" placeholder="Buscar cartão" title="Buscar cartão por nome da rotina">
-                        <button id="limpaCInputCard" class="cmb MenuBotaoInterno BotaoFechar" title="Limpar busca">⨉</button>
+                        <div id="limpaCInputCard" class="cmb botaoFechar botaoMaquina" title="Limpar busca">⨉</div>
                     </div>
                 </div>
 
@@ -276,18 +276,18 @@
         <div class="menuMaquinas">
             <div id="barraPesquisaMaquina" class="cmb fundoInvertido barraPesquisa">
                 <input type="text" id="inputPesquisaMaquina" class="cmb mInputName" placeholder="Busca" title="Busca dispositivo">
-                <button id="limpaInputPesquisaMaquina" class="cmb MenuBotaoInterno BotaoFechar" title="Limpar campo">⨉</button>
+                <div id="limpaInputPesquisaMaquina" class="cmb botaoFechar botaoMaquina" title="Limpar campo">⨉</div>
             </div>
 
-            <button id="adMaquina" class="cmb MenuBotaoInterno" title="Adicionar/Pesquisar dispositivo">✛</button>
+            <button id="adMaquina" class="cmb MenuBotao" title="Adicionar/Pesquisar dispositivo">✛</button>
             <div id="barraAddMaquina" class="cmb fundoInvertido barraPesquisa invisible6">
                 <input type="text" id="inputAddMaquina" class="cmb mInputName" placeholder="Novo" title="Digite o nome do novo dispositivo">
-                <button id="limpaInputAddMaquina" class="cmb MenuBotaoInterno BotaoFechar" title="Limpar campo">⨉</button>
+                <div id="limpaInputAddMaquina" class="cmb botaoFechar botaoMaquina" title="Limpar campo">⨉</div>
             </div>
             
-            <button id="ordenarMaquinas" class="cmb MenuBotaoInterno" title="Reordenar a lista" >⇅</button>
-            <button id="fixarTelaMaquinas" class="cmb MenuBotaoInterno MenuBotaoActive" title="Fixar tela" style="rotate: 72deg">★</button>
-            <button id="fecharMaquinas" class="cmb MenuBotaoInterno BotaoFechar" title="Fechar tela de dispositivos">⨉</button>
+            <button id="ordenarMaquinas" class="cmb MenuBotao" title="Reordenar a lista" >⇅</button>
+            <button id="fixarTelaMaquinas" class="cmb MenuBotao MenuBotaoActive" title="Fixar tela" style="rotate: 72deg">★</button>
+            <button id="fecharMaquinas" class="cmb MenuBotao BotaoFechar" title="Fechar tela de dispositivos">⨉</button>
         </div>
         
         <div class="cmb scroll maquinasContainerFundo">
@@ -298,7 +298,7 @@
                         <div class="menuTelaBotoes">
                             <button id="mudarStatus" class="cmb MenuBotao MenuBotaoTexto cMudarStatus" title="Mudar status">Ocupado</button>
                             <div id="buscarMaquina" class="cmb botaoFixar botaoMaquina" title="Buscar máquina">❯</div>
-                            <div id="deletarMaquina" class="btnCard botaoFechar botaoMaquina" title="Deletar dispositivo">⨉</div>
+                            <div id="deletarMaquina" class="cmb botaoFechar botaoMaquina" title="Deletar dispositivo">⨉</div>
                         </div>
                     </div>
                     <textarea type="text" class="inputComentario scroll scrollMini telaMensagemMaquinas" placeholder="Adicionar comentário" title="Adicionar comentário"></textarea>
@@ -311,7 +311,7 @@
                         <div class="menuTelaBotoes">
                             <button id="mudarStatus" class="cmb MenuBotao MenuBotaoTexto cMudarStatus" title="Mudar status">Livre</button>
                             <div id="buscarMaquina" class="cmb botaoFixar botaoMaquina" title="Buscar máquina">❯</div>
-                            <div id="deletarMaquina" class="btnCard botaoFechar botaoMaquina" title="Deletar dispositivo">⨉</div>
+                            <div id="deletarMaquina" class="cmb botaoFechar botaoMaquina" title="Deletar dispositivo">⨉</div>
                         </div>
                     </div>
                     <textarea type="text" class="inputComentario scroll scrollMini telaMensagemMaquinas" placeholder="Adicionar comentário" title="Adicionar comentário"></textarea>
@@ -324,7 +324,7 @@
                         <div class="menuTelaBotoes">
                             <button id="mudarStatus" class="cmb MenuBotao MenuBotaoTexto cMudarStatus" title="Mudar status">Ocupado</button>
                             <div id="buscarMaquina" class="cmb botaoFixar botaoMaquina" title="Buscar máquina">❯</div>
-                            <div id="deletarMaquina" class="btnCard botaoFechar botaoMaquina" title="Deletar dispositivo">⨉</div>
+                            <div id="deletarMaquina" class="cmb botaoFechar botaoMaquina" title="Deletar dispositivo">⨉</div>
                         </div>
                     </div>
                     <textarea type="text" class="inputComentario scroll scrollMini telaMensagemMaquinas" placeholder="Adicionar comentário" title="Adicionar comentário"></textarea>
@@ -337,7 +337,7 @@
                         <div class="menuTelaBotoes">
                             <button id="mudarStatus" class="cmb MenuBotao MenuBotaoTexto cMudarStatus" title="Mudar status">Ocupado</button>
                             <div id="buscarMaquina" class="cmb botaoFixar botaoMaquina" title="Buscar máquina">❯</div>
-                            <div id="deletarMaquina" class="btnCard botaoFechar botaoMaquina" title="Deletar dispositivo">⨉</div>
+                            <div id="deletarMaquina" class="cmb botaoFechar botaoMaquina" title="Deletar dispositivo">⨉</div>
                         </div>
                     </div>
                     <textarea type="text" class="inputComentario scroll scrollMini telaMensagemMaquinas" placeholder="Adicionar comentário" title="Adicionar comentário"></textarea>
@@ -350,7 +350,7 @@
                         <div class="menuTelaBotoes">
                             <button id="mudarStatus" class="cmb MenuBotao MenuBotaoTexto cMudarStatus" title="Mudar status">Livre</button>
                             <div id="buscarMaquina" class="cmb botaoFixar botaoMaquina" title="Buscar máquina">❯</div>
-                            <div id="deletarMaquina" class="btnCard botaoFechar botaoMaquina" title="Deletar dispositivo">⨉</div>
+                            <div id="deletarMaquina" class="cmb botaoFechar botaoMaquina" title="Deletar dispositivo">⨉</div>
                         </div>
                     </div>
                     <textarea type="text" class="inputComentario scroll scrollMini telaMensagemMaquinas" placeholder="Adicionar comentário" title="Adicionar comentário"></textarea>
@@ -363,7 +363,7 @@
                         <div class="menuTelaBotoes">
                             <button id="mudarStatus" class="cmb MenuBotao MenuBotaoTexto cMudarStatus" title="Mudar status">Ocupado</button>
                             <div id="buscarMaquina" class="cmb botaoFixar botaoMaquina" title="Buscar máquina">❯</div>
-                            <div id="deletarMaquina" class="btnCard botaoFechar botaoMaquina" title="Deletar dispositivo">⨉</div>
+                            <div id="deletarMaquina" class="cmb botaoFechar botaoMaquina" title="Deletar dispositivo">⨉</div>
                         </div>
                     </div>
                     <textarea type="text" class="inputComentario scroll scrollMini telaMensagemMaquinas" placeholder="Adicionar comentário" title="Adicionar comentário"></textarea>
@@ -376,7 +376,7 @@
                         <div class="menuTelaBotoes">
                             <button id="mudarStatus" class="cmb MenuBotao MenuBotaoTexto cMudarStatus" title="Mudar status">Livre</button>
                             <div id="buscarMaquina" class="cmb botaoFixar botaoMaquina" title="Buscar máquina">❯</div>
-                            <div id="deletarMaquina" class="btnCard botaoFechar botaoMaquina" title="Deletar dispositivo">⨉</div>
+                            <div id="deletarMaquina" class="cmb botaoFechar botaoMaquina" title="Deletar dispositivo">⨉</div>
                         </div>
                     </div>
                     <textarea type="text" class="inputComentario scroll scrollMini telaMensagemMaquinas" placeholder="Adicionar comentário" title="Adicionar comentário"></textarea>
@@ -389,7 +389,7 @@
                         <div class="menuTelaBotoes">
                             <button id="mudarStatus" class="cmb MenuBotao MenuBotaoTexto cMudarStatus" title="Mudar status">Ocupado</button>
                             <div id="buscarMaquina" class="cmb botaoFixar botaoMaquina" title="Buscar máquina">❯</div>
-                            <div id="deletarMaquina" class="btnCard botaoFechar botaoMaquina" title="Deletar dispositivo">⨉</div>
+                            <div id="deletarMaquina" class="cmb botaoFechar botaoMaquina" title="Deletar dispositivo">⨉</div>
                         </div>
                     </div>
                     <textarea type="text" class="inputComentario scroll scrollMini telaMensagemMaquinas" placeholder="Adicionar comentário" title="Adicionar comentário"></textarea>
@@ -402,7 +402,7 @@
                         <div class="menuTelaBotoes">
                             <button id="mudarStatus" class="cmb MenuBotao MenuBotaoTexto cMudarStatus" title="Mudar status">Ocupado</button>
                             <div id="buscarMaquina" class="cmb botaoFixar botaoMaquina" title="Buscar máquina">❯</div>
-                            <div id="deletarMaquina" class="btnCard botaoFechar botaoMaquina" title="Deletar dispositivo">⨉</div>
+                            <div id="deletarMaquina" class="cmb botaoFechar botaoMaquina" title="Deletar dispositivo">⨉</div>
                         </div>
                     </div>
                     <textarea type="text" class="inputComentario scroll scrollMini telaMensagemMaquinas" placeholder="Adicionar comentário" title="Adicionar comentário"></textarea>
@@ -415,7 +415,7 @@
                         <div class="menuTelaBotoes">
                             <button id="mudarStatus" class="cmb MenuBotao MenuBotaoTexto cMudarStatus" title="Mudar status">Ocupado</button>
                             <div id="buscarMaquina" class="cmb botaoFixar botaoMaquina" title="Buscar máquina">❯</div>
-                            <div id="deletarMaquina" class="btnCard botaoFechar botaoMaquina" title="Deletar dispositivo">⨉</div>
+                            <div id="deletarMaquina" class="cmb botaoFechar botaoMaquina" title="Deletar dispositivo">⨉</div>
                         </div>
                     </div>
                     <textarea type="text" class="inputComentario scroll scrollMini telaMensagemMaquinas" placeholder="Adicionar comentário" title="Adicionar comentário"></textarea>
@@ -428,7 +428,7 @@
                         <div class="menuTelaBotoes">
                             <button id="mudarStatus" class="cmb MenuBotao MenuBotaoTexto cMudarStatus" title="Mudar status">Livre</button>
                             <div id="buscarMaquina" class="cmb botaoFixar botaoMaquina" title="Buscar máquina">❯</div>
-                            <div id="deletarMaquina" class="btnCard botaoFechar botaoMaquina" title="Deletar dispositivo">⨉</div>
+                            <div id="deletarMaquina" class="cmb botaoFechar botaoMaquina" title="Deletar dispositivo">⨉</div>
                         </div>
                     </div>
                     <textarea type="text" class="inputComentario scroll scrollMini telaMensagemMaquinas" placeholder="Adicionar comentário" title="Adicionar comentário"></textarea>
@@ -441,7 +441,7 @@
                         <div class="menuTelaBotoes">
                             <button id="mudarStatus" class="cmb MenuBotao MenuBotaoTexto cMudarStatus" title="Mudar status">Ocupado</button>
                             <div id="buscarMaquina" class="cmb botaoFixar botaoMaquina" title="Buscar máquina">❯</div>
-                            <div id="deletarMaquina" class="btnCard botaoFechar botaoMaquina" title="Deletar dispositivo">⨉</div>
+                            <div id="deletarMaquina" class="cmb botaoFechar botaoMaquina" title="Deletar dispositivo">⨉</div>
                         </div>
                     </div>
                     <textarea type="text" class="inputComentario scroll scrollMini telaMensagemMaquinas" placeholder="Adicionar comentário" title="Adicionar comentário"></textarea>
@@ -1040,12 +1040,12 @@
                 <div id="configHistorico" class="fundo menuTelaBotoes collapsed">
                     <div id="painelInput" class="fundoInvertido barraPesquisa">
                         <input type="text" id="searchInputDate" class="hInputDate" placeholder="Data e hora" title="Data e hora">
-                        <button id="limpaHInputDate" class="MenuBotaoInterno BotaoFechar" title="Limpar data e hora">⨉</button>
+                        <div id="limpaHInputDate" class="cmb botaoFechar botaoMaquina" title="Limpar data e hora">⨉</div>
                     </div>
 
                     <div id="painelInput" class="fundoInvertido barraPesquisa">
                         <input type="text" id="searchInputName" class="hInputName" placeholder="Nome da rotina" title="Nome da rotina">
-                        <button id="limpaHInputName" class="MenuBotaoInterno BotaoFechar" title="Limpar nome da rotina">⨉</button>
+                        <div id="limpaHInputName" class="cmb botaoFechar botaoMaquina" title="Limpar nome da rotina">⨉</div>
                     </div>
                 </div>
                 <div id="configHistorico" class="fundo menuTelaBotoes collapsed">

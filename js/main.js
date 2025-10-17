@@ -10,6 +10,7 @@ var botoes = document.querySelectorAll('button');
 var botoesCards = document.querySelectorAll('.btnCard');
 var cards = document.querySelectorAll('.rectangle');
 var maquinasNaLista = document.querySelectorAll('.rectangleMaquinas');
+var barrasPesquisa = document.querySelectorAll('.barraPesquisa');
 
 var relogio = document.getElementById('clock');
 const cartoesFixados = document.getElementById('controlarFixados');
@@ -68,6 +69,9 @@ if (isTouchDevice()) {
     });
     maquinasNaLista.forEach((botao)=> {
         botao.classList.add('nh')
+    });
+    barrasPesquisa.forEach((barra)=> {
+        barra.classList.add('nh')
     });
 }
 

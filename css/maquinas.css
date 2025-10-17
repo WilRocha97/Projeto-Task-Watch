@@ -63,14 +63,6 @@
 .rectangleMaquinas.nh {
     scale: 1;
 }
-.rectangleMaquinas:hover .botaoFechar,
-.rectangleMaquinas:hover .botaoFixar,
-.rectangleMaquinas.nh .botaoFechar,
-.rectangleMaquinas.nh .botaoFixar {
-    width: 14px;
-    padding: 4px 5px 5px 5px;
-    opacity: 1;
-}
 
 .tituloContainerMaquina {
     display: flex;
