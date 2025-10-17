@@ -8,6 +8,8 @@ const fundoCabecalho = document.getElementById('cabecalho');
 const telaMaquinas = document.getElementById('telaMaquinas');
 const botaoOrdenarTelaMaquinas = document.getElementById("ordenarMaquinas");
 const botaoFixarTelaMaquinas = document.getElementById('fixarTelaMaquinas');
+const botaoFixarTelaMaquinasTexto = botaoFixarTelaMaquinas.querySelector('.MenuBotaoActive');
+
 const addMaquina = document.getElementById('adMaquina');
 const novaMaquina = document.getElementById('inputAddMaquina');
 const pesquisaMaquina = document.getElementById('inputPesquisaMaquina');
@@ -235,7 +237,7 @@ botaoOrdenarTelaMaquinas.addEventListener("click", () => {
     }, 600);
 });
 botaoFixarTelaMaquinas.addEventListener('click', ()=> {
-    botaoFixarTelaMaquinas.classList.toggle('active')
+    botaoFixarTelaMaquinasTexto.classList.toggle('active')
     document.querySelector('body').classList.toggle('mf');
 
     document.getElementById('fecharMaquinas').classList.toggle('invisible2');

@@ -14,6 +14,8 @@ var barrasPesquisa = document.querySelectorAll('.barraPesquisa');
 
 var relogio = document.getElementById('clock');
 const cartoesFixados = document.getElementById('controlarFixados');
+const cartoesFixadosTexto = cartoesFixados.querySelector('.MenuBotaoActive');
+
 const encolheCard = document.getElementById('encolherCard');
 const explodeCard = document.getElementById('explodirCard');
 const encolhe = document.getElementById('encolher');
@@ -80,17 +82,6 @@ export function animacaoBotao(target) {
     setTimeout(() => {
         target.classList.remove('clicked');
     }, 500); // Tempo da animação
-    
-    setTimeout(() => {
-        if (target.classList.contains('MenuBotaoActive')) {
-            target.classList.remove('MenuBotaoActive')
-            target.classList.add('MenuBotaoDesactive')
-        }
-        else if (target.classList.contains('MenuBotaoDesactive')) {
-            target.classList.remove('MenuBotaoDesactive')
-            target.classList.add('MenuBotaoActive')       
-        }
-    }, 1000);
 }
 
 function updateClock() {
@@ -252,18 +243,18 @@ cInputCard.addEventListener('blur', (event) => {
 });
 
 cartoesFixados.addEventListener('click', () => { 
-    cartoesFixados.classList.toggle('active')
+    cartoesFixadosTexto.classList.toggle('active')
 })
 // Minimiza e maximiza todas as telas internas dos cards
 encolhe.addEventListener('click', () => {
     const cards = document.querySelectorAll('.rectangle');
     const listaReversa = [...cards].reverse(); // Faz uma cópia para não alterar a original
 
-    if (cartoesFixados.classList.contains('active')) {
+    if (cartoesFixadosTexto.classList.contains('active')) {
 
     }
     listaReversa.forEach((card, index) => {
-        if (cartoesFixados.classList.contains('active')) {
+        if (cartoesFixadosTexto.classList.contains('active')) {
             if (!card.classList.contains('fixado')) {
                 return
             }
@@ -293,7 +284,7 @@ encolheCard.addEventListener('click', () => {
     const listaReversa = [...cards].reverse(); // Faz uma cópia para não alterar a original
 
     listaReversa.forEach((card, index) => {
-        if (cartoesFixados.classList.contains('active')) {
+        if (cartoesFixadosTexto.classList.contains('active')) {
             if (!card.classList.contains('fixado')) {
                 return
             }
@@ -318,7 +309,7 @@ explode.addEventListener('click', () => {
     const cards = document.querySelectorAll('.rectangle');
 
     cards.forEach((card, index) => {
-        if (cartoesFixados.classList.contains('active')) {
+        if (cartoesFixadosTexto.classList.contains('active')) {
             if (!card.classList.contains('fixado')) {
                 return
             }
@@ -350,7 +341,7 @@ explodeCard.addEventListener('click', () => {
     const cards = document.querySelectorAll('.rectangle');
 
     cards.forEach((card, index) => {
-        if (cartoesFixados.classList.contains('active')) {
+        if (cartoesFixadosTexto.classList.contains('active')) {
             if (!card.classList.contains('fixado')) {
                 return
             }
