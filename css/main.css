@@ -28,16 +28,17 @@
     --filter: blur(10px) opacity(50%) saturate(200%);
     --opacidade-patern: 0.1;
 
-    --animacao-bota-1: #1f64b8;
-    --animacao-bota-2: #2fc974;
-    --animacao-bota-3: #b4a51e;
-    --animacao-bota-4: #a52158;
+    --animacao-bota-1: #1a67c5;
+    --animacao-bota-2: #29d175;
+    --animacao-bota-3: #beae19;
+    --animacao-bota-4: #ad1e5a;
     --animacao-opaca-bota-1: #1f64b838;
     --animacao-opaca-bota-2: #2fc97427;
     --animacao-opaca-bota-3: #b4a51e2d;
     --animacao-opaca-bota-4: #a521582d;
     
     --cor-executando: #00cf91;
+    --cor-atencao: #00cf0a;
     --cor-erro: #ff0000;
     --cor-ocioso: #ffae00;
     --cor-final: #00c1fc;
@@ -80,6 +81,7 @@
     --animacao-opaca-bota-4: #ff006a33;
 
     --cor-executando: #00be85;
+    --cor-atencao: #01b30a;
     --cor-erro: #ff0000;
     --cor-ocioso: #ffae00;
     --cor-final: #00c3ff;

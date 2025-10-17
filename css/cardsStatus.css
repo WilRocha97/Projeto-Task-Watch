@@ -3,10 +3,10 @@
         box-shadow: inset 0 0 80px var(--cor-principal),
                 inset 0 0 1px var(--cor-principal),
                 inset 0 0 1px var(--cor-principal),
-                inset -1px -1px 2px var(--sombra-vidro-clara),
-                inset 1px 1px 2px var(--sombra-vidro-clara),
-                inset 1px -1px 2px var(--sombra-vidro-escura),
-                inset -1px 1px 2px var(--sombra-vidro-escura),
+                inset 0 0 0 #00000000,
+                inset 0 0 0 #00000000,
+                inset 0 0 0 #00000000,
+                inset 0 0 0 #00000000,
                 0 0 50px var(--cor-opaca),
                 0 0 25px var(--cor-opaca-2);
         border: var(--borda-card) solid var(--cor-principal);
@@ -44,7 +44,16 @@
     --animacao: none;
 }
 .status-attention {
-    --animacao: piscar 5s infinite;
+    --cor-primaria: #386622;
+    --cor-secundaria: #006345;
+    --cor-opaca: #4d92535d;
+    --cor-opaca-2: #00694a9a;
+    --cor-loading-1: #00ff4050;
+    --cor-loading-2: #00ffb350;
+    --cor-principal: var(--cor-atencao);
+    --cor-alerta: var(--cor-opaca);
+    /* --animacao: piscar 5s infinite; */
+    --animacao: none;
 }
 .status-warning {
     --cor-primaria: #8a5300;
@@ -55,7 +64,8 @@
     --cor-loading-2: #ffd000c5;
     --cor-principal: var(--cor-ocioso);
     --cor-alerta: var(--cor-ocioso);
-    --animacao: piscar 3s infinite;
+    /* --animacao: piscar 3s infinite; */
+    --animacao: none;
 }
 .status-error {
     --cor-primaria: #5c0000fb;
@@ -66,7 +76,8 @@
     --cor-loading-2: #eb0091dc;
     --cor-principal: var(--cor-erro);
     --cor-alerta: var(--cor-erro);
-    --animacao: piscar 1.5s infinite;
+    /* --animacao: piscar 1.5s infinite; */
+    --animacao: none;
 }
 .status-final {
     --cor-primaria: #006a7cfd;
@@ -75,11 +86,12 @@
     --cor-opaca-2: #004d818e;
     --cor-principal: var(--cor-final);
     --cor-alerta: var(--cor-final);
-    --animacao: piscar 8s infinite;
+    /* --animacao: piscar 8s infinite; */
+    --animacao: none;
 }
 
 /* Estilos genéricos para todos os status */
-.status {
+.status, .status.nh {
     --cor-fundo-2: #a8a8a82d;
     box-shadow: inset 0 0 20px var(--cor-opaca),
                 inset 0 0 1px var(--cor-opaca),
@@ -111,17 +123,6 @@
 }
 .status.nh {
     scale: 1;
-    --cor-fundo-2: #a8a8a82d;
-    box-shadow: inset 0 0 20px var(--cor-opaca),
-                inset 0 0 1px var(--cor-opaca),
-                inset 0 0 1px var(--cor-opaca),
-                inset -1px -1px 2px var(--sombra-vidro-clara),
-                inset 1px 1px 2px var(--sombra-vidro-clara),
-                inset 1px -1px 2px var(--sombra-vidro-escura),
-                inset -1px 1px 2px var(--sombra-vidro-escura);
-    border: var(--borda-card) solid var(--cor-vidro);
-    background: linear-gradient(50deg, var(--cor-primaria), var(--cor-secundaria));
-    animation: var(--animacao);
 }
 .status.collapsed {
     animation: none;
