@@ -396,6 +396,10 @@ button {
 .cInputUsuario, .cInputSenha, .cInputCard, .hInputName, .hInputDate, .mInputName {
    padding: 0 0 0 10px; 
 }
+.cInputCard {
+    width: 83px;
+    padding: 0 10px;
+}
 
 .BotaoFechar {
     color: red !important;
@@ -477,6 +481,9 @@ button {
     width: 14px;
     padding: 4px 5px 5px 5px;
     opacity: 1;
+}
+.barraPesquisa:hover .limparBarra {
+    margin: 10px;
 }
 
 .MenuBotao.nh::after, .MenuBotaoInterno.nh::after, .paginaHistorico button.nh::after {
