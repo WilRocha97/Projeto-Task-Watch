@@ -158,7 +158,8 @@ export function fechaMenu(botaoDoMenu=false) {
         // Espera a animação de saída terminar para trocar a imagem
         botaoMenu.addEventListener('animationend', function handleOut() {
             botaoMenu.removeEventListener('animationend', handleOut); // Remove o listener
-            botaoMenu.innerHTML = '❯'
+            botaoMenu.innerHTML = '❯';
+            menu.title = 'Abrir menu';
 
             // Adiciona a animação de saída
             botaoMenu.classList.remove('anim-out-side-left');
@@ -189,7 +190,8 @@ export function abreFechaMenu() {
         // Espera a animação de saída terminar para trocar a imagem
         botaoMenu.addEventListener('animationend', function handleOut() {
             botaoMenu.removeEventListener('animationend', handleOut); // Remove o listener
-            botaoMenu.innerHTML = '❮'
+            botaoMenu.innerHTML = '❮';
+            menu.title = 'Fechar menu';
 
             // Adiciona a animação de saída
             botaoMenu.classList.remove('anim-out-side-right');
