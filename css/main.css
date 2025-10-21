@@ -474,7 +474,7 @@ button {
 }
 .MenuBotao:hover::after, .MenuBotaoInterno:hover::after, .paginaHistorico button:hover::after {
     transform: translate(-50%, -50%) scale(1);
-    padding: 0 3px;
+    padding: 0 7px;
     opacity: 1;
 }
 .MenuBotao:hover, .MenuBotaoInterno:hover, .paginaHistorico button:hover {
