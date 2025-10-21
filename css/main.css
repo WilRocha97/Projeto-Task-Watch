@@ -474,7 +474,7 @@ button {
 }
 .MenuBotao:hover::after, .MenuBotaoInterno:hover::after, .paginaHistorico button:hover::after {
     transform: translate(-50%, -50%) scale(1);
-    padding: 0 7px;
+    padding: 0 4px;
     opacity: 1;
 }
 .MenuBotao:hover, .MenuBotaoInterno:hover, .paginaHistorico button:hover {
@@ -657,6 +657,9 @@ button.clicked::after,
         max-height: 47px;
         min-height: 47px;
         min-width: 47px;
+    }
+    .MenuBotao:hover::after, .MenuBotaoInterno:hover::after, .paginaHistorico button:hover::after {
+        padding: 0 7px;
     }
 }  
 @media (max-width: 1255px) {

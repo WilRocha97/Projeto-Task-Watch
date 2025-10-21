@@ -6,11 +6,16 @@ let canClickLimpaBusca = true;
 const fundoCabecalho = document.getElementById('cabecalho');
 
 const telaMaquinas = document.getElementById('telaMaquinas');
+
 const botaoOrdenarTelaMaquinas = document.getElementById("ordenarMaquinas");
+const botaoOrdenarTelaMaquinasTexto = botaoOrdenarTelaMaquinas.querySelector('.MenuBotaoActive');
+
 const botaoFixarTelaMaquinas = document.getElementById('fixarTelaMaquinas');
 const botaoFixarTelaMaquinasTexto = botaoFixarTelaMaquinas.querySelector('.MenuBotaoActive');
 
 const addMaquina = document.getElementById('adMaquina');
+const addMaquinaTexto = addMaquina.querySelector('.MenuBotaoActive');
+
 const novaMaquina = document.getElementById('inputAddMaquina');
 const pesquisaMaquina = document.getElementById('inputPesquisaMaquina');
 const menuMaquinas = document.querySelector('.menuMaquinas');
@@ -120,12 +125,12 @@ export function fecharTelaDeMaquinas() {
         if (!barraAddMaquina.classList.contains('invisible6')) {
             barraAddMaquina.classList.add('invisible6');
             barraPesquisaMaquina.classList.remove('invisible6');
-            addMaquina.classList.toggle('addMaquinaAtivada');
+            addMaquinaTexto.classList.toggle('addMaquinaAtivada');
         }
         pesquisaMaquina.value = ''
         telaMaquinas.classList.add('invisible5');
         fundoCabecalho.classList.remove('cabecalhoMegaExpandido');
-        botaoOrdenarTelaMaquinas.classList.remove('addMaquinaAtivada')
+        botaoOrdenarTelaMaquinasTexto.classList.remove('addMaquinaAtivada')
     }
 }
 
@@ -202,10 +207,10 @@ export function adicionarListeners() {
 var maquinas = ''
 var lista = ''
 botaoOrdenarTelaMaquinas.addEventListener("click", () => {
-    botaoOrdenarTelaMaquinas.classList.toggle('addMaquinaAtivada')
+    botaoOrdenarTelaMaquinasTexto.classList.toggle('addMaquinaAtivada')
     document.querySelector('.maquinasContainerFundo').classList.add('invisible1')
     setTimeout(()=> {
-        if (botaoOrdenarTelaMaquinas.classList.contains('addMaquinaAtivada')) {
+        if (botaoOrdenarTelaMaquinasTexto.classList.contains('addMaquinaAtivada')) {
                 lista = document.getElementById("listaMaquinas");
                 maquinas = Array.from(lista.children); // salva a ordem original
 
@@ -315,7 +320,7 @@ document.addEventListener('click', (event) => {
     }
 });
 addMaquina.addEventListener('click' , () => {
-    addMaquina.classList.toggle('addMaquinaAtivada')
+    addMaquinaTexto.classList.toggle('addMaquinaAtivada')
     barraAddMaquina.classList.toggle('invisible6')
     barraPesquisaMaquina.classList.toggle('invisible6')
     if (!barraAddMaquina.classList.contains('invisible6')) {
