@@ -430,7 +430,7 @@ button {
     background: none;
     border: var(--borda-card) solid #00000000;
     border-radius: var(--borda-botao);
-    margin: 3px;
+    margin: 0 3px;
     cursor: pointer;
     color: var(--cor-texto);
     font-size: var(--tamanho-texto-2);
@@ -469,7 +469,7 @@ button {
     opacity: 1;
 }
 .MenuBotao:hover, .MenuBotaoInterno:hover, .paginaHistorico button:hover {
-    margin: 3px 7px;
+    margin: 0 7px;
 }
 
 .rectangleMaquinas:hover .botaoFechar,
