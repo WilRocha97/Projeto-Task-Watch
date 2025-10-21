@@ -419,7 +419,16 @@ button {
     max-width: 500px;
     opacity: 1;
 }
-.MenuBotao, .MenuBotaoInterno, .MenuBotaoActive, .paginaHistorico button {
+.MenuBotaoActive {
+    transition: var(--transicao-link) ease-in-out, color 1s ease-in-out;
+}
+#controlarFixados, #fixarTelaMaquinas {
+    max-height: 28px;
+    min-height: 28px;
+    min-width: 28px;
+    max-width: 28px;
+}
+.MenuBotao, .MenuBotaoInterno, .paginaHistorico button {
     align-content: center;    
     text-align: center;
     align-items: center;
@@ -644,7 +653,7 @@ button.clicked::after,
     .rodape {
         margin-bottom: 100px;
     }
-    .MenuBotao, .MenuBotaoActive, .paginaHistorico button {
+    .MenuBotao, .paginaHistorico button {
         max-height: 47px;
         min-height: 47px;
         min-width: 47px;
