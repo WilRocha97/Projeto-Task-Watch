@@ -192,7 +192,7 @@
     background: linear-gradient(50deg, var(--cor-loading-1), var(--cor-loading-2));
     border-right: var(--cor-loading-2) 3px;
     border-radius: var(--borda-botao);
-    transition: height 0.2s, width 0.5s ease-in-out;
+    transition: height 0.2s, width 2s;
 }
 .bolinhaLoading {
     position: absolute;
