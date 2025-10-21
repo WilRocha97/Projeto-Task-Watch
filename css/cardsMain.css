@@ -108,6 +108,7 @@
     --escala-card: 1.1;
     width: 30px !important;
     max-height: 30px !important;
+    min-height: 30px !important;
     border-radius: 12px;
     padding: 0;
     margin: 10px;
@@ -122,10 +123,16 @@
 .rectangle.collapsed .dispositivo,
 .rectangle.collapsed .titulo,
 .rectangle.collapsed #media,
+.rectangle.collapsed #mensagemAlerta,
+.rectangle.collapsed .content,
 .rectangle.collapsed .porcentagem.pulse,
 .rectangle.collapsed .bolinhaLoading,
 .rectangle.collapsed .bolinhaLoadingMove {
     opacity: 0 !important;
+    max-height: 0 !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
     animation: none !important;
     cursor: pointer;
 }
