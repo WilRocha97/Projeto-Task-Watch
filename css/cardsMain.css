@@ -110,6 +110,7 @@
     max-height: 30px !important;
     min-height: 30px !important;
     border-radius: 12px;
+    overflow: hidden !important;
     padding: 0;
     margin: 10px;
     transition: var(--transicao-link) ease-in-out, max-height 0.2s ease-in-out, min-height 0.2s ease-in-out;

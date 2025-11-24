@@ -20,6 +20,8 @@
     text-align: center;
     opacity: 1;
     scale: 1;
+    max-height: 20px;
+    min-height: 0;
     transition: var(--transicao-link) ease-in-out;
 }
 .titulo {

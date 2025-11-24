@@ -109,6 +109,8 @@
     max-height: 30px;
     overflow: auto;
     margin: 0 5px;
+    transition: var(--transicao-link-2) ease-in-out, max-height 0.2s ease-in-out, min-height 0.2s ease-in-out;
+
 }
 .content {
     min-height: 10px;
