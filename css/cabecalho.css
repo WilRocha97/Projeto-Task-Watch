@@ -138,32 +138,48 @@
 
 @keyframes carregandoBotao {
     0%, 100% {
-        box-shadow: 4px 0 2px var(--animacao-opaca-bota-4),
-                    -4px 0 2px var(--animacao-opaca-bota-2),
-                    inset 4px 0 25px var(--animacao-bota-4),
-                    inset -4px 0 25px var(--animacao-bota-2),
+        box-shadow: 4px 0 5px var(--animacao-opaca-bota-1),
+                    -4px 0 5px var(--animacao-opaca-bota-2),
+                    inset 4px 4px 25px var(--animacao-bota-1),
+                    inset -4px -4px 25px var(--animacao-bota-2),
                     0 0 5px rgba(255, 255, 255, 0.349);
     }
     25% {
-        box-shadow: 4px 0 2px var(--animacao-opaca-bota-2),
-                    -4px 0 2px var(--animacao-opaca-bota-1),
-                    inset 4px 0 25px var(--animacao-bota-2),
-                    inset -4px 0 25px var(--animacao-bota-1),
+        box-shadow: 4px 0 5px var(--animacao-opaca-bota-2),
+                    -4px 0 5px var(--animacao-opaca-bota-3),
+                    inset 4px 4px 25px var(--animacao-bota-2),
+                    inset -4px -4px 25px var(--animacao-bota-3),
                     0 0 5px rgba(255, 255, 255, 0.479);
     }
     50% {
-        box-shadow: 4px 0 2px var(--animacao-opaca-bota-1),
-                    -4px 0 2px var(--animacao-opaca-bota-3),
-                    inset 4px 0 25px var(--animacao-bota-1),
-                    inset -4px 0 25px var(--animacao-bota-3),
+        box-shadow: 4px 0 5px var(--animacao-opaca-bota-3),
+                    -4px 0 5px var(--animacao-opaca-bota-4),
+                    inset 4px 4px 25px var(--animacao-bota-3),
+                    inset -4px -4px 25px var(--animacao-bota-4),
                     0 0 5px rgba(255, 255, 255, 0.479);
     }
     75% {
-        box-shadow: 4px 0 2px var(--animacao-opaca-bota-3),
-                    -4px 0 2px var(--animacao-opaca-bota-4),
-                    inset 4px 0 25px var(--animacao-bota-3),
-                    inset -4px 0 25px var(--animacao-bota-4),
+        box-shadow: 4px 0 5px var(--animacao-opaca-bota-4),
+                    -4px 0 5px var(--animacao-opaca-bota-1),
+                    inset 4px 4px 25px var(--animacao-bota-4),
+                    inset -4px -4px 25px var(--animacao-bota-1),
                     0 0 5px rgba(255, 255, 255, 0.349);
+    }
+}
+@keyframes carregandoBotaoOff {
+    0% {
+        box-shadow: 4px 0 5px var(--animacao-opaca-bota-1),
+                    -4px 0 5px var(--animacao-opaca-bota-2),
+                    inset 4px 4px 25px var(--animacao-bota-1),
+                    inset -4px -4px 25px var(--animacao-bota-2),
+                    0 0 5px rgba(255, 255, 255, 0.349);
+    }
+    100% {
+        box-shadow: 4px 0 2px #00000000,
+                    -4px 0 2px #00000000,
+                    inset 4px 0 25px #00000000,
+                    inset -4px 0 25px #00000000,
+                    0 0 5px #00000000;
     }
 }
 
@@ -175,23 +191,25 @@
     height: 100%;
     z-index: -1;
     border-radius: 50px;
+    opacity: 1;
     animation: carregandoBotao 2s infinite;
     transition: var(--transicao-link) ease-in-out;
 }
 .carregando.off {
+    animation: carregandoBotaoOff var(--transicao-link);
     opacity: 0;
 }
 
 .MenuBotaoActive.active,
 .paginaHistorico button:disabled {
-    text-shadow: 4px 0 5px var(--animacao-opaca-bota-1),
-                 4px 0 10px var(--animacao-bota-1),
+    text-shadow: 0 4px 5px var(--animacao-opaca-bota-1),
+                 0 4px 10px var(--animacao-bota-1),
                 -4px 0 5px var(--animacao-opaca-bota-3),
                 -4px 0 10px var(--animacao-bota-3),
                 0 -4px 5px var(--animacao-opaca-bota-2),
                 0 -4px 10px var(--animacao-bota-2),
-                0 4px 5px var(--animacao-opaca-bota-4),
-                0 4px 10px var(--animacao-bota-4);              
+                4px 0 5px var(--animacao-opaca-bota-4),
+                4px 0 10px var(--animacao-bota-4);      
 }
 .MenuBotaoActive.active {
     transform: rotate(-72deg)

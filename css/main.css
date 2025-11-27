@@ -530,10 +530,10 @@ button {
                     inset 1px 1px 1px var(--sombra-vidro-clara),
                     inset 1px -1px 1px var(--sombra-vidro-escura),
                     inset -1px 1px 1px var(--sombra-vidro-escura),
-                    inset 4px 0 15px var(--animacao-opaca-bota-1),
+                    inset 0 4px 15px var(--animacao-opaca-bota-1),
                     inset -4px 0 15px var(--animacao-opaca-bota-3),
                     inset 0 -4px 15px var(--animacao-opaca-bota-2),
-                    inset 0 4px 15px var(--animacao-opaca-bota-4);
+                    inset 4px 0 15px var(--animacao-opaca-bota-4);
     }
     50% {
         box-shadow: var(--direcao-sombra-1) var(--direcao-sombra-1) 9px var(--sombra-clara),
@@ -546,9 +546,9 @@ button {
                     inset 1px 1px 1px var(--sombra-vidro-clara),
                     inset 1px -1px 1px var(--sombra-vidro-escura),
                     inset -1px 1px 1px var(--sombra-vidro-escura),
-                    inset 4px 0 25px var(--animacao-bota-1),
+                    inset 0 4px 25px var(--animacao-bota-1),
                     inset -4px 0 25px var(--animacao-bota-3),
-                    inset 0 4px 35px var(--animacao-bota-4),
+                    inset 4px 0 35px var(--animacao-bota-4),
                     inset 0 -4px 35px var(--animacao-bota-2);
     }
     70% {
@@ -562,10 +562,10 @@ button {
                     inset 1px 1px 1px var(--sombra-vidro-clara),
                     inset 1px -1px 1px var(--sombra-vidro-escura),
                     inset -1px 1px 1px var(--sombra-vidro-escura),
-                    inset 4px 0 15px var(--animacao-opaca-bota-1),
+                    inset 0 4px 15px var(--animacao-opaca-bota-1),
                     inset -4px 0 15px var(--animacao-opaca-bota-3),
                     inset 0 -4px 15px var(--animacao-opaca-bota-2),
-                    inset 0 4px 15px var(--animacao-opaca-bota-4);
+                    inset 4px 0 15px var(--animacao-opaca-bota-4);
     }
     100% {
         box-shadow: 0 0 0 #00000000,
