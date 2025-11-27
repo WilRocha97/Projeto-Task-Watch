@@ -466,10 +466,10 @@ button {
             inset 1px 1px 2px var(--sombra-vidro-clara),
             inset 1px -1px 2px var(--sombra-vidro-escura),
             inset -1px 1px 2px var(--sombra-vidro-escura),
-            inset 4px 0 15px var(--animacao-opaca-bota-1),
-            inset -4px 0 15px var(--animacao-opaca-bota-3),
-            inset 0 -4px 15px var(--animacao-opaca-bota-2),
-            inset 0 4px 15px var(--animacao-opaca-bota-4);
+            inset 0 4px 15px var(--animacao-opaca-bota-1),
+            inset -4px 0 20px var(--animacao-opaca-bota-3),
+            inset 0 -4px 20px var(--animacao-opaca-bota-2),
+            inset 4px 0 15px var(--animacao-opaca-bota-4);
     transition: var(--transicao-link) ease-in-out;
 }
 .MenuBotao:hover::after, .MenuBotaoInterno:hover::after, .paginaHistorico button:hover::after {
