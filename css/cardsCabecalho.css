@@ -255,7 +255,7 @@
     }
 }
 @keyframes pulsar {
-    0%, 100% {
+    0% {
         opacity: 0;
         left: 0;
         width: 0;
@@ -263,7 +263,7 @@
     40% {
         opacity: 0;
         left: 0;
-        width: 0%;
+        width: 0;
     }
     50% {
         opacity: 1;
@@ -284,6 +284,10 @@
     60% {
         opacity: 0;
         left: 100%;
+        width: 0;
+    }
+    100% {
+        opacity: 0;
         width: 0;
     }
 }
