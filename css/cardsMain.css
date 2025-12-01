@@ -106,9 +106,9 @@
 }
 .rectangle.collapsed {
     --escala-card: 1.1;
-    width: 30px !important;
-    max-height: 30px !important;
-    min-height: 30px !important;
+    width: 27.5px !important;
+    max-height: 27.5px !important;
+    min-height: 27.5px !important;
     border-radius: 12px;
     overflow: hidden !important;
     padding: 0;
