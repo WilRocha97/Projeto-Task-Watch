@@ -203,9 +203,11 @@ export function abreFechaMenu() {
     }
 }
 
-document.body.addEventListener('click', (event) => { 
+document.body.addEventListener('click', (event) => {
     let target = event.target;
-    animacaoBotao(target)
+    if (target.classList.contains('MenuBotao')) {
+        animacaoBotao(target)
+    }
 });
 
 // Janela com dicas de como o site funciona
