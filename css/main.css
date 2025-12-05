@@ -278,8 +278,6 @@ button {
 }
 
 .fundo, .fundoInvertido {
-    height: fit-content;
-    width: fit-content;
     background: var(--cor-vidro);
     border-radius: var(--borda-botao);
     backdrop-filter: blur(var(--blur));
@@ -331,7 +329,7 @@ button {
     flex-direction: column;
     justify-content: flex-start;
     width: 100%;
-    min-height: 90vh;
+    min-height: 93.6vh;
     transition: var(--transicao-link);
 }
 .telaRotinas {
@@ -429,6 +427,7 @@ button {
     max-width: 28px;
 }
 .MenuBotao, .MenuBotaoInterno, .paginaHistorico button {
+    text-decoration: none;
     align-content: center;    
     text-align: center;
     align-items: center;

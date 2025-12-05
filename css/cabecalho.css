@@ -71,10 +71,11 @@
    ============================================================================= */
 
 #clock {
+    font-size: 0.85rem;
+    padding: 0 15px;
     align-self: center;
     opacity: 1;
-    transition: font-size var(--transicao-link) ease-in-out,
-                opacity var(--transicao-link) ease-in-out;
+    transition: var(--transicao-link) ease-in-out;
 }
 
 .relogio {
@@ -93,7 +94,7 @@
     z-index: -999;
     position: fixed;
     bottom: 20%;
-    width: 50%;
+    width: 62px;
     display: flex;
 }
 

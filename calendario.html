@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/avanco.png" type="image/gif">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/background.css">
+    <link rel="stylesheet" href="css/cabecalho.css">
+    <link rel="stylesheet" href="css/maquinas.css">
+    <link rel="stylesheet" href="css/cardsMain.css">
+    <link rel="stylesheet" href="css/cardsCabecalho.css">
+    <link rel="stylesheet" href="css/cardsConteudo.css">
+    <link rel="stylesheet" href="css/cardsStatus.css">
+    <link rel="stylesheet" href="css/historico.css">
+    <link rel="stylesheet" href="css/temas.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <title>Calendário - Task Watch</title>
+    <meta name="title" content="Calendário - TW">
+    <meta name="description" content="Clanedário do sistema de monitoramento de rotinas automáticas">
+</head>
+<body class="dark scroll"> 
+
+    <!-- Modal -->
+    <div id="modal-bg" class="modal-bg">
+    <div class="modal">
+        <h3 id="modal-title">Novo Evento</h3>
+
+        <input type="hidden" id="event-id">
+
+        <label>Título</label>
+        <input id="event-title" type="text">
+
+        <label>Início</label>
+        <input id="event-start" type="datetime-local">
+
+        <label>Fim</label>
+        <input id="event-end" type="datetime-local">
+
+        <label><input type="checkbox" id="event-all-day"> Dia inteiro</label>
+
+        <label>Repetição</label>
+        <select id="event-repeat">
+        <option value="none">Não repetir</option>
+        <option value="daily">Todos os dias</option>
+        <option value="weekly">Toda semana</option>
+        <option value="monthly">Todo mês</option>
+        <option value="yearly">Todo ano</option>
+        </select>
+
+        <label>Categoria</label>
+        <select id="event-category">
+        <option value="Nenhuma">Nenhuma</option>
+        <option value="Trabalho">Trabalho</option>
+        <option value="Pessoal">Pessoal</option>
+        <option value="Saude">Saúde</option>
+        <option value="Financeiro">Financeiro</option>
+        <option value="Lembrete">Lembrete</option>
+        <option value="Outro">Outro</option>
+        </select>
+
+        <label>Cor</label>
+        <select id="event-color">
+        <option value="">Padrão</option>
+        <option value="#1a73e8">Azul</option>
+        <option value="#34a853">Verde</option>
+        <option value="#ea4335">Vermelho</option>
+        <option value="#fbbc04">Amarelo</option>
+        <option value="#9c27b0">Roxo</option>
+        </select>
+
+        <label>Descrição</label>
+        <textarea id="event-desc"></textarea>
+
+        <div class="modal-footer">
+        <button class="btn btn-delete" id="btn-delete" style="display:none">Excluir</button>
+        <button class="btn btn-cancel" id="btn-cancel">Cancelar</button>
+        <button class="btn btn-save" id="btn-save">Salvar</button>
+        </div>
+    </div>
+    </div>
+
+</body>
+</html>
