@@ -189,34 +189,6 @@
     transition: var(--transicao-link) ease-in-out,
                 color 1s ease-in-out;
 }
-.linha::after {
-    width: 100%;
-    height: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scaleX(0.99) scaleY(0.6);
-    opacity: 0;
-    content: "";
-    position: absolute;
-    z-index: 999;
-    border: var(--borda-card) solid var(--cor-borda-vidro);
-    border-radius: inherit;
-    box-shadow: var(--direcao-sombra-1) var(--direcao-sombra-1) 9px var(--sombra-clara),
-            var(--direcao-sombra-2) var(--direcao-sombra-2) 9px var(--sombra-escura),
-            inset -1px -1px 2px var(--sombra-vidro-clara),
-            inset 1px 1px 2px var(--sombra-vidro-clara),
-            inset 1px -1px 2px var(--sombra-vidro-escura),
-            inset -1px 1px 2px var(--sombra-vidro-escura),
-            inset 0 4px 15px var(--animacao-opaca-bota-1),
-            inset -4px 0 20px var(--animacao-opaca-bota-3),
-            inset 0 -4px 20px var(--animacao-opaca-bota-2),
-            inset 4px 0 15px var(--animacao-opaca-bota-4);
-    transition: var(--transicao-link) ease-in-out;
-}
-.linha:hover::after {
-    transform: translate(-50%, -50%) scaleX(1) scaleY(1);
-    opacity: 1;
-}
 .linha:hover {
     padding: 12px 10px;
 }
