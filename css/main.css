@@ -75,10 +75,10 @@
     --animacao-bota-2: #51fc9e;
     --animacao-bota-3: #ffd448;
     --animacao-bota-4: #ff5fa2;
-    --animacao-opaca-bota-1: #0073ff2c;
-    --animacao-opaca-bota-2: #00ff733a;
-    --animacao-opaca-bota-3: #ffc40034;
-    --animacao-opaca-bota-4: #ff006a33;
+    --animacao-opaca-bota-1: #3088f32c;
+    --animacao-opaca-bota-2: #74ffb23a;
+    --animacao-opaca-bota-3: #ffd03534;
+    --animacao-opaca-bota-4: #fc388926;
 
     --cor-executando: #00be85;
     --cor-atencao: #01b30a;
@@ -456,7 +456,7 @@ button {
     font-weight: bold;
     transition: var(--transicao-link) ease-in-out, color 1s ease-in-out;
 }
-.MenuBotao::after, .MenuBotaoInterno::after, .paginaHistorico button::after, .linha::after {
+.MenuBotao::after, .MenuBotaoInterno::after, .paginaHistorico button::after, .linha::after, .linhaSimples::after {
     width: 100%;
     height: 100%;
     top: 50%;
@@ -482,7 +482,7 @@ button {
             inset 4px 0 15px var(--animacao-opaca-bota-4);
     transition: var(--transicao-link) ease-in-out;
 }
-.MenuBotao:hover::after, .MenuBotaoInterno:hover::after, .paginaHistorico button:hover::after, .linha:hover::after {
+.MenuBotao:hover::after, .MenuBotaoInterno:hover::after, .paginaHistorico button:hover::after, .linha:hover::after, .linhaSimples:hover::after {
     transform: translate(-50%, -50%) scaleX(1) scaleY(1);
     opacity: 1;
 }

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/background.css">
     <link rel="stylesheet" href="css/cabecalho.css">
     <link rel="stylesheet" href="css/maquinas.css">
+    <link rel="stylesheet" href="css/painel.css">
     <link rel="stylesheet" href="css/cardsMain.css">
     <link rel="stylesheet" href="css/cardsCabecalho.css">
     <link rel="stylesheet" href="css/cardsConteudo.css">
@@ -472,6 +473,75 @@
     </div>
 
     <div id="layoutTela" class="layout">
+        <div id="targetPainel" class="telaPainel">
+            <div class="chartBox">
+                <canvas id="meuDonut"></canvas>
+                <h1 class="tituloChart">Resumo das rotinas</h1>
+            </div>
+
+            <div class="fundo listaRotinas">
+                <h1 class="tituloRotinas">Rotinas atrasadas</h1>
+                <div class="lrStatusMaquina atrazo"></div>
+                <div id="AtrasadosTela" class="telaHistoricoConteudo telaListaRotinas scroll">
+                    <div class="linhaSimples">
+                         <p>CND Receita Federal CNPJ</p>
+                    </div>
+                    <div class="linhaSimples">
+                         <p>Boletos Sindicatos</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fundo listaRotinas">
+                <h1 class="tituloRotinas">Rotinas do dia</h1>
+                <div class="lrStatusMaquina dia"></div>
+                <div id="DiaTela" class="telaHistoricoConteudo telaListaRotinas scroll">
+                    <div class="linhaSimples">
+                        <p>Resumo de impostos</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fundo listaRotinas">
+                <h1 class="tituloRotinas">Rotinas em execuçao</h1>
+                <div class="lrStatusMaquina executando"></div>
+                <div id="ExecutandoTela" class="telaHistoricoConteudo telaListaRotinas scroll">
+                    <div class="linhaSimples">
+                        <p>CND Receita Federal CPF</p>
+                    </div>
+                    <div class="linhaSimples">
+                        <p>Consulta Débitos Estaduais</p>
+                    </div>
+                    <div class="linhaSimples">
+                        <p>Diagnóstico Fiscal</p>
+                    </div>
+                    <div class="linhaSimples">
+                        <p>Encaminha_Docs_WhatsApp</p>
+                    </div>
+                    <div class="linhaSimples">
+                        <p>Faturamento_X_Compra</p>
+                    </div>
+                    <div class="linhaSimples">
+                        <p>Pendências_SIGISSWEB</p>
+                    </div>
+                    <div class="linhaSimples">
+                        <p>Transmite DeSTDA sem movimento</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fundo listaRotinas">
+                <h1 class="tituloRotinas">Rotinas finalizadas</h1>
+                <div class="lrStatusMaquina final"></div>
+                <div id="FinalizadoTela" class="telaHistoricoConteudo telaListaRotinas scroll">
+                    <div class="linhaSimples">
+                        <p>Consulta Divida Ativa</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
         <div class="telaRotinas">
             <div id="telaRotinas" class="rotinas">
                 <div id="Consulta_Débitos_Estaduais_-_PC01" class="rectangle status status-attention" title="Consulta Débitos Estaduais - PC01 - Tempo estimado: 36 minutos - 63.40%">
@@ -1112,8 +1182,10 @@
     </footer>
     
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.14.0/Sortable.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script type="module" src="js/main.js"></script>
     <script type="module" src="js/maquinas.js"></script>
+    <script type="module" src="js/painel.js"></script>
     <script type="module" src="js/cards.js"></script>
     <script type="module" src="js/historico.js"></script>
     <script src="js/modo.js"></script>
