@@ -84,7 +84,7 @@
     overflow: hidden;
 }
 .rectangle.enter.extraLarge {
-    max-height: 900px;
+    max-height: 900px !important;
     width: 583px; 
 }
 .rectangle.enter.large {

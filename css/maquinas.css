@@ -1,7 +1,6 @@
-.maquinasTela {
+.telaLateral {
     position: fixed;
     overflow: hidden;
-    left: 0;
     z-index: 1;
     opacity: 1;
     width: 20vw;
@@ -14,33 +13,39 @@
                 background-color 1s ease-in-out,
                 box-shadow 1s ease-in-out;
 }
+#telaMaquinas {
+    left: 0;
+}
+#telaDemandas {
+    right: 0;
+}
 
-.botaoMaquina {
+.botaoItemMenuLateral {
     color: var(--cor-texto) !important;
 }
 
-.cabecalhoMenuMaquinas {
+.cabecalhoMenuLateral {
     display: flex;
-    height: 3%;
+    height: 6%;
     justify-content: center;
 }
-.maquinasContainerFundo {
+.telaMaquinasContainerFundo, .telaDemandasContainerFundo {
     position: fixed;
     opacity: 1;
     overflow: scroll;
     overflow-x: hidden;
-    height: 90vh;
-    max-height: 90vh;
+    height: 88vh;
+    max-height: 88vh;
     min-height: 0;
     margin-top: 6vh;
     width: 100%;
     transition: var(--transicao-link) ease-in-out;
 }
-.maquinasContainer {
+.telaMaquinasContainer, .telaDemandasContainer {
     display: flex;
     flex-direction: column;
 }
-.menuMaquinas {
+.menuLateral {
     position: fixed;
     display: flex;
     flex-direction: row;
@@ -49,7 +54,13 @@
     transition: var(--transicao-link) ease-in-out;
 }
 
-.rectangleMaquinas {
+.rectangleDemanda  {
+    min-height: 150px;
+}
+.rectangleMaquina {
+    min-height: 110px;
+}
+.rectangleDemanda, .rectangleMaquina {
     scale: 1;
     opacity: 1;
     margin: 10px 16px;
@@ -57,14 +68,14 @@
     max-height: 300px;
     transition: var(--transicao-link) ease-in-out;
 }
-.rectangleMaquinas:hover {
-    scale: var(--escala-maquina);
+.rectangleDemanda:hover, .rectangleMaquina:hover {
+    scale: var(--escala-item-lateral);
 }
-.rectangleMaquinas.nh {
+.rectangleDemanda.nh, .rectangleMaquina.nh {
     scale: 1;
 }
 
-.tituloContainerMaquina {
+.tituloContainerItemLateral {
     display: flex;
     flex-direction: row;
     gap: 5px;
@@ -72,13 +83,23 @@
     border-radius: var(--borda-botao);
     align-items: center;
 }
+.menuItenLateral {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    max-width: 100%;
+    opacity: 1;
+    transition: var(--transicao-link) ease-in-out, box-shadow 1s ease-in-out, background-color 1s ease-in-out;
+}
 
-.addMaquinaAtivada {
+.addMaquinaAtivada, .addDemandaAtivada {
     transform: rotate(-180deg);
 }
 
 /* barra de status */
-.cStatusMaquina {
+.cStatusItemLateral {
     position: fixed;
     top: 1px;
     left: -10px;
@@ -88,36 +109,48 @@
     height: 100%;
     margin: 5px 1.5px 0 1.5px;
     border-radius: 5px;
-    background-color: var(--cor-maquinas); 
-    box-shadow: 50px 0 100px var(--cor-maquinas),
-                45px 0 90px var(--cor-maquinas),
-                40px 0 80px var(--cor-maquinas),
-                35px 0 70px var(--cor-maquinas),
-                30px 0 60px var(--cor-maquinas),
-                25px 0 50px var(--cor-maquinas),
-                20px 0 40px var(--cor-maquinas),
-                15px 0 30px var(--cor-maquinas),
-                10px 0 20px var(--cor-maquinas),
-                5px 0 10px var(--cor-maquinas),
-                0 0 5px var(--cor-maquinas);
+    background-color: var(--cor-item-lateral); 
+    box-shadow: 50px 0 100px var(--cor-item-lateral),
+                45px 0 90px var(--cor-item-lateral),
+                40px 0 80px var(--cor-item-lateral),
+                35px 0 70px var(--cor-item-lateral),
+                30px 0 60px var(--cor-item-lateral),
+                25px 0 50px var(--cor-item-lateral),
+                20px 0 40px var(--cor-item-lateral),
+                15px 0 30px var(--cor-item-lateral),
+                10px 0 20px var(--cor-item-lateral),
+                5px 0 10px var(--cor-item-lateral),
+                0 0 5px var(--cor-item-lateral);
     transition: 1s ease-in-out;
 }
-.cStatusMaquina.livre { 
-    --cor-maquinas: var(--cor-executando-alternativa);
+.cStatusItemLateral.livre, .cStatusItemLateral.baixa  { 
+    --cor-item-lateral: var(--cor-executando-alternativa);
 }
-.cStatusMaquina.ocupado { 
-    --cor-maquinas: var(--cor-ocioso);
+.cStatusItemLateral.ocupado, .cStatusItemLateral.media  { 
+    --cor-item-lateral: var(--cor-ocioso);
+}
+.cStatusItemLateral.desativado, .cStatusItemLateral.alta  { 
+    --cor-item-lateral: var(--cor-erro);
 }
 
-.tituloMaquinas {
+.subTituloItemLateral {
+    font-weight: 600;
+    white-space: nowrap;
+    padding: 5px 5px 0;
+}
+.tituloItemLateral {
     font-weight: 600;
     font-size: 0.85rem;
-    white-space: nowrap
 }
 
-.telaMensagemMaquinas {
+.telaMensagemItemLateral {
+    height: 150px;
+}
+.mediaTelaMensagemItemLateral {
+    height: 80px;
+}
+.telaMensagemItemLateral, .miniTelaMensagemItemLateral, .mediaTelaMensagemItemLateral {
     width: 100%; 
-    height: 50px;
     font-size: 0.7rem;
     padding: 0 5px;
     cursor: pointer;
@@ -147,31 +180,31 @@
 }
 
 @media (min-width: 1650px) {
-    .menuMaquinas {
+    .menuLateral {
         min-height: 5%;
     }
-    .maquinasTela {
+    .telaLateral {
         width: 20vw;
     }
 }
 @media (min-width: 2500px) {
-    .menuMaquinas {
+    .menuLateral {
         min-height: 5%;
     }
-    .maquinasTela {
+    .telaLateral {
         width: 10vw;
     }
 }
 @media (max-width: 916px) {
-    .cabecalhoMenuMaquinas {
+    .cabecalhoMenuLateral {
         height: 1%;
         opacity: 0;
     }
-    .menuMaquinas {
-        bottom: 100px;
+    .menuLateral {
+        bottom: 140px;
     }
-    .maquinasContainerFundo {
-        height: 87vh;
+    .telaMaquinasContainerFundo, .telaDemandasContainerFundo {
+        height: 77vh;
         margin-top: 0;
     }
     #fixarTelaMaquinas {
@@ -184,36 +217,44 @@
         top: -1000px;
         cursor: default;
     }
-    .maquinasTela {
+    .telaLateral {
         width: 80vw;
         padding: 8px;
     }
-    .menuMaquinasSuperExpandido {
+    .menuLateralSuperExpandido {
         bottom: 1px !important;
         min-height: 95%;
         align-items: flex-start;
         transition: var(--transicao-link) ease-in-out;
     }
-    .botaoMaquina {
+    .botaoItemMenuLateral {
         margin: 10px;
     }
 }
 @media (max-width: 1255px) and (min-width: 917px) {
-    .maquinasTela {
+    .telaLateral {
         width: 30vw;
     }
-    .mf {
+    .mfMaquinas {
         margin-left: 30vw;
+    }
+    .mfDemandas {
+        margin-right: 30vw;
+    }
+    .mini {
         width: 70vw !important;
+    }
+    .extraMini {
+        width: 40vw !important;
     }
 }
 @media (max-height: 930px) and (max-width: 916px) {
-    .maquinasContainerFundo {
-        height: 80vh;
+    .telaMaquinasContainerFundo, .telaDemandasContainerFundo {
+        height: 75vh;
     }
 }
 @media (max-height: 830px) and (max-width: 916px) {
-    .maquinasContainerFundo {
-        height: 75vh;
+    .telaMaquinasContainerFundo, .telaDemandasContainerFundo {
+        height: 70vh;
     }
 }

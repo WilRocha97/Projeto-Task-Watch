@@ -31,6 +31,9 @@
             <div class="menu">
                 <div class="fundo menuTelaBotoes">
                     <a id="calendario" class="MenuBotao MenuBotaoTexto" title="Agenda de rotinas" href="" target="_blank">Agenda</a>
+                    
+                    <button id="maquinas" class="cmb MenuBotao MenuBotaoTexto" title="Lista de dispositivos">Dispositivos</button>
+                    <button id="demandas" class="cmb MenuBotao MenuBotaoTexto" title="Lista de demandas">Demandas</button>
 
                     <button id="historico" class="MenuBotao MenuBotaoTexto notifica miniBotao" title="Histórico de ocorrências das rotinas">
                         <div class="notificacao">
@@ -52,7 +55,6 @@
                 </div> -->
 
                 <div class="cmb fundo menuTelaBotoes menuInvisivel invisible3">
-                    <button id="maquinas" class="cmb MenuBotao MenuBotaoTexto" title="Lista de dispositivos">Dispositivos</button>
                     <button id="galeria" class="cmb MenuBotao MenuBotaoTexto" title="Galeria do TaskWatch oficial">Galeria</button>
                     <button id="dica" class="cmb MenuBotao" title="Ajuda">?</button>
                     <button id="toggleDarkMode" class="cmb MenuBotao iconeContainer" title="Mudar para modo claro">
@@ -74,7 +76,7 @@
                 <div class="cmb fundo menuTelaBotoes menuInvisivel invisible3">
                     <div class="cmb fundoInvertido barraPesquisa">
                         <input type="text" id="searchInputCard" class="cmb cInputCard" placeholder="Buscar cartão" title="Buscar cartão por nome da rotina">
-                        <div id="limpaCInputCard" class="cmb botaoFechar botaoMaquina limparBarra" title="Limpar busca">⨉</div>
+                        <div id="limpaCInputCard" class="cmb botaoFechar botaoItemMenuLateral limparBarra" title="Limpar busca">⨉</div>
                     </div>
                 </div>
             </div>
@@ -217,7 +219,9 @@
                     <br>• Em breve.
                     
                     <br><br><br><br><h1>Resumo das rotinas</h1>
-                    <br>• Em breve.
+                    <br>• Logo no topo temos o resumo das rotinas baseado na agenda.
+                    <br><br>• São 4 listas, uma mostrando as rotinas de dias anteriores, uma para as rotinas do dia, uma para as rotinas em execução e a última para as rotinas do dia que foram concluídas.
+                    <br><br>• A esquerda atá o gráfico, ao estilo "rosquinha", para representar a slistas.
 
                     <br><br><br><br><h1>Cartões</h1>
                     <br>• A cada rotina iniciada, um novo cartão irá aparecer na tela com as informações dela.
@@ -241,17 +245,26 @@
                     <br>• O botão "Dispositivos" abre a tela de dispositivos disponíveis, nela é possível visualizar quais estão executando alguma rotina.
                     <br><br>• Na barra de busca (Busque um dispositivo) você pode verificar se um dispositivo exite na lista.
                     <br><br>• O botão "✛" abre uma barra que pode ser usada para adicionar um novo dispositivo e caso ele já exista na lista, será marcado na tela. Ao abrir a barra de adição a barra de pesquisa irá minimizar, para ela voltar apenas clique em "✛" novamente
-                    <br><br>• Para ordenar a lista, colocando os dispositivos livres, no topo, clique em "⭥" (Reordenar a lista). Se quiser voltar para ordém padrão é só clicar novamente no mesmo botão.
+                    <br><br>• Para ordenar a lista, colocando os dispositivos livres no topo, clique em "⇅" (Reordenar a lista). Se quiser voltar para ordém padrão é só clicar novamente no mesmo botão.
                     <br><br>• Se quiser fixar a tela, basta clicar em "★" (Fixar tela de dispositivos).
                     <br><br>• É possível alterar o status manualmente clicando em "Livre" ou "Ocupado". Porém, se existir algum cartão na tela com alguma rotina no dispositivo alterado, ele retornará para "Ocupado".
                     <br><br>• Caso queira, é possível adicionar um comentário abaixo do nome do dispositivo.
+                    
+                    <br><br><br><br><h1>Demandas</h1>
+                    <br>• O botão "Demandas" abre a tela de demandas.
+                    <br><br>• Na barra de busca (Busque demanda) você pode verificar se uma demanda exite na lista.
+                    <br><br>• O botão "✛" abre uma barra que pode ser usada para adicionar uma nova demanda e caso ele já exista na lista, será marcada na tela. Ao abrir a barra de adição a barra de pesquisa irá minimizar, para ela voltar apenas clique em "✛" novamente
+                    <br><br>• Para ordenar a lista, colocando as demandas com prioridade alta no topo, clique em "⇅" (Reordenar a lista). Se quiser voltar para ordém padrão é só clicar novamente no mesmo botão.
+                    <br><br>• Se quiser fixar a tela, basta clicar em "★" (Fixar tela de demandas).
+                    <br><br>• É possível alterar a prioridade da demanda clicando em "Prioridade baixa", "Prioridade média" ou "Prioridade alta". Esses botões aparecem a cima do título da demanda ao passar o mouse sobre ela.
+                    <br><br>• É possível adicionar responsáveis, situação e comentários nos campos abaixo do título da demanda.
 
                     <br><br><br><br><h1>Histórico</h1>
                     <br>• A tela de histórico, que é exibida ao clicar no botão "Histórico", pode ser filtrada por ocorrência, basta clicar no ponto colorido com a cor correspondente ao evento. Eles ficam logo acima da janela de histórico do lado direito da tela.
                     <br><br>• É possível buscar alguma ocorrência por parte da data e hora e também pelo nome da rotina utilizando as barras de pesquisa.
                     <br><br>• O campo ao lado dos controles de paginação é onde você pode digitar a quantidade de linhas por página que apareceram na tela de hitórico, o padrão é 15 e o máixmo é 75 (Muitas linhas podem causar lentidão no dispositivo).
                 
-                    <br><br><br>Todos os cartões fixados e alterações na tela de dispositivos que você fizer ficam salvos no local storage do seu navegador, então sinta-se à vontade para explorar os recursos. :)<br><br>
+                    <br><br><br>Todos os cartões fixados e alterações nas telas de dispositivos e deamndas que você fizer, ficam salvos no local storage do seu navegador, então sinta-se à vontade para explorar os recursos. :)<br><br>
                 </div>
             </div>
         </div>
@@ -269,7 +282,7 @@
     <div id="modalConfirmacao" class="modalConfirma invisible2">
         <div class="fundoCabecalho"></div>
         <div class="fundo modalConfirmaContent invisible">
-            <p class="paragrafo">Tem certeza que deseja excluir esse dispositivo da lista?</p>
+            <p class="paragrafo">Tem certeza que deseja excluir esse iten da lista?</p>
             <button id="btnConfirmar" class="cmb MenuBotaoInterno">Sim</button>
             <button id="btnCancelar" class="cmb MenuBotaoInterno">Cancelar</button>
         </div>
@@ -283,21 +296,21 @@
         </div>
     </section>
 
-    <div id="telaMaquinas" class="fundo maquinasTela invisible5">
-        <span class="cabecalhoMenuMaquinas"></span>
-        <div class="menuMaquinas">
+    <div id="telaMaquinas" class="fundo telaLateral invisible5">
+        <span class="cabecalhoMenuLateral"></span>
+        <div class="menuLateral">
             <div id="barraPesquisaMaquina" class="cmb fundoInvertido barraPesquisa">
                 <input type="text" id="inputPesquisaMaquina" class="cmb mInputName" placeholder="Busca" title="Busca dispositivo">
-                <div id="limpaInputPesquisaMaquina" class="cmb botaoFechar botaoMaquina limparBarra" title="Limpar campo">⨉</div>
+                <div id="limpaInputPesquisaMaquina" class="cmb botaoFechar botaoItemMenuLateral limparBarra" title="Limpar campo">⨉</div>
             </div>
 
-            <div id="adMaquina" class="cmb MenuBotao" title="Adicionar/Pesquisar dispositivo">
+            <div id="addMaquina" class="cmb MenuBotao" title="Adicionar/Pesquisar dispositivo">
                 <div class="cmb MenuBotaoActive" title="Adicionar/Pesquisar dispositivo">✛</div>
             </div>
 
             <div id="barraAddMaquina" class="cmb fundoInvertido barraPesquisa invisible6">
                 <input type="text" id="inputAddMaquina" class="cmb mInputName" placeholder="Novo" title="Digite o nome do novo dispositivo">
-                <div id="limpaInputAddMaquina" class="cmb botaoFechar botaoMaquina limparBarra" title="Limpar campo">⨉</div>
+                <div id="limpaInputAddMaquina" class="cmb botaoFechar botaoItemMenuLateral limparBarra" title="Limpar campo">⨉</div>
             </div>
             
              <div id="ordenarMaquinas" class="cmb MenuBotao" title="Reordenar a lista">
@@ -310,162 +323,292 @@
             <button id="fecharMaquinas" class="cmb MenuBotao BotaoFechar" title="Fechar tela de dispositivos">⨉</button>
         </div>
         
-        <div class="cmb scroll maquinasContainerFundo">
-            <div id="listaMaquinas" class="cmb maquinasContainer">
-                <div id="PC01" class="rectangleMaquinas">
-                    <div class="tituloContainerMaquina">
-                        <div class="tituloMaquinas">PC01</div>
+        <div class="cmb scroll scrollInvisible telaMaquinasContainerFundo">
+            <div id="listaMaquinas" class="cmb telaMaquinasContainer">
+                <div id="PC01" class="rectangleMaquina">
+                    <div class="tituloContainerItemLateral">
+                        <div class="tituloItemLateral">PC01</div>
                         <div class="menuTelaBotoes">
                             <button id="mudarStatus" class="cmb MenuBotao MenuBotaoTexto cMudarStatus" title="Mudar status">Ocupado</button>
-                            <div id="buscarMaquina" class="cmb botaoFixar botaoMaquina" title="Buscar máquina">❯</div>
-                            <div id="deletarMaquina" class="cmb botaoFechar botaoMaquina" title="Deletar dispositivo">⨉</div>
+                            <div id="buscarMaquina" class="cmb botaoFixar botaoItemMenuLateral" title="Buscar máquina">❯</div>
+                            <div id="deletarMaquina" class="cmb botaoFechar botaoItemMenuLateral" title="Deletar dispositivo">⨉</div>
                         </div>
                     </div>
-                    <textarea type="text" class="inputComentario scroll scrollMini telaMensagemMaquinas" placeholder="Adicionar comentário" title="Adicionar comentário"></textarea>
-                    <span id="statusMaquina" class="cStatusMaquina ocupado"></span>
+                    <textarea type="text" class="inputComentario scroll scrollMini mediaTelaMensagemItemLateral" placeholder="Adicionar comentário" title="Adicionar comentário"></textarea>
+                    <span id="statusMaquina" class="cStatusItemLateral ocupado"></span>
                 </div>
 
-                <div id="PC02" class="rectangleMaquinas">
-                    <div class="tituloContainerMaquina">
-                        <div class="tituloMaquinas">PC02</div>
+                <div id="PC02" class="rectangleMaquina">
+                    <div class="tituloContainerItemLateral">
+                        <div class="tituloItemLateral">PC02</div>
                         <div class="menuTelaBotoes">
                             <button id="mudarStatus" class="cmb MenuBotao MenuBotaoTexto cMudarStatus" title="Mudar status">Livre</button>
-                            <div id="buscarMaquina" class="cmb botaoFixar botaoMaquina" title="Buscar máquina">❯</div>
-                            <div id="deletarMaquina" class="cmb botaoFechar botaoMaquina" title="Deletar dispositivo">⨉</div>
+                            <div id="buscarMaquina" class="cmb botaoFixar botaoItemMenuLateral" title="Buscar máquina">❯</div>
+                            <div id="deletarMaquina" class="cmb botaoFechar botaoItemMenuLateral" title="Deletar dispositivo">⨉</div>
                         </div>
                     </div>
-                    <textarea type="text" class="inputComentario scroll scrollMini telaMensagemMaquinas" placeholder="Adicionar comentário" title="Adicionar comentário"></textarea>
-                    <span id="statusMaquina" class="cStatusMaquina livre"></span>
+                    <textarea type="text" class="inputComentario scroll scrollMini mediaTelaMensagemItemLateral" placeholder="Adicionar comentário" title="Adicionar comentário"></textarea>
+                    <span id="statusMaquina" class="cStatusItemLateral livre"></span>
                 </div>
 
-                <div id="PC03" class="rectangleMaquinas">
-                    <div class="tituloContainerMaquina">
-                        <div class="tituloMaquinas">PC03</div>
+                <div id="PC03" class="rectangleMaquina">
+                    <div class="tituloContainerItemLateral">
+                        <div class="tituloItemLateral">PC03</div>
                         <div class="menuTelaBotoes">
                             <button id="mudarStatus" class="cmb MenuBotao MenuBotaoTexto cMudarStatus" title="Mudar status">Ocupado</button>
-                            <div id="buscarMaquina" class="cmb botaoFixar botaoMaquina" title="Buscar máquina">❯</div>
-                            <div id="deletarMaquina" class="cmb botaoFechar botaoMaquina" title="Deletar dispositivo">⨉</div>
+                            <div id="buscarMaquina" class="cmb botaoFixar botaoItemMenuLateral" title="Buscar máquina">❯</div>
+                            <div id="deletarMaquina" class="cmb botaoFechar botaoItemMenuLateral" title="Deletar dispositivo">⨉</div>
                         </div>
                     </div>
-                    <textarea type="text" class="inputComentario scroll scrollMini telaMensagemMaquinas" placeholder="Adicionar comentário" title="Adicionar comentário"></textarea>
-                    <span id="statusMaquina" class="cStatusMaquina ocupado"></span>
+                    <textarea type="text" class="inputComentario scroll scrollMini mediaTelaMensagemItemLateral" placeholder="Adicionar comentário" title="Adicionar comentário"></textarea>
+                    <span id="statusMaquina" class="cStatusItemLateral ocupado"></span>
                 </div>
                 
-                <div id="PC04" class="rectangleMaquinas">
-                    <div class="tituloContainerMaquina">
-                        <div class="tituloMaquinas">PC04</div>
+                <div id="PC04" class="rectangleMaquina">
+                    <div class="tituloContainerItemLateral">
+                        <div class="tituloItemLateral">PC04</div>
                         <div class="menuTelaBotoes">
                             <button id="mudarStatus" class="cmb MenuBotao MenuBotaoTexto cMudarStatus" title="Mudar status">Ocupado</button>
-                            <div id="buscarMaquina" class="cmb botaoFixar botaoMaquina" title="Buscar máquina">❯</div>
-                            <div id="deletarMaquina" class="cmb botaoFechar botaoMaquina" title="Deletar dispositivo">⨉</div>
+                            <div id="buscarMaquina" class="cmb botaoFixar botaoItemMenuLateral" title="Buscar máquina">❯</div>
+                            <div id="deletarMaquina" class="cmb botaoFechar botaoItemMenuLateral" title="Deletar dispositivo">⨉</div>
                         </div>
                     </div>
-                    <textarea type="text" class="inputComentario scroll scrollMini telaMensagemMaquinas" placeholder="Adicionar comentário" title="Adicionar comentário"></textarea>
-                    <span id="statusMaquina" class="cStatusMaquina ocupado"></span>
+                    <textarea type="text" class="inputComentario scroll scrollMini mediaTelaMensagemItemLateral" placeholder="Adicionar comentário" title="Adicionar comentário"></textarea>
+                    <span id="statusMaquina" class="cStatusItemLateral ocupado"></span>
                 </div>
 
-                <div id="PC05" class="rectangleMaquinas">
-                    <div class="tituloContainerMaquina">
-                        <div class="tituloMaquinas">PC05</div>
+                <div id="PC05" class="rectangleMaquina">
+                    <div class="tituloContainerItemLateral">
+                        <div class="tituloItemLateral">PC05</div>
                         <div class="menuTelaBotoes">
                             <button id="mudarStatus" class="cmb MenuBotao MenuBotaoTexto cMudarStatus" title="Mudar status">Livre</button>
-                            <div id="buscarMaquina" class="cmb botaoFixar botaoMaquina" title="Buscar máquina">❯</div>
-                            <div id="deletarMaquina" class="cmb botaoFechar botaoMaquina" title="Deletar dispositivo">⨉</div>
+                            <div id="buscarMaquina" class="cmb botaoFixar botaoItemMenuLateral" title="Buscar máquina">❯</div>
+                            <div id="deletarMaquina" class="cmb botaoFechar botaoItemMenuLateral" title="Deletar dispositivo">⨉</div>
                         </div>
                     </div>
-                    <textarea type="text" class="inputComentario scroll scrollMini telaMensagemMaquinas" placeholder="Adicionar comentário" title="Adicionar comentário"></textarea>
-                    <span id="statusMaquina" class="cStatusMaquina livre"></span>
+                    <textarea type="text" class="inputComentario scroll scrollMini mediaTelaMensagemItemLateral" placeholder="Adicionar comentário" title="Adicionar comentário"></textarea>
+                    <span id="statusMaquina" class="cStatusItemLateral livre"></span>
                 </div>
 
-                <div id="PC06" class="rectangleMaquinas">
-                    <div class="tituloContainerMaquina">
-                        <div class="tituloMaquinas">PC06</div>
+                <div id="PC06" class="rectangleMaquina">
+                    <div class="tituloContainerItemLateral">
+                        <div class="tituloItemLateral">PC06</div>
                         <div class="menuTelaBotoes">
                             <button id="mudarStatus" class="cmb MenuBotao MenuBotaoTexto cMudarStatus" title="Mudar status">Ocupado</button>
-                            <div id="buscarMaquina" class="cmb botaoFixar botaoMaquina" title="Buscar máquina">❯</div>
-                            <div id="deletarMaquina" class="cmb botaoFechar botaoMaquina" title="Deletar dispositivo">⨉</div>
+                            <div id="buscarMaquina" class="cmb botaoFixar botaoItemMenuLateral" title="Buscar máquina">❯</div>
+                            <div id="deletarMaquina" class="cmb botaoFechar botaoItemMenuLateral" title="Deletar dispositivo">⨉</div>
                         </div>
                     </div>
-                    <textarea type="text" class="inputComentario scroll scrollMini telaMensagemMaquinas" placeholder="Adicionar comentário" title="Adicionar comentário"></textarea>
-                    <span id="statusMaquina" class="cStatusMaquina ocupado"></span>
+                    <textarea type="text" class="inputComentario scroll scrollMini mediaTelaMensagemItemLateral" placeholder="Adicionar comentário" title="Adicionar comentário"></textarea>
+                    <span id="statusMaquina" class="cStatusItemLateral ocupado"></span>
                 </div>
 
-                <div id="PC07" class="rectangleMaquinas">
-                    <div class="tituloContainerMaquina">
-                        <div class="tituloMaquinas">PC07</div>
+                <div id="PC07" class="rectangleMaquina">
+                    <div class="tituloContainerItemLateral">
+                        <div class="tituloItemLateral">PC07</div>
                         <div class="menuTelaBotoes">
                             <button id="mudarStatus" class="cmb MenuBotao MenuBotaoTexto cMudarStatus" title="Mudar status">Livre</button>
-                            <div id="buscarMaquina" class="cmb botaoFixar botaoMaquina" title="Buscar máquina">❯</div>
-                            <div id="deletarMaquina" class="cmb botaoFechar botaoMaquina" title="Deletar dispositivo">⨉</div>
+                            <div id="buscarMaquina" class="cmb botaoFixar botaoItemMenuLateral" title="Buscar máquina">❯</div>
+                            <div id="deletarMaquina" class="cmb botaoFechar botaoItemMenuLateral" title="Deletar dispositivo">⨉</div>
                         </div>
                     </div>
-                    <textarea type="text" class="inputComentario scroll scrollMini telaMensagemMaquinas" placeholder="Adicionar comentário" title="Adicionar comentário"></textarea>
-                    <span id="statusMaquina" class="cStatusMaquina livre"></span>
+                    <textarea type="text" class="inputComentario scroll scrollMini mediaTelaMensagemItemLateral" placeholder="Adicionar comentário" title="Adicionar comentário"></textarea>
+                    <span id="statusMaquina" class="cStatusItemLateral livre"></span>
                 </div>
                 
-                <div id="PC08" class="rectangleMaquinas">
-                    <div class="tituloContainerMaquina">
-                        <div class="tituloMaquinas">PC08</div>
+                <div id="PC08" class="rectangleMaquina">
+                    <div class="tituloContainerItemLateral">
+                        <div class="tituloItemLateral">PC08</div>
                         <div class="menuTelaBotoes">
                             <button id="mudarStatus" class="cmb MenuBotao MenuBotaoTexto cMudarStatus" title="Mudar status">Ocupado</button>
-                            <div id="buscarMaquina" class="cmb botaoFixar botaoMaquina" title="Buscar máquina">❯</div>
-                            <div id="deletarMaquina" class="cmb botaoFechar botaoMaquina" title="Deletar dispositivo">⨉</div>
+                            <div id="buscarMaquina" class="cmb botaoFixar botaoItemMenuLateral" title="Buscar máquina">❯</div>
+                            <div id="deletarMaquina" class="cmb botaoFechar botaoItemMenuLateral" title="Deletar dispositivo">⨉</div>
                         </div>
                     </div>
-                    <textarea type="text" class="inputComentario scroll scrollMini telaMensagemMaquinas" placeholder="Adicionar comentário" title="Adicionar comentário"></textarea>
-                    <span id="statusMaquina" class="cStatusMaquina ocupado"></span>
+                    <textarea type="text" class="inputComentario scroll scrollMini mediaTelaMensagemItemLateral" placeholder="Adicionar comentário" title="Adicionar comentário"></textarea>
+                    <span id="statusMaquina" class="cStatusItemLateral ocupado"></span>
                 </div>
 
-                <div id="PC09" class="rectangleMaquinas">
-                    <div class="tituloContainerMaquina">
-                        <div class="tituloMaquinas">PC09</div>
+                <div id="PC09" class="rectangleMaquina">
+                    <div class="tituloContainerItemLateral">
+                        <div class="tituloItemLateral">PC09</div>
                         <div class="menuTelaBotoes">
                             <button id="mudarStatus" class="cmb MenuBotao MenuBotaoTexto cMudarStatus" title="Mudar status">Ocupado</button>
-                            <div id="buscarMaquina" class="cmb botaoFixar botaoMaquina" title="Buscar máquina">❯</div>
-                            <div id="deletarMaquina" class="cmb botaoFechar botaoMaquina" title="Deletar dispositivo">⨉</div>
+                            <div id="buscarMaquina" class="cmb botaoFixar botaoItemMenuLateral" title="Buscar máquina">❯</div>
+                            <div id="deletarMaquina" class="cmb botaoFechar botaoItemMenuLateral" title="Deletar dispositivo">⨉</div>
                         </div>
                     </div>
-                    <textarea type="text" class="inputComentario scroll scrollMini telaMensagemMaquinas" placeholder="Adicionar comentário" title="Adicionar comentário"></textarea>
-                    <span id="statusMaquina" class="cStatusMaquina ocupado"></span>
+                    <textarea type="text" class="inputComentario scroll scrollMini mediaTelaMensagemItemLateral" placeholder="Adicionar comentário" title="Adicionar comentário"></textarea>
+                    <span id="statusMaquina" class="cStatusItemLateral ocupado"></span>
                 </div>
                 
-                <div id="PC10" class="rectangleMaquinas">
-                    <div class="tituloContainerMaquina">
-                        <div class="tituloMaquinas">PC10</div>
+                <div id="PC10" class="rectangleMaquina">
+                    <div class="tituloContainerItemLateral">
+                        <div class="tituloItemLateral">PC10</div>
                         <div class="menuTelaBotoes">
                             <button id="mudarStatus" class="cmb MenuBotao MenuBotaoTexto cMudarStatus" title="Mudar status">Ocupado</button>
-                            <div id="buscarMaquina" class="cmb botaoFixar botaoMaquina" title="Buscar máquina">❯</div>
-                            <div id="deletarMaquina" class="cmb botaoFechar botaoMaquina" title="Deletar dispositivo">⨉</div>
+                            <div id="buscarMaquina" class="cmb botaoFixar botaoItemMenuLateral" title="Buscar máquina">❯</div>
+                            <div id="deletarMaquina" class="cmb botaoFechar botaoItemMenuLateral" title="Deletar dispositivo">⨉</div>
                         </div>
                     </div>
-                    <textarea type="text" class="inputComentario scroll scrollMini telaMensagemMaquinas" placeholder="Adicionar comentário" title="Adicionar comentário"></textarea>
-                    <span id="statusMaquina" class="cStatusMaquina ocupado"></span>
+                    <textarea type="text" class="inputComentario scroll scrollMini mediaTelaMensagemItemLateral" placeholder="Adicionar comentário" title="Adicionar comentário"></textarea>
+                    <span id="statusMaquina" class="cStatusItemLateral ocupado"></span>
                 </div>
 
-                <div id="PC11" class="rectangleMaquinas">
-                    <div class="tituloContainerMaquina">
-                        <div class="tituloMaquinas">PC11</div>
+                <div id="PC11" class="rectangleMaquina">
+                    <div class="tituloContainerItemLateral">
+                        <div class="tituloItemLateral">PC11</div>
                         <div class="menuTelaBotoes">
                             <button id="mudarStatus" class="cmb MenuBotao MenuBotaoTexto cMudarStatus" title="Mudar status">Livre</button>
-                            <div id="buscarMaquina" class="cmb botaoFixar botaoMaquina" title="Buscar máquina">❯</div>
-                            <div id="deletarMaquina" class="cmb botaoFechar botaoMaquina" title="Deletar dispositivo">⨉</div>
+                            <div id="buscarMaquina" class="cmb botaoFixar botaoItemMenuLateral" title="Buscar máquina">❯</div>
+                            <div id="deletarMaquina" class="cmb botaoFechar botaoItemMenuLateral" title="Deletar dispositivo">⨉</div>
                         </div>
                     </div>
-                    <textarea type="text" class="inputComentario scroll scrollMini telaMensagemMaquinas" placeholder="Adicionar comentário" title="Adicionar comentário"></textarea>
-                    <span id="statusMaquina" class="cStatusMaquina livre"></span>
+                    <textarea type="text" class="inputComentario scroll scrollMini mediaTelaMensagemItemLateral" placeholder="Adicionar comentário" title="Adicionar comentário"></textarea>
+                    <span id="statusMaquina" class="cStatusItemLateral livre"></span>
                 </div>
 
-                <div id="PC12" class="rectangleMaquinas">
-                    <div class="tituloContainerMaquina">
-                        <div class="tituloMaquinas">PC12</div>
+                <div id="PC12" class="rectangleMaquina">
+                    <div class="tituloContainerItemLateral">
+                        <div class="tituloItemLateral">PC12</div>
                         <div class="menuTelaBotoes">
                             <button id="mudarStatus" class="cmb MenuBotao MenuBotaoTexto cMudarStatus" title="Mudar status">Ocupado</button>
-                            <div id="buscarMaquina" class="cmb botaoFixar botaoMaquina" title="Buscar máquina">❯</div>
-                            <div id="deletarMaquina" class="cmb botaoFechar botaoMaquina" title="Deletar dispositivo">⨉</div>
+                            <div id="buscarMaquina" class="cmb botaoFixar botaoItemMenuLateral" title="Buscar máquina">❯</div>
+                            <div id="deletarMaquina" class="cmb botaoFechar botaoItemMenuLateral" title="Deletar dispositivo">⨉</div>
                         </div>
                     </div>
-                    <textarea type="text" class="inputComentario scroll scrollMini telaMensagemMaquinas" placeholder="Adicionar comentário" title="Adicionar comentário"></textarea>
-                    <span id="statusMaquina" class="cStatusMaquina ocupado"></span>
+                    <textarea type="text" class="inputComentario scroll scrollMini mediaTelaMensagemItemLateral" placeholder="Adicionar comentário" title="Adicionar comentário"></textarea>
+                    <span id="statusMaquina" class="cStatusItemLateral ocupado"></span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="telaDemandas" class="fundo telaLateral invisible5">
+        <span class="cabecalhoMenuLateral"></span>
+        <div class="menuLateral">
+            <div id="barraPesquisaDemanda" class="cmb fundoInvertido barraPesquisa">
+                <input type="text" id="inputPesquisaDemanda" class="cmb mInputName" placeholder="Busca" title="Busca demanda">
+                <div id="limpaInputPesquisaDemanda" class="cmb botaoFechar botaoItemMenuLateral limparBarra" title="Limpar campo">⨉</div>
+            </div>
+
+            <div id="addDemanda" class="cmb MenuBotao" title="Adicionar/Pesquisar dispositivo">
+                <div class="cmb MenuBotaoActive" title="Adicionar/Pesquisar dispositivo">✛</div>
+            </div>
+
+            <div id="barraAddDemanda" class="cmb fundoInvertido barraPesquisa invisible6">
+                <input type="text" id="inputAddDemanda" class="cmb mInputName" placeholder="Novo" title="Digite o título da demanda">
+                <div id="limpaInputAddDemanda" class="cmb botaoFechar botaoItemMenuLateral limparBarra" title="Limpar campo">⨉</div>
+            </div>
+            
+             <div id="ordenarDemandas" class="cmb MenuBotao" title="Reordenar a lista">
+                <div class="cmb MenuBotaoActive" title="Reordenar a lista">⇅</div>
+            </div>
+            
+            <div id="fixarTelaDemandas" class="cmb MenuBotao" title="Fixar telas">
+                <div class="cmb MenuBotaoActive" title="Fixar tela" style="rotate: 72deg">★</div>
+            </div>
+            <button id="fecharDemandas" class="cmb MenuBotao BotaoFechar" title="Fechar tela de dispositivos">⨉</button>
+        </div>
+        
+        <div class="cmb scroll scrollInvisible telaDemandasContainerFundo">
+            <div id="listaDemandas" class="cmb telaDemandasContainer">
+
+                <div id="Adicionar_aester_egg" class="rectangleDemanda">
+                    <div class="menuItenLateral">
+                        <button id="mudarStatus" class="cmb botaoFixar botaoItemMenuLateral cMudarStatus" title="Mudar status">Prioridade baixa</button>
+                        <div id="deletarDemanda" class="cmb botaoFechar botaoItemMenuLateral" title="Excluír demanda">⨉</div>
+                    </div>
+                    <div class="tituloContainerItemLateral">
+                        <div class="tituloItemLateral">Adicionar aester egg</div>
+                    </div>
+
+                    <div><div class="subTituloItemLateral">Responsável:</div>
+                        <textarea type="text" id="responsavel" class="inputComentario scroll scrollMini miniTelaMensagemItemLateral" placeholder="Responsável" title="Adicionar responsável da demanda">Gilberto</textarea>
+                    </div>
+                    <div>
+                        <div class="subTituloItemLateral">Situação:</div>
+                        <textarea type="text" id="situacao" class="inputComentario scroll scrollMini miniTelaMensagemItemLateral" placeholder="Situação" title="Adicionar situação da demanda">Aguardando aprovação</textarea>
+                    </div>
+                    <div>
+                        <div class="subTituloItemLateral">Descrição:</div>
+                        <textarea type="text" id="comentario" class="inputComentario scroll scrollMini telaMensagemItemLateral" placeholder="Adicionar comentário" title="Adicionar comentário">Adicionar easter egg no site da empresa</textarea>
+                    </div>
+
+                    <span id="statusDemanda" class="cStatusItemLateral baixa"></span>
+                </div>
+
+                <div id="Analisar_resultados_da_consulta_de_dívida_ativa" class="rectangleDemanda">
+                    <div class="menuItenLateral">
+                        <button id="mudarStatus" class="cmb botaoFixar botaoItemMenuLateral cMudarStatus" title="Mudar status">Prioridade media</button>
+                        <div id="deletarDemanda" class="cmb botaoFechar botaoItemMenuLateral" title="Excluír demanda">⨉</div>
+                    </div>
+                    <div class="tituloContainerItemLateral">
+                        <div class="tituloItemLateral">Analisar resultados da consulta de dívida ativa</div>
+                    </div>
+
+                    <div><div class="subTituloItemLateral">Responsável:</div>
+                        <textarea type="text" id="responsavel" class="inputComentario scroll scrollMini miniTelaMensagemItemLateral" placeholder="Responsável" title="Adicionar responsável da demanda">Magda</textarea>
+                    </div>
+                    <div>
+                        <div class="subTituloItemLateral">Situação:</div>
+                        <textarea type="text" id="situacao" class="inputComentario scroll scrollMini miniTelaMensagemItemLateral" placeholder="Situação" title="Adicionar situação da demanda">Aguardando</textarea>
+                    </div>
+                    <div>
+                        <div class="subTituloItemLateral">Descrição:</div>
+                        <textarea type="text" id="comentario" class="inputComentario scroll scrollMini telaMensagemItemLateral" placeholder="Adicionar comentário" title="Adicionar comentário"></textarea>
+                    </div>
+
+                    <span id="statusDemanda" class="cStatusItemLateral media"></span>
+                </div>
+
+                <div id="Arrumar_a_rotina_do_Diagnóstico_Fiscal" class="rectangleDemanda">
+                    <div class="menuItenLateral">
+                        <button id="mudarStatus" class="cmb botaoFixar botaoItemMenuLateral cMudarStatus" title="Mudar status">Prioridade alta</button>
+                        <div id="deletarDemanda" class="cmb botaoFechar botaoItemMenuLateral" title="Excluír demanda">⨉</div>
+                    </div>
+                    <div class="tituloContainerItemLateral">
+                        <div class="tituloItemLateral">Arrumar a rotina do Diagnóstico Fiscal</div>
+                    </div>
+
+                    <div><div class="subTituloItemLateral">Responsável:</div>
+                        <textarea type="text" id="responsavel" class="inputComentario scroll scrollMini miniTelaMensagemItemLateral" placeholder="Responsável" title="Adicionar responsável da demanda">Claudio</textarea>
+                    </div>
+                    <div>
+                        <div class="subTituloItemLateral">Situação:</div>
+                        <textarea type="text" id="situacao" class="inputComentario scroll scrollMini miniTelaMensagemItemLateral" placeholder="Situação" title="Adicionar situação da demanda">Em andamento</textarea>
+                    </div>
+                    <div>
+                        <div class="subTituloItemLateral">Descrição:</div>
+                        <textarea type="text" id="comentario" class="inputComentario scroll scrollMini telaMensagemItemLateral" placeholder="Adicionar comentário" title="Adicionar comentário">Analisar o erro e arrumar</textarea>
+                    </div>
+
+                    <span id="statusDemanda" class="cStatusItemLateral alta"></span>
+                </div>
+
+                <div id="Atualizar_banco_de_dados" class="rectangleDemanda">
+                    <div class="menuItenLateral">
+                        <button id="mudarStatus" class="cmb botaoFixar botaoItemMenuLateral cMudarStatus" title="Mudar status">Prioridade alta</button>
+                        <div id="deletarDemanda" class="cmb botaoFechar botaoItemMenuLateral" title="Excluír demanda">⨉</div>
+                    </div>
+                    <div class="tituloContainerItemLateral">
+                        <div class="tituloItemLateral">Atualizar banco de dados</div>
+                    </div>
+
+                    <div><div class="subTituloItemLateral">Responsável:</div>
+                        <textarea type="text" id="responsavel" class="inputComentario scroll scrollMini miniTelaMensagemItemLateral" placeholder="Responsável" title="Adicionar responsável da demanda">Andreia e Jacob</textarea>
+                    </div>
+                    <div>
+                        <div class="subTituloItemLateral">Situação:</div>
+                        <textarea type="text" id="situacao" class="inputComentario scroll scrollMini miniTelaMensagemItemLateral" placeholder="Situação" title="Adicionar situação da demanda">Em desenvolvimento</textarea>
+                    </div>
+                    <div>
+                        <div class="subTituloItemLateral">Descrição:</div>
+                        <textarea type="text" id="comentario" class="inputComentario scroll scrollMini telaMensagemItemLateral" placeholder="Adicionar comentário" title="Adicionar comentário">Atualizar as funções internas de amarrações do banco de dados</textarea>
+                    </div>
+
+                    <span id="statusDemanda" class="cStatusItemLateral alta"></span>
                 </div>
 
             </div>
@@ -481,7 +624,7 @@
 
             <div class="fundo listaRotinas">
                 <h1 class="tituloRotinas">Rotinas atrasadas</h1>
-                <div class="lrStatusMaquina atrazo"></div>
+                <div class="lrStatus atrazo"></div>
                 <div id="AtrasadosTela" class="telaHistoricoConteudo telaListaRotinas scroll">
                     <div class="linhaSimples">
                          <p>CND Receita Federal CNPJ</p>
@@ -494,7 +637,7 @@
 
             <div class="fundo listaRotinas">
                 <h1 class="tituloRotinas">Rotinas do dia</h1>
-                <div class="lrStatusMaquina dia"></div>
+                <div class="lrStatus dia"></div>
                 <div id="DiaTela" class="telaHistoricoConteudo telaListaRotinas scroll">
                     <div class="linhaSimples">
                         <p>Resumo de impostos</p>
@@ -504,7 +647,7 @@
 
             <div class="fundo listaRotinas">
                 <h1 class="tituloRotinas">Rotinas em execuçao</h1>
-                <div class="lrStatusMaquina executando"></div>
+                <div class="lrStatus executando"></div>
                 <div id="ExecutandoTela" class="telaHistoricoConteudo telaListaRotinas scroll">
                     <div class="linhaSimples">
                         <p>CND Receita Federal CPF</p>
@@ -516,13 +659,13 @@
                         <p>Diagnóstico Fiscal</p>
                     </div>
                     <div class="linhaSimples">
-                        <p>Encaminha_Docs_WhatsApp</p>
+                        <p>Encaminha Docs WhatsApp</p>
                     </div>
                     <div class="linhaSimples">
-                        <p>Faturamento_X_Compra</p>
+                        <p>Faturamento X Compra</p>
                     </div>
                     <div class="linhaSimples">
-                        <p>Pendências_SIGISSWEB</p>
+                        <p>Pendências SIGISSWEB</p>
                     </div>
                     <div class="linhaSimples">
                         <p>Transmite DeSTDA sem movimento</p>
@@ -532,7 +675,7 @@
 
             <div class="fundo listaRotinas">
                 <h1 class="tituloRotinas">Rotinas finalizadas</h1>
-                <div class="lrStatusMaquina final"></div>
+                <div class="lrStatus final"></div>
                 <div id="FinalizadoTela" class="telaHistoricoConteudo telaListaRotinas scroll">
                     <div class="linhaSimples">
                         <p>Consulta Divida Ativa</p>
@@ -1129,12 +1272,12 @@
                 <div id="configHistorico" class="fundo menuTelaBotoes collapsed">
                     <div id="painelInput" class="fundoInvertido barraPesquisa">
                         <input type="text" id="searchInputDate" class="hInputDate" placeholder="Data e hora" title="Data e hora">
-                        <div id="limpaHInputDate" class="cmb botaoFechar botaoMaquina limparBarra" title="Limpar data e hora">⨉</div>
+                        <div id="limpaHInputDate" class="cmb botaoFechar botaoItemMenuLateral limparBarra" title="Limpar data e hora">⨉</div>
                     </div>
 
                     <div id="painelInput" class="fundoInvertido barraPesquisa">
                         <input type="text" id="searchInputName" class="hInputName" placeholder="Nome da rotina" title="Nome da rotina">
-                        <div id="limpaHInputName" class="cmb botaoFechar botaoMaquina limparBarra" title="Limpar nome da rotina">⨉</div>
+                        <div id="limpaHInputName" class="cmb botaoFechar botaoItemMenuLateral limparBarra" title="Limpar nome da rotina">⨉</div>
                     </div>
                 </div>
                 <div id="configHistorico" class="fundo menuTelaBotoes collapsed">
@@ -1185,6 +1328,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script type="module" src="js/main.js"></script>
     <script type="module" src="js/maquinas.js"></script>
+    <script type="module" src="js/demandas.js"></script>
     <script type="module" src="js/painel.js"></script>
     <script type="module" src="js/cards.js"></script>
     <script type="module" src="js/historico.js"></script>

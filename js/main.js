@@ -1,15 +1,23 @@
 import {procurarCard} from './cards.js';
 import {desmarcaCardsBuscados} from './cards.js';
-import {restaurarEstado} from './maquinas.js';
-import {adicionarListeners} from './maquinas.js';
-import {salvarEstado} from './maquinas.js';
+
+import {restaurarEstadoMaquinas} from './maquinas.js';
+import {adicionarListenersMaquinas} from './maquinas.js';
+import {salvarEstadoMaquinas} from './maquinas.js';
 import {fecharTelaDeMaquinas} from './maquinas.js';
+
+import {restaurarEstadoDemandas} from './demandas.js';
+import {adicionarListenersDemandas} from './demandas.js';
+import {salvarEstadoDemandas} from './demandas.js';
+import {fecharTelaDeDemandas} from './demandas.js';
+
 import {verifica_estado_card} from './cards.js';
 
 var botoes = document.querySelectorAll('button');
 var botoesCards = document.querySelectorAll('.btnCard');
 var cards = document.querySelectorAll('.rectangle');
 var maquinasNaLista = document.querySelectorAll('.rectangleMaquinas');
+var DemandasNaLista = document.querySelectorAll('.rectangleDemandas');
 var barrasPesquisa = document.querySelectorAll('.barraPesquisa');
 
 var relogio = document.getElementById('clock');
@@ -26,20 +34,25 @@ const menu = document.getElementById('menu');
 const telaMenu = document.querySelectorAll('.menuInvisivel');
 
 const maquinas = document.getElementById('maquinas')
+const demandas = document.getElementById('demandas')
 const dica = document.getElementById('dica');
 const galeria = document.getElementById('galeria');
 
 const fecharMaquinas = document.getElementById('fecharMaquinas');
+const fecharDemandas = document.getElementById('fecharDemandas');
 const fecharAjuda = document.getElementById('fecharAjuda');
 const fecharGaleria = document.getElementById('fecharGaleria');
 
 const telaMaquinas = document.getElementById('telaMaquinas');
+const telaDemandas = document.getElementById('telaDemandas');
 const telaDica = document.getElementById('telaDica');
 const telaGaleria = document.getElementById('telaGaleria');
 const telaRotinas = document.getElementById('telaRotinas');
 
 const barraAddMaquina = document.getElementById('barraAddMaquina');
 const barraPesquisaMaquina = document.getElementById('barraPesquisaMaquina');
+const barraAddDemanda = document.getElementById('barraAddDemanda');
+const barraPesquisaDemanda = document.getElementById('barraPesquisaDemanda');
 
 var mainHistorico = document.getElementById('targetHistorico');
 var cInputCard = document.getElementById('searchInputCard');
@@ -218,6 +231,10 @@ menu.addEventListener('click', () => {
         fecharTelaDeMaquinas()
         telaRotinas.classList.add('rotinasExpandida');
     }
+    if (!telaDemandas.classList.contains('invisible5')) {
+        fecharTelaDeDemandas()
+        telaRotinas.classList.add('rotinasExpandida');
+    }
     if (!telaDica.classList.contains('invisible2')) {
         telaDica.classList.add('invisible2');
         fundoCabecalho.classList.remove('cabecalhoMegaExpandido')
@@ -378,14 +395,15 @@ maquinas.addEventListener('click', () => {
         telaDica.classList.add('invisible2');
     }
     if (telaMaquinas.classList.contains('invisible5')) {
-        restaurarEstado();
-        adicionarListeners();
-        salvarEstado();
+        restaurarEstadoMaquinas();
+        adicionarListenersMaquinas();
+        salvarEstadoMaquinas();
         telaMaquinas.classList.remove('invisible5');
     }
     else {
         fecharTelaDeMaquinas()
     }
+    fecharTelaDeDemandas()
 });
 fecharMaquinas.addEventListener('click', ()=> {
     if (!barraAddMaquina.classList.contains('invisible6')) {
@@ -394,7 +412,36 @@ fecharMaquinas.addEventListener('click', ()=> {
     }
 
     fecharTelaDeMaquinas()
-})
+});
+
+demandas.addEventListener('click', () => {
+    fechaMenu()
+    
+    if (!telaGaleria.classList.contains('invisible2')) {
+        telaGaleria.classList.add('invisible2');
+    }
+    if (!telaDica.classList.contains('invisible2')) {
+        telaDica.classList.add('invisible2');
+    }
+    if (telaDemandas.classList.contains('invisible5')) {
+        restaurarEstadoDemandas();
+        adicionarListenersDemandas();
+        salvarEstadoDemandas();
+        telaDemandas.classList.remove('invisible5');
+    }
+    else {
+        fecharTelaDeDemandas()
+    }
+    fecharTelaDeMaquinas()
+});
+fecharDemandas.addEventListener('click', ()=> {
+    if (!barraAddDemanda.classList.contains('invisible6')) {
+        barraAddDemanda.classList.add('invisible6')
+        barraPesquisaDemanda.classList.remove('invisible6')
+    }
+
+    fecharTelaDeDemandas()
+});
 
 dica.addEventListener('click', () => {
     fechaMenu()
@@ -404,6 +451,9 @@ dica.addEventListener('click', () => {
         }
     if (!telaMaquinas.classList.contains('invisible5')) {
         fecharTelaDeMaquinas()
+    }
+    if (!telaDemandas.classList.contains('invisible5')) {
+        fecharTelaDeDemandas()
     }
 
     if (telaDica.classList.contains('invisible2')) {
@@ -429,6 +479,9 @@ galeria.addEventListener('click', () => {
     }
     if (!telaMaquinas.classList.contains('invisible5')) {
         fecharTelaDeMaquinas()
+    }
+    if (!telaDemandas.classList.contains('invisible5')) {
+        fecharTelaDeDemandas()
     }
 
     if (telaGaleria.classList.contains('invisible2')) {

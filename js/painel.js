@@ -16,7 +16,7 @@ const ctx = document.getElementById('meuDonut');
 new Chart(ctx, {
     type: 'doughnut',
     data: {
-        labels: ['Atrasados', 'Para executar', 'Em execução', 'Executados'],
+        labels: ['Rotinas atrasadas', 'Rotinas do dia', 'Rotinas em execução', 'Rotinas do dia concluídas'],
         datasets: [{
             data: [2, 1, 7, 1],  // valores
             backgroundColor: [
@@ -35,14 +35,19 @@ new Chart(ctx, {
         }]
     },
     options: {
-        borderWidth: 5,
-        
-        cutout: '92%', // abertura central (donut)
+        borderWidth: 3,
+        hoverBorderWidth: 10,
+        hoverOffset: 10,
+        cutout: '92%',
         borderRadius: 30,
+        width: 'auto',
+        height: 'auto',
+        maintainAspectRatio: false,
+        layout: {
+            padding: 10,
+        },
         plugins: {
-            legend: {
-                display: false // legenda embaixo
-            },
+            legend: { display: false }
         },
     }
 });

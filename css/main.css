@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 :root {
-    --escala-maquina: 1.02;
+    --escala-item-lateral: 1.02;
     --tamanho-titulo: 2.4rem;
     --tamanho-texto: 1.4rem;
     --tamanho-texto-2: 0.9rem;
@@ -121,7 +121,7 @@ input:-webkit-autofill:active{
     box-shadow: inset 0 0 20px #23232300;
 }
 
-.telaHistoricoConteudo, .dicaContainer, .galeriaContainer, .maquinasContainerFundo {
+.telaHistoricoConteudo, .dicaContainer, .galeriaContainer, .menuLateralContainerFundo  {
     --scroll-background: transparent;
     --scroll-hover: var(--cor-destaque);
     --scroll-button-heigh: 20px;
@@ -136,6 +136,9 @@ input:-webkit-autofill:active{
 }
 .scrollMini, .scrollInfo {
     --scroll-button-heigh: 0;
+}
+.scrollInvisible {
+    --scroll-background: transparent;
 }
 
 /* Estilizando a barra de rolagem */
@@ -277,6 +280,7 @@ button {
     padding: 0 !important;
     margin: 0 !important;
     max-height: 0 !important;
+    min-height: 0 !important;
     cursor: default !important;
 }
 
@@ -322,9 +326,17 @@ button {
     transition: background-color var(--transicao-link) ease-in-out;
 }
 
-.mf {
+.mfMaquinas {
     margin-left: 20vw;
+}
+.mfDemandas {
+    margin-right: 20vw;
+}
+.mini {
     width: 80vw !important;
+}
+.extraMini {
+    width: 60vw !important;
 }
 
 .layout {
@@ -493,11 +505,15 @@ button {
     margin: 0 7px;
 }
 
-.rectangleMaquinas:hover .botaoFechar,
-.rectangleMaquinas:hover .botaoFixar,
+.rectangleMaquina:hover .botaoFechar,
+.rectangleMaquina:hover .botaoFixar,
+.rectangleDemanda:hover .botaoFechar,
+.rectangleDemanda:hover .botaoFixar,
 .barraPesquisa:hover .botaoFechar, 
-.rectangleMaquinas.nh .botaoFechar,
-.rectangleMaquinas.nh .botaoFixar,
+.rectangleMaquina.nh .botaoFechar,
+.rectangleMaquina.nh .botaoFixar,
+.rectangleDemanda.nh .botaoFechar,
+.rectangleDemanda.nh .botaoFixar,
 .barraPesquisa.nh .botaoFechar  {
     width: 14px;
     padding: 4px 5px 5px 5px;
@@ -687,8 +703,16 @@ button.clicked::after,
     }
 }
 @media (min-width: 2500px) {
-    .mf {
+    .mfMaquinas {
         margin-left: 10vw;
+    }
+    .mfDemandas {
+        margin-right: 10vw;
+    }
+    .mini {
         width: 90vw !important;
+    }
+    .extraMini {
+        width: 80vw !important;
     }
 }

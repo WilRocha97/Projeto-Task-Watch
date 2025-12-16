@@ -1,5 +1,6 @@
 import {animacaoBotao} from './main.js';
 import {fecharTelaDeMaquinas} from './maquinas.js';
+import {fecharTelaDeDemandas} from './demandas.js';
 import {fechaMenu} from './main.js';
 
 var template = ``;
@@ -75,6 +76,7 @@ function filtraHistorico(event='', ocorrencia='geral', page=1) {
     carregandoHistorico.classList.remove('off')
     fechaMenu()
     fecharTelaDeMaquinas()
+    fecharTelaDeDemandas()
     telaDica.classList.add('invisible2');
     telaGaleria.classList.add('invisible2');
     telaHistorico.classList.remove('historicoExpandida');
