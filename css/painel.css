@@ -119,3 +119,22 @@
         height: 0;
     }
 }
+
+@media (min-width: 2500px) {
+    .telaPainel {
+        width: calc(100% / 3);
+        flex-direction: column;
+        height: calc(100vh - 60px);
+    }
+    .listaRotinas {
+        width: 100%;
+        margin: 10px 0;
+    }
+    .listaRotinas.invisible5 {
+        height: 0;
+    }
+    .telaListaRotinas {
+        max-height: 95px !important;
+        margin: 5px 3px 3px;
+    }
+}
