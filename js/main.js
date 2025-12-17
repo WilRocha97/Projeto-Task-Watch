@@ -386,7 +386,7 @@ explodeCard.addEventListener('click', () => {
 
 // Janela com dicas de como o site funciona
 maquinas.addEventListener('click', () => {
-    fechaMenu()
+    fechaMenu(true)
     
     if (!telaGaleria.classList.contains('invisible2')) {
         telaGaleria.classList.add('invisible2');
@@ -415,7 +415,7 @@ fecharMaquinas.addEventListener('click', ()=> {
 });
 
 demandas.addEventListener('click', () => {
-    fechaMenu()
+    fechaMenu(true)
     
     if (!telaGaleria.classList.contains('invisible2')) {
         telaGaleria.classList.add('invisible2');

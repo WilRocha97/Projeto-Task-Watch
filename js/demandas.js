@@ -74,7 +74,7 @@ async function exibeDemandaPesquisada(pesquisa, nomeDaMaquina) {
     }
 }
 
-function adicionarDemandaNoInicio(idMaquina) {
+function adicionarDemandaNoInicio(idDemanda) {
     // Pega o container
     const container = document.querySelector("#listaDemandas");
     if (!container) return;
@@ -83,15 +83,15 @@ function adicionarDemandaNoInicio(idMaquina) {
     const maquinasNaLista = document.querySelectorAll('.rectangleDemanda');
     for (const maquinaNaLista of maquinasNaLista) {
         // console.log(card.id.includes)
-        if (maquinaNaLista.id === idMaquina) {
-            exibeDemandaPesquisada(false, idMaquina)
+        if (maquinaNaLista.id === idDemanda) {
+            exibeDemandaPesquisada(false, idDemanda)
             return;
         }
     };
 
     // Cria a nova div
     const novaDiv = document.createElement("div");
-    novaDiv.id = idMaquina;
+    novaDiv.id = idDemanda;
     novaDiv.className = "rectangleDemanda invisible7";
     novaDiv.innerHTML = `
         <div class="menuItenLateral">
@@ -100,7 +100,7 @@ function adicionarDemandaNoInicio(idMaquina) {
         </div>
 
         <div class="tituloContainerItemLateral">
-            <div class="tituloItemLateral">${idMaquina}</div>
+            <div class="tituloItemLateral" title="${idDemanda}">${idDemanda}</div>
         </div>
     
         <div><div class="subTituloItemLateral">Responsável:</div>
@@ -120,13 +120,13 @@ function adicionarDemandaNoInicio(idMaquina) {
 
     // Insere no índice 0 (antes do primeiro filho)
     container.insertBefore(novaDiv, container.firstChild);
-    document.getElementById(idMaquina).scrollIntoView({ behavior: "smooth", block: "start" });
+    document.getElementById(idDemanda).scrollIntoView({ behavior: "smooth", block: "start" });
 
     novaDemanda.value= '';
     setTimeout(()=> {
-        document.getElementById(idMaquina).classList.remove('invisible7')
+        document.getElementById(idDemanda).classList.remove('invisible7')
         if (isTouchDevice()) {
-            document.getElementById(idMaquina).classList.add('nh')
+            document.getElementById(idDemanda).classList.add('nh')
         }
     }, 100);
 }
