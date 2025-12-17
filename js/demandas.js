@@ -1,4 +1,3 @@
-import {procurarCard} from './cards.js';
 import {isTouchDevice} from './main.js';
 
 let canClickLimpaBusca = true;
@@ -326,16 +325,6 @@ document.addEventListener('click', (event) => {
                     statusDaMaquina.classList.add('alta')
                     target.innerHTML = 'Prioridade alta'
                 }
-        }
-
-        if (target.id == 'buscarMaquina') {
-            const idMaquina = divMae.id
-            procurarCard({key: 'Enter'}, idMaquina);
-
-            var screenWidth = window.innerWidth;
-            if (screenWidth < 916) {
-                fecharTelaDeDemandas();
-            }
         }
 
         if (target.id == 'deletarDemanda') {
