@@ -46,7 +46,7 @@
     display: flex;
     flex-direction: column;
 }
-.menuLateral {
+.menuLateralMaquinas, .menuLateralDemandas {
     position: fixed;
     display: flex;
     flex-direction: row;
@@ -148,7 +148,7 @@
 }
 
 .telaMensagemItemLateral {
-    height: 150px;
+    height: 100px;
 }
 .mediaTelaMensagemItemLateral {
     height: 80px;
@@ -184,7 +184,7 @@
 }
 
 @media (min-width: 1650px) {
-    .menuLateral {
+    .menuLateralMaquinas, .menuLateralDemandas {
         min-height: 5%;
     }
     .telaLateral {
@@ -192,7 +192,7 @@
     }
 }
 @media (min-width: 2500px) {
-    .menuLateral {
+    .menuLateralMaquinas, .menuLateralDemandas {
         min-height: 5%;
     }
     .telaLateral {
@@ -203,8 +203,9 @@
     .cabecalhoMenuLateral {
         height: 1%;
         opacity: 0;
+        padding: 0;
     }
-    .menuLateral {
+    .menuLateralMaquinas, .menuLateralDemandas {
         bottom: 140px;
     }
     .telaMaquinasContainerFundo, .telaDemandasContainerFundo {
@@ -222,7 +223,7 @@
         cursor: default;
     }
     .telaLateral {
-        width: 80vw;
+        width: 95vw;
         padding: 8px;
     }
     .menuLateralSuperExpandido {

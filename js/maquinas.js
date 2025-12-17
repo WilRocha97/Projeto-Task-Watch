@@ -17,7 +17,7 @@ const addMaquinaTexto = addMaquina.querySelector('.MenuBotaoActive');
 
 const novaMaquina = document.getElementById('inputAddMaquina');
 const pesquisaMaquina = document.getElementById('inputPesquisaMaquina');
-const menuLateral = document.querySelector('.menuLateral');
+const menuLateral = document.querySelector('.menuLateralMaquinas');
 const barraAddMaquina = document.getElementById('barraAddMaquina');
 const barraPesquisaMaquina = document.getElementById('barraPesquisaMaquina');
 const limpaInputPesquisaMaquina = document.getElementById('limpaInputPesquisaMaquina');

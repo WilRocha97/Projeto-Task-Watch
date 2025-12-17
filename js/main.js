@@ -16,8 +16,8 @@ import {verifica_estado_card} from './cards.js';
 var botoes = document.querySelectorAll('button');
 var botoesCards = document.querySelectorAll('.btnCard');
 var cards = document.querySelectorAll('.rectangle');
-var maquinasNaLista = document.querySelectorAll('.rectangleMaquinas');
-var DemandasNaLista = document.querySelectorAll('.rectangleDemandas');
+var maquinasNaLista = document.querySelectorAll('.rectangleMaquina');
+var demandasNaLista = document.querySelectorAll('.rectangleDemanda');
 var barrasPesquisa = document.querySelectorAll('.barraPesquisa');
 
 var relogio = document.getElementById('clock');
@@ -83,6 +83,9 @@ if (isTouchDevice()) {
         botao.classList.add('nh')
     });
     maquinasNaLista.forEach((botao)=> {
+        botao.classList.add('nh')
+    });
+    demandasNaLista.forEach((botao)=> {
         botao.classList.add('nh')
     });
     barrasPesquisa.forEach((barra)=> {

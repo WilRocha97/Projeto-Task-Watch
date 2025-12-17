@@ -17,7 +17,7 @@ const addDemandaTexto = addDemanda.querySelector('.MenuBotaoActive');
 
 const novaDemanda = document.getElementById('inputAddDemanda');
 const pesquisaDemanda = document.getElementById('inputPesquisaDemanda');
-const menuLateral = document.querySelector('.menuLateral');
+const menuLateral = document.querySelector('.menuLateralDemandas');
 const barraAddDemanda = document.getElementById('barraAddDemanda');
 const barraPesquisaDemanda = document.getElementById('barraPesquisaDemanda');
 const limpaInputPesquisaDemanda = document.getElementById('limpaInputPesquisaDemanda');
