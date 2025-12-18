@@ -40,10 +40,10 @@
     transition: 1s ease-in-out;
 }
 .lrStatus.final { 
-    --cor-lista: var(--cor-final-alternativa);
+    --cor-lista: var(--cor-final);
 }
 .lrStatus.executando { 
-    --cor-lista: var(--cor-executando-alternativa);
+    --cor-lista: var(--cor-executando);
 }
 .lrStatus.dia { 
     --cor-lista: var(--cor-ocioso);

@@ -136,7 +136,7 @@
     transition: 1s ease-in-out;
 }
 .cStatusItemLateral.livre, .cStatusItemLateral.baixa  { 
-    --cor-item-lateral: var(--cor-executando-alternativa);
+    --cor-item-lateral: var(--cor-executando);
 }
 .cStatusItemLateral.ocupado, .cStatusItemLateral.media  { 
     --cor-item-lateral: var(--cor-ocioso);
