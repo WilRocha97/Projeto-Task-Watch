@@ -3,7 +3,6 @@
     overflow: hidden;
     z-index: 1;
     opacity: 1;
-    width: 20vw;
     margin: 0;
     border-radius: 0;
     height: 100%;
@@ -15,9 +14,11 @@
 }
 #telaMaquinas {
     left: 0;
+    width: 20vw;
 }
 #telaDemandas {
     right: 0;
+    width: 90vw;
 }
 
 .botaoItemMenuLateral {
@@ -44,8 +45,14 @@
 }
 .telaMaquinasContainer, .telaDemandasContainer {
     display: flex;
+}
+.telaMaquinasContainer {
     flex-direction: column;
 }
+.telaDemandasContainer {
+    flex-wrap: wrap;
+}
+
 .menuLateralMaquinas, .menuLateralDemandas {
     position: fixed;
     display: flex;
@@ -54,9 +61,13 @@
     align-items: center;
     transition: var(--transicao-link) ease-in-out;
 }
+.menuLateralDemandas {
+    width: 30%;
+}
 
 .rectangleDemanda  {
     min-height: 150px;
+    width: 30%;
 }
 .rectangleMaquina {
     min-height: 110px;

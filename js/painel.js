@@ -6,10 +6,10 @@ const corErro = styles.getPropertyValue('--cor-erro').trim();
 const corOcioso = styles.getPropertyValue('--cor-ocioso').trim();
 const corFundo = styles.getPropertyValue('--cor-fundo').trim();
 
-const corExecutadoSombra = styles.getPropertyValue('--animacao-opaca-bota-1').trim();
-const corExecutandoSombra = styles.getPropertyValue('--animacao-opaca-bota-2').trim();
-const corErroSombra = styles.getPropertyValue('--animacao-opaca-bota-4').trim();
-const corOciosoSombra = styles.getPropertyValue('--animacao-opaca-bota-3').trim();
+const corExecutadoSombra = styles.getPropertyValue('--cor-final').trim();
+const corExecutandoSombra = styles.getPropertyValue('--cor-executando').trim();
+const corErroSombra = styles.getPropertyValue('--cor-erro').trim();
+const corOciosoSombra = styles.getPropertyValue('--cor-ocioso').trim();
 
 const ctx = document.getElementById('meuDonut');
 
@@ -22,7 +22,7 @@ new Chart(ctx, {
             backgroundColor: [
                 corErro, // vermelho
                 corOcioso, // amarelo
-                corExecutando,  // verde
+                corExecutando, // verde
                 corExecutado // azul
             ],
             borderColor: [
@@ -35,9 +35,8 @@ new Chart(ctx, {
         }]
     },
     options: {
-        borderWidth: 3,
-        hoverBorderWidth: 10,
-        hoverOffset: 10,
+        borderWidth: 0,
+        hoverBorderWidth: 2,
         cutout: '92%',
         borderRadius: 30,
         width: 'auto',

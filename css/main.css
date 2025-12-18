@@ -44,7 +44,7 @@
     --cor-final: #00c1fc;
     --cor-fechar: #8d5cff;
 
-    --cor-executando-alternativa: #00cf91;
+    --cor-executando-alternativa: #007954;
     --cor-erro-alternativa: #9b0000;
     --cor-ocioso-alternativa: #c47500;
     --cor-final-alternativa: #0098c7;
@@ -87,7 +87,7 @@
     --cor-final: #00c3ff;
     --cor-fechar: #3a00c0;
 
-    --cor-executando-alternativa: #00a573;
+    --cor-executando-alternativa: #007e58;
     --cor-erro-alternativa: #8f0000;
     --cor-ocioso-alternativa: #965500;
     --cor-final-alternativa: #00789c;
@@ -401,6 +401,7 @@ button {
 .inputComentario {
     color: var(--cor-texto);
     background: none;
+    resize: none;
     border: none;
     border-radius: 10px;
 }
