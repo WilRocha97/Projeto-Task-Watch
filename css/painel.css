@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding: 60px 30px 0;
+    padding: 50px 30px 0;
     height: 40vh;
     width: calc(100% - 60px);
     transition: var(--transicao-link) ease-in-out;
@@ -62,7 +62,7 @@
 }
 .listaRotinas {
     width: calc(100vw / 5);
-    margin-left: 10px;
+    margin-left: 5px;
     height: 100%;
 }
 .linhaSimples {
