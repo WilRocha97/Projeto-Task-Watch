@@ -33,7 +33,7 @@ async function exibeDemandas() {
 
     const maquinasNaLista = document.querySelectorAll('.rectangleDemanda');
     for (const maquinaNaLista of maquinasNaLista) {
-        maquinaNaLista.classList.remove('invisible7');
+        maquinaNaLista.classList.remove('invisible8');
         await esperar(20);
     }
     
@@ -57,10 +57,10 @@ async function exibeDemandaPesquisada(pesquisa, nomeDaMaquina) {
     const maquinasInvertidas = Array.from(maquinasNaLista).reverse();
     for (const maquinaNaLista of maquinasInvertidas) {
         if (!maquinaNaLista.id.includes(nomeNovaMaquina)) {
-            maquinaNaLista.classList.add('invisible7')
+            maquinaNaLista.classList.add('invisible8')
         }
         else {
-            maquinaNaLista.classList.remove('invisible7')
+            maquinaNaLista.classList.remove('invisible8')
             resultado = true
         }
         await esperar(20);
@@ -91,7 +91,7 @@ function adicionarDemandaNoInicio(idDemanda) {
     // Cria a nova div
     const novaDiv = document.createElement("div");
     novaDiv.id = idDemanda;
-    novaDiv.className = "rectangleDemanda invisible7";
+    novaDiv.className = "rectangleDemanda invisible8";
     novaDiv.innerHTML = `
         <div class="menuItenLateral">
             <button id="mudarStatus" class="cmb botaoFixar botaoItemMenuLateral cMudarStatus" title="Mudar status">Prioridade baixa</button>
@@ -125,7 +125,7 @@ function adicionarDemandaNoInicio(idDemanda) {
     setTimeout(()=> {
         var rectangleDemandaInicio = document.getElementById(idDemanda)
         if (rectangleDemandaInicio) {
-            rectangleDemandaInicio.classList.remove('invisible7')
+            rectangleDemandaInicio.classList.remove('invisible8')
             if (isTouchDevice()) {
                 document.getElementById(idDemanda).classList.add('nh')
             }
@@ -332,6 +332,12 @@ document.addEventListener('click', (event) => {
 
         if (target.id == 'deletarDemanda') {
             const modal = document.getElementById("modalConfirmacao");
+            modal.innerHTML = `<div class="fundoCabecalho"></div>
+                            <div class="fundo modalConfirmaContent invisible">
+                                <p class="paragrafo">Tem certeza que deseja excluir essa demanda da lista?</p>
+                                <button id="btnConfirmar" class="cmb MenuBotaoInterno">Sim</button>
+                                <button id="btnCancelar" class="cmb MenuBotaoInterno">Cancelar</button>
+                            </div>`
             const modalContent = document.querySelector(".modalConfirmaContent");
             modal.classList.remove("invisible2");
             modalContent.classList.remove("invisible");
@@ -345,7 +351,7 @@ document.addEventListener('click', (event) => {
                     modalContent.classList.add("invisible");
                 }, 300);
                 
-                divMae.classList.add('invisible7')
+                divMae.classList.add('invisible8')
                 setTimeout(()=> {
                     const container = document.querySelector(".telaDemandasContainer");
                     container.removeChild(divMae);

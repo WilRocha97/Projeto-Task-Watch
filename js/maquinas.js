@@ -321,6 +321,12 @@ document.addEventListener('click', (event) => {
 
         if (target.id == 'deletarMaquina') {
             const modal = document.getElementById("modalConfirmacao");
+            modal.innerHTML = `<div class="fundoCabecalho"></div>
+                            <div class="fundo modalConfirmaContent invisible">
+                                <p class="paragrafo">Tem certeza que deseja excluir esse dispositivo da lista?</p>
+                                <button id="btnConfirmar" class="cmb MenuBotaoInterno">Sim</button>
+                                <button id="btnCancelar" class="cmb MenuBotaoInterno">Cancelar</button>
+                            </div>`
             const modalContent = document.querySelector(".modalConfirmaContent");
             modal.classList.remove("invisible2");
             modalContent.classList.remove("invisible");

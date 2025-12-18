@@ -176,24 +176,6 @@
     transition: var(--transicao-link);
 }
 
-.modalConfirma {
-    opacity: 1;
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    width: 100vw;
-    height: 100vh;
-    z-index: 999;
-    transition: opacity var(--transicao-link) ease-in-out;
-}
-.modalConfirmaContent {
-    opacity: 1;
-    position: fixed;
-    padding: 20px;
-    bottom: 50%;
-    transition: opacity var(--transicao-link) ease-in-out;
-}
-
 @media (min-width: 1650px) {
     .menuLateralMaquinas, .menuLateralDemandas {
         min-height: 5%;
