@@ -3,7 +3,7 @@
     flex-direction: row;
     justify-content: center;
     margin: 50px 30px 0;
-    height: 40vh;
+    height: 35vh;
     width: calc(100% - 60px);
     transition: var(--transicao-link) ease-in-out;
 }
@@ -49,7 +49,8 @@
     --cor-lista: var(--cor-erro);
 }
 .telaListaRotinas {
-    max-height: calc(40vh - 62px) !important;
+    max-height: calc(35vh - 60px) !important;
+    border-radius: calc(var(--borda-botao) - 2px) !important;
 }
 .listasRotinas {
     display: flex;
