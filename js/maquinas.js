@@ -113,9 +113,12 @@ function adicionarMaquinaNoInicio(idMaquina) {
 
     novaMaquina.value= '';
     setTimeout(()=> {
-        document.getElementById(idMaquina).classList.remove('invisible7')
-        if (isTouchDevice()) {
-            document.getElementById(idMaquina).classList.add('nh')
+        var rectangleMaquinaInicio = document.getElementById(idMaquina)
+        if (rectangleMaquinaInicio) {
+            rectangleMaquinaInicio.classList.remove('invisible7')
+            if (isTouchDevice()) {
+                document.getElementById(idMaquina).classList.add('nh')
+            }
         }
     }, 100);
 }

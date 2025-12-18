@@ -123,9 +123,12 @@ function adicionarDemandaNoInicio(idDemanda) {
 
     novaDemanda.value= '';
     setTimeout(()=> {
-        document.getElementById(idDemanda).classList.remove('invisible7')
-        if (isTouchDevice()) {
-            document.getElementById(idDemanda).classList.add('nh')
+        var rectangleDemandaInicio = document.getElementById(idDemanda)
+        if (rectangleDemandaInicio) {
+            rectangleDemandaInicio.classList.remove('invisible7')
+            if (isTouchDevice()) {
+                document.getElementById(idDemanda).classList.add('nh')
+            }
         }
     }, 100);
 }
