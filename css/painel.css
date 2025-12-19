@@ -23,16 +23,16 @@
     width: 90%;
     border-radius: 5px;
     background-color: var(--cor-lista); 
-    box-shadow: 0 50px 100px var(--cor-lista),
-                0 45px 90px var(--cor-lista),
-                0 40px 80px var(--cor-lista),
-                0 35px 70px var(--cor-lista),
-                0 30px 60px var(--cor-lista),
-                0 25px 50px var(--cor-lista),
-                0 20px 40px var(--cor-lista),
-                0 15px 30px var(--cor-lista),
-                0 10px 20px var(--cor-lista),
-                0 5px 10px var(--cor-lista),
+    box-shadow: 0 10em 100px var(--cor-lista),
+                0 9em 90px var(--cor-lista),
+                0 8em 80px var(--cor-lista),
+                0 7em 70px var(--cor-lista),
+                0 5em 60px var(--cor-lista),
+                0 4em 50px var(--cor-lista),
+                0 3em 40px var(--cor-lista),
+                0 2em 30px var(--cor-lista),
+                0 1em 20px var(--cor-lista),
+                0 0.5em 15px var(--cor-lista),
                 0 0 5px var(--cor-lista);
     transition: 1s ease-in-out;
 }
@@ -52,16 +52,12 @@
     max-height: calc(35vh - 60px) !important;
     border-radius: calc(var(--borda-botao) - 2px) !important;
 }
-.listasRotinas {
-    display: flex;
-    flex-direction: row;
-    height: 100%;
-    transition: var(--transicao-link) ease-in-out;
-}
+
 .listaRotinas {
     width: calc(100vw / 5);
     margin-left: 5px;
     height: 100%;
+    overflow: hidden;
 }
 .linhaSimples {
     opacity: 1;
@@ -83,8 +79,6 @@
     width: calc((100vw / 5) - 35px);
     height: auto;
     margin-right: 15px;
-}
-.chartBox, .listasRotinas {
     position: relative;
     align-self: center;
 }
@@ -104,6 +98,7 @@
         flex-direction: column;
         height: fit-content;
         padding: 30px;
+        margin: 0;
     }
     .chartBox {
         width: 100%;
@@ -115,6 +110,9 @@
     }
     .listaRotinas.invisible5 {
         height: 0;
+    }
+    .lrStatus {
+        width: 96%;
     }
 }
 

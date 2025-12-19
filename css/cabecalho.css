@@ -8,7 +8,6 @@
     flex-direction: column;
     align-items: center;
     border-radius: 0 0 20px 20px;
-    overflow: hidden;
     transition: var(--transicao-link) ease-in-out,
                 background-color 1s ease-in-out, 
                 box-shadow 1s ease-in-out, 
@@ -30,6 +29,7 @@
     backdrop-filter: blur(var(--blur-fundo));
     -webkit-backdrop-filter: blur(var(--blur-fundo));
     z-index: 0;
+    border-radius: 0 0 20px 20px;
     transition: var(--transicao-link);
 }
 
@@ -49,7 +49,6 @@
     margin: 2px;
     width: 100%;
     padding: 3px;
-    overflow: hidden;
 }
 
 .menuTelaBotoes {

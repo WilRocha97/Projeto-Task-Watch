@@ -90,6 +90,7 @@
 .tituloContainerItemLateral {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     gap: 5px;
     padding: 5px;
     border-radius: var(--borda-botao);
@@ -122,16 +123,18 @@
     margin: 5px 1.5px 0 1.5px;
     border-radius: 5px;
     background-color: var(--cor-item-lateral); 
-    box-shadow: 50px 0 100px var(--cor-item-lateral),
-                45px 0 90px var(--cor-item-lateral),
-                40px 0 80px var(--cor-item-lateral),
-                35px 0 70px var(--cor-item-lateral),
-                30px 0 60px var(--cor-item-lateral),
-                25px 0 50px var(--cor-item-lateral),
-                20px 0 40px var(--cor-item-lateral),
-                15px 0 30px var(--cor-item-lateral),
-                10px 0 20px var(--cor-item-lateral),
-                5px 0 10px var(--cor-item-lateral),
+    box-shadow: 10em 0 100px var(--cor-item-lateral),
+                9em 0 90px var(--cor-item-lateral),
+                8em 0 80px var(--cor-item-lateral),
+                7em 0 70px var(--cor-item-lateral),
+                6em 0 60px var(--cor-item-lateral),
+                5em 0 50px var(--cor-item-lateral),
+                4em 0 40px var(--cor-item-lateral),
+                3em 0 30px var(--cor-item-lateral),
+                2em 0 20px var(--cor-item-lateral),
+                1em 0 10px var(--cor-item-lateral),
+                2px 0 10px var(--cor-item-lateral),
+                1px 0 10px var(--cor-item-lateral),
                 0 0 5px var(--cor-item-lateral);
     transition: 1s ease-in-out;
 }
@@ -156,6 +159,8 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    border-bottom: 1px solid var(--cor-texto);
+    margin-bottom: -1px;
 }
 
 .telaMensagemItemLateral {
@@ -205,6 +210,12 @@
         height: 77vh;
         margin-top: 0;
     }
+    .telaDemandasContainer {
+        flex-direction: column;
+    }
+    .rectangleDemanda {
+        width: auto;
+    }
     #fixarTelaMaquinas {
         opacity: 0;
         max-width: 0;
@@ -224,9 +235,6 @@
         min-height: 95%;
         align-items: flex-start;
         transition: var(--transicao-link) ease-in-out;
-    }
-    .botaoItemMenuLateral {
-        margin: 10px;
     }
 }
 @media (max-width: 1255px) and (min-width: 917px) {

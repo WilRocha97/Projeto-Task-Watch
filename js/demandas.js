@@ -93,16 +93,14 @@ function adicionarDemandaNoInicio(idDemanda) {
     novaDiv.id = idDemanda;
     novaDiv.className = "rectangleDemanda invisible8";
     novaDiv.innerHTML = `
-        <div class="menuItenLateral">
-            <button id="mudarStatus" class="cmb botaoFixar botaoItemMenuLateral cMudarStatus" title="Mudar status">Prioridade baixa</button>
-            <div id="deletarDemanda" class="cmb botaoFechar botaoItemMenuLateral" title="Deletar dispositivo">⨉</div>
-        </div>
-
         <div class="tituloContainerItemLateral">
             <div class="tituloItemLateral" title="${idDemanda}">${idDemanda}</div>
+            <div id="deletarDemanda" class="cmb botaoFechar botaoItemMenuLateral" title="Deletar dispositivo" style="padding:0 !important">⨉</div>
         </div>
+        <button id="mudarStatus" class="cmb MenuBotao botaoItemMenuLateral cMudarStatus" title="Mudar status">Prioridade baixa</button>
     
-        <div><div class="subTituloItemLateral">Responsável:</div>
+        <div>
+            <div class="subTituloItemLateral">Responsável:</div>
             <textarea type="text" id="responsavel" class="inputComentario scroll scrollMini miniTelaMensagemItemLateral" placeholder="Responsável" title="Adicionar responsável da demanda"></textarea>
         </div>
         <div>
@@ -128,6 +126,7 @@ function adicionarDemandaNoInicio(idDemanda) {
             rectangleDemandaInicio.classList.remove('invisible8')
             if (isTouchDevice()) {
                 document.getElementById(idDemanda).classList.add('nh')
+                rectangleDemandaInicio.querySelector('#mudarStatus').classList.add('nh')
             }
         }
     }, 100);
