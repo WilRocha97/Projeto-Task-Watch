@@ -76,7 +76,7 @@
 }
 
 .chartBox {
-    width: calc((100vw / 5) - 35px);
+    width: calc((100vw / 5) - 50px);
     height: auto;
     margin-right: 15px;
     position: relative;
