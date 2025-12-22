@@ -53,12 +53,25 @@
     border-radius: calc(var(--borda-botao) - 2px) !important;
 }
 
-.listaRotinas {
+.listaRotinas1, 
+.listaRotinas2, 
+.listaRotinas3, 
+.listaRotinas4 {
     width: calc(100vw / 5);
     margin-left: 5px;
     height: 100%;
     overflow: hidden;
 }
+.aD {
+    border-radius: var(--borda-botao) 5px 5px var(--borda-botao);
+}
+.aE {
+    border-radius: 5px var(--borda-botao) var(--borda-botao) 5px;
+}
+.aED {
+    border-radius: 5px;
+}
+
 .linhaSimples {
     opacity: 1;
     border-radius: 13px;
@@ -104,11 +117,17 @@
         width: 100%;
         margin: 10px 0;
     }
-    .listaRotinas {
+    .listaRotinas1, 
+    .listaRotinas2, 
+    .listaRotinas3, 
+    .listaRotinas4 {
         width: 100%;
         margin: 10px 0;
     }
-    .listaRotinas.invisible5 {
+    .listaRotinas1.invisible5, 
+    .listaRotinas2.invisible5, 
+    .listaRotinas3.invisible5, 
+    .listaRotinas4.invisible5 {
         height: 0;
     }
     .lrStatus {
@@ -122,11 +141,17 @@
         flex-direction: column;
         height: calc(100vh - 60px);
     }
-    .listaRotinas {
+    .listaRotinas1, 
+    .listaRotinas2, 
+    .listaRotinas3, 
+    .listaRotinas4 {
         width: 100%;
         margin: 10px 0;
     }
-    .listaRotinas.invisible5 {
+    .listaRotinas1.invisible5, 
+    .listaRotinas2.invisible5, 
+    .listaRotinas3.invisible5, 
+    .listaRotinas4.invisible5 {
         height: 0;
     }
     .telaListaRotinas {
