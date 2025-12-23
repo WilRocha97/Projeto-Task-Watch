@@ -63,13 +63,13 @@ new Chart(ctx, {
     options: {
         borderWidth: 0,
         hoverBorderWidth: 2,
-        cutout: '92%',
-        borderRadius: 30,
+        cutout: '85%',
+        borderRadius: 15,
         width: 'auto',
         height: 'auto',
         maintainAspectRatio: false,
         layout: {
-            padding: 10,
+            padding: 20,
         },
         plugins: {
             legend: { display: false }
