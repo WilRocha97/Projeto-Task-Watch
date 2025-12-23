@@ -7,8 +7,8 @@
     --tamanho-texto-2: 0.9rem;
     --transicao-link: 0.3s;
     --transicao-link-2: 0.6s;
-    --blur: 15px;
-    --blur-fundo: 5px;
+    --blur: 35px;
+    --blur-fundo: 10px;
     --blur-card: 3px;
     --borda-card: 1px;
     --sombra-vidro-card-clara: #cecccc0c;
@@ -129,7 +129,7 @@ input:-webkit-autofill:active{
     width: 100vw;
     height: 100vh;
     z-index: 999;
-    transition: opacity var(--transicao-link) ease-in-out;
+    transition: var(--transicao-link) ease-in-out;
 }
 .modalConfirmaContent {
     opacity: 1;
@@ -248,6 +248,11 @@ button {
     opacity: 0 !important;
     position: fixed !important;
     bottom: 200% !important;
+}
+.invisible0 {
+    opacity: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
 }
 .invisible1 {
     opacity: 0 !important;

@@ -338,14 +338,14 @@ document.addEventListener('click', (event) => {
                                 <button id="btnCancelar" class="cmb MenuBotaoInterno">Cancelar</button>
                             </div>`
             const modalContent = document.querySelector(".modalConfirmaContent");
-            modal.classList.remove("invisible2");
+            modal.classList.remove("invisible0");
             modalContent.classList.remove("invisible");
 
             const btnConfirmar = document.getElementById("btnConfirmar");
             const btnCancelar = document.getElementById("btnCancelar");
 
             btnConfirmar.onclick = () => {
-                modal.classList.add("invisible2");
+                modal.classList.add("invisible0");
                 setTimeout(()=> {
                     modalContent.classList.add("invisible");
                 }, 300);
@@ -357,7 +357,7 @@ document.addEventListener('click', (event) => {
                 }, 300);
             }
             btnCancelar.onclick = () => {
-                modal.classList.add("invisible2");
+                modal.classList.add("invisible0");
                 setTimeout(()=> {
                     modalContent.classList.add("invisible");
                 }, 300);
