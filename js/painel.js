@@ -6,12 +6,10 @@ const corErro = styles.getPropertyValue('--cor-erro').trim();
 const corOcioso = styles.getPropertyValue('--cor-ocioso').trim();
 const corFundo = styles.getPropertyValue('--cor-fundo').trim();
 
-const corExecutadoSombra = styles.getPropertyValue('--cor-final').trim();
-const corExecutandoSombra = styles.getPropertyValue('--cor-executando').trim();
-const corErroSombra = styles.getPropertyValue('--cor-erro').trim();
-const corOciosoSombra = styles.getPropertyValue('--cor-ocioso').trim();
-
-const ctx = document.getElementById('meuDonut');
+const corExecutadoSombra = styles.getPropertyValue('--animacao-opaca-bota-1').trim();
+const corExecutandoSombra = styles.getPropertyValue('--animacao-opaca-bota-2').trim();
+const corErroSombra = styles.getPropertyValue('--animacao-opaca-bota-4').trim();
+const corOciosoSombra = styles.getPropertyValue('--animacao-opaca-bota-3').trim();
 
 function verificaListasAbertas() {
     const elements = Array.from(document.querySelector('#targetPainel').children);
@@ -39,17 +37,50 @@ function verificaListasAbertas() {
     });
 }
 
-new Chart(ctx, {
+
+const outerCtx = document.getElementById('outerChart').getContext('2d');
+const outerChart = new Chart(outerCtx, {
+    type: 'doughnut',
+    data: {
+        labels: ['Rotinas atrasadas', 'Rotinas do dia', 'Rotinas em execução', 'Rotinas do dia concluídas'],
+        datasets: [{
+            data: [2, 1, 7, 1],
+            backgroundColor: [
+                corErro,
+                corOcioso,
+                corExecutando,
+                corExecutado
+            ]
+        }]
+    },
+    options: {
+        cutout: '95%', // Buraco menor = borda mais grossa
+        maintainAspectRatio: false,
+        borderRadius: 20,
+        borderWidth: 0,
+        layout: {
+            padding: 25,
+        },
+        plugins: {
+            legend: {
+                display: false
+            }
+        }
+    }
+});
+
+const ctx = document.getElementById('meuDonut');
+const innerChart = new Chart(ctx, {
     type: 'doughnut',
     data: {
         labels: ['Rotinas atrasadas', 'Rotinas do dia', 'Rotinas em execução', 'Rotinas do dia concluídas'],
         datasets: [{
             data: [2, 1, 7, 1],  // valores
             backgroundColor: [
-                corErro, // vermelho
-                corOcioso, // amarelo
-                corExecutando, // verde
-                corExecutado // azul
+                corErroSombra,
+                corOciosoSombra,
+                corExecutandoSombra,
+                corExecutadoSombra
             ],
             borderColor: [
                 corErroSombra,
@@ -62,17 +93,15 @@ new Chart(ctx, {
     },
     options: {
         borderWidth: 0,
-        hoverBorderWidth: 2,
-        cutout: '85%',
-        borderRadius: 15,
-        width: 'auto',
-        height: 'auto',
+        cutout: '50%',
+        borderRadius: 2,
         maintainAspectRatio: false,
         layout: {
-            padding: 20,
+            padding: 22,
         },
         plugins: {
             legend: { display: false }
         },
     }
 });
+
