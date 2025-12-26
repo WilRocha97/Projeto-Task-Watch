@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     margin: 50px 30px 0;
-    height: 35vh;
+    height: 250px;
     width: calc(100% - 60px);
     transition: var(--transicao-link) ease-in-out;
 }
@@ -14,7 +14,7 @@
 }
 
 .tituloRotinas {
-    margin: 13px 16px;
+    margin: 13px 16px 2px 16px;
 }
 /* barra de status */
 .lrStatus {
@@ -50,7 +50,7 @@
     --cor-lista: var(--cor-erro);
 }
 .telaListaRotinas {
-    max-height: calc(35vh - 60px) !important;
+    max-height: calc(35vh - 75px) !important;
     border-radius: calc(var(--borda-botao) - 2px) !important;
 }
 
@@ -97,6 +97,7 @@ canvas {
 .chartBox {
     width: calc((100vw / 5) - 50px);
     height: 100%;
+    min-height: 250px;
     margin-right: 15px;
     position: relative;
     align-self: center;
@@ -129,13 +130,19 @@ canvas {
     .listaRotinas3, 
     .listaRotinas4 {
         width: 100%;
-        margin: 10px 0;
+        margin: 2px 0;
     }
     .listaRotinas1.invisible5, 
     .listaRotinas2.invisible5, 
     .listaRotinas3.invisible5, 
     .listaRotinas4.invisible5 {
         height: 0;
+    }
+    .aD {
+        border-radius: var(--borda-botao) var(--borda-botao) 5px 5px
+    }
+    .aE {
+        border-radius:  5px 5px var(--borda-botao) var(--borda-botao)
     }
     .lrStatus {
         width: 96%;
