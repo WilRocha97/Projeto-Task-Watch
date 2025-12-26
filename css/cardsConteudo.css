@@ -131,25 +131,12 @@
     position: absolute;
     overflow: visible;
     z-index: -1000;
-    top: 5px;
-    right: 20px;
-    width: 80px;
-    height: auto;
+    top: 3px;
+    right: 3px;
+    width: auto;
+    height: 70%;
     opacity: 0.2;
     transition: var(--transicao-link) ease-in-out;
-}
-
-#decoracao.medio {
-    top: 10px;
-    width: 120px;
-}
-#decoracao.grande {
-    top: 15px;
-    width: 150px;
-}
-#decoracao.enorme {
-    top: 15px;
-    width: 250px;
 }
 
 @media (max-width: 916px) {

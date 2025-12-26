@@ -177,28 +177,6 @@ export function verifica_estado_card(divMae) {
         divMae.classList.remove('medium')
         divMae.classList.add('large')  
     }
-
-    const botoes = divMae.querySelectorAll('.maisInfob');
-    const decoracao = divMae.querySelector('#decoracao');
-    // Verifica quantos botões têm a classe 'minimizado'
-    const botoesMinimizados = Array.from(botoes).filter(botao => 
-        botao.classList.contains('flip')
-    );
-    if (botoesMinimizados.length === 1) {
-        decoracao.classList.remove('grande', 'enorme');
-        decoracao.classList.add('medio');
-    } 
-    else if (botoesMinimizados.length === 2) {
-        decoracao.classList.remove('medio', 'enorme');
-        decoracao.classList.add('grande');
-    } 
-    else if (botoesMinimizados.length === 3) {
-        decoracao.classList.remove('medio', 'grande');
-        decoracao.classList.add('enorme');
-    } 
-    else {
-        decoracao.classList.remove('medio', 'grande', 'enorme');
-    }
 }
 
 document.addEventListener('DOMContentLoaded', function() {
