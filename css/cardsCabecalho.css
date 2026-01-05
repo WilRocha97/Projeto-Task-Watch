@@ -66,25 +66,6 @@
     }
 }
 
-.botaoFechar, .botaoFixar {
-    font-weight: 600;
-    font-size: 0.7rem;
-    text-align: center;
-    color: white;
-    background: none;
-    border: none;
-    opacity: 1;
-    scale: 1;
-    white-space: nowrap;
-    border-radius: var(--borda-botao);
-    height: 13px;
-    transition: var(--transicao-link) ease-in-out;
-}
-.botaoFechar, .botaoFixar {
-    width: 0;
-    opacity: 0;
-    cursor: pointer;
-}
 .botaoFixado {
     opacity: 1;
     width: 14px;
@@ -124,15 +105,6 @@
 /* --------------------------------------- */
 .botaoFixar:hover {
     text-shadow: 0 0 5px white !important;
-}
-.botaoFechar:hover {
-    text-shadow: 0 0 5px red !important;
-    color: red !important;
-}
-.botaoFechar.nh:hover, .botaoFixar.nh:hover {
-    background-color: transparent;
-    text-shadow: 0 0 0 transparent;
-    color: white;
 }
 
 .botaoFixado.nh:hover {
