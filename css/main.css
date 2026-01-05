@@ -437,7 +437,7 @@ button {
     border: none;
     border-radius: 10px;
 }
-.cInputUsuario, .cInputSenha, .cInputCard, .hInputName, .hInputDate, .hInputPageSize, .mInputName {
+.cInputUsuario, .cInputSenha, .cInputPesquisa, .hInputName, .hInputDate, .hInputPageSize, .mInputName {
     width: 100%;
     height: 80%;
     margin: 5px;
@@ -447,10 +447,10 @@ button {
     border-radius: var(--borda-botao);
     transition: var(--transicao-link) ease-in-out;
 }
-.cInputUsuario, .cInputSenha, .cInputCard, .hInputName, .hInputDate, .mInputName {
+.cInputUsuario, .cInputSenha, .cInputPesquisa, .hInputName, .hInputDate, .mInputName {
    padding: 0 0 0 10px; 
 }
-.cInputCard {
+.cInputPesquisa {
     width: 83px;
     padding: 0 10px;
 }
