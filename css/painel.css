@@ -50,7 +50,7 @@
     --cor-lista: var(--cor-erro);
 }
 .telaListaRotinas {
-    max-height: calc(35vh - 75px) !important;
+    max-height: 200px !important;
     border-radius: calc(var(--borda-botao) - 2px) !important;
 }
 
