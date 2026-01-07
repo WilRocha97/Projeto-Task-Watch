@@ -51,7 +51,7 @@ const outerCtx = document.getElementById('outerChart').getContext('2d');
 const outerChart = new Chart(outerCtx, {
     type: 'doughnut',
     data: {
-        labels: ['Rotinas atrasadas', 'Rotinas do dia', 'Rotinas em execução', 'Rotinas do dia concluídas'],
+        labels: ['Rotinas atrasadas', 'Rotinas do dia', 'Rotinas em execução', 'Rotinas concluídas'],
         datasets: [{
             data: [2, 1, 7, 1],
             backgroundColor: [
@@ -82,7 +82,7 @@ const ctx = document.getElementById('meuDonut');
 const innerChart = new Chart(ctx, {
     type: 'doughnut',
     data: {
-        labels: ['Rotinas atrasadas', 'Rotinas do dia', 'Rotinas em execução', 'Rotinas do dia concluídas'],
+        labels: ['Rotinas atrasadas', 'Rotinas do dia', 'Rotinas em execução', 'Rotinas concluídas'],
         datasets: [{
             data: [2, 1, 7, 1],  // valores
             backgroundColor: [
@@ -109,7 +109,30 @@ const innerChart = new Chart(ctx, {
             padding: 22,
         },
         plugins: {
-            legend: { display: false }
+            legend: { display: false },
+            tooltip: {
+                callbacks: {
+                    labelColor: function(context) {
+                        // array com as cores fortes (do gráfico externo)
+                        const coresFortes = [corErro, corOcioso, corExecutando, corExecutado];
+                        const cor = coresFortes[context.dataIndex];
+                        
+                        return {
+                            borderColor: cor,
+                            backgroundColor: cor
+                        };
+                    }
+                },
+                // muda o quadrado para círculo (usa o mesmo estilo dos pontos)
+                usePointStyle: true,
+                
+                // tamanho do quadrado
+                boxWidth: 12,
+                boxHeight: 12,
+                
+                // espaçamento do quadrado até o texto
+                boxPadding: 4
+            }
         },
     }
 });
