@@ -17,7 +17,7 @@ function verificaListasAbertas() {
     elements.forEach((element, index) => {
         if (!element.classList.contains('chartBox')) {
             // Remove classes anteriores
-            element.classList.remove('aD', 'aE', 'aED');
+            
             
             // Verifica se algum elemento depois não tem 'invisible5'
             const hasVisibleAfter = elements.slice(index + 1).some(el => !el.classList.contains('invisible5'));
@@ -27,11 +27,20 @@ function verificaListasAbertas() {
             
             // Aplica as classes conforme a lógica
             if (hasVisibleBefore && hasVisibleAfter) {
-            element.classList.add('aED');
+                if (!element.classList.contains('aED')) {
+                    element.classList.remove('aD', 'aE');
+                    element.classList.add('aED');
+                }
             } else if (hasVisibleAfter) {
-            element.classList.add('aD');
+                if (!element.classList.contains('aD')) {
+                    element.classList.remove('aED', 'aE');
+                    element.classList.add('aD');
+                }
             } else if (hasVisibleBefore) {
-            element.classList.add('aE');
+                if (!element.classList.contains('aE')) {
+                    element.classList.remove('aD', 'aED');
+                    element.classList.add('aE');
+                }
             }
         }
     });
