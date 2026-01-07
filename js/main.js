@@ -164,6 +164,7 @@ export function fechaMenu(botaoDoMenu=false) {
         telaMenu.forEach(miniMenu => {
             miniMenu.classList.add('invisible3');
         })
+        document.getElementById('menuCabecalho').classList.add('minimizado')
         fundoCabecalho.classList.remove('cabecalhoExpandido');
         fundoCabecalho.classList.remove('cabecalhoMegaExpandido');
         telaRotinas.classList.remove('rotinasExpandida');
@@ -195,6 +196,7 @@ export function abreFechaMenu() {
         telaMenu.forEach(miniMenu => {
             miniMenu.classList.remove('invisible3');
         })
+        document.getElementById('menuCabecalho').classList.remove('minimizado')
         if (screenWidth < 1255) {
             fundoCabecalho.classList.add('cabecalhoExpandido')
         }
