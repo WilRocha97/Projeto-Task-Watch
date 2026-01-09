@@ -416,7 +416,6 @@ button {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
     margin: 3px;
     border-radius: calc(var(--borda-botao) - 3px);
     height: 30px;
