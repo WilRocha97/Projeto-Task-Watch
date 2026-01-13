@@ -11,6 +11,39 @@ const corExecutandoSombra = styles.getPropertyValue('--animacao-opaca-bota-2').t
 const corErroSombra = styles.getPropertyValue('--animacao-opaca-bota-4').trim();
 const corOciosoSombra = styles.getPropertyValue('--animacao-opaca-bota-3').trim();
 
+const glowPlugin = {
+    id: 'doughnutGlow',
+    
+    afterDatasetsDraw(chart, args, options) {
+        const { ctx } = chart;
+        const meta = chart.getDatasetMeta(0);
+        const dataset = chart.data.datasets[0];
+        
+        if (!meta.data || meta.data.length === 0) return;
+        
+        const blur = options.blur ?? 20;
+        const opacity = options.opacity ?? 0.8;
+        
+        meta.data.forEach((arc, i) => {
+            const bgColor = dataset.backgroundColor[i];
+            if (!bgColor) return;
+            
+            ctx.save();
+            ctx.shadowColor = bgColor;
+            ctx.shadowBlur = blur;
+            ctx.shadowOffsetX = 0;
+            ctx.shadowOffsetY = 0;
+            ctx.globalAlpha = opacity;
+            
+            // Usa o próprio elemento do Chart.js para desenhar
+            // Isso mantém o borderRadius original
+            arc.draw(ctx);
+            
+            ctx.restore();
+        });
+    }
+};
+
 function verificaListasAbertas() {
     const elements = Array.from(document.querySelector('#targetPainel').children);
   
@@ -50,6 +83,7 @@ function verificaListasAbertas() {
 const outerCtx = document.getElementById('outerChart').getContext('2d');
 const outerChart = new Chart(outerCtx, {
     type: 'doughnut',
+    plugins: [glowPlugin],
     data: {
         labels: ['Rotinas atrasadas', 'Rotinas do dia', 'Rotinas em execução', 'Rotinas concluídas'],
         datasets: [{
@@ -73,6 +107,10 @@ const outerChart = new Chart(outerCtx, {
         plugins: {
             legend: {
                 display: false
+            },
+            doughnutGlow: {
+                blur: 20,      // intensidade do glow
+                opacity: 1   // opacidade
             }
         }
     }
