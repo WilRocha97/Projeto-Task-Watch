@@ -1,8 +1,14 @@
+import {criarGraficoDashboard} from './painel.js';
+
 const corpo = document.body
 const botao = document.getElementById("toggleDarkMode")
 const imagem = botao.querySelector('img');
 
 botao.addEventListener('click', (e)=> {
+    setTimeout(()=> {
+        criarGraficoDashboard()
+    }, 500);
+    
     // Adiciona a animação de saída
     imagem.classList.remove('anim-in');
     imagem.classList.add('anim-out');
