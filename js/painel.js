@@ -67,6 +67,12 @@ export function criarGraficoDashboard() {
                     corOcioso,
                     corExecutando,
                     corExecutado
+                ],
+                borderColor: [
+                    corErroSombra,
+                    corOciosoSombra,
+                    corExecutandoSombra,
+                    corExecutadoSombra
                 ]
             }]
         },
@@ -74,7 +80,7 @@ export function criarGraficoDashboard() {
             cutout: '95%', // Buraco menor = borda mais grossa
             maintainAspectRatio: false,
             borderRadius: 20,
-            borderWidth: 0,
+            borderWidth: 1,
             layout: {
                 padding: 22,
             },
