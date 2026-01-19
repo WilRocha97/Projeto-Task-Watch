@@ -104,44 +104,6 @@
 .filtroFechar.clicado { box-shadow: 0 0 6px var(--cor-fechar); }
 
 /* =============================================================================
-   PAGINAÇÃO
-   ============================================================================= */
-
-.menuPaginas {
-    display: flex;
-    justify-self: center;
-    width: fit-content;
-    flex-direction: row;
-    transition: 1s ease-in-out;
-}
-
-.pageSize {
-    width: 35px !important;
-}
-
-.hInputPageSize {
-    text-align: center;
-    min-width: 15px !important;
-    transition: 1s ease-in-out;
-}
-
-.paginaHistorico {
-    opacity: 1;
-    max-width: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    transition: var(--transicao-link) ease-in-out,
-                box-shadow 1s ease-in-out,
-                color 1s ease-in-out;
-}
-
-.paginaHistorico span {
-    align-self: center;
-}
-
-/* =============================================================================
    TELA DO HISTÓRICO
    ============================================================================= */
 
