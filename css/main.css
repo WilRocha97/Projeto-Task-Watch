@@ -433,7 +433,7 @@ button {
     align-items: center;
     margin: 3px;
     border-radius: calc(var(--borda-botao) - 3px);
-    height: 30px;
+    height: 29px;
 }
 .drop {
     width: 100%;
