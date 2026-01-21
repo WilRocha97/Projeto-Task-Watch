@@ -19,6 +19,18 @@
     --borda-botao: 20px;
     --padding-botao: 1px 6px;
     --cor-padrao: #ff0040;
+    --cor-1: #00000000;
+    --cor-2: #00000000;
+    --cor-amarelo-1: #8a5300;
+    --cor-amarelo-2: #923702;
+    --cor-verde-1: #006345;
+    --cor-verde-2: #005757;
+    --cor-azul-1: #00578a;
+    --cor-azul-2: #1f43a5;
+    --cor-roxo-1: #592e75;
+    --cor-roxo-2: #732f92;
+    --cor-vermelho-1: #9c0000;
+    --cor-vermelho-2: #92024e;
     --blur-transition: 10px;
     --cor-botao-maisInfo: #ffffffff;
 }
@@ -484,7 +496,7 @@ button {
     min-width: 28px;
     max-width: 28px;
 }
-.MenuBotao, .MenuBotaoInterno, .paginaHistorico button {
+.MenuBotao, .MenuBotaoInterno, .paginaHistorico button, .tituloTabela {
     text-decoration: none;
     align-content: center;    
     text-align: center;
@@ -503,7 +515,7 @@ button {
     font-weight: bold;
     transition: var(--transicao-link) ease-in-out, color 1s ease-in-out;
 }
-.MenuBotao::after, .MenuBotaoInterno::after, .paginaHistorico button::after, .linha::after, .linhaSimples::after {
+.MenuBotao::after, .MenuBotaoInterno::after, .paginaHistorico button::after, .tituloTabela::after, .linha::after, .linhaSimples::after {
     width: 100%;
     height: 100%;
     top: 50%;
@@ -529,7 +541,7 @@ button {
             inset 4px 0 15px var(--animacao-opaca-bota-4);
     transition: var(--transicao-link) ease-in-out;
 }
-.MenuBotao:hover::after, .MenuBotaoInterno:hover::after, .paginaHistorico button:hover::after, .linha:hover::after, .linhaSimples:hover::after {
+.MenuBotao:hover::after, .MenuBotaoInterno:hover::after, .paginaHistorico button:hover::after, .tituloTabela:hover::after, .linha:hover::after, .linhaSimples:hover::after {
     transform: translate(-50%, -50%) scaleX(1) scaleY(1);
     opacity: 1;
 }

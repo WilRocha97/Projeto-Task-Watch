@@ -77,14 +77,6 @@
     transition: var(--transicao-link) ease-in-out;
 }
 
-.relogio {
-    padding: 9.8px 18px !important;
-    scale: 1;
-    transition: var(--transicao-link) ease-in-out,
-                box-shadow 1s ease-in-out,
-                background-color 1s ease-in-out;
-}
-
 .notifica {
     display: flex;
     justify-content: center;
@@ -185,8 +177,6 @@
 
 .carregando {
     position: absolute;
-    bottom: 0;
-    right: 0;
     width: 100%;
     height: 100%;
     z-index: -1;
@@ -196,6 +186,7 @@
     transition: var(--transicao-link) ease-in-out;
 }
 .carregando.off {
+    width: 0 !important;
     animation: carregandoBotaoOff var(--transicao-link);
     opacity: 0;
 }
