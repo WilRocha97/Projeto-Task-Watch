@@ -338,7 +338,7 @@ button {
     padding: 0 !important;
     cursor: default !important;
 }
-.invisible5 {
+.invisible6 {
     opacity: 0 !important;
     max-width: 0 !important;
     min-width: 0 !important;
@@ -860,8 +860,9 @@ button.clicked::after,
         justify-content: space-between;
         width: fit-content;
     }
-}
-@media (min-width: 2500px) {
+    .telaRotinas {
+        margin: 50px 0 0;
+    }
     .mfMaquinas {
         margin-left: 10vw;
     }

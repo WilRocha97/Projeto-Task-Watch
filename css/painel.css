@@ -155,12 +155,18 @@ canvas {
         flex-direction: column;
         height: calc(100vh - 60px);
     }
+    .aD {
+        border-radius: var(--borda-botao) var(--borda-botao) 5px 5px
+    }
+    .aE {
+        border-radius:  5px 5px var(--borda-botao) var(--borda-botao)
+    }
     .listaRotinas1, 
     .listaRotinas2, 
     .listaRotinas3, 
     .listaRotinas4 {
         width: 100%;
-        margin: 10px 0;
+        margin: 2px 0;
     }
     .listaRotinas1.invisible5, 
     .listaRotinas2.invisible5, 
