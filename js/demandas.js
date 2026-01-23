@@ -134,9 +134,9 @@ function adicionarDemandaNoInicio(idDemanda) {
 
 export function fecharTelaDeDemandas() {
     if (!document.querySelector('body').classList.contains('mfDemandas')) {
-        if (!barraAddDemanda.classList.contains('invisible6')) {
-            barraAddDemanda.classList.add('invisible6');
-            barraPesquisaDemanda.classList.remove('invisible6');
+        if (!barraAddDemanda.classList.contains('invisible5')) {
+            barraAddDemanda.classList.add('invisible5');
+            barraPesquisaDemanda.classList.remove('invisible5');
             addDemandaTexto.classList.toggle('addDemandaAtivada');
         }
         pesquisaDemanda.value = ''
@@ -367,9 +367,9 @@ document.addEventListener('click', (event) => {
 });
 addDemanda.addEventListener('click' , () => {
     addDemandaTexto.classList.toggle('addDemandaAtivada')
-    barraAddDemanda.classList.toggle('invisible6')
-    barraPesquisaDemanda.classList.toggle('invisible6')
-    if (!barraAddDemanda.classList.contains('invisible6')) {
+    barraAddDemanda.classList.toggle('invisible5')
+    barraPesquisaDemanda.classList.toggle('invisible5')
+    if (!barraAddDemanda.classList.contains('invisible5')) {
         novaDemanda.focus()
     }
 })

@@ -411,9 +411,9 @@ maquinas.addEventListener('click', () => {
     fecharTelaDeDemandas()
 });
 fecharMaquinas.addEventListener('click', ()=> {
-    if (!barraAddMaquina.classList.contains('invisible6')) {
-        barraAddMaquina.classList.add('invisible6')
-        barraPesquisaMaquina.classList.remove('invisible6')
+    if (!barraAddMaquina.classList.contains('invisible5')) {
+        barraAddMaquina.classList.add('invisible5')
+        barraPesquisaMaquina.classList.remove('invisible5')
     }
 
     fecharTelaDeMaquinas()
@@ -440,9 +440,9 @@ demandas.addEventListener('click', () => {
     fecharTelaDeMaquinas()
 });
 fecharDemandas.addEventListener('click', ()=> {
-    if (!barraAddDemanda.classList.contains('invisible6')) {
-        barraAddDemanda.classList.add('invisible6')
-        barraPesquisaDemanda.classList.remove('invisible6')
+    if (!barraAddDemanda.classList.contains('invisible5')) {
+        barraAddDemanda.classList.add('invisible5')
+        barraPesquisaDemanda.classList.remove('invisible5')
     }
 
     fecharTelaDeDemandas()

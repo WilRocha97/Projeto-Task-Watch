@@ -305,9 +305,10 @@ button {
     padding: 0 !important;
     cursor: default !important;
 }
-.invisible6 {
+.invisible5 {
     opacity: 0 !important;
-    width: 0 !important;
+    max-width: 0 !important;
+    min-width: 0 !important;
     margin: 0 !important;
     padding: 0 !important;
     cursor: default !important;
@@ -465,7 +466,7 @@ button {
    padding: 0 0 0 10px; 
 }
 .cInputPesquisa {
-    width: 83px;
+    min-width: 83px;
     padding: 0 10px;
 }
 
@@ -710,9 +711,9 @@ button.clicked::after,
 }
 
 .pageSize {
+    max-width: 40px !important;
     width: 35px !important;
 }
-
 .hInputPageSize {
     text-align: center;
     min-width: 15px !important;
@@ -803,6 +804,16 @@ button.clicked::after,
     }
     .MenuBotao:hover::after, .MenuBotaoInterno:hover::after, .paginaHistorico button:hover::after {
         padding: 0 7px;
+    }
+    .hInputPageSize {
+        min-width: 20px !important;
+        min-height: 20px !important;
+        font-size: larger;
+        transition: 1s ease-in-out;
+    }
+    .pageSize {
+        width: 44px !important;
+        height: 44px !important;
     }
 }  
 @media (max-width: 1255px) {

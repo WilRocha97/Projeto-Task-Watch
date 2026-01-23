@@ -125,9 +125,9 @@ function adicionarMaquinaNoInicio(idMaquina) {
 
 export function fecharTelaDeMaquinas() {
     if (!document.querySelector('body').classList.contains('mfMaquinas')) {
-        if (!barraAddMaquina.classList.contains('invisible6')) {
-            barraAddMaquina.classList.add('invisible6');
-            barraPesquisaMaquina.classList.remove('invisible6');
+        if (!barraAddMaquina.classList.contains('invisible5')) {
+            barraAddMaquina.classList.add('invisible5');
+            barraPesquisaMaquina.classList.remove('invisible5');
             addMaquinaTexto.classList.toggle('addMaquinaAtivada');
         }
         pesquisaMaquina.value = ''
@@ -357,9 +357,9 @@ document.addEventListener('click', (event) => {
 });
 addMaquina.addEventListener('click' , () => {
     addMaquinaTexto.classList.toggle('addMaquinaAtivada')
-    barraAddMaquina.classList.toggle('invisible6')
-    barraPesquisaMaquina.classList.toggle('invisible6')
-    if (!barraAddMaquina.classList.contains('invisible6')) {
+    barraAddMaquina.classList.toggle('invisible5')
+    barraPesquisaMaquina.classList.toggle('invisible5')
+    if (!barraAddMaquina.classList.contains('invisible5')) {
         novaMaquina.focus()
     }
 })
