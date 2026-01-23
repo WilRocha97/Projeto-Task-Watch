@@ -211,11 +211,11 @@
     text-align: center;
     opacity: 1;
     max-width: 500px;
-    margin-left: 10px;
+    margin: 0 10px;
     transition: var(--transicao-link) ease-in-out;
 }
 .textoCabecalho.invisible4 {
-    margin-left: 0 !important;
+    margin: 0 !important;
 }
 
 /* Toggle Dark Mode */

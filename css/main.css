@@ -5,6 +5,7 @@
     --tamanho-titulo: 2.4rem;
     --tamanho-texto: 1.4rem;
     --tamanho-texto-2: 0.9rem;
+    --tamanho-texto-3: 0.8rem;
     --transicao-link: 0.3s;
     --transicao-link-2: 0.6s;
     --blur: 35px;
@@ -173,17 +174,18 @@ input:-webkit-autofill:active{
     --scroll-background: transparent;
 }
 
-/* Estilizando a barra de rolagem */
+/* estilizando a barra de rolagem */
 .scroll::-webkit-scrollbar {
-    width: var(--scroll-bar-width); /* Largura da barra de rolagem */
+    width: var(--scroll-bar-width); /* largura da barra de rolagem */
+    height:  var(--scroll-bar-width); /* largura da barra de rolagem horizontal*/
 }
 .scroll::-webkit-scrollbar-track {
-    background: var(--scroll-background); /* Cor do fundo da barra de rolagem */
+    background: var(--scroll-background); /* cor do fundo da barra de rolagem */
 }
 .scroll::-webkit-scrollbar-thumb {
-    background-color: var(--scroll-color); /* Cor da barra de rolagem */
-    border-radius: 6px; /* Arredondamento das bordas */
-    border: none; /* Espaçamento entre a barra e o conteúdo */
+    background-color: var(--scroll-color); /* cor da barra de rolagem */
+    border-radius: 6px; /* arredondamento das bordas */
+    border: none; /* espaçamento entre a barra e o conteúdo */
     transition: var(--transicao-link) ease-in-out;
 }
 .scroll::-webkit-scrollbar-thumb:hover {
@@ -195,8 +197,18 @@ input:-webkit-autofill:active{
     background-color: var(--scroll-background);
     display: block;
     border-style: solid;
+}
+.scroll::-webkit-scrollbar-button:single-button:vertical:decrement {
     height: var(--scroll-button-heigh);
     width: 5px;
+}
+.scroll::-webkit-scrollbar-button:single-button:horizontal:decrement {
+    height: 5px;
+    width: var(--scroll-button-heigh);
+}
+
+.scroll::-webkit-scrollbar-corner {
+    background: none;
 }
 /* Up */
 .scroll::-webkit-scrollbar-button:single-button:vertical:decrement {
@@ -211,8 +223,24 @@ input:-webkit-autofill:active{
     border-width: 8px 2px 0 2px ;
     border-color: var(--scroll-color) transparent transparent transparent;
 }
-.scroll::-webkit-scrollbar-button:vertical:single-button:increment:hover {
+.scroll::-webkit-scrollbar-button:single-button:vertical:increment:hover {
     border-color: var(--scroll-hover) transparent transparent transparent;
+}
+/* Left Button */
+.scroll::-webkit-scrollbar-button:single-button:horizontal:decrement {
+    border-width: 2px 8px 2px 0; /* Ajuste para seta apontar à esquerda */
+    border-color: transparent #818181 transparent transparent;
+}
+.scroll::-webkit-scrollbar-button:single-button:horizontal:decrement:hover {
+    border-color: transparent var(--cor-destaque) transparent transparent;
+}
+/* Right Button */
+.scroll::-webkit-scrollbar-button:single-button:horizontal:increment {
+    border-width: 2px 0 2px 8px; /* Ajuste para seta apontar à direita */
+    border-color: transparent transparent transparent #818181;
+}
+.scroll::-webkit-scrollbar-button:single-button:horizontal:increment:hover {
+    border-color: transparent transparent transparent var(--cor-destaque);
 }
 
 html, body {
@@ -259,6 +287,11 @@ button {
     outline: none;
 }
 
+.invisibleHeight {
+    opacity: 0 !important;
+    max-height: 0 !important;
+    min-height: 0 !important;
+}
 .invisible {
     opacity: 0 !important;
     position: fixed !important;
@@ -712,7 +745,7 @@ button.clicked::after,
 
 .pageSize {
     max-width: 40px !important;
-    width: 35px !important;
+    min-width: 35px !important;
 }
 .hInputPageSize {
     text-align: center;
