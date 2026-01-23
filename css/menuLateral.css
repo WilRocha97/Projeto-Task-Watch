@@ -87,6 +87,9 @@
     scale: 1;
 }
 
+.rectangleMaquina .tituloContainerItemLateral {
+    justify-content: start;
+}
 .tituloContainerItemLateral {
     display: flex;
     flex-direction: row;
