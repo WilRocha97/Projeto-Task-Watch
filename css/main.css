@@ -165,10 +165,11 @@ input:-webkit-autofill:active{
     --scroll-background: transparent;
     --scroll-hover: white;
     --scroll-bar-width: 4px;
-    --scroll-color: #dbdbdb73;
-}
-.scrollMini, .scrollInfo {
+    --scroll-color: #777777;
     --scroll-button-heigh: 0;
+}
+.scrollCard {
+    --scroll-color: #b4b4b4;
 }
 .scrollInvisible {
     --scroll-background: transparent;
@@ -198,11 +199,11 @@ input:-webkit-autofill:active{
     display: block;
     border-style: solid;
 }
-.scroll::-webkit-scrollbar-button:single-button:vertical:decrement {
+.scroll::-webkit-scrollbar-button:single-button:vertical {
     height: var(--scroll-button-heigh);
     width: 5px;
 }
-.scroll::-webkit-scrollbar-button:single-button:horizontal:decrement {
+.scroll::-webkit-scrollbar-button:single-button:horizontal {
     height: 5px;
     width: var(--scroll-button-heigh);
 }

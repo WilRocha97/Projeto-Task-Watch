@@ -101,7 +101,7 @@ function adicionarMaquinaNoInicio(idMaquina) {
                 <div id="deletarMaquina" class="cmb botaoFechar botaoItemMenuLateral" title="Deletar dispositivo">⨉</div>
             </div>
         </div>
-        <textarea type="text" class="inputComentario scroll mediaTelaMensagemItemLateral"
+        <textarea type="text" class="inputComentario scroll scrollInfo mediaTelaMensagemItemLateral"
             placeholder="Adicionar comentário" 
             title="Adicionar comentário"></textarea>
         <span id="statusMaquina" class="cStatusItemLateral livre"></span>

@@ -101,15 +101,15 @@ function adicionarDemandaNoInicio(idDemanda) {
     
         <div>
             <div class="subTituloItemLateral">Responsável:</div>
-            <textarea type="text" id="responsavel" class="inputComentario scroll scrollMini miniTelaMensagemItemLateral" placeholder="Responsável" title="Adicionar responsável da demanda"></textarea>
+            <textarea type="text" id="responsavel" class="inputComentario scroll scrollInfo miniTelaMensagemItemLateral" placeholder="Responsável" title="Adicionar responsável da demanda"></textarea>
         </div>
         <div>
             <div class="subTituloItemLateral">Situação:</div>
-            <textarea type="text" id="situacao" class="inputComentario scroll scrollMini miniTelaMensagemItemLateral" placeholder="Situação" title="Adicionar situação da demanda"></textarea>
+            <textarea type="text" id="situacao" class="inputComentario scroll scrollInfo miniTelaMensagemItemLateral" placeholder="Situação" title="Adicionar situação da demanda"></textarea>
         </div>
         <div>
             <div class="subTituloItemLateral">Descrição:</div>
-            <textarea type="text" id="comentario" class="inputComentario scroll scrollMini telaMensagemItemLateral" placeholder="Adicionar comentário" title="Adicionar comentário"></textarea>
+            <textarea type="text" id="comentario" class="inputComentario scroll scrollInfo telaMensagemItemLateral" placeholder="Adicionar comentário" title="Adicionar comentário"></textarea>
         </div>
 
         <span id="statusDemanda" class="cStatusItemLateral livre"></span>
