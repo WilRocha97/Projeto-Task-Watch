@@ -1,20 +1,14 @@
 import {isTouchDevice} from './main.js';
 
 let canClickLimpaBusca = true;
-
 const fundoCabecalho = document.getElementById('cabecalho');
-
 const telaDemandas = document.getElementById('telaDemandas');
-
 const botaoOrdenarTelaDemandas = document.getElementById("ordenarDemandas");
 const botaoOrdenarTelaDemandasTexto = botaoOrdenarTelaDemandas.querySelector('.MenuBotaoActive');
-
 const botaoFixarTelaDemandas = document.getElementById('fixarTelaDemandas');
 const botaoFixarTelaDemandasTexto = botaoFixarTelaDemandas.querySelector('.MenuBotaoActive');
-
 const addDemanda = document.getElementById('addDemanda');
 const addDemandaTexto = addDemanda.querySelector('.MenuBotaoActive');
-
 const novaDemanda = document.getElementById('inputAddDemanda');
 const pesquisaDemanda = document.getElementById('inputPesquisaDemanda');
 const menuLateral = document.querySelector('.menuLateralDemandas');

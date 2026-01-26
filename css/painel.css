@@ -80,11 +80,13 @@
     padding: 5px;
     margin: 0 3px;
     min-height: 5px;
+    max-height: 50px;
     transition: var(--transicao-link) ease-in-out;
 }
 .linhaSimples.vazio {
     opacity: 0;
     min-height: 0;
+    max-height: 0;
     padding: 0 5px;
     margin: 0;
 }
@@ -104,6 +106,7 @@ canvas {
 }
 
 .tituloChart {
+    width: 100px;
     position: absolute;
     text-align: center;
     top: 50%;

@@ -1,4 +1,4 @@
-.telaLateral {
+#telaMaquinas, #telaDemandas {
     position: fixed;
     overflow: hidden;
     z-index: 1;
@@ -60,9 +60,6 @@
     margin: 5px 12px;
     align-items: center;
     transition: var(--transicao-link) ease-in-out;
-}
-.menuLateralDemandas {
-    width: 30%;
 }
 
 .rectangleDemanda  {
@@ -188,7 +185,7 @@
     .menuLateralMaquinas, .menuLateralDemandas {
         min-height: 5%;
     }
-    .telaLateral {
+    #telaMaquinas {
         width: 20vw;
     }
 }
@@ -196,7 +193,10 @@
     .menuLateralMaquinas, .menuLateralDemandas {
         min-height: 5%;
     }
-    .telaLateral {
+    .menuLateralDemandas {
+        width: 100%;
+    }
+    #telaMaquinas, #telaDemandas {
         width: 10vw;
     }
 }
@@ -229,9 +229,12 @@
         top: -1000px;
         cursor: default;
     }
-    .telaLateral {
+    #telaMaquinas, #telaDemandas {
         width: 95vw;
         padding: 8px;
+    }
+    .menuLateralDemandas {
+        width: 100%;
     }
     .menuLateralSuperExpandido {
         bottom: 1px !important;
@@ -241,7 +244,7 @@
     }
 }
 @media (max-width: 1255px) and (min-width: 917px) {
-    .telaLateral {
+    #telaMaquinas {
         width: 30vw;
     }
     .mfMaquinas {
