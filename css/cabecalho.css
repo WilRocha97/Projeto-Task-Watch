@@ -30,7 +30,7 @@
     -webkit-backdrop-filter: blur(var(--blur-fundo));
     z-index: 0;
     border-radius: 0 0 20px 20px;
-    transition: var(--transicao-link);
+    transition: var(--transicao-link) ease-in-out;
 }
 
 /* =============================================================================
@@ -49,6 +49,7 @@
     gap: 5px;
     width: 100%;
     padding: 3px;
+    transition: var(--transicao-link) ease-in-out;
 }
 .menu.minimizado {
     gap: 0;
