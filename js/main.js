@@ -1,17 +1,19 @@
+import {fechaMenu} from './menu.js'
+import {fecharTelaDeMaquinas} from './menu.js';
+import {fecharTelaDeDemandas} from './menu.js';
+
 import {procurarCard} from './cards.js';
 import {desmarcaCardsBuscados} from './cards.js';
+import {verifica_estado_card} from './cards.js';
 
 import {restaurarEstadoMaquinas} from './maquinas.js';
 import {adicionarListenersMaquinas} from './maquinas.js';
 import {salvarEstadoMaquinas} from './maquinas.js';
-import {fecharTelaDeMaquinas} from './maquinas.js';
 
 import {restaurarEstadoDemandas} from './demandas.js';
 import {adicionarListenersDemandas} from './demandas.js';
 import {salvarEstadoDemandas} from './demandas.js';
-import {fecharTelaDeDemandas} from './demandas.js';
 
-import {verifica_estado_card} from './cards.js';
 
 var botoes = document.querySelectorAll('button');
 var botoesCards = document.querySelectorAll('.btnCard');
@@ -30,18 +32,12 @@ const encolhe = document.getElementById('encolher');
 const explode = document.getElementById('explodir');
 
 const fundoCabecalho = document.getElementById('cabecalho')
-const menu = document.getElementById('menu');
-const telaMenu = document.querySelectorAll('.menuInvisivel');
 
 const maquinas = document.getElementById('maquinas')
 const demandas = document.getElementById('demandas')
-const dica = document.getElementById('dica');
-const galeria = document.getElementById('galeria');
 
 const fecharMaquinas = document.getElementById('fecharMaquinas');
 const fecharDemandas = document.getElementById('fecharDemandas');
-const fecharAjuda = document.getElementById('fecharAjuda');
-const fecharGaleria = document.getElementById('fecharGaleria');
 
 const telaMaquinas = document.getElementById('telaMaquinas');
 const telaDemandas = document.getElementById('telaDemandas');
@@ -69,6 +65,13 @@ document.querySelectorAll('.bn').forEach((bolinha, index) => {
     }, index * 500); // Atraso baseado no índice
 });
 
+export function animacaoBotao(target) {
+    target.classList.add('clicked');
+    setTimeout(() => {
+        target.classList.remove('clicked');
+    }, 500); // Tempo da animação
+}
+
 export function isTouchDevice() {
     return ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
 }
@@ -91,13 +94,6 @@ if (isTouchDevice()) {
     barrasPesquisa.forEach((barra)=> {
         barra.classList.add('nh')
     });
-}
-
-export function animacaoBotao(target) {
-    target.classList.add('clicked');
-    setTimeout(() => {
-        target.classList.remove('clicked');
-    }, 500); // Tempo da animação
 }
 
 function updateClock() {
@@ -153,102 +149,10 @@ function verificaTelaVazia() {
     }
 };
 
-export function fechaMenu(botaoDoMenu=false) {
-    var botaoMenu = document.getElementById('botaoMenu');
-    var telaMenu = document.querySelectorAll('.menuInvisivel');
-    var telaRotinas = document.getElementById('telaRotinas');
-    var fundoCabecalho = document.getElementById('cabecalho');
-    var screenWidth = window.innerWidth;
-    
-    if (screenWidth < 1255 || botaoDoMenu) {
-        telaMenu.forEach(miniMenu => {
-            miniMenu.classList.add('invisible3');
-        })
-        document.getElementById('menuCabecalho').classList.add('minimizado')
-        fundoCabecalho.classList.remove('cabecalhoExpandido');
-        fundoCabecalho.classList.remove('cabecalhoMegaExpandido');
-        telaRotinas.classList.remove('rotinasExpandida');
-    
-        // Adiciona a animação de saída
-        botaoMenu.classList.remove('anim-in-side-right');
-        botaoMenu.classList.add('anim-out-side-left');
-        // Espera a animação de saída terminar para trocar a imagem
-        botaoMenu.addEventListener('animationend', function handleOut() {
-            botaoMenu.removeEventListener('animationend', handleOut); // Remove o listener
-            botaoMenu.innerHTML = '❯';
-            menu.title = 'Abrir menu';
-
-            // Adiciona a animação de saída
-            botaoMenu.classList.remove('anim-out-side-left');
-            botaoMenu.classList.add('anim-in-side-left');
-        });
-    }
-}
-
-export function abreFechaMenu() {
-    var botaoMenu = document.getElementById('botaoMenu');
-    var telaMenu = document.querySelectorAll('.menuInvisivel');
-    var telaRotinas = document.getElementById('telaRotinas');
-    var fundoCabecalho = document.getElementById('cabecalho');
-    var screenWidth = window.innerWidth;
-
-    if (botaoMenu.innerHTML == '❯') {
-        telaMenu.forEach(miniMenu => {
-            miniMenu.classList.remove('invisible3');
-        })
-        document.getElementById('menuCabecalho').classList.remove('minimizado')
-        if (screenWidth < 1255) {
-            fundoCabecalho.classList.add('cabecalhoExpandido')
-        }
-        telaRotinas.classList.add('rotinasExpandida');
-
-        // Adiciona a animação de saída
-        botaoMenu.classList.remove('anim-in-side-left');
-        botaoMenu.classList.add('anim-out-side-right');
-        // Espera a animação de saída terminar para trocar a imagem
-        botaoMenu.addEventListener('animationend', function handleOut() {
-            botaoMenu.removeEventListener('animationend', handleOut); // Remove o listener
-            botaoMenu.innerHTML = '❮';
-            menu.title = 'Fechar menu';
-
-            // Adiciona a animação de saída
-            botaoMenu.classList.remove('anim-out-side-right');
-            botaoMenu.classList.add('anim-in-side-right');
-        });
-    }
-    else {
-        fechaMenu(true)
-    }
-}
-
 document.body.addEventListener('click', (event) => {
     let target = event.target;
     if (target.classList.contains('MenuBotao')) {
         animacaoBotao(target)
-    }
-});
-
-// Janela com dicas de como o site funciona
-menu.addEventListener('click', () => {
-    abreFechaMenu()
-    
-    if (!telaMaquinas.classList.contains('invisible5')) {
-        fecharTelaDeMaquinas()
-        telaRotinas.classList.add('rotinasExpandida');
-    }
-    if (!telaDemandas.classList.contains('invisible5')) {
-        fecharTelaDeDemandas()
-        telaRotinas.classList.add('rotinasExpandida');
-    }
-    if (!telaDica.classList.contains('invisible2')) {
-        telaDica.classList.add('invisible2');
-        fundoCabecalho.classList.remove('cabecalhoMegaExpandido')
-        telaRotinas.classList.add('rotinasExpandida');
-    }
-    if (!telaGaleria.classList.contains('invisible2')) {
-        telaGaleria.classList.add('invisible2');
-        fundoCabecalho.classList.remove('cabecalhoMegaExpandido')
-        telaRotinas.classList.add('rotinasExpandida');
     }
 });
 
@@ -448,60 +352,6 @@ fecharDemandas.addEventListener('click', ()=> {
     fecharTelaDeDemandas()
 });
 
-dica.addEventListener('click', () => {
-    fechaMenu()
-    
-    if (!telaGaleria.classList.contains('invisible2')) {
-            telaGaleria.classList.add('invisible2');
-        }
-    if (!telaMaquinas.classList.contains('invisible5')) {
-        fecharTelaDeMaquinas()
-    }
-    if (!telaDemandas.classList.contains('invisible5')) {
-        fecharTelaDeDemandas()
-    }
-
-    if (telaDica.classList.contains('invisible2')) {
-        telaDica.classList.remove('invisible2');
-        fundoCabecalho.classList.add('cabecalhoMegaExpandido')
-    }
-    else {
-        telaDica.classList.add('invisible2');
-        fundoCabecalho.classList.remove('cabecalhoMegaExpandido')
-    }
-});
-fecharAjuda.addEventListener('click', ()=> {
-    telaDica.classList.add('invisible2');
-    fundoCabecalho.classList.remove('cabecalhoMegaExpandido')
-})
-
-// Janela com imagens do TaskWatch oficial
-galeria.addEventListener('click', () => {
-    fechaMenu()
-
-    if (!telaDica.classList.contains('invisible2')) {
-        telaDica.classList.add('invisible2');
-    }
-    if (!telaMaquinas.classList.contains('invisible5')) {
-        fecharTelaDeMaquinas()
-    }
-    if (!telaDemandas.classList.contains('invisible5')) {
-        fecharTelaDeDemandas()
-    }
-
-    if (telaGaleria.classList.contains('invisible2')) {
-        telaGaleria.classList.remove('invisible2');
-        fundoCabecalho.classList.add('cabecalhoMegaExpandido')
-    }
-    else {
-        telaGaleria.classList.add('invisible2');
-        fundoCabecalho.classList.remove('cabecalhoMegaExpandido')
-    }
-});
-fecharGaleria.addEventListener('click', ()=> {
-    telaGaleria.classList.add('invisible2');
-    fundoCabecalho.classList.remove('cabecalhoMegaExpandido')
-})
 // Modal para exibir as imagens em tela cheia
 document.querySelectorAll('.imagemGaleria').forEach(image => {
     image.addEventListener('click', function () {

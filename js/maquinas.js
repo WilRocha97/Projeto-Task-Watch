@@ -1,10 +1,8 @@
 import {procurarCard} from './cards.js';
 import {isTouchDevice} from './main.js';
+import {fecharTelaDeMaquinas} from './menu.js';
 
 let canClickLimpaBusca = true;
-
-const fundoCabecalho = document.getElementById('cabecalho');
-const telaMaquinas = document.getElementById('telaMaquinas');
 
 const botaoOrdenarTelaMaquinas = document.getElementById("ordenarMaquinas");
 const botaoOrdenarTelaMaquinasTexto = botaoOrdenarTelaMaquinas.querySelector('.MenuBotaoActive');
@@ -121,20 +119,6 @@ function adicionarMaquinaNoInicio(idMaquina) {
             }
         }
     }, 100);
-}
-
-export function fecharTelaDeMaquinas() {
-    if (!document.querySelector('body').classList.contains('mfMaquinas')) {
-        if (!barraAddMaquina.classList.contains('invisible5')) {
-            barraAddMaquina.classList.add('invisible5');
-            barraPesquisaMaquina.classList.remove('invisible5');
-            addMaquinaTexto.classList.toggle('addMaquinaAtivada');
-        }
-        pesquisaMaquina.value = ''
-        telaMaquinas.classList.add('invisible5');
-        fundoCabecalho.classList.remove('cabecalhoMegaExpandido');
-        botaoOrdenarTelaMaquinasTexto.classList.remove('addMaquinaAtivada')
-    }
 }
 
 export function salvarEstadoMaquinas() {

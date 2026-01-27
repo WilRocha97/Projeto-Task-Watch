@@ -1,8 +1,6 @@
 import {isTouchDevice} from './main.js';
 
 let canClickLimpaBusca = true;
-const fundoCabecalho = document.getElementById('cabecalho');
-const telaDemandas = document.getElementById('telaDemandas');
 const botaoOrdenarTelaDemandas = document.getElementById("ordenarDemandas");
 const botaoOrdenarTelaDemandasTexto = botaoOrdenarTelaDemandas.querySelector('.MenuBotaoActive');
 const botaoFixarTelaDemandas = document.getElementById('fixarTelaDemandas');
@@ -17,6 +15,7 @@ const barraPesquisaDemanda = document.getElementById('barraPesquisaDemanda');
 const limpaInputPesquisaDemanda = document.getElementById('limpaInputPesquisaDemanda');
 const limpaInputAddDemanda = document.getElementById('limpaInputAddDemanda');
 const STORAGE_KEY = "estadoDemandas";
+
 
 function esperar(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -124,20 +123,6 @@ function adicionarDemandaNoInicio(idDemanda) {
             }
         }
     }, 100);
-}
-
-export function fecharTelaDeDemandas() {
-    if (!document.querySelector('body').classList.contains('mfDemandas')) {
-        if (!barraAddDemanda.classList.contains('invisible5')) {
-            barraAddDemanda.classList.add('invisible5');
-            barraPesquisaDemanda.classList.remove('invisible5');
-            addDemandaTexto.classList.toggle('addDemandaAtivada');
-        }
-        pesquisaDemanda.value = ''
-        telaDemandas.classList.add('invisible5');
-        fundoCabecalho.classList.remove('cabecalhoMegaExpandido');
-        botaoOrdenarTelaDemandasTexto.classList.remove('addDemandaAtivada')
-    }
 }
 
 export function salvarEstadoDemandas() {

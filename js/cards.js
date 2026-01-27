@@ -1,8 +1,8 @@
 import {animacaoBotao} from './main.js';
 import {decoracao} from './temas.js';
-import {fecharTelaDeMaquinas} from './maquinas.js';
-import {fecharTelaDeDemandas} from './demandas.js';
-import {fechaMenu} from './main.js';
+import {fecharTelaDeMaquinas} from './menu.js';
+import {fecharTelaDeDemandas} from './menu.js';
+import {fechaMenu} from './menu.js'
 
 var telaTitulo = document.querySelector("#telaTitulo");
 var telaTituloFundo = document.querySelector(".fundoGradiente");

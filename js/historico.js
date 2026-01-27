@@ -1,7 +1,7 @@
 import {animacaoBotao} from './main.js';
 import {fecharTelaDeMaquinas} from './maquinas.js';
 import {fecharTelaDeDemandas} from './demandas.js';
-import {fechaMenu} from './main.js';
+import {fechaMenu} from './menu.js'
 
 var template = ``;
 var idClassHistorico = '';
