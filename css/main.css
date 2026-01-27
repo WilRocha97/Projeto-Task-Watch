@@ -531,6 +531,24 @@ button {
     min-width: 28px;
     max-width: 28px;
 }
+
+.MenuBotao::before {
+    opacity: 0;
+    width: 0;
+    height: 2px;
+    left: 25%;
+    bottom: 2px;
+    justify-self: center;
+    border-radius: var(--borda-botao);
+    content: "";
+    position: absolute;
+    background: var(--cor-texto);
+    transition: var(--transicao-link) ease-in-out;
+}
+.MenuBotao.aberto::before {
+    opacity: 1;
+    width: 50%;
+}
 .MenuBotao, .MenuBotaoInterno, .paginaHistorico button, .tituloTabela {
     text-decoration: none;
     align-content: center;    
@@ -629,10 +647,10 @@ button {
     width: 14px;
     padding: 4px 5px 5px 5px;
     opacity: 1;
-    margin: 10px;
+    margin: 0 10px;
 }
 .barraPesquisa:hover .limparBarra {
-    margin: 10px;
+    margin: 0 10px;
 }
 
 .MenuBotao.nh::after, .MenuBotaoInterno.nh::after, .paginaHistorico button.nh::after {

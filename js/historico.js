@@ -410,6 +410,7 @@ historicoBotao.addEventListener('click', ()=> {
         filtro.classList.remove('clicado')
     });
 
+    historicoBotao.classList.toggle('aberto')
     historicoTelaContainer.classList.toggle('collapsed');
     mainHistorico.classList.toggle('collapsed');
     painelConfig.classList.toggle('collapsed');

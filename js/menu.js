@@ -19,7 +19,11 @@ export function fecharTelaDeMaquinas() {
     const pesquisaMaquina = document.getElementById('inputPesquisaMaquina');
     const barraAddMaquina = document.getElementById('barraAddMaquina');
     const barraPesquisaMaquina = document.getElementById('barraPesquisaMaquina');
+    var maquinas = document.getElementById('maquinas');
 
+    if (maquinas) {
+        maquinas.classList.remove('aberto');
+    }
     if (!document.querySelector('body').classList.contains('mfMaquinas')) {
         if (!barraAddMaquina.classList.contains('invisible5')) {
             barraAddMaquina.classList.add('invisible5');
@@ -41,7 +45,11 @@ export function fecharTelaDeDemandas() {
     const pesquisaDemanda = document.getElementById('inputPesquisaDemanda');
     const barraAddDemanda = document.getElementById('barraAddDemanda');
     const barraPesquisaDemanda = document.getElementById('barraPesquisaDemanda');
+    var demandas = document.getElementById('demandas');
 
+    if (demandas) {
+        demandas.classList.remove('aberto');
+    }
     if (!document.querySelector('body').classList.contains('mfDemandas')) {
         if (!barraAddDemanda.classList.contains('invisible5')) {
             barraAddDemanda.classList.add('invisible5');
