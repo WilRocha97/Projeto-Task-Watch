@@ -10,24 +10,16 @@ const galeria = document.getElementById('galeria');
 const telaGaleria = document.getElementById('telaGaleria');
 const fecharGaleria = document.getElementById('fecharGaleria');
 
-const botaoOrdenarTelaMaquinas = document.getElementById("ordenarMaquinas");
-const botaoOrdenarTelaMaquinasTexto = botaoOrdenarTelaMaquinas.querySelector('.MenuBotaoActive');
-const addMaquina = document.getElementById('addMaquina');
-const addMaquinaTexto = addMaquina.querySelector('.MenuBotaoActive');
-const pesquisaMaquina = document.getElementById('inputPesquisaMaquina');
-const barraAddMaquina = document.getElementById('barraAddMaquina');
-const barraPesquisaMaquina = document.getElementById('barraPesquisaMaquina');
-
-const botaoOrdenarTelaDemandas = document.getElementById("ordenarDemandas");
-const botaoOrdenarTelaDemandasTexto = botaoOrdenarTelaDemandas.querySelector('.MenuBotaoActive');
-const addDemanda = document.getElementById('addDemanda');
-const addDemandaTexto = addDemanda.querySelector('.MenuBotaoActive');
-const pesquisaDemanda = document.getElementById('inputPesquisaDemanda');
-const barraAddDemanda = document.getElementById('barraAddDemanda');
-const barraPesquisaDemanda = document.getElementById('barraPesquisaDemanda');
-
 
 export function fecharTelaDeMaquinas() {
+    const botaoOrdenarTelaMaquinas = document.getElementById("ordenarMaquinas");
+    const botaoOrdenarTelaMaquinasTexto = botaoOrdenarTelaMaquinas.querySelector('.MenuBotaoActive');
+    const addMaquina = document.getElementById('addMaquina');
+    const addMaquinaTexto = addMaquina.querySelector('.MenuBotaoActive');
+    const pesquisaMaquina = document.getElementById('inputPesquisaMaquina');
+    const barraAddMaquina = document.getElementById('barraAddMaquina');
+    const barraPesquisaMaquina = document.getElementById('barraPesquisaMaquina');
+
     if (!document.querySelector('body').classList.contains('mfMaquinas')) {
         if (!barraAddMaquina.classList.contains('invisible5')) {
             barraAddMaquina.classList.add('invisible5');
@@ -42,6 +34,14 @@ export function fecharTelaDeMaquinas() {
 }
 
 export function fecharTelaDeDemandas() {
+    const botaoOrdenarTelaDemandas = document.getElementById("ordenarDemandas");
+    const botaoOrdenarTelaDemandasTexto = botaoOrdenarTelaDemandas.querySelector('.MenuBotaoActive');
+    const addDemanda = document.getElementById('addDemanda');
+    const addDemandaTexto = addDemanda.querySelector('.MenuBotaoActive');
+    const pesquisaDemanda = document.getElementById('inputPesquisaDemanda');
+    const barraAddDemanda = document.getElementById('barraAddDemanda');
+    const barraPesquisaDemanda = document.getElementById('barraPesquisaDemanda');
+
     if (!document.querySelector('body').classList.contains('mfDemandas')) {
         if (!barraAddDemanda.classList.contains('invisible5')) {
             barraAddDemanda.classList.add('invisible5');
