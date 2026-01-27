@@ -208,6 +208,7 @@
     }
     .menuLateralMaquinas, .menuLateralDemandas {
         bottom: 140px;
+        justify-self: center;
     }
     .telaMaquinasContainerFundo, .telaDemandasContainerFundo {
         height: 77vh;
