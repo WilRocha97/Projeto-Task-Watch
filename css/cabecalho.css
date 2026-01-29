@@ -203,6 +203,9 @@
                 4px 0 5px var(--animacao-opaca-bota-4),
                 4px 0 10px var(--animacao-bota-4);      
 }
+.paginaHistorico button:disabled {
+    cursor: default;
+}
 .MenuBotaoActive.active {
     transform: rotate(-72deg)
 }

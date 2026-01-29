@@ -594,14 +594,14 @@ button {
             inset 4px 0 15px var(--animacao-opaca-bota-4);
     transition: var(--transicao-link) ease-in-out;
 }
-.MenuBotao:hover::after, .MenuBotaoInterno:hover::after, .paginaHistorico button:hover::after, .tituloTabela:hover::after, .linha:hover::after, .linhaSimples:hover::after {
+.MenuBotao:hover::after, .MenuBotaoInterno:hover::after, .paginaHistorico button:not(:disabled):hover::after, .tituloTabela:hover::after, .linha:hover::after, .linhaSimples:hover::after {
     transform: translate(-50%, -50%) scaleX(1) scaleY(1);
     opacity: 1;
 }
-.MenuBotao:hover::after, .MenuBotaoInterno:hover::after, .paginaHistorico button:hover::after {
+.MenuBotao:hover::after, .MenuBotaoInterno:hover::after, .paginaHistorico button:not(:disabled):hover::after {
     padding: 0 4px;
 }
-.MenuBotao:hover, .MenuBotaoInterno:hover, .paginaHistorico button:hover {
+.MenuBotao:hover, .MenuBotaoInterno:hover, .paginaHistorico button:not(:disabled):hover {
     margin: 0 7px;
 }
 
@@ -827,7 +827,7 @@ button.clicked::after,
 
 
 @media (hover: none) {
-    .MenuBotao:hover, .MenuBotaoInterno:hover, .MenuBotaoActive:hover, .paginaHistorico button:hover {
+    .MenuBotao:hover, .MenuBotaoInterno:hover, .MenuBotaoActive:hover, .paginaHistorico button:not(:disabled):hover {
         background: None;
         margin: 3px;
         backdrop-filter: None;
@@ -855,7 +855,7 @@ button.clicked::after,
         min-height: 47px;
         min-width: 47px;
     }
-    .MenuBotao:hover::after, .MenuBotaoInterno:hover::after, .paginaHistorico button:hover::after {
+    .MenuBotao:hover::after, .MenuBotaoInterno:hover::after, .paginaHistorico button:not(:disabled):hover::after {
         padding: 0 7px;
     }
     .hInputPageSize {
