@@ -110,6 +110,12 @@ export function criarGraficoDashboard() {
                     corExecutandoSombra,
                     corExecutadoSombra
                 ],
+                hoverBackgroundColor: [
+                    corErro,
+                    corOcioso,
+                    corExecutando,
+                    corExecutado
+                ]
             }]
         },
         options: {
