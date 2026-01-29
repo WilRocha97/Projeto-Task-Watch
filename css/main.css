@@ -154,17 +154,19 @@ input:-webkit-autofill:active{
     transition: opacity var(--transicao-link) ease-in-out;
 }
 
-.telaHistoricoConteudo, .dicaContainer, .galeriaContainer, .menuLateralContainerFundo  {
+.telaHistoricoConteudo, .dicaContainer, .galeriaContainer, .menuLateralContainerFundo, .classTelaTabela {
     --scroll-background: transparent;
     --scroll-hover: var(--cor-destaque);
-    --scroll-button-heigh: 20px;
-    --scroll-bar-width: 6px;
+    --scroll-button-heigh: 0;
+    --scroll-bar-width: 10px;
+    --padding-barra: 3px;
     --scroll-color: #858585;
 }
 .scrollInfo {
     --scroll-background: transparent;
     --scroll-hover: white;
     --scroll-bar-width: 4px;
+    --padding-barra: 1px;
     --scroll-color: #777777;
     --scroll-button-heigh: 0;
 }
@@ -179,6 +181,7 @@ input:-webkit-autofill:active{
 .scroll::-webkit-scrollbar {
     width: var(--scroll-bar-width); /* largura da barra de rolagem */
     height:  var(--scroll-bar-width); /* largura da barra de rolagem horizontal*/
+    border-radius: 20px;
 }
 .scroll::-webkit-scrollbar-track {
     background: var(--scroll-background); /* cor do fundo da barra de rolagem */
@@ -186,7 +189,8 @@ input:-webkit-autofill:active{
 .scroll::-webkit-scrollbar-thumb {
     background-color: var(--scroll-color); /* cor da barra de rolagem */
     border-radius: 6px; /* arredondamento das bordas */
-    border: none; /* espaçamento entre a barra e o conteúdo */
+    background-clip: padding-box;
+    border: var(--padding-barra) solid transparent;
     transition: var(--transicao-link) ease-in-out;
 }
 .scroll::-webkit-scrollbar-thumb:hover {
@@ -213,7 +217,7 @@ input:-webkit-autofill:active{
 }
 /* Up */
 .scroll::-webkit-scrollbar-button:single-button:vertical:decrement {
-    border-width: 0 2px 8px 2px;
+    border-width: 0 3px 8px 3px;
     border-color: transparent transparent var(--scroll-color) transparent;
 }
 .scroll::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
@@ -221,7 +225,7 @@ input:-webkit-autofill:active{
 }
 /* Down */
 .scroll::-webkit-scrollbar-button:single-button:vertical:increment {
-    border-width: 8px 2px 0 2px ;
+    border-width: 8px 3px 0 3px ;
     border-color: var(--scroll-color) transparent transparent transparent;
 }
 .scroll::-webkit-scrollbar-button:single-button:vertical:increment:hover {
@@ -229,7 +233,7 @@ input:-webkit-autofill:active{
 }
 /* Left Button */
 .scroll::-webkit-scrollbar-button:single-button:horizontal:decrement {
-    border-width: 2px 8px 2px 0; /* Ajuste para seta apontar à esquerda */
+    border-width: 3px 8px 3px 0; /* Ajuste para seta apontar à esquerda */
     border-color: transparent #818181 transparent transparent;
 }
 .scroll::-webkit-scrollbar-button:single-button:horizontal:decrement:hover {
@@ -237,7 +241,7 @@ input:-webkit-autofill:active{
 }
 /* Right Button */
 .scroll::-webkit-scrollbar-button:single-button:horizontal:increment {
-    border-width: 2px 0 2px 8px; /* Ajuste para seta apontar à direita */
+    border-width: 3px 0 3px 8px; /* Ajuste para seta apontar à direita */
     border-color: transparent transparent transparent #818181;
 }
 .scroll::-webkit-scrollbar-button:single-button:horizontal:increment:hover {
@@ -256,8 +260,9 @@ body, button, div, span, input, p, h1, h2, h3, h4, h5 {
 body {
     --scroll-background: var(--cor-vidro-2);
     --scroll-hover: var(--cor-destaque);
-    --scroll-button-heigh: 20px;
+    --scroll-button-heigh: 10px;
     --scroll-bar-width: 6px;
+    --padding-barra: 2px;
     --scroll-color: #858585;
     
     overflow: hidden;
@@ -534,20 +539,20 @@ button {
 
 .MenuBotao::before {
     opacity: 0;
-    width: 0;
-    height: 2px;
-    left: 25%;
-    bottom: 2px;
+    width: 2px;
+    height: 0;
+    left: 6px;
+    bottom: 10px;
     justify-self: center;
     border-radius: var(--borda-botao);
     content: "";
     position: absolute;
     background: var(--cor-texto);
-    transition: var(--transicao-link) ease-in-out;
+    transition: 1s ease-in-out;
 }
 .MenuBotao.aberto::before {
     opacity: 1;
-    width: 50%;
+    height: 35%;
 }
 .MenuBotao, .MenuBotaoInterno, .paginaHistorico button, .tituloTabela {
     text-decoration: none;

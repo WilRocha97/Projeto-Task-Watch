@@ -1,6 +1,6 @@
 import {animacaoBotao} from './main.js';
-import {fecharTelaDeMaquinas} from './maquinas.js';
-import {fecharTelaDeDemandas} from './demandas.js';
+import {fecharTelaDeMaquinas} from './menu.js';
+import {fecharTelaDeDemandas} from './menu.js';
 import {fechaMenu} from './menu.js'
 
 var template = ``;
