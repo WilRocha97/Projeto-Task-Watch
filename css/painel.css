@@ -120,7 +120,8 @@ canvas {
     .telaPainel {
         flex-direction: column;
         height: fit-content;
-        padding: 30px;
+        padding: 5px;
+        width: calc(100% - 10px);
         margin: 0;
     }
     .chartBox {

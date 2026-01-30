@@ -508,9 +508,6 @@
         min-height: 100%;
         transition: var(--transicao-link) ease-in-out;
     }
-    .mainHistorico {
-        padding: 0 0 65px 0 !important;
-    }
 
     :root {
         --borda-botao: 30px;
@@ -527,6 +524,7 @@
     }
     .barraPesquisa {
         height: 47px;
+        width: 100%;
     }
 }
 /* Tablet pequeno (650px - 720px) */

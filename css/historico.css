@@ -9,7 +9,7 @@
     width: 1500px;
     height: 100vh;
     padding: 50px 12px 0 0;
-    margin: 0;
+    margin: 30px;
     opacity: 1;
     scale: 1;
     transition: var(--transicao-link) ease-in-out;
@@ -111,7 +111,7 @@
     display: flex;
     align-self: center;
     flex-direction: column;
-    width: 90%;
+    width: 100%;
     opacity: 1;
     transition: var(--transicao-link) ease-in-out,
                 box-shadow 1s ease-in-out,
@@ -234,6 +234,15 @@
 
 /* Telas grandes até 2500px */
 @media (max-width: 916px) {
+    .mainHistorico {
+        padding: 0 0 65px 0 !important;
+        margin: 0 !important;
+        width: 100vw !important;
+    }
+    .telaHistorico {
+        width: calc(100% - 10px);
+        margin: 5px;
+    }
     .filtroHistorico {
         gap: 25px;
         height: 51.60px;
@@ -241,23 +250,13 @@
     .telaHistoricoConteudo {
         max-height: 55vh;
     }
-    .pageSize {
-        width: 44px !important;
-        height: 44px !important;
-    }
-    .hInputPageSize {
-        min-width: 20px !important;
-        min-height: 20px !important;
-        font-size: larger;
-        transition: 1s ease-in-out;
-    }
 }
 
 /* Telas grandes até 2500px */
 @media (max-width: 2500px) {
     .mainHistorico,
     .mainHistorico.collapsed {
-        width: 100%;
+        width: calc(100vw - 60px);
     }
 
     .mainHistorico {

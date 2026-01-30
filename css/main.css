@@ -863,6 +863,9 @@ button.clicked::after,
     .MenuBotao:hover::after, .MenuBotaoInterno:hover::after, .paginaHistorico button:not(:disabled):hover::after {
         padding: 0 7px;
     }
+    .MenuBotao::before {
+        bottom: 14px;
+    }
     .hInputPageSize {
         min-width: 20px !important;
         min-height: 20px !important;
