@@ -154,9 +154,9 @@ canvas {
 
 @media (min-width: 2500px) {
     .telaPainel {
-        width: calc(100% / 3);
+        width: 500px;
         flex-direction: column;
-        height: calc(100vh - 60px);
+        height: calc(100vh - 100px);
     }
     .aD {
         border-radius: var(--borda-botao) var(--borda-botao) 5px 5px

@@ -6,10 +6,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 1500px;
-    height: 100vh;
-    padding: 50px 12px 0 0;
+    width: calc(100vw - 60px);
+    height: calc(100vh - 100px);
     margin: 30px;
+    padding: 65px 0;
+    align-self: initial;
     opacity: 1;
     scale: 1;
     transition: var(--transicao-link) ease-in-out;
@@ -47,7 +48,7 @@
 }
 
 .mainHistorico.collapsed {
-    width: 0;
+    width: 100vw;
 }
 
 /* Filtros do histórico */
@@ -121,7 +122,7 @@
 
 .telaHistoricoConteudo {
     border-radius: calc(var(--borda-botao) - 5px);
-    max-height: 75vh;
+    max-height: calc(100vh - 165px);
     margin: 5px;
     padding: 5px;
     overflow-y: auto;
@@ -253,14 +254,16 @@
 }
 
 /* Telas grandes até 2500px */
-@media (max-width: 2500px) {
-    .mainHistorico,
-    .mainHistorico.collapsed {
-        width: calc(100vw - 60px);
+@media (min-width: 2500px) {
+    .linha {
+        grid-template-columns: 1fr 3fr 1.5fr;
     }
-
     .mainHistorico {
-        padding: 65px 0;
-        align-self: initial;
+        width: 1000px;
+        padding: 0;
+        margin: 50px 30px 0;
+    }
+    .mainHistorico.collapsed {
+        width: 0;
     }
 }
