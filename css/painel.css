@@ -78,7 +78,6 @@
     border-radius: 13px;
     position: relative;
     padding: 5px;
-    margin: 0 3px;
     min-height: 5px;
     max-height: 50px;
     transition: var(--transicao-link) ease-in-out;

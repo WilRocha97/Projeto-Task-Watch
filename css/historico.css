@@ -112,7 +112,6 @@
     align-self: center;
     flex-direction: column;
     width: 90%;
-    margin: 15px 0 0 0;
     opacity: 1;
     transition: var(--transicao-link) ease-in-out,
                 box-shadow 1s ease-in-out,
@@ -121,9 +120,9 @@
 }
 
 .telaHistoricoConteudo {
-    border-radius: calc(var(--borda-botao) - 8px);
+    border-radius: calc(var(--borda-botao) - 5px);
     max-height: 75vh;
-    margin: 3px;
+    margin: 5px;
     padding: 5px;
     overflow-y: auto;
     overflow-x: hidden;
