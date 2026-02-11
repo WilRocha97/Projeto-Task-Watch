@@ -135,7 +135,7 @@ function updateClock() {
 //setInterval(updateClock, 1000);
 
 // Verifica se tem algum card vizivel, se não exibe a tela de descanso
-setInterval(verificaTelaVazia, 1000);
+setInterval(verificaTelaVazia, 3000);
 function verificaTelaVazia() {
     if (mainHistorico.classList.contains('collapsed')) {
         if (!document.querySelector(".rectangle.enter")) {

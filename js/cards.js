@@ -19,16 +19,27 @@ var cInputCard = document.getElementById('searchInputCard');
 // caso existe alguma coisa no localStorage captura a string e transforma em JS para poder ser usado
 let cardsFixados = JSON.parse(localStorage.getItem("cardsFixados")) || []
 
-const cards = document.querySelectorAll('.rectangle')
-cards.forEach((card, index) => {
-    setTimeout(()=> {
-        card.classList.add('enter');
+setTimeout(()=> {
+    const cards = document.querySelectorAll('.rectangle')
+    cards.forEach((card, index) => {
+        setTimeout(()=> {
+            card.classList.add('enter');
 
-        decoracao(card);
-        verificaFixados(card);
+            decoracao(card);
+            verificaFixados(card);
 
-    }, 100 * index);
-});
+        }, 100 * index);
+    });
+}, 2000);
+
+setTimeout(()=> {
+    const infosCards = document.querySelectorAll('.invisibleDemo')
+    infosCards.forEach((infoCard, index) => {
+        setTimeout(()=> {
+            infoCard.classList.remove('invisibleDemo');
+        }, 100 * index);
+    });
+}, 2100);
 
 function verificaFixados(card) {
     if (cardsFixados.some(cardFixado => cardFixado[0] === card.id)) {

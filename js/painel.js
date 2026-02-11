@@ -163,3 +163,12 @@ export function criarGraficoDashboard() {
 document.addEventListener("DOMContentLoaded", () => {
     criarGraficoDashboard();
 });
+
+var listasTela = document.querySelectorAll('.telaListaRotinas');
+listasTela.forEach((lista, index) => {
+    setTimeout(()=> {
+        const elementoPai = lista.parentElement;
+
+        elementoPai.classList.remove('invisible5');
+    }, 500 * index);
+})

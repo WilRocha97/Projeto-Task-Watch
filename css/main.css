@@ -293,6 +293,10 @@ button {
     outline: none;
 }
 
+.invisibleDemo {
+    max-height: 0 !important;
+    opacity: 0 !important;
+}
 .invisibleHeight {
     opacity: 0 !important;
     max-height: 0 !important;
