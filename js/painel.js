@@ -121,10 +121,9 @@ export function criarGraficoDashboard() {
         options: {
             borderWidth: 0,
             cutout: '50%',
-            borderRadius: 6,
             maintainAspectRatio: false,
             layout: {
-                padding: 22,
+                padding: 25,
             },
             plugins: {
                 legend: { display: false },
