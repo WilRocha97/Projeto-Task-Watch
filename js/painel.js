@@ -170,5 +170,5 @@ listasTela.forEach((lista, index) => {
         const elementoPai = lista.parentElement;
 
         elementoPai.classList.remove('invisible5');
-    }, 500 * index);
+    }, 400 * index);
 })
