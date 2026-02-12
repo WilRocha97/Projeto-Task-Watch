@@ -34,6 +34,17 @@ const glowPlugin = {
     }
 };
 
+function atualizarGraficoDashboard() {
+    if (!graficoDashboard) return;
+
+    outerGraficoDashboard.data.datasets[0].data = [2, 1, 7, 1];
+    graficoDashboard.data.datasets[0].data = [2, 1, 7, 1];
+    //console.log(q)
+
+    outerGraficoDashboard.update();
+    graficoDashboard.update();
+}
+
 export function criarGraficoDashboard() {
     var styles = getComputedStyle(document.body);
     //<canvas id="meuDonut"></canvas>
@@ -61,7 +72,7 @@ export function criarGraficoDashboard() {
         data: {
             labels: ['Rotinas atrasadas', 'Rotinas do dia', 'Rotinas em execução', 'Rotinas concluídas'],
             datasets: [{
-                data: [2, 1, 7, 1],
+                data: [0, 0, 0, 0],
                 backgroundColor: [
                     corErro,
                     corOcioso,
@@ -162,13 +173,15 @@ export function criarGraficoDashboard() {
 
 document.addEventListener("DOMContentLoaded", () => {
     criarGraficoDashboard();
+    atualizarGraficoDashboard();
+    var listasTela = document.querySelectorAll('.telaListaRotinas');
+    listasTela.forEach((lista, index) => {
+        setTimeout(()=> {
+            const elementoPai = lista.parentElement;
+
+            elementoPai.classList.remove('invisible5');
+        }, 400 * index);
+    })
 });
 
-var listasTela = document.querySelectorAll('.telaListaRotinas');
-listasTela.forEach((lista, index) => {
-    setTimeout(()=> {
-        const elementoPai = lista.parentElement;
 
-        elementoPai.classList.remove('invisible5');
-    }, 400 * index);
-})
