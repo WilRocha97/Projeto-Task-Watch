@@ -21,7 +21,7 @@
     top: 1px;
     justify-self: center;
     height: 1px;
-    width: 90%;
+    width: calc(100% - 32px);
     border-radius: 5px;
     background-color: var(--cor-lista); 
     box-shadow: 0 10em 100px var(--cor-lista),
@@ -63,6 +63,20 @@
     height: 100%;
     overflow: hidden;
 }
+
+.painelHorizontal {
+    height: 150px;
+}
+.listaGrande {
+    width: 100%;
+}
+.listaHorizontal {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
 .aD {
     border-radius: var(--borda-botao) 5px 5px var(--borda-botao);
 }
