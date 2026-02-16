@@ -125,6 +125,19 @@
     --luz-menu: #ebebebad;
 }
 
+input:autofill,
+input:autofill:hover,
+input:autofill:focus,
+input:autofill:active {
+  /* Propriedades padrão funcionam */
+  font-style: oblique;
+  transition: background-color 1s ease-in-out;
+  box-shadow: inset 0 0 20px #23232300;
+
+  /* Equivalentes padrão dos webkit */
+  background-clip: text;
+  color: var(--cor-texto);
+}
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus, 
@@ -178,6 +191,11 @@ input:-webkit-autofill:active{
 }
 
 /* estilizando a barra de rolagem */
+.scroll {
+  /* Padrão (Firefox, Chrome 121+, Safari 18+) */
+  scrollbar-width: thin;
+  scrollbar-color: var(--scroll-color) var(--scroll-background);
+}
 .scroll::-webkit-scrollbar {
     width: var(--scroll-bar-width); /* largura da barra de rolagem */
     height:  var(--scroll-bar-width); /* largura da barra de rolagem horizontal*/
