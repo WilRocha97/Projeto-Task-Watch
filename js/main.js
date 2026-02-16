@@ -172,184 +172,186 @@ cInputCard.addEventListener('blur', (event) => {
     fundoCabecalho.classList.remove('cabecalhoSuperExpandido')
 });
 
-cartoesFixados.addEventListener('click', () => { 
-    cartoesFixadosTexto.classList.toggle('active')
-})
-// Minimiza e maximiza todas as telas internas dos cards
-encolhe.addEventListener('click', () => {
-    const cards = document.querySelectorAll('.rectangle');
-    const listaReversa = [...cards].reverse(); // Faz uma cópia para não alterar a original
+document.addEventListener("DOMContentLoaded", () => {
+    cartoesFixados.addEventListener('click', () => { 
+        cartoesFixadosTexto.classList.toggle('active')
+    })
+    // Minimiza e maximiza todas as telas internas dos cards
+    encolhe.addEventListener('click', () => {
+        const cards = document.querySelectorAll('.rectangle');
+        const listaReversa = [...cards].reverse(); // Faz uma cópia para não alterar a original
 
-    if (cartoesFixadosTexto.classList.contains('active')) {
-
-    }
-    listaReversa.forEach((card, index) => {
         if (cartoesFixadosTexto.classList.contains('active')) {
-            if (!card.classList.contains('fixado')) {
-                return
+
+        }
+        listaReversa.forEach((card, index) => {
+            if (cartoesFixadosTexto.classList.contains('active')) {
+                if (!card.classList.contains('fixado')) {
+                    return
+                }
             }
-        }
-        else {
-            if (card.classList.contains('fixado')) {
-                return
-            } 
-        }
-        
-        maisInfos.forEach(maisInfo => {
-            setTimeout(()=> {
+            else {
+                if (card.classList.contains('fixado')) {
+                    return
+                } 
+            }
+            
+            maisInfos.forEach(maisInfo => {
                 setTimeout(()=> {
-                    card.querySelector(maisInfo.botao).querySelector('.maisInfob').classList.remove('flip')
-                    card.querySelector(maisInfo.conteudo).classList.add('collapsed');
-                    card.classList.remove('large') 
-                }, 100)
-
-                verifica_estado_card(card)
-            }, 100 * index);
-        })
-    });
-});
-// Minimiza e maximiza todos os cards
-encolheCard.addEventListener('click', () => {
-    const cards = document.querySelectorAll('.rectangle');
-    const listaReversa = [...cards].reverse(); // Faz uma cópia para não alterar a original
-
-    listaReversa.forEach((card, index) => {
-        if (cartoesFixadosTexto.classList.contains('active')) {
-            if (!card.classList.contains('fixado')) {
-                return
-            }
-        }
-        else {
-            if (card.classList.contains('fixado')) {
-                return
-            } 
-        }
-
-        setTimeout(()=> {
-            card.classList.remove('large');
-            card.classList.remove('medium');
-            card.classList.add('collapsed');
-
-            verifica_estado_card(card)
-        }, 100 * index);  
-    });
-});
-// Minimiza e maximiza todas as telas internas dos cards
-explode.addEventListener('click', () => {
-    const cards = document.querySelectorAll('.rectangle');
-
-    cards.forEach((card, index) => {
-        if (cartoesFixadosTexto.classList.contains('active')) {
-            if (!card.classList.contains('fixado')) {
-                return
-            }
-        }
-        else {
-            if (card.classList.contains('fixado')) {
-                return
-            } 
-        }
-
-        maisInfos.forEach(maisInfo => {
-            if (!card.querySelector(maisInfo.botao).classList.contains('invisible')) {
-                setTimeout(()=> {
-                    card.classList.remove('collapsed');
-                    card.classList.add('large');
                     setTimeout(()=> {
-                        card.querySelector(maisInfo.botao).querySelector('.maisInfob').classList.add('flip')
-                        card.querySelector(maisInfo.conteudo).classList.remove('collapsed');
-
-                        verifica_estado_card(card)
+                        card.querySelector(maisInfo.botao).querySelector('.maisInfob').classList.remove('flip')
+                        card.querySelector(maisInfo.conteudo).classList.add('collapsed');
+                        card.classList.remove('large') 
                     }, 100)
+
+                    verifica_estado_card(card)
                 }, 100 * index);
-            }
-        })
+            })
+        });
     });
-});
-// Minimiza e maximiza todos os cards
-explodeCard.addEventListener('click', () => {
-    const cards = document.querySelectorAll('.rectangle');
+    // Minimiza e maximiza todos os cards
+    encolheCard.addEventListener('click', () => {
+        const cards = document.querySelectorAll('.rectangle');
+        const listaReversa = [...cards].reverse(); // Faz uma cópia para não alterar a original
 
-    cards.forEach((card, index) => {
-        if (cartoesFixadosTexto.classList.contains('active')) {
-            if (!card.classList.contains('fixado')) {
-                return
+        listaReversa.forEach((card, index) => {
+            if (cartoesFixadosTexto.classList.contains('active')) {
+                if (!card.classList.contains('fixado')) {
+                    return
+                }
             }
-        }
-        else {
-            if (card.classList.contains('fixado')) {
-                return
-            } 
-        }
+            else {
+                if (card.classList.contains('fixado')) {
+                    return
+                } 
+            }
 
-        setTimeout(()=> {
-            if (card.classList.contains('collapsed')) {
-                card.classList.add('large');
-                card.classList.remove('collapsed');
+            setTimeout(()=> {
+                card.classList.remove('large');
+                card.classList.remove('medium');
+                card.classList.add('collapsed');
 
                 verifica_estado_card(card)
-            }
-        }, 100 * index);
+            }, 100 * index);  
+        });
     });
-});
+    // Minimiza e maximiza todas as telas internas dos cards
+    explode.addEventListener('click', () => {
+        const cards = document.querySelectorAll('.rectangle');
 
-// Janela com dicas de como o site funciona
-maquinas.addEventListener('click', () => {
-    fechaMenu(true)
-    
-    if (!telaGaleria.classList.contains('invisible2')) {
-        telaGaleria.classList.add('invisible2');
-    }
-    if (!telaDica.classList.contains('invisible2')) {
-        telaDica.classList.add('invisible2');
-    }
-    if (telaMaquinas.classList.contains('invisible5')) {
-        restaurarEstadoMaquinas();
-        adicionarListenersMaquinas();
-        salvarEstadoMaquinas();
-        telaMaquinas.classList.remove('invisible5');
-    }
-    else {
-        fecharTelaDeMaquinas()
-    }
-    fecharTelaDeDemandas()
-});
-fecharMaquinas.addEventListener('click', ()=> {
-    if (!barraAddMaquina.classList.contains('invisible5')) {
-        barraAddMaquina.classList.add('invisible5')
-        barraPesquisaMaquina.classList.remove('invisible5')
-    }
+        cards.forEach((card, index) => {
+            if (cartoesFixadosTexto.classList.contains('active')) {
+                if (!card.classList.contains('fixado')) {
+                    return
+                }
+            }
+            else {
+                if (card.classList.contains('fixado')) {
+                    return
+                } 
+            }
 
-    fecharTelaDeMaquinas()
-});
+            maisInfos.forEach(maisInfo => {
+                if (!card.querySelector(maisInfo.botao).classList.contains('invisible')) {
+                    setTimeout(()=> {
+                        card.classList.remove('collapsed');
+                        card.classList.add('large');
+                        setTimeout(()=> {
+                            card.querySelector(maisInfo.botao).querySelector('.maisInfob').classList.add('flip')
+                            card.querySelector(maisInfo.conteudo).classList.remove('collapsed');
 
-demandas.addEventListener('click', () => {
-    fechaMenu(true)
-    
-    if (!telaGaleria.classList.contains('invisible2')) {
-        telaGaleria.classList.add('invisible2');
-    }
-    if (!telaDica.classList.contains('invisible2')) {
-        telaDica.classList.add('invisible2');
-    }
-    if (telaDemandas.classList.contains('invisible5')) {
-        restaurarEstadoDemandas();
-        adicionarListenersDemandas();
-        salvarEstadoDemandas();
-        telaDemandas.classList.remove('invisible5');
-    }
-    else {
+                            verifica_estado_card(card)
+                        }, 100)
+                    }, 100 * index);
+                }
+            })
+        });
+    });
+    // Minimiza e maximiza todos os cards
+    explodeCard.addEventListener('click', () => {
+        const cards = document.querySelectorAll('.rectangle');
+
+        cards.forEach((card, index) => {
+            if (cartoesFixadosTexto.classList.contains('active')) {
+                if (!card.classList.contains('fixado')) {
+                    return
+                }
+            }
+            else {
+                if (card.classList.contains('fixado')) {
+                    return
+                } 
+            }
+
+            setTimeout(()=> {
+                if (card.classList.contains('collapsed')) {
+                    card.classList.add('large');
+                    card.classList.remove('collapsed');
+
+                    verifica_estado_card(card)
+                }
+            }, 100 * index);
+        });
+    });
+
+    // Janela com dicas de como o site funciona
+    maquinas.addEventListener('click', () => {
+        fechaMenu(true)
+        
+        if (!telaGaleria.classList.contains('invisible2')) {
+            telaGaleria.classList.add('invisible2');
+        }
+        if (!telaDica.classList.contains('invisible2')) {
+            telaDica.classList.add('invisible2');
+        }
+        if (telaMaquinas.classList.contains('invisible5')) {
+            restaurarEstadoMaquinas();
+            adicionarListenersMaquinas();
+            salvarEstadoMaquinas();
+            telaMaquinas.classList.remove('invisible5');
+        }
+        else {
+            fecharTelaDeMaquinas()
+        }
         fecharTelaDeDemandas()
-    }
-    fecharTelaDeMaquinas()
-});
-fecharDemandas.addEventListener('click', ()=> {
-    if (!barraAddDemanda.classList.contains('invisible5')) {
-        barraAddDemanda.classList.add('invisible5')
-        barraPesquisaDemanda.classList.remove('invisible5')
-    }
+    });
+    fecharMaquinas.addEventListener('click', ()=> {
+        if (!barraAddMaquina.classList.contains('invisible5')) {
+            barraAddMaquina.classList.add('invisible5')
+            barraPesquisaMaquina.classList.remove('invisible5')
+        }
 
-    fecharTelaDeDemandas()
+        fecharTelaDeMaquinas()
+    });
+
+    demandas.addEventListener('click', () => {
+        fechaMenu(true)
+        
+        if (!telaGaleria.classList.contains('invisible2')) {
+            telaGaleria.classList.add('invisible2');
+        }
+        if (!telaDica.classList.contains('invisible2')) {
+            telaDica.classList.add('invisible2');
+        }
+        if (telaDemandas.classList.contains('invisible5')) {
+            restaurarEstadoDemandas();
+            adicionarListenersDemandas();
+            salvarEstadoDemandas();
+            telaDemandas.classList.remove('invisible5');
+        }
+        else {
+            fecharTelaDeDemandas()
+        }
+        fecharTelaDeMaquinas()
+    });
+    fecharDemandas.addEventListener('click', ()=> {
+        if (!barraAddDemanda.classList.contains('invisible5')) {
+            barraAddDemanda.classList.add('invisible5')
+            barraPesquisaDemanda.classList.remove('invisible5')
+        }
+
+        fecharTelaDeDemandas()
+    });
 });
 
 // Modal para exibir as imagens em tela cheia
