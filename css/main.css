@@ -631,6 +631,9 @@ button {
 .MenuBotao:hover, .MenuBotaoInterno:hover, .paginaHistorico button:not(:disabled):hover {
     margin: 0 7px;
 }
+.MenuBotao:hover #carregandoHistorico {
+    width: calc(100% + 7px);
+}
 
 .botaoFechar:hover {
     text-shadow: 0 0 5px red !important;
