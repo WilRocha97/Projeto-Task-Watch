@@ -193,6 +193,7 @@
 }
 
 .MenuBotaoActive.active,
+.MenuBotaoActive.activeBasic,
 .paginaHistorico button:disabled {
     text-shadow: 0 4px 5px var(--animacao-opaca-bota-1),
                  0 4px 10px var(--animacao-bota-1),
