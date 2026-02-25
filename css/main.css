@@ -79,6 +79,7 @@
     --sombra-vidro-clara: #ffffff0c;
     --sombra-vidro-escura: #8c8c8c05;
     --luz-menu: #7f95afc7;
+    --botao-hover: #303030;
 }
 .light {
     --stripe-color: #ffffff;
@@ -123,6 +124,7 @@
     --sombra-vidro-clara: #ffffff38;
     --sombra-vidro-escura: #7e7e7e2f;
     --luz-menu: #ebebebad;
+    --botao-hover: #c9c8c2;
 }
 
 input:autofill,
@@ -642,13 +644,11 @@ button {
 .botaoFechar.nh:hover, .botaoFixar.nh:hover {
     background-color: transparent;
     text-shadow: 0 0 0 transparent;
-    color: white;
 }
 .botaoFechar, .botaoFixar {
     font-weight: 600;
     font-size: 0.7rem;
     text-align: center;
-    color: white;
     background: none;
     border: none;
     opacity: 1;

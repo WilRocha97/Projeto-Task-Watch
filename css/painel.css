@@ -50,7 +50,7 @@
     --cor-lista: var(--cor-erro);
 }
 .telaListaRotinas {
-    max-height: 200px !important;
+    max-height: calc(100% - 50px) !important;
     border-radius: calc(var(--borda-botao) - 2px) !important;
 }
 
@@ -65,16 +65,20 @@
 }
 
 .painelHorizontal {
-    height: 150px;
+    height: 100px;
 }
 .listaGrande {
     width: 100%;
+    margin: 0;
 }
 .listaHorizontal {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
+    align-content: baseline;
     gap: 15px;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
 }
 
 .aD {

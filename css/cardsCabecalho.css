@@ -66,6 +66,9 @@
     }
 }
 
+.btnCard {
+    color: white;
+}
 .botaoFixado {
     opacity: 1;
     width: 14px;
