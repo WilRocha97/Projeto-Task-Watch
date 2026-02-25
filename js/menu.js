@@ -134,6 +134,20 @@ export function abreFechaMenu() {
     }
 }
 
+export function animacaoBotao(target) {
+    target.classList.add('clicked');
+    setTimeout(() => {
+        target.classList.remove('clicked');
+    }, 500); // Tempo da animação
+}
+
+document.body.addEventListener('click', (event) => {
+    let target = event.target;
+    if (target.classList.contains('MenuBotao')) {
+        animacaoBotao(target)
+    }
+});
+
 if (menu) {
     // menu do site
     menu.addEventListener('click', () => {

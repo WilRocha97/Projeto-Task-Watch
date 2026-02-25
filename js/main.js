@@ -65,13 +65,6 @@ document.querySelectorAll('.bn').forEach((bolinha, index) => {
     }, index * 500); // Atraso baseado no índice
 });
 
-export function animacaoBotao(target) {
-    target.classList.add('clicked');
-    setTimeout(() => {
-        target.classList.remove('clicked');
-    }, 500); // Tempo da animação
-}
-
 export function isTouchDevice() {
     return ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
 }
@@ -148,13 +141,6 @@ function verificaTelaVazia() {
         }
     }
 };
-
-document.body.addEventListener('click', (event) => {
-    let target = event.target;
-    if (target.classList.contains('MenuBotao')) {
-        animacaoBotao(target)
-    }
-});
 
 // limpa busca card
 limpaCInputCard.addEventListener('click', ()=> {

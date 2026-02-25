@@ -1,4 +1,4 @@
-import {animacaoBotao} from './main.js';
+import {animacaoBotao} from './menu.js';
 import {fecharTelaDeMaquinas} from './menu.js';
 import {fecharTelaDeDemandas} from './menu.js';
 import {fechaMenu} from './menu.js'
