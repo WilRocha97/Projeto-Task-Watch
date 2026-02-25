@@ -606,7 +606,7 @@ button {
     opacity: 0;
     content: "";
     position: absolute;
-    z-index: -999;
+    z-index: -999999;
     border: var(--borda-card) solid var(--cor-borda-vidro);
     border-radius: inherit;
     box-shadow: var(--direcao-sombra-1) var(--direcao-sombra-1) 9px var(--sombra-clara),
