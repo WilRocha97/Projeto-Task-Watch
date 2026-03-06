@@ -179,11 +179,19 @@ export function adicionarListenersMaquinas() {
         const statusEl = maquina.querySelector("#statusMaquina");
 
         if (textarea) {
-            textarea.addEventListener("input", salvarEstadoMaquinas);
+            textarea.addEventListener("blur", () => {
+                salvarEstadoMaquinas(maquina.id)
+            });
+            textarea.addEventListener("input", () => {
+                salvarEstadoMaquinas(maquina.id)
+            });
         }
         if (botaoStatus) {
-            botaoStatus.addEventListener("click", salvarEstadoMaquinas);
+            botaoStatus.addEventListener("click", () => {
+                salvarEstadoMaquinas(maquina.id)
+            });
         }
+
         if (statusEl) {
             const observer = new MutationObserver(salvarEstadoMaquinas);
             observer.observe(statusEl, { attributes: true, attributeFilter: ["class"] });
