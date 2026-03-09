@@ -128,27 +128,20 @@
 }
 
 input:autofill,
+input:-webkit-autofill,
 input:autofill:hover,
+input:-webkit-autofill:hover,
 input:autofill:focus,
-input:autofill:active {
-  /* Propriedades padrão funcionam */
+input:-webkit-autofill:focus,
+input:autofill:active,
+input:-webkit-autofill:active {
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: var(--cor-texto);
+  color: var(--cor-texto);
   font-style: oblique;
   transition: background-color 1s ease-in-out;
   box-shadow: inset 0 0 20px #23232300;
-
-  /* Equivalentes padrão dos webkit */
-  background-clip: text;
-  color: var(--cor-texto);
-}
-input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus, 
-input:-webkit-autofill:active{
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: var(--cor-texto);
-    font-style: oblique;
-    transition: background-color 1s ease-in-out;
-    box-shadow: inset 0 0 20px #23232300;
 }
 
 .modalConfirma {
@@ -156,10 +149,10 @@ input:-webkit-autofill:active{
     position: fixed;
     display: flex;
     justify-content: center;
-    width: 100vw;
-    height: 100vh;
-    z-index: 999;
-    transition: var(--transicao-link) ease-in-out;
+    width: 200vw;
+    height: 200vh;
+    z-index: 99999999;
+    transition: var(--transicao-link) ease-in-out;;
 }
 .modalConfirmaContent {
     opacity: 1;
@@ -271,7 +264,7 @@ input:-webkit-autofill:active{
 html, body {
     overflow-x: hidden !important;
     min-height: 100vh;
-    width: 100vw;
+    width: 100%;
     margin: 0;
 }
 body, button, div, span, input, p, h1, h2, h3, h4, h5 {
@@ -438,16 +431,16 @@ button {
 }
 
 .mfMaquinas {
-    margin-left: 20vw;
+    margin-left: 20%;
 }
 .mfDemandas {
-    margin-right: 20vw;
+    margin-right: 20%;
 }
 .mini {
-    width: 80vw !important;
+    width: 80% !important;
 }
 .extraMini {
-    width: 60vw !important;
+    width: 60% !important;
 }
 
 .layout {
@@ -917,15 +910,15 @@ button.clicked::after,
         margin: 50px 0 0;
     }
     .mfMaquinas {
-        margin-left: 10vw;
+        margin-left: 10%;
     }
     .mfDemandas {
-        margin-right: 10vw;
+        margin-right: 10%;
     }
     .mini {
-        width: 90vw !important;
+        width: 90% !important;
     }
     .extraMini {
-        width: 80vw !important;
+        width: 80% !important;
     }
 }
