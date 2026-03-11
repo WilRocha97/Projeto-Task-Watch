@@ -45,10 +45,10 @@
 }
 
 .rotinas {
-    padding: 5px 12px 0 12px;
+    padding: 5px 6px;
 }
 .rotinasExecutando {
-    padding: 0 12px 0 12px;
+    padding: 0 6px;
 }
 .rotinas, .rotinasExecutando {
     display: flex;
@@ -75,7 +75,7 @@
     transition: var(--transicao-link) ease-in-out, width 0.2s ease-in-out;
 }
 .rectangle.enter {
-    width: 292px;
+    width: 290px;
     max-height: 150px;
     padding: 5px;
     margin: 5px;
