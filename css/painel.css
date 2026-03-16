@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     margin: 50px 30px 0;
-    height: 250px;
+    height: 243px;
     width: calc(100% - 60px);
     transition: var(--transicao-link) ease-in-out;
 }
@@ -95,7 +95,7 @@
     opacity: 1;
     border-radius: 13px;
     position: relative;
-    padding: 5px;
+    padding: 2px 5px;
     min-height: 5px;
     max-height: 50px;
     transition: var(--transicao-link) ease-in-out;

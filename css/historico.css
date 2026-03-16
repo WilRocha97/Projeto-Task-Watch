@@ -122,8 +122,10 @@
 
 .telaHistoricoConteudo {
     border-radius: calc(var(--borda-botao) - 5px);
-    max-height: calc(100vh - 165px);
+    max-height: calc(100vh - 150px);
     margin: 5px;
+    gap: 5px;
+    display: grid;
     padding: 5px;
     overflow-y: auto;
     overflow-x: hidden;
@@ -144,15 +146,12 @@
     grid-template-columns: 0.5fr 3fr 1.5fr;
     align-content: center;
     min-height: 10px;
-    padding: 10px;
+    padding: 5px;
     border-radius: calc(var(--borda-botao) - 3px);
     border: var(--borda-card) solid #00000000;
     opacity: 1;
     transition: var(--transicao-link) ease-in-out,
                 color 1s ease-in-out;
-}
-.linha:hover {
-    padding: 12px 10px;
 }
 
 .situacao {
@@ -249,7 +248,7 @@
         height: 51.60px;
     }
     .telaHistoricoConteudo {
-        max-height: 55vh;
+        max-height: 53vh;
     }
 }
 
