@@ -30,6 +30,121 @@ let estado = {
 };
 
 // ═══════════════════════════════════════════════════════════════════════════════
+//  Dados de exemplo (executado apenas uma vez, se o storage estiver vazio)
+// ═══════════════════════════════════════════════════════════════════════════════
+
+function popularDadosExemplo() {
+    // Só popula se não houver nenhum fluxo ainda
+    if (storageGet("fluxos").length > 0) return;
+
+    const fluxos = [
+        { id: "exemplo-1", nome: "Desenvolvimento" },
+        { id: "exemplo-2", nome: "Marketing" },
+    ];
+
+    const listas = [
+        { id: "lista-1", nome: "A fazer",      fluxo_id: "exemplo-1" },
+        { id: "lista-2", nome: "Em andamento", fluxo_id: "exemplo-1" },
+        { id: "lista-3", nome: "Concluído",    fluxo_id: "exemplo-1" },
+        { id: "lista-4", nome: "A fazer",      fluxo_id: "exemplo-2" },
+        { id: "lista-5", nome: "Em andamento", fluxo_id: "exemplo-2" },
+    ];
+
+    const hoje = new Date();
+    const daqui = (dias) => {
+        const d = new Date(hoje);
+        d.setDate(d.getDate() + dias);
+        return d.toISOString().slice(0, 10);
+    };
+
+    const tarefas = [
+        // Desenvolvimento — A fazer
+        {
+            id: "tarefa-1", lista_id: "lista-1", ordem: 0,
+            titulo: "Configurar ambiente de desenvolvimento",
+            descricao: "Instalar dependências e configurar variáveis de ambiente.",
+            prioridade: "Alta", responsavel: "Desenvolvimento", solicitante: "Tech Lead",
+            data_prazo: daqui(3),
+        },
+        {
+            id: "tarefa-2", lista_id: "lista-1", ordem: 1,
+            titulo: "Revisar documentação da API",
+            descricao: "Leitura dos endpoints disponíveis e contratos de resposta.",
+            prioridade: "Media", responsavel: "Desenvolvimento", solicitante: "PO",
+            data_prazo: daqui(5),
+        },
+        {
+            id: "tarefa-3", lista_id: "lista-1", ordem: 2,
+            titulo: "Criar testes unitários do módulo de login",
+            descricao: "Cobertura mínima de 80% nas funções de autenticação.",
+            prioridade: "Alta", responsavel: "Desenvolvimento", solicitante: "QA",
+            data_prazo: daqui(7),
+        },
+
+        // Desenvolvimento — Em andamento
+        {
+            id: "tarefa-4", lista_id: "lista-2", ordem: 0,
+            titulo: "Implementar tela de listagem de fluxos",
+            descricao: "Componente com filtros, ordenação e paginação.",
+            prioridade: "Alta", responsavel: "Desenvolvimento", solicitante: "PO",
+            data_prazo: daqui(2),
+        },
+        {
+            id: "tarefa-5", lista_id: "lista-2", ordem: 1,
+            titulo: "Integrar drag & drop nas colunas",
+            descricao: "Permitir mover tarefas entre listas com reordenação visual.",
+            prioridade: "Media", responsavel: "Desenvolvimento", solicitante: "Design",
+            data_prazo: daqui(4),
+        },
+
+        // Desenvolvimento — Concluído
+        {
+            id: "tarefa-6", lista_id: "lista-3", ordem: 0,
+            titulo: "Definir paleta de cores e tipografia",
+            descricao: "Aprovado pelo design system da empresa.",
+            prioridade: "Baixa", responsavel: "Desenvolvimento", solicitante: "Design",
+            data_prazo: daqui(-5),
+        },
+        {
+            id: "tarefa-7", lista_id: "lista-3", ordem: 1,
+            titulo: "Configurar CI/CD no repositório",
+            descricao: "Pipeline de build, lint e deploy automático para staging.",
+            prioridade: "Alta", responsavel: "Desenvolvimento", solicitante: "DevOps",
+            data_prazo: daqui(-2),
+        },
+
+        // Marketing — A fazer
+        {
+            id: "tarefa-8", lista_id: "lista-4", ordem: 0,
+            titulo: "Planejar campanha de lançamento",
+            descricao: "Definir canais, orçamento e cronograma da campanha.",
+            prioridade: "Alta", responsavel: "Marketing", solicitante: "Diretor",
+            data_prazo: daqui(10),
+        },
+        {
+            id: "tarefa-9", lista_id: "lista-4", ordem: 1,
+            titulo: "Produzir posts para redes sociais",
+            descricao: "Pacote com 10 artes para Instagram e LinkedIn.",
+            prioridade: "Media", responsavel: "Marketing", solicitante: "Fernanda Rocha",
+            data_prazo: daqui(6),
+        },
+
+        // Marketing — Em andamento
+        {
+            id: "tarefa-10", lista_id: "lista-5", ordem: 0,
+            titulo: "Redigir e-mail marketing de boas-vindas",
+            descricao: "Sequência de 3 e-mails para novos cadastros.",
+            prioridade: "Media", responsavel: "Marketing", solicitante: "PO",
+            data_prazo: daqui(3),
+        },
+    ];
+
+    storageSet("fluxos",  fluxos);
+    storageSet("listas",  listas);
+    storageSet("tarefas", tarefas);
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
 //  Utilitários de requisição
 // ═══════════════════════════════════════════════════════════════════════════════
 
@@ -302,6 +417,8 @@ function modalConfirm(mensagem) {
 // ═══════════════════════════════════════════════════════════════════════════════
 
 async function init() {
+    popularDadosExemplo(); // ✅ popula só se o storage estiver vazio
+
     try {
         estado.fluxos = await api("/fluxos");
     } catch (e) {
