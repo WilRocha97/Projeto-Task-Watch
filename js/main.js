@@ -1,6 +1,5 @@
 import {fechaMenu} from './menu.js'
 import {fecharTelaDeMaquinas} from './menu.js';
-import {fecharTelaDeDemandas} from './menu.js';
 
 import {procurarCard} from './cards.js';
 import {desmarcaCardsBuscados} from './cards.js';
@@ -10,16 +9,10 @@ import {restaurarEstadoMaquinas} from './maquinas.js';
 import {adicionarListenersMaquinas} from './maquinas.js';
 import {salvarEstadoMaquinas} from './maquinas.js';
 
-import {restaurarEstadoDemandas} from './demandas.js';
-import {adicionarListenersDemandas} from './demandas.js';
-import {salvarEstadoDemandas} from './demandas.js';
-
-
 var botoes = document.querySelectorAll('button');
 var botoesCards = document.querySelectorAll('.btnCard');
 var cards = document.querySelectorAll('.rectangle');
 var maquinasNaLista = document.querySelectorAll('.rectangleMaquina');
-var demandasNaLista = document.querySelectorAll('.rectangleDemanda');
 var barrasPesquisa = document.querySelectorAll('.barraPesquisa');
 
 var relogio = document.getElementById('clock');
@@ -34,21 +27,16 @@ const explode = document.getElementById('explodir');
 const fundoCabecalho = document.getElementById('cabecalho')
 
 const maquinas = document.getElementById('maquinas')
-const demandas = document.getElementById('demandas')
 
 const fecharMaquinas = document.getElementById('fecharMaquinas');
-const fecharDemandas = document.getElementById('fecharDemandas');
 
 const telaMaquinas = document.getElementById('telaMaquinas');
-const telaDemandas = document.getElementById('telaDemandas');
 const telaDica = document.getElementById('telaDica');
 const telaGaleria = document.getElementById('telaGaleria');
 const telaRotinas = document.getElementById('telaRotinas');
 
 const barraAddMaquina = document.getElementById('barraAddMaquina');
 const barraPesquisaMaquina = document.getElementById('barraPesquisaMaquina');
-const barraAddDemanda = document.getElementById('barraAddDemanda');
-const barraPesquisaDemanda = document.getElementById('barraPesquisaDemanda');
 
 var mainHistorico = document.getElementById('targetHistorico');
 var cInputCard = document.getElementById('searchInputCard');
@@ -79,9 +67,6 @@ if (isTouchDevice()) {
         botao.classList.add('nh')
     });
     maquinasNaLista.forEach((botao)=> {
-        botao.classList.add('nh')
-    });
-    demandasNaLista.forEach((botao)=> {
         botao.classList.add('nh')
     });
     barrasPesquisa.forEach((barra)=> {
@@ -299,7 +284,6 @@ document.addEventListener("DOMContentLoaded", () => {
         else {
             fecharTelaDeMaquinas()
         }
-        fecharTelaDeDemandas()
     });
     fecharMaquinas.addEventListener('click', ()=> {
         if (!barraAddMaquina.classList.contains('invisible5')) {
@@ -308,35 +292,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         fecharTelaDeMaquinas()
-    });
-
-    demandas.addEventListener('click', () => {
-        fechaMenu(true)
-        
-        if (!telaGaleria.classList.contains('invisible2')) {
-            telaGaleria.classList.add('invisible2');
-        }
-        if (!telaDica.classList.contains('invisible2')) {
-            telaDica.classList.add('invisible2');
-        }
-        if (telaDemandas.classList.contains('invisible5')) {
-            restaurarEstadoDemandas();
-            adicionarListenersDemandas();
-            salvarEstadoDemandas();
-            telaDemandas.classList.remove('invisible5');
-        }
-        else {
-            fecharTelaDeDemandas()
-        }
-        fecharTelaDeMaquinas()
-    });
-    fecharDemandas.addEventListener('click', ()=> {
-        if (!barraAddDemanda.classList.contains('invisible5')) {
-            barraAddDemanda.classList.add('invisible5')
-            barraPesquisaDemanda.classList.remove('invisible5')
-        }
-
-        fecharTelaDeDemandas()
     });
 });
 

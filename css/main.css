@@ -492,14 +492,6 @@ button {
     border-radius: calc(var(--borda-botao) - 3px);
     height: 29px;
 }
-.drop {
-    width: 100%;
-    height: 30px;
-    border: none;
-    margin: 3px;
-    padding: 0 10px;
-    color: var(--cor-texto);
-}
 
 .inputComentario {
     color: var(--cor-texto);
@@ -590,7 +582,7 @@ button {
     font-weight: bold;
     transition: var(--transicao-link) ease-in-out, color 1s ease-in-out;
 }
-.MenuBotao::after, .MenuBotaoInterno::after, .paginaHistorico button::after, .tituloTabela::after, .linha::after, .linhaSimples::after {
+.MenuBotao::after, .MenuBotaoInterno::after, .paginaHistorico button::after, .tituloTabela::after, .linha::after, .linhaSimples::after, .drop::after {
     width: 100%;
     height: 100%;
     top: 50%;
@@ -616,7 +608,8 @@ button {
             inset 4px 0 15px var(--animacao-opaca-bota-4);
     transition: var(--transicao-link) ease-in-out;
 }
-.MenuBotao:hover::after, .MenuBotaoInterno:hover::after, .paginaHistorico button:not(:disabled):hover::after, .tituloTabela:hover::after, .linha:hover::after, .linhaSimples:hover::after {
+.MenuBotao:hover::after, .MenuBotaoInterno:hover::after, .paginaHistorico button:not(:disabled):hover::after, .tituloTabela:hover::after, 
+.linha:hover::after, .linhaSimples:hover::after, .drop:hover::after {
     transform: translate(-50%, -50%) scaleX(1) scaleY(1);
     opacity: 1;
 }

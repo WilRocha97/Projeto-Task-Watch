@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/avanco.png" type="image/gif">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/cabecalho.css">
+    <link rel="stylesheet" href="css/drop.css">
+    <link rel="stylesheet" href="css/menuLateral.css">
+    <link rel="stylesheet" href="css/painel.css">
+    <link rel="stylesheet" href="css/kanban.css">
+    <link rel="stylesheet" href="css/calendario.css">
+    <link rel="stylesheet" href="css/cardsConteudo.css">
+    <link rel="stylesheet" href="css/temas.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <title>Demandas</title>
+    <meta name="title" content="Agenda - TaskWatch">
+    <meta name="description" content="Agenda do sistema de monitoramento de rotinas automáticas">
+</head>
+<body class="dark scroll">
+    <header id="cabecalho" class="cabecalho">
+        <div class="fundoCabecalhoH invisible2"></div>
+
+        <div id="telaDica" class="cmb fundo dicaTela invisible2">
+            <div class="cmb scroll dicaContainer">
+                <button id="fecharAjuda" class="cmb MenuBotaoInterno BotaoFechar" title="Fechar ajuda">⨉</button>
+                <div id="textoDica" class="cmb ClassTextoDica">
+                    Olá, essa é a tela de demandas do Task Watch.
+
+                    <br><br><br>Aqui estam algumas informações sobre como o site funciona :)<br><br>
+                    
+                    <br><br><br><br><h1>Demandas</h1>
+                    <br>• Na coluna "Demandas" é onde fica a lista de fluxos de demandas.
+                    <br><br>• para adicionar uma nova clique em "✛".
+                    Para remover ou editar o nome, passe o mouse sobre o nome do fluxo que os botões de editar "✎" e deletar "✕" apareceram.
+
+                    <br><br><br><br><h1>Listas de demandas</h1>
+                    <br>• Ao lado da coluna de fluxos está a tela onde são exibidas as lista de demandas que o fluxo selecionado contém.
+                    <br><br>• Para adicionar uma nova lista clique em "✛ Nova lista". Para editar o nome da lista clique no título dela. 
+                    Para deletar clique em "✕" ao lado do título e para adicionar uma tarefa clique em "✛" ao lado do botão de deletar. 
+
+                    <br><br><br><br><h1>Tarefa</h1>
+                    <br>• Os cartões das tarefas exibem apenas o nível de príoridade, o nome do responsável, se tiver, a data limite para conclusão, se tiver 
+                    e o título da terefa. Para mostrar mais informações basta clicar no cartão dela.
+
+                    <br><br><br><br><h1>Informações da terefa</h1>
+                    <br>• A tela de exibição das informações das tarefas, alem de exibir, também permite editar as informações e deletar a tarefa clicando no botão 
+                    "Excluir" no canto inferior direito dessa tela.
+                    
+                    <br><br><br><br><h1>Responsáveis</h1>
+                    <br>• Ao selecionar ou editar um responsável na tela de informações da tarefa, ela irá para o fluxo com o nome desse responsável automáticamente.
+
+                    <br><br><br><br><h1>Buscando tarefas</h1>
+                    <br>• É possível buscar uma tarefa utilizando a barra de busca no canto superior direito da tela.
+                    <br><br>• As tarefas localizadas apareceram em um janela flutuante em baixo da barra de busca. Ao clicar em uma delas você será redirecionado ao fluxo
+                    que ela está.
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="fundoAuxiliar invisible0"></div>
+
+    <!-- Modal oculto no HTML -->
+    <div id="modalConfirmacao" class="modalConfirma invisible0"></div>
+
+    <!-- Modal -->
+    <div id="modalTarefa" class="modalCalendar hidden">
+        <div class="fundoCabecalho"></div>
+        <div class="modalCalendarContent fundo">
+            <div class="modalCabecalho">
+                <h1 id="modalCalendarTitle" class="subTituloItemLateral">Nova tarefa</h1>
+                <button id="close-modal" class="cmb MenuBotao BotaoFechar" title="Fechar tela do evento">⨉</button>
+            </div>
+
+            <div class="subTituloItemLateral" style="margin: 10px 10px 0;">Título</div>
+            <div class="cmb fundoInvertido barraPesquisa">
+                <input type="text" id="kb-titulo" class="cmb mInputName" placeholder="Título" title="Título">
+            </div>
+
+            <div style="display: flex; gap: 10px;">
+
+                <div style="width: 25%;">
+                    <div title="Tipo da rotina" class="subTituloItemLateral" style="margin: 10px 10px 0;">Prioridade</div>
+                    <div class="fundo drop" id="kb-prioridade" title="Tipo da rotina">
+                        <div class="menuDrop">
+                            <span id="triggerLabel">Prioridade da tarefa</span>
+                            <span class="chevron" id="chevron">▼</span>
+                        </div>
+                        
+                        <div class="fundo dropdown-menu" id="dropdownMenu">
+                            <div class="menuItems">
+                                <div class="menu-item MenuBotao MenuBotaoTexto" data-id="1">
+                                    <span class="item-label">Alta</span>
+                                </div>
+                                <div class="menu-item MenuBotao MenuBotaoTexto" data-id="2">
+                                    <span class="item-label">Média</span>
+                                </div>
+                                <div class="menu-item MenuBotao MenuBotaoTexto" data-id="3">
+                                    <span class="item-label">Baixa</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="width: 25%;">
+                    <div title="Responsável da tarefa" class="subTituloItemLateral" style="margin: 10px 10px 0;">Responsável</div>
+                    <div class="fundo drop" id="kb-responsavel" title="Responsável da tarefa">
+                        <div class="menuDrop">
+                            <span id="triggerLabel">Responsável da tarefa</span>
+                            <span class="chevron" id="chevron">▼</span>
+                        </div>
+                        
+                        <div class="fundo dropdown-menu" id="dropdownMenu">
+                            <div class="menuItems">
+                                 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="width: 25%;">
+                    <div class="subTituloItemLateral" style="margin: 10px 10px 0;">Solicitante</div>
+                    <div class="cmb fundoInvertido barraPesquisa">
+                        <input type="text" id="kb-solicitante" class="cmb mInputName" placeholder="Solicitante" title="Solicitante">
+                    </div>
+                </div>
+
+                <div style="width: 25%;">
+                    <div class="subTituloItemLateral" style="margin: 10px 10px 0;">Data final<br></h3></div>
+                    <div class="cmb fundoInvertido barraPesquisa">
+                        <input id="kb-data-prazo" class="cmb mInputName" type="date" title="Data final">
+                    </div>
+                </div>
+            </div>
+
+            <div class="subTituloItemLateral" style="margin: 10px 10px 0;">Descrição</div>
+            <textarea id="kb-descricao" class="inputComentario scroll telaMensagemEvento" placeholder="Adicionar descrição" title="Adicionar descrição" style="height: 30vh;"></textarea>
+            
+            <div class="modalCalendarActions">
+                <button id="save-event" class="cmb MenuBotao MenuBotaoTexto" title="Salvar evento">Salvar</button>
+                <button id="delete-event" class="cmb MenuBotao MenuBotaoTexto" title="Excluir evento">Excluir</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="layoutKB">
+        <div class="telaFluxos">
+            <div class="telaGrupoFluxos">
+                <div class="fundo cabecalhoFluxos">
+                    <h1 class="tituloFluxo">Demandas</h1>
+                    <button id="novoFluxo" class="MenuBotao MenuBotaoTexto" title="Nova fluxo">✛</button>     
+                </div>
+
+                <div class="fundo fundoListaFluxos">
+                    <div id="listaFluxos" class="listaFluxos scroll">
+                        
+                        <!--  -->
+
+                    </div>
+                </div>   
+
+            </div>
+
+        </div>
+
+        <div class="telaListas">
+            <div class="fundo cabecalhoTarefas">
+                <h1 id="fluxoSelecionado" class="tituloFluxo"></h1>
+                <div class="menuKB">
+                    <div class="pesquisaContainer">
+                        <div class="cmb fundoInvertido barraPesquisa">
+                            <input type="text" id="searchInputTarefa" class="cmb cInputPesquisa" placeholder="Buscar tarefa" title="Buscar tarefa por nome da rotina">
+                            <div id="limpaCInputTarefa" class="cmb botaoFechar botaoMaquina limparBarra" title="Limpar busca">⨉</div>
+                        </div>
+                        <div id="searchResults" class="fundo searchResults" style="opacity:0;"></div>
+                    </div>
+
+                    <button id="dica" class="cmb MenuBotao" title="Ajuda">?</button>
+                    <button id="toggleDarkMode" class="cmb MenuBotao iconeContainer" title="Mudar para modo claro">
+                        <img class="cmb icone" src="assets/moon.png" alt="Modo escuro">
+                    </button> 
+                </div>
+            </div>
+            <div class="telaGrupoListas scroll invisibleHeight">
+
+                <!-- <div class="telaTarefas">
+                    <div class="fundo cabecalhoTarefas">
+                        <h1 id="titulo_A_fazer" class="tituloFluxo">A fazer</h1>
+                        <button id="novaTarefa" class="MenuBotao MenuBotaoTexto" title="Nova tarefa na lista">✛</button>
+                    </div>
+                    
+                    <div class="fundo fundoListaTarefas">
+                        <div id="lista_A_fazer" class="listaTarefas scroll">
+
+                            <div id="tarefa-1" class="fundo rectangleTarefa">
+                                <div class="rectangleTarefaCabecalho">
+                                    <div class="prioridadeTarefa">
+                                        Alta
+                                    </div>
+                                </div>
+                                
+                                <div class="nivelPrioridade prioridadeAlta"></div>
+
+                                <div class="tituloTarefa">
+                                    Automatiza Fiscal
+                                </div>
+                            </div>
+
+                        </div>
+                    </div> 
+                </div> -->
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
+    <script type="module" src="js/modo.js"></script>
+    <script type="module" src="js/menu.js"></script>
+    <script type="module" src="js/drop.js"></script>
+    <script type="module" src="js/kanban.js"></script>
+</body>
+</html>

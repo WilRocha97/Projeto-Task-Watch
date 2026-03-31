@@ -1,4 +1,4 @@
-#telaMaquinas, #telaDemandas {
+#telaMaquinas {
     position: fixed;
     overflow: hidden;
     z-index: 1;
@@ -16,10 +16,6 @@
     left: 0;
     width: 20vw;
 }
-#telaDemandas {
-    right: 0;
-    width: 90vw;
-}
 
 .botaoItemMenuLateral {
     color: var(--cor-texto) !important;
@@ -31,7 +27,7 @@
     font-size: 1rem;
     padding: 20px;
 }
-.telaMaquinasContainerFundo, .telaDemandasContainerFundo {
+.telaMaquinasContainerFundo {
     position: fixed;
     opacity: 1;
     overflow: scroll;
@@ -43,17 +39,14 @@
     width: 100%;
     transition: var(--transicao-link) ease-in-out;
 }
-.telaMaquinasContainer, .telaDemandasContainer {
+.telaMaquinasContainer{
     display: flex;
 }
 .telaMaquinasContainer {
     flex-direction: column;
 }
-.telaDemandasContainer {
-    flex-wrap: wrap;
-}
 
-.menuLateralMaquinas, .menuLateralDemandas {
+.menuLateralMaquinas {
     position: fixed;
     display: flex;
     flex-direction: row;
@@ -62,14 +55,10 @@
     transition: var(--transicao-link) ease-in-out;
 }
 
-.rectangleDemanda  {
-    min-height: 150px;
-    width: 30%;
-}
 .rectangleMaquina {
     min-height: 110px;
 }
-.rectangleDemanda, .rectangleMaquina {
+.rectangleMaquina {
     scale: 1;
     opacity: 1;
     margin: 10px 6px 10px 14px;
@@ -77,10 +66,10 @@
     max-height: 300px;
     transition: var(--transicao-link) ease-in-out;
 }
-.rectangleDemanda:hover, .rectangleMaquina:hover {
+.rectangleMaquina:hover {
     scale: var(--escala-item-lateral);
 }
-.rectangleDemanda.nh, .rectangleMaquina.nh {
+.rectangleMaquina.nh {
     scale: 1;
 }
 
@@ -105,7 +94,7 @@
     transition: var(--transicao-link) ease-in-out, box-shadow 1s ease-in-out, background-color 1s ease-in-out;
 }
 
-.addMaquinaAtivada, .addDemandaAtivada {
+.addMaquinaAtivada {
     transform: rotate(-180deg);
 }
 
@@ -179,7 +168,7 @@
 }
 
 @media (min-width: 1650px) {
-    .menuLateralMaquinas, .menuLateralDemandas {
+    .menuLateralMaquinas {
         min-height: 5%;
     }
     #telaMaquinas {
@@ -187,13 +176,10 @@
     }
 }
 @media (min-width: 2500px) {
-    .menuLateralMaquinas, .menuLateralDemandas {
+    .menuLateralMaquinas {
         min-height: 5%;
     }
-    .menuLateralDemandas {
-        width: 100%;
-    }
-    #telaMaquinas, #telaDemandas {
+    #telaMaquinas {
         width: 10vw;
     }
 }
@@ -203,19 +189,13 @@
         opacity: 0;
         padding: 0;
     }
-    .menuLateralMaquinas, .menuLateralDemandas {
+    .menuLateralMaquinas {
         bottom: 140px;
         justify-self: center;
     }
-    .telaMaquinasContainerFundo, .telaDemandasContainerFundo {
+    .telaMaquinasContainerFundo {
         height: 77vh;
         margin-top: 0;
-    }
-    .telaDemandasContainer {
-        flex-direction: column;
-    }
-    .rectangleDemanda {
-        width: auto;
     }
     #fixarTelaMaquinas {
         opacity: 0;
@@ -227,12 +207,9 @@
         top: -1000px;
         cursor: default;
     }
-    #telaMaquinas, #telaDemandas {
+    #telaMaquinas {
         width: 95vw;
         padding: 8px;
-    }
-    .menuLateralDemandas {
-        width: 100%;
     }
     .menuLateralSuperExpandido {
         bottom: 1px !important;
@@ -248,9 +225,6 @@
     .mfMaquinas {
         margin-left: 30vw;
     }
-    .mfDemandas {
-        margin-right: 30vw;
-    }
     .mini {
         width: 70vw !important;
     }
@@ -259,12 +233,12 @@
     }
 }
 @media (max-height: 930px) and (max-width: 916px) {
-    .telaMaquinasContainerFundo, .telaDemandasContainerFundo {
+    .telaMaquinasContainerFundo {
         height: 75vh;
     }
 }
 @media (max-height: 830px) and (max-width: 916px) {
-    .telaMaquinasContainerFundo, .telaDemandasContainerFundo {
+    .telaMaquinasContainerFundo {
         height: 70vh;
     }
 }

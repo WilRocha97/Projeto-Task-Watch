@@ -249,17 +249,11 @@ botaoFixarTelaMaquinas.addEventListener('click', ()=> {
         document.querySelector('body').classList.remove('mfMaquinas'); 
     }
 
-    if (document.querySelector('body').classList.contains('mfMaquinas') && document.querySelector('body').classList.contains('mfDemandas')) {
-        document.querySelector('body').classList.remove('mini'); 
-        document.querySelector('body').classList.add('extraMini'); 
-    }
-    else if (!document.querySelector('body').classList.contains('mfDemandas') && !document.querySelector('body').classList.contains('mfMaquinas')) {
-        document.querySelector('body').classList.remove('extraMini'); 
-        document.querySelector('body').classList.remove('mini'); 
+    if (document.querySelector('body').classList.contains('mfMaquinas')) {
+        document.querySelector('body').classList.add('mini'); 
     }
     else {
-        document.querySelector('body').classList.remove('extraMini'); 
-        document.querySelector('body').classList.add('mini'); 
+        document.querySelector('body').classList.remove('mini'); 
     }
 
     document.getElementById('fecharMaquinas').classList.toggle('invisible2');

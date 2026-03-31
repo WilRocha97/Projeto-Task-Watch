@@ -1,8 +1,8 @@
 const menu = document.getElementById('menu');
-const fundoCabecalho = document.getElementById('cabecalho');
+const cabecalho = document.getElementById('cabecalho');
+const fundoCabecalho = document.querySelector('.fundoCabecalhoH');
 const telaRotinas = document.getElementById('telaRotinas');
 const telaMaquinas = document.getElementById('telaMaquinas');
-const telaDemandas = document.getElementById('telaDemandas');
 const dica = document.getElementById('dica');
 const telaDica = document.getElementById('telaDica');
 const fecharAjuda = document.getElementById('fecharAjuda');
@@ -32,34 +32,8 @@ export function fecharTelaDeMaquinas() {
         }
         pesquisaMaquina.value = ''
         telaMaquinas.classList.add('invisible5');
-        fundoCabecalho.classList.remove('cabecalhoMegaExpandido');
+        cabecalho.classList.remove('cabecalhoMegaExpandido');
         botaoOrdenarTelaMaquinasTexto.classList.remove('addMaquinaAtivada')
-    }
-}
-
-export function fecharTelaDeDemandas() {
-    const botaoOrdenarTelaDemandas = document.getElementById("ordenarDemandas");
-    const botaoOrdenarTelaDemandasTexto = botaoOrdenarTelaDemandas.querySelector('.MenuBotaoActive');
-    const addDemanda = document.getElementById('addDemanda');
-    const addDemandaTexto = addDemanda.querySelector('.MenuBotaoActive');
-    const pesquisaDemanda = document.getElementById('inputPesquisaDemanda');
-    const barraAddDemanda = document.getElementById('barraAddDemanda');
-    const barraPesquisaDemanda = document.getElementById('barraPesquisaDemanda');
-    var demandas = document.getElementById('demandas');
-
-    if (demandas) {
-        demandas.classList.remove('aberto');
-    }
-    if (!document.querySelector('body').classList.contains('mfDemandas')) {
-        if (!barraAddDemanda.classList.contains('invisible5')) {
-            barraAddDemanda.classList.add('invisible5');
-            barraPesquisaDemanda.classList.remove('invisible5');
-            addDemandaTexto.classList.toggle('addDemandaAtivada');
-        }
-        pesquisaDemanda.value = ''
-        telaDemandas.classList.add('invisible5');
-        fundoCabecalho.classList.remove('cabecalhoMegaExpandido');
-        botaoOrdenarTelaDemandasTexto.classList.remove('addDemandaAtivada')
     }
 }
 
@@ -67,7 +41,7 @@ export function fechaMenu(botaoDoMenu=false) {
     var botaoMenu = document.getElementById('botaoMenu');
     var telaMenu = document.querySelectorAll('.menuInvisivel');
     var telaRotinas = document.getElementById('telaRotinas');
-    var fundoCabecalho = document.getElementById('cabecalho');
+    var cabecalho = document.getElementById('cabecalho');
     var screenWidth = window.innerWidth;
     
     if (screenWidth < 1255 || botaoDoMenu) {
@@ -75,8 +49,8 @@ export function fechaMenu(botaoDoMenu=false) {
             miniMenu.classList.add('invisible3');
         })
         document.getElementById('menuCabecalho').classList.add('minimizado')
-        fundoCabecalho.classList.remove('cabecalhoExpandido');
-        fundoCabecalho.classList.remove('cabecalhoMegaExpandido');
+        cabecalho.classList.remove('cabecalhoExpandido');
+        cabecalho.classList.remove('cabecalhoMegaExpandido');
         if (telaRotinas) {
             telaRotinas.classList.remove('rotinasExpandida');  
         }
@@ -101,7 +75,7 @@ export function abreFechaMenu() {
     var botaoMenu = document.getElementById('botaoMenu');
     var telaMenu = document.querySelectorAll('.menuInvisivel');
     var telaRotinas = document.getElementById('telaRotinas');
-    var fundoCabecalho = document.getElementById('cabecalho');
+    var cabecalho = document.getElementById('cabecalho');
     var screenWidth = window.innerWidth;
 
     if (botaoMenu.innerHTML == '☰') {
@@ -110,7 +84,7 @@ export function abreFechaMenu() {
         })
         document.getElementById('menuCabecalho').classList.remove('minimizado')
         if (screenWidth < 1255) {
-            fundoCabecalho.classList.add('cabecalhoExpandido')
+            cabecalho.classList.add('cabecalhoExpandido')
         }
         if (telaRotinas) {
             telaRotinas.classList.add('rotinasExpandida');  
@@ -161,17 +135,10 @@ if (menu) {
                 }
             }
         }
-        if (telaDemandas) {
-            if (!telaDemandas.classList.contains('invisible5')) {
-                fecharTelaDeDemandas()
-                if (telaRotinas) {
-                    telaRotinas.classList.add('rotinasExpandida');        
-                }
-            }
-        }
         if (!telaDica.classList.contains('invisible2')) {
             telaDica.classList.add('invisible2');
-            fundoCabecalho.classList.remove('cabecalhoMegaExpandido')
+            fundoCabecalho.classList.add('invisible2');
+            cabecalho.classList.remove('cabecalhoMegaExpandido')
             if (telaRotinas) {
                 telaRotinas.classList.add('rotinasExpandida');        
             }
@@ -179,7 +146,8 @@ if (menu) {
         if (telaGaleria) {
             if (!telaGaleria.classList.contains('invisible2')) {
                 telaGaleria.classList.add('invisible2');
-                fundoCabecalho.classList.remove('cabecalhoMegaExpandido')
+                fundoCabecalho.classList.add('invisible2');
+                cabecalho.classList.remove('cabecalhoMegaExpandido')
                 telaRotinas.classList.add('rotinasExpandida');
             }
         }
@@ -201,24 +169,22 @@ if (telaDica) {
                 fecharTelaDeMaquinas()
             }
         }
-        if (telaDemandas) {
-            if (!telaDemandas.classList.contains('invisible5')) {
-                fecharTelaDeDemandas()
-            }
-        }
 
         if (telaDica.classList.contains('invisible2')) {
             telaDica.classList.remove('invisible2');
-            fundoCabecalho.classList.add('cabecalhoMegaExpandido')
+            fundoCabecalho.classList.remove('invisible2');
+            cabecalho.classList.add('cabecalhoMegaExpandido')
         }
         else {
             telaDica.classList.add('invisible2');
-            fundoCabecalho.classList.remove('cabecalhoMegaExpandido')
+            fundoCabecalho.classList.add('invisible2');
+            cabecalho.classList.remove('cabecalhoMegaExpandido')
         }
     });
     fecharAjuda.addEventListener('click', ()=> {
         telaDica.classList.add('invisible2');
-        fundoCabecalho.classList.remove('cabecalhoMegaExpandido')
+        fundoCabecalho.classList.add('invisible2');
+        cabecalho.classList.remove('cabecalhoMegaExpandido')
     })
 }
 
@@ -237,23 +203,21 @@ if (telaGaleria) {
                 fecharTelaDeMaquinas()
             }
         }
-        if (telaDemandas) {
-            if (!telaDemandas.classList.contains('invisible5')) {
-                fecharTelaDeDemandas()
-            }
-        }
 
         if (telaGaleria.classList.contains('invisible2')) {
             telaGaleria.classList.remove('invisible2');
-            fundoCabecalho.classList.add('cabecalhoMegaExpandido')
+            fundoCabecalho.classList.remove('invisible2');
+            cabecalho.classList.add('cabecalhoMegaExpandido')
         }
         else {
             telaGaleria.classList.add('invisible2');
-            fundoCabecalho.classList.remove('cabecalhoMegaExpandido')
+            fundoCabecalho.classList.add('invisible2');
+            cabecalho.classList.remove('cabecalhoMegaExpandido')
         }
     });
     fecharGaleria.addEventListener('click', ()=> {
         telaGaleria.classList.add('invisible2');
-        fundoCabecalho.classList.remove('cabecalhoMegaExpandido')
+        fundoCabecalho.classList.add('invisible2');
+        cabecalho.classList.remove('cabecalhoMegaExpandido')
     })
 }

@@ -1,0 +1,110 @@
+.minidrop::before {
+    opacity: 0;
+    width: 0;
+    height: 2px;
+    top: 5px;
+    justify-self: center;
+    border-radius: var(--borda-botao);
+    content: "";
+    position: absolute;
+    background: var(--cor-texto);
+    transition: 1s ease-in-out;
+}
+[data-selected-id]:not([data-selected-id="1"])::before {
+    opacity: 1;
+    width: 50%;
+}
+
+.drop {
+    opacity: 1;
+    height: 30px;
+    min-width: 100px;
+    border: none;
+    margin: 3px;
+    padding: 0 10px;
+    color: var(--cor-texto);
+    cursor: pointer;
+    background: none;
+}
+.minidrop {
+    display: flex;
+    height: 25px;
+    min-width: 20px;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+}
+.drop.minidrop .menuDrop {
+    min-width: 0;
+    width: fit-content;
+    align-self: center;
+    justify-self: center;
+}
+.drop.minidrop #triggerLabel {
+    font-size: 0;
+}
+
+/* Menu dropdown */
+.dropdown-menu {
+    justify-self: center;
+    top: 35px;
+    position: fixed;
+    opacity: 0;
+    max-height: 0;
+    min-width: 100%;
+    max-width: fit-content;
+    overflow: hidden;
+    background: var(--cor-vidro-2);
+    transition: var(--transicao-link) ease-in-out;
+}
+
+.dropdown-menu.open {
+    z-index: 1;
+    opacity: 1;
+    max-height: 500px;
+}
+
+.menuDrop {
+    min-width: 100px;
+    width: calc(100% - 20px);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: var(--tamanho-texto-3);
+    top: 25%;
+    position: fixed;
+}
+
+.menuItems {
+    padding: 5px 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Seta/Chevron */
+.chevron {
+    transition: transform var(--transicao-link) ease;
+    opacity: 0.5;
+}
+
+.chevron.rotated {
+    transform: rotate(180deg);
+}
+
+/* Label do item */
+.item-label {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+}
+
+.selected .item-label {
+    font-weight: bold;
+    border-bottom: 1px solid var(--cor-texto);
+}
+
+#triggerLabel {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

@@ -26,30 +26,32 @@
 </head>
 <body class="dark scroll"> 
     <header id="cabecalho" class="cabecalho">
-        <div class="fundoCabecalho"></div>
+        <div class="fundoCabecalhoH invisible2"></div>
         <div class="divisaoCabecalho">
             <div id="menuCabecalho" class="menu minimizado">
-                <div class="fundo menuTelaBotoes">
-                    <a id="calendario" class="MenuBotao MenuBotaoTexto" title="Agenda de rotinas" href="" target="_blank">Agenda</a>
-                    
-                    <button id="maquinas" class="cmb MenuBotao MenuBotaoTexto" title="Lista de dispositivos">Dispositivos</button>
-                    <button id="demandas" class="cmb MenuBotao MenuBotaoTexto" title="Lista de demandas">Demandas</button>
+                <div class="containerMenus">
+                    <div class="fundo menuTelaBotoes">
+                        <a id="demandas" class="cmb MenuBotao MenuBotaoTexto" title="Lista de demandas" href="demandas.html" target="_blank">Demandas</a>
+                    </div>
+                        
+                    <div class="fundo menuTelaBotoes">
+                        <button id="maquinas" class="cmb MenuBotao MenuBotaoTexto" title="Lista de dispositivos">Dispositivos</button>
 
-                    <button id="historico" class="MenuBotao MenuBotaoTexto notifica miniBotao" title="Histórico de ocorrências das rotinas">
-                        <div class="notificacao">
-                            <span id="bolinha-status-executando" class="bn bolinhaExecutando" title="Nova rotina iniciada"></span>
-                            <span id="bolinha-status-error" class="bn bolinhaErro invisible5" title="Nova rotina com erro"></span>
-                            <span id="bolinha-status-warning" class="bn bolinhaOcioso invisible5" title="Nova rotina ociosa"></span>
-                            <span id="bolinha-status-final" class="bn bolinhaFinal invisible5" title="Nova rotina finalizada"></span>
-                            <span id="bolinha-status-executando" class="bn bolinhaExecutando" title="Nova rotina iniciada"></span>
-                        </div>Histórico
-                        <span id="carregandoHistorico" class="carregando off"></span>
-                    </button>
-                    <button id="menu" class="cmb MenuBotao miniBotao" title="Abrir menu">
-                        <div id="botaoMenu" class="cmb">☰</div>
-                    </button>
+                        <button id="historico" class="MenuBotao MenuBotaoTexto notifica miniBotao" title="Histórico de ocorrências das rotinas">
+                            <div class="notificacao">
+                                <span id="bolinha-status-executando" class="bn bolinhaExecutando" title="Nova rotina iniciada"></span>
+                                <span id="bolinha-status-error" class="bn bolinhaErro invisible5" title="Nova rotina com erro"></span>
+                                <span id="bolinha-status-warning" class="bn bolinhaOcioso invisible5" title="Nova rotina ociosa"></span>
+                                <span id="bolinha-status-final" class="bn bolinhaFinal invisible5" title="Nova rotina finalizada"></span>
+                                <span id="bolinha-status-executando" class="bn bolinhaExecutando" title="Nova rotina iniciada"></span>
+                            </div>Histórico
+                            <span id="carregandoHistorico" class="carregando off"></span>
+                        </button>
+                        <button id="menu" class="cmb MenuBotao miniBotao" title="Abrir menu">
+                            <div id="botaoMenu" class="cmb">☰</div>
+                        </button>
+                    </div>
                 </div>
-
                 <!-- <div id="menuRelogio" class="fundo relogio">
                     <div id="clock"></div>
                 </div> -->
@@ -229,6 +231,9 @@
                     <br><br><br><br><h1>Agenda</h1>
                     <br>• A versão estática da agenda ainda não está disponível mas se quiser dar uma espiada, as imagens dela já estão aqui na "Galeria" do site.
                     
+                    <br><br><br><br><h1>Demandas</h1>
+                    <br>• Aqui é possível gerências as demandas.
+
                     <br><br><br><br><h1>Resumo das rotinas</h1>
                     <br>• Logo no topo temos o resumo das rotinas baseado na agenda.
                     <br><br>• São 4 listas, uma mostrando as rotinas de dias anteriores, uma para as rotinas do dia, uma para as rotinas em execução e a última para as rotinas do dia que foram concluídas.
@@ -261,14 +266,6 @@
                     <br><br>• É possível alterar o status manualmente clicando em "Livre" ou "Ocupado". Porém, se existir algum cartão na tela com alguma rotina no dispositivo alterado, ele retornará para "Ocupado".
                     <br><br>• Caso queira, é possível adicionar um comentário abaixo do nome do dispositivo.
                     
-                    <br><br><br><br><h1>Demandas</h1>
-                    <br>• O botão "Demandas" abre a tela de demandas.
-                    <br><br>• Na barra de busca (Busque demanda) você pode verificar se uma demanda exite na lista.
-                    <br><br>• O botão "✛" abre uma barra que pode ser usada para adicionar uma nova demanda e caso ele já exista na lista, será marcada na tela. Ao abrir a barra de adição a barra de pesquisa irá minimizar, para ela voltar apenas clique em "✛" novamente
-                    <br><br>• Para ordenar a lista, colocando as demandas com prioridade alta no topo, clique em "⇅" (Reordenar a lista). Se quiser voltar para ordém padrão é só clicar novamente no mesmo botão.
-                    <br><br>• É possível alterar a prioridade da demanda clicando em "Prioridade baixa", "Prioridade média" ou "Prioridade alta". Esses botões aparecem a cima do título da demanda ao passar o mouse sobre ela.
-                    <br><br>• É possível adicionar responsáveis, situação e comentários nos campos abaixo do título da demanda.
-
                     <br><br><br><br><h1>Histórico</h1>
                     <br>• A tela de histórico, que é exibida ao clicar no botão "Histórico", pode ser filtrada por ocorrência, basta clicar no ponto colorido com a cor correspondente ao evento. Eles ficam logo acima da janela de histórico do lado direito da tela.
                     <br><br>• É possível buscar alguma ocorrência por parte da data e hora e também pelo nome da rotina utilizando as barras de pesquisa.
@@ -482,133 +479,6 @@
                     </div>
                     <textarea type="text" class="inputComentario scroll scrollInfo mediaTelaMensagemItemLateral" placeholder="Adicionar comentário" title="Adicionar comentário"></textarea>
                     <span id="statusMaquina" class="cStatusItemLateral ocupado"></span>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <div id="telaDemandas" class="fundo telaLateral invisible5">
-        <span class="cabecalhoMenuLateral">Demandas</span>
-        <div class="menuLateralDemandas">
-            <button id="fecharDemandas" class="cmb MenuBotao BotaoFechar" title="Fechar tela de dispositivos">⨉</button>
-
-            <div id="fixarTelaDemandas" class="cmb MenuBotao invisible2" title="Fixar telas">
-                <div class="cmb MenuBotaoActive" title="Fixar telas" style="rotate: 72deg">★</div>
-            </div>
-            
-            <div id="ordenarDemandas" class="cmb MenuBotao" title="Reordenar a lista">
-                <div class="cmb MenuBotaoActive" title="Reordenar a lista">⇅</div>
-            </div>
-
-            <div id="barraPesquisaDemanda" class="cmb fundoInvertido barraPesquisa">
-                <input type="text" id="inputPesquisaDemanda" class="cmb mInputName" placeholder="Busca" title="Busca demanda">
-                <div id="limpaInputPesquisaDemanda" class="cmb botaoFechar botaoItemMenuLateral limparBarra" title="Limpar campo">⨉</div>
-            </div>
-
-            <div id="addDemanda" class="cmb MenuBotao" title="Adicionar/Pesquisar dispositivo">
-                <div class="cmb MenuBotaoActive" title="Adicionar/Pesquisar dispositivo">✛</div>
-            </div>
-
-            <div id="barraAddDemanda" class="cmb fundoInvertido barraPesquisa invisible5">
-                <input type="text" id="inputAddDemanda" class="cmb mInputName" placeholder="Novo" title="Digite o título da demanda">
-                <div id="limpaInputAddDemanda" class="cmb botaoFechar botaoItemMenuLateral limparBarra" title="Limpar campo">⨉</div>
-            </div>
-        </div>
-        
-        <div class="cmb scroll scrollInvisible telaDemandasContainerFundo">
-            <div id="listaDemandas" class="cmb telaDemandasContainer">
-
-                <div id="Adicionar_aester_egg" class="rectangleDemanda">
-                    <div class="tituloContainerItemLateral">
-                        <div class="tituloItemLateral">Adicionar aester egg</div>
-                        <div id="deletarDemanda" class="cmb botaoFechar botaoItemMenuLateral" title="Excluír demanda">⨉</div>
-                    </div>
-                    <button id="mudarStatus" class="cmb MenuBotao botaoItemMenuLateral cMudarStatus" title="Mudar status">Prioridade baixa</button>
-
-                    <div>
-                        <div class="subTituloItemLateral">Responsável:</div>
-                        <textarea type="text" id="responsavel" class="inputComentario scroll scrollInfo miniTelaMensagemItemLateral" placeholder="Responsável" title="Adicionar responsável da demanda">Gilberto</textarea>
-                    </div>
-                    <div>
-                        <div class="subTituloItemLateral">Situação:</div>
-                        <textarea type="text" id="situacao" class="inputComentario scroll scrollInfo miniTelaMensagemItemLateral" placeholder="Situação" title="Adicionar situação da demanda">Aguardando aprovação</textarea>
-                    </div>
-                    <div>
-                        <div class="subTituloItemLateral">Descrição:</div>
-                        <textarea type="text" id="comentario" class="inputComentario scroll scrollInfo telaMensagemItemLateral" placeholder="Adicionar comentário" title="Adicionar comentário">Adicionar easter egg no site da empresa</textarea>
-                    </div>
-
-                    <span id="statusDemanda" class="cStatusItemLateral baixa"></span>
-                </div>
-
-                <div id="Analisar_resultados_da_consulta_de_dívida_ativa" class="rectangleDemanda">
-                    <div class="tituloContainerItemLateral">
-                        <div class="tituloItemLateral">Analisar resultados da consulta de dívida ativa</div>
-                        <div id="deletarDemanda" class="cmb botaoFechar botaoItemMenuLateral" title="Excluír demanda">⨉</div>
-                    </div>
-                    <button id="mudarStatus" class="cmb MenuBotao botaoItemMenuLateral cMudarStatus" title="Mudar status">Prioridade media</button>
-
-                    <div>
-                        <div class="subTituloItemLateral">Responsável:</div>
-                        <textarea type="text" id="responsavel" class="inputComentario scroll scrollInfo miniTelaMensagemItemLateral" placeholder="Responsável" title="Adicionar responsável da demanda">Magda</textarea>
-                    </div>
-                    <div>
-                        <div class="subTituloItemLateral">Situação:</div>
-                        <textarea type="text" id="situacao" class="inputComentario scroll scrollInfo miniTelaMensagemItemLateral" placeholder="Situação" title="Adicionar situação da demanda">Aguardando</textarea>
-                    </div>
-                    <div>
-                        <div class="subTituloItemLateral">Descrição:</div>
-                        <textarea type="text" id="comentario" class="inputComentario scroll scrollInfo telaMensagemItemLateral" placeholder="Adicionar comentário" title="Adicionar comentário"></textarea>
-                    </div>
-
-                    <span id="statusDemanda" class="cStatusItemLateral media"></span>
-                </div>
-
-                <div id="Arrumar_a_rotina_do_Diagnóstico_Fiscal" class="rectangleDemanda">
-                    <div class="tituloContainerItemLateral">
-                        <div class="tituloItemLateral">Arrumar a rotina do Diagnóstico Fiscal</div>
-                        <div id="deletarDemanda" class="cmb botaoFechar botaoItemMenuLateral" title="Excluír demanda">⨉</div>
-                    </div>
-                    <button id="mudarStatus" class="cmb MenuBotao botaoItemMenuLateral cMudarStatus" title="Mudar status">Prioridade alta</button>
-
-                    <div>
-                        <div class="subTituloItemLateral">Responsável:</div>
-                        <textarea type="text" id="responsavel" class="inputComentario scroll scrollInfo miniTelaMensagemItemLateral" placeholder="Responsável" title="Adicionar responsável da demanda">Claudio</textarea>
-                    </div>
-                    <div>
-                        <div class="subTituloItemLateral">Situação:</div>
-                        <textarea type="text" id="situacao" class="inputComentario scroll scrollInfo miniTelaMensagemItemLateral" placeholder="Situação" title="Adicionar situação da demanda">Em andamento</textarea>
-                    </div>
-                    <div>
-                        <div class="subTituloItemLateral">Descrição:</div>
-                        <textarea type="text" id="comentario" class="inputComentario scroll scrollInfo telaMensagemItemLateral" placeholder="Adicionar comentário" title="Adicionar comentário">Analisar o erro e arrumar</textarea>
-                    </div>
-
-                    <span id="statusDemanda" class="cStatusItemLateral alta"></span>
-                </div>
-
-                <div id="Atualizar_banco_de_dados" class="rectangleDemanda">
-                    <div class="tituloContainerItemLateral">
-                        <div class="tituloItemLateral">Atualizar banco de dados</div>
-                        <div id="deletarDemanda" class="cmb botaoFechar botaoItemMenuLateral" title="Excluír demanda">⨉</div>
-                    </div>
-                    <button id="mudarStatus" class="cmb MenuBotao botaoItemMenuLateral cMudarStatus" title="Mudar status">Prioridade alta</button>
-
-                    <div>
-                        <div class="subTituloItemLateral">Responsável:</div>
-                        <textarea type="text" id="responsavel" class="inputComentario scroll scrollInfo miniTelaMensagemItemLateral" placeholder="Responsável" title="Adicionar responsável da demanda">Andreia e Jacob</textarea>
-                    </div>
-                    <div>
-                        <div class="subTituloItemLateral">Situação:</div>
-                        <textarea type="text" id="situacao" class="inputComentario scroll scrollInfo miniTelaMensagemItemLateral" placeholder="Situação" title="Adicionar situação da demanda">Em desenvolvimento</textarea>
-                    </div>
-                    <div>
-                        <div class="subTituloItemLateral">Descrição:</div>
-                        <textarea type="text" id="comentario" class="inputComentario scroll scrollInfo telaMensagemItemLateral" placeholder="Adicionar comentário" title="Adicionar comentário">Atualizar as funções internas de amarrações do banco de dados</textarea>
-                    </div>
-
-                    <span id="statusDemanda" class="cStatusItemLateral alta"></span>
                 </div>
 
             </div>
@@ -1330,7 +1200,6 @@
     <script type="module" src="js/main.js"></script>
     <script type="module" src="js/menu.js"></script>
     <script type="module" src="js/maquinas.js"></script>
-    <script type="module" src="js/demandas.js"></script>
     <script type="module" src="js/painel.js"></script>
     <script type="module" src="js/cards.js"></script>
     <script type="module" src="js/historico.js"></script>

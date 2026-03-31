@@ -1,0 +1,236 @@
+/* Destaque pulsante no card encontrado */
+@keyframes bounce { 
+    0%, 100% {
+        border-color: white;
+    }
+    50% {
+        border-color: black;
+    }
+}
+
+.layoutKB {
+    width: calc(100% - 4px);
+    height: calc(100vh - 4px);
+    margin: 2px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 2px;
+}
+
+.pesquisaContainer {
+    display: flex;
+    flex-direction: column;
+}
+.searchResults {
+    position: fixed;
+    top: 42px;
+    padding: 10px;
+    width: 15%;
+    flex-direction: column;
+    gap: 10px;
+    display: flex;
+    opacity: 0;
+    overflow: hidden;
+    background: var(--cor-vidro-2);
+    transition: var(--transicao-link) ease-in-out;
+}
+.searchResultItem  {
+    max-height: 100%;
+    max-width: 100%;
+    margin: 0 7px
+}
+.searchResultMeta, .searchResultTitulo {
+    text-wrap: auto;
+}
+.naoEncontrado {
+    color: red;
+    font-weight: bold;
+}
+.cardDestacado { 
+    border: 5px solid rgba(255, 255, 255, 0);
+    border-radius: 10px;
+    animation: bounce 1s ease 5 !important;
+}
+
+.menuKB{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.cabecalhoNovaLista {
+    height: 47px;
+    align-items: center;
+    display: flex;
+}
+
+.telaListas, .telaFluxos, .telaTarefas {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    height: calc(100vh - 4px);
+    overflow: hidden;
+    border-radius: 6px;
+    transition: var(--transicao-link) ease-in-out;
+}
+.telaListas {
+    width: 85%;
+}
+.telaFluxos {
+    width: 15%;
+}
+.telaTarefas {
+    min-width: 300px;
+    max-width: 300px;
+}
+
+.telaGrupoListas, .telaGrupoFluxos {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 100%;
+    max-height: 100%;
+    gap: 2px;
+    overflow: hidden;
+    transition: var(--transicao-link) ease-in-out;
+}
+.telaGrupoFluxos {
+    flex-direction: column;  
+}
+.telaGrupoListas {
+    border-radius: 6px;
+    flex-direction: row;
+    min-height: 0;
+    width: calc(100vw - 245px);
+    overflow-x: auto;
+    flex-direction: row;
+    transition: var(--transicao-link) ease-in-out;
+}
+
+.fundoListaTarefas, .fundoListaFluxos {
+    border-radius: 6px;
+    overflow: hidden;
+}
+.fundoListaTarefas {
+    height: calc(100% - 98px);
+}
+.fundoListaFluxos {
+    height: calc(100% - 49px);
+}
+
+.fluxoItem {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cabecalhoFluxos, .cabecalhoTarefas {
+    border-radius: 6px;
+    display: flex;
+    height: 47px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.listaFluxos, .listaTarefas {
+    border-radius: 6px;
+    overflow-x: hidden;
+    width: calc(100% - 10px);
+    
+    height: calc(100% - 10px);
+}
+.listaTarefas {
+    margin: 5px;
+}
+.listaFluxos {
+    margin: 5px 2px;
+}
+
+.tituloFluxo {
+    border-radius: 6px;
+    padding: 16px;
+}
+
+.rectangleTarefa {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 3px 2px 2px 2px;
+    padding: 5px;
+    border-radius: 6px;
+    height: fit-content;
+    border: 0;
+    gap: 4px;
+    overflow: hidden;
+    border: var(--borda-card) solid var(--sombra-vidro-escura);
+    transition: var(--transicao-link) ease-in-out;
+}
+.rectangleTarefaCabecalho {
+    display: flex;
+    flex-direction: row;
+}
+.rectangleTarefa:hover {
+    cursor: pointer;
+    box-shadow: var(--direcao-sombra-1) var(--direcao-sombra-1) 9px var(--sombra-clara),
+        var(--direcao-sombra-2) var(--direcao-sombra-2) 9px var(--sombra-escura),
+        inset 0 0 1px var(--cor-borda-vidro),
+        inset 0 0 1px var(--cor-borda-vidro),
+        inset -1px -1px 2px var(--sombra-vidro-clara),
+        inset 1px 1px 2px var(--sombra-vidro-clara),
+        inset 1px -1px 2px var(--sombra-vidro-escura),
+        inset -1px 1px 2px var(--sombra-vidro-escura),
+        inset 0 0 200px var(--botao-hover);
+    border: var(--borda-card) solid var(--cor-borda-vidro);
+    scale: var(--escala-card);
+    transform: translateY(-3px);
+}
+
+.tituloTarefa, .prioridadeTarefa, .responsavelTarefa, .solicitanteDaTarefa, .prazoDaTarefa {
+    padding: 5px;
+    z-index: 99;
+}
+.prioridadeAlta {
+    --cor-lista: var(--cor-erro);
+}
+.prioridadeMedia {
+    --cor-lista: var(--cor-ocioso);
+}
+.prioridadeBaixa {
+    --cor-lista: var(--cor-executando);
+}
+.nivelPrioridade {
+    z-index: 1;
+    height: 1px;
+    width: 100%;
+    border-radius: 5px;
+    background-color: var(--cor-lista);
+    box-shadow: 0 -2em 30px var(--cor-lista), 
+                0 -1em 20px var(--cor-lista), 
+                0 -0.5em 15px var(--cor-lista), 
+                0 0 5px var(--cor-lista);
+    transition: var(--transicao-link) ease-in-out;
+}
+
+.fluxo-acoes {
+    display: flex;
+    flex-direction: row;
+    transition: var(--transicao-link) ease-in-out;
+}
+.btn-editar-fluxo, .btn-deletar-fluxo {
+    opacity: 0;
+    max-width: 0;
+    min-width: 0;
+    margin: 0;
+    border: 0;
+    transition: var(--transicao-link) ease-in-out;
+}
+.fluxoItem:hover .btn-editar-fluxo,
+.fluxoItem:hover .btn-deletar-fluxo {
+    opacity: 1;
+    max-width: 35px;
+    min-width: 0;
+}
+.btn-editar-lista:hover {
+    cursor: pointer;
+}

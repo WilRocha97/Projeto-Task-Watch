@@ -1,7 +1,6 @@
 import {animacaoBotao} from './menu.js';
 import {decoracao} from './temas.js';
 import {fecharTelaDeMaquinas} from './menu.js';
-import {fecharTelaDeDemandas} from './menu.js';
 import {fechaMenu} from './menu.js'
 
 var telaTitulo = document.querySelector("#telaTitulo");
@@ -93,7 +92,6 @@ function sortable(container) {
                 evt.item.classList.add('sortable-ghost');
                 fechaMenu()
                 fecharTelaDeMaquinas()
-                fecharTelaDeDemandas()
                 telaDica.classList.add('invisible2');
                 telaGaleria.classList.add('invisible2');
             }, delay);
@@ -213,7 +211,6 @@ document.addEventListener('click', (event) => {
         if (!target.classList.contains('cmb')) {
             fechaMenu()
             fecharTelaDeMaquinas()
-            fecharTelaDeDemandas()
             telaDica.classList.add('invisible2');
             telaGaleria.classList.add('invisible2');
             telaHistorico.classList.remove('historicoExpandida');
