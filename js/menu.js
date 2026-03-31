@@ -48,7 +48,10 @@ export function fechaMenu(botaoDoMenu=false) {
         telaMenu.forEach(miniMenu => {
             miniMenu.classList.add('invisible3');
         })
-        document.getElementById('menuCabecalho').classList.add('minimizado')
+        var menuCabecalhoMenu = document.getElementById('menuCabecalho')
+        if (menuCabecalhoMenu) {
+            menuCabecalhoMenu.classList.add('minimizado')
+        }
         cabecalho.classList.remove('cabecalhoExpandido');
         cabecalho.classList.remove('cabecalhoMegaExpandido');
         if (telaRotinas) {
@@ -56,18 +59,20 @@ export function fechaMenu(botaoDoMenu=false) {
         }
     
         // Adiciona a animação de saída
-        botaoMenu.classList.remove('anim-in-side-right');
-        botaoMenu.classList.add('anim-out-side-left');
-        // Espera a animação de saída terminar para trocar a imagem
-        botaoMenu.addEventListener('animationend', function handleOut() {
-            botaoMenu.removeEventListener('animationend', handleOut); // Remove o listener
-            botaoMenu.innerHTML = '☰';
-            menu.title = 'Abrir menu';
+        if (botaoMenu) {
+            botaoMenu.classList.remove('anim-in-side-right');
+            botaoMenu.classList.add('anim-out-side-left');
+            // Espera a animação de saída terminar para trocar a imagem
+            botaoMenu.addEventListener('animationend', function handleOut() {
+                botaoMenu.removeEventListener('animationend', handleOut); // Remove o listener
+                botaoMenu.innerHTML = '☰';
+                menu.title = 'Abrir menu';
 
-            // Adiciona a animação de entrada
-            botaoMenu.classList.remove('anim-out-side-left');
-            botaoMenu.classList.add('anim-in-side-left');
-        });
+                // Adiciona a animação de entrada
+                botaoMenu.classList.remove('anim-out-side-left');
+                botaoMenu.classList.add('anim-in-side-left');
+            });
+        }
     }
 }
 
@@ -82,7 +87,10 @@ export function abreFechaMenu() {
         telaMenu.forEach(miniMenu => {
             miniMenu.classList.remove('invisible3');
         })
-        document.getElementById('menuCabecalho').classList.remove('minimizado')
+        var menuCabecalhoMenu = document.getElementById('menuCabecalho')
+        if (menuCabecalhoMenu) {
+            menuCabecalhoMenu.classList.remove('minimizado')
+        }
         if (screenWidth < 1255) {
             cabecalho.classList.add('cabecalhoExpandido')
         }

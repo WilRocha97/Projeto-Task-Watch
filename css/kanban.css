@@ -8,6 +8,20 @@
     }
 }
 
+.opcoesContainer {
+    display: flex;
+    gap: 10px;
+}
+.opcaoContainer {
+    width: 25%;
+}
+
+#abreMenuFluxos {
+    opacity: 0;
+    position: fixed;
+    top: -200px;
+}
+
 .layoutKB {
     width: calc(100% - 4px);
     height: calc(100vh - 4px);
@@ -77,7 +91,7 @@
 .telaListas {
     width: 85%;
 }
-.telaFluxos {
+.telaFluxos, .telaFluxos.collapsed {
     width: 15%;
 }
 .telaTarefas {
@@ -101,7 +115,7 @@
     border-radius: 6px;
     flex-direction: row;
     min-height: 0;
-    width: calc(100vw - 245px);
+    width: 100%;
     overflow-x: auto;
     flex-direction: row;
     transition: var(--transicao-link) ease-in-out;
@@ -233,4 +247,58 @@
 }
 .btn-editar-lista:hover {
     cursor: pointer;
+}
+
+@media (max-width: 916px) {
+    .opcoesContainer {
+        flex-direction: column;
+    }
+    .opcaoContainer {
+        width: 100%;
+    }
+
+    .telaFluxos {
+        width: 500px;
+        position: fixed;
+        z-index: 2;
+        width: 80vw;
+    }
+    .telaFluxos.collapsed {
+        width: 0;
+    }
+    .telaListas {
+        width: 100%;
+    }
+
+    .cabecalhoTarefas.superior {
+        flex-wrap: wrap;
+        height: 100px;
+        z-index: 1;
+    }
+    #abreMenuFluxos {
+        opacity: 1;
+        position: relative;
+        top: 0;
+    }
+    .pesquisaContainer{
+        width: 100%;
+    }
+    .menuKB {
+        width: 100%;
+    }
+    .searchResults {
+        left: 1px;
+        right: 1px;
+        width: 90vw;
+        justify-self: center;
+        top: 100px;
+    }
+
+    .fundoListaTarefas {
+        height: calc(100% - 151px);
+    }
+
+    .modalCalendarContent {
+        width: 90vw !important;
+    }
 }

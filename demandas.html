@@ -83,9 +83,8 @@
                 <input type="text" id="kb-titulo" class="cmb mInputName" placeholder="Título" title="Título">
             </div>
 
-            <div style="display: flex; gap: 10px;">
-
-                <div style="width: 25%;">
+            <div class="opcoesContainer">
+                <div class="opcaoContainer" style="z-index: 2;">
                     <div title="Tipo da rotina" class="subTituloItemLateral" style="margin: 10px 10px 0;">Prioridade</div>
                     <div class="fundo drop" id="kb-prioridade" title="Tipo da rotina">
                         <div class="menuDrop">
@@ -109,7 +108,7 @@
                     </div>
                 </div>
 
-                <div style="width: 25%;">
+                <div class="opcaoContainer" style="z-index: 1;">
                     <div title="Responsável da tarefa" class="subTituloItemLateral" style="margin: 10px 10px 0;">Responsável</div>
                     <div class="fundo drop" id="kb-responsavel" title="Responsável da tarefa">
                         <div class="menuDrop">
@@ -125,14 +124,14 @@
                     </div>
                 </div>
                 
-                <div style="width: 25%;">
+                <div class="opcaoContainer">
                     <div class="subTituloItemLateral" style="margin: 10px 10px 0;">Solicitante</div>
                     <div class="cmb fundoInvertido barraPesquisa">
                         <input type="text" id="kb-solicitante" class="cmb mInputName" placeholder="Solicitante" title="Solicitante">
                     </div>
                 </div>
 
-                <div style="width: 25%;">
+                <div class="opcaoContainer">
                     <div class="subTituloItemLateral" style="margin: 10px 10px 0;">Data final<br></h3></div>
                     <div class="cmb fundoInvertido barraPesquisa">
                         <input id="kb-data-prazo" class="cmb mInputName" type="date" title="Data final">
@@ -151,7 +150,7 @@
     </div>
 
     <div class="layoutKB">
-        <div class="telaFluxos">
+        <div id="menuLateralFluxos" class="telaFluxos">
             <div class="telaGrupoFluxos">
                 <div class="fundo cabecalhoFluxos">
                     <h1 class="tituloFluxo">Demandas</h1>
@@ -171,7 +170,9 @@
         </div>
 
         <div class="telaListas">
-            <div class="fundo cabecalhoTarefas">
+            <div class="fundo cabecalhoTarefas superior">
+                <button id="abreMenuFluxos" class="cmb MenuBotao" title="Abre ou fecha o menu lateral de fluxos">☰</button>
+
                 <h1 id="fluxoSelecionado" class="tituloFluxo"></h1>
                 <div class="menuKB">
                     <div class="pesquisaContainer">

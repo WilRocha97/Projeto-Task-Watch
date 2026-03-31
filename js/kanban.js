@@ -2,7 +2,9 @@ import {Dropdown} from './drop.js'
 
 const limpaCInputTarefa = document.getElementById('limpaCInputTarefa');
 var cInputTarefa = document.getElementById('searchInputTarefa');
-
+var menuFluxos = document.getElementById('abreMenuFluxos');
+var barraFluxos = document.getElementById('menuLateralFluxos');
+var botoes = document.querySelectorAll('button');
 
 /**
  * kanban.js
@@ -70,7 +72,7 @@ function popularDadosExemplo() {
             id: "tarefa-2", lista_id: "lista-1", ordem: 1,
             titulo: "Revisar documentação da API",
             descricao: "Leitura dos endpoints disponíveis e contratos de resposta.",
-            prioridade: "Media", responsavel: "Desenvolvimento", solicitante: "PO",
+            prioridade: "Média", responsavel: "Desenvolvimento", solicitante: "PO",
             data_prazo: daqui(5),
         },
         {
@@ -93,7 +95,7 @@ function popularDadosExemplo() {
             id: "tarefa-5", lista_id: "lista-2", ordem: 1,
             titulo: "Integrar drag & drop nas colunas",
             descricao: "Permitir mover tarefas entre listas com reordenação visual.",
-            prioridade: "Media", responsavel: "Desenvolvimento", solicitante: "Design",
+            prioridade: "Média", responsavel: "Desenvolvimento", solicitante: "Design",
             data_prazo: daqui(4),
         },
 
@@ -125,7 +127,7 @@ function popularDadosExemplo() {
             id: "tarefa-9", lista_id: "lista-4", ordem: 1,
             titulo: "Produzir posts para redes sociais",
             descricao: "Pacote com 10 artes para Instagram e LinkedIn.",
-            prioridade: "Media", responsavel: "Marketing", solicitante: "Fernanda Rocha",
+            prioridade: "Média", responsavel: "Marketing", solicitante: "Fernanda Rocha",
             data_prazo: daqui(6),
         },
 
@@ -134,7 +136,7 @@ function popularDadosExemplo() {
             id: "tarefa-10", lista_id: "lista-5", ordem: 0,
             titulo: "Redigir e-mail marketing de boas-vindas",
             descricao: "Sequência de 3 e-mails para novos cadastros.",
-            prioridade: "Media", responsavel: "Marketing", solicitante: "PO",
+            prioridade: "Média", responsavel: "Marketing", solicitante: "PO",
             data_prazo: daqui(3),
         },
     ];
@@ -464,8 +466,36 @@ function renderizarSidebar() {
         btn.addEventListener("click", (e) => {
             if (e.target.closest(".fluxo-acoes")) return;
             selecionarFluxo(f.id, true);
+            if (isTouchDevice()) {
+                barraFluxos.classList.add('collapsed');
+            }
         });
         lista.appendChild(btn);
+    });
+
+    var botoes = document.querySelectorAll('button');
+    if (isTouchDevice()) {
+        barraFluxos.classList.add('collapsed');
+
+        botoes.forEach((botao)=> {
+            botao.classList.add('nh')
+        });
+    }
+}
+
+function isTouchDevice() {
+    return ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+}
+
+menuFluxos.addEventListener('click', ()=> {
+    barraFluxos.classList.toggle('collapsed');
+})
+
+if (isTouchDevice()) {
+    barraFluxos.classList.add('collapsed');
+
+    botoes.forEach((botao)=> {
+        botao.classList.add('nh')
     });
 }
 
