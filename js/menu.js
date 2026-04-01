@@ -3,6 +3,8 @@ const cabecalho = document.getElementById('cabecalho');
 const fundoCabecalho = document.querySelector('.fundoCabecalhoH');
 const telaRotinas = document.getElementById('telaRotinas');
 const telaMaquinas = document.getElementById('telaMaquinas');
+const botaoFixarTelaMaquinas = document.getElementById('fixarTelaMaquinas');
+const botaoFixarTelaMaquinasTexto = botaoFixarTelaMaquinas.querySelector('.MenuBotaoActive');
 const dica = document.getElementById('dica');
 const telaDica = document.getElementById('telaDica');
 const fecharAjuda = document.getElementById('fecharAjuda');
@@ -12,28 +14,32 @@ const fecharGaleria = document.getElementById('fecharGaleria');
 
 
 export function fecharTelaDeMaquinas() {
-    const botaoOrdenarTelaMaquinas = document.getElementById("ordenarMaquinas");
-    const botaoOrdenarTelaMaquinasTexto = botaoOrdenarTelaMaquinas.querySelector('.MenuBotaoActive');
-    const addMaquina = document.getElementById('addMaquina');
-    const addMaquinaTexto = addMaquina.querySelector('.MenuBotaoActive');
-    const pesquisaMaquina = document.getElementById('inputPesquisaMaquina');
-    const barraAddMaquina = document.getElementById('barraAddMaquina');
-    const barraPesquisaMaquina = document.getElementById('barraPesquisaMaquina');
-    var maquinas = document.getElementById('maquinas');
+    if (telaMaquinas) {
+        if (!botaoFixarTelaMaquinasTexto.classList.contains('active')) {
+            const botaoOrdenarTelaMaquinas = document.getElementById("ordenarMaquinas");
+            const botaoOrdenarTelaMaquinasTexto = botaoOrdenarTelaMaquinas.querySelector('.MenuBotaoActive');
+            const addMaquina = document.getElementById('addMaquina');
+            const addMaquinaTexto = addMaquina.querySelector('.MenuBotaoActive');
+            const pesquisaMaquina = document.getElementById('inputPesquisaMaquina');
+            const barraAddMaquina = document.getElementById('barraAddMaquina');
+            const barraPesquisaMaquina = document.getElementById('barraPesquisaMaquina');
+            var maquinas = document.getElementById('maquinas');
 
-    if (maquinas) {
-        maquinas.classList.remove('aberto');
-    }
-    if (!document.querySelector('body').classList.contains('mfMaquinas')) {
-        if (!barraAddMaquina.classList.contains('invisible5')) {
-            barraAddMaquina.classList.add('invisible5');
-            barraPesquisaMaquina.classList.remove('invisible5');
-            addMaquinaTexto.classList.toggle('addMaquinaAtivada');
+            if (maquinas) {
+                maquinas.classList.remove('aberto');
+            }
+            if (!document.querySelector('body').classList.contains('mfMaquinas')) {
+                if (!barraAddMaquina.classList.contains('invisible5')) {
+                    barraAddMaquina.classList.add('invisible5');
+                    barraPesquisaMaquina.classList.remove('invisible5');
+                    addMaquinaTexto.classList.toggle('addMaquinaAtivada');
+                }
+                pesquisaMaquina.value = ''
+                telaMaquinas.classList.add('invisible5');
+                cabecalho.classList.remove('cabecalhoMegaExpandido');
+                botaoOrdenarTelaMaquinasTexto.classList.remove('addMaquinaAtivada')
+            }
         }
-        pesquisaMaquina.value = ''
-        telaMaquinas.classList.add('invisible5');
-        cabecalho.classList.remove('cabecalhoMegaExpandido');
-        botaoOrdenarTelaMaquinasTexto.classList.remove('addMaquinaAtivada')
     }
 }
 
