@@ -145,7 +145,15 @@ export function procurarCard(event, cardPesquisado='') {
             // aplica estilo de destaque aos cards
             if (resultado.length > 0) {
                 resultado.forEach(card => {
-                card.classList.add('buscaCard');
+                    card.classList.add('buscaCard');
+                    
+                    setTimeout(()=> {
+                        card.scrollIntoView({ behavior: 'smooth',
+                                                block: 'end',    // 'start' | 'center' | 'end' | 'nearest'
+                                                inline: 'nearest'
+                                            });
+                        setTimeout(() => card.classList.remove('buscaCard'), 10000);
+                    }, 300);
                 });
             } else {
                 cInputCard.classList.add('naoEncontrado');
