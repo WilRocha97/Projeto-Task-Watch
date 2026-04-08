@@ -14,7 +14,7 @@
                 color 1s ease-in-out;
 }
 .cabecalhoExpandido {
-    max-height: 350px;
+    max-height: 350px !important;
 }
 .cabecalhoMegaExpandido {
     max-height: 8000px;
@@ -38,11 +38,8 @@
     z-index: 1; 
 }
 .fundoCabecalhoH {
-    position: fixed;
     max-width: 100vw;
     max-height: 100vh;
-    min-width: 100vw;
-    min-height: 100vh; 
 }
 
 /* =============================================================================
@@ -496,7 +493,6 @@
     }
 
     .menu {
-        flex-wrap: wrap;
         padding: 8px
     }
     .rotinas {
@@ -515,6 +511,7 @@
     .cabecalho {
         bottom: 0;
         width: 100%;
+        max-height: 176px;
         box-shadow: inset 0 -30px 30px var(--cor-vidro);
         border-radius: 0;
         --tamanho-texto-2: 1rem;
@@ -610,9 +607,6 @@
 
     :root {
         --borda-botao: 30px;
-    }
-    .menuTelaBotoes {
-        flex-wrap: nowrap;
     }
     .barraPesquisa {
         height: 47px;

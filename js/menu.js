@@ -1,6 +1,5 @@
 const menu = document.getElementById('menu');
 const cabecalho = document.getElementById('cabecalho');
-const fundoCabecalho = document.querySelector('.fundoCabecalhoH');
 const telaRotinas = document.getElementById('telaRotinas');
 const telaMaquinas = document.getElementById('telaMaquinas');
 const botaoFixarTelaMaquinas = document.getElementById('fixarTelaMaquinas');
@@ -151,7 +150,6 @@ if (menu) {
         }
         if (!telaDica.classList.contains('invisible2')) {
             telaDica.classList.add('invisible2');
-            fundoCabecalho.classList.add('invisible2');
             cabecalho.classList.remove('cabecalhoMegaExpandido')
             if (telaRotinas) {
                 telaRotinas.classList.add('rotinasExpandida');        
@@ -160,7 +158,6 @@ if (menu) {
         if (telaGaleria) {
             if (!telaGaleria.classList.contains('invisible2')) {
                 telaGaleria.classList.add('invisible2');
-                fundoCabecalho.classList.add('invisible2');
                 cabecalho.classList.remove('cabecalhoMegaExpandido')
                 telaRotinas.classList.add('rotinasExpandida');
             }
@@ -186,18 +183,15 @@ if (telaDica) {
 
         if (telaDica.classList.contains('invisible2')) {
             telaDica.classList.remove('invisible2');
-            fundoCabecalho.classList.remove('invisible2');
             cabecalho.classList.add('cabecalhoMegaExpandido')
         }
         else {
             telaDica.classList.add('invisible2');
-            fundoCabecalho.classList.add('invisible2');
             cabecalho.classList.remove('cabecalhoMegaExpandido')
         }
     });
     fecharAjuda.addEventListener('click', ()=> {
         telaDica.classList.add('invisible2');
-        fundoCabecalho.classList.add('invisible2');
         cabecalho.classList.remove('cabecalhoMegaExpandido')
     })
 }
@@ -220,18 +214,15 @@ if (telaGaleria) {
 
         if (telaGaleria.classList.contains('invisible2')) {
             telaGaleria.classList.remove('invisible2');
-            fundoCabecalho.classList.remove('invisible2');
             cabecalho.classList.add('cabecalhoMegaExpandido')
         }
         else {
             telaGaleria.classList.add('invisible2');
-            fundoCabecalho.classList.add('invisible2');
             cabecalho.classList.remove('cabecalhoMegaExpandido')
         }
     });
     fecharGaleria.addEventListener('click', ()=> {
         telaGaleria.classList.add('invisible2');
-        fundoCabecalho.classList.add('invisible2');
         cabecalho.classList.remove('cabecalhoMegaExpandido')
     })
 }

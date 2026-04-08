@@ -26,15 +26,18 @@
 </head>
 <body class="dark scroll"> 
     <header id="cabecalho" class="cabecalho">
-        <div class="fundoCabecalhoH invisible2"></div>
+        <div class="fundoCabecalhoH"></div>
         <div class="divisaoCabecalho">
             <div id="menuCabecalho" class="menu minimizado">
                 <div class="containerMenus">
                     <div class="fundo menuTelaBotoes">
+                        <div class="cmb fundoInvertido barraPesquisa">
+                            <input type="text" id="searchInputCard" class="cmb cInputPesquisa" placeholder="Buscar cartão" title="Buscar cartão por nome da rotina">
+                            <div id="limpaCInputCard" class="cmb botaoFechar botaoItemMenuLateral limparBarra" title="Limpar busca">⨉</div>
+                        </div>
+
                         <a id="demandas" class="cmb MenuBotao MenuBotaoTexto" title="Lista de demandas" href="demandas.html" target="_blank">Demandas</a>
-                    </div>
-                        
-                    <div class="fundo menuTelaBotoes">
+
                         <button id="maquinas" class="cmb MenuBotao MenuBotaoTexto" title="Lista de dispositivos">Dispositivos</button>
 
                         <button id="historico" class="MenuBotao MenuBotaoTexto notifica miniBotao" title="Histórico de ocorrências das rotinas">
@@ -75,12 +78,6 @@
                     <button id="explodir" class="cmb MenuBotao" title="Maximizar todos as telas internas dos cartões">▼</button>
                 </div>
 
-                <div class="cmb fundo menuTelaBotoes menuInvisivel invisible3">
-                    <div class="cmb fundoInvertido barraPesquisa">
-                        <input type="text" id="searchInputCard" class="cmb cInputPesquisa" placeholder="Buscar cartão" title="Buscar cartão por nome da rotina">
-                        <div id="limpaCInputCard" class="cmb botaoFechar botaoItemMenuLateral limparBarra" title="Limpar busca">⨉</div>
-                    </div>
-                </div>
             </div>
         </div>
         
