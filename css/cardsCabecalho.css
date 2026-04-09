@@ -123,7 +123,7 @@
 .rectangle.collapsed .botaoFixado {
     z-index: 9000;
     opacity: 1 !important;
-    width: 1px;
+    width: 1px !important;
     height: 1px;
     margin: 0;
     padding: 0;
