@@ -84,7 +84,7 @@
 .rectangle.nh .botaoFechar, 
 .rectangle.nh .botaoFixar,
 .rectangle.nh .botaoFixado{
-    width: 14px;
+    width: 14px !important;
     opacity: 1;
 }
 .rectangle:hover .dispositivo,

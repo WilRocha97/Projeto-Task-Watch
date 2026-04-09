@@ -32,7 +32,8 @@
                 <div class="containerMenus">
                     <div class="fundo menuTelaBotoes">
                         <div class="cmb fundoInvertido barraPesquisa">
-                            <input type="text" id="searchInputCard" class="cmb cInputPesquisa" placeholder="Buscar cartão" title="Buscar cartão por nome da rotina">
+                            <input type="text" id="searchInputCard" class="cmb cInputPesquisa" placeholder="Buscar cartão" title="Buscar cartão por nome da rotina" 
+                                oninput="this.size = Math.min(Math.max(this.value.length, 12), 50)" size="12">
                             <div id="limpaCInputCard" class="cmb botaoFechar botaoItemMenuLateral limparBarra" title="Limpar busca">⨉</div>
                         </div>
 

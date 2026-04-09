@@ -123,6 +123,7 @@
 }
 .status.nh {
     scale: 1;
+    transform: translateY(0);
 }
 .status.collapsed {
     animation: none;
