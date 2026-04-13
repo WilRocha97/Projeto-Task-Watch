@@ -280,6 +280,7 @@ document.addEventListener("DOMContentLoaded", () => {
             adicionarListenersMaquinas();
             salvarEstadoMaquinas();
             telaMaquinas.classList.remove('invisible5');
+            maquinas.classList.add('aberto');
         }
         else {
             fecharTelaDeMaquinas()

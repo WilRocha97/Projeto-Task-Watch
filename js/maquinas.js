@@ -400,3 +400,44 @@ novaMaquina.addEventListener('blur', (event) => {
     menuLateral.classList.remove('menuLateralSuperExpandido');
     document.querySelector('.telaMaquinasContainerFundo').classList.remove('invisibleMobile');
 });
+
+setInterval(()=> {
+    if (!document.querySelector('.telaLateral').classList.contains('invisible5')) {
+        var quantidadeLivre = document.querySelectorAll('.livre').length
+        var quantidadeOcupado = document.querySelectorAll('.ocupado').length
+        var quantidadeDesativado = document.querySelectorAll('.desativado').length
+
+        var quantidadeLivreTexto = ''
+        var quantidadeOcupadoTexto = ''
+        var quantidadeDesativadoTexto = ''
+
+        document.getElementById('monitorLivres').innerHTML = quantidadeLivre
+        document.getElementById('monitorEmUso').innerHTML = quantidadeOcupado
+        document.getElementById('monitorDesativados').innerHTML = quantidadeDesativado
+
+        if (quantidadeLivre == 1) {
+            quantidadeLivreTexto = 'Livre'
+        }
+        else {
+            quantidadeLivreTexto = 'Livres'
+        }
+
+        if (quantidadeOcupado == 1) {
+            quantidadeOcupadoTexto = 'Ocupado'
+        }
+        else {
+            quantidadeOcupadoTexto = 'Ocupados'
+        }
+
+        if (quantidadeDesativado == 1) {
+            quantidadeDesativadoTexto = 'Desativado'
+        }
+        else {
+            quantidadeDesativadoTexto = 'Desativados'
+        }
+
+        document.getElementById('monitorLivresTexto').innerHTML = quantidadeLivreTexto
+        document.getElementById('monitorEmUsoTexto').innerHTML = quantidadeOcupadoTexto
+        document.getElementById('monitorDesativadosTexto').innerHTML = quantidadeDesativadoTexto
+    }
+}, 2000);
