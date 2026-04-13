@@ -23,24 +23,28 @@
     flex-wrap: nowrap;
     font-size: 11.5px;
     gap: 2px;
+    height: 100%;
     justify-content: center;
+    align-items: center;
     border-radius: 10px;
-    padding: 0 4px;
+    padding: 0 0 0 10px;
 }
 .smLivres, .smEmUso, .smDesativados {
     position: relative;
 }
 .smLivres::before, .smEmUso::before, .smDesativados::before {
-    width: 100%;
-    height: 1px;
+    width: 2px;
+    border-radius: 20px;
+    height: 20%;
     content: "";
     position: absolute;
-    bottom: 1px;
+    left: 6px;
     background: var(--cor-fundo);
-    box-shadow: 0 -0.5px 11px var(--cor-fundo), 
-                0 -0.3px 7px var(--cor-fundo), 
-                0 -0.1px 3px var(--cor-fundo), 
-                0 0 1px var(--cor-fundo);
+    box-shadow: 4em 0 25px var(--cor-fundo), 
+                3em 0 20px var(--cor-fundo), 
+                2em 0 15px var(--cor-fundo), 
+                1px 0 10px var(--cor-fundo), 
+                0 0 5px var(--cor-fundo);
     z-index: -1;
 }
 .smLivres::before {
@@ -70,14 +74,14 @@
 }
 
 .cabecalhoMenuLateral {
-    justify-content: space-between;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     overflow: hidden;
     font-size: 1rem;
-    padding: 16px;
-    height: 15px;
+    padding: 0 16px;
+    align-items: center;
+    height: 45px;
 }
 .telaMaquinasContainerFundo {
     position: fixed;
