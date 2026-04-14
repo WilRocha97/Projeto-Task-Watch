@@ -431,16 +431,10 @@ button {
 }
 
 .mfMaquinas {
-    margin-left: 20%;
-}
-.mfDemandas {
-    margin-right: 20%;
+    margin-left: 22vw;
 }
 .mini {
-    width: 80% !important;
-}
-.extraMini {
-    width: 60% !important;
+    width: 78vw !important;
 }
 
 .layout {
@@ -652,13 +646,9 @@ button {
 
 .rectangleMaquina:hover .botaoFechar,
 .rectangleMaquina:hover .botaoFixar,
-.rectangleDemanda:hover .botaoFechar,
-.rectangleDemanda:hover .botaoFixar,
 .barraPesquisa:hover .botaoFechar, 
 .rectangleMaquina.nh .botaoFechar,
 .rectangleMaquina.nh .botaoFixar,
-.rectangleDemanda.nh .botaoFechar,
-.rectangleDemanda.nh .botaoFixar,
 .barraPesquisa.nh .botaoFechar  {
     width: 14px;
     padding: 4px 5px 5px 5px;
@@ -905,13 +895,7 @@ button.clicked::after,
     .mfMaquinas {
         margin-left: 10%;
     }
-    .mfDemandas {
-        margin-right: 10%;
-    }
     .mini {
         width: 90% !important;
-    }
-    .extraMini {
-        width: 80% !important;
     }
 }
