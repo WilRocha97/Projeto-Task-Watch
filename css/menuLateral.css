@@ -14,13 +14,14 @@
 }
 #telaMaquinas {
     left: 0;
-    width: 20vw;
+    width: 22vw;
 }
 
 .subMenuDispositivos {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    overflow: hidden;
     font-size: 11.5px;
     gap: 2px;
     height: 100%;
@@ -35,7 +36,7 @@
 .smLivres::before, .smEmUso::before, .smDesativados::before {
     width: 2px;
     border-radius: 20px;
-    height: 20%;
+    height: 5%;
     content: "";
     position: absolute;
     left: 6px;
@@ -73,16 +74,20 @@
     color: var(--cor-texto) !important;
 }
 
-.cabecalhoMenuLateral {
+.cabecalhoMenuLateral, .cabecalhoMenuLateralItens {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     overflow: hidden;
     font-size: 1rem;
-    padding: 0 16px;
     align-items: center;
     height: 45px;
 }
+.cabecalhoMenuLateral {
+    justify-content: space-between;
+    padding: 0 16px;
+}
+
 .telaMaquinasContainerFundo {
     position: fixed;
     opacity: 1;
