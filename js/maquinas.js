@@ -26,67 +26,74 @@ function esperar(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+// ─── Tags ────────────────────────────────────────────────────────────────────
+
+function renderizarTags(tagLista, tags) {
+    tagLista.innerHTML = '';
+    tags.forEach(tag => {
+        const span = document.createElement('span');
+        span.className = 'tagItem fundo';
+        span.innerHTML = `${tag}<button class="removeTag BotaoFechar" data-tag="${tag}" title="Remover tag">×</button>`;
+        tagLista.appendChild(span);
+    });
+}
+
+function lerTagsDaMaquina(maquina) {
+    return Array.from(maquina.querySelectorAll('.tagItem'))
+        .map(t => t.childNodes[0].textContent.trim())
+        .filter(Boolean);
+}
+
+// ─── Exibição ─────────────────────────────────────────────────────────────────
+
 async function exibeMaquinas() {
-    canClickLimpaBusca = false
+    canClickLimpaBusca = false;
 
     const maquinasNaLista = document.querySelectorAll('.rectangleMaquina');
     for (const maquinaNaLista of maquinasNaLista) {
         maquinaNaLista.classList.remove('invisible7');
         await esperar(20);
     }
-    
-    canClickLimpaBusca = true
+
+    canClickLimpaBusca = true;
 }
 
 async function exibeMaquinaPesquisada(pesquisa, nomeDaMaquina) {
-    var nomeNovaMaquina = ''
-    if (nomeDaMaquina != '') {
-        nomeNovaMaquina = nomeDaMaquina
-    }
-    else {
-        nomeNovaMaquina = pesquisaMaquina.value;
-    } 
+    const nomeNovaMaquina = nomeDaMaquina !== '' ? nomeDaMaquina : pesquisaMaquina.value;
     const maquinasNaLista = document.querySelectorAll('.rectangleMaquina');
 
-    // Verificar se o id contém a frase pesquisada
-    var resultado = false;
-
-    // Converte para array e inverte
+    let resultado = false;
     const maquinasInvertidas = Array.from(maquinasNaLista).reverse();
+
     for (const maquinaNaLista of maquinasInvertidas) {
         if (!maquinaNaLista.id.includes(nomeNovaMaquina)) {
-            maquinaNaLista.classList.add('invisible7')
-        }
-        else {
-            maquinaNaLista.classList.remove('invisible7')
-            resultado = true
+            maquinaNaLista.classList.add('invisible7');
+        } else {
+            maquinaNaLista.classList.remove('invisible7');
+            resultado = true;
         }
         await esperar(20);
-    };
-    // aplica estilo de destaque aos cards
-    if (!resultado) {
-        if (pesquisa) {
-            pesquisaMaquina.classList.add('naoEncontrado');
-        }
+    }
+
+    if (!resultado && pesquisa) {
+        pesquisaMaquina.classList.add('naoEncontrado');
     }
 }
 
-function adicionarMaquinaNoInicio(idMaquina) {
-    // Pega o container
+// ─── Criação ──────────────────────────────────────────────────────────────────
+
+function adicionarMaquinaNoInicio(idMaquina, tags = []) {
     const container = document.querySelector("#listaMaquinas");
     if (!container) return;
 
-    // Verificar se o id contém a frase pesquisada
     const maquinasNaLista = document.querySelectorAll('.rectangleMaquina');
     for (const maquinaNaLista of maquinasNaLista) {
-        // console.log(card.id.includes)
         if (maquinaNaLista.id === idMaquina) {
-            exibeMaquinaPesquisada(false, idMaquina)
+            exibeMaquinaPesquisada(false, idMaquina);
             return;
         }
-    };
+    }
 
-    // Cria a nova div
     const novaDiv = document.createElement("div");
     novaDiv.id = idMaquina;
     novaDiv.className = "rectangleMaquina invisible7";
@@ -99,42 +106,61 @@ function adicionarMaquinaNoInicio(idMaquina) {
                 <div id="deletarMaquina" class="cmb botaoFechar botaoItemMenuLateral" title="Deletar dispositivo">⨉</div>
             </div>
         </div>
+
+        <div class="tagsContainer">
+            <div class="tagLista"></div>
+            <div class="tagInputWrapper">
+                <input
+                    type="text"
+                    class="inputTag"
+                    placeholder="Adicionar tag"
+                    maxlength="30"
+                />
+            </div>
+        </div>
+
         <textarea type="text" class="inputComentario scroll scrollInfo mediaTelaMensagemItemLateral"
-            placeholder="Adicionar comentário" 
+            placeholder="Adicionar comentário"
             title="Adicionar comentário"></textarea>
         <span id="statusMaquina" class="cStatusItemLateral livre"></span>
     `;
 
-    // Insere no índice 0 (antes do primeiro filho)
     container.insertBefore(novaDiv, container.firstChild);
     document.getElementById(idMaquina).scrollIntoView({ behavior: "smooth", block: "start" });
 
-    novaMaquina.value= '';
-    setTimeout(()=> {
-        var rectangleMaquinaInicio = document.getElementById(idMaquina)
-        if (rectangleMaquinaInicio) {
-            rectangleMaquinaInicio.classList.remove('invisible7')
-            if (isTouchDevice()) {
-                document.getElementById(idMaquina).classList.add('nh')
-            }
+    // Renderiza tags iniciais (caso restauradas do storage)
+    renderizarTags(novaDiv.querySelector('.tagLista'), tags);
+
+    novaMaquina.value = '';
+    setTimeout(() => {
+        const el = document.getElementById(idMaquina);
+        if (el) {
+            el.classList.remove('invisible7');
+            if (isTouchDevice()) el.classList.add('nh');
         }
+        adicionarListenersMaquinas(idMaquina);
     }, 100);
 }
 
+// ─── Storage ──────────────────────────────────────────────────────────────────
+
 export function salvarEstadoMaquinas() {
     const estado = {};
+
     document.querySelectorAll(".rectangleMaquina").forEach(maquina => {
         const id = maquina.id;
-        const statusEl = maquina.querySelector("#statusMaquina");
-        const textarea = maquina.querySelector("textarea");
+        const statusEl   = maquina.querySelector("#statusMaquina");
+        const textarea   = maquina.querySelector("textarea");
         const botaoStatus = maquina.querySelector("#mudarStatus");
 
         estado[id] = {
-            statusClasse: statusEl ? statusEl.classList[1] || "" : "",
-            comentario: textarea ? textarea.value : "",
-            botaoTexto: botaoStatus ? botaoStatus.textContent : ""
+            statusClasse: statusEl    ? statusEl.classList[1] || ""    : "",
+            comentario:   textarea    ? textarea.value                 : "",
+            botaoTexto:   botaoStatus ? botaoStatus.textContent        : "",
+            tags:         lerTagsDaMaquina(maquina)                     // ← novo
         };
     });
+
     localStorage.setItem(STORAGE_KEY, JSON.stringify(estado));
 }
 
@@ -145,26 +171,22 @@ export function restaurarEstadoMaquinas() {
     for (const id in dados) {
         const maquina = document.getElementById(id);
         if (!maquina) {
-            // Se o elemento não existe mais, remove do storage
             delete dados[id];
             alterado = true;
             continue;
         }
 
-        const { statusClasse, comentario, botaoTexto } = dados[id];
-        const statusEl = maquina.querySelector("#statusMaquina");
-        const textarea = maquina.querySelector("textarea");
-        const botaoStatus = maquina.querySelector("#mudarStatus");
+        const { statusClasse, comentario, botaoTexto, tags = [] } = dados[id];
 
-        if (statusEl && statusClasse) {
-            statusEl.className = `cStatusItemLateral ${statusClasse}`;
-        }
-        if (textarea) {
-            textarea.value = comentario;
-        }
-        if (botaoStatus) {
-            botaoStatus.textContent = botaoTexto;
-        }
+        const statusEl    = maquina.querySelector("#statusMaquina");
+        const textarea    = maquina.querySelector("textarea");
+        const botaoStatus = maquina.querySelector("#mudarStatus");
+        const tagLista    = maquina.querySelector(".tagLista");
+
+        if (statusEl && statusClasse)  statusEl.className = `cStatusItemLateral ${statusClasse}`;
+        if (textarea)                  textarea.value = comentario;
+        if (botaoStatus)               botaoStatus.textContent = botaoTexto;
+        if (tagLista)                  renderizarTags(tagLista, tags);   // ← novo
     }
 
     if (alterado) {
@@ -172,272 +194,256 @@ export function restaurarEstadoMaquinas() {
     }
 }
 
-export function adicionarListenersMaquinas() {
-    document.querySelectorAll(".rectangleMaquina").forEach(maquina => {
-        const textarea = maquina.querySelector("textarea");
-        const botaoStatus = maquina.querySelector("#mudarStatus");
-        const statusEl = maquina.querySelector("#statusMaquina");
+// ─── Listeners ────────────────────────────────────────────────────────────────
 
+export function adicionarListenersMaquinas(idAlvo = '') {
+    const seletor = idAlvo ? `#${idAlvo}` : '.rectangleMaquina';
+
+    document.querySelectorAll(seletor).forEach(maquina => {
+        const textarea    = maquina.querySelector("textarea");
+        const botaoStatus = maquina.querySelector("#mudarStatus");
+        const statusEl    = maquina.querySelector("#statusMaquina");
+        const tagLista    = maquina.querySelector('.tagLista');
+        const inputTag    = maquina.querySelector('.inputTag');
+        const btnAdd      = maquina.querySelector('.btnAdicionarTag');
+
+        // Listeners existentes
         if (textarea) {
-            textarea.addEventListener("blur", () => {
-                salvarEstadoMaquinas(maquina.id)
-            });
-            textarea.addEventListener("input", () => {
-                salvarEstadoMaquinas(maquina.id)
-            });
+            textarea.addEventListener("blur",  () => salvarEstadoMaquinas());
+            textarea.addEventListener("input", () => salvarEstadoMaquinas());
         }
         if (botaoStatus) {
-            botaoStatus.addEventListener("click", () => {
-                salvarEstadoMaquinas(maquina.id)
-            });
+            botaoStatus.addEventListener("click", () => salvarEstadoMaquinas());
         }
-
         if (statusEl) {
             const observer = new MutationObserver(salvarEstadoMaquinas);
             observer.observe(statusEl, { attributes: true, attributeFilter: ["class"] });
         }
+
+        // ── Listeners de tags ──────────────────────────────────────────────
+
+        function adicionarTag() {
+            const valor = inputTag.value.trim();
+            if (!valor) return;
+
+            // Bloqueia duplicata
+            const jaExiste = lerTagsDaMaquina(maquina).includes(valor);
+            if (jaExiste) {
+                inputTag.classList.add('tagDuplicada');
+                setTimeout(() => inputTag.classList.remove('tagDuplicada'), 800);
+                return;
+            }
+
+            const span = document.createElement('span');
+            span.className = 'tagItem fundo';
+            span.innerHTML = `${valor}<button class="removeTag BotaoFechar" data-tag="${valor}" title="Remover tag">×</button>`;
+            tagLista.appendChild(span);
+            inputTag.value = '';
+            salvarEstadoMaquinas();
+        }
+
+        if (btnAdd) {
+            btnAdd.addEventListener('click', adicionarTag);
+        }
+
+        if (inputTag) {
+            inputTag.addEventListener('keydown', (e) => {
+                // Impede que Enter propague para o listener global de novaMaquina
+                e.stopPropagation();
+                if (e.key === 'Enter') { e.preventDefault(); adicionarTag(); }
+            });
+        }
+
+        // Remoção via delegação na tagLista
+        if (tagLista) {
+            tagLista.addEventListener('click', (e) => {
+                if (e.target.classList.contains('removeTag')) {
+                    e.target.closest('.tagItem').remove();
+                    salvarEstadoMaquinas();
+                }
+            });
+        }
     });
 }
 
-var maquinas = ''
-var lista = ''
+// ─── Ordenar ──────────────────────────────────────────────────────────────────
+
+var maquinas = '';
+var lista = '';
+
 botaoOrdenarTelaMaquinas.addEventListener("click", () => {
-    botaoOrdenarTelaMaquinasTexto.classList.toggle('addMaquinaAtivada')
-    document.querySelector('.telaMaquinasContainerFundo').classList.add('invisible1')
-    setTimeout(()=> {
+    botaoOrdenarTelaMaquinasTexto.classList.toggle('addMaquinaAtivada');
+    document.querySelector('.telaMaquinasContainerFundo').classList.add('invisible1');
+
+    setTimeout(() => {
         if (botaoOrdenarTelaMaquinasTexto.classList.contains('addMaquinaAtivada')) {
             lista = document.getElementById("listaMaquinas");
-            maquinas = Array.from(lista.children); // salva a ordem original
+            maquinas = Array.from(lista.children);
 
-            // Ordenar -> "livre" no topo
-            const livres = [];
-            const ocupados = [];
-            const desativados = [];
-            
+            const livres = [], ocupados = [], desativados = [];
             maquinas.forEach(maquina => {
                 const status = maquina.querySelector(".cStatusItemLateral");
-                if (status && status.classList.contains("livre")) {
-                    livres.push(maquina);
-                } 
-                else if (status && status.classList.contains("ocupado")) {
-                    ocupados.push(maquina);
-                }
-                else {
-                    desativados.push(maquina);
-                }
+                if (status && status.classList.contains("livre"))         livres.push(maquina);
+                else if (status && status.classList.contains("ocupado"))  ocupados.push(maquina);
+                else                                                       desativados.push(maquina);
             });
 
-            // limpa e remonta a lista
             lista.innerHTML = "";
             [...livres, ...ocupados, ...desativados].forEach(m => lista.appendChild(m));
         } else {
-            // Voltar à ordem original
             lista.innerHTML = "";
             maquinas.forEach(m => lista.appendChild(m));
         }
     }, 300);
-    setTimeout(()=> {
-        document.querySelector('.telaMaquinasContainerFundo').classList.remove('invisible1')
+
+    setTimeout(() => {
+        document.querySelector('.telaMaquinasContainerFundo').classList.remove('invisible1');
     }, 600);
 });
-botaoFixarTelaMaquinas.addEventListener('click', ()=> {
-    botaoFixarTelaMaquinasTexto.classList.toggle('active')
-    if (!document.querySelector('body').classList.contains('mfMaquinas')) {
-        document.querySelector('body').classList.add('mfMaquinas');
-    }
-    else {
-        document.querySelector('body').classList.remove('mfMaquinas'); 
-    }
 
-    if (document.querySelector('body').classList.contains('mfMaquinas')) {
-        document.querySelector('body').classList.add('mini'); 
-    }
-    else {
-        document.querySelector('body').classList.remove('mini'); 
-    }
+// ─── Fixar ────────────────────────────────────────────────────────────────────
 
+botaoFixarTelaMaquinas.addEventListener('click', () => {
+    botaoFixarTelaMaquinasTexto.classList.toggle('active');
+    document.querySelector('body').classList.toggle('mfMaquinas');
+    document.querySelector('body').classList.toggle('mini');
     document.getElementById('fecharMaquinas').classList.toggle('invisible2');
     document.getElementById('maquinas').classList.toggle('invisible2');
-})
-// ouvinte para os cliques nos cartões
+});
+
+// ─── Cliques nas máquinas ─────────────────────────────────────────────────────
+
 document.addEventListener('click', (event) => {
-    // Verifica se o elemento clicado ou algum de seus pais possui a classe 'rectangle'
     let target = event.target;
     const divMae = target.closest('.rectangleMaquina');
+    if (!divMae) return;
 
-    if (divMae) {
-        if (target.id == 'mudarStatus') {
-            var statusDaMaquina = divMae.querySelector('#statusMaquina');
-            // Procura todos os elementos que tenham no ID a id da maquina
-            const elementos = Array.from(document.getElementById('layoutTela').querySelectorAll('[id]')).filter(el => el.id.includes(divMae.id));
-            // Se não encontrar nenhum card com a id da máquina, muda o status pra livre
-            if (elementos.length > 0) {
-                statusDaMaquina.classList.remove('livre', 'desativado')
-                statusDaMaquina.classList.add('ocupado')
-                target.innerHTML = 'Ocupado'
-            }
-            else {
-                if (statusDaMaquina.classList.contains('desativado')) {
-                    statusDaMaquina.classList.remove('desativado', 'ocupado')
-                    statusDaMaquina.classList.add('livre')
-                    target.innerHTML = 'Livre'
-                }
-                else if (statusDaMaquina.classList.contains('livre')) {
-                    statusDaMaquina.classList.remove('livre', 'desativado')
-                    statusDaMaquina.classList.add('ocupado')
-                    target.innerHTML = 'Ocupado'
-                }
-                else {
-                    statusDaMaquina.classList.remove('ocupado', 'livre')
-                    statusDaMaquina.classList.add('desativado')
-                    target.innerHTML = 'Desativado'
-                }
+    if (target.id === 'mudarStatus') {
+        const statusDaMaquina = divMae.querySelector('#statusMaquina');
+        const elementos = Array.from(document.getElementById('layoutTela').querySelectorAll('[id]'))
+            .filter(el => el.id.includes(divMae.id));
+
+        if (elementos.length > 0) {
+            statusDaMaquina.classList.remove('livre', 'desativado');
+            statusDaMaquina.classList.add('ocupado');
+            target.innerHTML = 'Ocupado';
+        } else {
+            if (statusDaMaquina.classList.contains('desativado')) {
+                statusDaMaquina.classList.replace('desativado', 'livre');
+                target.innerHTML = 'Livre';
+            } else if (statusDaMaquina.classList.contains('livre')) {
+                statusDaMaquina.classList.replace('livre', 'ocupado');
+                target.innerHTML = 'Ocupado';
+            } else {
+                statusDaMaquina.classList.replace('ocupado', 'desativado');
+                target.innerHTML = 'Desativado';
             }
         }
+    }
 
-        if (target.id == 'buscarMaquina') {
-            const idMaquina = divMae.id
-            procurarCard({key: 'Enter'}, idMaquina);
+    if (target.id === 'buscarMaquina') {
+        procurarCard({ key: 'Enter' }, divMae.id);
+        if (window.innerWidth < 916) fecharTelaDeMaquinas();
+    }
 
-            var screenWidth = window.innerWidth;
-            if (screenWidth < 916) {
-                fecharTelaDeMaquinas();
-            }
-        }
+    if (target.id === 'deletarMaquina') {
+        const modal = document.getElementById("modalConfirmacao");
+        modal.innerHTML = `
+            <div class="fundoCabecalho"></div>
+            <div class="fundo modalConfirmaContent invisible">
+                <p class="paragrafo">Tem certeza que deseja excluir esse dispositivo da lista?</p>
+                <button id="btnConfirmar" class="cmb MenuBotaoInterno">Sim</button>
+                <button id="btnCancelar" class="cmb MenuBotaoInterno">Cancelar</button>
+            </div>`;
 
-        if (target.id == 'deletarMaquina') {
-            const modal = document.getElementById("modalConfirmacao");
-            modal.innerHTML = `<div class="fundoCabecalho"></div>
-                            <div class="fundo modalConfirmaContent invisible">
-                                <p class="paragrafo">Tem certeza que deseja excluir esse dispositivo da lista?</p>
-                                <button id="btnConfirmar" class="cmb MenuBotaoInterno">Sim</button>
-                                <button id="btnCancelar" class="cmb MenuBotaoInterno">Cancelar</button>
-                            </div>`
-            const modalContent = document.querySelector(".modalConfirmaContent");
-            modal.classList.remove("invisible0");
-            modalContent.classList.remove("invisible");
+        const modalContent = document.querySelector(".modalConfirmaContent");
+        modal.classList.remove("invisible0");
+        modalContent.classList.remove("invisible");
 
-            const btnConfirmar = document.getElementById("btnConfirmar");
-            const btnCancelar = document.getElementById("btnCancelar");
+        document.getElementById("btnConfirmar").onclick = () => {
+            modal.classList.add("invisible0");
+            setTimeout(() => modalContent.classList.add("invisible"), 300);
+            divMae.classList.add('invisible7');
+            setTimeout(() => {
+                document.querySelector(".telaMaquinasContainer").removeChild(divMae);
+                salvarEstadoMaquinas();   // persiste remoção no storage
+            }, 300);
+        };
 
-            btnConfirmar.onclick = () => {
-                modal.classList.add("invisible0");
-                setTimeout(()=> {
-                    modalContent.classList.add("invisible");
-                }, 300);
-                
-                divMae.classList.add('invisible7')
-                setTimeout(()=> {
-                    const container = document.querySelector(".telaMaquinasContainer");
-                    container.removeChild(divMae);
-                }, 300);
-            }
-            btnCancelar.onclick = () => {
-                modal.classList.add("invisible0");
-                setTimeout(()=> {
-                    modalContent.classList.add("invisible");
-                }, 300);
-            };
-        }
+        document.getElementById("btnCancelar").onclick = () => {
+            modal.classList.add("invisible0");
+            setTimeout(() => modalContent.classList.add("invisible"), 300);
+        };
     }
 });
-addMaquina.addEventListener('click' , () => {
-    addMaquinaTexto.classList.toggle('addMaquinaAtivada')
-    barraAddMaquina.classList.toggle('invisible5')
-    barraPesquisaMaquina.classList.toggle('invisible5')
-    if (!barraAddMaquina.classList.contains('invisible5')) {
-        novaMaquina.focus()
-    }
-})
-// limpa busca card
-limpaInputPesquisaMaquina.addEventListener('click', ()=> {
-    if (!canClickLimpaBusca) return;
 
-    pesquisaMaquina.value = ''
-    exibeMaquinas()
-})
+// ─── Barra add / pesquisa ─────────────────────────────────────────────────────
+
+addMaquina.addEventListener('click', () => {
+    addMaquinaTexto.classList.toggle('addMaquinaAtivada');
+    barraAddMaquina.classList.toggle('invisible5');
+    barraPesquisaMaquina.classList.toggle('invisible5');
+    if (!barraAddMaquina.classList.contains('invisible5')) novaMaquina.focus();
+});
+
+limpaInputPesquisaMaquina.addEventListener('click', () => {
+    if (!canClickLimpaBusca) return;
+    pesquisaMaquina.value = '';
+    exibeMaquinas();
+});
+
 pesquisaMaquina.addEventListener('keydown', (event) => {
     if (!canClickLimpaBusca) return;
-
     pesquisaMaquina.classList.remove('naoEncontrado');
-    if (event.key === 'Enter') {
-        exibeMaquinaPesquisada(true, '')
-    }
-    if (event.key === 'Backspace') {
-        exibeMaquinas()
-    }
+    if (event.key === 'Enter')     exibeMaquinaPesquisada(true, '');
+    if (event.key === 'Backspace') exibeMaquinas();
 });
-pesquisaMaquina.addEventListener('focus', (event) => {
+
+pesquisaMaquina.addEventListener('focus', () => {
     menuLateral.classList.add('menuLateralSuperExpandido');
     document.querySelector('.telaMaquinasContainerFundo').classList.add('invisibleMobile');
 });
-pesquisaMaquina.addEventListener('blur', (event) => {
+
+pesquisaMaquina.addEventListener('blur', () => {
     menuLateral.classList.remove('menuLateralSuperExpandido');
     document.querySelector('.telaMaquinasContainerFundo').classList.remove('invisibleMobile');
 });
-limpaInputAddMaquina.addEventListener('click', ()=> {
+
+limpaInputAddMaquina.addEventListener('click', () => {
     if (!canClickLimpaBusca) return;
-
-    novaMaquina.value = ''
-    exibeMaquinas()
-})
-// adiciona o evento de escutar a tecla na barra de busca dos cards
-novaMaquina.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter') {
-        const nomeNovaMaquina = novaMaquina.value;
-
-        adicionarMaquinaNoInicio(nomeNovaMaquina, 'Livre', 'livre', '', true);
-    }
-    if (event.key === 'Backspace') {
-        exibeMaquinas()
-    }
+    novaMaquina.value = '';
+    exibeMaquinas();
 });
-novaMaquina.addEventListener('focus', (event) => {
+
+novaMaquina.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') adicionarMaquinaNoInicio(novaMaquina.value);
+    if (event.key === 'Backspace') exibeMaquinas();
+});
+
+novaMaquina.addEventListener('focus', () => {
     menuLateral.classList.add('menuLateralSuperExpandido');
     document.querySelector('.telaMaquinasContainerFundo').classList.add('invisibleMobile');
 });
-novaMaquina.addEventListener('blur', (event) => {
+
+novaMaquina.addEventListener('blur', () => {
     menuLateral.classList.remove('menuLateralSuperExpandido');
     document.querySelector('.telaMaquinasContainerFundo').classList.remove('invisibleMobile');
 });
 
-setInterval(()=> {
-    if (!document.querySelector('.telaLateral').classList.contains('invisible5')) {
-        var quantidadeLivre = document.querySelectorAll('.livre').length
-        var quantidadeOcupado = document.querySelectorAll('.ocupado').length
-        var quantidadeDesativado = document.querySelectorAll('.desativado').length
+// ─── Monitor de status (intervalo) ───────────────────────────────────────────
 
-        var quantidadeLivreTexto = ''
-        var quantidadeOcupadoTexto = ''
-        var quantidadeDesativadoTexto = ''
+setInterval(() => {
+    if (document.querySelector('.telaLateral').classList.contains('invisible5')) return;
 
-        document.getElementById('monitorLivres').innerHTML = quantidadeLivre
-        document.getElementById('monitorEmUso').innerHTML = quantidadeOcupado
-        document.getElementById('monitorDesativados').innerHTML = quantidadeDesativado
+    const qtdLivre      = document.querySelectorAll('.livre').length;
+    const qtdOcupado    = document.querySelectorAll('.ocupado').length;
+    const qtdDesativado = document.querySelectorAll('.desativado').length;
 
-        if (quantidadeLivre == 1) {
-            quantidadeLivreTexto = 'Livre'
-        }
-        else {
-            quantidadeLivreTexto = 'Livres'
-        }
+    document.getElementById('monitorLivres').innerHTML      = qtdLivre;
+    document.getElementById('monitorEmUso').innerHTML       = qtdOcupado;
+    document.getElementById('monitorDesativados').innerHTML = qtdDesativado;
 
-        if (quantidadeOcupado == 1) {
-            quantidadeOcupadoTexto = 'Ocupado'
-        }
-        else {
-            quantidadeOcupadoTexto = 'Ocupados'
-        }
-
-        if (quantidadeDesativado == 1) {
-            quantidadeDesativadoTexto = 'Desativado'
-        }
-        else {
-            quantidadeDesativadoTexto = 'Desativados'
-        }
-
-        document.getElementById('monitorLivresTexto').innerHTML = quantidadeLivreTexto
-        document.getElementById('monitorEmUsoTexto').innerHTML = quantidadeOcupadoTexto
-        document.getElementById('monitorDesativadosTexto').innerHTML = quantidadeDesativadoTexto
-    }
+    document.getElementById('monitorLivresTexto').innerHTML      = qtdLivre      === 1 ? 'Livre'      : 'Livres';
+    document.getElementById('monitorEmUsoTexto').innerHTML       = qtdOcupado    === 1 ? 'Ocupado'    : 'Ocupados';
+    document.getElementById('monitorDesativadosTexto').innerHTML = qtdDesativado === 1 ? 'Desativado' : 'Desativados';
 }, 2000);

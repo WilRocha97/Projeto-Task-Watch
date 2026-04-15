@@ -487,8 +487,13 @@ button {
     height: 29px;
 }
 
-.inputComentario {
+.inputTag {
+    height: 1rem !important;
+    margin-top: 4px;
+}
+.inputComentario, .inputTag {
     color: var(--cor-texto);
+    margin-top: 4px;
     background: none;
     resize: none;
     border: none;

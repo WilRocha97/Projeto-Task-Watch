@@ -122,14 +122,10 @@
 }
 
 .rectangleMaquina {
-    min-height: 110px;
-}
-.rectangleMaquina {
     scale: 1;
     opacity: 1;
     margin: 10px 6px 10px 14px;
     border-radius: 10px;
-    max-height: 300px;
     transition: var(--transicao-link) ease-in-out;
 }
 .rectangleMaquina:hover {
@@ -231,6 +227,57 @@
     overflow-y: auto;      /* ativa scroll vertical quando passar do max-height */
     word-wrap: break-word; /* quebra automática das palavras */
     transition: var(--transicao-link);
+}
+
+.tagsContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.tagLista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    min-height: 0;
+}
+
+.tagItem {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 8px;
+    color: var(--cor-texto);
+    font-size: 0.75rem;
+    user-select: none;
+}
+
+.removeTag {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    line-height: 1;
+    padding: 0;
+}
+
+.tagInputWrapper {
+    display: flex;
+    gap: 4px;
+}
+
+.inputTag.tagDuplicada { border-color: #e05; animation: shake 0.3s; }
+
+.btnAdicionarTag {
+    padding: 2px 8px;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+@keyframes shake {
+    0%,100% { transform: translateX(0); }
+    33%      { transform: translateX(-4px); }
+    66%      { transform: translateX(4px); }
 }
 
 @media (min-width: 1650px) {
