@@ -415,10 +415,10 @@ button {
                 -1px 1px 1px var(--sombra-vidro-escura);
 }
 .fundo2 {
-    padding: 3px 2px;
+    padding: 2px;
     margin: 5px 0 0 0;
     background: var(--cor-fundo-2);
-    border-radius: 15px;
+    border-radius: 17px;
     box-shadow: inset -1px -1px 2px var(--sombra-vidro-card-clara),
                 inset 1px 1px 2px var(--sombra-vidro-card-clara),
                 inset 1px -1px 2px var(--sombra-vidro-card-escura),

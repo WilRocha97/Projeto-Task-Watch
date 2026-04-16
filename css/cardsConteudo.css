@@ -85,7 +85,8 @@
     transition: var(--transicao-link) ease-in-out;
 }
 .telaExecucaoConteudo, .telaDadoConteudo, .telaResumoConteudo, .telaErroInfo {
-    margin: 3px 6px;
+    margin: 3px 3px;
+    border-radius: 14px;
 }
 .telaExecucaoConteudo, .telaDadoConteudo, .telaResumoConteudo, .telaErroInfo {
     overflow-y: auto;

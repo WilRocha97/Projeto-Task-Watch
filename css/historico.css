@@ -126,7 +126,6 @@
     margin: 5px;
     gap: 5px;
     display: grid;
-    padding: 5px;
     overflow-y: auto;
     overflow-x: hidden;
 }

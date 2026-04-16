@@ -14,14 +14,14 @@
 }
 
 .tituloRotinas {
-    margin: 13px 16px 2px 16px;
+    margin: 8px 11px 2px 11px;
 }
 /* barra de status */
 .lrStatus {
     top: 1px;
     justify-self: center;
     height: 1px;
-    width: calc(100% - 32px);
+    width: calc(100% - 20px);
     border-radius: 5px;
     background-color: var(--cor-lista); 
     box-shadow: 0 10em 100px var(--cor-lista),
@@ -50,7 +50,7 @@
     --cor-lista: var(--cor-erro);
 }
 .telaListaRotinas {
-    max-height: calc(100% - 53px) !important;
+    max-height: calc(100% - 40px) !important;
     border-radius: calc(var(--borda-botao) - 2px) !important;
 }
 
