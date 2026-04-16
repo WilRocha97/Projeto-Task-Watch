@@ -85,7 +85,7 @@
     transition: var(--transicao-link) ease-in-out;
 }
 .telaExecucaoConteudo, .telaDadoConteudo, .telaResumoConteudo, .telaErroInfo {
-    margin: 3px 3px;
+    margin: 0 3px;
     border-radius: 14px;
 }
 .telaExecucaoConteudo, .telaDadoConteudo, .telaResumoConteudo, .telaErroInfo {
