@@ -418,7 +418,7 @@ button {
     padding: 2px;
     margin: 5px 0 0 0;
     background: var(--cor-fundo-2);
-    border-radius: 17px;
+    border-radius: 16px;
     box-shadow: inset -1px -1px 2px var(--sombra-vidro-card-clara),
                 inset 1px 1px 2px var(--sombra-vidro-card-clara),
                 inset 1px -1px 2px var(--sombra-vidro-card-escura),

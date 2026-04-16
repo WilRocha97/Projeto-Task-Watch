@@ -123,7 +123,8 @@
 .telaHistoricoConteudo {
     border-radius: calc(var(--borda-botao) - 5px);
     max-height: calc(100vh - 150px);
-    margin: 5px;
+    padding: 4px;
+    margin: 4px;
     gap: 5px;
     display: grid;
     overflow-y: auto;

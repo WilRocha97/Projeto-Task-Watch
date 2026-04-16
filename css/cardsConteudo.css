@@ -85,7 +85,7 @@
     transition: var(--transicao-link) ease-in-out;
 }
 .telaExecucaoConteudo, .telaDadoConteudo, .telaResumoConteudo, .telaErroInfo {
-    margin: 0 3px;
+    margin: 3px;
     border-radius: 14px;
 }
 .telaExecucaoConteudo, .telaDadoConteudo, .telaResumoConteudo, .telaErroInfo {
@@ -110,13 +110,13 @@
     max-height: 30px;
     overflow: auto;
     margin: 0 5px;
+    padding: 3px;
     transition: var(--transicao-link-2) ease-in-out, max-height 0.2s ease-in-out, min-height 0.2s ease-in-out;
-
 }
 .content {
     min-height: 10px;
     max-height: 200px;
-    padding: 3px;
+    padding: 3px 6px;
     opacity: 1;
     transition: var(--transicao-link-2) ease-in-out;
 }
