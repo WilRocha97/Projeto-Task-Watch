@@ -186,6 +186,7 @@
                 1px 0 10px var(--cor-item-lateral),
                 0 0 5px var(--cor-item-lateral);
     transition: 1s ease-in-out;
+    z-index: -1;
 }
 .cStatusItemLateral.livre, .cStatusItemLateral.baixa  { 
     --cor-item-lateral: var(--cor-executando);
@@ -245,10 +246,12 @@
     display: inline-flex;
     align-items: center;
     gap: 4px;
-    padding: 2px 8px;
+    padding: 0 4px;
     color: var(--cor-texto);
     font-size: 0.75rem;
     user-select: none;
+    background: var(--cor-vidro-2);
+    border: 1px solid grey;
 }
 
 .removeTag {
@@ -257,7 +260,7 @@
     cursor: pointer;
     font-size: 0.9rem;
     line-height: 1;
-    padding: 0;
+    align-self: end;
 }
 
 .tagInputWrapper {
