@@ -109,13 +109,18 @@
     display: flex;
 }
 .telaMaquinasContainer {
+    opacity: 1;
+    min-height: 0;
+    max-height: 100%;
     flex-direction: column;
+    transition: var(--transicao-link) ease-in-out;
 }
 
 .menuLateralMaquinas {
     position: fixed;
     display: flex;
     flex-direction: row;
+    width: calc(100% - 24px);
     margin: 5px 12px;
     align-items: center;
     transition: var(--transicao-link) ease-in-out;

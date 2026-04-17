@@ -33,7 +33,7 @@ function renderizarTags(tagLista, tags) {
     tags.forEach(tag => {
         const span = document.createElement('span');
         span.className = 'tagItem fundo';
-        span.innerHTML = `${tag}<button class="removeTag BotaoFechar" data-tag="${tag}" title="Remover tag">×</button>`;
+        span.innerHTML = `${tag}<button class="removeTag BotaoFechar" data-tag="${tag}" title="Remover marcador">×</button>`;
         tagLista.appendChild(span);
     });
 }
@@ -113,7 +113,7 @@ function adicionarMaquinaNoInicio(idMaquina, tags = []) {
                 <input
                     type="text"
                     class="inputTag"
-                    placeholder="Adicionar tag"
+                    placeholder="Adicionar marcador"
                     maxlength="30"
                 />
             </div>
@@ -236,7 +236,7 @@ export function adicionarListenersMaquinas(idAlvo = '') {
 
             const span = document.createElement('span');
             span.className = 'tagItem fundo';
-            span.innerHTML = `${valor}<button class="removeTag BotaoFechar" data-tag="${valor}" title="Remover tag">×</button>`;
+            span.innerHTML = `${valor}<button class="removeTag BotaoFechar" data-tag="${valor}" title="Remover marcador">×</button>`;
             tagLista.appendChild(span);
             inputTag.value = '';
             salvarEstadoMaquinas();
