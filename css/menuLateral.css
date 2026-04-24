@@ -308,11 +308,11 @@
         padding: 0;
     }
     .menuLateralMaquinas {
-        bottom: 188px;
+        bottom: 150px;
         justify-self: center;
     }
     .telaMaquinasContainerFundo {
-        height: calc(100% - 270px);
+        height: calc(100% - 230px);
         margin-top: 0;
     }
     #fixarTelaMaquinas {

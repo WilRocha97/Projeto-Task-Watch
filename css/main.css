@@ -859,12 +859,12 @@ button.clicked::after,
         padding: 0 15px;
     }
     .rodape {
-        margin-bottom: 120px;
+        margin-bottom: 140px;
     }
     .MenuBotao, .paginaHistorico button {
-        max-height: 47px;
-        min-height: 47px;
-        min-width: 47px;
+        max-height: 47px !important;
+        min-height: 47px !important;
+        min-width: 47px !important;
     }
     .MenuBotao:hover::after, .MenuBotaoInterno:hover::after, .paginaHistorico button:not(:disabled):hover::after {
         padding: 0 7px;
@@ -886,6 +886,7 @@ button.clicked::after,
 @media (max-width: 1255px) {
     .invisible3 {
         height: 0 !important;
+        min-height: 0 !important;
     }
 }
 @media (min-width: 2500px) {

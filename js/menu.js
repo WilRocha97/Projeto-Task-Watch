@@ -1,3 +1,4 @@
+var botoes = document.querySelectorAll('button');
 const menu = document.getElementById('menu');
 const cabecalho = document.getElementById('cabecalho');
 const telaRotinas = document.getElementById('telaRotinas');
@@ -11,6 +12,14 @@ const galeria = document.getElementById('galeria');
 const telaGaleria = document.getElementById('telaGaleria');
 const fecharGaleria = document.getElementById('fecharGaleria');
 
+export function isTouchDevice() {
+    return ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+}
+if (isTouchDevice()) {
+    botoes.forEach((botao)=> {
+        botao.classList.add('nh')
+    });
+}
 
 export function fecharTelaDeMaquinas() {
     if (telaMaquinas) {
