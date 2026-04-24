@@ -98,9 +98,7 @@
     opacity: 1;
     overflow: scroll;
     overflow-x: hidden;
-    height: 88vh;
-    max-height: 88vh;
-    min-height: 0;
+    height: calc(100% - 94px);
     margin-top: 6vh;
     width: 100%;
     transition: var(--transicao-link) ease-in-out;
@@ -110,7 +108,6 @@
 }
 .telaMaquinasContainer {
     opacity: 1;
-    min-height: 0;
     max-height: 100%;
     flex-direction: column;
     transition: var(--transicao-link) ease-in-out;
@@ -311,11 +308,11 @@
         padding: 0;
     }
     .menuLateralMaquinas {
-        bottom: 180px;
+        bottom: 188px;
         justify-self: center;
     }
     .telaMaquinasContainerFundo {
-        height: 77vh;
+        height: calc(100% - 270px);
         margin-top: 0;
     }
     #fixarTelaMaquinas {
@@ -351,15 +348,5 @@
     }
     .extraMini {
         width: 40vw !important;
-    }
-}
-@media (max-height: 930px) and (max-width: 916px) {
-    .telaMaquinasContainerFundo {
-        height: 73vh;
-    }
-}
-@media (max-height: 830px) and (max-width: 916px) {
-    .telaMaquinasContainerFundo {
-        height: 70vh;
     }
 }
