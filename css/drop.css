@@ -17,9 +17,8 @@
 
 .drop {
     opacity: 1;
-    height: 30px;
+    height: 29px;
     min-width: 100px;
-    border: none;
     margin: 3px;
     padding: 0 10px;
     color: var(--cor-texto);
