@@ -341,6 +341,7 @@ button {
     min-width: 0 !important;
     min-height: 0 !important;
     cursor: default !important;
+    border: none !important;
     z-index: -999;
 }
 .invisible3 {
@@ -350,6 +351,7 @@ button {
     max-width: 0 !important;
     height: 0 !important;
     cursor: default !important;
+    border: none !important;
 }
 .invisible4 {
     opacity: 0 !important;
