@@ -79,9 +79,11 @@
 }
 /* Mostra todo o cabeçalho no hover em telas de computador ou no modo mobile*/
 .rectangle:hover .botaoFechar, 
+.rectangle:hover .botaoPiP, 
 .rectangle:hover .botaoFixar,
 .rectangle:hover .botaoFixado,
 .rectangle.nh .botaoFechar, 
+.rectangle.nh .botaoPiP, 
 .rectangle.nh .botaoFixar,
 .rectangle.nh .botaoFixado{
     width: 14px !important;
@@ -121,7 +123,7 @@
     transform: rotate(72deg);
 }
 .rectangle.collapsed .botaoFixado {
-    z-index: 9000;
+    z-index: 9;
     opacity: 1 !important;
     width: 1px !important;
     height: 1px;

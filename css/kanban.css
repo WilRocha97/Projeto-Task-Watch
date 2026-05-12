@@ -126,7 +126,7 @@
     overflow: hidden;
 }
 .fundoListaTarefas {
-    height: calc(100% - 98px);
+    height: calc(100% - 104px);
 }
 .fundoListaFluxos {
     height: calc(100% - 49px);
@@ -151,7 +151,7 @@
     border-radius: 6px;
     overflow-x: hidden;
     width: calc(100% - 6px);
-    height: calc(100% - 4px);
+    height: calc(100% - 7px);
 }
 .listaTarefas {
     margin: 3px 2px;

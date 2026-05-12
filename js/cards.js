@@ -2,6 +2,7 @@ import {animacaoBotao} from './menu.js';
 import {decoracao} from './temas.js';
 import {fecharTelaDeMaquinas} from './menu.js';
 import {fechaMenu} from './menu.js'
+import {alternarCardNoPiP} from './pictureInPicture.js'
 
 var telaTitulo = document.querySelector("#telaTitulo");
 var telaTituloFundo = document.querySelector(".fundoGradiente");
@@ -326,6 +327,9 @@ document.addEventListener('click', (event) => {
                 }
             }
         }
+        else if (target.classList.contains('botaoPiP')) {
+            alternarCardNoPiP(divMae);
+        }
         else {
             while (target && !target.classList.contains('rectangle')) {
                 target = target.parentElement;
@@ -333,7 +337,9 @@ document.addEventListener('click', (event) => {
         
             // Se um elemento com a classe 'rectangle' foi encontrado, alterna a classe 'collapsed'
             if (target) {
-                target.classList.toggle('collapsed');
+                if (!target.classList.contains('emPip')) {
+                    target.classList.toggle('collapsed');
+                };   
             }
         }
 

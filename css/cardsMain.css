@@ -27,6 +27,7 @@
     text-shadow: none !important;
 } 
 .sortable-ghost .botaoFixar,
+.sortable-ghost .botaoPiP,
 .sortable-ghost .botaoFechar,
 .sortable-ghost .botaoInfo,
 .sortable-ghost .maisInfo,
@@ -116,6 +117,7 @@
 }
 .rectangle.collapsed #decoracao,
 .rectangle.collapsed .botaoFechar,
+.rectangle.collapsed .botaoPiP,
 .rectangle.collapsed .botaoInfo,
 .rectangle.collapsed .maisInfo,
 .rectangle.collapsed .maisInfo2,
@@ -140,7 +142,7 @@
     cursor: pointer;
 }
 .rectangle.collapsed .porcentagem,
-.rectangle.collapsed .botaoFixar, 
+.rectangle.collapsed .botaoFixar,
 .rectangle.collapsed .barraLoading {
     position: absolute;
     top: 0;
@@ -150,6 +152,22 @@
     opacity: 0.6;
 }
 
+.rectangle.emPip::after {
+    content: '↘';
+    position: absolute;
+    text-align: center;
+    top: 0;
+    left: 0;
+    background: #727272;
+    font-size: 20px;
+    text-shadow: 0 0 5px white;
+    width: 100%;
+    height: 100%;
+    padding: 6px 0;
+    font-weight: bold;
+    z-index: 10;
+    pointer-events: none;
+}
 
 @media (max-width: 641px) {
     .rectangle.enter {
@@ -167,7 +185,7 @@
     .cabecalhoCardBotoes {
         gap: 20px !important;
     }
-    .botaoFechar, .botaoFixar, .botaoInfo {
+    .botaoFechar, .botaoFixar, .botaoInfo, .botaoPiP {
         font-size: 1rem !important;
     }
 }
@@ -181,7 +199,7 @@
     .maisInfo, .maisInfo2 {
         margin-top: 10px;
     }
-    .botaoFechar, .botaoFixar, .botaoInfo {
+    .botaoFechar, .botaoFixar, .botaoInfo, .botaoPiP {
         font-size: large;
         font-weight: bold;
     }
