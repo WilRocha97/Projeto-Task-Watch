@@ -156,28 +156,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }
         listaReversa.forEach((card, index) => {
-            if (cartoesFixadosTexto.classList.contains('active')) {
-                if (!card.classList.contains('fixado')) {
-                    return
+            if (!card.classList.contains('emPip')) { 
+                if (cartoesFixadosTexto.classList.contains('active')) {
+                    if (!card.classList.contains('fixado')) {
+                        return
+                    }
                 }
-            }
-            else {
-                if (card.classList.contains('fixado')) {
-                    return
-                } 
-            }
-            
-            maisInfos.forEach(maisInfo => {
-                setTimeout(()=> {
+                else {
+                    if (card.classList.contains('fixado')) {
+                        return
+                    } 
+                }
+                
+                maisInfos.forEach(maisInfo => {
                     setTimeout(()=> {
-                        card.querySelector(maisInfo.botao).querySelector('.maisInfob').classList.remove('flip')
-                        card.querySelector(maisInfo.conteudo).classList.add('collapsed');
-                        card.classList.remove('large') 
-                    }, 100)
+                        setTimeout(()=> {
+                            card.querySelector(maisInfo.botao).querySelector('.maisInfob').classList.remove('flip')
+                            card.querySelector(maisInfo.conteudo).classList.add('collapsed');
+                            card.classList.remove('large') 
+                        }, 100)
 
-                    verifica_estado_card(card)
-                }, 100 * index);
-            })
+                        verifica_estado_card(card)
+                    }, 100 * index);
+                })
+            };
         });
     });
     // Minimiza e maximiza todos os cards
@@ -186,24 +188,26 @@ document.addEventListener("DOMContentLoaded", () => {
         const listaReversa = [...cards].reverse(); // Faz uma cópia para não alterar a original
 
         listaReversa.forEach((card, index) => {
-            if (cartoesFixadosTexto.classList.contains('active')) {
-                if (!card.classList.contains('fixado')) {
-                    return
+            if (!card.classList.contains('emPip')) { 
+                if (cartoesFixadosTexto.classList.contains('active')) {
+                    if (!card.classList.contains('fixado')) {
+                        return
+                    }
                 }
-            }
-            else {
-                if (card.classList.contains('fixado')) {
-                    return
-                } 
-            }
+                else {
+                    if (card.classList.contains('fixado')) {
+                        return
+                    } 
+                }
 
-            setTimeout(()=> {
-                card.classList.remove('large');
-                card.classList.remove('medium');
-                card.classList.add('collapsed');
+                setTimeout(()=> {
+                    card.classList.remove('large');
+                    card.classList.remove('medium');
+                    card.classList.add('collapsed');
 
-                verifica_estado_card(card)
-            }, 100 * index);  
+                    verifica_estado_card(card)
+                }, 100 * index);  
+            };
         });
     });
     // Minimiza e maximiza todas as telas internas dos cards
@@ -211,31 +215,33 @@ document.addEventListener("DOMContentLoaded", () => {
         const cards = document.querySelectorAll('.rectangle');
 
         cards.forEach((card, index) => {
-            if (cartoesFixadosTexto.classList.contains('active')) {
-                if (!card.classList.contains('fixado')) {
-                    return
+            if (!card.classList.contains('emPip')) { 
+                if (cartoesFixadosTexto.classList.contains('active')) {
+                    if (!card.classList.contains('fixado')) {
+                        return
+                    }
                 }
-            }
-            else {
-                if (card.classList.contains('fixado')) {
-                    return
-                } 
-            }
+                else {
+                    if (card.classList.contains('fixado')) {
+                        return
+                    } 
+                }
 
-            maisInfos.forEach(maisInfo => {
-                if (!card.querySelector(maisInfo.botao).classList.contains('invisible')) {
-                    setTimeout(()=> {
-                        card.classList.remove('collapsed');
-                        card.classList.add('large');
+                maisInfos.forEach(maisInfo => {
+                    if (!card.querySelector(maisInfo.botao).classList.contains('invisible')) {
                         setTimeout(()=> {
-                            card.querySelector(maisInfo.botao).querySelector('.maisInfob').classList.add('flip')
-                            card.querySelector(maisInfo.conteudo).classList.remove('collapsed');
+                            card.classList.remove('collapsed');
+                            card.classList.add('large');
+                            setTimeout(()=> {
+                                card.querySelector(maisInfo.botao).querySelector('.maisInfob').classList.add('flip')
+                                card.querySelector(maisInfo.conteudo).classList.remove('collapsed');
 
-                            verifica_estado_card(card)
-                        }, 100)
-                    }, 100 * index);
-                }
-            })
+                                verifica_estado_card(card)
+                            }, 100)
+                        }, 100 * index);
+                    }
+                })
+            };
         });
     });
     // Minimiza e maximiza todos os cards
@@ -243,25 +249,27 @@ document.addEventListener("DOMContentLoaded", () => {
         const cards = document.querySelectorAll('.rectangle');
 
         cards.forEach((card, index) => {
-            if (cartoesFixadosTexto.classList.contains('active')) {
-                if (!card.classList.contains('fixado')) {
-                    return
+            if (!card.classList.contains('emPip')) { 
+                if (cartoesFixadosTexto.classList.contains('active')) {
+                    if (!card.classList.contains('fixado')) {
+                        return
+                    }
                 }
-            }
-            else {
-                if (card.classList.contains('fixado')) {
-                    return
-                } 
-            }
-
-            setTimeout(()=> {
-                if (card.classList.contains('collapsed')) {
-                    card.classList.add('large');
-                    card.classList.remove('collapsed');
-
-                    verifica_estado_card(card)
+                else {
+                    if (card.classList.contains('fixado')) {
+                        return
+                    } 
                 }
-            }, 100 * index);
+
+                setTimeout(()=> {
+                    if (card.classList.contains('collapsed')) {
+                        card.classList.add('large');
+                        card.classList.remove('collapsed');
+
+                        verifica_estado_card(card)
+                    }
+                }, 100 * index);
+            };
         });
     });
 

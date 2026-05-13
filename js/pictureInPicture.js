@@ -2,17 +2,17 @@ let pipWindow = null;
 // chave: card original (HTMLElement) → { wrapper, clone, observer, syncScheduled }
 const pipCards = new Map();
 
-export async function alternarCardNoPiP(card) {
+export async function alternarCardNoPiP(card, target) {
     // se já tá na PiP, remove
     if (pipCards.has(card)) {
-        removerCardDoPiP(card);
+        removerCardDoPiP(card, target);
         return;
     }
     // garante a janela aberta
     if (!pipWindow) {
         await abrirJanelaPiP();
     }
-    adicionarCardAoPiP(card);
+    adicionarCardAoPiP(card, target);
 }
 
 async function abrirJanelaPiP() {
@@ -67,6 +67,7 @@ async function abrirJanelaPiP() {
         /* esconde botões originais dentro do clone */
         .pip-clone .botaoFixar,
         .pip-clone .botaoFechar,
+        .pip-clone .botaoPip,
         .pip-clone .maisInfo,
         .pip-clone .maisInfo2,
         .pip-clone .maisInfo3 {
@@ -106,14 +107,13 @@ async function abrirJanelaPiP() {
         pipCards.forEach((entry, original) => {
             entry.observer.disconnect();
             original.classList.remove('emPip');
-            original.classList.remove('collapsed');
         });
         pipCards.clear();
         pipWindow = null;
     });
 }
 
-function adicionarCardAoPiP(card) {
+function adicionarCardAoPiP(card, target) {
     card.classList.add('collapsed');
     card.classList.add('emPip');
 
@@ -125,7 +125,7 @@ function adicionarCardAoPiP(card) {
     btnFechar.className = 'pipCardFechar';
     btnFechar.textContent = '×';
     btnFechar.title = 'Remover este card da janela flutuante';
-    btnFechar.addEventListener('click', () => removerCardDoPiP(card));
+    btnFechar.addEventListener('click', () => removerCardDoPiP(card, target));
 
     const clone = criaClone(card);
     wrapper.appendChild(btnFechar);
@@ -143,29 +143,29 @@ function adicionarCardAoPiP(card) {
     });
 
     pipCards.set(card, entry);
+    target.classList.add('botaoPipAtivado');
 }
 
-function removerCardDoPiP(card) {
+function removerCardDoPiP(card, target) {
     const entry = pipCards.get(card);
     if (!entry) return;
 
     entry.observer.disconnect();
     entry.wrapper.remove();
     card.classList.remove('emPip');
-    card.classList.remove('collapsed');
     pipCards.delete(card);
 
     // se foi o último, fecha a janela
     if (pipCards.size === 0 && pipWindow) {
         pipWindow.close();
     }
+    target.classList.remove('botaoPipAtivado');
 }
 
 function criaClone(card) {
     const clone = card.cloneNode(true);
     clone.classList.add('pip-clone');
     clone.classList.remove('emPip');
-    clone.classList.remove('collapsed');
     clone.removeAttribute('id');
     clone.querySelectorAll('[id]').forEach(n => n.removeAttribute('id'));
     return clone;

@@ -69,7 +69,7 @@
 .btnCard {
     color: white;
 }
-.botaoFixado {
+.botaoFixado, .botaoPipAtivado {
     opacity: 1;
     width: 14px;
     padding-bottom: 1px;
@@ -79,11 +79,13 @@
 }
 /* Mostra todo o cabeçalho no hover em telas de computador ou no modo mobile*/
 .rectangle:hover .botaoFechar, 
-.rectangle:hover .botaoPiP, 
+.rectangle:hover .botaoPip, 
+.rectangle:hover .botaoPipAtivado,
 .rectangle:hover .botaoFixar,
 .rectangle:hover .botaoFixado,
 .rectangle.nh .botaoFechar, 
-.rectangle.nh .botaoPiP, 
+.rectangle.nh .botaoPip, 
+.rectangle.nh .botaoPipAtivado
 .rectangle.nh .botaoFixar,
 .rectangle.nh .botaoFixado{
     width: 14px !important;
@@ -108,19 +110,23 @@
     gap: 10px;
 }
 /* --------------------------------------- */
-.botaoFixar:hover {
+.botaoFixar:hover, 
+.botaoPip:hover {
     text-shadow: 0 0 5px white !important;
 }
 
-.botaoFixado.nh:hover {
+.botaoFixado.nh:hover,
+.botaoPipAtivado.nh:hover {
     text-shadow: 0 0 5px white,
                  0 0 7px white;
 }
 
 .botaoFixado {
+    transform: rotate(72deg);
+}
+.botaoFixado, .botaoPipAtivado {
     text-shadow: 0 0 5px white,
                  0 0 7px white;
-    transform: rotate(72deg);
 }
 .rectangle.collapsed .botaoFixado {
     z-index: 9;
@@ -136,7 +142,8 @@
     color: white;
     background: none;
 }
-.rectangle.collapsed .botaoFixar {
+.rectangle.collapsed .botaoFixar, 
+.rectangle.collapsed .botaoPip {
     opacity: 0;
 }
 
