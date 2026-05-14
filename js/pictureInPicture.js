@@ -118,7 +118,7 @@ async function abrirJanelaPiP() {
         /* scrollbar discreta */
         body::-webkit-scrollbar { width: 6px; }
         body::-webkit-scrollbar-thumb {
-            background: rgba(121, 121, 121, 0.3);
+            background: rgb(126, 126, 126);
             border-radius: 3px;
         }
     `;
