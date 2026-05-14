@@ -632,7 +632,7 @@ button {
     background-color: transparent;
     text-shadow: 0 0 0 transparent;
 }
-.botaoFechar, .botaoFixar, .botaoPiP {
+.botaoFechar, .botaoFixar, .botaoPip {
     font-weight: 600;
     font-size: 0.7rem;
     text-align: center;
@@ -645,7 +645,7 @@ button {
     height: 13px;
     transition: var(--transicao-link) ease-in-out;
 }
-.botaoFechar, .botaoFixar, .botaoPiP {
+.botaoFechar, .botaoFixar, .botaoPip {
     width: 0;
     opacity: 0;
     cursor: pointer;
@@ -883,6 +883,10 @@ button.clicked::after,
     .pageSize {
         width: 44px !important;
         height: 44px !important;
+    }
+    .botaoFechar, .botaoFixar, .botaoInfo, .botaoPip {
+        font-size: 1rem !important;
+        width: 70px !important;
     }
 }  
 @media (max-width: 1255px) {

@@ -327,7 +327,7 @@ document.addEventListener('click', (event) => {
                 }
             }
         }
-        else if (target.classList.contains('botaoPiP')) {
+        else if (target.classList.contains('botaoPip')) {
             alternarCardNoPiP(divMae, target);
         }
         else {

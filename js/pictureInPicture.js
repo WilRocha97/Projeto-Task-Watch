@@ -46,8 +46,11 @@ async function abrirJanelaPiP() {
             transition: 0.2s ease-in-out;
         }
         body {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
             display: flex; 
-            flex-direction: column;
+            flex-direction: row;
             padding: 8px; gap: 8px;
             scale: 0.9;
             box-sizing: border-box;
@@ -70,8 +73,10 @@ async function abrirJanelaPiP() {
         .pip-clone .botaoPip,
         .pip-clone .maisInfo,
         .pip-clone .maisInfo2,
-        .pip-clone .maisInfo3 {
+        .pip-clone .maisInfo3,
+        .subMenuCard {
             display: none !important;
+            right: 0 !important;
         }
 
         /* botão de fechar individual de cada card na PiP */
@@ -96,7 +101,7 @@ async function abrirJanelaPiP() {
         /* scrollbar discreta */
         body::-webkit-scrollbar { width: 6px; }
         body::-webkit-scrollbar-thumb {
-            background: rgba(232,168,23,0.3);
+            background: rgba(121, 121, 121, 0.3);
             border-radius: 3px;
         }
     `;
@@ -107,6 +112,7 @@ async function abrirJanelaPiP() {
         pipCards.forEach((entry, original) => {
             entry.observer.disconnect();
             original.classList.remove('emPip');
+            original.querySelector('#pip').classList.remove('botaoPipAtivado');
         });
         pipCards.clear();
         pipWindow = null;
@@ -114,7 +120,6 @@ async function abrirJanelaPiP() {
 }
 
 function adicionarCardAoPiP(card, target) {
-    card.classList.add('collapsed');
     card.classList.add('emPip');
 
     // wrapper contendo o clone + botão de fechar individual
