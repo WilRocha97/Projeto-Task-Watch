@@ -24,16 +24,34 @@ async function abrirJanelaPiP() {
     // copia estilos
     [...document.styleSheets].forEach(sheet => {
         try {
-            const css = [...sheet.cssRules].map(r => r.cssText).join('');
-            const style = pipWindow.document.createElement('style');
-            style.textContent = css;
-            pipWindow.document.head.appendChild(style);
+        const css = [...sheet.cssRules]
+            .filter(r => !(r instanceof CSSMediaRule))
+            .map(r => r.cssText)
+            .join('');
+                const style = pipWindow.document.createElement('style');
+                style.textContent = css;
+                pipWindow.document.head.appendChild(style);
         } catch {
-            const link = pipWindow.document.createElement('link');
-            link.rel = 'stylesheet';
-            link.href = sheet.href;
-            pipWindow.document.head.appendChild(link);
+            fetch(sheet.href)
+                .then(r => r.text())
+                .then(text => {
+                    // remove blocos @media com regex (cuidado: regex em CSS é frágil pra casos complexos)
+                    const limpo = text.replace(/@media[^{]+\{(?:[^{}]|\{[^{}]*\})*\}/g, '');
+                    const style = pipWindow.document.createElement('style');
+                    style.textContent = limpo;
+                    pipWindow.document.head.appendChild(style);
+                })
+                .catch(() => {
+                    // se o fetch falhar (CORS, etc.), volta pro link sem filtro
+                    const link = pipWindow.document.createElement('link');
+                    link.rel = 'stylesheet';
+                    link.href = sheet.href;
+                    pipWindow.document.head.appendChild(link);
+                });
         }
+        const style = pipWindow.document.createElement('style');
+        style.textContent = '@media (max-width: 641px) {.rectangle.enter {width: calc(100vw - 16px) !important;};}'
+        pipWindow.document.head.appendChild(style);
     });
 
     // estilos exclusivos da PiP
@@ -46,13 +64,12 @@ async function abrirJanelaPiP() {
             transition: 0.2s ease-in-out;
         }
         body {
-            display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            display: flex; 
+            display: flex;
             flex-direction: row;
-            padding: 8px; gap: 8px;
-            scale: 0.9;
+            padding: 8px;
+            gap: 8px;
             box-sizing: border-box;
             overflow-y: auto;
             overflow-x: hidden;
