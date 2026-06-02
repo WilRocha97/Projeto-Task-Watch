@@ -19,7 +19,7 @@ function definevariantesImagens() {
         variantesImagens = 12;
         feriado = 'pascoa'
     }
-    else if ((mes === 6 && dia >= 21) && (mes === 6 && dia <= 30)) {
+    else if ((mes === 6 && dia >= 1) && (mes === 6 && dia <= 30)) {
         variantesImagens = 19;
         feriado = 'junina'
     }
