@@ -42,6 +42,43 @@
     max-height: 100vh;
 }
 
+#notificacoes {
+    right: 10px;
+}
+.alertas{
+    z-index: 99;
+    opacity: 1;
+    max-width: 100%;
+    max-height: 100%;
+    min-width: 0;
+    min-height: 0;
+    margin: 10px;
+    padding: 5px 10px;
+    text-align: center;
+    justify-self: center;
+    align-self: center;
+    display: flex;
+    font-weight: 700;
+    font-size: larger;
+    transition: var(--transicao-link) ease-in-out;
+}
+.alertas.collapsed {
+    opacity: 0 !important;
+    max-height: 0 !important;
+    min-height: 0 !important;
+    margin: 0 10px !important;
+    padding: 0 10px !important;
+}
+.alertasVermelho {
+    box-shadow: inset 0 0 30px #ff000082;
+    border: var(--borda-card) solid #ff00006e;
+}
+.alertasAmarelo {
+    box-shadow: inset 0 0 30px #ff9c0082;
+    border: var(--borda-card) solid #ffa5006e;
+}
+
+
 /* =============================================================================
    SISTEMA DE MENU
    ============================================================================= */
@@ -216,7 +253,7 @@
                 0 -4px 5px var(--animacao-opaca-bota-2),
                 0 -4px 10px var(--animacao-bota-2),
                 4px 0 5px var(--animacao-opaca-bota-4),
-                4px 0 10px var(--animacao-bota-4);      
+                4px 0 10px var(--animacao-bota-4);
 }
 .paginaHistorico button:disabled {
     cursor: default;
@@ -494,6 +531,7 @@
     }
 
     .menu {
+        flex-wrap: wrap;
         padding: 8px
     }
     .rotinas {
@@ -556,7 +594,6 @@
     }
 
     .menu {
-        flex-wrap: wrap;
         padding: 8px
     }
     .rotinas {

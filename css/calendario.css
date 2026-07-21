@@ -6,6 +6,14 @@
         border-color: black;
     }
 }
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
 
 .container{
     display:flex;
@@ -45,10 +53,35 @@ main{
     justify-content: center;
     align-items: center;
 }
-
 #clock {
     font-size: 0.85rem;
 }
+.cAvisoMesAnterior, .cAvisoMesSeguinte {
+    z-index: 2;
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    bottom: 30%;
+    display: flex;
+}
+.cAvisoMesAnterior {
+    right: 1px;
+}
+.cAvisoMesSeguinte {
+    left: 1px;
+}
+.avisoEmExecucao {
+    background: var(--cor-ocioso);
+    box-shadow: 0 0 5px var(--cor-ocioso);
+    position: relative;
+    width: 8px;
+    height: 8px;
+    border-radius: 5px;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+    animation: pulse 2s infinite;
+}
+
 .calendar{
     opacity: 1;
     display: grid;
@@ -112,10 +145,9 @@ main{
     left: 0;
 }
 .dayHi .eventContainer {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: flex-start;
+    display: grid;
+    align-content: start;
+    grid-template-columns: auto auto auto auto;
     gap: 4px;
     row-gap: 4px;
 }
@@ -170,7 +202,7 @@ main{
 
 .day.today {
     border: 1px solid var(--cor-texto);
-    box-shadow: inset 0 0 3px var(--cor-texto),
+    box-shadow: inset 0 0 3000px var(--cor-marcada-borda-vidro),
             inset 0 0 0 #00000000,
             inset 0 0 0 #00000000,
             inset 0 0 0 #00000000,
@@ -278,6 +310,7 @@ main{
 }
 .event:hover {
     opacity: 1 !important;
+    z-index: 20 !important;
     box-shadow: inset 0 0 20px var(--cor-evento-hover),
                 0 0 10px var(--cor-evento-hover);
     border: var(--borda-card) solid var(--cor-evento-hover);
@@ -321,7 +354,7 @@ main{
 .buscaEvento {
     border: 5px solid rgba(255, 255, 255, 0);
     border-radius: 10px;
-    animation: bounce 1s infinite !important;
+    animation: bounce 1s ease 10 !important;
 }
 .naoEncontrado {
     color: red;

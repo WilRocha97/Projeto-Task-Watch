@@ -121,6 +121,7 @@ export function criarGraficoDashboard() {
                     corExecutandoSombra,
                     corExecutadoSombra
                 ],
+                hoverOffset: 5,
                 hoverBackgroundColor: [
                     corErro,
                     corOcioso,
@@ -132,6 +133,7 @@ export function criarGraficoDashboard() {
         options: {
             borderWidth: 0,
             cutout: '50%',
+            borderRadius: 5,
             maintainAspectRatio: false,
             layout: {
                 padding: 26,

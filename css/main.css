@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
 
 :root {
     --escala-item-lateral: 1.02;
@@ -16,10 +17,10 @@
     --sombra-vidro-card-escura: #6868680c;
     --sombra-card: #3f3f3f27;
     --sombra-card-clara: #81818127;
-    --sombra-2: #7c746827;
+    --sombra-2: #7e736427;
     --borda-botao: 20px;
     --padding-botao: 1px 6px;
-    --cor-padrao: #ff0040;
+    --cor-padrao: #ffd900;
     --cor-1: #00000000;
     --cor-2: #00000000;
     --cor-amarelo-1: #8a5300;
@@ -52,7 +53,7 @@
     --animacao-opaca-bota-4: #a521582d;
     
     --cor-executando: #00cf91;
-    --cor-atencao: #00cf0a;
+    --cor-atencao: #b0cf00;
     --cor-erro: #ff0000;
     --cor-ocioso: #ffae00;
     --cor-final: #00c1fc;
@@ -98,7 +99,7 @@
     --animacao-opaca-bota-4: #fc388926;
 
     --cor-executando: #00be85;
-    --cor-atencao: #01b30a;
+    --cor-atencao: #a7b301;
     --cor-erro: #ff0000;
     --cor-ocioso: #ffae00;
     --cor-final: #00c3ff;
@@ -164,7 +165,7 @@ input:-webkit-autofill:active {
     transition: opacity var(--transicao-link) ease-in-out;
 }
 
-.telaHistoricoConteudo, .dicaContainer, .galeriaContainer, .menuLateralContainerFundo, .classTelaTabela {
+.telaHistoricoConteudo, .dicaContainer, .galeriaContainer, .menuLateralContainerFundo, .classTelaTabela, .telaMaquinasContainerFundo {
     --scroll-background: transparent;
     --scroll-hover: var(--cor-destaque);
     --scroll-button-heigh: 0;
@@ -190,8 +191,8 @@ input:-webkit-autofill:active {
 /* estilizando a barra de rolagem */
 .scroll {
   /* Padrão (Firefox, Chrome 121+, Safari 18+) */
-  scrollbar-width: thin;
-  scrollbar-color: var(--scroll-color) var(--scroll-background);
+    scrollbar-width: thin;
+    scrollbar-color: var(--scroll-color) var(--scroll-background);
 }
 .scroll::-webkit-scrollbar {
     width: var(--scroll-bar-width); /* largura da barra de rolagem */
@@ -269,8 +270,11 @@ html, body {
     width: 100%;
     margin: 0;
 }
-body, button, div, span, input, p, h1, h2, h3, h4, h5 {
+body, div, span, input, p, h1, h2, h3, h4, h5 {
    font-family: "Rubik", sans-serif; 
+}
+button, .MenuBotao, .MenuBotaoTexto, .btnCard {
+    font-family: "Roboto Slab", serif; 
 }
 body {
     --scroll-background: var(--cor-vidro-2);
@@ -315,12 +319,13 @@ button {
 .invisibleHeight {
     opacity: 0 !important;
     max-height: 0 !important;
+    height: 0 !important;
     min-height: 0 !important;
 }
 .invisible {
     opacity: 0 !important;
-    position: fixed !important;
-    bottom: 200% !important;
+    max-width: 0 !important;
+    overflow: hidden !important;
 }
 .invisible0 {
     opacity: 0 !important;
@@ -604,10 +609,7 @@ button {
             inset 1px 1px 2px var(--sombra-vidro-clara),
             inset 1px -1px 2px var(--sombra-vidro-escura),
             inset -1px 1px 2px var(--sombra-vidro-escura),
-            inset 0 4px 15px var(--animacao-opaca-bota-1),
-            inset -4px 0 20px var(--animacao-opaca-bota-3),
-            inset 0 -4px 20px var(--animacao-opaca-bota-2),
-            inset 4px 0 15px var(--animacao-opaca-bota-4);
+            inset 0 0 200px var(--botao-hover);
     transition: var(--transicao-link) ease-in-out;
 }
 .MenuBotao:hover::after, .MenuBotaoInterno:hover::after, .paginaHistorico button:not(:disabled):hover::after, .tituloTabela:hover::after, 
@@ -624,12 +626,11 @@ button {
 .MenuBotao:hover #carregandoHistorico {
     width: calc(100% + 7px);
 }
-
 .botaoFechar:hover {
     text-shadow: 0 0 5px red !important;
     color: red !important;
 }
-.botaoFechar.nh:hover, .botaoFixar.nh:hover {
+.botaoFechar.nh:hover, .botaoFixar.nh:hover, .botaoPip.nh:hover {
     background-color: transparent;
     text-shadow: 0 0 0 transparent;
 }
@@ -658,13 +659,11 @@ button {
 .rectangleMaquina.nh .botaoFechar,
 .rectangleMaquina.nh .botaoFixar,
 .barraPesquisa.nh .botaoFechar  {
-    width: 14px;
-    padding: 4px 5px 5px 5px;
+    width: 50px;
     opacity: 1;
-    margin: 0 10px;
 }
-.barraPesquisa:hover .limparBarra {
-    margin: 0 10px;
+.barraPesquisa:hover {
+    padding: 0;
 }
 
 .MenuBotao.nh::after, .MenuBotaoInterno.nh::after, .paginaHistorico button.nh::after {
@@ -768,7 +767,6 @@ button.clicked::after,
 /* =============================================================================
    PAGINAÇÃO
    ============================================================================= */
-
 .menuPaginas {
     display: flex;
     justify-self: center;
@@ -838,6 +836,9 @@ button.clicked::after,
                 0 4px 5px var(--animacao-opaca-bota-4),
                 0 4px 10px var(--animacao-bota-4);
 }
+.linkSecreto{
+    opacity: 0;
+}
 
 
 @media (hover: none) {
@@ -889,7 +890,7 @@ button.clicked::after,
         font-size: 1rem !important;
         width: 70px !important;
     }
-}  
+}   
 @media (max-width: 1255px) {
     .invisible3 {
         height: 0 !important;

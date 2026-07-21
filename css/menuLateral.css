@@ -103,7 +103,7 @@
     width: 100%;
     transition: var(--transicao-link) ease-in-out;
 }
-.telaMaquinasContainer{
+.telaMaquinasContainer {
     display: flex;
 }
 .telaMaquinasContainer {
@@ -190,13 +190,13 @@
     transition: 1s ease-in-out;
     z-index: -1;
 }
-.cStatusItemLateral.livre, .cStatusItemLateral.baixa  { 
+.cStatusItemLateral.livre { 
     --cor-item-lateral: var(--cor-executando);
 }
-.cStatusItemLateral.ocupado, .cStatusItemLateral.media  { 
+.cStatusItemLateral.ocupado { 
     --cor-item-lateral: var(--cor-ocioso);
 }
-.cStatusItemLateral.desativado, .cStatusItemLateral.alta  { 
+.cStatusItemLateral.desativado { 
     --cor-item-lateral: var(--cor-erro);
 }
 
@@ -294,7 +294,7 @@
     }
 }
 @media (min-width: 2500px) {
-    .menuLateralMaquinas {
+    .menuLateralMaquinas  {
         min-height: 5%;
     }
     #telaMaquinas {
