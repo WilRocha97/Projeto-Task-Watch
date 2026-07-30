@@ -68,6 +68,7 @@
     min-height: 0 !important;
     margin: 0 10px !important;
     padding: 0 10px !important;
+    border: none !important;
 }
 .alertasVermelho {
     box-shadow: inset 0 0 30px #ff000082;
