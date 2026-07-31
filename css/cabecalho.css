@@ -145,7 +145,8 @@
 /* Bolinhas de status */
 .bolinhaErro,
 .bolinhaOcioso,
-.bolinhaFinal {
+.bolinhaFinal,
+.bolinhaFechado  {
     position: relative;	
     bottom: 200%;
     width: 100%;
@@ -175,6 +176,11 @@
     background-color: var(--cor-final); 
     box-shadow: 0 0 10px var(--cor-final),
                 0 -10px 20px var(--cor-final); 
+}
+.bolinhaFechado { 
+    background-color: var(--cor-fechar); 
+    box-shadow: 0 0 10px var(--cor-fechar),
+                0 -10px 20px var(--cor-fechar); 
 }
 
 /* =============================================================================

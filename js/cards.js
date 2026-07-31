@@ -280,6 +280,7 @@ document.addEventListener('click', (event) => {
                     }
                     else {
                         telaRotinas.removeChild(divMae)
+                        document.getElementById('bolinha-status-fechado').classList.remove('invisible5')
                     }
                 }, 500);
             }
