@@ -273,7 +273,7 @@ html, body {
 body, div, span, input, p, h1, h2, h3, h4, h5 {
    font-family: "Rubik", sans-serif; 
 }
-button, .MenuBotao, .MenuBotaoTexto, .btnCard {
+button, .MenuBotao, .MenuBotaoTexto, .maisInfo, .maisInfo2, .maisInfo3 {
     font-family: "Roboto Slab", serif; 
 }
 body {
