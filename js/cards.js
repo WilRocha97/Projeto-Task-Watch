@@ -138,7 +138,7 @@ export function procurarCard(event, cardPesquisado='') {
             const resultado = [];
             cards.forEach(card => {
                 // console.log(card.id.includes)
-                if (card.id.includes(cardPesquisado)) {
+                if (card.id.toLowerCase().includes(cardPesquisado.toLowerCase())) {
                 resultado.push(card); // Adicionar o card correspondente no resultado
                 }
             });
