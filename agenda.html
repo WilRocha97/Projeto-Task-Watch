@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/avanco.png" type="image/gif">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/cabecalho.css">
+    <link rel="stylesheet" href="css/drop.css">
+    <link rel="stylesheet" href="css/menuLateral.css">
+    <link rel="stylesheet" href="css/calendario.css">
+    <link rel="stylesheet" href="css/cardsConteudo.css">
+    <link rel="stylesheet" href="css/temas.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <title>Agenda</title>
+    <meta name="title" content="Agenda - TaskWatch">
+    <meta name="description" content="Agenda do sistema de monitoramento de rotinas automáticas">
+</head>
+<body class="dark scroll">
+    <header id="cabecalho" class="cabecalho">
+        <div class="fundoCabecalhoH"></div>
+        <div class="divisaoCabecalho">
+            <div id="menuCabecalho" class="menu minimizado">
+                <div class="fundo menuTelaBotoes">
+                    <div class="cmb fundoInvertido barraPesquisa">
+                        <input type="text" id="searchInputRotina" class="cmb cInputPesquisa" placeholder="Buscar rotina" title="Buscar rotina por nome"
+                            oninput="this.size = Math.min(Math.max(this.value.length, 12), 50)" size="12">
+                        <div id="limpaCInputRotina" class="cmb botaoFechar botaoMaquina limparBarra" title="Limpar busca">⨉</div>
+                    </div>
+
+                    <button id="prev-month" class="MenuBotao MenuBotaoTexto" title="Mês anterior">
+                        <div class="cAvisoMesAnterior">
+                            <span id="avisoMesAnterior" class="avisoEmExecucao invisible0" title="Existe rotina em execução no mês anterior"></span>
+                        </div>❮</button>
+                    <div>
+                        <div id="month-label" class="textoCabecalho"></div>
+                    </div>
+                    <button id="next-month" class="MenuBotao MenuBotaoTexto" title="Próximo mês">
+                        <div class="cAvisoMesSeguinte">
+                            <span id="avisoMesSeguinte" class="avisoEmExecucao invisible0" title="Existe rotina em execução no mês seguinte"></span>
+                        </div>❯</button>
+
+                    <div id="clock" class="MenuBotao MenuBotaoTexto"></div>
+
+                    <button id="menu" class="cmb MenuBotao" title="Abrir menu">
+                        <div id="botaoMenu" class="cmb">☰</div>
+                    </button>
+                </div>
+                
+                <div class="fundo menuTelaBotoes menuInvisivel invisible3">
+                    <button id="btn-new-event" class="MenuBotao MenuBotaoTexto" title="Nova rotina">Nova rotina</button>
+                    <button id="exportarCalendario" class="MenuBotao" title="Exportar calendário" value="csv">CSV
+                        <span id="carregandoExportacao" class="carregando off"></span>
+                    </button>
+                    <button id="dica" class="cmb MenuBotao" title="Ajuda">?</button>
+                    <button id="toggleDarkMode" class="cmb MenuBotao iconeContainer" title="Mudar para modo claro">
+                        <img class="cmb icone" src="assets/moon.png" alt="Modo escuro">
+                    </button> 
+                </div>
+            </div>  
+        </div>
+
+        <div id="telaDica" class="cmb fundo dicaTela invisible2">
+            <div class="cmb scroll dicaContainer">
+                <button id="fecharAjuda" class="cmb MenuBotaoInterno BotaoFechar" title="Fechar ajuda">⨉</button>
+                <div id="textoDica" class="cmb ClassTextoDica">
+                    Olá, essa é a agenda do Task Watch.
+
+                    <br><br><br>Aqui estam algumas informações sobre como o site funciona :)<br><br>
+                    
+                    <br><br><br><br><h1>Apresentação</h1>
+                    <br>• Aqui na agenda estão registradas as rotinas automátizadas que devem ser executadas durante os dias. 
+                    As rotinas cadastradas aqui apareceram de forma resumida na página inicial do TaskWatch.
+
+                    <br><br><br><br><h1>Buscando rotinas</h1>
+                    <br>• É possível buscar uma rotina utilizando a barra de busca localizado a esquerda no cabeçalho do site.
+
+                    <br><br><br><br><h1>CSV</h1>
+                    <br>• Se quiser exportar o mês em exibição, cliquem no botão "CSV" presente no cabeçalho do site.
+
+                    <br><br><br><br><h1>Calendário</h1>
+                    <br>• No calendário é possível adicionar rotinas clicando no botão "Nova rotina" 
+                    localizado no cabeçalho do site.
+                    Para adicionar um rotina esporádica, clique em "✛", localizada no topo da célula ou no botão "Nova rotina" localizado no cabeçalho do site, 
+                    depois clique no seletor de data e hora no canto direito do campo "Data" e clique em limpar para colcoar uma data vazia.
+                    <br><br>• Para trocar o mês exibido na tela, clique em "❮", "❯" ou use o botão de rolagem (scroll) do mouse. 
+                    Para voltar para o mês atual, clique no relógio que fica a direita dos botões de troca de mês.
+
+                    <br><br><br><br><h1>Células do dia</h1>
+                    <br>• O calendário é divido em células, uma para cada dia do mês que ficam separados por colunas, onde cada coluna representa um dia da semana. 
+                    <br><br>• A esquerda do calendário existe a aba de "Rotinas esporádicas", uma célula específica para as rotinas que não tem data definida. 
+                    <br><br>• No cabeçalho de cada célula é exibido o número relativo àquele dia e existem alguns botões de interação. Se aquele dia for um fériado, 
+                    é exibido o seu nome.
+                    <br><br>• Para maximizar a célula, basta clicar no botão "≡", para minimizar clique novamente. Para inserir uma rotina naquele dia específico, 
+                    basta clicar no botão "✛"
+                    
+                    <br><br><br><br><h1>Rotinas</h1>
+                    <br>• Do lado esquerdo de cada rotina exisete um botão onde é possivel mudar o estádo da rotina. "▢" siginifica que a rotina está em aberto, 
+                    "⏺︎" a rotina está em andamento e "✔" a rotina está concluída. Quando alguma rotina estiver marcada como "⏺︎ Em andamento", 
+                    aparecerá um ponto amarelo que aparece no canto superior direito da célula
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="fundoAuxiliar invisible0"></div>
+
+    <!-- Modal oculto no HTML -->
+    <div id="modalConfirmacao" class="modalConfirma invisible0"></div>
+
+    <div class="container">
+        <div id="containerEsporadicos" class="containerEsporadicos collapsed">
+            <div>
+                <div class="weekday">Rotinas esporádicas</div>
+            </div>
+            <div class="day dayEsporadicos fundo" data-day="0">
+                <div class="tituloContainer">
+                    <div id="expandEventoExporadico" class="expand" title="Expande a lista">≡</div>
+                    <div id="newEventoExporadico" class="new" title="Nova rotina exporádica">✛</div>
+                </div>
+
+                <div id="listaEventosExporadicos" class="eventContainer scroll scrollInfo">
+                </div>
+            </div>
+        </div>
+        <main>
+            <div class="header-week"><div class="weekday">Dom</div><div class="weekday">Seg</div><div class="weekday">Ter</div><div class="weekday">Qua</div><div class="weekday">Qui</div><div class="weekday">Sex</div><div class="weekday">Sáb</div></div>
+            <div id="calendar" class="calendar collapsed"></div>
+        </main>
+    </div>
+
+    <!-- Modal -->
+    <div id="modalCalendar" class="modalCalendar hidden">
+        <div class="fundoCabecalho"></div>
+        <div class="modalCalendarContent fundo">
+            <div class="modalCabecalho">
+                <h3 id="modalCalendarTitle" class="subTituloItemLateral">Novo evento</h3>
+                <button id="close-modal" class="cmb MenuBotao BotaoFechar" title="Fechar tela do evento">⨉</button>
+            </div>
+
+            <div class="subTituloItemLateral" style="margin: 10px 10px 0;">Título</div>
+            <div class="cmb fundoInvertido barraPesquisa">
+                <input type="text" id="ev-titulo" class="cmb mInputName" placeholder="Título" title="Título">
+            </div>
+
+            <div class="subTituloItemLateral" style="margin: 10px 10px 0;">Data<br><h3>(Para adicionar uma rotina esporádica, abra o seletor a baixo e clique em 'Limpar')</h3></div>
+            <div class="cmb fundoInvertido barraPesquisa">
+                <input id="ev-data-inicio" class="cmb mInputName" type="datetime-local" title="Data início">
+            </div>
+            
+            <div style="display: flex; gap: 10px;">
+                <div style="width: 50%;">
+                    <div title="Tipo da rotina" class="subTituloItemLateral" style="margin: 10px 10px 0;">Tipo</div>
+                    <div class="fundo drop" id="ev-tipo" title="Tipo da rotina">
+                        <div class="menuDrop">
+                            <span id="triggerLabel">Tipo da rotina</span>
+                            <span class="chevron" id="chevron">▼</span>
+                        </div>
+                        
+                        <div class="fundo dropdown-menu" id="dropdownMenu">
+                            <div class="menuItems">
+                                <div class="menu-item MenuBotao MenuBotaoTexto" data-id="1">
+                                    <span class="item-label">Demanda</span>
+                                </div>
+                                <div class="menu-item MenuBotao MenuBotaoTexto" data-id="2">
+                                    <span class="item-label">Lembrete</span>
+                                </div>
+                                <div class="menu-item MenuBotao MenuBotaoTexto" data-id="3">
+                                    <span class="item-label">Robô</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div style="width: 50%;">
+                    <div title="Quando a rotina deve se repitir" class="subTituloItemLateral" style="margin: 10px 10px 0;">Repetição</div>
+                    <div class="fundo drop" id="ev-repeticao" title="Quando a rotina deve se repitir">
+                        <div class="menuDrop">
+                            <span id="triggerLabel">Quando a rotina deve se repitir</span>
+                            <span class="chevron" id="chevron">▼</span>
+                        </div>
+                        
+                        <div class="fundo dropdown-menu" id="dropdownMenu">
+                            <div class="menuItems">
+                                <div class="menu-item MenuBotao MenuBotaoTexto" data-id="1">
+                                    <span class="item-label">Nenhuma</span>
+                                </div>
+                                <div class="menu-item MenuBotao MenuBotaoTexto" data-id="2">
+                                    <span class="item-label">Semanal</span>
+                                </div>
+                                <div class="menu-item MenuBotao MenuBotaoTexto" data-id="3">
+                                    <span class="item-label">Mensal</span>
+                                </div>
+                                <div class="menu-item MenuBotao MenuBotaoTexto" data-id="4">
+                                    <span class="item-label">Anual</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subTituloItemLateral" style="margin: 10px 10px 0;">Descrição</div>
+            <textarea id="ev-descricao" class="inputComentario scroll telaMensagemEvento" placeholder="Adicionar descrição" title="Adicionar descrição" style="height: 30vh;"></textarea>
+            
+            <div class="modalCalendarActions">
+                <button id="save-event" class="cmb MenuBotao MenuBotaoTexto" title="Salvar evento">Salvar</button>
+                <button id="delete-event" class="cmb MenuBotao MenuBotaoTexto" title="Excluir evento">Excluir</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
+    <script type="module" src="js/modo.js"></script>
+    <script type="module" src="js/menu.js"></script>
+    <script type="module" src="js/calendario.js"></script>
+    <script type="module" src="js/feriados.js"></script>
+    <script type="module" src="js/drop.js"></script>
+</body>
+</html>

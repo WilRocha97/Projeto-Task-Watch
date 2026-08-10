@@ -36,6 +36,8 @@
                                 oninput="this.size = Math.min(Math.max(this.value.length, 12), 50)" size="12">
                             <div id="limpaCInputCard" class="cmb botaoFechar botaoItemMenuLateral limparBarra" title="Limpar busca">⨉</div>
                         </div>
+                        
+                        <a id="calendario" class="MenuBotao MenuBotaoTexto" title="Agenda de rotinas" href="agenda.html" target="_blank">Agenda</a>
 
                         <a id="demandas" class="cmb MenuBotao MenuBotaoTexto" title="Lista de demandas" href="demandas.html" target="_blank">Demandas</a>
 
@@ -241,13 +243,13 @@
                     Se o site for aberto em um navegador diferente ou os dados do navegador atual forem deletados, todas as informações seram perdidas.
                     
                     <br><br><br><br><h1>Agenda</h1>
-                    <br>• A versão estática da agenda ainda não está disponível mas se quiser dar uma espiada, as imagens dela já estão aqui na "Galeria" do site.
-                    
+                    <br>• Aqui ficam registradas as rotinas que devem ser executadas.
+
                     <br><br><br><br><h1>Demandas</h1>
                     <br>• Aqui é possível gerências as demandas.
 
                     <br><br><br><br><h1>Resumo das rotinas</h1>
-                    <br>• Logo no topo temos o resumo das rotinas baseado na agenda.
+                    <br>• Logo no topo temos o resumo das rotinas cadastradas na agenda.
                     <br><br>• São 4 listas, uma mostrando as rotinas de dias anteriores, uma para as rotinas do dia, uma para as rotinas em execução e a última para as rotinas do dia que foram concluídas.
                     <br><br>• A esquerda atá o gráfico, ao estilo "rosquinha", para representar a slistas.
 
@@ -701,12 +703,7 @@
                 <h1 class="tituloRotinas">Rotinas atrasadas</h1>
                 <div class="lrStatus atrazo"></div>
                 <div id="AtrasadosTela" class="telaHistoricoConteudo telaListaRotinas scroll">
-                    <div class="linhaSimples">
-                         <p>CND Receita Federal CNPJ</p>
-                    </div>
-                    <div class="linhaSimples">
-                         <p>Boletos Sindicatos</p>
-                    </div>
+
                 </div>
             </div>
 
@@ -714,9 +711,7 @@
                 <h1 class="tituloRotinas">Rotinas do dia</h1>
                 <div class="lrStatus dia"></div>
                 <div id="DiaTela" class="telaHistoricoConteudo telaListaRotinas scroll">
-                    <div class="linhaSimples">
-                        <p>Resumo de impostos</p>
-                    </div>
+
                 </div>
             </div>
 
@@ -724,27 +719,7 @@
                 <h1 class="tituloRotinas">Rotinas em execuçao</h1>
                 <div class="lrStatus executando"></div>
                 <div id="ExecutandoTela" class="telaHistoricoConteudo telaListaRotinas scroll">
-                    <div class="linhaSimples">
-                        <p>CND Receita Federal CPF</p>
-                    </div>
-                    <div class="linhaSimples">
-                        <p>Consulta Débitos Estaduais</p>
-                    </div>
-                    <div class="linhaSimples">
-                        <p>Diagnóstico Fiscal</p>
-                    </div>
-                    <div class="linhaSimples">
-                        <p>Encaminha Docs WhatsApp</p>
-                    </div>
-                    <div class="linhaSimples">
-                        <p>Faturamento X Compra</p>
-                    </div>
-                    <div class="linhaSimples">
-                        <p>Pendências SIGISSWEB</p>
-                    </div>
-                    <div class="linhaSimples">
-                        <p>Transmite DeSTDA sem movimento</p>
-                    </div>
+
                 </div>
             </div>
 
@@ -752,9 +727,7 @@
                 <h1 class="tituloRotinas">Rotinas concluídas</h1>
                 <div class="lrStatus final"></div>
                 <div id="FinalizadoTela" class="telaHistoricoConteudo telaListaRotinas scroll">
-                    <div class="linhaSimples">
-                        <p>Consulta Divida Ativa</p>
-                    </div>
+ 
                 </div>
             </div>
         </div>
