@@ -1,4 +1,4 @@
-import { apiDashboard, _semearEventosDemo } from './rotinas-storage.js';
+import { apiDashboard, _semearEventosDemo, _resetarStatusEventosDemo } from './rotinas-storage.js';
 
 let graficoDashboard; // variável global
 let outerGraficoDashboard;
@@ -243,6 +243,16 @@ function atualizarGraficoDashboard(q) {
     graficoDashboard.update();
 }
 
+// chave única por OCORRÊNCIA (evento + data), não só pelo título — dois
+// eventos com o mesmo nome em datas diferentes (ex: o mesmo evento demo
+// marcado em dois meses) têm o mesmo título mas são ocorrências distintas,
+// e usar só o título fazia a segunda colidir com o id da primeira e nunca
+// ser inserida na lista
+function chaveRotina(rotina) {
+    const dataChave = (rotina.data_inicio || '').split(' ')[0]; // só a data, sem hora
+    return `rot_${rotina.id}_${dataChave}`.replace(/[^a-zA-Z0-9_-]/g, '_');
+}
+
 function atualizarLista(id_lista, lista) {
     var qualTela = document.getElementById(id_lista);
     const elementoPai = qualTela.parentElement;
@@ -273,9 +283,9 @@ function atualizarLista(id_lista, lista) {
         const paragrafoLinha = linha.querySelector('.nomeRotina')
         if (!paragrafoLinha) return; // elemento sem o parágrafo esperado (ex: linha em transição/placeholder), ignora com segurança
 
-        const textoExiste = lista.some(item => item.titulo === paragrafoLinha.innerHTML);
+        const aindaExiste = lista.some(item => chaveRotina(item) === linha.id);
 
-        if (!textoExiste) {
+        if (!aindaExiste) {
             linha.classList.add('vazio')
             setTimeout(()=> {
                 linha.remove();
@@ -286,7 +296,7 @@ function atualizarLista(id_lista, lista) {
     //console.log(lista)
     setTimeout(()=> {
         lista.forEach((rotina, index) => {
-            const idRotina = rotina.titulo.split(" ").join("_").replace("/", "").replace("(", "").replace(")", "");
+            const idRotina = chaveRotina(rotina);
 
             // verifica se a rotina está na lista
             const rtoinaNaLista = qualTela.querySelector(`#${idRotina}`);
@@ -309,14 +319,17 @@ function atualizarLista(id_lista, lista) {
                     // Insere o conteúdo concatenado na div de saída
                     const newElement = document.createElement('div');
                     newElement.id = idRotina;
+                    newElement.dataset.titulo = rotina.titulo;
                     newElement.title = `${rotina.titulo}\n\n${rotina.descricao}`;
                     newElement.className = 'linhaSimples vazio';
                     newElement.innerHTML = `<p class="nomeRotina">${rotina.titulo}</p>
                                             <p class="dataRotina">${dataFormatada}</p>`;
 
-                    // Encontra a posição correta para inserir em ordem alfabética
+                    // Encontra a posição correta para inserir em ordem alfabética pelo
+                    // título (o id não reflete mais só o título, então não dá mais pra
+                    // comparar os ids diretamente)
                     const filhos = Array.from(qualTela.children);
-                    const posicao = filhos.find(filho => filho.id.localeCompare(idRotina) > 0);
+                    const posicao = filhos.find(filho => (filho.dataset.titulo || '').localeCompare(rotina.titulo) > 0);
 
                     if (posicao) {
                         // Insere antes do elemento encontrado
@@ -358,7 +371,9 @@ async function executarPeriodicamente() {
 document.addEventListener("DOMContentLoaded", () => {
     // garante que os eventos de demonstração existam mesmo se essa página
     // for aberta antes do calendário
+
     _semearEventosDemo();
+    _resetarStatusEventosDemo();
     criarGraficoDashboard();
     executarPeriodicamente();
 });

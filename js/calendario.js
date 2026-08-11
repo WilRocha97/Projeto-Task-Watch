@@ -226,6 +226,7 @@ document.getElementById("btn-new-event").onclick = () => {
     document.getElementById("delete-event").style.display = "none";
     document.getElementById("modalCalendar").classList.remove("hidden");
 };
+
 document.getElementById("close-modal").onclick = () => document.getElementById("modalCalendar").classList.add("hidden");
 
 document.getElementById("save-event").onclick = async () => {

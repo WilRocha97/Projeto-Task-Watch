@@ -90,6 +90,27 @@ function _proximoAno(d) {
     return new Date(ano, d.getMonth(), dia, d.getHours(), d.getMinutes(), d.getSeconds());
 }
 
+// ocorrência mensal MAIS RECENTE (<= hoje) de um evento de demonstração,
+// caminhando a partir da data base do evento (ev.data_inicio). Usado tanto
+// por apiDashboard (atrasados) quanto por _resetarStatusEventosDemo, pra
+// manter os dois em sincronia — antes cada um assumia (de jeitos ligeiramente
+// diferentes) que a ocorrência "certa" era sempre a do mês corrente, o que
+// quebra quando o evento demo tem um offsetDias grande o suficiente pra cair
+// num mês anterior (ex.: offsetDias: -11 virando outro mês)
+function _ocorrenciaDemoAtual(ev, hoje) {
+    const hojeData = new Date(hoje.getFullYear(), hoje.getMonth(), hoje.getDate());
+    const base = _parseDataHora(ev.data_inicio);
+    let ocorrencia = new Date(base.getFullYear(), base.getMonth(), base.getDate());
+    if (ocorrencia > hojeData) return ocorrencia; // base ainda não chegou (não deveria acontecer no fluxo normal)
+
+    let proxima = _proximoMes(ocorrencia);
+    while (proxima <= hojeData) {
+        ocorrencia = proxima;
+        proxima = _proximoMes(proxima);
+    }
+    return ocorrencia;
+}
+
 // equivalente a _processamento_listar_eventos (com year/month sempre informados)
 export async function apiListarEventos(year, month, exportar = false) {
     const start = new Date(year, month - 1, 1);
@@ -245,7 +266,6 @@ export async function apiDashboard() {
     // meia-noite de hoje, pra comparar só a DATA (igual ao .date() do backend em Python) —
     // sem isso, um evento marcado pra hoje "vencia" assim que passasse das 00h00
     const hojeData = new Date(hoje.getFullYear(), hoje.getMonth(), hoje.getDate());
-    const diasNoMesAtual = new Date(hoje.getFullYear(), hoje.getMonth() + 1, 0).getDate();
     eventos.forEach(ev => {
         if (ev.data_inicio === '2001-01-01 00:00:00') return; // "esporádico" sem data
         const isDemo = ev.statusFixo !== undefined && ev.statusFixo !== null;
@@ -253,10 +273,9 @@ export async function apiDashboard() {
         const datas = [];
 
         if (isDemo) {
-            // eventos de demonstração: considera só a ocorrência do mês atual
-            // (é a mesma data que _resetarStatusEventosDemo mantém sincronizada)
-            const dia = Math.min(inicioDt.getDate(), diasNoMesAtual);
-            const ocorrenciaAtual = new Date(hoje.getFullYear(), hoje.getMonth(), dia);
+            // eventos de demonstração: usa a ocorrência mais recente de fato
+            // (mesmo cálculo do _resetarStatusEventosDemo — ver _ocorrenciaDemoAtual)
+            const ocorrenciaAtual = _ocorrenciaDemoAtual(ev, hoje);
             if (ocorrenciaAtual < hojeData) datas.push(ocorrenciaAtual);
         } else {
             const rep = _normRep(ev.repeticao);
@@ -327,21 +346,20 @@ export function exportarLocal(events) {
 // -----------------------------------------------------------------------
 // ---------- EVENTOS FIXOS DE DEMONSTRAÇÃO (semeados automaticamente) ----
 // -----------------------------------------------------------------------
-// São criados uma única vez (controlado pela flag DEMO_SEED_KEY), guardando
-// em `statusFixo` o status "padrão" de cada um. Diferente da versão anterior,
-// eles funcionam como eventos normais no dia a dia (clicar neles grava
-// registro real em eventos_execucao/eventos_concluidos, do jeito de sempre)
-// — a função _resetarStatusEventosDemo() é quem devolve cada um ao seu
-// status padrão, reescrevendo o registro real da ocorrência do mês atual.
-// Chame essa função sempre que a página do CALENDÁRIO for carregada.
-const DEMO_SEED_KEY = 'rotinas_demo_seed_v1';
+// _semearEventosDemo() apaga e recria os eventos demo (e seus registros reais
+// em eventos_execucao/eventos_concluidos) toda vez que é chamada — não semeia
+// mais só uma vez. Eles funcionam como eventos normais no dia a dia (clicar
+// neles grava registro real, do jeito de sempre) — a função
+// _resetarStatusEventosDemo() é quem devolve cada um ao seu status padrão
+// (guardado em `statusFixo`), reescrevendo o registro real da ocorrência do
+// mês atual. Chame as duas sempre que a página do CALENDÁRIO for carregada.
 const EVENTOS_DEMO = [
     { titulo: 'CND Receita Federal CNPJ',        statusFixo: 0 }, // em aberto
     { titulo: 'Boletos Sindicatos',               statusFixo: 0 }, // em aberto
     { titulo: 'Resumo de impostos',                statusFixo: 0, offsetDias: 0 }, // em aberto, no dia atual (sem o -1 dia)
-    { titulo: 'CND Receita Federal CPF',          statusFixo: 1 }, // em execução
-    { titulo: 'Consulta Débitos Estaduais',        statusFixo: 1 }, // em execução
-    { titulo: 'Diagnóstico Fiscal',                statusFixo: 1 }, // em execução
+    { titulo: 'CND Receita Federal CPF',          statusFixo: 1, offsetDias: -2 }, // em execução
+    { titulo: 'Consulta Débitos Estaduais',        statusFixo: 1, offsetDias: -2 }, // em execução
+    { titulo: 'Diagnóstico Fiscal',                statusFixo: 1, offsetDias: -3 }, // em execução
     { titulo: 'Encaminha Docs WhatsApp',           statusFixo: 1 }, // em execução
     { titulo: 'Faturamento X Compra',              statusFixo: 1 }, // em execução
     { titulo: 'Pendências SIGISSWEB',              statusFixo: 1 }, // em execução
@@ -350,9 +368,16 @@ const EVENTOS_DEMO = [
 ];
 
 export function _semearEventosDemo() {
-    if (localStorage.getItem(DEMO_SEED_KEY)) return; // já semeado antes, não duplica
+    // apaga qualquer evento demo criado antes (e os registros reais de
+    // execução/conclusão vinculados a eles), pra recriar tudo do zero
+    let eventos = _lerEventos();
+    const idsDemoAntigos = new Set(eventos.filter(e => e.demo === true).map(e => e.id));
+    if (idsDemoAntigos.size > 0) {
+        eventos = eventos.filter(e => !idsDemoAntigos.has(e.id));
+        _salvarExecucao(_lerExecucao().filter(e => !idsDemoAntigos.has(e.evento_id)));
+        _salvarConcluidos(_lerConcluidos().filter(c => !idsDemoAntigos.has(c.evento_id)));
+    }
 
-    const eventos = _lerEventos();
     const hoje = new Date();
 
     EVENTOS_DEMO.forEach(demo => {
@@ -378,12 +403,13 @@ export function _semearEventosDemo() {
     });
 
     _salvarEventos(eventos);
-    localStorage.setItem(DEMO_SEED_KEY, '1');
 }
 
 // devolve cada evento de demonstração ao seu status padrão (statusFixo),
 // reescrevendo o registro real (eventos_execucao/eventos_concluidos) da
-// ocorrência do MÊS ATUAL — chamar sempre que a página do calendário carregar
+// ocorrência mensal mais recente de fato (não necessariamente a do mês
+// corrente — ver _ocorrenciaDemoAtual) — chamar sempre que a página do
+// calendário carregar
 export function _resetarStatusEventosDemo() {
     const eventos = _lerEventos();
     const demoEventos = eventos.filter(e => e.statusFixo !== undefined && e.statusFixo !== null);
@@ -395,14 +421,9 @@ export function _resetarStatusEventosDemo() {
     let concluidos = _lerConcluidos().filter(c => !idsDemo.has(c.evento_id));
 
     const hoje = new Date();
-    const diasNoMesAtual = new Date(hoje.getFullYear(), hoje.getMonth() + 1, 0).getDate();
 
     demoEventos.forEach(ev => {
-        // recalcula a data da ocorrência desse evento no mês atual (clampando
-        // pro último dia do mês, igual à recorrência mensal normal)
-        const base = _parseDataHora(ev.data_inicio);
-        const dia = Math.min(base.getDate(), diasNoMesAtual);
-        const dataOcorrencia = _fmtData(new Date(hoje.getFullYear(), hoje.getMonth(), dia));
+        const dataOcorrencia = _fmtData(_ocorrenciaDemoAtual(ev, hoje));
 
         if (ev.statusFixo === 1) {
             execucao.push({ evento_id: ev.id, data: dataOcorrencia });
