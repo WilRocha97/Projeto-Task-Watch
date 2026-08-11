@@ -9,6 +9,8 @@ import {restaurarEstadoMaquinas} from './maquinas.js';
 import {adicionarListenersMaquinas} from './maquinas.js';
 import {salvarEstadoMaquinas} from './maquinas.js';
 
+import {_semearEventosDemo, _resetarStatusEventosDemo} from './rotinas-storage.js';
+
 var botoes = document.querySelectorAll('button');
 var botoesCards = document.querySelectorAll('.btnCard');
 var cards = document.querySelectorAll('.rectangle');
@@ -73,6 +75,9 @@ if (isTouchDevice()) {
         barra.classList.add('nh')
     });
 }
+
+_semearEventosDemo();
+_resetarStatusEventosDemo();
 
 function updateClock() {
     var daysOfWeek = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"];
