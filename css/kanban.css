@@ -83,7 +83,7 @@
     display: flex;
     flex-direction: column;
     gap: 2px;
-    height: calc(100vh - 4px);
+    height: 100%;
     overflow: hidden;
     border-radius: 6px;
     transition: var(--transicao-link) ease-in-out;
@@ -111,14 +111,24 @@
 .telaGrupoFluxos {
     flex-direction: column;  
 }
+.telaGrupoListasWrapper {
+    width: 100%;
+    height: 100%;
+    overflow-x: auto;   /* a barra de scroll mora aqui agora */
+    overflow-y: hidden;
+    border-radius: 6px;
+}
 .telaGrupoListas {
     border-radius: 6px;
+    display: flex;
     flex-direction: row;
+    flex-wrap: nowrap;
     min-height: 0;
-    width: 100%;
-    overflow-x: auto;
-    flex-direction: row;
+    height: 100%;
+    width: max-content;   /* deixa crescer conforme o nº de colunas, sem quebrar linha */
+    gap: 2px;
     transition: var(--transicao-link) ease-in-out;
+    /* remove overflow-x/overflow-y daqui */
 }
 
 .fundoListaTarefas, .fundoListaFluxos {
@@ -126,7 +136,7 @@
     overflow: hidden;
 }
 .fundoListaTarefas {
-    height: calc(100% - 104px);
+    height: 100%;
 }
 .fundoListaFluxos {
     height: calc(100% - 49px);
@@ -154,7 +164,7 @@
     height: calc(100% - 7px);
 }
 .listaTarefas {
-    margin: 3px 2px;
+    margin: 1px 2px;
     padding: 1px;
 }
 .listaFluxos {
@@ -170,7 +180,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin: 2px;
+    margin: 4px 2px;
     padding: 5px;
     border-radius: 6px;
     height: fit-content;
@@ -199,29 +209,32 @@
 }
 
 .tituloTarefa, .prioridadeTarefa, .responsavelTarefa, .solicitanteDaTarefa, .prazoDaTarefa {
-    padding: 5px;
+    padding: 3px;
+    margin: 2px;
     z-index: 99;
 }
 .prioridadeAlta {
-    --cor-lista: var(--cor-erro);
+    --cor-lista: var(--cor-erro-alternativa);
 }
 .prioridadeMedia {
-    --cor-lista: var(--cor-ocioso);
+    --cor-lista: var(--cor-ocioso-alternativa);
 }
 .prioridadeBaixa {
-    --cor-lista: var(--cor-executando);
+    --cor-lista: var(--cor-executando-alternativa);
 }
 .nivelPrioridade {
+    color: white;
+    border-radius: 5px;
+    background-color: var(--cor-lista);
+    box-shadow: 0 0 5px var(--cor-lista);
+    transition: var(--transicao-link) ease-in-out;
+}
+.barraSeparadora {
     z-index: 1;
     height: 1px;
     width: 100%;
     border-radius: 5px;
-    background-color: var(--cor-lista);
-    box-shadow: 0 -2em 30px var(--cor-lista), 
-                0 -1em 20px var(--cor-lista), 
-                0 -0.5em 15px var(--cor-lista), 
-                0 0 5px var(--cor-lista);
-    transition: var(--transicao-link) ease-in-out;
+    background-color: #7e7e7e4d;
 }
 
 .fluxo-acoes {

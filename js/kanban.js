@@ -594,12 +594,12 @@ function criarElementoTarefa(tarefa) {
 
     div.innerHTML = `
         <div class="rectangleTarefaCabecalho">
-          <div class="prioridadeTarefa">${escHtml(tarefa.prioridade)}</div>
+          <div class="prioridadeTarefa nivelPrioridade ${classeNivel}">${escHtml(tarefa.prioridade)}</div>
           ${tarefa.responsavel ? `<div class="responsavelTarefa">${escHtml(tarefa.responsavel)}</div>` : ""}
           ${tarefa.solicitante  ? `<div class="solicitanteDaTarefa">${escHtml(tarefa.solicitante)}</div>` : ""}
           ${tarefa.data_prazo  ? `<div class="prazoDaTarefa">${formatarData(tarefa.data_prazo)}</div>` : ""}
         </div>
-        <div class="nivelPrioridade ${classeNivel}"></div>
+        <div class="barraSeparadora"></div>
         <div class="tituloTarefa">${escHtml(tarefa.titulo)}</div>`;
 
     div.addEventListener("click", () => abrirModalTarefa(tarefa));
