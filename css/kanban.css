@@ -206,7 +206,11 @@
     border: var(--borda-card) solid var(--cor-borda-vidro);
     scale: var(--escala-card);
     transform: translateY(-3px);
+    z-index: 9999999;
 }
+.rectangleTarefa:hover .listaTarefas {
+    overflow: visible;
+} 
 
 .tituloTarefa, .prioridadeTarefa, .responsavelTarefa, .solicitanteDaTarefa, .prazoDaTarefa {
     padding: 3px;
@@ -215,18 +219,21 @@
 }
 .prioridadeAlta {
     --cor-lista: var(--cor-erro-alternativa);
+    --cor-lista-2: var(--cor-erro);
 }
 .prioridadeMedia {
     --cor-lista: var(--cor-ocioso-alternativa);
+    --cor-lista-2: var(--cor-ocioso);
 }
 .prioridadeBaixa {
     --cor-lista: var(--cor-executando-alternativa);
+    --cor-lista-2: var(--cor-executando);
 }
 .nivelPrioridade {
     color: white;
     border-radius: 5px;
     background-color: var(--cor-lista);
-    box-shadow: 0 0 5px var(--cor-lista);
+    box-shadow: 0 0 5px var(--cor-lista), 0 0 100px var(--cor-lista-2), 0 0 200px var(--cor-lista-2);
     transition: var(--transicao-link) ease-in-out;
 }
 .barraSeparadora {
