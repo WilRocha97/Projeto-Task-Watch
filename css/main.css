@@ -72,7 +72,8 @@
     --cor-texto: #ffffff;
     --cor-texto-2: #000000;
     --cor-titulo: #444444;
-    --cor-fundo: #080808;
+    --cor-fundo: #0e0d0c;
+    --cor-pixel: rgb(129 129 129 / 10%);
     --direcao-sombra-2: 2px;
     --direcao-sombra-1: -2px;
     --sombra-clara: #00000028;
@@ -118,7 +119,8 @@
     --cor-texto: #000000;
     --cor-texto-2: #ffffff;
     --cor-titulo: #000000;
-    --cor-fundo: #fffaf4;
+    --cor-fundo: #f9f1e8;
+    --cor-pixel: rgb(45 44 44 / 13%);
     --direcao-sombra-2: 2px;
     --direcao-sombra-1: -2px;
     --sombra-clara: #97959528;
@@ -284,8 +286,10 @@ body {
     --padding-barra: 2px;
     --scroll-color: #858585;
     
+    background-size: 20px 20px;
+    background-attachment: fixed;
+    background-image: radial-gradient(circle, var(--cor-pixel) 1px, #00000000 1px);
     overflow: hidden;
-    background: linear-gradient(135deg, rgba(145, 145, 145, 0.151), rgba(39, 39, 39, 0.158));
     background-color: var(--cor-fundo); /* cor base */
     color: var(--cor-texto);
     line-height: 15px;
