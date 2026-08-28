@@ -7,28 +7,28 @@ var barraFluxos = document.getElementById('menuLateralFluxos');
 var botoes = document.querySelectorAll('button');
 
 /**
- * kanban.js
+ * kanban.js (versão local — memória do navegador / localStorage)
  * Gerencia todo o comportamento do quadro Kanban:
- *  - Comunicação com a API Python
+ *  - Simula a API usando localStorage (rotearLocal)
  *  - Renderização de fluxos, listas e tarefas
  *  - Modal de criação / edição / exclusão
  *  - Drag & drop entre listas e fluxos
+ *  - Drag & drop para reordenar as colunas (listas)
  */
-
-const API = `${location.protocol}//${location.hostname}:5000`;
 
 // ═══════════════════════════════════════════════════════════════════════════════
 //  Estado global
 // ═══════════════════════════════════════════════════════════════════════════════
 
 let estado = {
-    fluxos:           [],   // dados completos vindos da API
-    fluxoAtualId:     null, // id do fluxo sendo exibido
-    tarefaEditandoId: null, // id da tarefa aberta no modal (null = nova)
+    fluxos:              [],   // dados completos vindos da API
+    fluxoAtualId:        null, // id do fluxo sendo exibido
+    tarefaEditandoId:    null, // id da tarefa aberta no modal (null = nova)
     tarefaResponsavelAtual: null, // responsável da tarefa antes de editar
-    listaNovaId:      null, // lista-alvo ao criar nova tarefa
-    arrastandoId:     null, // id da tarefa em drag
-    dropdowns:        {},   // instâncias da classe Dropdown: { prioridade, responsavel }
+    listaNovaId:         null, // lista-alvo ao criar nova tarefa
+    arrastandoId:        null, // id da tarefa em drag
+    colunaArrastandoId:  null, // id da coluna (lista) em drag
+    dropdowns:           {},   // instâncias da classe Dropdown: { prioridade, responsavel }
 };
 
 // ═══════════════════════════════════════════════════════════════════════════════
@@ -45,11 +45,11 @@ function popularDadosExemplo() {
     ];
 
     const listas = [
-        { id: "lista-1", nome: "A fazer",      fluxo_id: "exemplo-1" },
-        { id: "lista-2", nome: "Em andamento", fluxo_id: "exemplo-1" },
-        { id: "lista-3", nome: "Concluído",    fluxo_id: "exemplo-1" },
-        { id: "lista-4", nome: "A fazer",      fluxo_id: "exemplo-2" },
-        { id: "lista-5", nome: "Em andamento", fluxo_id: "exemplo-2" },
+        { id: "lista-1", nome: "A fazer",      fluxo_id: "exemplo-1", ordem: 0 },
+        { id: "lista-2", nome: "Em andamento", fluxo_id: "exemplo-1", ordem: 1 },
+        { id: "lista-3", nome: "Concluído",    fluxo_id: "exemplo-1", ordem: 2 },
+        { id: "lista-4", nome: "A fazer",      fluxo_id: "exemplo-2", ordem: 0 },
+        { id: "lista-5", nome: "Em andamento", fluxo_id: "exemplo-2", ordem: 1 },
     ];
 
     const hoje = new Date();
@@ -164,6 +164,10 @@ function gerarId() {
     return Date.now() + Math.random().toString(36).slice(2, 7);
 }
 
+function ordenarPorOrdem(lista) {
+    return [...lista].sort((a, b) => (a.ordem ?? 0) - (b.ordem ?? 0));
+}
+
 // ─── Roteador local (substitui fetch) ──────────────────────────────────────
 
 function rotearLocal(path, method, body) {
@@ -183,11 +187,10 @@ function rotearLocal(path, method, body) {
 
         if (!id) {
             if (method === "GET") {
-                // Retorna fluxos com listas e tarefas aninhadas
+                // Retorna fluxos com listas (ordenadas por "ordem") e tarefas aninhadas
                 return fluxos.map(f => ({
                     ...f,
-                    listas: listas
-                        .filter(l => l.fluxo_id === f.id)
+                    listas: ordenarPorOrdem(listas.filter(l => l.fluxo_id === f.id))
                         .map(l => ({
                             ...l,
                             tarefas: tarefas.filter(t => t.lista_id === l.id),
@@ -207,8 +210,7 @@ function rotearLocal(path, method, body) {
                 const f = fluxos[idx];
                 return {
                     ...f,
-                    listas: listas
-                        .filter(l => l.fluxo_id === f.id)
+                    listas: ordenarPorOrdem(listas.filter(l => l.fluxo_id === f.id))
                         .map(l => ({
                             ...l,
                             tarefas: tarefas.filter(t => t.lista_id === l.id),
@@ -231,10 +233,25 @@ function rotearLocal(path, method, body) {
     if (recurso === "listas") {
         const listas = storageGet("listas");
 
+        // PUT /listas/reordenar
+        if (id === "reordenar" && method === "PUT") {
+            const { listas: payload } = body; // [{ id, ordem }, ...]
+            const atualizadas = listas.map(l => {
+                const nova = payload.find(p => String(p.id) === String(l.id));
+                return nova ? { ...l, ordem: nova.ordem } : l;
+            });
+            storageSet("listas", atualizadas);
+            return { ok: true };
+        }
+
         if (!id) {
             if (method === "GET")  return listas;
             if (method === "POST") {
-                const nova = { id: gerarId(), ...body };
+                const listasDoFluxo = listas.filter(l => l.fluxo_id === body.fluxo_id);
+                const proxOrdem = listasDoFluxo.length
+                    ? Math.max(...listasDoFluxo.map(l => l.ordem ?? 0)) + 1
+                    : 0;
+                const nova = { id: gerarId(), ordem: proxOrdem, ...body };
                 storageSet("listas", [...listas, nova]);
                 return nova;
             }
@@ -430,6 +447,7 @@ async function init() {
 
     renderizarSidebar();
     inicializarDropdownsModal();
+    bindContainerColunas(document.querySelector(".telaGrupoListas"));
 
     if (estado.fluxos.length > 0) {
         const ultimoId = localStorage.getItem("fluxoAtual"); // ✅ string pura
@@ -458,10 +476,10 @@ function renderizarSidebar() {
         btn.className = 'fluxoItem';
         btn.dataset.id = f.id;
         btn.title      = "Abrir fluxo de tarefas";
-        btn.innerHTML  = `<button class="MenuBotao MenuBotaoTexto fluxo-btn">☰ ${escHtml(f.nome)}</button>
+        btn.innerHTML  = `<button class="MenuBotao MenuBotaoTexto fluxo-btn">${escHtml(f.nome)}</button>
                           <span class="fluxo-acoes">
-                            <button class="cmb MenuBotao btn-editar-fluxo" data-id="${f.id}" title="Renomear fluxo">✎</button>
-                            <button class="cmb MenuBotao btn-deletar-fluxo" data-id="${f.id}" title="Excluir fluxo">✕</button>
+                            <button class="cmb botaoFixar botaoItemMenuLateral btn-editar-fluxo" data-id="${f.id}" title="Renomear fluxo">✎</button>
+                            <button class="cmb botaoFechar botaoItemMenuLateral btn-deletar-fluxo" data-id="${f.id}" title="Excluir fluxo">✕</button>
                           </span>`;
         btn.addEventListener("click", (e) => {
             if (e.target.closest(".fluxo-acoes")) return;
@@ -545,7 +563,10 @@ function criarElementoLista(lista) {
 
     col.innerHTML = `
       <div class="fundo cabecalhoTarefas">
-        <button class="MenuBotao MenuBotaoTexto lista-nome btn-editar-lista" data-id="${lista.id}">${escHtml(lista.nome)}</button>
+        <div class="cabecalhoTarefasEsquerda">
+          <span class="dragHandleColuna" title="Arraste para reordenar a coluna" draggable="true">⠿</span>
+          <button class="MenuBotao MenuBotaoTexto lista-nome btn-editar-lista" data-id="${lista.id}">${escHtml(lista.nome)}</button>
+        </div>
         <div style="display:flex;gap:4px">
           <button class="cmb MenuBotao MenuBotaoTexto btn-deletar-lista" data-id="${lista.id}" title="Excluir lista">✕</button>
           <button class="cmb MenuBotao MenuBotaoTexto btn-nova-tarefa" data-lista-id="${lista.id}" title="Nova tarefa na lista">✛</button>
@@ -565,6 +586,7 @@ function criarElementoLista(lista) {
     tarefasOrdenadas.forEach((t) => dropZone.appendChild(criarElementoTarefa(t)));
 
     bindDropZone(dropZone);
+    bindColumnDrag(col);
 
     col.querySelector(".btn-nova-tarefa").addEventListener("click", () =>
         abrirModalTarefa(null, lista.id)
@@ -605,12 +627,14 @@ function criarElementoTarefa(tarefa) {
     div.addEventListener("click", () => abrirModalTarefa(tarefa));
 
     div.addEventListener("dragstart", (e) => {
+        e.stopPropagation(); // não deixa a coluna capturar esse drag como reordenação
         estado.arrastandoId = tarefa.id;
         e.dataTransfer.effectAllowed = "move";
         e.dataTransfer.setData("text/plain", tarefa.id);
         setTimeout(() => div.classList.add("arrastando"), 0);
     });
-    div.addEventListener("dragend", () => {
+    div.addEventListener("dragend", (e) => {
+        e.stopPropagation();
         estado.arrastandoId = null;
         div.classList.remove("arrastando");
     });
@@ -723,12 +747,14 @@ cInputTarefa.addEventListener('keydown', (event) => {
 });
 
 // ═══════════════════════════════════════════════════════════════════════════════
-//  Drag & Drop
+//  Drag & Drop — Tarefas dentro de uma lista
 // ═══════════════════════════════════════════════════════════════════════════════
 
 function bindDropZone(zone) {
     zone.addEventListener("dragover", (e) => {
+        if (estado.arrastandoId == null) return; // não é um drag de tarefa
         e.preventDefault();
+        e.stopPropagation();
         e.dataTransfer.dropEffect = "move";
         zone.classList.add("drag-over");
 
@@ -746,7 +772,9 @@ function bindDropZone(zone) {
     zone.addEventListener("dragleave", () => zone.classList.remove("drag-over"));
 
     zone.addEventListener("drop", async (e) => {
+        if (estado.arrastandoId == null) return;
         e.preventDefault();
+        e.stopPropagation();
         zone.classList.remove("drag-over");
 
         const listaId = zone.dataset.listaId; // ✅ string pura
@@ -776,6 +804,101 @@ function getTarefaApos(container, y) {
                 return { offset, el: card };
             }
             return mais_proximo;
+        },
+        { offset: Number.NEGATIVE_INFINITY }
+    ).el ?? null;
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+//  Drag & Drop — Reordenar colunas (listas) dentro do fluxo
+// ═══════════════════════════════════════════════════════════════════════════════
+
+function bindColumnDrag(col) {
+    col.setAttribute("draggable", "true");
+
+    col.addEventListener("dragstart", (e) => {
+        // se o drag começou numa tarefa, deixa o handler da tarefa cuidar disso
+        if (e.target.closest(".rectangleTarefa")) return;
+
+        // só inicia o drag da coluna se começou na alça de arraste
+        if (!e.target.closest(".dragHandleColuna")) {
+            e.preventDefault();
+            return;
+        }
+
+        estado.colunaArrastandoId = col.dataset.id; // ✅ string pura
+        e.dataTransfer.effectAllowed = "move";
+        e.dataTransfer.setData("text/plain", col.dataset.id);
+        setTimeout(() => col.classList.add("arrastandoColuna"), 0);
+    });
+
+    col.addEventListener("dragend", () => {
+        estado.colunaArrastandoId = null;
+        col.classList.remove("arrastandoColuna");
+    });
+}
+
+function bindContainerColunas(container) {
+    if (!container) return;
+
+    container.addEventListener("dragover", (e) => {
+        if (estado.colunaArrastandoId == null) return;
+        e.preventDefault();
+        e.dataTransfer.dropEffect = "move";
+
+        const arrastando = container.querySelector(`.telaTarefas[data-id="${estado.colunaArrastandoId}"]`);
+        if (!arrastando) return;
+
+        const afterEl   = getColunaApos(container, e.clientX);
+        const novaLista = container.querySelector(".cabecalhoNovaLista");
+
+        if (afterEl === null) {
+            // manda pro final, mas sempre antes do botão "Nova lista"
+            if (novaLista) {
+                container.insertBefore(arrastando, novaLista);
+            } else {
+                container.appendChild(arrastando);
+            }
+        } else {
+            container.insertBefore(arrastando, afterEl);
+        }
+    });
+
+    container.addEventListener("drop", async (e) => {
+        if (estado.colunaArrastandoId == null) return;
+        e.preventDefault();
+
+        const colunas = [...container.querySelectorAll(".telaTarefas")];
+        const payload = colunas.map((c, idx) => ({
+            id:    c.dataset.id, // ✅ string pura
+            ordem: idx,
+        }));
+
+        try {
+            await api("/listas/reordenar", "PUT", { listas: payload });
+            const fluxo = estado.fluxos.find((f) => f.id === estado.fluxoAtualId);
+            if (fluxo) {
+                fluxo.listas.sort(
+                    (a, b) => payload.findIndex((p) => String(p.id) === String(a.id)) - payload.findIndex((p) => String(p.id) === String(b.id))
+                );
+            }
+        } catch (err) {
+            mostrarErro(err.message);
+            await recarregarFluxo();
+        }
+    });
+}
+
+function getColunaApos(container, x) {
+    const colunas = [...container.querySelectorAll(".telaTarefas:not(.arrastandoColuna)")];
+    return colunas.reduce(
+        (mais_proxima, col) => {
+            const box    = col.getBoundingClientRect();
+            const offset = x - box.left - box.width / 2;
+            if (offset < 0 && offset > mais_proxima.offset) {
+                return { offset, el: col };
+            }
+            return mais_proxima;
         },
         { offset: Number.NEGATIVE_INFINITY }
     ).el ?? null;
