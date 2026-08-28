@@ -551,7 +551,7 @@ function criarElementoLista(lista) {
           <button class="cmb MenuBotao MenuBotaoTexto btn-nova-tarefa" data-lista-id="${lista.id}" title="Nova tarefa na lista">✛</button>
         </div>
       </div>
-      <div class="fundo fundoListaTarefas">
+      <div class="fundoListaTarefas">
         <div class="listaTarefas scroll drop-zone" id="lista_${lista.id}" data-lista-id="${lista.id}">
         </div>
       </div>`;
