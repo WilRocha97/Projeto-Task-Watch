@@ -146,6 +146,8 @@
 .fluxoItem {
     display: flex;
     justify-content: space-between;
+    z-index: 2;
+    position: relative;
 }
 
 .cabecalhoFluxos, .cabecalhoTarefas {
