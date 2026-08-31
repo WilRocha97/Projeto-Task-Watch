@@ -248,6 +248,7 @@
 } 
 
 .tituloTarefa, .prioridadeTarefa, .responsavelTarefa, .solicitanteDaTarefa, .prazoDaTarefa {
+    height: fit-content;
     padding: 3px;
     margin: 2px;
     z-index: 99;
