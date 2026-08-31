@@ -467,6 +467,10 @@ button {
     min-height: 93.6vh;
     transition: var(--transicao-link);
 }
+.off {
+    opacity: 0.2;
+    scale: 0.9;
+}
 .telaRotinas {
     display: flex;
     flex-direction: column;
@@ -602,6 +606,7 @@ button {
     font-size: var(--tamanho-texto-2);
     font-weight: bold;
     transition: var(--transicao-link) ease-in-out, color 1s ease-in-out;
+    z-index: 1;
 }
 .MenuBotao::after, .MenuBotaoInterno::after, .paginaHistorico button::after, .tituloTabela::after, .linha::after, .linhaSimples::after, .drop::after {
     width: 100%;
