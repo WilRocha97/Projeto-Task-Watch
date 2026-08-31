@@ -1,4 +1,3 @@
-import {getDataInfo} from './relogio.js';
 import {updateClock} from './relogio.js';
 import {marcarFeriados} from './feriados.js';
 import {animacaoBotao} from './menu.js';
@@ -18,10 +17,47 @@ var botoes = document.querySelectorAll('button');
 
 let qualLado = 'Para esquerda'
 
-let currentDate = new Date(); // mês mostrado
+// ---------- helpers de data (sempre horário local do usuário) ----------
+const pad = n => String(n).padStart(2, "0");
+
+// Data/hora atual do dispositivo, lida no momento do uso (nunca guardada em global)
+function agora() {
+    return new Date();
+}
+
+// Primeiro dia do mês de uma data. Manter o dia 1 evita o estouro do setMonth
+// (ex.: 31/08 + 1 mês viraria 31/09 -> 01/10)
+function inicioDoMes(date) {
+    return new Date(date.getFullYear(), date.getMonth(), 1);
+}
+
+// "YYYY-MM-DD HH:MM:SS" ou "YYYY-MM-DDTHH:MM" interpretado como horário LOCAL.
+// Sem isso o navegador pode tratar o formato como UTC e o dia/mês escorrega.
+function parseDataLocal(valor) {
+    if (valor instanceof Date) return valor;
+    const m = String(valor).match(/^(\d{4})-(\d{2})-(\d{2})(?:[T ](\d{2}):(\d{2})(?::(\d{2}))?)?/);
+    if (!m) return new Date(valor);
+    return new Date(
+        Number(m[1]),
+        Number(m[2]) - 1,
+        Number(m[3]),
+        Number(m[4] || 0),
+        Number(m[5] || 0),
+        Number(m[6] || 0)
+    );
+}
+
+// "YYYY-MM-DD" no horário local
+function ymdLocal(d) {
+    return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+}
+
+let currentDate = inicioDoMes(agora()); // mês mostrado (sempre no dia 1)
 let editingEvent = null;
 
-var [day, dayOfWeek, actualMonth, monthName, year, hours, minutes] = getDataInfo();
+function mudarMes(delta) {
+    currentDate = new Date(currentDate.getFullYear(), currentDate.getMonth() + delta, 1);
+}
 
 export function isTouchDevice() {
     return ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
@@ -57,21 +93,23 @@ async function verificaExecucaoAnterior() {
 
         // usa currentDate direto (fonte da verdade do mês exibido) em vez de ler o
         // texto de #month-label — esse texto só é atualizado quando a animação de
-        // troca de mês termina (animationend), então lê-lo aqui era uma corrida:
-        // podia pegar o texto do mês ANTERIOR, ainda não trocado
-        const ref = new Date(Date.UTC(currentDate.getFullYear(), currentDate.getMonth(), 1));
+        // troca de mês termina (animationend), então lê-lo aqui era uma corrida
+        const refAno = currentDate.getFullYear();
+        const refMes = currentDate.getMonth();
 
         document.getElementById('avisoMesAnterior').classList.add('invisible0')
         document.getElementById('avisoMesSeguinte').classList.add('invisible0')
 
         for (const item of items) {
             if (item.repeticao != 'nenhuma') {
-                const d = new Date(item.data_inicio);
-                const dMes = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), 1));
-                if (dMes < ref) {
+                // tudo em horário local: comparar data local com getUTC* jogava
+                // eventos da noite (a partir das 21h em UTC-3) para o mês seguinte
+                const d = parseDataLocal(item.data_inicio);
+                const diff = (d.getFullYear() - refAno) * 12 + (d.getMonth() - refMes);
+                if (diff < 0) {
                     document.getElementById('avisoMesAnterior').classList.remove('invisible0')
                 }
-                else if (dMes > ref) {
+                else if (diff > 0) {
                     document.getElementById('avisoMesSeguinte').classList.remove('invisible0')
                 };
             }
@@ -81,15 +119,13 @@ async function verificaExecucaoAnterior() {
     }
 }
 
-function formatDateLocal(dtStr) {
-    const d = new Date(dtStr);
-    const pad = n => String(n).padStart(2, "0");
+function formatDateLocal(valor) {
+    const d = parseDataLocal(valor);
     return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}`;
 }
 
-function formatDateForDisplay(dtStr) {
-    const d = new Date(dtStr);
-    return d.toLocaleString();
+function formatDateForDisplay(valor) {
+    return parseDataLocal(valor).toLocaleString();
 }
 
 function atualizaCalendario() {
@@ -115,7 +151,7 @@ function abreModalEvento(dtStart) {
         document.getElementById("ev-titulo").value = "";
         document.getElementById("ev-descricao").value = "";
         document.getElementById("ev-tipo").value = "";
-        document.getElementById("ev-data-inicio").value = formatDateLocal(dtStart.toISOString());
+        document.getElementById("ev-data-inicio").value = formatDateLocal(dtStart);
         document.getElementById("ev-repeticao").value = "nenhuma";
         document.getElementById("delete-event").style.display = "none";
         document.getElementById("modalCalendar").classList.remove("hidden");
@@ -165,18 +201,17 @@ function expandeDia(botaoExpansao, cell) {
 
 // ---------- calendar nav ----------
 document.getElementById("prev-month").onclick = () => { 
-    currentDate.setMonth(currentDate.getMonth()-1); 
+    mudarMes(-1);
     qualLado = 'Para direita'
     atualizaCalendario()
 }
 document.getElementById("next-month").onclick = () => { 
-    currentDate.setMonth(currentDate.getMonth()+1); 
+    mudarMes(1);
     qualLado = 'Para esquerda'
     atualizaCalendario()
-
 }
 document.getElementById("clock").onclick = () => {
-    currentDate = new Date();     // volta ao mês atual
+    currentDate = inicioDoMes(agora());     // volta ao mês atual
     qualLado = 'Para esquerda'
     atualizaCalendario()
 };
@@ -220,8 +255,7 @@ document.getElementById("btn-new-event").onclick = () => {
     document.getElementById("ev-titulo").value = "";
     document.getElementById("ev-descricao").value = "";
     document.getElementById("ev-tipo").value = "";
-    const now = new Date();
-    document.getElementById("ev-data-inicio").value = formatDateLocal(now.toISOString());
+    document.getElementById("ev-data-inicio").value = formatDateLocal(agora());
     document.getElementById("ev-repeticao").value = "nenhuma";
     document.getElementById("delete-event").style.display = "none";
     document.getElementById("modalCalendar").classList.remove("hidden");
@@ -447,14 +481,13 @@ function criarCelulaDia(year, month, d) {
     const cell = document.createElement("div");
     cell.className = "day fundo";
     cell.dataset.day = d;
-    const dateStr = `${year}-${String(month).padStart(2,"0")}-${String(d).padStart(2,"0")}`;
+    const dateStr = `${year}-${pad(month)}-${pad(d)}`;
 
     if (isTouchDevice()) {
         cell.classList.add("nh");
     }
-    const today = new Date();
-    const todayStr = `${today.getFullYear()}-${String(today.getMonth()+1).padStart(2,"0")}-${String(today.getDate()).padStart(2,"0")}`;
-    if (dateStr === todayStr) {
+    // data local do dispositivo, lida na hora da montagem
+    if (dateStr === ymdLocal(agora())) {
         cell.classList.add("today");
     }
 
@@ -506,7 +539,7 @@ function atualizarEventosCalendario(year, month, events) {
     const eventosPorDia = {};
     events.forEach(ev => {
         const dia = ev.data_inicio.split(" ")[0];
-        if (dia.startsWith(`${year}-${String(month).padStart(2,"0")}`)) {
+        if (dia.startsWith(`${year}-${pad(month)}`)) {
             const d = parseInt(dia.split("-")[2], 10);
             if (!eventosPorDia[d]) eventosPorDia[d] = [];
             eventosPorDia[d].push(ev);
@@ -530,7 +563,7 @@ function atualizarEventosCalendario(year, month, events) {
         const idsNovos = new Set(eventosNovos.map(ev => `dia${d}-${ev.id}`));
 
         eventosAtuais.forEach(el => {
-            if (!el.id == 'diaEsporadico') {
+            if (!el.id.startsWith('diaEsporadico')) {
                 if (!idsNovos.has(el.id)) {
                     el.remove();
                 }
@@ -634,7 +667,7 @@ function criarElementoEvento(ev, d, year, month) {
 
 // ---------- renderizarEventosDia ----------
 function renderizarEventosDia(cell, d, year, month, events) {
-    const dateStr = `${year}-${String(month).padStart(2,"0")}-${String(d).padStart(2,"0")}`;
+    const dateStr = `${year}-${pad(month)}-${pad(d)}`;
     const eventCell = cell.querySelector(".eventContainer");
 
     events.filter(ev => ev.data_inicio.startsWith(dateStr)).forEach(ev => {
@@ -679,7 +712,9 @@ function registrarInteracao(event) {
 document.addEventListener('click', (event) => {registrarInteracao(event)});
 document.addEventListener('keydown', registrarInteracao);
 document.querySelector('#newEventoExporadico').addEventListener("click", () => {
-    const dtStart = new Date(year, actualMonth, day, 9,0);
+    // lê a data no momento do clique, não no carregamento da página
+    const hoje = agora();
+    const dtStart = new Date(hoje.getFullYear(), hoje.getMonth(), hoje.getDate(), 9, 0);
     abreModalEvento(dtStart);
 });
 document.querySelector('#expandEventoExporadico').addEventListener("click", (event) => {
@@ -697,11 +732,11 @@ window.addEventListener('wheel', (event) => {
   if (event.target.closest('.eventContainer') || event.target.closest('.cabecalho') || event.target.closest('.modalCalendarContent')) return;
 
   if (event.deltaY > 0) {
-    currentDate.setMonth(currentDate.getMonth()-1); 
+    mudarMes(-1);
     qualLado = 'Para direita'
     atualizaCalendario()
   } else {
-    currentDate.setMonth(currentDate.getMonth()+1); 
+    mudarMes(1);
     qualLado = 'Para esquerda'
     atualizaCalendario()
   }
