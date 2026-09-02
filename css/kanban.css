@@ -159,6 +159,9 @@
     justify-content: space-between;
     align-items: center;
 }
+.cabecalhoTarefas.superior {
+    z-index: 99999;
+}
 
 .cabecalhoTarefasEsquerda {
     display: flex;
@@ -336,7 +339,6 @@
     .cabecalhoTarefas.superior {
         flex-wrap: wrap;
         height: 100px;
-        z-index: 1;
     }
     #abreMenuFluxos {
         opacity: 1;
