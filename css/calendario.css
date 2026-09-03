@@ -21,6 +21,7 @@
     min-height: 85vh;
     width: calc(100vw - 4px);
     gap: 2px;
+    transition: var(--transicao-link) ease-in-out;
 }
 .containerEsporadicos {
     opacity: 1;
@@ -180,12 +181,12 @@ main{
     overflow: hidden;
     width: calc(100% - 4px);
 }
-.date, .expand, .new, .holiday {
+.date, .expand, .new, .holiday, .length {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     border-radius: 4px;
-    width: 16px;
+    min-width: 16px;
     height: auto;
     align-self: center;
     justify-self: center;
@@ -194,10 +195,26 @@ main{
     -webkit-backdrop-filter: blur(var(--blur));
     transition: var(--transicao-link) ease-in-out;
 }
-.holiday {
-    width: calc(100% - 64px);
+.holiday, .length {
+    width: 100%;
     padding: 0 5px;
     text-align: start;
+}
+.length {
+    min-width: 0;
+    max-width: 0;
+    width: 0;
+    padding: 0;
+    position: fixed;
+    z-index: -99999;
+}
+.length.expanded {
+    position: relative;
+    width: 100%;
+    padding: 0 5px;
+    min-width: fit-content;
+    max-width: fit-content;
+    width: fit-content;
 }
 
 .day.today {
@@ -210,6 +227,7 @@ main{
             inset 0 0 0 #00000000,
             inset 0 0 0 #00000000;
 }
+.day.today .length,
 .day.today .date,
 .day.today .holiday,
 .day.today .expand, .expand:hover,
@@ -219,6 +237,7 @@ main{
 }
 
 /* Estilo para dias de feriado */
+.day.feriado .length, 
 .day.feriado .date, 
 .day.feriado .expand, 
 .day.feriado .new,
@@ -447,7 +466,7 @@ button.danger{
         padding: 20px 2px 0;
         height: calc(100% - 24px);
     }
-    .date, .expand, .new {
+    .date, .expand, .new, .length {
         width: 26px;
         height: 100%;
     }

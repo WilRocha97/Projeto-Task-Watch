@@ -166,7 +166,7 @@ function expandeDia(botaoExpansao, cell) {
             cell.classList.remove("dayHi");
             fundoAuxiliar.classList.add('invisible0');
             botaoExpansao.classList.remove("expanded");
-
+            cell.querySelector(".length").classList.remove("expanded");
             cell.classList.remove("collapsed");
         }, 300)
     }
@@ -193,6 +193,7 @@ function expandeDia(botaoExpansao, cell) {
             cell.classList.add("dayHi");
             fundoAuxiliar.classList.remove('invisible0');
             botaoExpansao.classList.add("expanded");
+            cell.querySelector(".length").classList.add("expanded");
 
             cell.classList.remove("collapsed");
         }, 300)
@@ -388,6 +389,15 @@ function montaListaExporadica(events){
                 elemento.remove();
             }
         });
+
+        if (eventosNaTela.length == 1) {
+            var quantidade_eventos = 'evento'
+        }
+        else {
+            var quantidade_eventos = 'eventos'
+        }
+        document.querySelector(".lengthExporadico").title = `${eventosNaTela.length} ${quantidade_eventos} no dia`;
+        document.querySelector(".lengthExporadico").innerText = `${eventosNaTela.length} ${quantidade_eventos} no dia`;
     }
 }
 
@@ -468,7 +478,7 @@ function construirEstruturaCalendario(year, month, events) {
     }
 
     for (let d=1; d<=totalDays; d++){
-        const cell = criarCelulaDia(year, month, d);
+        const cell = criarCelulaDia(year, month, d, events);
         renderizarEventosDia(cell, d, year, month, events);
         cal.appendChild(cell);
     }
@@ -477,7 +487,7 @@ function construirEstruturaCalendario(year, month, events) {
 }
 
 // ---------- criarCelulaDia ----------
-function criarCelulaDia(year, month, d) {
+function criarCelulaDia(year, month, d, events) {
     const cell = document.createElement("div");
     cell.className = "day fundo";
     cell.dataset.day = d;
@@ -513,6 +523,23 @@ function criarCelulaDia(year, month, d) {
     newLabel.title = "Nova rotina do dia";
     newLabel.innerText = '✛';
     tituloContainer.appendChild(newLabel);
+
+    let listaEventosDia = [];
+    events.filter(ev => ev.data_inicio.startsWith(dateStr)).forEach(ev => {
+        listaEventosDia.push(ev);
+    });
+    // expanded console.log(listaEventosDia.length)
+    if (listaEventosDia.length == 1) {
+        var quantidade_eventos = 'evento'
+    }
+    else {
+        var quantidade_eventos = 'eventos'
+    }
+    const lengthLabel = document.createElement("div");
+    lengthLabel.className = "length";
+    lengthLabel.title = `${listaEventosDia.length} ${quantidade_eventos} no dia`;
+    lengthLabel.innerText = `${listaEventosDia.length} ${quantidade_eventos} no dia`;
+    tituloContainer.appendChild(lengthLabel);
 
     const expandB = cell.querySelector(".expand");
     expandB.addEventListener("click", (ev) => {
