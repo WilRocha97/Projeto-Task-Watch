@@ -141,7 +141,7 @@ function atualizaCalendario() {
             document.getElementById('containerEsporadicos').classList.remove('collapsed')
             verificaExecucaoAnterior()
         }, 200)
-    }, 500)
+    }, 200)
 }
 
 function abreModalEvento(dtStart) {
