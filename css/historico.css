@@ -20,33 +20,13 @@
    PAINEL DE CONFIGURAÇÃO E FILTROS
    ============================================================================= */
 
-.painelConfig {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: baseline;
-    max-height: 200px;
-    margin: 10px 0;
-    gap: 10px;
-    transition: opacity var(--transicao-link) ease-in-out,
-                max-height var(--transicao-link) ease-in-out,
-                padding var(--transicao-link) ease-in-out,
-                margin var(--transicao-link) ease-in-out,
-                box-shadow 1s ease-in-out,
-                color 1s ease-in-out;
-}
-
 /* Estados colapsados */
-.painelConfig.collapsed,
 .mainHistorico.collapsed {
     opacity: 0;
     height: 0;
     padding: 0;
     margin: 0;
-    z-index: -999;
 }
-
 .mainHistorico.collapsed {
     width: 100vw;
 }
