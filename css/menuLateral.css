@@ -7,10 +7,10 @@
     border-radius: 0;
     height: 100%;
     min-height: 0;
-    transition: var(--transicao-link) ease-in-out,
-                min-heigt 1s ease-in-out,
-                background-color 1s ease-in-out,
-                box-shadow 1s ease-in-out;
+    transition: var(--transicao-link) var(--ease),
+                min-heigt 1s var(--ease),
+                background-color 1s var(--ease),
+                box-shadow 1s var(--ease);
 }
 #telaMaquinas {
     left: 0;
@@ -28,7 +28,7 @@
     align-items: center;
     border-radius: 10px;
     padding: 0 0 0 20px;
-    transition: var(--transicao-link) ease-in-out;
+    transition: var(--transicao-link) var(--ease);
 }
 .smLivres, .smEmUso, .smDesativados {
     position: relative;
@@ -45,7 +45,7 @@
                 0 0 10px var(--cor-fundo), 
                 0 0 5px var(--cor-fundo);
     z-index: -1;
-    transition: var(--transicao-link) ease-in-out;
+    transition: var(--transicao-link) var(--ease);
 }
 .smLivres::before {
     --cor-fundo: var(--cor-executando);
@@ -60,7 +60,7 @@
     overflow: hidden;
     max-width: 0;
     opacity: 0;
-    transition: var(--transicao-link) ease-in-out;
+    transition: var(--transicao-link) var(--ease);
 }
 .subMenuDispositivos:hover #monitorDesativadosTexto, 
 .subMenuDispositivos:hover #monitorEmUsoTexto, 
@@ -101,7 +101,7 @@
     height: calc(100% - 94px);
     margin-top: 6vh;
     width: 100%;
-    transition: var(--transicao-link) ease-in-out;
+    transition: var(--transicao-link) var(--ease);
 }
 .telaMaquinasContainer {
     display: flex;
@@ -110,7 +110,7 @@
     opacity: 1;
     max-height: 100%;
     flex-direction: column;
-    transition: var(--transicao-link) ease-in-out;
+    transition: var(--transicao-link) var(--ease);
 }
 
 .menuLateralMaquinas {
@@ -120,7 +120,7 @@
     width: calc(100% - 24px);
     margin: 5px 12px;
     align-items: center;
-    transition: var(--transicao-link) ease-in-out;
+    transition: var(--transicao-link) var(--ease);
 }
 
 .rectangleMaquina {
@@ -128,7 +128,7 @@
     opacity: 1;
     margin: 10px 6px 10px 14px;
     border-radius: 10px;
-    transition: var(--transicao-link) ease-in-out;
+    transition: var(--transicao-link) var(--ease);
 }
 .rectangleMaquina:hover {
     scale: var(--escala-item-lateral);
@@ -155,7 +155,7 @@
     overflow: hidden;
     max-width: 100%;
     opacity: 1;
-    transition: var(--transicao-link) ease-in-out, box-shadow 1s ease-in-out, background-color 1s ease-in-out;
+    transition: var(--transicao-link) var(--ease), box-shadow 1s var(--ease), background-color 1s var(--ease);
 }
 
 .addMaquinaAtivada {
@@ -187,7 +187,7 @@
                 2px 0 10px var(--cor-item-lateral),
                 1px 0 10px var(--cor-item-lateral),
                 0 0 5px var(--cor-item-lateral);
-    transition: 1s ease-in-out;
+    transition: 1s var(--ease);
     z-index: -1;
 }
 .cStatusItemLateral.livre { 
@@ -229,7 +229,7 @@
     resize: none;          /* impede redimensionamento manual */
     overflow-y: auto;      /* ativa scroll vertical quando passar do max-height */
     word-wrap: break-word; /* quebra automática das palavras */
-    transition: var(--transicao-link);
+    transition: var(--transicao-link) var(--ease);
 }
 
 .tagsContainer {
@@ -333,7 +333,7 @@
         bottom: 1px !important;
         min-height: 95%;
         align-items: flex-start;
-        transition: var(--transicao-link) ease-in-out;
+        transition: var(--transicao-link) var(--ease);
     }
 }
 @media (max-width: 1255px) and (min-width: 917px) {

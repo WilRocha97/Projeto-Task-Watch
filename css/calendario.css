@@ -21,7 +21,7 @@
     min-height: 85vh;
     width: calc(100vw - 4px);
     gap: 2px;
-    transition: var(--transicao-link) ease-in-out;
+    transition: var(--transicao-link) var(--ease);
 }
 .containerEsporadicos {
     opacity: 1;
@@ -29,7 +29,7 @@
     flex-direction: column;
     gap: 2px;
     height: calc(100vh - 54px);
-    transition: 0.2s ease-in-out;
+    transition: 0.2s var(--ease);
 }
 .containerEsporadicos.collapsed {
     opacity: 0;
@@ -79,7 +79,7 @@ main{
     height: 8px;
     border-radius: 5px;
     opacity: 1;
-    transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s var(--ease);
     animation: pulse 2s infinite;
 }
 
@@ -91,7 +91,7 @@ main{
     align-content: start;
     height: calc(100% - 25px);
     gap: 2px;
-    transition: 0.2s ease-in-out;
+    transition: 0.2s var(--ease);
 }
 .calendar.collapsed {
     opacity: 0;
@@ -125,7 +125,11 @@ main{
     overflow: hidden;
     border-radius: 6px;
     scale: 1;
-    transition: var(--transicao-link) ease-in-out, margin 0s, min-width 0s, max-width 0s, height 0s;
+    transition: var(--transicao-link) var(--ease), 
+                margin 0s, 
+                min-width 0s, 
+                max-width 0s, 
+                height 0s;
 }
 .dayEsporadicos {
     height: calc(100% - 27px); 
@@ -193,7 +197,7 @@ main{
     text-align: center;
     backdrop-filter: blur(var(--blur-card));
     -webkit-backdrop-filter: blur(var(--blur));
-    transition: var(--transicao-link) ease-in-out;
+    transition: var(--transicao-link) var(--ease);
 }
 .holiday, .length {
     width: 100%;
@@ -259,7 +263,7 @@ main{
     width: 5px;
     height: 5px;
     background: #80808000;
-    transition: var(--transicao-link) ease-in-out;
+    transition: var(--transicao-link) var(--ease);
 }
 .day:has(.executando):hover::before {
     top: 2px;
@@ -310,7 +314,7 @@ main{
     border: var(--borda-card) solid #00000000;
     background:linear-gradient(150deg, var(--cor-evento), var(--cor-evento-2));
     cursor:pointer;
-    transition: var(--transicao-link) ease-in-out;
+    transition: var(--transicao-link) var(--ease);
 }
 .event.Robô {
     --cor-evento: var(--cor-verde-1);
@@ -364,7 +368,7 @@ main{
     background: none;
     color: white;
     cursor: pointer;
-    transition: var(--transicao-link) ease-in-out;
+    transition: var(--transicao-link) var(--ease);
 }
 .botaoEvent:hover {
     color: black;
@@ -388,7 +392,7 @@ main{
     display:flex;
     align-items:center;
     justify-content:center;
-    transition: var(--transicao-link) ease-in-out;
+    transition: var(--transicao-link) var(--ease);
 }
 .modalCalendar.hidden{
     opacity: 0;

@@ -8,7 +8,7 @@
     content: "";
     position: absolute;
     background: var(--cor-texto);
-    transition: 1s ease-in-out;
+    transition: 1s var(--ease);
 }
 [data-selected-id]:not([data-selected-id="1"])::before {
     opacity: 1;
@@ -54,7 +54,7 @@
     max-width: fit-content;
     overflow: hidden;
     background: var(--cor-vidro-2);
-    transition: var(--transicao-link) ease-in-out;
+    transition: var(--transicao-link) var(--ease);
 }
 
 .dropdown-menu.open {
@@ -83,7 +83,7 @@
 
 /* Seta/Chevron */
 .chevron {
-    transition: transform var(--transicao-link) ease;
+    transition: transform var(--transicao-link) var(--ease);
     opacity: 0.5;
 }
 

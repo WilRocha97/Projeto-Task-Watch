@@ -532,14 +532,17 @@ function selecionarFluxo(fluxoId, transicao=false) {
 
     const container = document.querySelector(".telaGrupoListas");
     if (transicao) {
-       container.classList.add('invisibleHeight'); 
+       container.classList.add('collapsed'); 
     }
     
     setTimeout(()=> {
         container.innerHTML = "";
-        (fluxo.listas || []).forEach((lista) => {
+        (fluxo.listas || []).forEach((lista, index) => {
             var coluna = criarElementoLista(lista)
             container.appendChild(coluna);
+            setTimeout(()=> {
+                coluna.classList.remove('collapsed')
+            }, 100 * index);
         });
 
         const divNovaLista = document.createElement("div");
@@ -548,17 +551,15 @@ function selecionarFluxo(fluxoId, transicao=false) {
         divNovaLista.querySelector("#novaLista").addEventListener("click", () => abrirModalNovaLista(fluxoId));
         container.appendChild(divNovaLista);
         
-        setTimeout(()=> {
-            if (transicao) {
-                container.classList.remove('invisibleHeight'); 
-            }
-        }, 500);
+        if (transicao) {
+            container.classList.remove('collapsed'); 
+        }
     }, 300);
 }
 
 function criarElementoLista(lista) {
     const col = document.createElement("div");
-    col.className    = "telaTarefas";
+    col.className    = "telaTarefas collapsed";
     col.dataset.id   = lista.id;
 
     col.innerHTML = `

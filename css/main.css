@@ -9,6 +9,7 @@
     --tamanho-texto-3: 0.8rem;
     --transicao-link: 0.3s;
     --transicao-link-2: 0.6s;
+    --ease: ease-out;
     --blur: 35px;
     --blur-fundo: 10px;
     --blur-card: 3px;
@@ -449,7 +450,7 @@ button {
                 var(--direcao-sombra-2) var(--direcao-sombra-2) 5px var(--sombra-card);
     backdrop-filter: blur(var(--blur-card));
     -webkit-backdrop-filter: blur(var(--blur-card)); /* compatibilidade com Safari */
-    transition: background-color var(--transicao-link) ease-in-out;
+    transition: var(--transicao-link) var(--ease);
 }
 
 .mfMaquinas {
@@ -465,7 +466,7 @@ button {
     justify-content: flex-start;
     width: 100%;
     min-height: 93.6vh;
-    transition: var(--transicao-link);
+    transition: var(--transicao-link) var(--ease);
 }
 .off {
     opacity: 0.2;
@@ -474,7 +475,7 @@ button {
 .telaRotinas {
     display: flex;
     flex-direction: column;
-    transition: var(--transicao-link) ease-in-out;
+    transition: var(--transicao-link) var(--ease);
 }
 
 .telaLogin {
@@ -533,7 +534,7 @@ button {
     background: none;
     border: none;
     border-radius: var(--borda-botao);
-    transition: var(--transicao-link) ease-in-out;
+    transition: var(--transicao-link) var(--ease);
 }
 .cInputUsuario, .cInputSenha, .cInputPesquisa, .hInputName, .hInputDate, .mInputName {
    padding: 0 0 0 10px; 
@@ -562,7 +563,7 @@ button {
     opacity: 1;
 }
 .MenuBotaoActive {
-    transition: var(--transicao-link) ease-in-out, color 1s ease-in-out;
+    transition: var(--transicao-link) var(--ease), color 1s var(--ease);
 }
 #controlarFixados, #fixarTelaMaquinas {
     max-height: 28px;
@@ -582,7 +583,7 @@ button {
     content: "";
     position: absolute;
     background: var(--cor-texto);
-    transition: 1s ease-in-out;
+    transition: 1s var(--ease);
 }
 .MenuBotao.aberto::before {
     opacity: 1;
@@ -605,7 +606,7 @@ button {
     color: var(--cor-texto);
     font-size: var(--tamanho-texto-2);
     font-weight: bold;
-    transition: var(--transicao-link) ease-in-out, color 1s ease-in-out;
+    transition: var(--transicao-link) var(--ease), color 1s var(--ease);
 }
 .MenuBotao::after, .MenuBotaoInterno::after, .paginaHistorico button::after, .tituloTabela::after, .linha::after, .linhaSimples::after, .drop::after {
     width: 100%;
@@ -628,7 +629,7 @@ button {
             inset 1px -1px 2px var(--sombra-vidro-escura),
             inset -1px 1px 2px var(--sombra-vidro-escura),
             inset 0 0 200px var(--botao-hover);
-    transition: var(--transicao-link) ease-in-out;
+    transition: var(--transicao-link) var(--ease);
 }
 .MenuBotao:hover::after, .MenuBotaoInterno:hover::after, .paginaHistorico button:not(:disabled):hover::after, .tituloTabela:hover::after, 
 .linha:hover::after, .linhaSimples:hover::after, .drop:hover::after {
@@ -663,7 +664,7 @@ button {
     white-space: nowrap;
     border-radius: var(--borda-botao);
     height: 13px;
-    transition: var(--transicao-link) ease-in-out;
+    transition: var(--transicao-link) var(--ease);
 }
 .botaoFechar, .botaoFixar, .botaoPip {
     width: 0;
@@ -790,7 +791,7 @@ button.clicked::after,
     justify-self: center;
     width: fit-content;
     flex-direction: row;
-    transition: 1s ease-in-out;
+    transition: 1s var(--ease);
 }
 
 .pageSize {
@@ -800,7 +801,7 @@ button.clicked::after,
 .hInputPageSize {
     text-align: center;
     min-width: 15px !important;
-    transition: 1s ease-in-out;
+    transition: 1s var(--ease);
 }
 
 .paginaHistorico {
@@ -810,9 +811,9 @@ button.clicked::after,
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    transition: var(--transicao-link) ease-in-out,
-                box-shadow 1s ease-in-out,
-                color 1s ease-in-out;
+    transition: var(--transicao-link) var(--ease),
+                box-shadow 1s var(--ease),
+                color 1s var(--ease);
 }
 
 .paginaHistorico span {
@@ -828,7 +829,7 @@ button.clicked::after,
     justify-content: center;
     font-size: 0.8rem;
     padding: 1rem;
-    transition: var(--transicao-link) ease-in-out;
+    transition: var(--transicao-link) var(--ease);
 }
 .rodapeConteudo {
     display: flex;
@@ -840,7 +841,7 @@ button.clicked::after,
     font-weight: bold;
     text-decoration: none;
     color: var(--cor-destaque);
-    transition: var(--transicao-link) ease-in-out;
+    transition: var(--transicao-link) var(--ease);
     border-radius: var(--borda-botao);
     padding: 5px 7px;
 }
@@ -898,7 +899,7 @@ button.clicked::after,
         min-width: 20px !important;
         min-height: 20px !important;
         font-size: larger;
-        transition: 1s ease-in-out;
+        transition: 1s var(--ease);
     }
     .pageSize {
         width: 44px !important;

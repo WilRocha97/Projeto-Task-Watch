@@ -6,7 +6,7 @@
     margin: 52px 30px 0;
     height: 243px;
     width: calc(100% - 60px);
-    transition: var(--transicao-link) ease-in-out;
+    transition: var(--transicao-link) var(--ease);
 }
 .telaPainel.collapsed {
     height: 0;
@@ -35,7 +35,7 @@
                 0 1em 20px var(--cor-lista),
                 0 0.5em 15px var(--cor-lista),
                 0 0 5px var(--cor-lista);
-    transition: 1s ease-in-out;
+    transition: 1s var(--ease);
 }
 .lrStatus.final { 
     --cor-lista: var(--cor-final);
@@ -98,7 +98,7 @@
     padding: 2px 5px;
     min-height: 5px;
     max-height: 50px;
-    transition: var(--transicao-link) ease-in-out;
+    transition: var(--transicao-link) var(--ease);
 }
 .linhaSimples.vazio {
     opacity: 0;
@@ -121,7 +121,7 @@ canvas {
     margin-right: 15px;
     position: relative;
     align-self: center;
-    transition: var(--transicao-link) ease-in-out;
+    transition: var(--transicao-link) var(--ease);
 }
 .chartBox.collapsed {
     width: 0;

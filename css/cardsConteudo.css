@@ -5,7 +5,7 @@
     max-height: 20px;
     margin: 5px 8px 3px;
     gap: 10px;
-    transition: var(--transicao-link) ease-in-out;
+    transition: var(--transicao-link) var(--ease);
 }
 .maisInfo, .maisInfo2, .maisInfo3 {
     display: flex;
@@ -21,7 +21,7 @@
     max-width: fit-content;
     max-height: 500px;
     text-shadow: 0 0 1px white;
-    transition: var(--transicao-link) ease-in-out;
+    transition: var(--transicao-link) var(--ease);
 }
 .maisInfob {
     border-radius: 5px;
@@ -32,7 +32,7 @@
     border-right: 3px solid var(--cor-botao-maisInfo);
     border-top: 3px solid var(--cor-botao-maisInfo);
     border-bottom: 3px solid var(--cor-botao-maisInfo);
-    transition: all 0.3s ease;
+    transition: 0.3s var(--ease);
 }
 .maisInfob.flip {
     margin: 5px 5px;
@@ -53,11 +53,11 @@
     display: flex;
     flex-direction: column;
     opacity: 1;
-    transition: 0.2s ease-in-out;
+    transition: 0.2s var(--ease);
 }
 .resumoErroInfo {
     max-height: 500px;
-    transition: max-height var(--transicao-link-2) ease-in-out;
+    transition: max-height var(--transicao-link-2) var(--ease);
 }
 .resumoResultados {
     max-height: 150px;
@@ -82,7 +82,7 @@
     padding: 0;
     margin: 0;
     max-height: 0;
-    transition: var(--transicao-link) ease-in-out;
+    transition: var(--transicao-link) var(--ease);
 }
 .telaExecucaoConteudo, .telaDadoConteudo, .telaResumoConteudo, .telaErroInfo {
     margin: 3px;
@@ -100,7 +100,7 @@
 }
 .telaResumoConteudo {
     max-height: 145px;
-    transition: max-height var(--transicao-link) ease-in-out;
+    transition: max-height var(--transicao-link) var(--ease);
 }
 .telaResumoConteudo.large {
     max-height: 248px;
@@ -111,21 +111,21 @@
     overflow: auto;
     margin: 0 5px;
     padding: 3px;
-    transition: var(--transicao-link-2) ease-in-out, max-height 0.2s ease-in-out, min-height 0.2s ease-in-out;
+    transition: var(--transicao-link-2) var(--ease), max-height 0.2s var(--ease), min-height 0.2s var(--ease);
 }
 .content {
     min-height: 10px;
     max-height: 200px;
     padding: 3px 6px;
     opacity: 1;
-    transition: var(--transicao-link-2) ease-in-out;
+    transition: var(--transicao-link-2) var(--ease);
 }
 .content.vazio, #mensagemAlerta.vazio {
     max-height: 0;
     min-height: 0;
     padding: 0;
     opacity: 0;
-    transition: var(--transicao-link-2) ease-in-out;
+    transition: var(--transicao-link-2) var(--ease);
 }
 
 .decoracao,
@@ -138,7 +138,7 @@
     width: auto;
     height: 70%;
     opacity: 0.2;
-    transition: var(--transicao-link) ease-in-out;
+    transition: var(--transicao-link) var(--ease);
 }
 #alerta {
     z-index: -500;

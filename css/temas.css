@@ -186,5 +186,5 @@
 
 .pattern-overlay {
     opacity: var(--opacidade-patern); /* controla a transparência */
-    transition: var(--transicao-link) ease-in-out;
+    transition: var(--transicao-link) var(--ease);
 }

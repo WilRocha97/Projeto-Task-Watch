@@ -13,7 +13,7 @@
     align-self: initial;
     opacity: 1;
     scale: 1;
-    transition: var(--transicao-link) ease-in-out;
+    transition: var(--transicao-link) var(--ease);
 }
 
 /* =============================================================================
@@ -37,7 +37,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    transition: var(--transicao-link) ease-in-out;
+    transition: var(--transicao-link) var(--ease);
 }
 
 /* Base para todos os filtros */
@@ -52,9 +52,9 @@
     width: 20px;
     height: 5px;
     border-radius: 5px;
-    transition: var(--transicao-link) ease-in-out,
-                background-color 1s ease-in-out,
-                box-shadow 1s ease-in-out;
+    transition: var(--transicao-link) var(--ease),
+                background-color 1s var(--ease),
+                box-shadow 1s var(--ease);
 }
 
 /* Cores específicas dos filtros */
@@ -94,10 +94,10 @@
     flex-direction: column;
     width: 100%;
     opacity: 1;
-    transition: var(--transicao-link) ease-in-out,
-                box-shadow 1s ease-in-out,
-                color 1s ease-in-out,
-                background-color 1s ease-in-out;
+    transition: var(--transicao-link) var(--ease),
+                box-shadow 1s var(--ease),
+                color 1s var(--ease),
+                background-color 1s var(--ease);
 }
 
 .telaHistoricoConteudo {
@@ -130,14 +130,14 @@
     border-radius: calc(var(--borda-botao) - 3px);
     border: var(--borda-card) solid #00000000;
     opacity: 1;
-    transition: var(--transicao-link) ease-in-out,
-                color 1s ease-in-out;
+    transition: var(--transicao-link) var(--ease),
+                color 1s var(--ease);
 }
 
 .situacao {
     text-align: right;
-    transition: var(--transicao-link) ease-in-out,
-                color 1s ease-in-out;
+    transition: var(--transicao-link) var(--ease),
+                color 1s var(--ease);
 }
 
 /* Estados das situações */

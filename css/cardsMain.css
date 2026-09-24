@@ -53,7 +53,7 @@
     justify-content: center;
     align-items: start;
     flex-wrap: wrap;
-    transition: height var(--transicao-link) ease-in-out, padding var(--transicao-link) ease-in-out;
+    transition: var(--transicao-link) var(--ease);
 }
 .rectangle {
     --escala-card: 1.02;
@@ -70,7 +70,7 @@
     overflow: hidden;
     -webkit-tap-highlight-color: transparent;
     outline: none;
-    transition: var(--transicao-link) ease-in-out, width 0.2s ease-in-out;
+    transition: var(--transicao-link) var(--ease), width 0.2s var(--ease);
 }
 .rectangle.enter {
     width: 290px;
@@ -100,7 +100,7 @@
     margin: 0 !important;
     opacity: 0 !important;
     scale: 0 !important;
-    transition: var(--transicao-link) ease-in-out, max-height 0.2s ease-in-out, min-height 0.2s ease-in-out;
+    transition: var(--transicao-link) var(--ease), max-height 0.2s var(--ease), min-height 0.2s var(--ease);
 }
 .rectangle.collapsed {
     --escala-card: 1.1;
@@ -110,7 +110,7 @@
     border-radius: 12px;
     overflow: hidden !important;
     padding: 0;
-    transition: var(--transicao-link) ease-in-out, max-height 0.2s ease-in-out, min-height 0.2s ease-in-out;
+    transition: var(--transicao-link) var(--ease), max-height 0.2s var(--ease), min-height 0.2s var(--ease);
 }
 .rectangle.collapsed #decoracao,
 .rectangle.collapsed .botaoFechar,
