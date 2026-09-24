@@ -9,7 +9,7 @@
     --tamanho-texto-3: 0.8rem;
     --transicao-link: 0.3s;
     --transicao-link-2: 0.6s;
-    --ease: ease-out;
+    --ease: cubic-bezier(0.47, 0.35, 0.09, 1.13);
     --blur: 35px;
     --blur-fundo: 10px;
     --blur-card: 3px;
