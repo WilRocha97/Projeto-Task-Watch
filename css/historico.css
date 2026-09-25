@@ -13,6 +13,7 @@
     align-self: initial;
     opacity: 1;
     scale: 1;
+    overflow: hidden;
     transition: var(--transicao-link) var(--ease);
 }
 

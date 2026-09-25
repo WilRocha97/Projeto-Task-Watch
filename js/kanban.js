@@ -538,7 +538,7 @@ function selecionarFluxo(fluxoId, transicao=false) {
     setTimeout(()=> {
         container.innerHTML = "";
         (fluxo.listas || []).forEach((lista, index) => {
-            var coluna = criarElementoLista(lista)
+            var coluna = criarElementoLista(lista, transicao)
             container.appendChild(coluna);
             setTimeout(()=> {
                 coluna.classList.remove('collapsed')
@@ -557,9 +557,17 @@ function selecionarFluxo(fluxoId, transicao=false) {
     }, 300);
 }
 
-function criarElementoLista(lista) {
+function criarElementoLista(lista, transicao) {
+    if (transicao) {
+        var transicao_classe = ' collapsed'
+    }
+    else {
+        var transicao_classe = ''
+    }
+        
+
     const col = document.createElement("div");
-    col.className    = "telaTarefas collapsed";
+    col.className    = `telaTarefas${transicao_classe}`;
     col.dataset.id   = lista.id;
 
     col.innerHTML = `
@@ -788,7 +796,7 @@ function bindDropZone(zone) {
 
         try {
             await api("/tarefas/reordenar", "PUT", { tarefas: payload });
-            await recarregarFluxo();
+            await recarregarFluxo(false);
         } catch (err) {
             mostrarErro(err.message);
         }
