@@ -565,7 +565,6 @@ function criarElementoLista(lista, transicao) {
         var transicao_classe = ''
     }
         
-
     const col = document.createElement("div");
     col.className    = `telaTarefas${transicao_classe}`;
     col.dataset.id   = lista.id;
