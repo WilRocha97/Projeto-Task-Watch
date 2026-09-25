@@ -883,7 +883,7 @@ button.clicked::after,
         padding: 0 15px;
     }
     .rodape {
-        margin-bottom: 140px;
+        margin-bottom: 200px;
     }
     .MenuBotao, .paginaHistorico button {
         max-height: 47px !important;

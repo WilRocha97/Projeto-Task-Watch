@@ -126,7 +126,7 @@
     display: grid;
     grid-template-columns: 0.5fr 3fr 1.5fr;
     align-content: center;
-    min-height: 10px;
+    height: max-content;
     padding: 5px;
     border-radius: calc(var(--borda-botao) - 3px);
     border: var(--borda-card) solid #00000000;
@@ -229,7 +229,7 @@
         height: 51.60px;
     }
     .telaHistoricoConteudo {
-        max-height: 53vh;
+        max-height: 53vh !important;
     }
 }
 

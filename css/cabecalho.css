@@ -532,7 +532,8 @@
 
     .menu {
         flex-wrap: wrap;
-        padding: 8px
+        padding: 8px;
+        gap: 0;
     }
     .rotinas {
         padding: 12px 12px 0 12px !important;
