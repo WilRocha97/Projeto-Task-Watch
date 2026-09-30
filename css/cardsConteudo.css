@@ -10,7 +10,7 @@
 .maisInfo, .maisInfo2, .maisInfo3 {
     display: flex;
     flex-direction: row;
-    cursor:cell;
+    cursor: cell;
     border: none;
     background: none;
     color: white;
@@ -99,7 +99,7 @@
     max-height: 52px;
 }
 .telaResumoConteudo {
-    max-height: 145px;
+    max-height: 127px;
     transition: max-height var(--transicao-link) var(--ease);
 }
 .telaResumoConteudo.large {
