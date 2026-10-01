@@ -96,7 +96,7 @@
 .telaListas {
     width: 100%;
 }
-.telaFluxos, .telaFluxos.collapsed {
+.telaFluxos {
     max-width: 15%;
     min-width: fit-content;
 }
@@ -335,13 +335,12 @@
     }
 
     .telaFluxos {
-        width: 500px;
-        position: fixed;
+        max-width: 100%;
+        min-width: 0;
         z-index: 2;
-        width: 80vw;
     }
     .telaFluxos.collapsed {
-        width: 0;
+        max-width: 0;
     }
     .telaListas {
         width: 100%;
@@ -349,7 +348,7 @@
 
     .cabecalhoTarefas.superior {
         flex-wrap: wrap;
-        height: 100px;
+        height: fit-content;
     }
     #abreMenuFluxos {
         opacity: 1;

@@ -62,15 +62,15 @@ export function fechaMenu(botaoDoMenu=false) {
     var telaMenu = document.querySelectorAll('.menuInvisivel');
     var telaRotinas = document.getElementById('telaRotinas');
     var cabecalho = document.getElementById('cabecalho');
+    var menuCabecalho = document.getElementById('menuCabecalho');
     var screenWidth = window.innerWidth;
     
     if (screenWidth < 1255 || botaoDoMenu) {
         telaMenu.forEach(miniMenu => {
             miniMenu.classList.add('invisible3');
         })
-        var menuCabecalhoMenu = document.getElementById('menuCabecalho')
-        if (menuCabecalhoMenu) {
-            menuCabecalhoMenu.classList.add('minimizado')
+        if (menuCabecalho){
+            menuCabecalho.classList.add('minimizado')
         }
         cabecalho.classList.remove('cabecalhoExpandido');
         cabecalho.classList.remove('cabecalhoMegaExpandido');

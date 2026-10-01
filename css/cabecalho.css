@@ -1,7 +1,7 @@
 /* Cabeçalho */
 .cabecalho {
     position: fixed;
-    z-index: 2;
+    z-index: 999999;
     display: flex;
     max-height: 125px;
     min-height: 0;
@@ -17,7 +17,7 @@
     max-height: 350px !important;
 }
 .cabecalhoMegaExpandido {
-    max-height: 8000px;
+    max-height: 8000px !important;
 }
 
 .fundoCabecalho, .fundoCabecalhoH, .fundoAuxiliar {

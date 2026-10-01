@@ -422,7 +422,7 @@ button.danger{
 
 
 /* Mobile (até 649px) */
-@media (max-width: 1000px) {
+@media (max-width: 916px) {
     .container {
         flex-direction: column;
         margin: 25px 2px 0;
