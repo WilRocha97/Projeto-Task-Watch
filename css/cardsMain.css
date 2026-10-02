@@ -167,10 +167,12 @@
     .cabecalhoCardBotoes {
         gap: 15px !important;
     }
-    .botaoFechar, .botaoFixar, .botaoInfo, .botaoPip {
+
+    .btnCard {
         font-size: 1rem !important;
+        width: 14px !important;
+        opacity: 1 !important;
     }
-    
 }
 @media (min-width: 650px) and (max-width: 720px) {
     .maisInfo.clicked, .maisInfo2.clicked {

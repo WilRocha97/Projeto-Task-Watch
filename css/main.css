@@ -650,6 +650,11 @@ button {
     text-shadow: 0 0 5px red !important;
     color: red !important;
 }
+.botaoFechar.nh, .botaoFixar.nh {
+    font-size: 1rem !important;
+    width: 70px !important;
+    opacity: 1 !important;
+}
 .botaoFechar.nh:hover, .botaoFixar.nh:hover, .botaoPip.nh:hover {
     background-color: transparent;
     text-shadow: 0 0 0 transparent;
@@ -909,6 +914,7 @@ button.clicked::after,
     .botaoFechar, .botaoFixar, .botaoInfo, .botaoPip {
         font-size: 1rem !important;
         width: 70px !important;
+        opacity: 1 !important;
     }
 }   
 @media (max-width: 1255px) {
@@ -925,6 +931,7 @@ button.clicked::after,
     }
     .telaRotinas {
         margin: 50px 0 0;
+        align-self: baseline;
     }
     .mfMaquinas {
         margin-left: 10%;

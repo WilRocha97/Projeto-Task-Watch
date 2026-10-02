@@ -11,6 +11,8 @@ import {salvarEstadoMaquinas} from './maquinas.js';
 
 var botoes = document.querySelectorAll('button');
 var botoesCards = document.querySelectorAll('.btnCard');
+var botoesFechar = document.querySelectorAll('.botaoFechar');
+var botoesFixar = document.querySelectorAll('.botaoFixar');
 var cards = document.querySelectorAll('.rectangle');
 var maquinasNaLista = document.querySelectorAll('.rectangleMaquina');
 var barrasPesquisa = document.querySelectorAll('.barraPesquisa');
@@ -70,6 +72,12 @@ if (isTouchDevice()) {
         botao.classList.add('nh')
     });
     barrasPesquisa.forEach((barra)=> {
+        barra.classList.add('nh')
+    });
+    botoesFechar.forEach((barra)=> {
+        barra.classList.add('nh')
+    });
+    botoesFixar.forEach((barra)=> {
         barra.classList.add('nh')
     });
 }
